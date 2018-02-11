@@ -1,0 +1,6 @@
+package learning_interface;
+
+package learning_interface.*;
+public interface Common {
+double runTimer(double a, double b, double c);
+}

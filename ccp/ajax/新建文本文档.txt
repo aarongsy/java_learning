@@ -1,0 +1,21 @@
+function zgxx(dtid,i){
+	var zcmc = "";
+	var zgje = 0;
+ 
+	var urls = "/interface/hzjjNew/zchcgbxsqlc21/xiyf/zgxxAjax.jsp?dtid="+dtid+"&time="+new Date().getTime();
+	jQuery.getJSON(urls,function(ret){
+		if(ret.status == 'succ'){ 
+			jQuery("#field"+<%=arrayD6.get("zgje")%>+"_"+i).val(checkFloatForJJ(ret.hdje));
+			jQuery("#field"+<%=arrayD6.get("zgje")%>+"_"+i+"span").html(checkFloatForJJ(ret.hdje));
+			jQuery("#field"+<%=arrayD6.get("wqzgje")%>+"_"+i).val(checkFloatForJJ(ret.zgwqje));                  
+			jQuery("#field"+<%=arrayD6.get("wqzgje")%>+"_"+i+"span").html(checkFloatForJJ(ret.zgwqje));       
+
+			zcmc = ret.zcmc;
+			zgje = ret.hdje;
+			gysmc = ret.gysmc;
+ 
+			setZY_ZG(zcmc,gysmc,i);
+		}else{                                                                                 
+			alert("Êý¾ÝÒì³£:" + urls);
+		}
+	});  
