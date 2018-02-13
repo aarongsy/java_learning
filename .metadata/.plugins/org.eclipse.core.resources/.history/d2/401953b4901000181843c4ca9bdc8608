@@ -1,0 +1,24 @@
+class Movie{
+	String title;
+	String genre;
+	Double rating;
+	
+	void playIt(){
+		System.out.println("Playing the movie");
+	}
+}
+
+public class MovieTestDrive{
+	public static void main(String[] args){
+		Movie one = new Movie();
+		one.title ="Gone with the Stock";
+		one.genre ="Tragic";
+		one.rating= 5.6;
+		Movie two=new Moview();
+		two.title="abc";
+		two.genre="ef";
+		two.rating =3.4;
+	    two.playIt();
+		
+	}	
+}	
