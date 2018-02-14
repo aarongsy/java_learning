@@ -30,14 +30,15 @@ public class testread {
 		        
 		        if(line==lineDel) {
 		        	//temp.replace(" ", "");
-		        	String s= temp.replace(" ", "");
+		        	String s= temp.replace(" ","");
 		        	//s=temp.replace("\n","");
 		        	//s=temp.replace("\r\n","" );
+		        	
 		        	System.out.print(s);
 		        	//System.out.print("string"+10);
 		        	continue;
 		        	}
-		        sb.append(temp).append( "\r\n ");
+		        sb.append(temp).append( "\r\n");
 		}
 		br.close();
 		OutputStreamWriter osr = new OutputStreamWriter(new FileOutputStream(file),"utf-8");
@@ -52,7 +53,7 @@ public class testread {
 	}
 	public static void main(String args[]) throws Exception {
 		
-		String filedirectory="D://123//new144.txt";
+		String filedirectory="D://123//new154.txt";
 		String delfiledir="D://123//new9.txt";
 		int n=1;
 		for (int i=0;i<n;i++){

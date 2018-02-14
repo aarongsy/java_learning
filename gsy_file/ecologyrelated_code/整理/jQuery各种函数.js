@@ -51,12 +51,12 @@ ajax({
   } 
 })
 /*******************************选择框操作****************************************/
-//选择框增加选项
+//选择框增加选项 （选择框id:#test）
 $("#test").append("<option value='5'>测试5</option>");
 $("#test").empty();//用的最多 
 //显示或者隐藏制定选项
-$("#test>option:contains('selectioncontent')").hide();
-$("#test>option:contains('selectioncontent')").show();
+$("#test>option:contains('selection content')").hide();
+$("#test>option:contains('selection content')").show();
 //删除Select中索引值最大Option(最后一个)
  $("#test  option:last").remove();   
 //删除Select中索引值为0的Option(第一个)

@@ -2,9 +2,10 @@
 <section name="Workbench">
 	<section name="ExternalProjectImportWizard">
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
-		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
-		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="true" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Documents and Settings\gsy\桌面\发短信"/>
 			<item value="C:\Documents and Settings\gsy\workspace\ccp\CCP"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
