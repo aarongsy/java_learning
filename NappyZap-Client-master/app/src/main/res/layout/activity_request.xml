@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.diana.test3.Irritable"
+    android:background="@drawable/background2">
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BACK"
+        android:id="@+id/button164"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HOME"
+        android:id="@+id/button165"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:text="Request pickup now"
+        android:id="@+id/buttonrequest"
+        android:textSize="@dimen/new2"
+        android:layout_below="@+id/scrollView7"
+        android:layout_centerHorizontal="true" />
+
+
+    <ScrollView
+        android:layout_width="350dp"
+        android:layout_height="210dp"
+        android:id="@+id/scrollView7"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="10dp"
+        android:fillViewport="false">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tap request below to have your bin emptied today. The collection address is the default address you registered with. To change go to your personal information page. You can contact the driver by clicking on contacts below.   "
+            android:id="@+id/textView10"
+            android:textSize="@dimen/new4" />
+    </ScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Request"
+        android:id="@+id/textView9"
+        android:layout_alignBottom="@+id/button20"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ff0b0b0b"
+        android:textSize="@dimen/new3" />
+
+
+</RelativeLayout>

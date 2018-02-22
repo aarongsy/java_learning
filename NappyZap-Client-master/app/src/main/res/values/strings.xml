@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="intro">Capture a picture to crop!</string>
+    <string name="picture">Picture</string>
+    <string name="capture">Launch Camera</string>
+    <string name="app_name">Test</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_disclaimer">Disclaimer</string>
+    <string name="title_activity_aboutus">About Us</string>
+    <string name="title_activity_contact">Report</string>
+    <string name="title_activity_dashboard">Current Pickup</string>
+    <string name="title_activity_home">Login</string>
+    <string name="title_activity_request">Request</string>
+    <string name="title_activity_register">Register</string>
+    <string name="title_activity_status">Status</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <string-array name="mNavArray">
+        <item>Current Pickup</item>
+        <item>Previous Pickups</item>
+        <item>Contact Us</item>
+        <item>About Us</item>
+        <item>Logout</item>
+    </string-array>
+    <string name="title_activity_previous_pickups">PreviousPickups</string>
+</resources>

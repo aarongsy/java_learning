@@ -1,0 +1,12 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+.footer {
+  /* Set the fixed height of the footer here */
+  background-color: #1B1BB3; 
+  color: white;
+}
+

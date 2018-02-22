@@ -1,0 +1,150 @@
+textarea{
+	resize: vertical;
+}
+
+.container{
+	position: relative; 
+	z-index: 3;
+}	
+
+.background-img{
+	position: relative;
+    width: 100%;
+}
+.logo{
+	position: absolute;
+	top: 30px;
+}
+
+/*Custom Navbar*/
+.navbar-default{
+	background-color:#0365c0;
+	margin-bottom: 0px;
+}
+.navbar-default .navbar-brand{
+	color: white;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    background-color: #0B7FE8;
+	color: white;
+}
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    background-color: #0B7FE8;
+	color: white;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: white;
+    background-color: #024D91;
+}
+
+.social-icon{
+	max-width: 50px;
+	float: right;
+}
+
+.social-wrapper{
+	
+}
+/*Custom Button*/
+.btn-primary{
+	background-color: #0365c0;
+	color: white;
+}
+.btn-primary:hover{
+	background-color: #5F5FC6;
+}
+#main-wrapper{
+	margin-top: 75px;
+}
+
+/*Coloured Strips*/
+.strip-left{ 
+	height: 250px;
+}
+.strip-left-content{
+	padding-top: 3%;
+	padding-left: 5%;
+}
+.strip-right{
+	height: 250px;
+}
+.strip-right-content{
+	float: right;
+	padding-top: 3%;
+	padding-right: 5%;
+}
+
+/*Tables*/
+.table-choice{
+    background-color: #f7f7f7;
+}
+
+.table-choice .navbar-nav .active{
+	background-color: white;
+	margin-bottom: 3px solid white;
+	border-radius: 20px 20px 0px 0px;
+}
+
+.table-choice .navbar-nav li:hover{
+	background-color: white;
+}
+
+.table-choice li a{
+	 color: black;
+}
+
+/*Warning Notifications*/
+#warning{
+	display: none;
+}
+
+.twitter-timeline{
+	width: 100%;
+}
+#twitter-widget-0 {
+   width:100%;
+}
+
+/*Newsssss*/
+
+.news-wrapper{
+	margin-top: 10px;
+	background-color: #f7f7f7;
+	border-radius: 10px;
+	padding: 14px;
+}
+.news-title{
+	border-bottom: 1px solid #0365c0;
+	margin: 14px;
+}
+.news-body{
+	margin: 14px;
+}
+
+.news-wrapper:last-child{
+	margin-bottom: 10px;
+}
+
+.timestamp{
+	margin-top: 10px;
+}
+
+/*Pics and Twittter*/
+.picsntwit{
+	margin-top: 20px;
+}
+
+.picsntwit-pic{
+	background-size: contain;
+}
+
+.picsntwit-twit{
+	
+}
