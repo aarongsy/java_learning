@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>alertView.html</title>
+
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <link rel="stylesheet" href="css/bootstrap.min.css?version=20171207" type="text/css">
+    <style type="text/css">
+        table,
+        th {
+            text-align: center;
+        }
+
+        td.danger {
+            background-color: #d9534f !important;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid" style="width:650px">
+        <!-- 定义表格框架 -->
+        <table class="table table-striped table-bordered table-hover table-condensed" style="text-align:center;">
+            <thead>
+                <tr>
+                    <th>罐号</th>
+                    <th>部门</th>
+                    <th>内容物</th>
+                    <th>液位高度</th>
+                    <th>温度</th>
+                    <th>压力</th>
+                    <th>重量</th>
+                    <th>时间</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <script type="text/javascript" src="./js/jquery.min.js?version=20171207"></script>
+    <script type="text/javascript">
+        jQuery(function () {
+            if (!sessionStorage) {} else {
+                var value = window.sessionStorage.getItem("key");
+                jQuery("tbody").html(value);
+                value = null;
+                return;
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -14,7 +14,7 @@
 	</section>
 	<section name="org.eclipse.debug.ui.LAUNCH_CONFIGURATIONS_DIALOG_SECTION">
 		<item value="735" key="DIALOG_WIDTH"/>
-		<item value=", org.eclipse.jdt.launching.localJavaApplication, " key="org.eclipse.debug.ui.EXPANDED_NODES"/>
+		<item value=", org.eclipse.jdt.launching.localJavaApplication, org.eclipse.jst.server.tomcat.core.launchConfigurationType, org.eclipse.jst.server.generic.core.launchConfigurationType, org.eclipse.wst.server.preview.launchConfigurationType, org.eclipse.jst.server.preview.launchConfigurationType, " key="org.eclipse.debug.ui.EXPANDED_NODES"/>
 		<item value="665" key="DIALOG_HEIGHT"/>
 		<item value="237" key="org.eclipse.debug.ui.DIALOG_SASH_WEIGHTS_1"/>
 		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>

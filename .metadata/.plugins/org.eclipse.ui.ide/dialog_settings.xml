@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="ExternalProjectImportWizard">
-		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<item value="true" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="true" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value=""/>
 			<item value="C:\Documents and Settings\gsy\桌面\发短信"/>
 			<item value="C:\Documents and Settings\gsy\workspace\ccp\CCP"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value="C:\Documents and Settings\gsy\桌面\file_ecology&amp;OA\发短信\readtext.zip"/>
+			<item value="C:\Documents and Settings\gsy\桌面\smsServiceTest.zip"/>
+			<item value="C:\Documents and Settings\gsy\桌面\mntext.zip"/>
+			<item value="C:\Documents and Settings\gsy\桌面\apcvalues.zip"/>
+			<item value="C:\Documents and Settings\gsy\桌面\readtext.zip"/>
 			<item value=""/>
 		</list>
 	</section>
@@ -25,6 +31,7 @@
 			<item value="org.eclipse.jpt.jpa"/>
 			<item value="org.eclipse.m2e"/>
 			<item value="org.eclipse.pde.PDE"/>
+			<item value="org.eclipse.wst.web.ui"/>
 		</list>
 	</section>
 </section>

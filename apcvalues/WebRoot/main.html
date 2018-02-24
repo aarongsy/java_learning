@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    <!-- The jQuery library is a prerequisite for all jqSuite products -->
+    <script type="text/ecmascript" src="./js/jquery.min.js?version=20171207"></script>
+    <script src="./js/bootstrap.min.js?version=20171207"></script>
+    <!-- We support more than 40 localizations -->
+    <script type="text/ecmascript" src="./js/trirand/i18n/grid.locale-cn.js?version=20171207"></script>
+    <!-- This is the Javascript file of jqGrid -->
+    <script type="text/ecmascript" src="./js/trirand/jquery.jqGrid.min.js?version=20171207"></script>
+    <script type="text/ecmascript" src="./js/context-menu.js?version=20171207"></script>
+    <script src="./js/metisMenu.min.js?version=20171207"></script>
+    <!-- A link to a Boostrap  and jqGrid Bootstrap CSS siles-->
+    <link rel="stylesheet" href="./css/bootstrap.min.css?version=20171207">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/trirand/ui.jqgrid-bootstrap.css?version=20171207" />
+    <link rel="stylesheet" href="./css/metisMenu.min.css?version=20171207">
+    <link rel="stylesheet" href="./css/mm-vertical.css?version=20171207">
+    <script>
+        //$.jgrid.defaults.width = '100%';
+        $.jgrid.defaults.responsive = true;
+        $.jgrid.defaults.styleUI = 'Bootstrap';
+    </script>
+    <style>
+    html,
+    body,
+    .container,
+    .container-fluid,
+    [class*='col-'] {
+        height: 100%;
+    }
+
+    .contextMenu {
+        font-size: 18px;
+    }
+	</style>
+
+    <meta charset="utf-8" />
+    <title>桶槽信息维护中心V1.3</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row" style="height:100%">
+            <aside class="col-md-2" style="background-color:#212529">
+                <nav class="sidebar-nav">
+                    <ul class="metismenu" id="menu">
+                    	<li>
+                            <a href="index.jsp" aria-expanded="false">返回主页面</a>
+                        </li>
+                        <li>
+                            <a href="main.html" aria-expanded="false">桶槽TagName维护</a>
+                        </li>
+                        <li>
+                            <a href="threshold.html" aria-expanded="false">桶槽警报阈值维护</a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <div class="col-md-10" style="background-color:#F7F7F7">
+                <div class="alert alert-danger alert-dismissible" role="alert" style="margin-top:20px">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong>
+                        <span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;注意！</strong>&nbsp;修改时请确保PIMS抛出的文本中的TagName与此表中的一致！
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading text-center">桶槽信息TagName维护表</div>
+                    <table id="jqGrid"></table>
+                    <div id="jqGridPager"></div>
+                </div>
+            </div>
+            <div class="contextMenu row" id="contextMenu" style="display:none;">
+                <ul>
+                    <li id="add">
+                        <span class="glyphicon glyphicon-plus" style="float:left"></span>
+                        <span style="font-size:100%; font-family:Verdana;margin-left:10px;">添加数据</span>
+                    </li>
+                    <li id="edit">
+                        <span class="glyphicon glyphicon-pencil" style="float:left"></span>
+                        <span style="font-size:100%; font-family:Verdana;margin-left:10px;">编辑数据</span>
+                    </li>
+                    <li id="del">
+                        <span class="glyphicon glyphicon-trash" style="float:left"></span>
+                        <span style="font-size:100%; font-family:Verdana;margin-left:10px;">删除数据</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+        	if(!!!sessionStorage){
+    			window.location.href="index.jsp";
+    		}else{
+    			var pw = sessionStorage.getItem("mi");
+    			if(pw!="ccp1234"){
+    				window.location.href="index.jsp";
+    			}
+    		}
+            $("#menu").metisMenu();
+            $("#jqGrid").jqGrid({
+                url: 'JqGridServlet?method=initJqGrid',
+                editurl: 'JqGridServlet?method=optJqGrid',
+                datatype: "json",
+                colModel: [{
+                        label: '罐号',
+                        name: 'tank_num',
+                        key: true,
+                        editable: true,
+                        editrules: {
+                            required: true
+                        }
+                    },
+                    {
+                        label: '内容物',
+                        name: 'material',
+                        editable: true
+                    },
+                    {
+                        label: '高度',
+                        name: 'tank_heig',
+                        editable: true
+                    },
+                    {
+                        label: '温度',
+                        name: 'tank_temp',
+                        editable: true
+                    },
+                    {
+                        label: '重量',
+                        name: 'tank_weig',
+                        editable: true
+                    },
+                    {
+                        label: '压力',
+                        name: 'tank_pi',
+                        editable: true
+                    }
+                ],
+                sortname: 'tank_num',
+                sortorder: 'asc',
+                autowidth: true,
+                //width: 300,
+                height: 500,
+                rowNum: 30,
+                viewrecords: true,
+                pager: "#jqGridPager",
+                gridComplete: initGrid
+            });
+        });
+
+        function initGrid() {
+            $(".jqgrow", "#jqGrid").contextMenu('contextMenu', {
+                menuStyle: {
+                    width: "150px",
+                },
+                bindings: {
+                    'edit': function (t) {
+                        editRow();
+                    },
+                    'add': function (t) {
+                        addRow();
+                    },
+                    'del': function (t) {
+                        delRow();
+                    }
+                },
+                onContextMenu: function (event, menu) {
+                    var rowId = $(event.target).parent("tr").attr("id")
+                    var grid = $("#jqGrid");
+                    grid.setSelection(rowId);
+
+                    return true;
+                }
+            });
+
+            function addRow() {
+                var grid = $("#jqGrid");
+                grid.editGridRow("new", {
+                    closeAfterAdd: true
+                });
+            }
+
+            function editRow() {
+                var grid = $("#jqGrid");
+                var rowKey = grid.getGridParam("selrow");
+                if (rowKey) {
+                    grid.editGridRow(rowKey, {
+                        closeAfterEdit: true
+                    });
+                } else {
+                    alert("没有选中行！");
+                }
+            }
+
+            function delRow() {
+                var grid = $("#jqGrid");
+                var rowKey = grid.getGridParam("selrow");
+                if (rowKey) {
+                    grid.delGridRow(rowKey);
+                } else {
+                    alert("没有选中行！");
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

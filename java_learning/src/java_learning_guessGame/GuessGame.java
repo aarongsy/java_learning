@@ -27,6 +27,7 @@ public class GuessGame{
 			p2.guess();
 			p3.guess();
 			
+			
 			guessp1=p1.number;
 			System.out.println("Player one guessed" +guessp1);
 			guessp2=p2.number;

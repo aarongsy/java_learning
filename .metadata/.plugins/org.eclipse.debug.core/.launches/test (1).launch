@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/java_learning/src/java_learning_guessGame/test.java"/>
+<listEntry value="/smsServiceTest/src/com/service/Test.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
 </listAttribute>
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="java_learning_guessGame.test"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="java_learning"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.service.Test"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="smsServiceTest"/>
 </launchConfiguration>

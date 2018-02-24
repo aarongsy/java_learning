@@ -1,0 +1,41 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ccp.mapper.MnMapper">
+	<!-- <resultMap type="com.ccp.pojo.MnData" id="mnDataMapping">
+		<result column="STName" property="STName"/>
+		<result column="MeasureDatetime" property="MeasureDatetime"/>
+		<result column="PollutantName" property="PollutantName"/>
+		<result column="PollutantCode" property="PollutantCode"/>
+		<result column="RealtimeData" property="RealtimeData" javaType="double" jdbcType="DOUBLE"/>
+		<result column="MetricUnit" property="MetricUnit"/>
+		<result column="Flag" property="Flag"/>
+		<result column="ReceiveDatetime" property="ReceiveDatetime"/>
+		<result column="UpperLimit" property="UpperLimit" javaType="double" jdbcType="DOUBLE"/>
+		<result column="LowerLimit" property="LowerLimit" javaType="double" jdbcType="DOUBLE"/>
+	</resultMap> -->
+
+	<select id="queryMnByEnterpriseNameAndDeviceName" resultType="string">
+		SELECT MN FROM dbo.Device WHERE EnterpriseName= #{0} AND DeviceName= #{1}
+	</select>
+	<select id="queryDeviceNameListByEnterpriseName" resultType="string">
+		SELECT DeviceName FROM dbo.Device WHERE EnterpriseName= #{0}
+	</select>
+	<select id="queryMeasureDateTimeByMn" resultType="string">
+		SELECT TOP 1 d.MeasureDateTime  
+        FROM   MeasureData d 
+        WHERE d.MeasureDateTime>='2018-01-18' AND d.MN=#{0} 
+        ORDER BY d.MeasureDateTime DESC
+	</select>
+	<select id="queryDataByMnAndMeasureDateTime" resultType="com.ccp.pojo.MnData">
+		SELECT sct.STName,md.MeasureDatetime,p.PollutantName,p.PollutantCode,
+        ROUND(md.RealtimeData,3) AS RealtimeData,p.MetricUnit,md.Flag,md.ReceiveDatetime,
+        ROUND (p.UpperLimit,3) AS UpperLimit,ROUND (p.LowerLimit,3) AS LowerLimit 
+        FROM MeasureData md
+        INNER JOIN Device device ON md.MN=device.MN   
+        INNER JOIN SystemCodeTable sct ON sct.ST=md.ST 
+        INNER JOIN Pollutant p ON p.PollutantCode=md.PollutantCode 
+        WHERE md.MN=#{0} AND md.MeasureDatetime=#{1}
+	</select>
+</mapper>
