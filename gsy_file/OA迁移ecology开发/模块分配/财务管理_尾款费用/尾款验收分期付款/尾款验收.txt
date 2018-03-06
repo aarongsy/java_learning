@@ -1,0 +1,421 @@
+<CENTER>
+<DIV id=layoutDiv>
+<TABLE class=layouttable border=1>
+<CAPTION>尾款验收确认单-分期付款(开始)</CAPTION>
+<COLGROUP>
+<COL width="12%">
+<COL width="38%">
+<COL width="12%">
+<COL width="38%"></COLGROUP>
+<TBODY>
+<TR>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4cd4dc1f014cdeb5977212ac name=MultiLanguageLabel>标题</A></TD>
+<TD class=FieldValue colSpan=3><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdeb5977212ac$ class=InputStyle2 value=[只读]尾款验收确认单-分期付款主表.标题 name=40285a8d4cd4dc1f014cdea133bf125e></TD></TR>
+<TR>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4cd4dc1f014cdeb5979d12ae name=MultiLanguageLabel>流程单号</A></TD>
+<TD class=FieldValue colSpan=3><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdeb5979d12ae$ class=InputStyle2 value=[只读]尾款验收确认单-分期付款主表.流程单号 name=40285a8d4cd4dc1f014cdea133bf125e></TD></TR>
+<TR>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4cd4dc1f014cdeb597c612b0 name=MultiLanguageLabel>公司代码</A></TD>
+<TD class=FieldValue><INPUT id=$40285a8d4cd4dc1f014cdeb597c612b0$ class=InputStyle2 value=[可编辑]尾款验收确认单-分期付款主表.公司代码 name=40285a8d4cd4dc1f014cdea133bf125e></TD>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4cd4dc1f014cdeb597f012b2 name=MultiLanguageLabel>填单日期</A></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdeb597f012b2$ class=InputStyle2 value=[只读]尾款验收确认单-分期付款主表.填单日期 name=40285a8d4cd4dc1f014cdea133bf125e></TD></TR>
+<TR>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4cd4dc1f014cdeb5981b12b4 name=MultiLanguageLabel>承办人</A></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdeb5981b12b4$ class=InputStyle2 value=[只读]尾款验收确认单-分期付款主表.承办人 name=40285a8d4cd4dc1f014cdea133bf125e></TD>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4cd4dc1f014cdeb5984912b6 name=MultiLanguageLabel>验收单位</A></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdeb5984912b6$ class=InputStyle2 value=[只读]尾款验收确认单-分期付款主表.验收单位 name=40285a8d4cd4dc1f014cdea133bf125e></TD></TR>
+<TR>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4cd4dc1f014cdeb5987012b8 name=MultiLanguageLabel>供应商简码</A></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdeb5987012b8$ class=InputStyle2 value=[只读]尾款验收确认单-分期付款主表.供应商简码 name=40285a8d4cd4dc1f014cdea133bf125e></TD>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4cd4dc1f014cdeb5989812ba name=MultiLanguageLabel>供应商名称</A></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdeb5989812ba$ class=InputStyle2 value=[只读]尾款验收确认单-分期付款主表.供应商名称 name=40285a8d4cd4dc1f014cdea133bf125e></TD></TR>
+<TR>
+<TD><A id=MultiLanguageLabel_40285a8d4cd4dc1f014cdeb598e312be name=MultiLanguageLabel>采购员</A></TD>
+<TD>&nbsp;<INPUT style="WIDTH: 25.64%; HEIGHT: 21px" id=$40285a8d4cd4dc1f014cdeb598e312be$ class=InputStyle2 value=[只读]尾款验收确认单-分期付款主表.采购员 size=1 name=40285a8d4cd4dc1f014cdea133bf125e><INPUT style="WIDTH: 119px; HEIGHT: 20px" id=$40285a8d52f37b040152f3a3b6c50036$ class=InputStyle2 value=[隐藏]尾款验收确认单-分期付款主表.采购员主 size=3 name=40285a8d4cd4dc1f014cdea133bf125e></TD>
+<TD>付款条款代码</TD>
+<TD>&nbsp;<INPUT id=$40285a8d4fa53380014faafec95212bf$ class=InputStyle2 value=[可编辑]尾款验收确认单-分期付款主表.付款条款代码 name=40285a8d4cd4dc1f014cdea133bf125e><INPUT id=$40285a8d51e6945001521ab05bd60500$ class=InputStyle2 value=[隐藏]尾款验收确认单-分期付款主表.分期付款第一码 name=40285a8d4cd4dc1f014cdea133bf125e></TD></TR>
+<TR>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4cd4dc1f014cdeb598be12bc name=MultiLanguageLabel>采购订单</A></TD>
+<TD class=FieldValue>&nbsp;<INPUT id=$40285a8d4cd4dc1f014cdeb598be12bc$ class=InputStyle2 value=[可编辑]尾款验收确认单-分期付款主表.采购订单 name=40285a8d4cd4dc1f014cdea133bf125e><INPUT onclick=getinfo() value=查询 type=button></TD></TD; <TD>&nbsp;</TD> 
+<TD class=FieldValue><INPUT id=$40285a8d53a60f3c0153a7420b910da1$ class=InputStyle2 value=[隐藏]尾款验收确认单-分期付款主表.关务人员 name=40285a8d4cd4dc1f014cdea133bf125e></TD></TR></TBODY></TABLE>
+<TABLE id=oTable40285a8d4cd4dc1f014cdec644441452 class=detailtable border=1>
+<CAPTION>尾款验收确认分期付款采购订单<SPAN id=div40285a8d4cd4dc1f014cdec644441452button name="div40285a8d4cd4dc1f014cdec644441452button"><A href="javascript:addrow('40285a8d4cd4dc1f014cdec644441452');"><IMG title=New border=0 src="/images/plus.gif" width=11 height=11></A>&nbsp;<A href="javascript:delrow('40285a8d4cd4dc1f014cdec644441452');"><IMG title=Delete border=0 src="/images/minus.gif" width=11 height=11></A>&nbsp;<INPUT onclick=getinfo() value=获取采购订单信息 type=button><A href="javascript:addrowbyexcel('40285a8d4cd4dc1f014cdec644441452');"></A></SPAN></CAPTION>
+<COLGROUP>
+<COL width="10%">
+<COL width="10%">
+<COL width="10%">
+<COL width="10%">
+<COL width="10%">
+<COL width="10%">
+<COL width="10%">
+<COL width="10%">
+<COL width="10%">
+<COL width="10%"></COLGROUP>
+<TBODY>
+<TR class=Header>
+<TD noWrap><INPUT id=check_node_all onclick="selectAll(this,'40285a8d4cd4dc1f014cdec644441452')" value=-1 type=checkbox name=check_node_all><A id=MultiLanguageLabel_40285a8d4cd4dc1f014cdecd0749145a name=MultiLanguageLabel>序号</A></TD>
+<TD noWrap><A id=MultiLanguageLabel_40285a8d4cd4dc1f014cdecd076d145c name=MultiLanguageLabel>采购订单号</A></TD>
+<TD noWrap><A id=MultiLanguageLabel_40285a8d4cd4dc1f014cdecd0791145e name=MultiLanguageLabel>采购订单项次</A></TD>
+<TD noWrap><A id=MultiLanguageLabel_40285a8d4cd4dc1f014cdecd07b81460 name=MultiLanguageLabel>短文本</A></TD>
+<TD noWrap><A id=MultiLanguageLabel_40285a8d4cd4dc1f014cdecd07e21462 name=MultiLanguageLabel>订购单位</A></TD>
+<TD noWrap><A id=MultiLanguageLabel_40285a8d4cd4dc1f014cdecd08101464 name=MultiLanguageLabel>数量</A></TD>
+<TD noWrap><A id=MultiLanguageLabel_40285a8d4cd4dc1f014cdecd08341466 name=MultiLanguageLabel>金额（完税）</A></TD>
+<TD noWrap><A id=MultiLanguageLabel_40285a8d4cd4dc1f014cdecd08691468 name=MultiLanguageLabel>币别</A></TD>
+<TD noWrap><A id=MultiLanguageLabel_40285a8d4cd4dc1f014cdecd0890146a name=MultiLanguageLabel>付款比例</A></TD>
+<TD noWrap><A id=MultiLanguageLabel_40285a8d4cd4dc1f014cdecd08b6146c name=MultiLanguageLabel>付款金额</A></TD></TR>
+<TR id=oTR40285a8d4cd4dc1f014cdec644441452 class=DataLight><!-- 明细表ID，请勿删除。-->
+<TD noWrap><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdecd0749145a$ class=InputStyle2 value=[只读]尾款验收确认分期付款采购订单.序号 name=40285a8d4cd4dc1f014cdec644441452></TD>
+<TD noWrap><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdecd076d145c$ class=InputStyle2 value=[只读]尾款验收确认分期付款采购订单.采购订单号 name=40285a8d4cd4dc1f014cdec644441452></TD>
+<TD noWrap><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdecd0791145e$ class=InputStyle2 value=[只读]尾款验收确认分期付款采购订单.采购订单项次 name=40285a8d4cd4dc1f014cdec644441452></TD>
+<TD noWrap><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdecd07b81460$ class=InputStyle2 value=[只读]尾款验收确认分期付款采购订单.短文本 name=40285a8d4cd4dc1f014cdec644441452></TD>
+<TD noWrap><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdecd07e21462$ class=InputStyle2 value=[只读]尾款验收确认分期付款采购订单.订购单位 name=40285a8d4cd4dc1f014cdec644441452></TD>
+<TD noWrap><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdecd08101464$ class=InputStyle2 value=[只读]尾款验收确认分期付款采购订单.数量 name=40285a8d4cd4dc1f014cdec644441452></TD>
+<TD noWrap><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdecd08341466$ class=InputStyle2 value=[只读]尾款验收确认分期付款采购订单.金额（完税） name=40285a8d4cd4dc1f014cdec644441452></TD>
+<TD noWrap><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdecd08691468$ class=InputStyle2 value=[只读]尾款验收确认分期付款采购订单.币别 name=40285a8d4cd4dc1f014cdec644441452></TD>
+<TD noWrap><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdecd0890146a$ class=InputStyle2 value=[只读]尾款验收确认分期付款采购订单.付款比例 name=40285a8d4cd4dc1f014cdec644441452></TD>
+<TD noWrap><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdecd08b6146c$ class=InputStyle2 value=[只读]尾款验收确认分期付款采购订单.付款金额 name=40285a8d4cd4dc1f014cdec644441452></TD></TR></TBODY></TABLE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<INPUT id=$40285a8d53ab32090153ab56a9060204$ class=InputStyle2 value=[只读]尾款验收确认单-分期付款主表.订单付款金额 name=40285a8d4cd4dc1f014cdea133bf125e> 
+<TABLE class=layouttable border=1>
+<COLGROUP>
+<COL width="12%">
+<COL width="38%">
+<COL width="12%">
+<COL width="38%"></COLGROUP>
+<TBODY>
+<TR style="DISPLAY: none" id=show1>
+<TD colSpan=4>&nbsp;<STRONG>设备信息</STRONG></TD></TR>
+<TR style="DISPLAY: none" id=show2>
+<TD class=FieldName noWrap>是否逾期交货</TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdeb5990412c0$ class=InputStyle2 value=[可编辑]尾款验收确认单-分期付款主表.是否逾期交货 name=40285a8d4cd4dc1f014cdea133bf125e></TD>
+<TD class=FieldName noWrap>设备已开始使用</TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdeb5992912c2$ class=InputStyle2 value=[可编辑]尾款验收确认单-分期付款主表.设备已开始使用 name=40285a8d4cd4dc1f014cdea133bf125e></TD></TR>
+<TR style="DISPLAY: none" id=show3>
+<TD class=FieldName noWrap>
+<P>已提供产品质量证明书、</P>
+<P>合格证</P></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdeb5994d12c4$ class=InputStyle2 value=[可编辑]尾款验收确认单-分期付款主表.已提供产品质量证明书、合格证 name=40285a8d4cd4dc1f014cdea133bf125e></TD>
+<TD class=FieldName noWrap>已提供材料质保书</TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdeb5997712c6$ class=InputStyle2 value=[可编辑]尾款验收确认单-分期付款主表.已提供材料质保书 name=40285a8d4cd4dc1f014cdea133bf125e></TD></TR>
+<TR style="DISPLAY: none" id=show4>
+<TD colSpan=4><STRONG>工程信息</STRONG></TD></TR>
+<TR style="DISPLAY: none" id=show5>
+<TD class=FieldName noWrap>是否属压力管道工程</TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdeb5999b12c8$ class=InputStyle2 value=[可编辑]尾款验收确认单-分期付款主表.是否属压力管道工程 name=40285a8d4cd4dc1f014cdea133bf125e></TD>
+<TD class=FieldName noWrap>厂商是否延迟完工</TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdeb599c912ca$ class=InputStyle2 value=[可编辑]尾款验收确认单-分期付款主表.厂商是否延迟完工 name=40285a8d4cd4dc1f014cdea133bf125e></TD></TR>
+<TR style="DISPLAY: none" id=show6>
+<TD class=FieldName noWrap>异常原因</TD>
+<TD class=FieldValue colSpan=3><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdeb599eb12cc$ class=InputStyle2 value=[可编辑]尾款验收确认单-分期付款主表.异常原因 name=40285a8d4cd4dc1f014cdea133bf125e></TD></TR>
+<TR style="DISPLAY: none" id=show7>
+<TD class=FieldName noWrap>已依照图纸全数完工</TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdeb59a1012ce$ class=InputStyle2 value=[可编辑]尾款验收确认单-分期付款主表.已依照图纸全数完工 name=40285a8d4cd4dc1f014cdea133bf125e></TD>
+<TD class=FieldName noWrap>现场已全数清理完毕</TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4cd4dc1f014cdeb59a5b12d2$ class=InputStyle2 value=[可编辑]尾款验收确认单-分期付款主表.现场已全数清理完毕 name=40285a8d4cd4dc1f014cdea133bf125e></TD></TR></TBODY></TABLE></DIV></CENTER>
+<SCRIPT>   
+WeaverUtil.load(function(){    
+      // getsupplyinfo(); 
+//getsupplyinfo2()   ;  
+getvalue();  
+
+});   
+
+function showinfo()   
+{  
+    var purchno=document.getElementById('field_40285a8d4cd4dc1f014cdeb598be12bc').value;//采购订单号    
+
+    Ext.Ajax.request({                                                                
+         url: '/app/weikuan/fenqifukuan.jsp',                                                               
+         params:{requestid:requestid,purchno:purchno},                                                                
+         success: function(res) {                                                                
+            var str=res.responseText;                                             
+            //document.getElementById('detailHtml').innerHTML=str;                                                
+         }                                                               
+    });   
+    getsupplyinfo();   
+ }   
+function getsupplyinfo()   
+{   
+    var purchno=document.getElementById('field_40285a8d4cd4dc1f014cdeb598be12bc').value;//采购订单号    
+alert('获取供应商信息');
+    Ext.Ajax.request({                                                                  
+         url: '/app/weikuan/getsupplyinfo.jsp',                                                                 
+         params:{requestid:requestid,purchno:purchno},                                                                  
+         success: function(res) {       
+         jsonResult = eval('('+res.responseText+')');      
+        //alert(jsonResult .LIFNR);        
+        document.getElementById('field_40285a8d4cd4dc1f014cdeb5987012b8').value=jsonResult .LIFNR;                               //供应商简码    
+        document.getElementById('field_40285a8d4cd4dc1f014cdeb5987012b8span').innerHTML=jsonResult .LIFNR;     
+        document.getElementById('field_40285a8d4cd4dc1f014cdeb5989812ba').value=jsonResult .NAME1;                           //供应商名称    
+        document.getElementById('field_40285a8d4cd4dc1f014cdeb5989812baspan').innerHTML=jsonResult .NAME1;    
+        //document.getElementById('field_40285a8d4cd4dc1f014cdeb598e312be').value=jsonResult .BSART;                                  //采购员    
+       // document.getElementById('field_40285a8d4cd4dc1f014cdeb598e312bespan').innerHTML=jsonResult .BSART;                                   
+
+        document.getElementById('field_40285a8d4fa53380014faafec95212bfspan').innerHTML=jsonResult.ZTERM; 
+        document.getElementById('field_40285a8d4fa53380014faafec95212bf').value=jsonResult .ZTERM;                                                                                     
+         }                                                                 
+    });     
+
+}   
+
+
+function getsupplyinfo2()    
+{    
+    var purchno=document.getElementById('field_40285a8d4cd4dc1f014cdeb598be12bc').value;//采购订单号     
+    if(purchno!=''){  
+     alert('获取采购员'); 
+    Ext.Ajax.request({                                                                   
+         url: '/app/weikuan/getname.jsp',                                                                  
+         params:{requestid:requestid,purchno:purchno},                                                                   
+         success: function(res) {        
+         jsonResult = eval('('+res.responseText+')');       
+       // alert(jsonResult .EKGRP);         
+        document.getElementById('field_40285a8d4cd4dc1f014cdeb598e312be').value=jsonResult .EKGRP;                    //采购员     
+        document.getElementById('field_40285a8d4cd4dc1f014cdeb598e312bespan').innerHTML=jsonResult .EKGRP;                                                                                                          
+         }                                                                  
+    });      
+   }else{ 
+        alert('请先输入采购订单号！'); 
+         document.getElementById('field_40285a8d4cd4dc1f014cdeb598e312be').value='';                    //采购组           
+         document.getElementById('field_40285a8d4cd4dc1f014cdeb598e312bespan').innerHTML='';   
+   } 
+}    
+
+
+function getinfo(){ 
+if(requestid=='') 
+{ 
+alert('请先点击保存'); 
+}  
+ else{ 
+DWREngine.setAsync(false);     
+    var purchno=document.getElementById('field_40285a8d4cd4dc1f014cdeb598be12bc').value;//采购订单号   
+    Ext.Ajax.request({                                             
+         url: '/app/weikuan/fenqifukuan.jsp',                                                                
+         params:{requestid:requestid,purchno:purchno},                                                                 
+         success: function(res) {                                                                 
+            var str=res.responseText;                                              
+            //document.getElementById('detailHtml').innerHTML=str;     
+          // location.reload();  
+                                             
+         }                                                                
+    });  
+}   
+    getsupplyinfo();   
+ getsupplyinfo2() ;  
+DWREngine.setAsync(true);    
+
+    }   
+
+function getin() { 
+onSubmit(1); 
+} 
+
+
+
+
+function gets()  
+{  
+document.getElementById('field_40285a8d4cd4dc1f014cdeb5979d12ae').value='WK'+document.getElementById('field_40285a8d4cd4dc1f014cdeb598be12bc').value;  
+document.getElementById('field_40285a8d4cd4dc1f014cdeb5979d12aespan').innerHTML='WK'+document.getElementById('field_40285a8d4cd4dc1f014cdeb598be12bc').value;  
+}  
+
+
+
+
+
+
+
+function getjud()       
+{     
+    DWREngine.setAsync(false);   
+        var remark='';      
+        var payterm=document.getElementById('field_40285a8d4fa53380014faafec95212bf').value;//付款条件       
+                var sql='select isfinished from requestbase where id=(select requestid from uf_fn_acceptconfirm  where orderno=\''+document.getElementById('field_40285a8d4cd4dc1f014cdeb598be12bc').value+'\')';    
+//alert(sql);   
+                DataService.getValues(sql,{        
+                    callback:function(data)        
+                    {     
+//alert('length:'+data.length);    
+                        if (data&&data.length>0)     
+                        {     
+                            for (var i=0;i<data.length;i++)     
+                            {     
+                                isfinished=data[i].isfinished;    
+                                if (isfinished==1)    
+                                {    
+                                    remark='1';   
+                                   // alert(remark);   
+                                }        
+                            }     
+                        }     
+                    }     
+                });     
+                if (remark=='1'){         
+                }     
+                else     
+                {     
+                    alert('安装验收未提交！');        
+     
+                }        
+    DWREngine.setAsync(true);   
+}      
+
+
+function getjudge()    
+{    
+DWREngine.setAsync(false);      
+    var purchorder='';    
+    var sql='select a.purchorder from uf_fn_wkdividpay  a left join requestbase b on a.requestid=b.id  where isfinished=1';    
+    DataService.getValues(sql,{         
+        callback:function(data)         
+        {       
+         if(data&&data.length>0){      
+             for (var i=0;i<data.length ; i++)     
+             {     
+                purchorder=data[i].purchorder;    
+    if (document.getElementById('field_40285a8d4cd4dc1f014cdeb598be12bc').value==purchorder)     
+    {     
+alert('该采购订单已在流程内！');    
+document.getElementById('field_40285a8d4cd4dc1f014cdeb598be12bc').value='';   
+    }     
+else{}   
+             }     
+     
+           }             
+        }       
+    });    
+DWREngine.setAsync(true);      
+
+}   
+
+
+function getvalue(){      
+    var b='';    
+    var a=document.getElementById('field_40285a8d4fa53380014faafec95212bf').value;    
+    b=a.substring(0,2);    
+    c=a.substring(0,1);  
+//alert(c);  
+    document.getElementById('field_40285a8d51e6945001521ab05bd60500').value=c;  
+//alert(b);    
+    if (b=='EZ')    //设备   
+    
+    {      
+        document.getElementById('show1').style.display='';      
+        document.getElementById('show2').style.display='';      
+        document.getElementById('show3').style.display='';     
+
+        document.getElementById('show4').style.display='none';       
+        document.getElementById('show5').style.display='none';       
+        document.getElementById('show6').style.display='none';       
+        document.getElementById('show7').style.display='none';    
+setNeedCheck('40285a8d4cd4dc1f014cdeb5990412c0',true) ;    
+setNeedCheck('40285a8d4cd4dc1f014cdeb5992912c2',true) ;     
+setNeedCheck('40285a8d4cd4dc1f014cdeb5994d12c4',true) ;     
+setNeedCheck('40285a8d4cd4dc1f014cdeb5997712c6',true) ;     
+
+setNeedCheck('40285a8d4cd4dc1f014cdeb5999b12c8',false) ;    
+setNeedCheck('40285a8d4cd4dc1f014cdeb599c912ca',false) ;     
+setNeedCheck('40285a8d4cd4dc1f014cdeb599eb12cc',false) ;     
+setNeedCheck('40285a8d4cd4dc1f014cdeb59a1012ce',false) ;     
+setNeedCheck('40285a8d4cd4dc1f014cdeb59a5b12d2',false) ;      
+
+
+    }      
+    else if(b=='CZ'||b=='EY')    //工程  
+    {      
+        document.getElementById('show1').style.display='none';       
+        document.getElementById('show2').style.display='none';       
+        document.getElementById('show3').style.display='none';      
+
+        document.getElementById('show4').style.display='';      
+        document.getElementById('show5').style.display='';      
+        document.getElementById('show6').style.display='';      
+        document.getElementById('show7').style.display='';    
+setNeedCheck('40285a8d4cd4dc1f014cdeb5999b12c8',true) ;   
+setNeedCheck('40285a8d4cd4dc1f014cdeb599c912ca',true) ;    
+setNeedCheck('40285a8d4cd4dc1f014cdeb599eb12cc',true) ;    
+setNeedCheck('40285a8d4cd4dc1f014cdeb59a1012ce',true) ;    
+setNeedCheck('40285a8d4cd4dc1f014cdeb59a5b12d2',true) ;     
+
+setNeedCheck('40285a8d4cd4dc1f014cdeb5990412c0',false) ;     
+setNeedCheck('40285a8d4cd4dc1f014cdeb5992912c2',false) ;      
+setNeedCheck('40285a8d4cd4dc1f014cdeb5994d12c4',false) ;      
+setNeedCheck('40285a8d4cd4dc1f014cdeb5997712c6',false) ;      
+
+    }      
+else  
+{  
+}  
+}      
+
+function onSubmitBefore(issave)    
+{     
+    if(issave==1)//保存         
+    {         
+        return true;         
+    }   
+else{   
+    var s=document.getElementById('field_40285a8d4fa53380014faafec95212bf').value;    
+//alert(s);    
+    var residuenum='';  
+    var sql='select residuenum from uf_fn_installmentdata  where code=\''+s+'\'';       
+DWREngine.setAsync(false);      
+                DataService.getValues(sql,{           
+                    callback:function(data)           
+                    {        
+//alert('length:'+data.length);       
+                        if (data&&data.length>0)        
+                        {        
+                            for (var i=0;i<data.length;i++)        
+                            {     
+                                residuenum=data[0].residuenum;    
+//alert(residuenum);  
+                            }        
+                        }        
+                    }        
+                });      
+  
+
+//alert(residuenum);   
+
+                if (residuenum=='40285a8d4bd90cff014bdea1e07c775c')     
+                {       
+                    var length=0;           
+                    var sql='select * from uf_fnwkpurchinfo where requestid=\''+requestid+'\''                 
+                    DataService.getValues(sql,{                 
+                        callback:function(data)                 
+                        {               
+//alert(data.length);   
+
+                         if(data&&data.length>0)           
+                             {       
+                                length=data.length;       
+                             }                     
+                        }               
+                    });   
+                     if(document.getElementById('field_40285a8d4cd4dc1f014cdeb598e312be').value==''||length==0)  
+                    {  
+                    alert('未获取采购订单或采购员！');   
+                    return false;  
+                    }  
+                    else  
+                    {  
+                    return true;   
+
+                    }  
+                }     
+                else     
+                {     
+                   alert('该订单不为分期付款单请勿提交');      
+                    return false;   
+                }    
+}     
+DWREngine.setAsync(true);          
+}  
+
+
+
+</SCRIPT>
+
+<DIV></DIV>
+<CENTER>
+<DIV><INPUT id=$40285a8d54317ae001545abce82e09f5$ class=InputStyle2 value=[隐藏]尾款验收确认单-分期付款主表.所属公司 name=40285a8d4cd4dc1f014cdea133bf125e><INPUT id=$40285a8d54317ae001545b4c2f131b61$ class=InputStyle2 value=[隐藏]尾款验收确认单-分期付款主表.厂区别 name=40285a8d4cd4dc1f014cdea133bf125e><INPUT id=$40285a8d54317ae001545b4c2f521b63$ class=InputStyle2 value=[隐藏]尾款验收确认单-分期付款主表.一级部门 name=40285a8d4cd4dc1f014cdea133bf125e><INPUT id=$40285a8d54317ae001545b4c2f941b65$ class=InputStyle2 value=[隐藏]尾款验收确认单-分期付款主表.二级部门 name=40285a8d4cd4dc1f014cdea133bf125e><INPUT id=$40285a8d54317ae001545b4c2fe31b67$ class=InputStyle2 value=[隐藏]尾款验收确认单-分期付款主表.当前环节 name=40285a8d4cd4dc1f014cdea133bf125e></DIV></CENTER>

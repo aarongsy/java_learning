@@ -1,0 +1,531 @@
+var CKEditorExt = null;
+(function(){
+	CKEditorExt = {
+		initEditor_Form : initEditor_Form,
+		initEditor : initEditor,
+		getEditor : getEditor,
+		showImageDialog : showImageDialog,
+		showFlashDialog : showFlashDialog,
+		showFlashVideoDialog : showFlashVideoDialog,
+		showDocInsertDialog : showDocInsertDialog,
+		selectImageType : selectImageType,
+		insertHtml : insertHtml,
+		setHtml : setHtml,
+		getHtml : getHtml,
+		getText : getText,
+		destroy : destroy,
+		switchTextMode : switchTextMode,
+		switchEditMode : switchEditMode,
+		checkText : checkText,
+		customFormConfigPath : '/ckeditor/customConfig_Form.js',	//表单布局上使用的ckeditor控件自定义配置文件的路径
+		whenAllEditorIsReady : whenAllEditorIsReady
+	};
+	
+	var instanceCount = 0;
+	
+	CKEDITOR.on('instanceReady', function(){
+		if(instanceCount > 0){
+			instanceCount--;
+		}
+	});
+	
+	/**
+	* 表单或流程使用该方法
+	* 使用该方法初始化编辑器会默认使用 /ckeditor/customConfig_Form.js 中的配置 (如调用中不覆盖)
+	* 该配置可能具有一些特有的特性，如：默认收缩，无状态栏，高度固定等.
+	* 建议调用方式：
+	* CKEditorExt.initEditor_Form("字段id");
+	* 如需要单独设置高度或者宽度，可使用如下调用：
+	* CKEditorExt.initEditor_Form("字段id", {config : {width : '80%', height : '100px'}});
+	* 如需要在编辑器加载完成后回调方法，可使用如下调用：
+	* CKEditorExt.initEditor_Form("字段id", {instanceReadyFun : function(e){alert("加载完成");}});
+	* 揉合在一起调用方式如下：
+	* CKEditorExt.initEditor_Form("字段id", {
+	*	config : {width : '80%', height : '100px'},
+	*	instanceReadyFun : function(e){alert("加载完成");}
+	* });
+	* config的配置完全遵从于CKEDITOR.replace的第二个参数, 如需其他设置可自行了解相关配置。
+	*/
+	function initEditor_Form(name, customSettings){
+		if(!customSettings){
+			customSettings = {};
+		}
+		if(!customSettings.config){
+			customSettings.config = {};
+		}
+		if(!customSettings.config.customConfig){
+			customSettings.config.customConfig = CKEditorExt.customFormConfigPath;
+		}
+		CKEditorExt.initEditor(name, customSettings);
+	}
+	
+	function initEditor(name, customSettings){
+		instanceCount++;
+		
+		if(!customSettings){
+			customSettings = {};
+		}
+		var editor = CKEDITOR.replace(name, customSettings.config);
+		if(typeof(customSettings.instanceReadyFun) == "function"){
+			editor.on('instanceReady', customSettings.instanceReadyFun); 
+		}
+		return editor;
+	}
+	
+	function whenAllEditorIsReady(fn){
+		var repeatCount = 30;
+		
+		var interval = setInterval(function(){
+			if(repeatCount <= 0){
+				clearInterval(interval);
+				return;
+			}
+			if(instanceCount <= 0){
+				clearInterval(interval);
+				if(typeof(fn) == "function"){
+					fn();
+				}
+			}
+			repeatCount--;
+		}, 200);
+	}
+	
+	function getEditor(editorName){
+		return eval("CKEDITOR.instances." + editorName);
+	}
+	
+	function showImageDialog(editor){
+		var dialogWindowId = "CKEditorExt_ImageDialog";
+		removeDialogWindow(dialogWindowId);
+		createDialogWindow({
+			id : dialogWindowId,
+			title : "插入图像",
+			height: 160,
+			contents : getImageDialogContentsHtml(),
+			buttons: [
+				{                 
+					id: 'CKEditorExt_ImageDialog_BtnOK',                 
+					label: '确定',                 
+					onClick: function () {                     
+						submitImageDialogForm();            
+					}             
+				},             
+				{                 
+					id: 'CKEditorExt_ImageDialog_BtnCancel',                 
+					label: '取消',                 
+					onClick: function () {                     
+						removeDialogWindow(dialogWindowId);                 
+					}             
+				}
+			]
+		});
+		
+		function getImageDialogContentsHtml(){
+			var contentsHtml = 
+				"<form id=\"imageDialogForm\">" +
+				"<div style=\"margin-top: 10px;font-family: Microsoft YaHei;\">" +
+					"<input id=\"imgTypeUrl\" type=\"radio\" name=\"imgType\" onclick=\"CKEditorExt.selectImageType(this);\" value=\"1\" style=\"width:20px;\"/>网络图片" +
+					"<input id=\"imgTypeFile\" type=\"radio\" name=\"imgType\" onclick=\"CKEditorExt.selectImageType(this);\"  checked=\"checked\"  value=\"2\" style=\"width:20px;\"/>本地图片" +
+				"</div>" +
+				"<div style=\"margin-top: 20px;padding-left: 5px;\">" +
+					"<span id=\"imgUrlSpan\" style=\"display:none;font-family: Microsoft YaHei;\">图片地址：<input name=\"imgUrl\" value=\"http://\" id=\"imgUrl\" style=\"width:280px;\" size=\"40\"/></span>" +
+					"<span id=\"imgFileSpan\" style=\"font-family: Microsoft YaHei;\">选择图片：<input style=\"width:280px;\" type=\"file\" id=\"imgFile\" name=\"file\" size=\"30\"></span>" +
+				"</div>" +
+				"</form>";
+			return contentsHtml;
+		}
+		
+		function submitImageDialogForm(){
+			var imgTypes = document.getElementsByName("imgType");
+			var imgTypeV;
+			for(var i = 0; i < imgTypes.length; i++){
+				if(imgTypes[i].checked){
+					imgTypeV = imgTypes[i].value;
+					break;
+				}
+			}
+			var isWebImg = (imgTypeV == "1");
+			var isLoaclImg = (imgTypeV == "2");
+			if(isWebImg){
+				var imgUrl = document.getElementById("imgUrl");
+				if(invalidUrl(imgUrl.value)){
+					alert("URL地址不能为空或非法地址");
+					return;
+				}
+				var sHtml = "<img id=\""+generateId()+"\" alt=\""+imgUrl.value+"\" src=\""+imgUrl.value+"\"/>";
+				var isSuccess = CKEditorExt.insertHtml(editor, sHtml);
+				if (!isSuccess)return;
+            	removeDialogWindow(dialogWindowId);
+			}else if(isLoaclImg){
+				var imgFile = document.getElementById("imgFile");
+				if(imgFile.value == ""){
+					alert("请选择文件");
+					return;
+				}
+				var fileSuffix = imgFile.value.substring(imgFile.value.lastIndexOf(".") + 1);
+				fileSuffix = fileSuffix.toLowerCase();
+				if("jpg|jpeg|gif|png".indexOf(fileSuffix) == -1){
+					alert("请选择图片类型的文件");
+					return;
+				}
+				var imgMask=new Ext.LoadMask(Ext.getDom(dialogWindowId),{msg:'正在上传图片，请稍候...'})
+            	imgMask.show();
+            	Ext.Ajax.request({
+	                url: "/ServiceAction/com.eweaver.document.file.FileUploadAction?action=ajax",
+	                form: 'imageDialogForm',
+	                isUpload:true,
+	                success: function(res) {
+	                    imgMask.hide();
+	                    var imgSrc = "/ServiceAction/com.eweaver.document.file.FileDownload?attachid=" + res.responseText + "&download=1";
+	                    var sHtml = "<img alt=\"image_"+res.responseText+"\" src=\""+imgSrc+"\"/>";
+	                    var isSuccess = CKEditorExt.insertHtml(editor, sHtml);
+						if (!isSuccess)return;
+		            	removeDialogWindow(dialogWindowId);
+	                }
+	            });
+			}else{
+				alert("无法识别的imgType:" + imgTypeV);
+			}
+		}
+		
+	}
+	
+	function showFlashDialog(editor){
+		var dialogWindowId = "CKEditorExt_FlashDialog";
+		removeDialogWindow(dialogWindowId);
+		createDialogWindow({
+			id : dialogWindowId,
+			title : "插入Flash",
+			height: 160,
+			contents : getFlashDialogContentsHtml(),
+			buttons: [
+				{                 
+					id: 'CKEditorExt_FlashDialog_BtnOK',                 
+					label: '确定',                 
+					onClick: function () {   
+						insertFlashObject();                  
+					}             
+				},             
+				{                 
+					id: 'CKEditorExt_FlashDialog_BtnCancel',                 
+					label: '取消',                 
+					onClick: function () {                     
+						removeDialogWindow(dialogWindowId);                 
+					}             
+				}
+			]
+		});
+		
+		function getFlashDialogContentsHtml(){
+			var contentsHtml = 
+				"<div style=\"margin-top: 10px;font-family: Microsoft YaHei;\">" +
+					"<input id=\"isFlashVideoUrl\" type=\"checkbox\" style=\"width:20px;\">是否Flash视频(*.flv)" +
+				"</div>" +
+				"<div style=\"margin-top: 15px;padding-left: 5px;\">" +
+					"<span style=\"font-family: Microsoft YaHei;\">Flash地址：<input id=\"flashUrl\" style=\"width:280px;\" value=\"http://\"/></span>" +
+				"</div>";
+			return contentsHtml;	
+		}
+		
+		var oEmbed = null;
+		
+		var selectedEle = editor.getSelection().getSelectedElement();
+		if(selectedEle){
+			if(selectedEle.getName() == "img" && selectedEle.getAttribute("_ckflash")){
+				oEmbed = editor.restoreRealElement(selectedEle);
+				document.getElementById("flashUrl").value = oEmbed.getAttribute("src");
+			}
+		}
+		
+		function insertFlashObject(){
+			var flashUrl = document.getElementById("flashUrl");
+			if(invalidUrl(flashUrl.value)){
+				alert("URL地址不能为空或非法地址");
+				return;
+			}
+			var isFlashVideoUrl = document.getElementById("isFlashVideoUrl");
+			if(isFlashVideoUrl.checked && !flashUrl.value.toLowerCase().endsWith(".flv")){
+				alert("不正确的Flash视频格式");
+				return;
+			}
+			if(isFlashVideoUrl.checked){
+				appendFlashVideo(editor, flashUrl.value);
+			}else{
+				oEmbed = (oEmbed==null) ? editor.document.createElement('EMBED') : oEmbed;
+				oEmbed.setAttribute("src", flashUrl.value);
+				var oFakeImage = editor.createFakeElement(oEmbed, "cke_flash", null, false);
+				oFakeImage.setAttribute('_ckflash', 'true');
+				editor.insertElement(oFakeImage);
+			}
+			removeDialogWindow(dialogWindowId);   			
+		}
+	}
+	
+	function showFlashVideoDialog(editor){
+		alert(1);
+		if(typeof(flvBrowserUrl) == "string" && flvBrowserUrl != ""){
+			var sArgs = "dialogWidth:600px,dialogHeight:450px";
+			var result = window.showModalDialog(flvBrowserUrl,"",sArgs);
+			if(result){
+				appendFlashVideo(editor, result);
+			}
+		}
+	}
+	
+	function showDocInsertDialog(editor){
+		if(typeof(insertDOC) == "string" && insertDOC == "true"){
+			var result = window.showModalDialog("/base/popupmain.jsp?url=/base/refobj/baseobjbrowser.jsp?id=402881e70ebfb96c010ebfbf16de0004&idsin=",window,"dialogHeight:500px;dialogWidth:800px;status:no;center:yes;resizable:yes");
+			if(!result){return;}
+			var id = result[0];
+			var name = result[1];
+			if(id == "" && name == ""){
+				return;		
+			}else{
+			    CKEditorExt.insertHtml(editor, name);
+			}
+		}
+	}
+	
+	function createDialogWindow(settings){
+		var config = {
+			width : 400,
+			height: 200
+		};
+		
+		Ext.apply(config,settings);
+		
+		var dialogWindow = document.createElement("div");
+		if(config.id){
+			dialogWindow.setAttribute("id", config.id);
+		}
+		dialogWindow.style.border = "1px solid #666";
+		dialogWindow.style.backgroundColor = "#fff";
+		dialogWindow.style.width = config.width + "px";
+		dialogWindow.style.height = config.height + "px";
+		var l = (document.body.clientWidth - config.width) / 2;
+		var t = ((document.body.clientHeight - config.height) / 2) - 50;
+		dialogWindow.style.position = "absolute";
+		dialogWindow.style.zIndex = 10000;
+		dialogWindow.style.left = l + "px";
+		dialogWindow.style.top = t + "px";
+		
+		if(config.title){
+			var titleEle = document.createElement("div");
+			titleEle.style.height = "30px";
+			titleEle.style.backgroundColor = "#ccc";
+			titleEle.style.borderBottom = "1px solid #666";
+			titleEle.style.lineHeight = "30px";
+			titleEle.style.padding = "0px 0px 0px 10px";
+			titleEle.style.fontSize = "14px";
+			titleEle.style.fontWeight = "bold";
+			titleEle.style.fontFamily = "Microsoft YaHei";
+			titleEle.innerHTML = config.title;
+			dialogWindow.appendChild(titleEle);
+		}
+		
+		if(config.contents){
+			var contentsEle = document.createElement("div");
+			contentsEle.style.padding = "10px";
+			contentsEle.innerHTML = config.contents;
+			dialogWindow.appendChild(contentsEle);
+		}
+		
+		if(config.buttons){
+			var buttonsEle = document.createElement("div");
+			buttonsEle.style.position = "absolute";
+			buttonsEle.style.bottom = "10px";
+			buttonsEle.style.right = "10px";
+			for(var i = 0; i < config.buttons.length; i++){
+				var btn = document.createElement("input");
+				btn.setAttribute("type", "button");
+				if(config.buttons[i].id){
+					btn.setAttribute("id", config.buttons[i].id);
+				}
+				if(config.buttons[i].label){
+					btn.setAttribute("value", config.buttons[i].label);
+				}
+				if(config.buttons[i].onClick){
+					btn.onclick = config.buttons[i].onClick;
+				}
+				btn.style.padding = "3px 15px";
+				if(i != (config.buttons.length - 1)){
+					btn.style.marginRight = "10px";
+				}
+				btn.style.backgroundColor = "#ccc";
+				btn.style.border = "1px solid #666";
+				btn.style.cursor = "pointer";
+				buttonsEle.appendChild(btn);
+			}
+			dialogWindow.appendChild(buttonsEle);
+		}
+		
+		document.body.appendChild(dialogWindow);
+		return dialogWindow;
+	}
+	
+	function removeDialogWindow(dialogWindowId){
+		var dialogWindow = document.getElementById(dialogWindowId);
+		if(dialogWindow && dialogWindow.parentNode){
+			dialogWindow.parentNode.removeChild(dialogWindow);
+		}
+	}
+	
+	function selectImageType(imgType){
+		var imgUrlSpan = document.getElementById("imgUrlSpan");
+		var imgFileSpan = document.getElementById("imgFileSpan");
+		imgUrlSpan.style.display=(imgType.value==1)?'':'none';
+		imgFileSpan.style.display=(imgType.value==2)?'':'none';
+	}
+	
+	function appendFlashVideo(editor, flashUrl){
+		var sHtml = "<img class=\"editorFlashVideo\" _flashUrl=\""+flashUrl+"\" src=\"/ckeditor/FlashVideo.jpg\" width=\"96\" height=\"96\"/>";
+		CKEditorExt.insertHtml(editor, sHtml);
+	}
+	
+	/*插入html,焦点后追加内容的方式*/
+	function insertHtml(editorOrName, html){
+		var editor = changeToEditorIfIsEditorName(editorOrName);
+		var isSuccess = false;
+		if(editor && editor.mode == "wysiwyg"){
+			editor.insertHtml(html);
+			isSuccess = true;
+		}
+		return isSuccess;
+	}
+	
+	/*设置html,设置的html会完全取代编辑器现有的内容*/
+	function setHtml(editorOrName, html){
+		var editor = changeToEditorIfIsEditorName(editorOrName);
+		var isSuccess = false;
+		if(editor && editor.mode == "wysiwyg"){
+			editor.setData(html);
+			isSuccess = true;
+		}
+		return isSuccess;
+	}
+	
+	/*获取html,包含html标签，如<p>aaa</p>*/
+	function getHtml(editorOrName){
+		var editor = changeToEditorIfIsEditorName(editorOrName);
+		return editor.getData();
+	}
+	
+	/*获取文本,不包含html标签，如内容是<p>aaa</p>,获取的文本为aaa*/
+	function getText(editorOrName){
+        var s = CKEditorExt.getHtml(editorOrName);
+		if(Ext.isEmpty(s)){
+			return s;
+		}
+		s = Ext.util.Format.htmlDecode(s);
+		s = Ext.util.Format.stripTags(s);
+		if(s && s.trim){
+			s = s.trim();
+		}
+		return s;
+	}
+	
+	function destroy(editorOrName){
+		var editor = changeToEditorIfIsEditorName(editorOrName);
+		if(editor && typeof(editor.destroy) == "function"){
+			editor.destroy();
+		}
+	}
+	
+	function changeToEditorIfIsEditorName(editorOrName){
+		var isString = (typeof editorOrName == 'string' || editorOrName.constructor == String);
+		if(isString){
+			return CKEditorExt.getEditor(editorOrName);
+		}
+		return editorOrName;	//is editor self
+	}
+	
+	
+	var isFirstSwitchTextMode = true;
+	
+	function switchTextMode(editorName){
+		var editorEleObj = document.getElementById("cke_" + editorName);
+		editorEleObj.style.display = "none";
+		
+		var mappingTextId = editorName + "_mappingText";
+		
+		if(isFirstSwitchTextMode){
+			var sourceStyleWidth = "80%";
+			var sourceStyleHeight = "100px";
+			
+			var sourceTextareaObj = document.getElementById(editorName);
+			if(sourceTextareaObj){
+				if(sourceTextareaObj.style.width){
+					sourceStyleWidth = sourceTextareaObj.style.width;
+				}
+				if(sourceTextareaObj.style.height){
+					sourceStyleHeight = sourceTextareaObj.style.height;
+				}
+			}
+			var mappingTextHtml = "<textarea class='InputStyle2' style='width:"+sourceStyleWidth+"; height:"+sourceStyleHeight+";' name='"+mappingTextId+"' id='"+mappingTextId+"'></textarea>";
+			Ext.DomHelper.insertAfter(editorEleObj,{tag:'span',html:mappingTextHtml});
+			
+			var textareaObj = document.getElementById(mappingTextId);
+			textareaObj.value = CKEditorExt.getText(editorName);
+			
+			var listenerChangeFn = function(){
+				var str=textareaObj.value;
+				str=str.ReplaceAll("\r\n","\n").ReplaceAll("\n","<br/>");
+				CKEditorExt.setHtml(editorName, str);
+			};
+			if(textareaObj.attachEvent){
+				textareaObj.attachEvent("onchange", listenerChangeFn);
+			}else if(textareaObj.addEventListener){
+				textareaObj.addEventListener("change", listenerChangeFn);
+			}
+			
+			isFirstSwitchTextMode = false;
+		}else{
+			var textareaObj = document.getElementById(mappingTextId);
+			textareaObj.value = CKEditorExt.getText(editorName);
+			textareaObj.style.visibility = "";
+			textareaObj.style.display = "";
+		}
+	}
+	
+	function switchEditMode(editorName){
+		var mappingTextId = editorName + "_mappingText";
+		var textareaObj = document.getElementById(mappingTextId);
+		textareaObj.style.display = "none";
+		
+		var editorEleObj = document.getElementById("cke_" + editorName);
+		editorEleObj.style.display = "";
+		var str=textareaObj.value;
+		str=str.ReplaceAll("\r\n","\n").ReplaceAll("\n","<br/>");
+		CKEditorExt.setHtml(editorName, str);
+	}
+	
+	function checkText(editorName){
+		var targetEditor = CKEditorExt.getEditor(editorName);
+		var _checkId="spadsdnId";
+		var spanId = _checkId + editorName;
+		var checkImgHtml = "<img src=\"/images/base/checkinput.gif\" align=\"absMiddle\">";
+		if(Ext.isEmpty(CKEditorExt.getHtml(targetEditor))){
+			var editorEleObj = document.getElementById("cke_" + editorName);
+			Ext.DomHelper.insertAfter(editorEleObj,{tag:'span',id:spanId,html:checkImgHtml});
+		}
+		function setCheck(){
+			if(Ext.isEmpty(CKEditorExt.getHtml(targetEditor))){
+				document.getElementById(spanId).innerHTML = checkImgHtml;
+			}else{
+				document.getElementById(spanId).innerHTML = "";
+			}
+		}
+		targetEditor.on('focus', setCheck); 
+		targetEditor.on('blur', setCheck); 
+	}
+	
+	function generateId(){
+		var s="img_";
+		return s+Math.ceil((Math.random()*8999+1000));
+	}
+	
+	function invalidUrl(val){
+		return (val=='' || val.toLowerCase()=='http://' || val.substring(0,4).toLowerCase()!='http');
+	}
+	
+}());

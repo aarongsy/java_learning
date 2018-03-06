@@ -1,0 +1,93 @@
+/*
+	workflow.css
+	流程页面相关的样式
+*/
+/******签字意见表格对应的样式******/
+table.signature{/*签字意见表格对应的样式*/
+
+}
+table.signature td{/*签字意见表格中列对应的样式*/
+
+}
+table.signature td.FieldName{/*签字意见表格中样式为FieldName的列对应的样式*/
+	
+}
+table.signature td.FieldValue{/*签字意见表格中样式为FieldValue的列对应的样式*/
+
+}
+
+
+
+/******tab页对应的样式******/
+
+
+
+
+/*被选中时,tab页左右两侧对应的样式*/
+
+
+
+span.formFlowNo{
+	font-weight: bold;
+	color: #672D2B;
+}
+table.layouttable td.fieldvalue{
+	background-color: #f0f0f0;
+	padding: 2px 5px;
+}
+
+
+/*
+table.signature{
+	border: 1px solid #C7AEA9 !important;
+}
+table.signature td.fieldname{
+	border-right: 1px solid #C7AEA9 !important;
+}
+table.signature td.fieldvalue{
+	background-color: #F7E8CB;
+	border-left: 1px solid #C7AEA9 !important;
+}
+*/
+table.signature td.fieldname{
+	width: 12% !important;
+}
+table.layouttable,table.detailtable {
+	border: 0;
+}
+table.detailtable caption{/*明细表标题对应的样式*/
+	text-align: left;			/*文本对齐方式*/
+	font-size: 12px;
+	font-weight: bold;
+	border: 0px !important;
+	border-bottom: 2px solid #D8DFEA;
+	padding: 0;
+	margin: 0;
+}
+table.layouttable caption{
+	padding: 0 0 5px 0; 
+	text-align: center; 
+	font-family: Microsoft YaHei;
+	font-size: 26px; 
+	font-weight: normal; 
+	letter-spacing: 0px !important;
+	border-top: 0 !important;
+}
+.requestlog {}
+.tableApprovalOpinions {
+	border: 1px solid #C7AEA9;
+}
+.tableApprovalOpinions tr.bg th {
+	background-color: #F7E8CB;
+	font-weight: bold;
+}
+.tableApprovalOpinions th,  .tableApprovalOpinions td {
+	padding: 4px 5px;
+	border-top: 1px solid #C7AEA9;
+	border-bottom: 0px solid #C7AEA9;
+	font-family: Microsoft YaHei;
+	color: #333;
+}
+.tableApprovalOpinions td a{
+	font-family: Microsoft YaHei;
+}

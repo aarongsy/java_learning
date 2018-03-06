@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tables xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="table-schema.xsd">
+	
+	<global version="4.0.0"/>
+	<table name="selectitemtype" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="OBJNAME" type="string" length="256" />
+		<column name="PID" type="string" length="256" />
+		<column name="DSPORDER" type="int" length="256" />
+		<column name="COL3" type="string" length="256" />
+		<column name="COL2" type="string" length="256" />
+		<column name="COL1" type="string" length="256" />
+		<column name="ISDELETE" type="int" length="256" />
+		<column name="MODULEID" type="string" length="256" />
+	</table>
+	<table name="selectitem" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="OBJNAME" type="string" length="256" />
+		<column name="OBJDESC" type="string" length="256" />
+		<column name="PID" type="string" length="256" />
+		<column name="TYPEID" type="string" length="256" />
+		<column name="DSPORDER" type="int" length="256" />
+		<column name="COL1" type="string" length="256" />
+		<column name="COL2" type="string" length="256" />
+		<column name="COL3" type="string" length="256" />
+		<column name="ISDELETE" type="int" length="256" />
+		<column name="IMAGEFIELD" type="string" length="256" />
+	</table>
+	<table name="refobj" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="OBJNAME" type="string" length="256" />
+		<column name="REFURL" type="string" length="256" />
+		<column name="REFTABLE" type="string" length="256" />
+		<column name="KEYFIELD" type="string" length="256" />
+		<column name="VIEWFIELD" type="string" length="256" />
+		<column name="VIEWURL" type="string" length="256" />
+		<column name="FILTER" type="string" length="256" />
+		<column name="ISREFOBJLINK" type="int" length="256" />
+		<column name="COL1" type="string" length="256" />
+		<column name="COL2" type="string" length="256" />
+		<column name="COL3" type="string" length="256" />
+		<column name="ISMULTI" type="int" length="256" />
+		<column name="ISPERMOBJ" type="int" length="256" />
+		<column name="ISDELETE" type="int" length="256" />
+		<column name="SELFIELD" type="string" length="256" />
+		<column name="ISDIRECTINPUT" type="int" length="256" />
+		<column name="MODULEID" type="string" length="256" />
+	</table>
+	<table name="forminfo" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="SELECTITEMID" type="string" length="256" />
+		<column name="OBJNAME" type="string" length="256" />
+		<column name="OBJDESC" type="string" length="256" />
+		<column name="OBJTABLENAME" type="string" length="256" />
+		<column name="OBJTYPE" type="int" length="256" />
+		<column name="COL1" type="string" length="256" />
+		<column name="COL2" type="string" length="256" />
+		<column name="COL3" type="string" length="256" />
+		<column name="ISDELETE" type="int" length="256" />
+		<column name="MODULEID" type="string" length="256" />
+	</table>
+	<table name="category" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="PID" type="string" length="256" />
+		<column name="OBJNAME" type="string" length="256" />
+		<column name="DSPORDER" type="int" length="256" />
+		<column name="OTYPE" type="int" length="256" />
+		<column name="MTYPE" type="int" length="256" />
+		<column name="ISDELETE" type="int" length="256" />
+		<column name="COL1" type="string" length="256" />
+		<column name="COL2" type="string" length="256" />
+		<column name="COL3" type="string" length="256" />
+		<column name="WORKFLOWID" type="string" length="256" />
+		<column name="HUMRESID" type="string" length="256" />
+		<column name="CREATELAYOUTID" type="string" length="256" />		
+		<column name="VIEWLAYOUTID" type="string" length="256" />
+		<column name="EDITLAYOUTID" type="string" length="256" />
+		<column name="REFLAYOUTID" type="string" length="256" />
+		<column name="FORMID" type="string" length="256" />
+		<column name="OBJDESC" type="string" length="256" />
+		<column name="REPORTID" type="string" length="256" />
+		<column name="ISFASTNEW" type="int" length="256" />
+		<column name="MODULEID" type="string" length="256" />
+		<column name="UNIQUEFLITER" type="string" length="256" />
+		<column name="ISAPPROVE" type="float" length="256" />
+		<column name="DOCFIELD" type="string" length="256" />
+		<column name="IMPORTDETAIL" type="int" length="256" />
+		<column name="actionClazz" type="string" length="256" />
+	</table>
+	<table name="workflowinfo" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="OBJNAME" type="string" length="256" />
+		<column name="OBJTYPE" type="string" length="256" />
+		<column name="FORMID" type="string" length="256" />
+		<column name="ISACTIVE" type="int" length="256" />
+		<column name="ISAPPROVABLE" type="int" length="256" />
+		<column name="APPROVEOBJ" type="string" length="256" />
+		<column name="APPROVEOBJTYPE" type="string" length="256" />
+		<column name="ISTRIGGER" type="int" length="256" />	
+		<column name="TRIGGERCYCLE" type="int" length="256" />
+		<column name="TRIGGERDATE" type="string" length="256" />
+		<column name="TRIGGERTIME" type="string" length="256" />		
+		<column name="HELPDOC" type="string" length="256" />
+		<column name="DEFTITLE" type="string" length="256" />
+		<column name="OBJDESC" type="string" length="256" />
+		<column name="COL1" type="string" length="256" />
+		<column name="COL2" type="string" length="256" />
+		<column name="COL3" type="string" length="256" />
+		<column name="REMINDTYPE" type="string" length="256" />
+		<column name="ISEMAIL" type="int" length="256" />
+		<column name="ISSMS" type="int" length="256" />
+		<column name="ISRTX" type="int" length="256" />
+		<column name="EMAILMODEL" type="string" length="256" />
+		<column name="MSGMODEL" type="string" length="256" />
+		<column name="ISDELETE" type="int" length="256" />
+		<column name="DSPORDER" type="int" length="256" />
+		<column name="ISPOPUP" type="int" length="256" />
+		<column name="MODULEID" type="string" length="256" />
+		<column name="GRAPH" type="string" length="256" />
+		<column name="ISDOC" type="int" length="256" />
+		<column name="DOCTEMPLATE" type="string" length="256" />
+	</table>
+	<table name="categorylink" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="OBJID" type="string" length="256" />
+		<column name="OBJTYPE" type="string" length="256" />
+		<column name="CATEGORYID" type="string" length="256" />
+		<column name="PTYPE" type="string" length="256" />
+		<column name="COL1" type="string" length="256" />
+		<column name="COL2" type="string" length="256" />
+		<column name="COL3" type="string" length="256" />
+		<column name="ISDELETE" type="string" length="256" />
+	</table>
+		<table name="export" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="STARTNODEID" type="string" length="32" />
+		<column name="ENDNODEID" type="string" length="32" />
+		<column name="CONDITION" type="clob"  />
+		<column name="LINKNAME" type="string" length="128" />
+		<column name="BTNNAME" type="string" length="32" />
+		<column name="WORKFLOWID" type="string" length="32" />
+		<column name="LINKFROM" type="int"  />
+		<column name="LINKTO" type="int" />
+		<column name="X1" type="int" />
+		<column name="X2" type="int" />
+		<column name="X3" type="int" />
+		<column name="X4" type="int" />
+		<column name="X5" type="int" />
+		<column name="Y1" type="int" />
+		<column name="Y2" type="int" />
+		<column name="Y3" type="int" />
+		<column name="Y4" type="int" />
+		<column name="Y5" type="int" />
+		<column name="COL1" type="string" length="256" />
+		<column name="COL2" type="string" length="256" />
+		<column name="COL3" type="string" length="256" />
+		<column name="ISDELETE" type="int" />
+	</table>
+		<table name="formfield" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="FORMID" type="string" length="32" />
+		<column name="FIELDNAME" type="string" length="32" />
+		<column name="HTMLTYPE" type="int" />
+		<column name="FIELDTYPE" type="string" length="32" />
+		<column name="FIELDATTR" type="string" length="32" />
+		<column name="FIELDCHECK" type="string" length="1024" />
+		<column name="LABELID" type="string" length="32" />
+		<column name="LABELNAME" type="string" length="128" />
+		<column name="ISDELETE" type="int" />
+		<column name="COL1" type="string" length="256" />
+		<column name="COL2" type="string" length="256" />
+		<column name="COL3" type="string" length="256" />
+		<column name="ISONLY" type="int"/>
+		<column name="NEEDLOG" type="int"/>
+		<column name="ISPROMPT" type="string" length="32"/>
+		<column name="ISEXCEL" type="int" />
+		<column name="ISDEFAULT" type="int" />
+		<column name="ISMONEY" type="int" />
+		<column name="DOCDIR" type="string" length="64" />
+	</table>
+		<table name="formlayoutfield" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="LAYOUTID" type="string" length="32" />
+		<column name="FORMID" type="string" length="32" />
+		<column name="FIELDNAME" type="string" length="32" />
+		<column name="STYLE" type="string" length="128" />
+		<column name="FORMULA" type="string" length="1024" />
+		<column name="DEFAULTVALUE" type="string" length="256" />
+		<column name="SHOWSTYLE" type="int"/>
+		<column name="COL1" type="string" length="256" />
+		<column name="COL2" type="string" length="256" />
+		<column name="COL3" type="string" length="256" />
+		<column name="ISDELETE" type="int"/>
+	</table>
+		<table name="formlayout" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="FORMID" type="string" length="32" />
+		<column name="NODEID" type="string" length="32" />
+		<column name="TYPEID" type="string" length="32" />
+		<column name="LAYOUTINFO" type="clob" />
+		<column name="LAYOUTFORMATTED" type="clob" />
+		<column name="LAYOUTNAME" type="string" length="256" />
+		<column name="ISDEFAULT" type="int" />
+		<column name="ISDELETE" type="int"/>
+		<column name="SUPPORTEDCLIENT" type="int"/>
+	</table>
+		<table name="formlink" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="OID" type="string" length="32" />
+		<column name="PID" type="string" length="32" />
+		<column name="TYPEID" type="int" />
+		<column name="FIELDMAP" type="string" length="128" />
+		<column name="ISDELETE" type="int"/>
+	</table>
+	<table name="label" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="LABELNAME" type="string" length="512" />
+		<column name="LABELDESC" type="string" length="256" />
+		<column name="COL1" type="string" length="256" />
+		<column name="COL2" type="string" length="256" />
+		<column name="COL3" type="string" length="256" />
+		<column name="KEYWORD" type="string" length="512" />
+		<column name="LANGUAGE" type="string" length="256" />
+		<column name="ISDELETE" type="int" />
+	</table>
+		<table name="module" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="PID" type="string" length="32" />
+		<column name="LABELID" type="string" length="32" />
+		<column name="OBJNAME" type="string" length="256" />
+		<column name="DSPORDER" type="int" />
+		<column name="ISDELETE" type="int" />
+		<column name="DESCRIPTION" type="string" length="500" />
+	</table>
+	<table name="nodeinfo" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="OBJNAME" type="string" length="32" />
+		<column name="WORKFLOWID" type="string" length="32" />
+		<column name="NODETYPE" type="int" length="256" />
+		<column name="ISREJECT" type="int" />
+		<column name="REJECTNODE" type="string" length="32" />
+		<column name="REFWORKFLOWID" type="string" length="32" />
+		<column name="REFNODEID" type="string" length="32" />
+		<column name="OUTMAPPING" type="string" length="512" />
+		<column name="INMAPPING" type="string" length="512" />
+		<column name="JOINTYPE" type="int" />
+		<column name="SPLITTYPE" type="int" />
+		<column name="NODEOPERATERS" type="string" length="32" />
+		<column name="PERPAGE" type="string" length="128" />
+		<column name="AFTERPAGE" type="string" length="128" />
+		<column name="ISEMAIL" type="int" />
+		<column name="ISSMS" type="int" />
+		<column name="ISRTX" type="int" />
+		<column name="EMAILMODEL" type="string" length="32" />
+		<column name="MSGMODEL" type="string" length="256" />
+		<column name="ISTIMEOUT" type="int" />
+		<column name="TIMEOUTUNIT" type="int" />
+		<column name="TIMEOUTSTART" type="int" />
+		<column name="TIMEOUTTYPE" type="int" />
+		<column name="TIMEOUTFIELDID" type="string" length="32" />
+		<column name="TIMEOUTVALUE" type="string" length="32" />
+		<column name="TIMEOUTOPT" type="int" />
+		<column name="TIMEOUTLOADID" type="string" length="32" />
+		<column name="DATAINTERFACE" type="CLOB" />
+		<column name="DRAWXPOS" type="int" />
+		<column name="DRAWYPOS" type="int" />
+		<column name="COL1" type="string" length="256" />
+		<column name="COL2" type="string" length="256" />
+		<column name="COL3" type="string" length="256" />
+		<column name="HUIQIAN" type="int"/>
+		<column name="REMINDTYPE" type="string" length="32" />
+		<column name="SAVEBUTTONNAME" type="string" length="256" />
+		<column name="YNAWOKE" type="int" />
+		<column name="AWOKEINFO" type="string" length="512" />
+		<column name="NODEEXTPAGE" type="string" length="256" />
+		<column name="ISAUTOFLOW" type="int" />
+		<column name="ISDELETE" type="int" />
+		<column name="ISPOPUP" type="int" />
+		<column name="WORDMODULEID" type="string" length="32" />
+		<column name="WORDDOCNAME" type="string" length="32" />
+		<column name="WORDMODULEFIELD" type="string" length="32" />
+		<column name="WORDDOCURL" type="string" length="32" />
+		<column name="WORDDOCHEAD" type="string" length="32" />
+		<column name="ISSTAMP" type="int" />
+		<column name="ISPRINT" type="int" />
+		<column name="ISTEMPORARY" type="string" length="2" />
+		<column name="DOCCANEDIT" type="int" />
+		<column name="ISDOCVESTIGE" type="int" />
+		<column name="WFREDTEMPLATE" type="string" length="250" />
+		<column name="WORDREDTEMPLATE" type="string" length="250" />
+		<column name="STAMPFIELD" type="string" length="64" />
+		<column name="FLOWCHARTMETHOD" type="int" />
+		<column name="PFLOWMETHOD" type="int" />
+		<column name="ISFORWARD" type="int" />
+		<column name="PLISTMETHOD" type="int" />
+		<column name="SHAREPMETHOD" type="int" />
+		<column name="ISREXPAND" type="int" />
+		<column name="IMPORTDETAIL" type="int" />
+		<column name="REMARKREQUIRED" type="int" />
+		<column name="DATAINTERFACE2" type="CLOB" />
+		<column name="ISTEMPORARY2" type="string" length="10" />
+		<column name="ISTEMPORARY3" type="string" length="10" />
+		<column name="ISTEMPORARYTEXT" type="string" length="64" />
+		<column name="ISTEMPORARYTEXT2" type="string" length="64" />
+		<column name="ISTEMPORARYTEXT3" type="string" length="64" />
+		<column name="CUSTOMACTION" type="string" length="256" />
+	</table>
+	<table name="notifydefine" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="AHEAD" type="string" length="32" />
+		<column name="CATEGORYID" type="string" length="32" />
+		<column name="CONTENT" type="string" length="1024" />
+		<column name="DATEFIELD" type="string" length="255" />
+		<column name="NOTIFYNAME" type="string" length="255" />
+		<column name="REMINDTYPE" type="int" />
+		<column name="FORMID" type="string" length="32" />
+		<column name="ISDELETE" type="int" />
+		<column name="ISSMS" type="int" />
+		<column name="ISPOPUP" type="int" />
+		<column name="ISEMAIL" type="int" />
+		<column name="ISRTX" type="int" />
+		<column name="TIMEFIELD" type="string" length="32" />
+		<column name="AHOUR" type="int" />
+		<column name="AMINUTES" type="int" />
+	</table>
+	<table name="pagemenu" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="PAGEPROP" type="string" length="256" />
+		<column name="TOURL" type="string" length="1024" />
+		<column name="LABELID" type="string" length="32" />
+		<column name="SHOWNAME" type="string" length="256" />
+		<column name="ACCESSKEY" type="string" length="256" />
+		<column name="OBJID" type="string" length="32" />
+		<column name="OBJTABLE" type="string" length="256" />
+		<column name="RIGHTTYPE" type="string" length="256" />
+		<column name="DSPORDER" type="int" />
+		<column name="ISSHOW"  type="int" />
+		<column name="COL1" type="string" length="256" />
+		<column name="COL2" type="string" length="256" />
+		<column name="COL3" type="string" length="256" />
+		<column name="ISDELETE" type="int" />
+		<column name="IMGFILE" type="string" length="256" />
+		<column name="MODULEID" type="string" length="32" />
+		<column name="CUSTOMACTIONID" type="string" length="64" />
+		<column name="PROPTYPE" type="string" length="32" />
+		<column name="TOURLTYPE" type="string" length="32" />
+		<column name="TOURLSPAN" type="string" length="32" />
+		<column name="BTNSHOWSTYLE" type="string" length="32" />
+		<column name="SHOWSTYLE" type="string" length="32" />
+		<column name="ACTIONUSE" type="int" />
+	</table>
+	<table name="permissiondetail" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="OBJID" type="string" length="32" />
+		<column name="OBJTABLE" type="string" length="32" />
+		<column name="OBJFIELD" type="CLOB" />
+		<column name="RULEID" type="string" length="32" />
+		<column name="ORGID" type="string" length="32" />
+		<column name="USERID" type="string" length="32" />
+		<column name="ISALLUSER" type="int" />
+		<column name="MINSECLEVEL" type="int" />
+		<column name="MAXSECLEVEL" type="int" />
+		<column name="OPTTYPE"  type="int" />
+		<column name="DOCATTOPTTYPE"  type="int" />
+		<column name="WFOPTTYPE"  type="int" />
+		<column name="STATIONID" type="string" length="32" />
+		<column name="ISDELETE"  type="int" />
+	</table>
+	<table name="permissionrule" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="OBJID" type="string" length="32" />
+		<column name="ISTYPE" type="int" />
+		<column name="OBJTABLE" type="string" length="32" />
+		<column name="OBJFIELD" type="CLOB" />
+		<column name="SHARETYPE" type="string" length="32" />
+		<column name="ROLETYPE" type="string" length="32" />
+		<column name="ORGOBJTYPE" type="string" length="32" />
+		<column name="ORGSHARETYPE" type="string" length="32" />
+		<column name="FORMFIELDID" type="string" length="32" />
+		<column name="ROLEOBJID" type="string" length="32" />
+		<column name="USERSHARETYPE" type="string" length="32" />
+		<column name="ORGUNITTYPE" type="string" length="32" />
+		<column name="ORGMANAGER"  type="int" />
+		<column name="USEROBJTYPE"  type="string" length="32" />
+		<column name="ORGOBJID" type="clob" />
+		<column name="USERIDS"  type="clob" />
+		<column name="MINSECLEVEL"  type="int" />
+		<column name="WFOPERATORNODEID"  type="string" length="32" />
+		<column name="MAXSECLEVEL" type="int" />
+		<column name="OPTTYPE" type="int" />
+		<column name="DOCATTOPTTYPE" type="int" />
+		<column name="WFOPTTYPE"  type="int" />
+		<column name="STATIONOBJTYPE"  type="string" length="32" />
+		<column name="STATIONID"  type="string" length="32" />
+		<column name="ORGREFTYPE" type="string" length="32" />
+		<column name="LAYOUTID" type="string" length="32" />
+		<column name="LAYOUTID1" type="string" length="32" />
+		<column name="PRIORITY" type="int" />
+		<column name="DETAILFILTER" type="int" />
+		<column name="ISDEFAULT" type="int" />
+		<column name="ISDELETE"  type="int" />
+		<column name="RESTRICTIONSFIELD" type="string" length="2048" />
+		<column name="FIELDOF" type="string" length="2048" />
+		<column name="NODEID" type="string" length="32" />
+		<column name="NOTIFYDEFINEID" type="string" length="32" />
+		<column name="CONDITION" type="string" length="2048" />
+		<column name="MOBILELAYOUTID" type="string" length="32" />
+		<column name="MOBILELAYOUTID1" type="string" length="32" />
+		<column name="MOBILEPRIORITY"  type="int" />
+	</table>
+	<table name="reportdef" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="FORMID" type="string" length="32" />
+		<column name="OBJNAME" type="string" length="256" />
+		<column name="OBJTYPE" type="string" length="32" />
+		<column name="OBJDESC" type="string" length="512" />
+		<column name="COL1" type="string" length="256" />
+		<column name="COL2" type="string" length="256" />
+		<column name="COL3" type="string" length="256" />
+		<column name="OBJOPTS" type="string" length="2048" />
+		<column name="OBJMODELNAME" type="string" length="128" />
+		<column name="OBJSAVEPATH" type="string" length="128" />
+		<column name="OBJTYPE2" type="string" length="32" />
+		<column name="VIEWTYPE" type="int" />
+		<column name="GROUPBY" type="string" length="32" />
+		<column name="ISDELETE" type="int" />
+		<column name="SELECTCONDITIONS" type="string" length="1024" />
+		<column name="TREEBY" type="string" length="50" />
+		<column name="GROUPBYTREE" type="string" length="50" />
+		<column name="SECFORMID" type="string" length="256" />
+		<column name="ISFORMBASE" type="string" length="32" />
+		<column name="REPORTUSAGE"  type="int" />
+		<column name="MODULEID" type="string" length="32" />
+		<column name="ISREFRESH" type="int" />
+		<column name="ISEXPEXCEL"  type="int" />
+		<column name="DEFAULTTIME"  type="int" />
+		<column name="ISBATCHUPDATE"  type="int" />
+		<column name="GROUPBY1" type="string" length="32" />
+		<column name="GROUPBY2" type="string" length="32" />
+		<column name="JSCONTENT" type="CLOB" />		
+	</table>
+	<table name="reportfield" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="REPORTID" type="string" length="32" />
+		<column name="FORMFIELDID" type="string" length="32" />
+		<column name="DSPORDER" type="int" />
+		<column name="ISORDERFIELD" type="int" />
+		<column name="ISSUM" type="int" />
+		<column name="HREFLINK" type="string" length="256" />
+		<column name="SHOWNAME" type="string" length="256" />
+		<column name="ALERTCOND" type="string" length="256" />
+		<column name="COL1" type="string" length="256" />
+		<column name="COL2" type="string" length="256" />
+		<column name="COL3" type="string" length="256" />
+		<column name="SHOWWIDTH" type="int" />
+		<column name="ISBROWSER" type="string" length="2" />
+		<column name="ISDELETE" type="int" />
+		<column name="SHOWMETHOD" type="string" length="32" />
+		<column name="PRIORDER" type="string" length="5" />
+		<column name="ISHREFFIELD" type="string" length="5" />
+	</table>
+	<table name="reportsearchfield" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="REPORTID" type="string" length="32" />
+		<column name="FORMFIELDID" type="string" length="32" />
+		<column name="COL1" type="string" length="256" />
+		<column name="COL2" type="string" length="256" />
+		<column name="COL3" type="string" length="256" />
+		<column name="ISQUESTSEARCH" type="string" length="2" />
+		<column name="DSPORDER" type="int" />
+		<column name="ISDELETE" type="int" />
+		<column name="ISFILLIN" type="string" length="5" />		
+	</table>
+	<table name="pagemenu" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="PAGEPROP" type="string" length="32" />
+		<column name="TOURL" type="string" length="32" />
+		<column name="LABELID" type="string" length="256" />
+		<column name="SHOWNAME" type="string" length="256" />
+		<column name="ACCESSKEY" type="string" length="256" />
+		<column name="OBJID" type="string" length="2" />
+		<column name="OBJTABLE"  type="string" length="256" />
+		<column name="RIGHTTYPE"  type="string" length="256" />
+		<column name="DSPORDER"  type="int" />
+		<column name="ISSHOW" type="int" />
+		<column name="COL1" type="string" length="32" />
+		<column name="COL2" type="string" length="32" />
+		<column name="COL3" type="string" length="256" />
+		<column name="ISDELETE" type="int"/>
+		<column name="IMGFILE" type="string" length="256" />
+		<column name="MODULEID" type="string" length="2" />
+		<column name="CUSTOMACTIONID" type="string" length="256"/>
+		<column name="PROPTYPE" type="string" length="256"/>
+		<column name="TOURLTYPE" type="string" length="5" />
+		<column name="TOURLSPAN" type="string" length="32" />
+		<column name="BTNSHOWSTYLE" type="string" length="32" />
+		<column name="SHOWSTYLE" type="string" length="256" />
+		<column name="ACTIONUSE" type="int" />		
+	</table>
+		<table name="treeviewerinfo" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="TREETYPE" type="int"/>
+		<column name="TREEFORMID" type="string" length="32" />
+		<column name="TREEFIELDNAME" type="string" length="256" />
+		<column name="DATAFORMID" type="string" length="256" />
+		<column name="DATAKEYFIELD" type="string" length="256" />
+		<column name="DATAWHERE" type="string" length="2" />
+		<column name="DATAVIEWTEXT"  type="string" length="256" />
+		<column name="TREEFIELDKEY"  type="string" length="256" />
+		<column name="TREEFIELDID"  type="int" />
+		<column name="TITLE" type="string" length="32"  />
+		<column name="ISDELETE" type="string" length="32" />
+		<column name="TREEWHERE" type="string" length="32" />
+		<column name="VIEWTYPE" type="string" length="256" />
+		<column name="SUBTREE"  type="string" length="256" />
+		<column name="MENUINFO" type="string" length="256" />
+		<column name="MENUFUN" type="string" length="2" />
+		<column name="OPTIONS" type="string" length="256"/>
+		<column name="MODULEID" type="string" length="256"/>
+		<column name="USERFUN" type="string" length="5" />	
+	</table>
+	<table name="labelcustom" primaryKey="ID">
+		<column name="ID" type="string" length="32" />
+		<column name="LABELNAME" type="string" length="200" />
+		<column name="KEYWORD" type="string" length="32" />
+		<column name="LANGUAGE" type="string" length="50" />
+		<column name="LABELTYPE" type="string" length="50" />
+		<column name="COL1" type="string" length="50" />
+		<column name="COL2" type="string" length="50" />
+		<column name="COL3"  type="string" length="50" />
+	</table>
+</tables>

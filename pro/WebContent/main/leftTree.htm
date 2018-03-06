@@ -1,0 +1,13 @@
+<html>
+<head>
+<script language="javascript" src="<%=request.getContextPath()%>/js/JSCookTree.js"></script>
+<script>
+function dourl(){
+	var o = event.srcElement;
+	parent.parent.mainframe.location.href = o.getAttribute("url");
+}
+</script>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/images/base/ThemeXP/theme.css">
+</head>
+<body oncontextmenu="javascript:return false;" style="background-color:#EEE"></body>
+</html>

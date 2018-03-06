@@ -1,0 +1,5 @@
+ERROR:[2014-01-02 11:22:43,209] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-7) :java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+ ERROR:[2014-01-02 23:59:00,145] com.eweaver.base.job.DelAttachJob(quartzScheduler_Worker-7) :org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [select id,imagefileid from imagefiletemp where to_date(to_char(sysdate,'yyyy-MM-dd'),'yyyy-MM-dd')-to_date(createdate,'yyyy-MM-dd') >= ]; nested exception is java.sql.SQLSyntaxErrorException: ORA-00936: 缺失表达式
+
+ 

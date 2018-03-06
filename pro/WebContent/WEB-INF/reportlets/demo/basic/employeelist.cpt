@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.5</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters>
+</Parameters>
+<ColumnNames><![CDATA[EmployeeID,,.,,Name,,.,,Sex,,.,,City,,.,,Country,,.,,School,,.,,Title,,.,,TitleOfCourtesy,,.,,Salary,,.,,BirthDate,,.,,HireDate,,.,,Address,,.,,Education,,.,,Region,,.,,PostalCode,,.,,E-mail,,.,,Personal Homepage,,.,,Disciplines,,.,,HomePhone,,.,,Extension,,.,,Photo,,.,,Notes,,.,,ReportsTo,,.,,PhotoPath]]></ColumnNames><ColumnTypes><![CDATA[class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String]]></ColumnTypes><RowData>
+<![CDATA[Puud]gGfgo``2=iT_u$Z<*9Q"Oh/b#ac7`MAR1V.IYLEb`0pg.!,.GVlh<5%=e[1F1Fg!f,0
+`TPcfro<`9`9+q(qn8etS=D.>@N
+kqf=c15IGg%eg^XCc&0iLqTEQgQ8!CX7W,;L;L@A2`"m7
+3+r8MQko`_*d?I/Kn*SG_<bGOW##W%JRRIlRi(<!&5(AeaIPq&D5P;
+eR)aEE*S?][dRn_og@
+JIK.U@ET%A_CHLbpFu7`tQIqMC-C#7WYEtW[SLCi"pGsnVqn@92h8O1LF9`o1OJ?U+gtOBI2
+Ot(6%;,,
+T:^;/0u*t1H[VhVNP7$r9P27F6i)[*adm'i0U1<L1d$c8`P[dX^uo6/QpmJiI$Vl
+\E@3Uroc7.;720h#qN^Hr;PZ-aR^d)s$>5g
+b</G^4r!#(<6>X<lcj>SS*Rr6-ak-cD?W?>/K
+d9:73GWLZ.M,FqiAlG^BQ$b!%R0EKo(5b!LF3#,_L>bN!fVYpK(u-mr!r&DNkq
+P^D"p6(hj[
++J<<S?2G/Nk(GE6QQO'PJ,nb9=];/ugdcLms6E3s:FFfrfQc"kO>#Y<$ijH!$dOW!@^er\[,
+lEJj$Q#=-A)R&`&d
+YP<_4bT=%kDd/[_$oQr(?2H]9T+0r0+Lqd,D,,)Pn#pD*a6krQGG=kur
+Df*kfnq'E2j$O:2`=S'DAd`#@!4hlf@*_EN$5C:b^L*
+XS"S((ps=]E[t]Y_Wq3,=L!lmsn(G
+=fA_s]1l!`DG6f50CC@/e/F!\jd2gr^3:H8%YHYJ(gW&)X]3Sa<6`2-)j#mN3HraK)9R>7
+BC
+n5H=%u[dgQHWrE)c)2HLX__LC+uk'T<9jST+U90ubHti$^WuApU*eP9f)pj1m59bV-!:@b<C
+k)NFU;*2PBW3Qa)mK&pPOmDY
+5)Ec%Wu"S,IAb'D`U`.`1P>(RZrjBD+uTND!(dtRM_^,?7g9
+C"%-UaTWjg5;?SY)FO4H(c^^EW#qZI"b[Y8u8iSAB-XVJKY-'B5
+n=91#r,CC^Dc`m0iOBPaP
+,F+H!8>153Tt[BM_PDe)_7PA!;XeB1mq?L%U""*?@;7'gC&)7;&([(i'LEQ%kd;=/Pg2`jR:
+"6FHJ
+5o*89lm66RNA#ITJ#1b^E[@n'kUh0lj];>&DJZ#b5.K;<I8D,Pid<+3F&WVleIZZ^Q#
+D0X*PFbY.)fj(Nnth<\'uNSJXp!1J.am
+<Nh_+sB!nB0pQ@"$=B0K;qqBtt0<Js>-3%Bp6c&d
+8H5h]IO?^,)ASgT3V@H<Em)a^*_lD)!WS$YKq_DW3<7_ch&!Y`Z:iS=J-b\
+&pIhEMGp\_@t.
+KHffMu!#29oICE%M5JcF@uK3`>Cr%(JS4F;pA/[73dW1D$lT-L*1e[022#>gisGFkcM^,5S\
+XV=0h$3A*!UO#
+2(<uV?6W@rU,Om3TmVi)\URR#NL3bMD5/h<X!!ChH$uP4c/RqlpOiPOZ0_$
+Sbh0>D(amr""b\2!L1rKhJ==JNW=lYaWpW7.8MpB
+@i\l?>;gaZSV'&r>?T(7p3G5DH.Ep#Ng
+^960rNdhRmapX@V_AkAda;_=WLE1TQNneVq8jsf*icDakN&m7,_fWn'@kNP2]c?TA(J
+3m-6@
+bP66,+-Bf$7P:>7@)]J.1RM=beEDHMD5B=D@bg3iDNAe2eh)S1MU\?F$oehFKl?kO(Z$J"d[
+-nbHE:\ZVl_]r/c[3pUM[
+-Jd#OeCd]Ga%a^bc*h<n.]8>?/lFd/[D>bm`4TXMBcKI%C?7X$F
+c,J^tVd*_f2m_ioe)G!n=Qf9d>BFT]f@:Fu#S<&QEUqmC]m_
+JTc=c6)W;Z@pf3O2pfM3"f(9
+8IkV*9a_3M\LQ/CEtKfu<T],^^;F6MPVf"f_3Wo)MYV(6h'5OXc)*$4@sA8fo5>m2:0O*&<I
+j9
+O8k_/F]5`B2<]gHKK$-Ble.2"8jR4BKOk\S9-_qD;4kk.]:2'K?,*Jt6co^V=RqF0$M:h@
+j8os'N%^rj;kbuF^7-,l1Z]7E?p5L
+pKH%*cF5)(k,\!#=Vf#mh=olh6,A`!Y>r:VFX+`K&gm
+Yd4<A+HIimL9mep17p]VCgLL3'^tCDoS.iA)&m#G^Id70tc3M)0(o6LQ
+"3ac<)ho;\nBK?"d
+QV=ru^I-X;K2qc<K!T,n(en9EhM*#V[l-b\K8E*ml>8,'($]V"g6Y%:.9Qh+M9/MODb]S(*I
+n+r6nXisGo
+*q,)^I8'H4-:dlmj$DJDs+CMY(Ds:a&.%QKpBg-_rO+pQi58H]qC(Rp^cjt[/M
+@dUGO\'mOk[FL9AOC8_=$mgGA%pc'[8Ogm3c?
+`d;YS8g"n+Q%F7\P,PdpV\DeKs-g[k5l;RC
+J@/#48DI,d:%IO%aTkPS#VRZE^%nFWY4<>d4JT1l?7YYS54?@,F%)RM2m+IFCN6W
+F]a(-/3)
+Gf"kd9<*d$H7'o5@moWnoRXT!Hmk&orPjbSMm+58bC8kLb92K-]Ubs`rS@1i+u/D4W>[FYl=
+q~
+
+]]>
+</RowData>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters>
+</Parameters>
+<ColumnNames><![CDATA[EmployeeID,,.,,Time,,.,,WorkPlace,,.,,Title,,.,,Proof]]></ColumnNames><ColumnTypes><![CDATA[class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String]]></ColumnTypes><RowData>
+<![CDATA[F]@%3X"Y*5G.rP=\4'g4$'/W_U+U.`[8l*20Hn.fj2d=^r;@Yr<*)EF.4EF1=m"X-K]@(1-W
+g3ZqPhQuhHK6>(,)>bp9o3&=<f]
+MaDVbqTh3h15]kJkfV2h>&f\p>Gdl1q+eI0d9&*;r$hW4
+7$a!,Hq40EQThli)1#U?6rJ<ZanIomE-!&Zm3O:pMnNTLE^4AbI*?P
+*/j%RBKO3fT(P;,sd6
+cK&SU*b=3Z<`;4IkKJ["&\A,'0lCp[06C8e<@7?n1@dC,_@kDq2l\X\m];VDo&>0i_AS!D>9
+5.;Y.qc'
+H8l2)G/$&%Q&6e6DeCI24+_'b?J_F6g\9dUJ1TBGcn7fi7d0#o,L6)<B9d%.jnB1
+Z\q09Su4XqP']$'4EUs`Chf4e?NpjG)QZ[k
+,<@QadhM9uWsVS'Bda*DnT#tB-Xp%F2\dn)Uf
+`2Wjs<nX\ODkDpQCCi4CqSH7e$]D(#6\3X_fpJ$@YJp>"3ZI##9%]52j#\9C'1
+Dh_ZhY1J04
+MPS%2QM0R/)%oOj*5M3bAD0BS2#G!lC[Xr^blWrn[W8nR62kfRmDN(`Z]S<4``&X([=r&E1F
+!L:[b78HARKJSIQB
+bNk<ZL]bjin**gLGSK<<[8fjuu5J%`F-%P(!VpJ)ke5Sh]'jeEMloT.7
+5<<XSGQoaN:TeolJJo*69sc6*hUCqK7UfXu#caelafE
+-osHkg5"sGP:a3phN-7VBhMUJRWiX
+fgN<r*-RceSsi#&FYB41&1T;IC=AS)Xt*bq.m.k(?BLfDC4Pl8X3AU<pA_g;DqL-&-f."T
+Ek
+pOhUN<*c)qKK!TCW!G\u0Fc!5kDe*r~
+
+]]>
+</RowData>
+</TableData>
+<TableData name="ds3" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters>
+</Parameters>
+<ColumnNames><![CDATA[雇员ID,,.,,姓氏,,.,,名字,,.,,头衔,,.,,尊称,,.,,出生日期,,.,,雇用日期,,.,,地址,,.,,城市,,.,,地区,,.,,邮政编码,,.,,国家,,.,,家庭电话,,.,,分机,,.,,照片,,.,,备注,,.,,上级]]></ColumnNames><ColumnTypes><![CDATA[class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String]]></ColumnTypes><RowData>
+<![CDATA[NE4eSg/\o95+_"'po0H>d*^6Hm6C995a`HN[Nbh4+sAR.fTq2D5Vf."C#_%@c89Ya8lMXLFF
+#k)<g:$H4M]@-p0R'd[?!#QBqnK
+nh3mkO@A_nTp:4*l=Q7:6VGi_(85W_H^0a]I<?b(@MSe,
+Kj[.n6g4qN.*U7L;WjQ>IS>[pS'LbS;)?c<CH:23,nKH4uS0W+Vi`K
+MPaHut;0^Tka<o^?,e
+2q^9]d)E*bO.mhe5<oOo6/SW.ui.U?F0JecF^HPQ>bKNl<I>$<N"Ado"g`6X'*GZ7':q2q:A
+ssqLD&l4
+6.ojX:E:]efu=2)!-cf<ht4+Kr$%F6C6M7^%h$TcH&JtTdWdM]HiWV$!s](,DIN*
+89nPs-<<(fAp=+*MOAj,9ZjJ&L@2sCmL6[1
+17h][=)0uVk*f;mLA/:2IoVjok2C_@@uV_6f[
+MOjHb`Y!lSk)ADTs=SX>Wd:<K5;+iqk+-;EJ[LjYHPMCENPp18JLF.__Z5DVR[
+k@0<k]G7nB
+3j)Ahil<`Z,V:h=J`p3<\qt_^A2fGnMV%+?lp_B'o$,6`SBZO"AA_A*=fRs0CU]fq_pP4@1,
+:ucY@<SJY=A5N%3"
+D))V.sh9hGL'fci;6H:B%QKr#qpuFNTep-ho8F_qh=in\S<X<2AY3SQk
+u$r"%G]9uNcWN6J@`h@T'\gTrjVPa&NdZNpcA]m?N^g
+4cLd+>fo?:QF;n.:S`8*#<ceMF6e/
++:PnaQ!&>BCr8qXk$&eE\d.u=he3N3%7%GBPnqcgSX21nKk<YKbmGDtej/bb_>0@j)U31?
+[;
+C8?g0IubI]5GNqNWGGLGa8ch*e48!Nj#AAe"scIO:Fl.YWTD<G:NhPh]T4#h1JD<b+Wi%YI=
+.g'>%?f>:CqTInRoM:l_80Ih
+`+s6"8!Ui3X&RgcfJ,MR>9nfQ85UK1_l,H)UR1Z&Fgj+L3\#
+aic4f7lHmFkh7!!YmPmdOAco+c+cgR)mVtNI_GA]BXjZP?.6tjf
+)j+58agdd]2`3'aXL_@PF
+n=AXlCpGo=K4esJtq4_bIimLiD3q9o;HEOk/D>.=t#`.4S,+Ye3F6!t6sMhk>M%\,&un?NFU
+ZaI,S
+X*4^/OcOW<2U'^4`X,o#XBn`(gG:ioH"(uJ<f@,qS%-Fh'OO<W^1BFaa8s&1ftMXs7O
+i5r7[EA0n/_^`kuMU)"V<,R\a4Kc]`q.
+ps$:o:^QsIk#6H[<,,a;s4Xh6PdA(mf$"IU<aLke
+B-aprq8dIoa[jr;c<J]bYe1oiIiFi@)_(dJ)8?O_0brAe$^\gY_d_/9em$Z
+%%["=t8lJpksm
+7#,jb6:t>`oC:*!J68@o";=BNM),11sH(N#Ntptm&V,ZK4]"!\e[Y$c$(S[Znu<QEcnlL37A
+omFa\L-$hBpO"
+NJsbWgU!5aPe`?M#i=0KH_7k&u$807AN*r?Sj*5CS*DQjKrcJr!D`\_CO^4
+f"S=S+i1c]n$nWF?%C9L@_noq:>p[6$6)TtlnSO>
+fu*?:fg@rZ-)6i,L;H3SIT`cSTm1K7FB
+/W&*5ogr52OF<GCV,q2I3LM4,(`n7M_s*N;!>$9T5hB^lnGk(sM=IAd'=^Zho9`AK0E
+2/MhL
+-k5QC6Qpj-X0BEc=68-17*ahiM;O!L*_6!1q:M.QLR&9QW1Mi#hqd9S9n`7Fc~
+
+]]>
+</RowData>
+</TableData>
+</TableDataMap>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="0" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+<ParameterInterface class="com.fr.report.parameter.DefaultParameterInterface">
+<DPparam /></ParameterInterface>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<ReportWebAttr>
+<EmailManager mailHost="" password="___" user="" fromEmailAddress="" />
+<ServerPrinter>
+</ServerPrinter>
+<Background name="NullBackground" />
+</ReportWebAttr>
+<ReportWriteAttr>
+</ReportWriteAttr>
+<RowHeight defaultValue="19">
+<![CDATA[28,19,19,19,19,1]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[88,95,108,128,107,111]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="6" s="0"><O><![CDATA[IT运维部人员基本信息列表]]></O>
+</C>
+<C c="0" r="2" s="1"></C>
+<C c="1" r="2" s="2"></C>
+<C c="2" r="2" s="2"></C>
+<C c="3" r="2" s="2"></C>
+<C c="4" r="2" s="2"></C>
+<C c="5" r="2" s="3"></C>
+<C c="0" r="3" s="4"><O><![CDATA[员工号]]></O>
+</C>
+<C c="1" r="3" s="4"><O><![CDATA[姓名]]></O>
+</C>
+<C c="2" r="3" s="4"><O><![CDATA[头衔]]></O>
+</C>
+<C c="3" r="3" s="4"><O><![CDATA[联系方式]]></O>
+</C>
+<C c="4" r="3" s="4"><O><![CDATA[分机号]]></O>
+</C>
+<C c="5" r="3" s="4"><O><![CDATA[雇用日期]]></O>
+</C>
+<C c="0" r="4" s="5"><O t="DSColumn"><Attributes dsName="ds1" columnName="EmployeeID" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<HighlightList><Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.FormulaCondition"><Formula>
+<![CDATA[row()%2==0]]>
+</Formula>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.BackgroundHighlightAction">
+<Background name="ColorBackground"
+ color="-656641">
+</Background>
+<Scope val="1" /></HighlightAction>
+</Highlight>
+</HighlightList><Expand dir="0" />
+</C>
+<C c="1" r="4" s="5"><O t="DSColumn"><Attributes dsName="ds1" columnName="Name" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="2" r="4" s="5"><O t="DSColumn"><Attributes dsName="ds3" columnName="头衔" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[雇员ID]]></CNAME><Compare op="0">
+<ColumnRow column="0" row="4"/>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="3" r="4" s="5"><O t="DSColumn"><Attributes dsName="ds3" columnName="家庭电话" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="4" r="4" s="5"><O t="DSColumn"><Attributes dsName="ds3" columnName="分机" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="5" r="4" s="6"><O t="DSColumn"><Attributes dsName="ds1" columnName="HireDate" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="0" r="5" s="7"></C>
+<C c="1" r="5" s="8"></C>
+<C c="2" r="5" s="8"></C>
+<C c="3" r="5" s="8"></C>
+<C c="4" r="5" s="8"></C>
+<C c="5" r="5" s="9"></C>
+<C c="4" r="7"><O><![CDATA[统计日期：\t]]></O>
+</C>
+<C c="5" r="7" s="10"><O><![CDATA[2008-10-21]]></O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="16" foreground="-16739659" />
+<Background name="NullBackground" />
+<Border><Bottom style="6" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ImageBackground"
+ specifiedImageWidth="-1.0"
+ specifiedImageHeight="-1.0"
+ layout="2">
+<Image width="271" height="20">
+<![CDATA[mDD3s_Ctrm_#OF0>K!!9WJ6!OQ7+.ZoaQ9>0E]d2laNppWiE)!WiGp)li!RsTDPW,0?[QWIV
+_g1pu1d?NUQ%!281S82*R8))W+4
+iebJi;<TD!-WQ)u!;iUeW~
+
+]]>
+</Image>
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ImageBackground"
+ specifiedImageWidth="-1.0"
+ specifiedImageHeight="-1.0"
+ layout="2">
+<Image width="271" height="20">
+<![CDATA[mDD3s_Ctrm_#OF0>K!!9WJ6!OQ7+.ZoaQ9>0E]d2laNppWiE)!WiGp)li!RsTDPW,0?[QWIV
+_g1pu1d?NUQ%!281S82*R8))W+4
+iebJi;<TD!-WQ)u!;iUeW~
+
+]]>
+</Image>
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ImageBackground"
+ specifiedImageWidth="-1.0"
+ specifiedImageHeight="-1.0"
+ layout="2">
+<Image width="271" height="20">
+<![CDATA[mDD3s_Ctrm_#OF0>K!!9WJ6!OQ7+.ZoaQ9>0E]d2laNppWiE)!WiGp)li!RsTDPW,0?[QWIV
+_g1pu1d?NUQ%!281S82*R8))W+4
+iebJi;<TD!-WQ)u!;iUeW~
+
+]]>
+</Image>
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="14" />
+<Background name="ColorBackground"
+ color="-2101249">
+</Background>
+<Border><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" foreground="-13421773" />
+<Background name="NullBackground" />
+<Border><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.SimpleDateFormat"><![CDATA[yyyy-MM-dd]]></Format>
+<FRFont name="SimSun" style="0" size="12" foreground="-13421773" />
+<Background name="NullBackground" />
+<Border><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+</StyleList>
+</WorkBook>

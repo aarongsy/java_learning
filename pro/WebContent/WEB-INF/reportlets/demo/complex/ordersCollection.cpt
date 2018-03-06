@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.2</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes isCache="false" maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT orderid,year(signdate) as year,month(signdate) as month FROM ORDERS]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings shrinkToFit="false" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[34,15]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[]]>
+</ColumnWidth>
+<CellElementList>
+<C c="1" r="0" cs="3" s="0"><O><![CDATA[08、09年订单统计]]></O>
+</C>
+<C c="1" r="2" cs="3" s="1"></C>
+<C c="1" r="3" s="2"><O><![CDATA[年]]></O>
+</C>
+<C c="2" r="3" s="2"><O><![CDATA[月]]></O>
+</C>
+<C c="3" r="3" s="2"><O><![CDATA[订单数量]]></O>
+</C>
+<C c="1" r="4" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="YEAR" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="2" r="4" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="MONTH" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="3" r="4" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="ORDERID" />
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.CountFunction]]></FN></RG>
+</O>
+<NameJavaScriptGroup>
+<NameJavaScript name="已付订单">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<Parameters>
+<Parameter>
+<Attributes name="month" />
+<O t="Formula" class="Formula"><Attributes><![CDATA[=C5]]></Attributes></O>
+</Parameter>
+<Parameter>
+<Attributes name="year" />
+<O t="Formula" class="Formula"><Attributes><![CDATA[=B5]]></Attributes></O>
+</Parameter>
+</Parameters>
+<ReportletName><![CDATA[/demo/complex/paid.cpt]]>
+</ReportletName></JavaScript>
+</JavaScript>
+</NameJavaScript>
+<NameJavaScript name="未付订单">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<Parameters>
+<Parameter>
+<Attributes name="month" />
+<O t="Formula" class="Formula"><Attributes><![CDATA[=C5]]></Attributes></O>
+</Parameter>
+<Parameter>
+<Attributes name="year" />
+<O t="Formula" class="Formula"><Attributes><![CDATA[=B5]]></Attributes></O>
+</Parameter>
+</Parameters>
+<ReportletName><![CDATA[/demo/complex/unPaid.cpt]]>
+</ReportletName></JavaScript>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand dir="0" />
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style style_name="Title" />
+<Style style_name="Head" />
+<Style style_name="Head2" />
+<Style style_name="cell" />
+<Style>
+<FRFont name="SimSun" style="0" size="12" foreground="-16776961" underline="1" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6697729"
+ /><Bottom style="1" color="-6697729"
+ /><Left style="1" color="-6697729"
+ /><Right style="1" color="-6697729"
+ /></Border>
+</Style>
+</StyleList>
+</WorkBook>

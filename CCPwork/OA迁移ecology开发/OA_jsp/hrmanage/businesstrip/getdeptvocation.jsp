@@ -1,0 +1,299 @@
+<%@ page language="java" contentType="application/json" pageEncoding="UTF-8"%>
+<%@ page import="org.json.simple.JSONObject"%>
+<%@ page import="org.json.simple.JSONArray"%>
+<%@ page import="com.eweaver.base.util.StringHelper" %>
+<%@ page import="com.eweaver.app.configsap.SapConnector" %>
+<%@ page import="com.sap.conn.jco.JCoException" %>
+<%@ page import="com.sap.conn.jco.JCoFunction" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Calendar" %>
+<%@ page import="java.util.Date" %>
+
+<%@ page import="com.sap.conn.jco.JCoTable"%>
+<%@ page import="com.eweaver.base.BaseContext"%>
+<%@ page import="com.eweaver.base.BaseJdbcDao" %>
+<%@ page import="com.eweaver.sysinterface.base.Param" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.eweaver.base.*" %>
+<%@ page import="java.util.Map" %>
+
+<%
+ 
+	String requestid = StringHelper.null2String(request.getParameter("requestid"));//requestid
+	String sdate = StringHelper.null2String(request.getParameter("sdate"));//日期
+	String edate = StringHelper.null2String(request.getParameter("edate"));//日期
+	String dept = StringHelper.null2String(request.getParameter("dept"));//部门
+	BaseJdbcDao baseJdbc=(BaseJdbcDao)BaseContext.getBean("baseJdbcDao");
+	String company = StringHelper.null2String(request.getParameter("company"));//所属公司
+	Calendar cdr = Calendar.getInstance();	
+	SimpleDateFormat sdt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd");
+	Date theBegin = ft.parse(sdate);
+	String delsql = "delete uf_hr_kqdetail where requestid = '"+requestid+"'";
+	baseJdbc.update(delsql);
+
+	String humsql = "select id,objno,extmrefobjfield8,extselectitemfield11,extrefobjfield4 as zc,(select zjlevel from uf_profe where requestid =extrefobjfield4) as zcdj,(select nameid from uf_profe where requestid =extrefobjfield4) as zcbh from humres where extmrefobjfield9 = '40285a90497eab15014983bfe7011e36' ";
+	if(!dept.equals(""))//如果所属部门不为空
+	{
+		humsql = humsql+" and instr('"+dept+"',orgid)>0 ";
+	}
+
+	humsql = humsql +" order by objno asc ";
+	List list1 = baseJdbc.executeSqlForList(humsql);
+	int sum = 0;
+	if(list1.size()>0)
+	{
+		for(int m = 0;m<list1.size();m++)
+		{
+			Map mm = (Map)list1.get(m);
+			String ids = StringHelper.null2String(mm.get("id"));//员工id
+			String group = StringHelper.null2String(mm.get("extselectitemfield11"));//员工组
+			String objno = StringHelper.null2String(mm.get("objno"));//员工工号
+			String zc = StringHelper.null2String(mm.get("zc"));//员工职称
+			String zcbh = StringHelper.null2String(mm.get("zcbh"));//员工编号
+			String firstdept = StringHelper.null2String(mm.get("extmrefobjfield8"));//一级部门
+			int zcdj = 0;
+			if(StringHelper.null2String(mm.get("zcdj")).equals(""))
+			{
+				zcdj = 0;
+			}
+			else
+			{
+				zcdj= Integer.parseInt(StringHelper.null2String(mm.get("zcdj")));//员工职称等级
+			}
+			String yesno = "40288098276fc2120127704884290211";
+
+			if(yesno.equals("40288098276fc2120127704884290211"))
+			{
+				String sql1="select to_char((to_date('"+sdate+"','yyyy-mm-dd'))+Rownum-1,'yyyy-mm-dd') as thedate from dual connect by rownum< to_date('"+edate+"','yyyy-mm-dd')-to_date('"+sdate+"','yyyy-mm-dd') +2";
+				System.out.println(sql1);
+				List lists = baseJdbc.executeSqlForList(sql1);
+				if(lists.size()>0)
+				{
+					for(int k = 0;k<lists.size();k++)
+					{
+						Map map2 = (Map)lists.get(k);
+						String thedate = StringHelper.null2String(map2.get("thedate"));//员工工号
+						theBegin = ft.parse(thedate);
+						//获取请假信息
+						String sql = "select jobno,objname,(select extrefobjfield4 from humres where id = a.objname) as zc,(select objname from orgunit where id = a.objdept) as objdeptxt,reason,startdate,starttime,enddate,endtime from uf_hr_vacation a where '"+thedate+"' between startdate and enddate and isvalided = '40288098276fc2120127704884290210' and 1<>(select isdelete from requestbase where id = requestid) and comtype = '4028804d2083a7ed012083ebb988005b' and objname = '"+ids+"' order by jobno asc";
+						List list = baseJdbc.executeSqlForList(sql);
+						if(list.size()>0)
+						{
+							for(int i = 0;i<list.size();i++)
+							{
+								Map map = (Map)list.get(i);
+								String jobno = StringHelper.null2String(map.get("jobno"));//员工工号
+								String objname = StringHelper.null2String(map.get("objname"));//员工姓名
+								String objdeptxt = StringHelper.null2String(map.get("objdeptxt"));//员工所属部门
+								String reason = StringHelper.null2String(map.get("reason"));//事由
+								String startdate = StringHelper.null2String(map.get("startdate"));//开始日期
+								String starttime = StringHelper.null2String(map.get("starttime"));//开始时间
+								String enddate = StringHelper.null2String(map.get("enddate"));//结束日期
+								String endtime = StringHelper.null2String(map.get("endtime"));//结束时间
+								String sdtime = startdate+" "+starttime;//开始日期时间
+								String edtime = enddate +" "+endtime;//结束日期时间
+								
+								String clsql = "select pstime,petime from uf_hr_classinfo where requestid=(select classno from uf_hr_classplan where objname = '"+ids+"' and thedate = '"+thedate+"')";
+								List list3 = baseJdbc.executeSqlForList(clsql);
+								if(list3.size() >0)
+								{
+									Map cm = (Map)list3.get(0);
+									String pstime = StringHelper.null2String(cm.get("pstime"));//计划开始时间
+									String petime = StringHelper.null2String(cm.get("petime"));//计划结束时间
+									SimpleDateFormat sft = new SimpleDateFormat("HH:mm:ss");
+									Date ps = sft.parse(pstime);
+									Date pe = sft.parse(petime);
+									if(ps.getTime()>=pe.getTime()){//跨天					
+										cdr.setTime(theBegin);
+										cdr.add(Calendar.DAY_OF_MONTH,1);
+										String nextDay = ft.format(cdr.getTime());
+										pstime = thedate + " " + pstime;
+										petime = nextDay + " " + petime;
+									}else{
+										pstime = thedate + " " + pstime;
+										petime = thedate + " " + petime;
+									}
+									Date st = sdt.parse(sdtime);//请假开始时间
+									Date se = sdt.parse(edtime);//请假结束时间
+
+									Date sp = sdt.parse(pstime);//班别开始时间
+									Date ep = sdt.parse(petime);//班别结束时间
+									String ss = "";
+									String ee = "";
+									if(st.getTime()>sp.getTime())//班别开始时间在请假时间段外
+									{
+										if(ep.getTime() >st.getTime() && ep.getTime()<=se.getTime())//班别结束时间在请假时间段内
+										{
+											ss = sdtime;
+											ee = petime;
+											if(thedate.equals(enddate))
+											{
+												ee = edtime;
+											}
+										}	
+										if(ep.getTime() >se.getTime())
+										{
+											ss = sdtime;
+											ee = edtime;
+										}
+									}
+									else if(sp.getTime() >=st.getTime() && sp.getTime() <se.getTime())//班别开始时间在请假时间段内
+									{
+										if(ep.getTime()<se.getTime())//班别结束时间在请假时间段内
+										{
+											ss = pstime;
+											ee = petime;
+											if(thedate.equals(enddate))
+											{
+												ee = edtime;
+											}
+										}
+										else//班别结束时间在请假时间段外
+										{
+											ss = pstime;
+											ee = edtime;
+										}
+									}
+									if(!ss.equals("") && !ee.equals(""))
+									{
+										ss = ss.split(" ")[1];
+										ee = ee.split(" ")[1];
+
+										String insql = "insert into uf_hr_kqdetail (id,requestid,psnno,psnname,dept,zc,kqtype,startdate,enddate,reason,yesno,thedate,appstart,append)values('"+IDGernerator.getUnquieID()+"','"+requestid+"','"+jobno+"','"+objname+"','"+objdeptxt+"','"+zc+"','请假','"+starttime+"','"+endtime+"','"+reason+"','"+yesno+"','"+thedate+"','"+startdate+"','"+enddate+"')";
+										baseJdbc.update(insql);
+										sum = sum +1;
+									}
+									
+								}
+							}
+						}
+
+						//获取出差信息
+						String sql2 = "select ifreturn,(select objname from orgunit where id = a.objdept) as objdeptxt,reason,(select wm_concat(b.unit) from uf_hr_businesstripsub  b where a.requestid = b.requestid) as unit,sdate,stime,edate,etime from uf_hr_businesstrip a where psnname = '"+ids+"' and isvalided = '40288098276fc2120127704884290210' and 1<>(select isdelete from requestbase where id = requestid) and '"+thedate+"' between sdate and edate";
+						//if(group.equals("40285a8f489c17ce0148f371f98a6740") || group.equals("40285a8f489c17ce0148f371f98a6741"))
+						//{
+							//sql2 = sql2 +" and ifreturn <>'40288098276fc2120127704884290210'";//不是返台休假
+						//}
+						System.out.println(sql2);
+						List list2 = baseJdbc.executeSqlForList(sql2);
+						System.out.println(sql);
+						if(list2.size()>0)
+						{
+							for(int j = 0;j<list2.size();j++)
+							{
+								Map map1 = (Map)list2.get(j);
+								//String objname = StringHelper.null2String(map1.get("objname"));//员工姓名
+								String objdeptxt = StringHelper.null2String(map1.get("objdeptxt"));//员工所属部门
+								String reason = StringHelper.null2String(map1.get("reason"));//事由
+								String unit = StringHelper.null2String(map1.get("unit"));//拜访单位
+								String startdate = StringHelper.null2String(map1.get("sdate"));//开始日期
+								String starttime = StringHelper.null2String(map1.get("stime"));//开始时间
+								String enddate = StringHelper.null2String(map1.get("edate"));//结束日期
+								String endtime = StringHelper.null2String(map1.get("etime"));//结束时间
+								String sdtime = startdate+" "+starttime;//开始日期时间
+								String edtime = enddate +" "+endtime;//结束日期时间
+								String ifreturn = StringHelper.null2String(map1.get("ifreturn"));//是否返台休假
+
+								String allreson = reason+"："+unit;
+								String clsql1 = "select pstime,petime from uf_hr_classinfo where requestid=(select classno from uf_hr_classplan where objname = '"+ids+"' and thedate = '"+thedate+"')";
+								List list4 = baseJdbc.executeSqlForList(clsql1);
+								if(list4.size() >0)
+								{
+									Map cm1 = (Map)list4.get(0);
+									String pstime = StringHelper.null2String(cm1.get("pstime"));//计划开始时间
+									String petime = StringHelper.null2String(cm1.get("petime"));//计划结束时间
+									SimpleDateFormat sft = new SimpleDateFormat("HH:mm:ss");
+									Date ps = sft.parse(pstime);
+									Date pe = sft.parse(petime);
+									if(ps.getTime()>=pe.getTime()){//跨天					
+										cdr.setTime(theBegin);
+										cdr.add(Calendar.DAY_OF_MONTH,1);
+										String nextDay = ft.format(cdr.getTime());
+										pstime = thedate + " " + pstime;
+										petime = nextDay + " " + petime;
+									}else{
+										pstime = thedate + " " + pstime;
+										petime = thedate + " " + petime;
+									}
+									Date st = sdt.parse(sdtime);//请假开始时间
+									Date se = sdt.parse(edtime);//请假结束时间
+
+									Date sp = sdt.parse(pstime);//班别开始时间
+									Date ep = sdt.parse(petime);//班别结束时间
+									String ss = "";
+									String ee = "";
+									if(st.getTime()>sp.getTime())//班别开始时间在请假时间段外
+									{
+										if(ep.getTime() >st.getTime() && ep.getTime()<=se.getTime())//班别结束时间在请假时间段内
+										{
+											ss = sdtime;
+											ee = petime;
+											if(thedate.equals(enddate))
+											{
+												ee = edtime;
+											}
+										}	
+										if(ep.getTime() >se.getTime())
+										{
+											ss = sdtime;
+											ee = edtime;
+										}
+									}
+									else if(sp.getTime() >=st.getTime() && sp.getTime() <se.getTime())//班别开始时间在请假时间段内
+									{
+										if(ep.getTime()<se.getTime())//班别结束时间在请假时间段内
+										{
+											ss = pstime;
+											ee = petime;
+											if(thedate.equals(enddate))
+											{
+												ee = edtime;
+											}
+										}
+										else//班别结束时间在请假时间段外
+										{
+											ss = pstime;
+											ee = edtime;
+										}
+									}
+									if(!ss.equals("") && !ee.equals(""))
+									{
+										ss = ss.split(" ")[1];
+										ee = ee.split(" ")[1];
+
+										
+										//if(ifreturn.equals("40288098276fc2120127704884290210"))//如果是返台休假
+										//{
+											//String selsql = "select requestid from uf_hr_kqdetail where thedate = '"+thedate+"' and psnno = '"+objno+"' and kqtype = '请假' and ('"+ss+"' between startdate and enddate or '"+ee+"' between startdate and enddate)";
+											//List sellist = baseJdbc.executeSqlForList(selsql);
+											//if(sellist.size()<=0)
+											//{
+												//String insql1 = "insert into uf_hr_kqdetail (id,requestid,psnno,psnname,dept,zc,kqtype,startdate,enddate,reason,yesno,thedate,appstart,append)values('"+IDGernerator.getUnquieID()+"','"+requestid+"','"+objno+"','"+ids+"','"+objdeptxt+"','"+zc+"','出差','"+starttime+"','"+endtime+"','"+reason+"','"+yesno+"','"+thedate+"','"+startdate+"','"+enddate+"')";
+												//baseJdbc.update(insql1);
+												//sum = sum +1;
+											//}
+										//}
+										//else{
+											String insql5 = "insert into uf_hr_kqdetail (id,requestid,psnno,psnname,dept,zc,kqtype,startdate,enddate,reason,yesno,thedate,appstart,append)values('"+IDGernerator.getUnquieID()+"','"+requestid+"','"+objno+"','"+ids+"','"+objdeptxt+"','"+zc+"','出差','"+starttime+"','"+endtime+"','"+allreson+"','"+yesno+"','"+thedate+"','"+startdate+"','"+enddate+"')";
+											baseJdbc.update(insql5);
+											sum = sum +1;
+										//}
+										
+									}
+									
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	JSONObject jo = new JSONObject();		
+	jo.put("sum", sum);
+	response.setContentType("application/json; charset=utf-8");
+	response.getWriter().write(jo.toString());
+	response.getWriter().flush();
+	response.getWriter().close();
+%>

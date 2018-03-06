@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.2</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes isCache="false" maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT * FROM ORDERS where paid=0]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings shrinkToFit="false" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[32]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[40]]>
+</ColumnWidth>
+<CellElementList>
+<C c="1" r="0" cs="7" s="0"><O><![CDATA[未付订单汇总]]></O>
+</C>
+<C c="1" r="2" s="1"><O><![CDATA[订单编号]]></O>
+</C>
+<C c="2" r="2" s="1"><O><![CDATA[客户姓名]]></O>
+</C>
+<C c="3" r="2" s="1"><O><![CDATA[订单金额]]></O>
+</C>
+<C c="4" r="2" s="1"><O><![CDATA[签订时间]]></O>
+</C>
+<C c="5" r="2" s="1"><O><![CDATA[付款方式]]></O>
+</C>
+<C c="6" r="2" s="1"><O><![CDATA[发货方式]]></O>
+</C>
+<C c="7" r="2" s="1"><O><![CDATA[发货时间]]></O>
+</C>
+<C c="1" r="3" s="2"><O t="DSColumn"><Attributes dsName="ds1" columnName="ORDERID" />
+<Condition class="com.fr.data.condition.ListCondition"><JoinCondition join="0">
+<Condition class="com.fr.data.condition.FormulaCondition"><Formula>
+<![CDATA[year(SIGNDATE)=$year]]>
+</Formula>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.FormulaCondition"><Formula>
+<![CDATA[month(SIGNDATE)=$month]]>
+</Formula>
+</Condition>
+</JoinCondition>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<NameJavaScriptGroup>
+<NameJavaScript name="订单明细">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<Parameters>
+<Parameter>
+<Attributes name="orderID" />
+<O t="Formula" class="Formula"><Attributes><![CDATA[=B4]]></Attributes></O>
+</Parameter>
+</Parameters>
+<TargetFrame><![CDATA[_blank]]></TargetFrame>
+<ReportletName extendParameters="true"><![CDATA[/doc/Tutorial/advanced/Drill-down/orderDetail.cpt]]>
+</ReportletName></JavaScript>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand dir="0" />
+</C>
+<C c="2" r="3" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="CUSTOMERID" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<DBDictAttr tableName="CUSTOMER" schemaName="" keyColumnIndex="1" valueColumnIndex="2"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection></Dictionary></Present>
+<Expand dir="0" />
+</C>
+<C c="3" r="3" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="AMOUNT" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="4" r="3" s="5"><O t="DSColumn"><Attributes dsName="ds1" columnName="SIGNDATE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="5" r="3" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="PAYMETHOD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="6" r="3" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="SHIPMETHOD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="7" r="3" s="5"><O t="DSColumn"><Attributes dsName="ds1" columnName="SHIPDATE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="7" r="5" s="6"><O><![CDATA[返回首页]]></O>
+<NameJavaScriptGroup>
+<NameJavaScript name="首页">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<Parameters>
+</Parameters>
+<ReportletName><![CDATA[/doc/Tutorial/advanced/Drill-down/ordersCollection.cpt]]>
+</ReportletName></JavaScript>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="15" foreground="-13395610" />
+<Background name="NullBackground" />
+<Border><Bottom style="6" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-3342388">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" foreground="-16776961" underline="1" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style>
+<Format class="java.text.DecimalFormat"><![CDATA[¤#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.SimpleDateFormat"><![CDATA[yyyy-MM-dd]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" foreground="-16776961" underline="1" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+</StyleList>
+</WorkBook>

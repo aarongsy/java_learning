@@ -1,0 +1,366 @@
+/*全局css*/
+@charset "utf-8";
+body,p,table,td,input,div,select,button,span,a,textarea{
+	/*
+	font-family:simsun,Microsoft YaHei,Verdana,Tahoma,sans-serif;
+	font-size:13px;
+	color: #000;
+	*/
+	font-family:Segoe UI,simsun,Microsoft YaHei,Verdana,Tahoma,sans-serif;
+	font-size:12px;
+	color: #333;
+}
+body{
+	background-color: #fff;
+}
+/*表单布局显示样式*/
+#layoutFrame{
+	width: 95%;
+	background-color: #ffffff;/*F5F4ED*/
+	padding:0 20 0 20;
+	height:100%;
+}
+/*表单布局显示样式*/
+#layoutDiv{
+	margin:auto;
+	
+	text-align: center;
+}
+/*表单布局显示样式*/
+#taskinfodiv{
+	margin:auto;
+	text-align: left;
+}
+table.layouttable,table.detailtable {
+	border: 1px solid #909090;
+}
+table.layouttable caption{
+	padding:10px 0; 
+	text-align: center; 
+	font-family:'黑体','宋体'; 
+	font-size: 20px; font-weight: normal; 
+	letter-spacing: 12px; border-top: solid 1px #909090; zoom: 1 
+}
+table.layouttable td{
+	border: 1px solid #909090;
+}
+table.layouttable tr{
+	height: 25px;
+}
+table.layouttable span,table.layouttable textarea{
+	word-break:break-all;
+}
+table.detailtable caption{
+	text-align: left;
+	padding:5px;
+	border: 1px solid #909090;
+}
+table.detailtable td{
+	border: 1px solid #909090;
+	text-align: left;
+}
+table.detailtable table{
+	border-width: 0px;
+}
+table.detailtable table td{
+	line-height: 25px;
+	border: solid #a0a0a0;
+	border-width:1 0 0 0;
+}
+table.detailtable span,table.detailtable textarea{
+	word-break:break-all;
+}
+table.signature td.FieldName{
+	width: 12%;
+}
+/*表格样式定义*/
+table{
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0px;
+}
+table.noborder {
+	border: none;
+	border-style: none;
+}
+tr.datadark,tr.datalight{
+	height: 25px;
+}
+tr.datadark td {
+	background-color: #EFEFEF;
+}
+tr.datalight td {
+	color: #000000;
+}
+tr.header {
+	height: 25px;
+	font-weight: bold;
+	background-color:#f0f0f0;
+	text-align: left;
+}
+tr.header td{
+	padding: 0 2 0 2;
+}
+tr.spacing {
+	height: 4px
+}
+td.fieldname,td.fieldvalue{
+	height: 22px;
+	padding: 0 2 0 2;
+}
+td.fieldname {
+	text-decoration: none;
+	border-bottom: 1px solid #efefde;
+}
+td.fieldvalue {
+	background-color: #efefde;
+	border-bottom: 1px solid #fff;
+}
+.inputstyle,.inputstyle2{
+	background: #f7f7f7;
+	border: 1px solid #d6d3d6;
+	align: center;
+}
+.textarea{
+	width: 90%;font-size: 13px; height: 200px; padding: 1px,1px; color: #4e4e4e; background:#fff; overflow-y: auto;  margin-top:3px;margin-bottom:3px; border:1px solid #F4F2E8;
+}
+/*签字意见*/
+.requestlog {padding:2px 0; color: #000000; text-align: center; font-family:'黑体','宋体'; font-size: 14px; font-weight: normal; letter-spacing:  zoom: 1 }
+.tableApprovalOpinions {}
+.tableApprovalOpinions tr.bg th { background:#faf9f5; }
+.tableApprovalOpinions th,  .tableApprovalOpinions td { color: #4e4e4e; padding: 8px 5px 8px 15px; border-top: solid 1px #ebe7d1; border-bottom: solid 1px #ebe7d1;}
+
+@charset "utf-8";
+
+/* == 自定义的表格列表样式 == */
+.tableWrap { margin: 15px 20px 0 11px;background-color:#fff}
+bleWrap .cpt { height: 22px }
+.tableWrap .cpt strong { display: inline-block; font-weight:bold; padding: 3px 0 4px 14px; background: url(../../images/application/ico_tableWrap_cpt.gif) 0 4px no-repeat;}
+.tableWrap .cpt strong img { margin:-2px 0 0 5px; vertical-align: middle}
+.tableWrap .cpt .float_r { float:right}
+.tableWrap .moreoffice li{float: left;padding: 0px 5px 10px 0px;font-size: 12px;color: #4e4e4e;}
+.tableWrap .moreoffice li.scoress{margin-top: 4px;}
+.tableWrap .moreoffice li.clonecss{margin-top: -5px;}
+.tableWrap .moreoffice li.tecss{padding-right: 60px;}
+.tableWrap .moreoffice .inputcss{color: #4e4e4e;background: #fff;font-size: 12px;vertical-align: middle;height:20px; border: solid 1px #DBD5B2;}
+/*--
+	.tab: 		Tab按扭的容器引用的类
+	.tab li: 	Tab按扭
+--*/
+.tableWrap .cpt .tab {float: left; margin-right: 10px;}
+.tableWrap .cpt .tab li { float:left; line-height: 18px;}
+.tableWrap .cpt .tab li img { vertical-align: middle}
+.tableWrap .cpt .tab li.div {padding: 3px 3px 0;}
+.tableWrap .cpt .tab li a { display: inline-block; padding: 3px 5px 2px;}
+.tableWrap .cpt .tab li a:hover { text-decoration: none}
+.tableWrap .cpt .tab li a:hover span { color: #b7b4b0}
+.tableWrap .cpt .tab li a strong { display: inline; float:none; background: none; padding: 0; cursor: pointer}
+.tableWrap .cpt .tab li a span { display: inline-block; margin: 0 3px; padding-right:0; color: #333; font-size: 12px; background: url(../../images/application/ico_tab_expand.gif) right -100px no-repeat; cursor: pointer}
+.tableWrap .cpt .tab li.now a { background:#b7b4b0; color: #fff}
+.tableWrap .cpt .tab li.now a:link span, .tableWrap .cpt .tab li.now a:visited span, .tableWrap .cpt .tab li.now a:active span, .tableWrap .cpt .tab li.now a:hover span {color:#ffd800; background-position: right 50%; padding-right:10px;text-decoration: none}
+
+/* “发起”Button */
+.tableWrap .cpt a.btnStartSign { display: inline-block; height: 20px; padding-right: 20px; background: url(../../images/base/button.gif) right  no-repeat;}
+.tableWrap .cpt a.btnStartSign span { display: inline-block; height: 20px; padding-left: 20px; line-height: 20px; color: #000; font-weight: bold; background: url(../../images/base/button.gif) left  no-repeat; cursor: pointer}
+.tableWrap .cpt a.btnStartSign:hover { text-decoration: none}
+
+/* --表格列表及相应Tab功能样式-- */
+.tableWrap dl {clear:both; float:none; border-top: solid 2px #b7b4b0;}
+.tableWrap dl dd {}
+/*-- 
+	dl.tabC: Tab内容的容器类.
+	dd.cont: Tab内容
+--*/
+.tableWrap dl.tabC {}
+.tableWrap dl.tabC dd.cont { display: none}
+
+.tableWrap .tb_cpt { width: 25px; text-align: center; padding-top: 13px; font-size: 12px; font-weight:bold; background: url(../images/bg_tb_left_cpt.gif) 0 0 no-repeat;}
+.tableWrap .tb_cpt span { display: inline-block; width: 25px; padding-bottom: 13px; background: url(../images/bg_tb_left_cpt.gif) 0 bottom no-repeat;}
+
+.tableWrap tr.bg th, .tableWrap tr.bg td{ background:#f6f4ec;}
+.tableWrap th, .tableWrap td { padding: 8px 0px; *padding: 5px 0px 3px;}
+/* “更多”Button */
+.tableWrap .btnMore { margin-bottom: -15px; text-align: right}
+.tableWrap a.more { color: #b7b4b0; line-height: 30px;}
+
+/* 表格中超链接样式 */
+.tableWrap a:hover {color: #b7b4b0; text-decoration: underline}
+.tableWrap td a { *vertical-align:baseline; *zoom: 1}
+
+/* --分页按钮及功能-- */
+.page { text-align: center; margin-top: 18px; color: #999;}
+.page .pagelink {display: inline-block; width: 500px; float: none; clear: both;height: 40px;vertical-align:middle;text-align: center; }
+.page .pagelink span { float: left;}
+.page .pagelink a { float:left; display: inline-block; margin: 0 3px; height: 19px; line-height: 19px; padding: 0 7px; border: solid 1px #e0e0e0; color: #999; font-family: Verdana, Arial; overflow:hidden;text-align: center;display: block;}
+.page .pagelink a:link, .page a:visited, .page a:active {color: #999;}
+.page .pagelink a.now { color: #c83e31;}
+.page .pagelink a:hover { text-decoration: none; color: #c83e31;}
+.page .pagelink a.prev { background: url(../../images/application/ico_page_arrow.gif) center 4px no-repeat;}
+.page .pagelink a.next {padding-right: 15px; background: url(../../images/application/ico_page_arrow.gif) 45px -15px no-repeat;}
+.page .pageFunction { display: inline; position:relative; top: -7px; float: none; clear: both;}
+.page .pageFunction .jumpNum { width: 13px; margin: 0 3px; border: 1px solid #e0e0e0; padding:2px; vertical-align: middle}
+.page .pageFunction input.btnJumpTo { border: none; height: 19px; width: 33px; vertical-align:middle; color: #fff; text-align: center; background:#999; line-height: 19px; cursor: pointer}
+
+
+/*文档查看页面*/
+.docSubject{
+	font-family: Microsoft YaHei, Segoe UI, Verdana, Tahoma;
+	font-size: 26px;
+	margin: 20px 0 5px 10px;
+	text-align: left;
+}
+.docBaseProps{
+	text-align: left;
+	margin: 0 0 0 10px;
+}
+.docBaseProps span{
+	font-family:;
+	color: #999;
+}
+.docContainerLeft{
+	margin: 10px 220px 20px 10px;
+	padding: 0 15px 0 0;
+	float: left;
+	border-right: 1px solid #ddd;
+}
+.docContainerRight{
+
+	float: right;
+	width: 200px;
+	margin: 10px 0 0 -205px;
+}
+.docPropsTitle{
+	padding: 2px 0 2px 5px;
+	background-color: #f2f2f2;
+	border-top: 1px solid #e2e2e2;
+	margin-bottom: 1px;
+	color: #333;
+	font-weight: bold;
+}
+.docPropsContent{
+	width: 200px;
+	overflow: auto;	
+}
+.docContainerLeft .docAbstract{
+	color: #666;
+	background-color: #fff5da;
+	border: 1px solid #efe4b4;
+	padding: 3px 0 3px 5px;
+	margin: 0 0 20px 0;
+}
+.docContent{
+	margin-bottom: 20px;
+}
+.docContent p{
+	font-family: Segoe UI, Verdana, Tahoma;
+}
+.docAttach{
+
+}
+.docAttachFile{
+	padding: 4px;
+	border-bottom: 1px solid #eee;
+}
+#docattribute{
+	margin-top: 10px;
+}
+table.remarkItem{
+	background-color: #EDEFF4;padding:6px;margin: 0 0 2px 0;
+}
+table.remarkItem td{
+	vertical-align: top;
+	padding: 5px 12px;
+	line-height: 18px;
+	color: #666;
+}
+td.remarkAvator{
+	padding: 0!important;
+	width: 40px;
+	background-color: #fff;
+}
+td.remarkAvator img{
+	width: 32px;
+	height: 32px;
+}
+td.remarkArrow{
+	width: 8px;
+	padding: 0 !important;
+	background-color: #fff;
+	background-image: url(/images/triangle.png);
+	background-repeat: no-repeat;
+	
+}
+.fontArial9{
+	font-family:arial;font-size:10px !important;color:#999;
+}
+table.remarkItem td span a{
+	color: #3B5998 !important;
+}
+
+.x-window .x-btn-text{	/*ext打开的window的按钮样式*/
+	color: #333;	
+}
+
+/*新首页全局样式*/
+#rightDiv .levelSplitFlag{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 8px;
+	height: 60px;
+	overflow: hidden;
+	z-index: 100;
+	border: 0px solid red;	
+}
+#rightDiv .verticalSplitFlag{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 40px;
+	height: 14px;
+	overflow: hidden;
+	z-index: 100;
+	border: 0px solid red;	
+}
+#rightDiv .levelSplit{/*水平分割元素对应的样式*/
+	position: absolute;	/*定位:绝对定位*/
+	top: 0px;			/*距离顶部的距离*/
+	left: 0px;			/*距离左边的距离*/
+	width: 6px;		/*宽度*/
+	height: 162px;		/*高度*/
+	cursor: pointer;	/*鼠标移上去时鼠标形状(手形)*/
+	z-index: 101;
+	display: none;
+}
+#rightDiv .levelSplit_Contraction{/*点击收缩菜单时的样式(鼠标移上去时)*/
+	background: url("/images/main/leftMenu_Contraction.png") no-repeat;	/*背景图片 不平铺*/
+	background-position: 0px 0px !important;
+}
+
+#rightDiv .levelSplit_Expand{/*点击展开菜单时的样式(鼠标移上去时)*/
+	background: url("/images/main/leftMenu_Expand.png") no-repeat;	/*背景图片 不平铺*/
+	background-position: 0px 0px !important;
+}
+#rightDiv .verticalSplit{
+	position: absolute;	/*定位:绝对定位*/
+	top:1px;			/*距离顶部的距离*/
+	left: 0px;			/*距离左边的距离*/
+	width: 162px;		/*宽度*/
+	height: 14px;		/*高度*/
+	cursor: pointer;	/*鼠标移上去时鼠标形状(手形)*/
+	overflow: hidden;
+	z-index: 101;
+	display: none;
+}
+#rightDiv .verticalSplit_Contraction{/*点击收缩头部时的样式(鼠标移上去时)*/
+	background: url("/images/main/top_Contraction.png") no-repeat;	/*背景图片 不平铺*/
+	background-position: 0px 0px !important;
+}
+#rightDiv .verticalSplit_Expand{/*点击展开头部时的样式(鼠标移上去时)*/
+	background: url("/images/main/top_Expand.png") no-repeat;		/*背景图片 不平铺*/
+	background-position: 0px 0px !important;
+}
+
+#portalMenu li a.currPortalTab{
+	color: red !important;	
+}

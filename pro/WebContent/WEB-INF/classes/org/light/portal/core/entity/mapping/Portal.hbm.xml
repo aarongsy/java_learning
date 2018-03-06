@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!--
+  - Mapping file for the Hibernate implementation of the Clinic interface.
+ -->
+<hibernate-mapping auto-import="true" default-lazy="false">  
+ <class name="org.light.portal.core.entity.Portal" table="light_portal" >
+   <id name="userId" column="USER_ID">
+	   <generator class="assigned"/>
+   </id>      
+   <property name="title"  type="string" 	column="title"/> 
+   <property name="theme"  type="string" 	column="theme"/>
+   <property name="locale"  type="string" 	column="locale"/>
+   <property name="bgImage"  type="string" 	column="bgImage"/>
+   <property name="headerImage"  type="string" 	column="headerImage"/>
+   <property name="showLocaleBar"  type="integer"    	column="showLocaleBar"    />     
+   <property name="headerHeight"  type="integer"    	column="headerHeight"/>   
+   <property name="fontSize"  type="integer"    	column="fontSize"/>   
+   <property name="count"  type="integer"    	column="count"/>    
+   <property name="createDate"  type="date"    	column="createDate"    />  
+ </class>
+ 
+ <class name="org.light.portal.core.entity.PortalRole" table="light_role" >
+  <id name="roleId" column="roleId">
+	   <generator class="assigned"/>
+   </id>     
+   <property name="allowLookAndFeel"  type="integer"    	column="allowLookAndFeel"    />
+   <property name="allowLayout"  type="integer"    	column="allowLayout"    />
+   <property name="allowAddTab"  type="integer"    	column="allowAddTab"    />
+   <property name="allowAddContent"  type="integer"    	column="allowAddContent"    />
+   <property name="allowSignIn"  type="integer"    	column="allowSignIn"    />
+   <property name="allowTurnOff"  type="integer"    	column="allowTurnOff"    />
+   <property name="title"  type="string" 	column="title"/> 
+   <property name="theme"  type="string" 	column="theme"/>
+ </class>
+ 
+ <class name="org.light.portal.core.entity.PortalUserRole" table="light_user_role" >
+  <id name="id" column="ID">
+	   <generator class="increment"/>
+   </id>     
+   <property name="userId"  type="string" 	column="userId"/>
+   <property name="roleId"  type="string" 	column="roleId"/>
+ </class> 
+ 
+ <class name="org.light.portal.core.entity.PortalTab" table="light_portal_tab"  >
+   <id name="id" column="ID">
+	   <generator class="increment"/>
+   </id>   
+   <property name="label"  type="string"    	column="label"    />
+   <property name="url"  type="string"    	column="url"    />
+   <property name="closeable"  type="integer"    	column="closeable"    />
+   <property name="editable"  type="integer"    	column="editable"    />
+   <property name="moveable"  type="integer"    	column="moveable"    />
+   <property name="allowAddContent"  type="integer"    	column="allowAddContent"    />
+   <property name="color" type="string" column="color"   />    
+   <property name="defaulted" type="integer" column="defaulted"   /> 
+   <property name="between" type="integer" column="colBetween"   /> 
+   <property name="widths" type="string" column="widths"   /> 
+   <property name="portletWindowType" type="string" column="portletWindowType"   /> 
+   <property name="userId"  type="string"    	column="userId"    />
+   <property name="pid"  type="integer"    	column="pid"    />
+   <property name="isdelete"  type="integer"    	column="isdelete"    />
+   <property name="absolute"  type="integer"    	column="absolute"    />
+   <property name="isshow"  type="integer"    	column="isshow"    />
+   <property name="dsporder"  type="integer"    	column="dsporder"    />
+   <property name="manageIds"  type="string"    	column="manageIds"    /> 
+   <property name="scrolls"  type="integer"    	column="scrolls"    />
+   <property name="col1"  type="string"    	column="col1"    />
+ </class>
+ 
+ <class name="org.light.portal.core.entity.PortletObject" table="light_portlet"  >
+   <id name="id" column="portletId">
+	   <generator class="increment"/>
+   </id>   
+   <property name="column"  type="integer" 	column="columnNumber"/>
+   <property name="row"  type="integer" 	column="rowNumber"/>
+   <property name="label"  type="string" 	column="label"/>
+   <property name="icon"  type="string" 	column="icon"/>
+   <property name="url"     type="string"      column="url"/>
+   <property name="name"  type="string" 	column="name"/>
+   <property name="path"  type="string" 	column="path"/>
+   <property name="closeable"  type="integer" 	column="closeable"/>
+   <property name="refreshMode"  type="integer" 	column="refreshMode"/>
+   <property name="editMode"  type="integer" 	column="editMode"/>
+   <property name="helpMode"  type="integer" 	column="helpMode"/>
+   <property name="configMode"  type="integer" 	column="configMode"/>
+   <property name="autoRefreshed"  type="integer" 	column="autoRefreshed"/>
+   <property name="periodTime"  type="integer" 	column="periodTime"/>
+   <property name="showNumber"  type="integer" 	column="showNumber"/>
+   <property name="allowJS"  type="integer" 	column="allowJS"/>
+   <property name="pageRefreshed"  type="integer" 	column="pageRefreshed"/>
+   <property name="clientCached"  type="integer" 	column="clientCached"/>
+   <property name="parameter"  type="string" 	column="parameter"/>
+   <property name="windowStatus"  type="integer" 	column="portlet_status"/>
+   <property name="mode"  type="integer" 	column="portlet_mode"/>
+   <property name="tabId"  type="integer" 	column="tabId"/>   
+   <property name="barBgColor"  type="string" 	column="barBgColor"/>
+   <property name="barFontColor"  type="string" 	column="barFontColor"/>
+   <property name="contentBgColor"  type="string" 	column="contentBgColor"/>
+   <property name="colspan"  type="integer" 	column="colspan"/>
+   <property name="y"  type="integer" 	column="y"/>
+   <property name="height"  type="integer" 	column="height"/>
+   <property name="col1"  type="string"    	column="col1" />
+   <set
+         name="preferences"
+         lazy="false"
+         inverse="true"
+   		 cascade="all-delete-orphan"
+     >
+         <key>
+            <column name="portletId" />
+         </key>
+         <one-to-many 
+             class="org.light.portal.core.entity.PortletObjectPreferences"
+         />
+   </set>     
+ </class>
+ 
+ <class name="org.light.portal.core.entity.PortletObjectPreferences" table="light_portlet_preferences"  >
+   <id name="id" column="preferencesId">
+	   <generator class="increment"/>
+   </id>   
+   <property name="name"  type="string"    	column="name"    />
+   <property name="value"  type="string"    	column="value"    />
+   <property name="status"  type="integer" 	column="status"/>  
+   <property name="portletId"  type="integer" 	column="portletId"/>   
+ </class>
+ 
+ <class name="org.light.portal.core.entity.PortletObjectRef" table="light_portlet_ref"  >   
+   <id name="name" column="name">
+	   <generator class="assigned"/>
+   </id>   
+   <property name="label"  type="string" 	column="label"/>
+   <property name="icon"  type="string" 	column="icon"/>
+   <property name="url"     type="string"      column="url"/>
+   <property name="path"  type="string" 	column="path"/>
+   <property name="tag"  type="string" 	column="tag"/>
+   <property name="refreshMode"  type="integer" 	column="refreshMode"/>
+   <property name="editMode"  type="integer" 	column="editMode"/>
+   <property name="helpMode"  type="integer" 	column="helpMode"/>
+   <property name="configMode"  type="integer" 	column="configMode"/>
+   <property name="autoRefreshed"  type="integer" 	column="autoRefreshed"/>
+   <property name="clientCached"  type="integer" 	column="clientCached"/>
+   <property name="periodTime"  type="integer" 	column="periodTime"/>
+   <property name="showNumber"  type="integer" 	column="showNumber"/>
+   <property name="allowJS"  type="integer" 	column="allowJS"/>
+   <property name="pageRefreshed"  type="integer" 	column="pageRefreshed"/>
+   <property name="parameter"  type="string" 	column="parameter"/>
+   <property name="userId"  type="string"    	column="userId"    />      
+ </class> 
+</hibernate-mapping>

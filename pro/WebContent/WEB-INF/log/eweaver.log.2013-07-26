@@ -1,0 +1,3 @@
+ERROR:[2013-07-26 15:09:24,644] com.eweaver.base.file.FileUploadAction(http-9086-8) :文件大小超过限制,不能上传
+ ERROR:[2013-07-26 15:09:49,364] com.eweaver.base.file.FileUploadAction(http-9086-6) :文件大小超过限制,不能上传
+ 

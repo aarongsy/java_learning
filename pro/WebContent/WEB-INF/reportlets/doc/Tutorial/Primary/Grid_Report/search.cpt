@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.5</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT PRODUCT.PRODUCTID,ORDERSDETAIL.QUANTITY,PRICE,COST FROM PRODUCT , ORDERSDETAIL WHERE PRODUCT.PRODUCTID=ORDERSDETAIL.PRODUCTID]]></Query>
+</TableData>
+</TableDataMap>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.CustomParameterUI">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT PRODUCT.PRODUCTID,ORDERSDETAIL.QUANTITY,PRICE,COST FROM PRODUCT , ORDERSDETAIL WHERE PRODUCT.PRODUCTID=ORDERSDETAIL.PRODUCTID]]></Query>
+</TableData>
+</TableDataMap>
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<RowHeight defaultValue="19">
+<![CDATA[10,23,10,23,10,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,120,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="1" s="0"><O><![CDATA[商品ID:]]></O>
+</C>
+<C c="1" r="1"><O><![CDATA[APP001]]></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<FieldName>商品ID</FieldName><TextAttr /></Widget>
+</C>
+<C c="1" r="3" cs="2" s="0"><Widget class="com.fr.report.web.ui.impl.form.FormSubmitButton">
+<WidgetAttr/>
+<Text>查询</Text></Widget>
+</C>
+<C c="0" r="4"></C>
+</CellElementList>
+</ParameterUI>
+<Parameter>
+<Attributes name="商品ID" />
+<O><![CDATA[APP001]]></O>
+</Parameter>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[19,19,19,19,19,19,19,19,19,19,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,72,72,72,72,72,72,72,72,72,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="1" r="1" s="1"><O><![CDATA[产品编号]]></O>
+</C>
+<C c="2" r="1" s="1"><O><![CDATA[数量]]></O>
+</C>
+<C c="3" r="1" s="1"><O><![CDATA[单价]]></O>
+</C>
+<C c="4" r="1" s="1"><O><![CDATA[成本]]></O>
+</C>
+<C c="5" r="1" s="1"><O><![CDATA[总额]]></O>
+</C>
+<C c="6" r="1" s="1"><O><![CDATA[利润]]></O>
+</C>
+<C c="1" r="2" s="2"><O t="DSColumn"><Attributes dsName="ds1" columnName="PRODUCTID" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[PRODUCTID]]></CNAME><Compare op="0">
+<Parameter>
+<Attributes name="商品ID" />
+<O><![CDATA[APP001]]></O>
+</Parameter>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="2" r="2" s="2"><O t="DSColumn"><Attributes dsName="ds1" columnName="QUANTITY" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="3" r="2" s="2"><O t="DSColumn"><Attributes dsName="ds1" columnName="PRICE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="4" r="2" s="2"><O t="DSColumn"><Attributes dsName="ds1" columnName="COST" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="5" r="2" s="2"><O t="Formula" class="Formula"><Attributes><![CDATA[=C3*D3]]></Attributes></O>
+</C>
+<C c="6" r="2" s="2"><O t="Formula" class="Formula"><Attributes><![CDATA[=F3-C3*E3]]></Attributes></O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-3342337">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

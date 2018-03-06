@@ -1,0 +1,5 @@
+ERROR:[2014-11-08 13:30:08,652] com.eweaver.workflow.form.dao.ForminfoDaoHB(http-0.0.0.0-80-32) :java.sql.SQLSyntaxErrorException: ORA-00955: 名称已由现有对象使用
+
+ ERROR:[2014-11-08 23:59:00,023] com.eweaver.base.job.DelAttachJob(quartzScheduler_Worker-1) :org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [select id,imagefileid from imagefiletemp where to_date(to_char(sysdate,'yyyy-MM-dd'),'yyyy-MM-dd')-to_date(createdate,'yyyy-MM-dd') >= ]; nested exception is java.sql.SQLSyntaxErrorException: ORA-00936: 缺失表达式
+
+ 

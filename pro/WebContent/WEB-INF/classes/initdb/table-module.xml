@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Schemaconf>
+	<Module name="module" key="40288036223513b901224de7ca3e0a07" fieldname="id" >
+	<property key=""></property>
+	</Module>
+	<ReferSchemas>
+		<ReferSchema ID="module" referfield="id" type="simple"/>
+		<ReferSchema ID="selectitemtype" referfield="moduleid" type="simple"/>
+		<ReferSchema ID="selectitem" referfield="typeid" type="simple">
+			<ReferSchema ID="selectitemtype" primaryfield ="id" referfield="moduleid"/>
+		</ReferSchema>
+		<ReferSchema ID="refobj" referfield="moduleid" type="simple"/>
+		<ReferSchema ID="forminfo" referfield="moduleid" type="simple"/>
+		<ReferSchema ID="category" referfield="moduleid" type="simple"/>
+		<ReferSchema ID="workflowinfo" referfield="moduleid" type="simple"/>
+		<ReferSchema ID="reportdef" referfield="moduleid" type="simple"/>
+		<ReferSchema ID="pagemenu" referfield="moduleid" type="simple"/>
+		<ReferSchema ID="categorylink" referfield="categoryid" type="complex">
+			<ReferSchema ID="category" referfield="moduleid" />
+		</ReferSchema>
+		<ReferSchema ID="notifydefine" referfield="categoryid" type="complex">
+			<ReferSchema ID="category" referfield="moduleid" />
+		</ReferSchema>
+		<ReferSchema ID="reportfield" referfield="reportid" type="complex">
+			<ReferSchema ID="reportdef" referfield="moduleid" />
+		</ReferSchema>
+		<ReferSchema ID="reportsearchfield" referfield="reportid" type="complex">
+			<ReferSchema ID="reportdef" referfield="moduleid" />
+		</ReferSchema>
+		<ReferSchema ID="nodeinfo" referfield="workflowid" type="complex">
+			<ReferSchema ID="workflowinfo" referfield="moduleid" />
+		</ReferSchema>
+		<ReferSchema ID="permissionrule" referfield="objid" type="complex">
+			<ReferSchema ID="nodeinfo" referfield="workflowid">
+				<ReferSchema ID="workflowinfo" referfield="moduleid" />
+			</ReferSchema>
+			<ReferSchema ID="reportdef" referfield="moduleid"/>
+			<ReferSchema ID="category" referfield="moduleid"/>
+		</ReferSchema>
+		<ReferSchema ID="permissiondetail" referfield="objid" type="complex">
+			<ReferSchema ID="nodeinfo" referfield="workflowid">
+				<ReferSchema ID="workflowinfo" referfield="moduleid" />
+			</ReferSchema>
+			<ReferSchema ID="reportdef" referfield="moduleid"/>
+			<ReferSchema ID="category" referfield="moduleid"/>
+		</ReferSchema>
+		<ReferSchema ID="export" referfield="workflowid" type="complex">
+			<ReferSchema ID="workflowinfo" referfield="moduleid" />
+		</ReferSchema>
+		<ReferSchema ID="formfield" referfield="formid" type="complex">
+			<ReferSchema ID="forminfo" referfield="moduleid" />
+		</ReferSchema>
+		<ReferSchema ID="formlink" referfield="oid" type="complex">
+			<ReferSchema ID="forminfo" referfield="moduleid" />
+		</ReferSchema>
+		<ReferSchema ID="formlayout" referfield="formid" type="complex">
+			<ReferSchema ID="forminfo" referfield="moduleid" />
+		</ReferSchema>
+		<ReferSchema ID="formlayoutfield" referfield="layoutid" type="complex">
+			<ReferSchema ID="formlayout" referfield="formid" >
+				<ReferSchema ID="forminfo" referfield="moduleid" />
+			</ReferSchema>
+		</ReferSchema>
+		<ReferSchema ID="pagemenu" referfield="moduleid" type="simple"/>
+		<ReferSchema ID="treeviewerinfo" referfield="moduleid" type="simple"/>
+		<!-- 报表列名多语言start -->
+		<ReferSchema ID="labelcustom" referfield="keyword" type="complex">
+			<!-- 报表列名 -->
+			<ReferSchema ID="reportfield" referfield="reportid">
+				<ReferSchema ID="reportdef" referfield="moduleid" />
+			</ReferSchema>
+			<!-- 字段列名 -->
+			<ReferSchema ID="formfield" referfield="formid">
+				<ReferSchema ID="forminfo" referfield="moduleid" />
+			</ReferSchema>
+			<!-- 流程名称 -->
+			<ReferSchema ID="workflowinfo" referfield="moduleid" />
+			<!-- 流程节点 -->
+			<ReferSchema ID="nodeinfo" referfield="workflowid">
+				<ReferSchema ID="workflowinfo"  referfield="moduleid" />
+			</ReferSchema>
+			<!-- select框 -->
+			<ReferSchema ID="selectitem" referfield="typeid">
+				<ReferSchema ID="selectitemtype" referfield="moduleid"></ReferSchema>
+			</ReferSchema>
+			<ReferSchema ID="module" referfield="id"></ReferSchema>
+		</ReferSchema>
+		<!-- 报表列名多语言end -->
+	</ReferSchemas>
+	<Schemas>
+	
+	</Schemas>
+</Schemaconf>

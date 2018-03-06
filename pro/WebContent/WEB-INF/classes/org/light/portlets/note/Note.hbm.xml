@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!--
+  - Mapping file for the Hibernate implementation of the Clinic interface.
+ -->
+<hibernate-mapping auto-import="true" default-lazy="false">
+ 
+ <class name="org.light.portlets.note.Note" table="light_note"  >
+   <id name="userId" column="user_id">
+	   <generator class="assigned"/>
+   </id> 
+   <property name="color"  type="string"    	column="color"    />
+   <property name="bgColor"  type="string"    	column="bgColor"    />
+   <property name="content"  type="text"    	column="content"    />  
+   <property name="width"  type="string"    	column="width"    />
+   <property name="height"  type="string"    	column="height"    />
+ </class>
+ 
+ <class name="org.light.portlets.note.NoteRef" table="light_note_ref"  >
+   <id name="id" column="ID">
+	   <generator class="increment"/>
+   </id>   
+   <property name="color"  type="string"    	column="color"    />
+   <property name="bgColor"  type="string"    	column="bgColor"    />
+   <property name="content"  type="text"    	column="content"    /> 
+   <property name="width"  type="string"    	column="width"    />
+   <property name="height"  type="string"    	column="height"    />  
+ </class>
+ 
+</hibernate-mapping>

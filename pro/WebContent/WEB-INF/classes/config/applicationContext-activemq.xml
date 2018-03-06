@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:amq="http://activemq.apache.org/schema/core"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd">
+
+	<broker useJmx="false" persistent="false" brokerName="eweaverBroker" xmlns="http://activemq.apache.org/schema/core">
+		<transportConnectors>
+			<transportConnector uri="tcp://localhost:0" />
+		</transportConnectors>
+	</broker>
+
+	<!--  ActiveMQ connectionFactory  -->
+	<amq:connectionFactory id="jmsConnectionFactory" brokerURL="vm://localhost" />
+
+	<!--  ActiveMQ destinations  -->
+	<amq:queue name="destination" physicalName="org.apache.activemq.spring.Test.spring.embedded" />
+
+	<bean id="connectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory">
+		<property name="targetConnectionFactory" ref="jmsConnectionFactory" />
+	</bean>
+
+	<!--  Spring JmsTemplate config -->
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory" ref="connectionFactory" />
+		<property name="messageConverter" ref="eweaverMessageConverter" />
+	</bean>
+
+	<!--  EweaverMessage converter  -->
+	<bean id="eweaverMessageConverter" class="com.eweaver.base.msg.EweaverMessageConverter" />
+
+	<!-- POJO which send Message uses  Spring JmsTemplate -->
+	<bean id="eweaverMessageProducer" class="com.eweaver.base.msg.EweaverMessageProducer">
+		<property name="template" ref="jmsTemplate" />
+		<property name="destination" ref="destination" />
+	</bean>
+	
+	<bean id="userMessageService" class="com.eweaver.base.msg.usermsg.UserMessageService">
+		<property name="eweaverMessageProducer" ref="eweaverMessageProducer" />
+	</bean>
+
+	<!--  Message Driven POJO (MDP) -->
+	<bean id="messageListener" class="org.springframework.jms.listener.adapter.MessageListenerAdapter">
+		<constructor-arg ref="eweaverMessageConsumer" />
+		<!--  may be other method -->
+		<property name="defaultListenerMethod" value="sendMessage" />
+		<!-- custom MessageConverter define -->
+		<property name="messageConverter" ref="eweaverMessageConverter" />
+	</bean>
+	<bean id="eweaverMessageConsumer" class="com.eweaver.base.msg.EweaverMessageConsumer">
+		<property name="imMessage" ref="imMessage" />
+		<property name="smsMessage" ref="smsMessage" />
+		<property name="emailMessage" ref="emailMessage" />
+		<property name="popupMessage" ref="popupMessage" />
+	</bean>
+
+	<!--  listener container，MDP无需实现接口 -->
+	<bean id="listenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+		<property name="connectionFactory" ref="jmsConnectionFactory" />
+		<property name="destination" ref="destination" />
+		<property name="messageListener" ref="messageListener" />
+	</bean>
+</beans>

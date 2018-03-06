@@ -1,0 +1,13 @@
+ERROR:[2014-11-29 08:23:51,672] com.eweaver.base.security.dao.PermissionruleDaoHB(http-0.0.0.0-80-1) :java.sql.SQLSyntaxErrorException: ORA-00904: "ID": 标识符无效
+
+ ERROR:[2014-11-29 08:31:19,635] com.eweaver.base.security.dao.PermissionruleDaoHB(http-0.0.0.0-80-2) :java.sql.SQLSyntaxErrorException: ORA-00904: "ID": 标识符无效
+
+ ERROR:[2014-11-29 11:33:08,482] com.eweaver.base.security.dao.PermissionruleDaoHB(http-0.0.0.0-80-11) :java.sql.SQLSyntaxErrorException: ORA-00904: "ID": 标识符无效
+
+ ERROR:[2014-11-29 11:38:02,149] com.eweaver.base.security.dao.PermissionruleDaoHB(http-0.0.0.0-80-25) :java.sql.SQLSyntaxErrorException: ORA-00904: "ID": 标识符无效
+
+ ERROR:[2014-11-29 11:38:30,695] com.eweaver.base.security.dao.PermissionruleDaoHB(http-0.0.0.0-80-13) :java.sql.SQLSyntaxErrorException: ORA-00904: "ID": 标识符无效
+
+ ERROR:[2014-11-29 23:59:00,128] com.eweaver.base.job.DelAttachJob(quartzScheduler_Worker-1) :org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [select id,imagefileid from imagefiletemp where to_date(to_char(sysdate,'yyyy-MM-dd'),'yyyy-MM-dd')-to_date(createdate,'yyyy-MM-dd') >= ]; nested exception is java.sql.SQLSyntaxErrorException: ORA-00936: 缺失表达式
+
+ 

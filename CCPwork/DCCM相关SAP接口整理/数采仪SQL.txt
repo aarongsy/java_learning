@@ -1,0 +1,25 @@
+ip:192.168.224.120
+数据库名称：HJ212Platform
+Sa密码：skyray123
+ 
+建议查询SQL如下：
+--按设备名称查询MN
+SELECT [MN]   
+                FROM [dbo].[Device]  
+                WHERE    EnterpriseName='长春化工有限公司'  
+                    AND          DeviceName='厂界1'
+ 
+--按MN查询最新数据的时间
+SELECT TOP 1 d.MeasureDateTime  
+        FROM   MeasureData d 
+        WHERE d.MeasureDateTime>='2018-01-18' AND d.MN='23040283212633' 
+        ORDER BY d.MeasureDateTime DESC;
+ 
+--按MN和时间查询实时数据
+SELECT sct.STName, md.MeasureDatetime, p.PollutantName, p.PollutantCode ,   
+        ROUND(md.RealtimeData, 3) AS RealtimeData, p.MetricUnit, md.Flag, md.ReceiveDatetime, 
+             ROUND (p.UpperLimit , 3 )  AS  UpperLimit,    ROUND ( p.LowerLimit , 3 )  AS  LowerLimit  
+        FROM MeasureData md  INNER JOIN Device device ON md.MN=device.MN  
+                   INNER JOIN SystemCodeTable sct ON sct.ST=md.ST 
+                  INNER JOIN Pollutant p ON p.PollutantCode=md.PollutantCode  
+        WHERE md.MN='23040283212633' AND md.MeasureDatetime='2018-01-18 12:34:56'

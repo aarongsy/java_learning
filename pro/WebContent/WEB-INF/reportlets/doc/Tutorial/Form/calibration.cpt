@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.2</Version>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings shrinkToFit="false" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<ReportWebAttr>
+<WebFormContent>
+<ToolBars>
+</ToolBars>
+</WebFormContent>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager><Location>
+<Embed position="1"/>
+</Location>
+<ToolBar><Widget class="com.fr.report.web.ui.impl.write.Submit">
+<WidgetAttr disabled="true"/>
+<Text>提交</Text><IconName>submit</IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.write.Verify">
+<WidgetAttr disabled="true"/>
+<Text>数据校验</Text><IconName>verify</IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager></ToolBars>
+</WebWriteContent>
+<Background name="NullBackground" />
+</ReportWebAttr>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<ReportWriteAttr>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL1">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="ORDERS"/>
+<ColumnConfig name="ORDERID" isKey="true" skipUnmodified="false" >
+<ColumnRow column="1" row="2"/>
+</ColumnConfig>
+<ColumnConfig name="CUSTOMERID" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="SIGNDATE" isKey="false" skipUnmodified="false" >
+<ColumnRow column="5" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="SHIPDATE" isKey="false" skipUnmodified="false" >
+<ColumnRow column="3" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="PAYMETHOD" isKey="false" skipUnmodified="false" >
+<ColumnRow column="5" row="2"/>
+</ColumnConfig>
+<ColumnConfig name="SHIPMETHOD" isKey="false" skipUnmodified="false" >
+<ColumnRow column="5" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="SHIPPORT" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="AMOUNT" isKey="false" skipUnmodified="false" >
+<ColumnRow column="3" row="2"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL2">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="PRODUCT"/>
+<ColumnConfig name="PRODUCTID" isKey="true" skipUnmodified="false" >
+<ColumnRow column="0" row="7"/>
+</ColumnConfig>
+<ColumnConfig name="PRODUCTNAME" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="7"/>
+</ColumnConfig>
+<ColumnConfig name="PRODUCTTYPE" isKey="false" skipUnmodified="false" >
+<ColumnRow column="3" row="7"/>
+</ColumnConfig>
+<ColumnConfig name="COST" isKey="false" skipUnmodified="false" >
+<ColumnRow column="5" row="7"/>
+</ColumnConfig>
+<ColumnConfig name="QUANTITY" isKey="false" skipUnmodified="false" >
+<ColumnRow column="4" row="7"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL3">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="PRODUCT"/>
+<ColumnConfig name="PRODUCTID" isKey="true" skipUnmodified="false" >
+<ColumnRow column="0" row="8"/>
+</ColumnConfig>
+<ColumnConfig name="PRODUCTNAME" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="8"/>
+</ColumnConfig>
+<ColumnConfig name="PRODUCTTYPE" isKey="false" skipUnmodified="false" >
+<ColumnRow column="3" row="8"/>
+</ColumnConfig>
+<ColumnConfig name="COST" isKey="false" skipUnmodified="false" >
+<ColumnRow column="5" row="8"/>
+</ColumnConfig>
+<ColumnConfig name="QUANTITY" isKey="false" skipUnmodified="false" >
+<ColumnRow column="4" row="8"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL4">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="PRODUCT"/>
+<ColumnConfig name="PRODUCTID" isKey="true" skipUnmodified="false" >
+<ColumnRow column="0" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="PRODUCTNAME" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="PRODUCTTYPE" isKey="false" skipUnmodified="false" >
+<ColumnRow column="3" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="COST" isKey="false" skipUnmodified="false" >
+<ColumnRow column="5" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="QUANTITY" isKey="false" skipUnmodified="false" >
+<ColumnRow column="4" row="9"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL5">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="PRODUCT"/>
+<ColumnConfig name="PRODUCTID" isKey="true" skipUnmodified="false" >
+<ColumnRow column="0" row="10"/>
+</ColumnConfig>
+<ColumnConfig name="PRODUCTNAME" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="10"/>
+</ColumnConfig>
+<ColumnConfig name="PRODUCTTYPE" isKey="false" skipUnmodified="false" >
+<ColumnRow column="3" row="10"/>
+</ColumnConfig>
+<ColumnConfig name="COST" isKey="false" skipUnmodified="false" >
+<ColumnRow column="5" row="10"/>
+</ColumnConfig>
+<ColumnConfig name="QUANTITY" isKey="false" skipUnmodified="false" >
+<ColumnRow column="4" row="10"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<VV>
+<O t="Formula" class="Formula"><Attributes><![CDATA[=D3==SUM(F8:F11)]]></Attributes></O>
+<Message>
+<![CDATA[总金额计算不正确！]]></Message>
+</VV>
+</ReportWriteAttr>
+<RowHeight defaultValue="19">
+<![CDATA[]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[70,66,77,75,74,73]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="0"></C>
+<C c="1" r="0" cs="4" s="1"><O><![CDATA[客户订单]]></O>
+</C>
+<C c="5" r="0" s="0"></C>
+<C c="0" r="1" s="0"></C>
+<C c="1" r="1" s="0"></C>
+<C c="2" r="1" s="0"></C>
+<C c="3" r="1" s="0"></C>
+<C c="4" r="1" s="0"></C>
+<C c="5" r="1" s="0"></C>
+<C c="0" r="2" s="2"><O><![CDATA[订单编号：]]></O>
+<Expand leftParentDefault="false" left="B3" />
+</C>
+<C c="1" r="2" s="3"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><NumberAttr/></Widget>
+</C>
+<C c="2" r="2" s="4"><O><![CDATA[总金额：]]></O>
+</C>
+<C c="3" r="2" s="3"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><NumberAttr/></Widget>
+</C>
+<C c="4" r="2" s="4"><O><![CDATA[付款方式：]]></O>
+</C>
+<C c="5" r="2" s="3"><Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr disabled="false"/>
+<TextAttr /><MVList class="com.fr.data.TreeRendererMVList">
+<DataList class="com.fr.data.impl.CustomDataList">
+<CustomDataListAttr>
+<DataList key="visa"/>
+<DataList key="credit"/>
+</CustomDataListAttr>
+</DataList>
+</MVList>
+</Widget>
+</C>
+<C c="0" r="3" s="4"><O><![CDATA[客户编号：]]></O>
+</C>
+<C c="1" r="3" s="3"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><NumberAttr/></Widget>
+</C>
+<C c="2" r="3" s="4"></C>
+<C c="3" r="3" s="0"></C>
+<C c="4" r="3" s="4"><O><![CDATA[签订日期：]]></O>
+</C>
+<C c="5" r="3" s="5"><Widget class="com.fr.report.web.ui.DateEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><DateAttr start="" end=""/></Widget>
+</C>
+<C c="0" r="4" s="4"><O><![CDATA[发货港口：]]></O>
+</C>
+<C c="1" r="4" s="3"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</C>
+<C c="2" r="4" s="4"><O><![CDATA[发货日期：]]></O>
+</C>
+<C c="3" r="4" s="5"><Widget class="com.fr.report.web.ui.DateEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><DateAttr start="" end=""/></Widget>
+</C>
+<C c="4" r="4" s="4"><O><![CDATA[运输方式：]]></O>
+</C>
+<C c="5" r="4" s="3"><Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr disabled="false"/>
+<TextAttr /><MVList class="com.fr.data.TreeRendererMVList">
+<DataList class="com.fr.data.impl.CustomDataList">
+<CustomDataListAttr>
+<DataList key="DHL"/>
+<DataList key="Emery"/>
+<DataList key="UPS"/>
+<DataList key="US  Mail"/>
+</CustomDataListAttr>
+</DataList>
+</MVList>
+</Widget>
+</C>
+<C c="0" r="5" s="6"></C>
+<C c="1" r="5" s="6"></C>
+<C c="2" r="5" s="6"></C>
+<C c="3" r="5" s="6"></C>
+<C c="4" r="5" s="6"></C>
+<C c="5" r="5" s="6"></C>
+<C c="0" r="6" s="7"><O><![CDATA[产品编号]]></O>
+</C>
+<C c="1" r="6" s="7"><O><![CDATA[产品名称]]></O>
+</C>
+<C c="2" r="6" s="7"><O><![CDATA[产品类型]]></O>
+</C>
+<C c="3" r="6" s="7"><O><![CDATA[数量 (吨)]]></O>
+</C>
+<C c="4" r="6" s="7"><O><![CDATA[单价(元)]]></O>
+</C>
+<C c="5" r="6" s="7"><O><![CDATA[总价(元)]]></O>
+</C>
+<C c="6" r="6"></C>
+<C c="0" r="7" s="8"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><NumberAttr/></Widget>
+</C>
+<C c="1" r="7" s="8"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</C>
+<C c="2" r="7" s="8"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</C>
+<C c="3" r="7" s="8"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><NumberAttr/></Widget>
+</C>
+<C c="4" r="7" s="8"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><NumberAttr/></Widget>
+</C>
+<C c="5" r="7" s="8"><O t="Formula" class="Formula"><Attributes><![CDATA[=D8*E8]]></Attributes></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</C>
+<C c="0" r="8" s="8"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><NumberAttr/></Widget>
+</C>
+<C c="1" r="8" s="8"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</C>
+<C c="2" r="8" s="8"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</C>
+<C c="3" r="8" s="8"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><NumberAttr/></Widget>
+</C>
+<C c="4" r="8" s="8"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><NumberAttr/></Widget>
+</C>
+<C c="5" r="8" s="8"><O t="Formula" class="Formula"><Attributes><![CDATA[=D9*E9]]></Attributes></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</C>
+<C c="0" r="9" s="8"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><NumberAttr/></Widget>
+</C>
+<C c="1" r="9" s="8"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</C>
+<C c="2" r="9" s="8"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</C>
+<C c="3" r="9" s="8"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><NumberAttr/></Widget>
+</C>
+<C c="4" r="9" s="8"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><NumberAttr/></Widget>
+</C>
+<C c="5" r="9" s="8"><O t="Formula" class="Formula"><Attributes><![CDATA[=D10*E10]]></Attributes></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</C>
+<C c="0" r="10" s="8"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><NumberAttr/></Widget>
+</C>
+<C c="1" r="10" s="8"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</C>
+<C c="2" r="10" s="8"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</C>
+<C c="3" r="10" s="8"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><NumberAttr/></Widget>
+</C>
+<C c="4" r="10" s="8"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><NumberAttr/></Widget>
+</C>
+<C c="5" r="10" s="8"><O t="Formula" class="Formula"><Attributes><![CDATA[=D11*E11]]></Attributes></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</C>
+<C c="3" r="19"><O><![CDATA[]]></O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="16" foreground="-16617053" />
+<Background name="ColorBackground"
+ color="-1">
+</Background>
+<Border></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12" />
+<Background name="ColorBackground"
+ color="-1">
+</Background>
+<Border></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" color="-6697729"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.SimpleDateFormat"><![CDATA[yyyy-MM-dd]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" color="-6697729"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom color="-1"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12" />
+<Background name="ColorBackground"
+ color="-3342337">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

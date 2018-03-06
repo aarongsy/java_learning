@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.5</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT PRODUCTID,PRODUCTTYPE,PRODUCTNAME FROM PRODUCT]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT month(signdate) as MONTH,ORDERS.ORDERID,QUANTITY,PRODUCTID FROM ORDERSDETAIL,ORDERS WHERE ORDERS.ORDERID=ORDERSDETAIL.ORDERID]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[19,18,19,28,19,19,19,19,19,19,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,66,79,46,50,45,51,72,72,72,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="1" r="1" cs="2" rs="2" s="0"><O t="BiasTextPainter"><IsBackSlash value="false"/>
+<![CDATA[月份  |销售量  |产品]]>
+</O>
+</C>
+<C c="3" r="1" cs="2" s="0"><O><![CDATA[合计]]></O>
+</C>
+<C c="5" r="1" cs="2" s="0"><O t="DSColumn"><Attributes dsName="ds2" columnName="MONTH" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<HighlightList><Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<HighlightAction class="com.fr.report.highlight.ValueHighlightAction">
+<O t="Formula" class="Formula"><Attributes><![CDATA[=CONCATENATE($$$,"月")]]></Attributes></O>
+</HighlightAction>
+</Highlight>
+</HighlightList><Expand dir="1" />
+</C>
+<C c="3" r="2" s="0"><O><![CDATA[销售量]]></O>
+</C>
+<C c="4" r="2" s="0"><O><![CDATA[排名]]></O>
+</C>
+<C c="5" r="2" s="0"><O><![CDATA[销售量]]></O>
+</C>
+<C c="6" r="2" s="0"><O><![CDATA[排名]]></O>
+</C>
+<C c="1" r="3" s="0"><O t="DSColumn"><Attributes dsName="ds1" columnName="PRODUCTTYPE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="2" r="3" s="0"><O t="DSColumn"><Attributes dsName="ds1" columnName="PRODUCTNAME" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="3" r="3" s="1"><O t="DSColumn"><Attributes dsName="ds2" columnName="QUANTITY" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[PRODUCTID]]></CNAME><Compare op="0">
+<AnDSColumn dsName="ds1" columnName="PRODUCTID" /></Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+</C>
+<C c="4" r="3" s="2"><O t="Formula" class="Formula"><Attributes><![CDATA[=count(D4[!0]{B4==$B4&&D4>$D4})+1]]></Attributes></O>
+</C>
+<C c="5" r="3" s="1"><O t="DSColumn"><Attributes dsName="ds2" columnName="QUANTITY" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[PRODUCTID]]></CNAME><Compare op="0">
+<AnDSColumn dsName="ds1" columnName="PRODUCTID" /></Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+</C>
+<C c="6" r="3" s="2"><O t="Formula" class="Formula"><Attributes><![CDATA[=count(F4[!0]{B4==$B4&&F4>$F4&&F2==$F2})+1]]></Attributes></O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-3342337">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-52">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

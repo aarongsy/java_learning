@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<FaceManager>
+<Attributes dayOfMonth="7"
+ homeTabTitle="FineReport Demo" />
+<FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.FolderDef">
+<Attributes name="报表展示" /><FolderAttributes isShow="true" /></NodeDef>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="销售人员信息列表" /><ReportletInfo reporletPath="/demo/basic/employeelist.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="资源利用率交叉分布表" /><ReportletInfo reporletPath="/demo/basic/systemresources.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="多层次交叉报表" /><ReportletInfo reporletPath="/demo/basic/assess.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="风险预警分析" /><ReportletInfo reporletPath="/demo/basic/finance3.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="设备明细表" /><ReportletInfo reporletPath="/demo/basic/equipmentdetails.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="多源分片" /><ReportletInfo reporletPath="/demo/complex/complexvertical.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.FolderDef">
+<Attributes name="参数查询" /><FolderAttributes isShow="true" /></NodeDef>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="产品信息的TOPN统计" /><ReportletInfo reporletPath="/demo/parameter/topn.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="日期自动补全" /><ReportletInfo reporletPath="/demo/parameter/filiale.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="时间段查询" /><ReportletInfo reporletPath="/demo/parameter/season.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="参数联动" /><ReportletInfo reporletPath="/demo/parameter/connect.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="复杂参数查询" /><ReportletInfo reporletPath="/demo/parameter/Orders.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="动态列汇总表" /><ReportletInfo reporletPath="/demo/parameter/equipment.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.FolderDef">
+<Attributes name="超级链接" /><FolderAttributes isShow="true" /></NodeDef>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="层次钻取" /><ReportletInfo reporletPath="/demo/complex/ordersCollection.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="BS动态网页排序" /><ReportletInfo reporletPath="/demo/complex/employeeLink.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.FolderDef">
+<Attributes name="分页" /><FolderAttributes isShow="true" /></NodeDef>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="动态重复标题行" /><ReportletInfo reporletPath="/demo/basic/post.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="套打" /><ReportletInfo reporletPath="/demo/complex/slip.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="卡片式分栏" /><ReportletInfo reporletPath="/demo/complex/equipment.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.FolderDef">
+<Attributes name="层次坐标" /><FolderAttributes isShow="true" /></NodeDef>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="占比分析" /><ReportletInfo reporletPath="/demo/complex/total.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="同期比分析" /><ReportletInfo reporletPath="/demo/complex/compair.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="告警排名" /><ReportletInfo reporletPath="/demo/complex/orderby.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="跨层累计" /><ReportletInfo reporletPath="/demo/complex/cumulation.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+</FaceNode>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.FolderDef">
+<Attributes name="填报" /><FolderAttributes isShow="true" /></NodeDef>
+<FaceNode>
+<NodeDef class="com.fr.web.face.WriteReportletDef">
+<Attributes name="自由填报" /><ReportletInfo reporletPath="/demo/form/stuff.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.WriteReportletDef">
+<Attributes name="主从表填报(多源/自动计算/数据校验)" /><ReportletInfo reporletPath="/demo/form/equipmentdetailsform.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.WriteReportletDef">
+<Attributes name="行式填报" /><ReportletInfo reporletPath="/demo/form/row.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="多sheet表单" /><ReportletInfo reporletPath="/demo/form/eopaf.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+<Parameter>
+<Attributes name="op" />
+<O><![CDATA[form]]></O>
+</Parameter>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.FolderDef">
+<Attributes name="图表" /><FolderAttributes isShow="true" /></NodeDef>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="柱状图" /><ReportletInfo reporletPath="/demo/chart/histogram.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="饼状图" /><ReportletInfo reporletPath="/demo/chart/areaChart.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="仪表盘" /><ReportletInfo reporletPath="/demo/chart/panel.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="面积图" /><ReportletInfo reporletPath="/demo/chart/area.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="全距图" /><ReportletInfo reporletPath="/demo/chart/quanju.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="股价图" /><ReportletInfo reporletPath="/demo/chart/stock.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="动态显示" /><ReportletInfo reporletPath="/demo/chart/car3.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+<FaceNode>
+<NodeDef class="com.fr.web.face.ViewReportletDef">
+<Attributes name="图表热点链接" /><ReportletInfo reporletPath="/demo/chart/hy1.cpt" isConvertToCpt="true" isConvertToExcel="false" isConvertToPdf="false" isConvertToWord="false" mailToAdd="" saveTo="">
+<Parameters>
+</Parameters>
+</ReportletInfo>
+</NodeDef>
+</FaceNode>
+</FaceNode>
+</FaceNode>
+</FaceManager>

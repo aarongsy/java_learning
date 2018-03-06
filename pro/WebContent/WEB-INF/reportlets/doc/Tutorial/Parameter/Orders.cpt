@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.5</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT orderid,customerid,title,orders.empid,signdate,paymethod,shipmethod,shipport,amount FROM ORDERS,employee where orders.empid=employee.empid]]></Query>
+</TableData>
+</TableDataMap>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.CustomParameterUI">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<RowHeight defaultValue="19">
+<![CDATA[19,19,19,19,19,19,19,19,19,19,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,72,72,72,72,72,72,72,72,72,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="1" s="0"><O><![CDATA[订单编号：]]></O>
+</C>
+<C c="1" r="1"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<FieldName>ORDERID</FieldName><TextAttr /></Widget>
+</C>
+<C c="2" r="1" s="0"><O><![CDATA[客户编号：]]></O>
+</C>
+<C c="3" r="1"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr/>
+<FieldName>CUSTOMERID</FieldName><MVList class="com.fr.data.impl.DatabaseDictionary">
+<DBDictAttr tableName="CUSTOMER" schemaName="" keyColumnIndex="2" valueColumnIndex="2"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection></MVList>
+</Widget>
+</C>
+<C c="4" r="1" s="0"><O><![CDATA[员工编号：]]></O>
+</C>
+<C c="5" r="1"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.TreeComboBoxEditor">
+<WidgetAttr/>
+<FieldName>EMPID</FieldName><TreeAttr mutiSelect="true" onlyLeaf="true"/><TreeNodeAttr><MVList class="com.fr.data.TreeRendererMVList">
+<DataList class="com.fr.data.impl.FormulaDataList">
+<Formula><![CDATA[UNIQUEARRAY(VALUE("ds1",3))]]></Formula>
+</DataList>
+</MVList>
+</TreeNodeAttr><TreeNodeAttr><MVList class="com.fr.data.TreeRendererMVList">
+<DataList class="com.fr.data.impl.FormulaDataList">
+<Formula><![CDATA[UNIQUEARRAY(VALUE("ds1",4,3,@1))]]></Formula>
+</DataList>
+</MVList>
+</TreeNodeAttr></Widget>
+</C>
+<C c="0" r="3" s="0"><O><![CDATA[签订日期：]]></O>
+</C>
+<C c="1" r="3"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.DateEditor">
+<WidgetAttr/>
+<FieldName>SIGNDATE</FieldName><DateAttr start="" end=""/></Widget>
+</C>
+<C c="2" r="3" s="0"><O><![CDATA[订单总额：]]></O>
+</C>
+<C c="3" r="3"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<FieldName>AMOUNT</FieldName><NumberAttr/></Widget>
+</C>
+<C c="4" r="3" s="0"><O><![CDATA[运输方式：]]></O>
+</C>
+<C c="5" r="3"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.ComboCheckBox">
+<WidgetAttr/>
+<FieldName>SHIPMETHOD</FieldName><MVList class="com.fr.data.impl.DatabaseDictionary">
+<DBDictAttr tableName="ORDERS" schemaName="" keyColumnIndex="7" valueColumnIndex="7"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection></MVList>
+<Delimiter><![CDATA[,]]></Delimiter></Widget>
+</C>
+<C c="0" r="5" s="0"><O><![CDATA[发货港口：]]></O>
+</C>
+<C c="1" r="5" cs="2"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.CheckBoxGroup">
+<WidgetAttr/>
+<FieldName>SHIPPORT</FieldName><MVList class="com.fr.data.TreeRendererMVList">
+<DataList class="com.fr.data.impl.FormulaDataList">
+<Formula><![CDATA[UNIQUEARRAY(VALUE("ds1",8))]]></Formula>
+</DataList>
+</MVList>
+</Widget>
+</C>
+<C c="3" r="5" s="0"><O><![CDATA[付款方式：]]></O>
+</C>
+<C c="4" r="5" cs="2"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.RadioGroup">
+<WidgetAttr/>
+<FieldName>PAYMETHOD</FieldName><MVList class="com.fr.data.TreeRendererMVList">
+<DataList class="com.fr.data.impl.FormulaDataList">
+<Formula><![CDATA[UNIQUEARRAY(VALUE("ds1",6))]]></Formula>
+</DataList>
+</MVList>
+</Widget>
+</C>
+<C c="5" r="7"><O><![CDATA[查询]]></O>
+<Widget class="com.fr.report.web.ui.impl.form.FormSubmitButton">
+<WidgetAttr/>
+</Widget>
+</C>
+</CellElementList>
+</ParameterUI>
+<Parameter>
+<Attributes name="ORDERID" />
+<O><![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="CUSTOMERID" />
+<O><![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="EMPID" />
+<O><![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="SIGNDATE" />
+<O><![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="PAYMETHOD" />
+<O><![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="SHIPMETHOD" />
+<O><![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="SHIPPORT" />
+<O><![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="AMOUNT" />
+<O><![CDATA[]]></O>
+</Parameter>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<RowHeight defaultValue="19">
+<![CDATA[19,19,19,32,19,19,19,19,19,19,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[85,67,73,78,76,72,61,72,72,72,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="8" rs="2" s="1"><O><![CDATA[产品销售情况查询]]></O>
+</C>
+<C c="0" r="2" s="2"><O><![CDATA[编号]]></O>
+</C>
+<C c="1" r="2" s="2"><O><![CDATA[客户编号]]></O>
+</C>
+<C c="2" r="2" s="2"><O><![CDATA[员工编号]]></O>
+</C>
+<C c="3" r="2" s="2"><O><![CDATA[发货时间]]></O>
+</C>
+<C c="4" r="2" s="2"><O><![CDATA[付款方式]]></O>
+</C>
+<C c="5" r="2" s="2"><O><![CDATA[运输方式]]></O>
+</C>
+<C c="6" r="2" s="2"><O><![CDATA[港口]]></O>
+</C>
+<C c="7" r="2" s="2"><O><![CDATA[总额]]></O>
+</C>
+<C c="0" r="3" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="ORDERID" />
+<Condition class="com.fr.data.condition.ListCondition"><JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[ORDERID]]></CNAME><Compare op="0">
+<O t="Formula" class="Formula"><Attributes><![CDATA[=if($ORDERID=='',nofilter,$ORDERID)]]></Attributes></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[CUSTOMERID]]></CNAME><Compare op="0">
+<O t="Formula" class="Formula"><Attributes><![CDATA[=if($CUSTOMERID=='',nofilter,$CUSTOMERID)]]></Attributes></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[EMPID]]></CNAME><Compare op="12">
+<O t="Formula" class="Formula"><Attributes><![CDATA[=if($EMPID=='',nofilter,$EMPID)]]></Attributes></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[SIGNDATE]]></CNAME><Compare op="0">
+<O t="Formula" class="Formula"><Attributes><![CDATA[=if($SIGNDATE=='',nofilter,$SIGNDATE)]]></Attributes></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[PAYMETHOD]]></CNAME><Compare op="12">
+<Parameter>
+<Attributes name="PAYMETHOD" />
+<O><![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[AMOUNT]]></CNAME><Compare op="0">
+<O t="Formula" class="Formula"><Attributes><![CDATA[=if($AMOUNT==0,nofilter,$AMOUNT)]]></Attributes></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[SHIPMETHOD]]></CNAME><Compare op="12">
+<Parameter>
+<Attributes name="SHIPMETHOD" />
+<O><![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[SHIPPORT]]></CNAME><Compare op="12">
+<Parameter>
+<Attributes name="SHIPPORT" />
+<O><![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="1" r="3" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="CUSTOMERID" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="2" r="3" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="EMPID" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="3" r="3" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="SIGNDATE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="4" r="3" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="PAYMETHOD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="5" r="3" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="SHIPMETHOD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="6" r="3" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="SHIPPORT" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="7" r="3" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="AMOUNT" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="23" foreground="-16724737" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-3342337">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.SimpleDateFormat"><![CDATA[yyyy-MM-dd]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

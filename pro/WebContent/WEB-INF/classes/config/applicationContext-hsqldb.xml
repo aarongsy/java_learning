@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="hsqldbDS" class="org.logicalcobwebs.proxool.ProxoolDataSource">
+		<property name="driver" value="org.hsqldb.jdbcDriver"></property>
+		<property name="driverUrl" value="jdbc:hsqldb:mem:eweaver"></property>
+		<property name="user" value="sa"></property>
+		<property name="password" value=""></property>
+		<property name="maximumConnectionCount" value="100"></property>
+		<property name="minimumConnectionCount" value="5"></property>
+		<property name="maximumActiveTime" value="180000"></property>
+    </bean>
+
+	<bean id="hsqldbDao" class="com.eweaver.base.BaseJdbcDao">
+		<property name="dataSource">
+			<ref bean="hsqldbDS" />
+		</property>
+	</bean>
+
+</beans>

@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+  "-//Hibernate/Hibernate Configuration DTD//EN"
+  "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<mapping class="com.eweaver.base.label.model.Label" />
+		<mapping class="com.eweaver.base.label.model.LabelCustom" />
+		<mapping class="com.eweaver.base.label.model.LabelDictory" />
+		<mapping class="com.eweaver.base.menu.model.Menu" />
+		<mapping class="com.eweaver.base.menu.model.Pagemenu" />
+		<mapping class="com.eweaver.base.orgunit.model.Orgunittype" />
+		<mapping class="com.eweaver.base.orgunit.model.Orgunit" />
+		<mapping class="com.eweaver.base.orgunit.model.Orgunitlink" />
+		<mapping class="com.eweaver.base.setitem.model.Setitemtype" />
+		<mapping class="com.eweaver.base.setitem.model.Setitem" />
+		<mapping class="com.eweaver.base.selectitem.model.Selectitemtype" />
+		<mapping class="com.eweaver.base.selectitem.model.Selectitem" />
+		<mapping class="com.eweaver.base.log.model.Log" />
+		<mapping class="com.eweaver.base.delobj.model.Delobj" />
+		<mapping class="com.eweaver.base.security.model.Sysperms" />
+		<mapping class="com.eweaver.base.security.model.Sysresource" />
+		<mapping class="com.eweaver.base.security.model.Sysrole" />
+		<mapping class="com.eweaver.base.security.model.Sysuser" />
+		<mapping class="com.eweaver.base.security.model.Sysuserrolelink" />
+		<mapping class="com.eweaver.base.security.model.Permissionrule" />
+		<mapping class="com.eweaver.base.security.model.Permissiondetail" />
+		<mapping class="com.eweaver.base.searchcustomize.model.Searchcustomize" />
+		<mapping class="com.eweaver.base.searchcustomize.model.Searchcustomizeoption" />
+		<mapping class="com.eweaver.base.refobj.model.Refobj" />
+		<mapping class="com.eweaver.base.refobj.model.Refobjlink" />
+		<mapping class="com.eweaver.base.favlist.model.Favlist" />
+		<mapping class="com.eweaver.base.category.model.Category" />
+		<mapping class="com.eweaver.base.category.model.Categorylink" />
+		<mapping class="com.eweaver.base.extfield.model.Extfieldinfo" />
+		<mapping class="com.eweaver.base.extfield.model.Extfieldset" />
+		<mapping class="com.eweaver.base.keyinfo.model.Keyinfo" />
+		<mapping class="com.eweaver.base.menu.model.Menuorg" />
+		<mapping class="com.eweaver.base.stationlevel.model.Stationlevel" />
+		<mapping class="com.eweaver.base.stationlevel.model.Stationlevellink" />
+		<mapping class="com.eweaver.base.imgfile.model.Imgfile" />
+		<mapping class="com.eweaver.base.personalSignature.model.PersonalSignature" />
+
+		<mapping class="com.eweaver.document.base.model.Attach" />
+		<mapping class="com.eweaver.document.base.model.Docattach" />
+		<mapping class="com.eweaver.document.base.model.Docauthor" />
+		<mapping class="com.eweaver.document.base.model.Docbase" />
+		<mapping class="com.eweaver.document.remark.model.Remark" />
+
+		<mapping class="com.eweaver.humres.base.model.Humres" />
+		<mapping class="com.eweaver.humres.base.model.Humresorg" />
+		<mapping class="com.eweaver.humres.base.model.Humreslink" />
+		<mapping class="com.eweaver.humres.base.model.Humrescustomize" />
+		<mapping class="com.eweaver.humres.base.model.Stationinfo" />
+		<mapping class="com.eweaver.humres.base.model.Stationlink" />
+		<mapping class="com.eweaver.interfaces.outter.model.Outtersys" />
+		<mapping class="com.eweaver.interfaces.outter.model.Outtersysdetail" />
+		<mapping class="com.eweaver.interfaces.outter.model.Accountsetting" />
+		<!--<mapping class="com.eweaver.humres.base.model.Personalset" />-->
+
+		<mapping class="com.eweaver.workflow.form.model.FormBase" />
+		<mapping class="com.eweaver.workflow.form.model.Forminfo" />
+		<mapping class="com.eweaver.workflow.form.model.Formfield" />
+		<mapping class="com.eweaver.workflow.form.model.Formlayout" />
+		<mapping class="com.eweaver.workflow.form.model.Formlayoutfield" />
+		<mapping class="com.eweaver.workflow.form.model.Formlink" />
+		<mapping class="com.eweaver.workflow.form.model.Refobject" />
+		<mapping class="com.eweaver.workflow.workflow.model.Export" />
+		<mapping class="com.eweaver.workflow.workflow.model.ExportFree" />
+		<mapping class="com.eweaver.workflow.workflow.model.ExportDetail" />
+		<mapping class="com.eweaver.workflow.workflow.model.Workflowinfo" />
+		<mapping class="com.eweaver.workflow.workflow.model.Workflowacting" />
+		<mapping class="com.eweaver.workflow.workflow.model.Workflowdoctype" />
+		<mapping class="com.eweaver.workflow.workflow.model.Workflowaccredit" />
+		<mapping class="com.eweaver.workflow.workflow.model.NodeinfoFree" />
+		<mapping class="com.eweaver.workflow.workflow.model.Nodeinfo" />
+		<mapping class="com.eweaver.workflow.request.model.Requestbase" />
+		<mapping class="com.eweaver.workflow.request.model.Requeststatus" />
+		<mapping class="com.eweaver.workflow.request.model.Requestlog" />
+		<mapping class="com.eweaver.workflow.request.model.Requestoperators" />
+		<mapping class="com.eweaver.workflow.request.model.Requestoptrule" />
+		<mapping class="com.eweaver.workflow.request.model.Requeststep" />
+		<mapping class="com.eweaver.workflow.request.model.Noderemind" />
+		<mapping class="com.eweaver.workflow.request.model.Messageurl" />
+
+		<mapping class="com.eweaver.workflow.report.model.Reportdef" />
+		<mapping class="com.eweaver.workflow.report.model.Reportfield" />
+		<mapping class="com.eweaver.workflow.report.model.Reportsearchfield" />
+		<mapping class="com.eweaver.workflow.report.model.Combinefield" />
+
+		<mapping class="com.eweaver.workflow.report.model.Contempfield" />
+		<mapping class="com.eweaver.workflow.report.model.Contemplate" />
+		<mapping class="com.eweaver.workflow.request.model.Workflownodestyle" />
+		<mapping class="com.eweaver.workflow.report.groupfield.model.Groupfield" />
+		<mapping class="com.eweaver.workflow.report.groupfield.model.Groupfielddetail" />
+		<mapping class="com.eweaver.report.model.Reportsearchfield2" />
+
+		<mapping class="com.eweaver.calendar.base.model.CalendarSetting" />
+		<mapping class="com.eweaver.calendar.base.model.Vcalendar" />
+		<mapping class="com.eweaver.calendar.event.model.Event" />
+		<mapping class="com.eweaver.calendar.event.model.Repeatpattern" />
+
+		<mapping class="com.eweaver.base.sequence.Sequence" />
+		<mapping class="com.eweaver.base.security.model.SysGroup" />
+		<mapping class="com.eweaver.base.notify.model.NotifyDefine" />
+		<mapping class="com.eweaver.base.notify.model.Notify" />
+		<mapping class="com.eweaver.base.notify.model.NotifyReceiverLink" />
+
+		<mapping class="com.eweaver.base.treeviewer.model.TreeViewerInfo" />
+		<mapping class="com.eweaver.base.treeviewer.model.TemplateViewer" />
+		<mapping class="com.eweaver.base.treeviewer.model.DynamicFormAction" />
+		<mapping class="com.eweaver.base.log.model.ChangeLog" />
+		<mapping class="com.eweaver.base.log.model.ChangeLogDetail" />
+		<mapping class="com.eweaver.base.security.model.PermissionBatchAction" />
+		<mapping class="com.eweaver.base.security.model.PermissionBatchActionDetail" />
+		<mapping class="com.eweaver.base.security.model.PermissionBatchActionGroup" />
+		<mapping class="com.eweaver.base.security.model.Cardcombination" />
+		<mapping class="com.eweaver.base.security.model.Cardcombinationdetail" />
+		<mapping class="com.eweaver.base.module.model.Module" />
+		<mapping class="com.eweaver.calendar.base.model.Scheduleset" />
+		<mapping class="com.eweaver.cowork.model.Coworkset" />
+		<mapping class="com.eweaver.base.refobj.model.Refobjmodel" />
+		<mapping class="com.eweaver.email.model.Emailtype" />
+		<mapping class="com.eweaver.email.model.Sendemail" />
+		<mapping class="com.eweaver.email.model.Emailsetinfo" />
+		<mapping class="com.eweaver.email.model.Eserverinfo" />
+		<mapping class="com.eweaver.email.model.Getemails" />
+		<mapping class="com.eweaver.email.model.Relationset" />
+		<mapping class="com.eweaver.userkey.model.UserKey" />
+		<mapping class="com.eweaver.workflow.stamp.model.Imginfo" />
+		<mapping class="com.eweaver.workflow.stamp.model.Stampinfo" />
+		<mapping class="com.eweaver.customaction.model.Customaction" />
+		<mapping class="com.eweaver.customaction.model.Customactiondetail" />
+		 <mapping class="com.eweaver.document.base.model.Docexclusion"/>
+		<mapping class="com.eweaver.portal.model.Portalorg" />
+		<mapping class="com.eweaver.portal.model.MailPortletOpt" />
+		<mapping class="com.eweaver.portal.model.PortletobjConfig" />
+		<mapping class="com.eweaver.homepage.model.Pages" />
+		<mapping class="com.eweaver.homepage.model.WebMenu" />
+		<mapping class="com.eweaver.homepage.model.WebMenuRef" />
+		<mapping class="com.eweaver.homepage.model.WebSkin" />
+		<mapping class="com.eweaver.workflow.subprocess.model.Subprocessset" />
+		<mapping class="com.eweaver.workflow.subprocess.model.Subprocesssetdetail" />
+		<mapping class="com.eweaver.workflow.subprocess.model.SubprocesssetConditionDetail" />
+		<mapping class="com.eweaver.indagate.model.Indagatecontent" />
+		<mapping class="com.eweaver.indagate.model.Indagateoption" />
+
+		<mapping class="com.eweaver.attendance.model.Attendance" />
+		<mapping class="com.eweaver.attendance.model.HolidaysInfo" />
+		<mapping class="com.eweaver.word.model.WordModule" />
+		<mapping class="com.eweaver.excel.model.Excelopt" />
+		<mapping class="com.eweaver.base.msg.model.SmsHistory" />
+		<mapping class="com.eweaver.base.sequence.SequenceLink" />
+		<mapping class="com.eweaver.workflow.request.model.RequestFlowpath" />
+		<mapping resource="org/light/portal/core/entity/mapping/Portal.hbm.xml"></mapping>
+		<mapping resource="org/light/portal/user/entity/mapping/User.hbm.xml"></mapping>
+		<mapping resource="org/light/portlets/note/Note.hbm.xml"></mapping>
+		<mapping resource="org/light/portlets/bookmark/Bookmark.hbm.xml"></mapping>
+		<mapping resource="org/light/portlets/todolist/ToDo.hbm.xml"></mapping>
+		<mapping class="com.eweaver.task.model.TaskModel" />
+		<mapping class="com.eweaver.task.model.TaskLog" />
+		<!-- Ganntt -->
+		<mapping class="com.eweaver.ganttmap.model.EdoTask"/>
+		<mapping class="com.eweaver.ganttmap.model.EdoPredecessorLink"/>
+		<!-- CPMS -->
+		<mapping class="com.eweaver.cpms.project.doc.Doclink"/>
+		<mapping class="com.eweaver.cpms.project.doc.DoctypeLink"/>
+		<mapping class="com.eweaver.cpms.project.flow.Flowlink"/>
+		<mapping class="com.eweaver.cpms.project.pretask.PreTask"/>
+		<mapping class="com.eweaver.cpms.project.wbstemplate.TaskTemplate"/>
+		<mapping class="com.eweaver.cpms.project.resource.TaskResource"/>
+		<mapping class="com.eweaver.cpms.comment.Comment"/>
+		<!-- Portlet -->
+		<mapping class="com.eweaver.portal.model.PortletStyle"/>
+		<mapping class="org.light.portal.core.entity.PortletObjectConfig"/>
+		<!-- Skin -->
+		<mapping class="com.eweaver.base.skin.model.Skin"/>
+		<!-- ShortCut -->
+		<mapping class="com.eweaver.base.shortcut.model.ShortCut"/>
+		<mapping class="com.eweaver.base.shortcut.model.ShortCut_CustomData"/>
+		<!-- Album -->
+		<mapping class="com.eweaver.app.album.model.Album"/>
+		<mapping class="com.eweaver.app.album.model.Photo"/>
+	</session-factory>
+</hibernate-configuration>

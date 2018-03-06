@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.5</Version>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="0" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+<ParameterInterface class="com.fr.report.parameter.DefaultParameterInterface">
+<DPparam /></ParameterInterface>
+<Parameter>
+<Attributes name="id" />
+<O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr allowBlank="false" /></Widget>
+</Parameter>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<ReportWebAttr>
+<EmailManager mailHost="" password="___" user="" fromEmailAddress="" />
+<ServerPrinter>
+</ServerPrinter>
+<Background name="NullBackground" />
+</ReportWebAttr>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<ReportWriteAttr>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="add">
+<Attributes dsName="db2" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table name="A001"/>
+<ColumnConfig name="A001_ID" isKey="true" skipUnmodified="false" >
+<ColumnRow column="1" row="1"/>
+</ColumnConfig>
+<ColumnConfig name="CHECK_DATE" isKey="false" skipUnmodified="false" >
+<ColumnRow column="3" row="1"/>
+</ColumnConfig>
+<ColumnConfig name="CER_KIND" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="2"/>
+</ColumnConfig>
+<ColumnConfig name="LETTER_NO" isKey="false" skipUnmodified="false" >
+<ColumnRow column="4" row="2"/>
+</ColumnConfig>
+<ColumnConfig name="ST_BALACE" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="2"/>
+</ColumnConfig>
+<ColumnConfig name="CER_NO" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="A_100_GOOD" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="6"/>
+</ColumnConfig>
+<ColumnConfig name="A_100_DEF" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="6"/>
+</ColumnConfig>
+<ColumnConfig name="A_50_GOOD" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="7"/>
+</ColumnConfig>
+<ColumnConfig name="A_50_DEF" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="7"/>
+</ColumnConfig>
+<ColumnConfig name="A_20_GOOD" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="8"/>
+</ColumnConfig>
+<ColumnConfig name="A_20_DEF" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="8"/>
+</ColumnConfig>
+<ColumnConfig name="A_10_GOOD" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="A_10_DEF" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="A_5_GOOD" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="10"/>
+</ColumnConfig>
+<ColumnConfig name="A_5_DEF" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="10"/>
+</ColumnConfig>
+<ColumnConfig name="A_2_GOOD" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="11"/>
+</ColumnConfig>
+<ColumnConfig name="A_2_DEF" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="11"/>
+</ColumnConfig>
+<ColumnConfig name="A_1_GOOD" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="12"/>
+</ColumnConfig>
+<ColumnConfig name="A_1_DEF" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="12"/>
+</ColumnConfig>
+<ColumnConfig name="A_05_GOOD" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="13"/>
+</ColumnConfig>
+<ColumnConfig name="A_05_DEF" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="13"/>
+</ColumnConfig>
+<ColumnConfig name="A_02_GOOD" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="14"/>
+</ColumnConfig>
+<ColumnConfig name="A_02_DEF" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="14"/>
+</ColumnConfig>
+<ColumnConfig name="A_01_GOOD" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="15"/>
+</ColumnConfig>
+<ColumnConfig name="A_01_DEF" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="15"/>
+</ColumnConfig>
+<ColumnConfig name="A_005_GOOD" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="16"/>
+</ColumnConfig>
+<ColumnConfig name="A_005_DEF" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="16"/>
+</ColumnConfig>
+<ColumnConfig name="A_002_GOOD" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="17"/>
+</ColumnConfig>
+<ColumnConfig name="A_002_DEF" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="17"/>
+</ColumnConfig>
+<ColumnConfig name="A_001_GOOD" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="18"/>
+</ColumnConfig>
+<ColumnConfig name="A_001_DEF" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="18"/>
+</ColumnConfig>
+<ColumnConfig name="TOTAL_GOOD" isKey="false" skipUnmodified="false" >
+<O><![CDATA[]]></O>
+</ColumnConfig>
+<ColumnConfig name="TOTAL_DEF" isKey="false" skipUnmodified="false" >
+<O><![CDATA[]]></O>
+</ColumnConfig>
+<ColumnConfig name="TOTAL" isKey="false" skipUnmodified="false" >
+<O><![CDATA[]]></O>
+</ColumnConfig>
+<ColumnConfig name="PEOPLE" isKey="false" skipUnmodified="false" >
+<ColumnRow column="3" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="VALUELESS" isKey="false" skipUnmodified="false" >
+<ColumnRow column="3" row="6"/>
+</ColumnConfig>
+<ColumnConfig name="DO_FIVE" isKey="false" skipUnmodified="false" >
+<ColumnRow column="3" row="7"/>
+</ColumnConfig>
+<ColumnConfig name="IS_DOUBLE" isKey="false" skipUnmodified="false" >
+<ColumnRow column="3" row="8"/>
+</ColumnConfig>
+<ColumnConfig name="CHECK_VERDCT" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="13"/>
+</ColumnConfig>
+<ColumnConfig name="CHECK_PEOPLE" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="19"/>
+</ColumnConfig>
+<ColumnConfig name="RECHECK_PEOPLE" isKey="false" skipUnmodified="false" >
+<ColumnRow column="3" row="19"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+</ReportWriteAttr>
+<RowHeight defaultValue="19">
+<![CDATA[54,19,30,19,19,19,19,15,19,19,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,97,72,105,72,60,50,47,72,72,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="1" r="0" cs="7" s="0"><O><![CDATA[金库查库登记簿]]></O>
+</C>
+<C c="1" r="1"><O t="Formula" class="Formula"><Attributes><![CDATA[=$id]]></Attributes></O>
+<Expand dir="0" />
+</C>
+<C c="2" r="1" s="1"><O><![CDATA[查库日期：]]></O>
+</C>
+<C c="3" r="1" cs="5" s="2"><O t="DSColumn"><Attributes dsName="ds1" columnName="CHECK_DATE" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="8" r="1"></C>
+<C c="1" r="2" s="3"><O><![CDATA[查库人证件名称]]></O>
+</C>
+<C c="2" r="2" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="CER_KIND" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+</CustomDictAttr>
+</Dictionary></Present>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr/>
+<MVList class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+</CustomDictAttr>
+</MVList>
+</Widget>
+</C>
+<C c="3" r="2" s="3"><O><![CDATA[查库人介绍信号码]]></O>
+</C>
+<C c="4" r="2" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="LETTER_NO" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="5" r="2" cs="2" s="5"><O><![CDATA[账面库存现金余额]]></O>
+</C>
+<C c="7" r="2" s="6"><O t="DSColumn"><Attributes dsName="ds1" columnName="ST_BALACE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="1" r="3" s="3"><O><![CDATA[查库人证件号码]]></O>
+</C>
+<C c="2" r="3" cs="3" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="CER_NO" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="5" r="3" cs="3" s="5"><O><![CDATA[实际库存现金]]></O>
+</C>
+<C c="1" r="4" cs="4" s="7"><O><![CDATA[查库内容及结果：]]></O>
+</C>
+<C c="5" r="4" rs="2" s="5"><O><![CDATA[劵别]]></O>
+</C>
+<C c="6" r="4" cs="2" s="5"><O><![CDATA[金额]]></O>
+</C>
+<C c="1" r="5" cs="2" s="8"><O><![CDATA[在岗人数]]></O>
+</C>
+<C c="3" r="5" s="9"><O t="DSColumn"><Attributes dsName="ds1" columnName="PEOPLE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowDecimals="false" allowNegative="false"/></Widget>
+</C>
+<C c="4" r="5" s="10"></C>
+<C c="6" r="5" s="3"><O><![CDATA[完整劵]]></O>
+</C>
+<C c="7" r="5" s="3"><O><![CDATA[损伤劵]]></O>
+</C>
+<C c="1" r="6" cs="2" s="8"><O><![CDATA[有无白条抵库]]></O>
+</C>
+<C c="3" r="6" s="9"><O t="DSColumn"><Attributes dsName="ds1" columnName="VALUELESS" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+</CustomDictAttr>
+</Dictionary></Present>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr/>
+<MVList class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+</CustomDictAttr>
+</MVList>
+</Widget>
+</C>
+<C c="4" r="6" s="10"></C>
+<C c="5" r="6" s="3"><O><![CDATA[壹佰元]]></O>
+</C>
+<C c="6" r="6" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_100_GOOD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="7" r="6" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_100_DEF" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="1" r="7" cs="2" s="8"><O><![CDATA[是否执行“五同”]]></O>
+</C>
+<C c="3" r="7" s="9"><O t="DSColumn"><Attributes dsName="ds1" columnName="DO_FIVE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+</CustomDictAttr>
+</Dictionary></Present>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr/>
+<MVList class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+</CustomDictAttr>
+</MVList>
+</Widget>
+</C>
+<C c="4" r="7" s="10"></C>
+<C c="5" r="7" s="3"><O><![CDATA[伍拾元]]></O>
+</C>
+<C c="6" r="7" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_50_GOOD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="7" r="7" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_50_DEF" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="1" r="8" cs="2" s="8"><O><![CDATA[是否双锁]]></O>
+</C>
+<C c="3" r="8" s="9"><O t="DSColumn"><Attributes dsName="ds1" columnName="IS_DOUBLE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+</CustomDictAttr>
+</Dictionary></Present>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr/>
+<MVList class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+</CustomDictAttr>
+</MVList>
+</Widget>
+</C>
+<C c="4" r="8" s="10"></C>
+<C c="5" r="8" s="3"><O><![CDATA[贰拾元]]></O>
+</C>
+<C c="6" r="8" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_20_GOOD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="7" r="8" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_20_DEF" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="1" r="9" s="11"></C>
+<C c="2" r="9" s="1"></C>
+<C c="3" r="9" s="1"></C>
+<C c="4" r="9" s="10"></C>
+<C c="5" r="9" s="3"><O><![CDATA[拾  元]]></O>
+</C>
+<C c="6" r="9" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_10_GOOD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="7" r="9" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_10_DEF" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="1" r="10" s="11"></C>
+<C c="2" r="10" s="1"></C>
+<C c="3" r="10" s="1"></C>
+<C c="4" r="10" s="10"></C>
+<C c="5" r="10" s="3"><O><![CDATA[伍  元]]></O>
+</C>
+<C c="6" r="10" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_5_GOOD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="7" r="10" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_5_DEF" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="1" r="11" s="12"></C>
+<C c="2" r="11" s="9"></C>
+<C c="3" r="11" s="9"></C>
+<C c="4" r="11" s="13"></C>
+<C c="5" r="11" s="3"><O><![CDATA[贰  元]]></O>
+</C>
+<C c="6" r="11" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_2_GOOD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="7" r="11" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_2_DEF" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="1" r="12" cs="4" s="7"><O><![CDATA[查库意见：]]></O>
+</C>
+<C c="5" r="12" s="3"><O><![CDATA[壹  元]]></O>
+</C>
+<C c="6" r="12" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_1_GOOD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="7" r="12" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_1_DEF" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="1" r="13" cs="4" rs="5" s="14"><O t="DSColumn"><Attributes dsName="ds1" columnName="CHECK_VERDCT" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="5" r="13" s="15"><O><![CDATA[伍  角]]></O>
+</C>
+<C c="6" r="13" s="6"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_05_GOOD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="7" r="13" s="6"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_05_DEF" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="5" r="14" s="15"><O><![CDATA[贰  角]]></O>
+</C>
+<C c="6" r="14" s="6"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_02_GOOD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="7" r="14" s="6"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_02_DEF" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="5" r="15" s="15"><O><![CDATA[壹  角]]></O>
+</C>
+<C c="6" r="15" s="6"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_01_GOOD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="7" r="15" s="6"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_01_DEF" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="5" r="16" s="15"><O><![CDATA[伍  分]]></O>
+</C>
+<C c="6" r="16" s="6"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_005_GOOD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="7" r="16" s="6"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_005_DEF" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="5" r="17" s="15"><O><![CDATA[贰  分]]></O>
+</C>
+<C c="6" r="17" s="6"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_002_GOOD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="7" r="17" s="6"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_002_DEF" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="1" r="18" cs="2" s="16"><O><![CDATA[查库人签章]]></O>
+</C>
+<C c="3" r="18" cs="2" s="16"><O><![CDATA[出纳负责人或管库员签章]]></O>
+</C>
+<C c="5" r="18" s="15"><O><![CDATA[壹  分]]></O>
+</C>
+<C c="6" r="18" s="6"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_001_GOOD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="7" r="18" s="6"><O t="DSColumn"><Attributes dsName="ds1" columnName="A_001_DEF" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowNegative="false"/></Widget>
+</C>
+<C c="1" r="19" cs="2" rs="2" s="14"><O t="DSColumn"><Attributes dsName="ds1" columnName="CHECK_PEOPLE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="3" r="19" cs="2" rs="2" s="14"><O t="DSColumn"><Attributes dsName="ds1" columnName="RECHECK_PEOPLE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="5" r="19" s="15"><O><![CDATA[小  计]]></O>
+</C>
+<C c="6" r="19" s="6"><O t="Formula" class="Formula"><Attributes><![CDATA[=SUM(G7,G8,G9,G10,G11,G12,G13,G14,G15,G16,G17,G18,G19)]]></Attributes></O>
+</C>
+<C c="7" r="19" s="6"><O t="Formula" class="Formula"><Attributes><![CDATA[=SUM(H7,H8,H9,H10,H11,H12,H13,H14,H15,H16,H17,H18,H19)]]></Attributes></O>
+</C>
+<C c="5" r="20" s="15"><O><![CDATA[合  计]]></O>
+</C>
+<C c="6" r="20" cs="2" s="6"><O t="Formula" class="Formula"><Attributes><![CDATA[=SUM(G20,H20)]]></Attributes></O>
+</C>
+<C c="1" r="21" cs="2" s="6"></C>
+<C c="3" r="21" cs="2" s="6"></C>
+<C c="5" r="21" s="6"><O><![CDATA[]]></O>
+</C>
+<C c="6" r="21" s="6"><O><![CDATA[]]></O>
+</C>
+<C c="7" r="21" s="6"><O><![CDATA[]]></O>
+</C>
+<C c="1" r="22" cs="2" s="6"></C>
+<C c="3" r="22" cs="2" s="6"></C>
+<C c="5" r="22" s="6"><O><![CDATA[]]></O>
+</C>
+<C c="6" r="22" s="6"><O><![CDATA[]]></O>
+</C>
+<C c="7" r="22" s="6"><O><![CDATA[]]></O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="16" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style imageLayout="2">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style imageLayout="2">
+<Format class="java.text.SimpleDateFormat"><![CDATA[MM/dd/yyyy]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style imageLayout="2">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-922645">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style imageLayout="2">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="2">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-922645">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style imageLayout="2">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-922645">
+</Background>
+<Border><Top style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="2">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-1">
+</Background>
+<Border><Left style="1" /></Border>
+</Style>
+<Style imageLayout="2">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" /></Border>
+</Style>
+<Style imageLayout="2">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Right style="1" /></Border>
+</Style>
+<Style imageLayout="2">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Left style="1" /></Border>
+</Style>
+<Style imageLayout="2">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" /><Left style="1" /></Border>
+</Style>
+<Style imageLayout="2">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" /><Right style="1" /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top color="-1"
+ /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-922645">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-922645">
+</Background>
+<Border><Top style="1" /><Bottom color="-1"
+ /><Left style="1" /><Right style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

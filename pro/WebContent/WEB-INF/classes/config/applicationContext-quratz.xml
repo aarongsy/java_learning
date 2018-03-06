@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-2.5.xsd" default-lazy-init="true">
+
+	<bean name="quartzScheduler"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="workflowTrigger" />
+				<ref bean="noderemindTrigger" />
+                <ref bean="notifyTrigger" />
+                <ref bean="delAttachTrigger" />
+				<ref bean="setHumresStatusTrigger" />
+				<ref bean="setHumresClassTrigger" />
+				<ref bean="setOvertimeTrigger" />
+				<ref bean="setSYPH" />
+				<!--
+                <ref bean="ecologysyncTrigger" />
+                <ref bean="versionActivePolicyScanTrigger"/>
+                <ref bean="ecologySyncAllTrigger" />
+                <ref bean="ecologySyncDailyTrigger" />
+                <ref bean="permissionBatchActionHumresTrigger"/>
+                -->
+			</list>
+		</property>
+		<property name="configLocation"	value="classpath:quartz.properties" />
+	</bean>
+
+	<bean id="workflowTrigger"
+		class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		 <property name="jobDetail">
+             <bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+           		<property name="targetObject">
+						<bean class="com.eweaver.base.job.WorkflowCreateJob">          
+							<property name="workflowinfoDao">	
+										<bean class="com.eweaver.workflow.workflow.dao.WorkflowinfoDaoHB">
+											<property name="sessionFactory">
+												<ref bean="sessionFactory"/>
+											</property>
+										</bean>	
+							</property> 
+     						<property name="repeatInterval">
+							   <value>300000</value>
+							 </property>
+						  </bean>
+				   </property>
+				   <property name="targetMethod">
+					<value>check</value>
+				   </property>
+				   <property name="concurrent">
+					<value>false</value>
+				   </property>
+			</bean>
+         </property> 
+     	<property name="repeatInterval">
+		   <value>300000</value>
+		 </property>
+
+	</bean>
+	
+
+	<bean id="noderemindTrigger"
+		class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		 <property name="jobDetail">
+             <bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+           		<property name="targetObject">
+						<bean class="com.eweaver.base.job.NodeRemindJob">    
+							<property name="noderemindDao">	
+											<bean class="com.eweaver.workflow.request.dao.NoderemindDaoHB">
+												<property name="sessionFactory">
+													<ref bean="sessionFactory"/>
+												</property>
+											</bean>	
+								</property>
+						  </bean>
+				   </property>
+				   <property name="targetMethod">
+					<value>check</value>
+				   </property>
+				   <property name="concurrent">
+					<value>false</value>
+				   </property>
+			</bean>
+         </property> 
+     	<property name="repeatInterval">
+		   <value>300000</value>
+		 </property>
+	</bean>
+
+	<bean id="ldapImportTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerBean">
+		 <property name="jobDetail">
+             <bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+           		<property name="targetObject">
+						<bean class="com.eweaver.base.job.LdapImportJob">    
+							<property name="ldapService">									
+								<ref bean="ldapService"/>										
+							</property>
+						  </bean>
+				   </property>
+				   <property name="targetMethod">
+					<value>check</value>
+				   </property>
+				   <property name="concurrent">
+					<value>false</value>
+				   </property>
+			</bean>
+         </property>
+		 <property name="cronExpression">            
+		 <value>0 59 23 * * ? *</value>        
+		 </property>
+	</bean>
+	
+	<bean id="delAttachTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerBean">
+		 <property name="jobDetail">
+             <bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+           		<property name="targetObject">
+						<bean class="com.eweaver.base.job.DelAttachJob">    
+							<property name="delAttachService">									
+								<ref bean="delAttachService"/>										
+							</property>
+						  </bean>
+				   </property>
+				   <property name="targetMethod">
+					<value>check</value>
+				   </property>
+				   <property name="concurrent">
+					<value>false</value>
+				   </property>
+			</bean>
+         </property>
+		 <property name="cronExpression">            
+		 <value>0 59 23 * * ? *</value>        
+		 </property>
+	</bean>
+
+	<bean id="permissionBatchActionHumresTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerBean">
+		 <property name="jobDetail">
+             <bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+           		<property name="targetObject">
+						<bean class="com.eweaver.base.job.PermissionBatchActionHumresJob">
+							<property name="rightTransferService">
+								<ref bean="rightTransferService"/>
+							</property>
+						  </bean>
+				   </property>
+				   <property name="targetMethod">
+					<value>check</value>
+				   </property>
+				   <property name="concurrent">
+					<value>false</value>
+				   </property>
+			</bean>
+         </property>
+		 <property name="cronExpression">
+		 <value>0 30 0 * * ? *</value>
+		 </property>
+	</bean>
+
+    <bean id="notifyTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		 <property name="jobDetail">
+             <bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+           		<property name="targetObject">
+					<bean class="com.eweaver.base.job.NotifyJob">    
+						<property name="notityService" ref="notifyService" />
+	                   	<property name="workflowService" ref="workflowService" />
+					</bean>
+			   </property>
+			   <property name="targetMethod" value="check" />
+			   <property name="concurrent" value="false" />
+			</bean>
+        </property>
+        <property name="repeatInterval" value="300000" />
+	</bean>
+	<bean id="msgTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		 <property name="jobDetail">
+             <bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+           		<property name="targetObject">
+					<bean class="com.eweaver.base.job.MsgJob">    
+						<property name="baseJdbcDao" ref="baseJdbcDao" />
+					</bean>
+			   </property>
+			   <property name="targetMethod" value="check" />
+			   <property name="concurrent" value="false" />
+			</bean>
+        </property>
+        <property name="repeatInterval" value="120000" />
+	</bean>
+	
+	<bean id="versionActivePolicyScanTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		 <property name="jobDetail">
+             <bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+           		<property name="targetObject">
+					<bean class="com.eweaver.base.job.VersionActivePolicyScanJob">
+					</bean>
+			   </property>
+			   <property name="targetMethod" value="activeVersion" />
+			   <property name="concurrent" value="false" />
+			</bean>
+        </property>
+       <property name="repeatInterval" value="120000" />
+	</bean>
+	
+	<bean id="ecologysyncTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerBean">
+		 <property name="jobDetail">
+             <bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+           		<property name="targetObject">
+						<bean class="com.eweaver.interfaces.ecology.sync.EcologySync"></bean>
+				   </property>
+				   <property name="targetMethod">
+					<value>sync</value>
+				   </property>
+				   <property name="concurrent">
+					<value>false</value>
+				   </property>
+			</bean>
+         </property>
+		 <property name="cronExpression">
+		 <value>0 0 23 * * ? *</value>
+		 </property>
+	</bean>
+
+	<bean id="setHumresStatusTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerBean">
+		 <property name="jobDetail">
+             <bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+           		<property name="targetObject">
+						<bean class="com.eweaver.app.hrmanage.setHumresStatus"></bean>
+				   </property>
+				   <property name="targetMethod">
+					<value>check</value>
+				   </property>
+				   <property name="concurrent">
+					<value>false</value>
+				   </property>
+			</bean>
+         </property>
+		 <property name="cronExpression">
+		 <value>0 0 23 * * ? *</value>
+		 </property>
+	</bean>
+
+		<bean id="setSYPH"
+		class="org.springframework.scheduling.quartz.CronTriggerBean">
+		 <property name="jobDetail">
+             <bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+           		<property name="targetObject">
+						<bean class="com.eweaver.app.autotask.CreateWorkflow"></bean>
+				   </property>
+				   <property name="targetMethod">
+					<value>CreHRprobation</value>
+				   </property>
+				   <property name="concurrent">
+					<value>false</value>
+				   </property>
+			</bean>
+         </property>
+		 <property name="cronExpression">
+		 <value>0 0 3 * * ? *</value>
+		 </property>
+	</bean>
+	
+	<bean id="setHumresClassTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerBean">
+		 <property name="jobDetail">
+             <bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+           		<property name="targetObject">
+						<bean class="com.eweaver.app.hrmanage.setHumresClass"></bean>
+				   </property>
+				   <property name="targetMethod">
+					<value>check</value>
+				   </property>
+				   <property name="concurrent">
+					<value>false</value>
+				   </property>
+			</bean>
+         </property>
+		 <property name="cronExpression">
+		 <value>0 0 1 1 * ? *</value>
+		 </property>
+	</bean> 
+	<bean id="setOvertimeTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerBean">
+		 <property name="jobDetail">
+             <bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+           		<property name="targetObject">
+						<bean class="com.eweaver.app.hrmanage.setOvertime"></bean>
+				   </property>
+				   <property name="targetMethod">
+					<value>check</value>
+				   </property>
+				   <property name="concurrent">
+					<value>false</value>
+				   </property>
+			</bean>
+         </property>
+		 <property name="cronExpression">
+		 <value>0 0 6 1 * ? *</value>
+		 </property>
+	</bean>
+</beans>

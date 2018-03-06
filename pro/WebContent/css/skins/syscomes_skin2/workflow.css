@@ -1,0 +1,87 @@
+/*
+	workflow.css
+	流程页面相关的样式
+*/
+
+
+
+
+.x-toolbar{
+	border-bottom: 0;
+}
+span.formFlowNo{
+	font-weight: bold;
+	color: #3B59AA;
+}
+
+
+/******签字意见表格对应的样式******/
+#layoutFrame{
+	width: 100%;
+	padding: 0;
+}
+table.layouttable,table.detailtable {
+	border: 0;
+}
+table.detailtable caption{/*明细表标题对应的样式*/
+	text-align: left !important;			/*文本对齐方式*/
+	font-size: 12px !important;
+	font-weight: bold !important;
+	color: #000 !important;
+	border: 0px !important;
+	border-bottom: 2px solid #D8DFEA;
+	padding: 0;
+	margin: 0;
+}
+table.layouttable caption{
+	padding: 0 0 5px 0; 
+	text-align: center; 
+	font-family: Microsoft YaHei;
+	font-size: 26px; 
+	font-weight: normal; 
+	letter-spacing: 0px !important;
+	border-top: 0 !important;
+}
+table.layouttable td{
+	border: 0;
+}
+table.layouttable td a,table.tableApprovalOpinions td a {
+	color: #3B59AA !important;
+	font-family: Segoe UI;
+	font-weight: bold !important;
+}
+
+table.layouttable {/*主表表格样式*/
+	border-top: 2px solid #D8DFEA;
+	border-bottom: 0px solid #D8DFEA;
+}
+table.layouttable td.fieldname, table.layouttable td.FieldName{
+	text-align: right;
+	padding-right: 10px;
+	border-bottom: 1px solid #EDF0F5;
+	color: #000;
+}
+table.layouttable td.fieldvalue, table.layouttable td.FieldValue{
+	border-bottom: 1px solid #fff;
+}
+table.signature td.fieldname{
+	width: 12% !important;
+}
+.requestlog {
+
+}
+.tableApprovalOpinions {
+	margin-top: 10px;
+	border: 1px solid #D8DFEA;
+}
+.tableApprovalOpinions tr.bg th {
+	background-color: #EDF0F5;
+	font-weight: bold;
+}
+.tableApprovalOpinions th,  .tableApprovalOpinions td {
+	padding: 4px 5px;
+	border-top: 1px solid #D8DFEA;
+	border-bottom: 0px solid #D8DFEA;
+	font-family: Microsoft YaHei;
+	color: #333;
+}

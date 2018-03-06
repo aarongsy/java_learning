@@ -1,0 +1,363 @@
+/*  
+	global.css
+	皮肤全局样式,包含：
+	Ext Toolbar的样式
+	页面布局相关的样式(表单,流程)
+*/
+
+html,body{border:0;}
+
+/******Ext Toolbar对应的样式重写******/
+.x-panel-tbar, .x-panel-tbar-noheader{
+	
+
+}
+.x-toolbar{/*toolbar的样式*/
+	BACKGROUND-IMAGE: url(images/mbmenu_bgnd_sel_2.jpg);
+	padding: 1px;
+	margin-bottom: 0px;
+	height:25px;
+	border-bottom:#e0e0e0 1px solid;
+
+}
+.x-panel-tbar-noheader .x-toolbar{
+}
+.x-toolbar .x-btn{/*按钮左侧区域的样式(图片左边)*/
+
+	border: 0px solid #ddd;
+	margin-right: 5px;
+}
+.x-btn button{
+	background-color: transparent;	
+}
+.x-toolbar .x-btn button, .x-toolbar .x-btn button span{
+	font-family: Segoe UI, Microsoft YaHei, Segoe UI;
+	font-size: 12px;
+	color: #3C5369;
+	font-weight: bold;
+}
+/*
+table.x-btn{
+	border: 1px solid #bbb !important;
+	background: url(images/buttonBg.png) !important;
+}
+.x-btn button{
+	background-color: transparent;	
+}
+.x-toolbar .x-btn button, .x-toolbar .x-btn button span{
+	font-family: Segoe UI, Microsoft YaHei, Segoe UI;
+	font-size: 12px;
+	color: #333;
+	font-weight: bold;
+}
+*/
+.x-toolbar .ytb-sep{/*toolbar按钮最左侧显示的一个td,一般是一根竖线*/
+	display: block;				/*显示(不显示)*/
+}
+.x-toolbar .x-btn-left{/*按钮左侧区域的样式(图片左边)*/
+
+}
+.x-toolbar .x-btn-right{/*按钮右侧区域的样式(文字右边)*/
+
+}
+.x-toolbar .x-btn-center{/*按钮区域的样式*/
+
+}
+.x-toolbar .x-btn-center .x-btn-text{/*按钮的样式*/
+	padding: 0 0 0 18px;
+	font-weight: bold !important;
+}
+.x-toolbar .x-btn-over .x-btn-left{/*鼠标经过时   按钮左侧区域的样式*/
+	background: url(images/tb-btn-sprite.jpg) no-repeat 0 0;
+}
+.x-toolbar .x-btn-over .x-btn-right{/*鼠标经过时   按钮右侧区域的样式*/
+	background: url(images/tb-btn-sprite.jpg) no-repeat 0 -21px;
+}
+.x-toolbar .x-btn-over .x-btn-center{/*鼠标经过时   按钮区域的样式*/
+	background: url(images/tb-btn-sprite.jpg) repeat-x 0 -42px;
+}
+.x-toolbar .x-btn-over .x-btn-center .x-btn-text{
+	color: #24303C;
+}
+
+
+
+.x-panel-body-noheader, .x-panel-mc .x-panel-body{
+	
+	BACKGROUND-COLOR: #f9f9f9;
+}
+.x-tab-panel-body, .x-tab-panel-header{
+	BACKGROUND-IMAGE: url(images/bg.gif);
+}
+
+/******tab页对应的样式******/
+ul.x-tab-strip-top {/*tab页头部对应的样式*/
+	background: transparent;		/*背景(透明)*/
+	border: none;				/*边框(无)*/
+	border-bottom: 1px solid #CBCBCB !important;
+	padding-left: 5px !important;
+}
+ul.x-tab-strip-top li{
+	margin-left: 3px !important;
+	margin-right: -1px;
+	border-left: 1px solid #CBCBCB !important;
+	border-right: 1px solid #CBCBCB !important;
+	border-top: 1px solid #CBCBCB !important;
+	
+}
+.x-tab-strip-top .x-tab-right, .x-tab-strip-top .x-tab-left, .x-tab-strip-top .x-tab-strip-inner{/*未被选中时,tab页对应的样式*/
+	background: url();
+	background-color: #EEE;
+}
+.x-tab-strip-top .x-tab-strip-active .x-tab-strip-inner{
+	background-image: url() !important;
+	background-color: #fff;
+}
+.x-tab-strip-top .x-tab-strip-over .x-tab-right,.x-tab-strip-top .x-tab-strip-over .x-tab-left,.x-tab-strip-top .x-tab-strip-over .x-tab-inner{
+	background: url();
+	background-color: #EEE;
+}
+/*被选中时,tab页左右两侧对应的样式*/
+.x-tab-strip-top .x-tab-strip-active .x-tab-right,.x-tab-strip-top .x-tab-strip-active .x-tab-left,.x-tab-strip-top .x-tab-strip-active .x-tab-inner{
+	background-image: url() !important;
+	background-color: #fff;
+	star:expression(this.onFocus=this.blur());
+}
+.x-tab-strip-top .x-tab-strip-over .x-tab-inner{
+	background-image: url() !important;
+}
+.x-tab-strip-top .x-tab-strip-over .x-tab-strip-text{
+	background-color: #EEE;
+}
+.x-tab-strip-top .x-tab-strip-active .x-tab-right,.x-tab-strip-top .x-tab-strip-active .x-tab-left,.x-tab-strip-top .x-tab-strip-active .x-tab-inner{
+	star:expression(this.onFocus=this.blur());
+}
+.x-tab-strip-top span.x-tab-strip-text{/*未被选中时,tab页中字体对应的样式*/
+	font-family: Microsoft YaHei;
+	font-size: 12px;
+	/*color: #3B5998;*/
+	color: #333;
+}
+.x-tab-strip-top .x-tab-strip-active .x-tab-strip-text{/*被选中时,tab页字体区域对应的样式*/
+	background-color: #fff;
+	font-family: Microsoft YaHei;
+	font-size: 12px;
+	font-weight: bold;			/*字体宽度*/
+	color: #000;				/*字体颜色*/
+	
+}
+/*for ie 10*/
+.x-tab-strip-top .x-tab-with-icon .x-tab-right{
+	padding-left: 0px;
+	text-decoration: none;
+}
+.x-tab-strip-top .x-tab-with-icon .x-tab-left{
+	padding-left: 6px;
+}
+
+/******布局样式相关css[表单,流程]******/
+#layoutDiv{	/*包含表格(主表和子表)最外层div对应的样式*/
+}
+#layoutDiv span{/*layoutDiv下span的样式*/
+	word-break:break-all;
+}
+table.layouttable {/*主表表格样式*/
+	border: 1px solid #ccc;
+	margin-bottom: 10px;
+	/*background-image: url(images/table_bg.jpg);*/
+
+}
+table.detailtable{/*子表表格样式*/
+	border: 1px solid #ccc;	/*边框(宽度  样式  颜色)*/
+}
+table.layouttable caption,table.layouttable caption span,table.layouttable caption a{/*主表标题对应的样式(含标题中的span和a元素)*/
+	font-family: Microsoft YaHei;
+	font-size: 23px;			/*字体大小*/
+	font-weight: normal;			/*字体重量(粗体)*/
+	text-align: center;			/*文本对齐方式*/
+	padding: 0 0 10px 0;
+	color: #3C5369;
+	border: none;
+	
+}
+table.layouttable tr{/*主表表格行对应的样式*/
+	height:30px;		/*高度*/
+	line-height: 30px;	/*行高*/
+}
+table.layouttable td{/*主表表格列对应的样式*/
+	border: 1px solid #ccc;	/*边框(宽度  样式  颜色)*/
+}
+table.layouttable span,table.layouttable textarea{/*主表表格中的span和多行文本对应的样式*/
+	word-break:break-all;
+}
+table.detailtable caption{/*明细表标题对应的样式*/
+	text-align: left;			/*文本对齐方式*/
+	padding:1px;				/*内边距*/
+	color: #3C5369;				/*内容颜色*/
+	border: 1px solid #ccc;	/*边框(宽度  样式  颜色)*/
+	font-size: 13px;
+}
+table.detailtable td{/*明细表列对应的样式*/
+	border: 1px solid #ccc;	/*边框(宽度  样式  颜色)*/
+}
+table.detailtable table{/*明细表中包含的table对应的样式*/
+	border-width: 0px;			/*边框宽度*/
+	margin-top: -1px;			/*上外边距*/
+}
+table.detailtable table td{/*明细表中包含的table中列对应的样式*/
+	height: 30px;				/*高度*/
+	line-height: 30px;			/*行高*/
+	border: solid #ccc;		/*边框(样式  颜色)*/
+	border-width:1 0 0 0;		/*边框宽度(上 右 下 左)*/
+}
+td.FieldName {/*表格中样式为FieldName的列对应的样式(主要针对主表每项文字标题所设置的样式)*/
+	font-family: Segoe UI, Microsoft YaHei;
+	color: #333;
+	text-decoration: none;				
+	height: 28px;						/*高度*/
+	border-bottom: 1px solid #fff;	/*下边框(宽度  样式  颜色)*/
+	background-color: #F5FAFA;			/*背景颜色*/
+	padding: 0 4 0 0;
+	font-weight:normal;
+	/*BACKGROUND-IMAGE: url(images/bg.gif);*/
+
+	padding-left: 2px;					/*内左边距*/
+}
+td.FieldValue {/*表格中样式为FieldValue的列对应的样式(主要针对主表每项表单元素所设置的样式)*/
+	font-family: Segoe UI, Microsoft YaHei;
+	color: #333;
+	padding-right: 4px;					/*内右边距*/
+	padding-left: 4px;					/*内左边距*/
+	background-color: #fff;			/*背景颜色*/
+	border-bottom: 1px solid #f8f8f0;		/*下边框(宽度  样式  颜色)*/
+	height: 28px;						/*高度*/
+}
+td.FieldValue, td.FieldValue span, td.FieldValue span a {/*表格中样式为FieldValue的列对应的样式(主要针对主表每项表单元素所设置的样式)*/
+	font-family: Segoe UI, Microsoft YaHei;
+}
+input.inputstyle, input.inputstyle2{
+	border: 1px solid #ccc;
+    font-size: 12px;
+	vertical-align: middle;
+	height:20px; 
+	padding: 3px  4px 0px 2px;
+	border: solid 1px #DBD5B2;
+}
+
+
+
+
+
+
+BUTTON.Browser {
+	BACKGROUND-IMAGE: url(images/browser.gif);
+}
+A.addfile{
+	background-image: url(images/files_add.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	display:inline-block;/*float:left;*/
+	height: 20px;
+	margin-top: -1px;
+	/*position:relative;*/
+	text-decoration: none;
+	top: 0pt;
+	width: 80px;
+}
+
+
+
+
+
+
+/******文档查看页面css******/
+div, span{
+	font-family: Microsoft YaHei, Segoe UI, Verdana, Tahoma;
+	font-size: 12px;
+}
+#pagemenubar{
+	padding: 0 0 0px 0;
+	border-bottom: 0px solid #eee;
+}
+.docSubject{
+	font-family: Microsoft YaHei, Segoe UI, Verdana, Tahoma;
+	font-size: 26px;
+	margin: 10px;
+	text-align: center;
+}
+.docBaseProps{
+	text-align: center;
+	margin: 0 0 0 10px;
+}
+.docBaseProps span{
+	font-family:;
+	color: #999;
+}
+.docAbstract{
+	color: #666;
+	background-color: #fff5da;
+	border: 1px solid #efe4b4;
+	padding: 3px 0 3px 5px;
+	margin: 10px 20px;
+}
+.docContent{
+	margin: 10px 20px !important;
+}
+.docContent p{
+	font-family: Segoe UI, Verdana, Tahoma;
+}
+.docAttach{
+
+}
+.docAttachFile{
+	padding: 4px;
+	border-bottom: 1px solid #eee;
+}
+#docattribute{
+	margin-top: 10px;
+}
+#docAttributeWeb{
+	margin: 10px 10px;
+}
+#docRemark{
+	margin-top: 5px;
+}
+.docSlogan{
+	margin: 5px 10px 0 10px;
+}
+.slogan{
+	color: green;
+}
+
+table.remarkItem{
+	background-color: #EDEFF4;padding:6px;margin: 0 0 2px 0;
+}
+table.remarkItem td{
+	vertical-align: top;
+	padding: 5px 12px;
+	line-height: 18px;
+	color: #666;
+}
+td.remarkAvator{
+	padding: 0!important;
+	width: 40px;
+	background-color: #fff;
+}
+td.remarkAvator img{
+	width: 32px;
+	height: 32px;
+}
+td.remarkArrow{
+	width: 8px;
+	padding: 0 !important;
+	background-color: #fff;
+	background-image: url(images/triangle.png);
+	background-repeat: no-repeat;
+	
+}
+.fontArial9{
+	font-family:arial;font-size:10px !important;color:#999;
+}
+table.remarkItem td span a{
+	color: #3B5998 !important;
+}

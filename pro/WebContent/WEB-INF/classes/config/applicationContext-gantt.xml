@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="ganttService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.ganttmap.service.GanttService">
+				<property name="edoTaskDao" ref="edoTaskDao"/>
+				<property name="edoPredecessorLinkDao" ref="edoPredecessorLinkDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="edoTaskDao" class="com.eweaver.ganttmap.dao.EdoTaskDaoHB">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="edoPredecessorLinkDao" class="com.eweaver.ganttmap.dao.EdoPredecessorLinkDaoHB">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+</beans>

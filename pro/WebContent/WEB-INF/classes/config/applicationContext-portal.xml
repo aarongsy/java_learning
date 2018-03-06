@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="baseDao" class="org.light.portal.core.dao.hibernate.BaseDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="userDao" ref="userDao" />
+	</bean>
+
+	<bean id="portalDao" class="org.light.portal.core.dao.hibernate.PortalDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="userDao" ref="userDao" />
+	</bean>
+
+	<bean id="userDao" class="org.light.portal.user.dao.hibernate.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="mailPortletDao" class="com.eweaver.portal.dao.MailPortletDaoHB">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="portletobjConfigDao" class="com.eweaver.portal.dao.PortletobjConfigDaoHB">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="portalService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="org.light.portal.core.service.spring.PortalServiceImpl">
+				<property name="baseDao" ref="baseDao" />
+				<property name="portalDao" ref="portalDao" />
+				<property name="portletStyleService" ref="portletStyleService" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="userService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="org.light.portal.user.service.spring.UserServiceImpl">
+				<property name="baseDao" ref="baseDao" />
+				<property name="userDao" ref="userDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="pagesDao" class="com.eweaver.homepage.dao.PagesDaoHB">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="webMenuDao" class="com.eweaver.homepage.dao.WebMenuDaoHB">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="webMenuRefDao" class="com.eweaver.homepage.dao.WebMenuRefDaoHB">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="webSkinDao" class="com.eweaver.homepage.dao.WebSkinDaoHB">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="pagesService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.homepage.service.PagesService">
+				<property name="pagesDao" ref="pagesDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="portletStyleService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.portal.service.PortletStyleService">
+				<property name="portletStyleDao" ref="portletStyleDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="portletStyleDao" class="com.eweaver.portal.dao.PortletStyleDaoHB">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+</beans>

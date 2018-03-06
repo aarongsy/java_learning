@@ -1,0 +1,11 @@
+错误时间
+  10:01:08
+错误位置
+  sql2012051501.sql第6行
+错误语句
+ alter table formfield add constraint pk_formfield_id primary key(id)
+错误原因
+  java.sql.SQLException: ORA-02260: 表只能具有一个主键
+
+
+

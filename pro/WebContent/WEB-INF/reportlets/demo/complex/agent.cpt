@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.2</Version>
+<TableDataMap>
+<TableData name="ProductSeries" class="com.fr.data.impl.EmbeddedTableData">
+<ColumnNames><![CDATA[ID,,.,,ProductID,,.,,Series]]></ColumnNames>
+<ColumnTypes><![CDATA[java.lang.String,java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[!BpM"s"Og7$+KoZn](;11'o]B:dYRG#r;n1rPIkg8QcBW#rDsqo$a;Eq?f(d2$qO9e$-I\$8
+r2K$-B-`kgIK~
+
+]]>
+</RowData>
+</TableData>
+<TableData name="ProductVariety" class="com.fr.data.impl.EmbeddedTableData">
+<ColumnNames><![CDATA[ID,,.,,ProductID,,.,,Variety]]></ColumnNames>
+<ColumnTypes><![CDATA[java.lang.String,java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[*QU;MJcHL>iVB!Ne+)k-@m`XKd@mh7>$s1SP,8@O3]9Al22+C#%=PZJmjfZjHcAVkYQCu?k2
+"f).Uoj^Igo*+ap3&eBR(*]C]O,
+70EJok/5dqn-3`-hhG,.D4fJ-l4ViUSbMcHU/.-*U'uu\
+1Kpm!/%>q/\3pG]67k=kkG?bmsE;K_QM[[boH-Kecl$@A]V$AU+n.X
+].~
+
+]]>
+</RowData>
+</TableData>
+<TableData name="VarietyAgent" class="com.fr.data.impl.EmbeddedTableData">
+<ColumnNames><![CDATA[ID,,.,,ProductID,,.,,AgentDistinction,,.,,Agent]]></ColumnNames>
+<ColumnTypes><![CDATA[java.lang.String,java.lang.String,java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[L!i[g_a"b;i:H_ZZEsB)\U&"[>DZPs;N5N)[;#coO$aL&?IbO!JDr361<Z!*q0cZ.R2l;0Y0
+st4hIJcCa&R82=dBS8o9uSXZQmu
+ac#K_g^A<A<8_t3<h8kE*a^`%dOt-.5gcE<Miqd_uXB,H
+gVF.<2i=6H"],*"1)q"YC<I$fK6pek/?>gf,4A(KK50CTE,X=-V#h1
+TD/g1[4]*b0n_drpER
+[8T2TnSBQGF(_UF7[=2*r[:E(q(r"IG^&*Jt==d/p1+m\jSg!h(.cXh^qGmQ<TX.Z#AWfgBR
+qI9RdOg'
+gkTb(2IL%&VSpRZ&\Wi`e4t;$L*tG4.ne~
+
+]]>
+</RowData>
+</TableData>
+</TableDataMap>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="0" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings shrinkToFit="true" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.7499999999999999" bottom="0.27" right="0.7499999999999999" />
+</ReportSettings>
+<ReportPageAttr>
+</ReportPageAttr>
+<ReportWebAttr>
+<EmailManager mailHost="" password="___" user="" fromEmailAddress="" />
+<ServerPrinter>
+</ServerPrinter>
+<Background name="NullBackground" />
+</ReportWebAttr>
+<ReportWriteAttr>
+</ReportWriteAttr>
+<RowHeight defaultValue="19">
+<![CDATA[19,19,22,22]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[70,110,120,120,226]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="5" s="0"><O><![CDATA[IT行业某品牌产品代理分布]]></O>
+</C>
+<C c="0" r="2" cs="5" s="1"></C>
+<C c="0" r="3" s="2"><O><![CDATA[序号]]></O>
+</C>
+<C c="1" r="3" s="2"><O><![CDATA[产品系列]]></O>
+</C>
+<C c="2" r="3" s="2"><O><![CDATA[产品分类]]></O>
+</C>
+<C c="3" r="3" s="2"><O><![CDATA[系列代理]]></O>
+</C>
+<C c="4" r="3" s="2"><O><![CDATA[代理商]]></O>
+</C>
+<C c="0" r="4" s="3"><O t="DSColumn"><Attributes dsName="ProductSeries" columnName="ID" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="1" r="4" s="3"><O t="DSColumn"><Attributes dsName="ProductSeries" columnName="Series" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="2" r="4" s="3"><O t="DSColumn"><Attributes dsName="ProductVariety" columnName="Variety" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[ProductID]]></CNAME><Compare op="0">
+<ColumnRow column="0" row="4"/>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="3" r="4" s="3"><O t="DSColumn"><Attributes dsName="VarietyAgent" columnName="AgentDistinction" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[ProductID]]></CNAME><Compare op="0">
+<ColumnRow column="0" row="4"/>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" leftParentDefault="false" left="B5" />
+</C>
+<C c="4" r="4" s="3"><O t="DSColumn"><Attributes dsName="VarietyAgent" columnName="Agent" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="0" r="6" cs="5" s="4"><O><![CDATA[“IT行业某品牌产品代理分布”报表功能应用说明：]]></O>
+</C>
+<C c="0" r="7" cs="5" s="5"><O><![CDATA[1、两列纵向扩展，有共同的父格。]]></O>
+</C>
+<C c="0" r="8" cs="5" s="5"><O><![CDATA[该报表中，“产品分类”及“系列代理”来自不同的数据表，两者也没有任何关联，但是共同与“产品系列”]]></O>
+</C>
+<C c="0" r="9" cs="5" s="6"><O><![CDATA[有关联。此时需要在同一表单中展现，只需将两列设置共同的父格即可。]]></O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="16" foreground="-16617053" />
+<Background name="NullBackground" />
+<Border><Bottom style="6" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ImageBackground"
+ specifiedImageWidth="-1.0"
+ specifiedImageHeight="-1.0"
+ layout="2">
+<Image width="271" height="20">
+<![CDATA[mDD3s_Ctrm_#OF0>K!!9WJ6!OQ7+.ZoaQ9>0E]d2laNppWiE)!WiGp)li!RsTDPW,0?[QWIV
+_g1pu1d?NUQ%!281S82*R8))W+4
+iebJi;<TD!-WQ)u!;iUeW~
+
+]]>
+</Image>
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12" />
+<Background name="ColorBackground"
+ color="-852225">
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-328966">
+</Background>
+<Border><Top style="3" color="-6894375"
+ /><Left style="3" color="-6894375"
+ /><Right style="3" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-328966">
+</Background>
+<Border><Left style="3" color="-6894375"
+ /><Right style="3" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-328966">
+</Background>
+<Border><Bottom style="3" color="-6894375"
+ /><Left style="3" color="-6894375"
+ /><Right style="3" color="-6894375"
+ /></Border>
+</Style>
+</StyleList>
+</WorkBook>

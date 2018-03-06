@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+${headerFiles}
+<title>产品新闻</title>
+</head>
+
+<body>
+<div id="page">
+#IncludePage('402880322263601101226373c9a40003')
+<div id="main">
+	<div id="leftPanel">leftElement</div>
+	<div id="rightPanel">right</div>
+	<div id="centerPanel">center</div>
+</div>
+#IncludePage('40288032226360110122636fbf950002')
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+ERROR:[2014-11-03 09:42:26,769] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-0.0.0.0-80-21) :java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+ ERROR:[2014-11-03 11:37:29,976] com.eweaver.workflow.form.dao.ForminfoDaoHB(http-0.0.0.0-80-17) :java.sql.SQLSyntaxErrorException: ORA-00955: 名称已由现有对象使用
+
+ ERROR:[2014-11-03 11:41:03,552] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-0.0.0.0-80-49) :java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+ ERROR:[2014-11-03 11:41:03,578] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-0.0.0.0-80-49) :java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+ ERROR:[2014-11-03 11:41:03,604] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-0.0.0.0-80-49) :java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+ ERROR:[2014-11-03 11:41:03,630] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-0.0.0.0-80-49) :java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+ ERROR:[2014-11-03 11:41:03,657] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-0.0.0.0-80-49) :java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+ ERROR:[2014-11-03 11:41:03,683] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-0.0.0.0-80-49) :java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+ ERROR:[2014-11-03 11:41:03,717] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-0.0.0.0-80-49) :java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+ ERROR:[2014-11-03 11:41:03,743] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-0.0.0.0-80-49) :java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+ ERROR:[2014-11-03 11:41:03,768] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-0.0.0.0-80-49) :java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+ ERROR:[2014-11-03 11:41:03,794] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-0.0.0.0-80-49) :java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+ ERROR:[2014-11-03 11:42:17,382] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-0.0.0.0-80-18) :java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+ ERROR:[2014-11-03 11:42:52,198] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-0.0.0.0-80-18) :java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+ ERROR:[2014-11-03 11:45:06,640] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-0.0.0.0-80-34) :java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+ ERROR:[2014-11-03 11:45:51,601] com.eweaver.workflow.form.dao.ForminfoDaoHB(http-0.0.0.0-80-9) :java.sql.SQLSyntaxErrorException: ORA-00955: 名称已由现有对象使用
+
+ ERROR:[2014-11-03 11:46:09,697] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-0.0.0.0-80-9) :java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+ ERROR:[2014-11-03 11:47:29,330] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-0.0.0.0-80-49) :java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+ ERROR:[2014-11-03 11:48:38,886] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-0.0.0.0-80-7) :java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+ ERROR:[2014-11-03 11:50:28,991] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-0.0.0.0-80-6) :java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+ ERROR:[2014-11-03 11:53:03,011] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-0.0.0.0-80-25) :java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+ ERROR:[2014-11-03 11:53:58,337] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-0.0.0.0-80-7) :java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+ ERROR:[2014-11-03 11:57:00,255] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-0.0.0.0-80-25) :java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+ ERROR:[2014-11-03 23:59:00,135] com.eweaver.base.job.DelAttachJob(quartzScheduler_Worker-0) :org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [select id,imagefileid from imagefiletemp where to_date(to_char(sysdate,'yyyy-MM-dd'),'yyyy-MM-dd')-to_date(createdate,'yyyy-MM-dd') >= ]; nested exception is java.sql.SQLSyntaxErrorException: ORA-00936: 缺失表达式
+
+ 

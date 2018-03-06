@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!--
+ * FCKeditor - The text editor for Internet - http://www.fckeditor.net
+ * Copyright (C) 2003-2008 Frederico Caldeira Knabben
+ *
+ * == BEGIN LICENSE ==
+ *
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU General Public License Version 2 or later (the "GPL")
+ *    http://www.gnu.org/licenses/gpl.html
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ *  - Mozilla Public License Version 1.1 or later (the "MPL")
+ *    http://www.mozilla.org/MPL/MPL-1.1.html
+ *
+ * == END LICENSE ==
+ *
+ * This is the sample "Find" plugin window.
+-->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta content="noindex, nofollow" name="robots">
+		<script type="text/javascript" src="/js/json.js"></script>
+		<script type="text/javascript" src="/js/weaverUtil.js"></script>
+		<script type="text/javascript">
+
+//var oEditor = window.parent.InnerDialogLoaded() ;
+var dialog	= window.parent ;
+var oEditor = dialog.InnerDialogLoaded() ;
+
+var pageWin=dialog.parent;
+var oElement=null;
+var fieldData=null;//需要传递的参数数据
+var fieldId=null;//保存字段名称
+var isInsert=false;
+
+function initFromOption(val){
+	var oSel=pageWin.document.getElementById('formList');
+	if(!oSel)return;
+	var opts=pageWin.document.getElementById('formList').options;
+	alert('title:'+pageWin.document.title);
+	var formOpt=$('formName').options;
+	var opt=null,opt2=null;
+	for(var i=0;i<opts.length;i++){
+		opt2=opts[i];
+		opt=document.createElement("OPTION");
+		opt.text=opt2.text;opt.value=opt2.value;
+		if(val==opt2.value)opt.selected=true;
+		formOpt.add(opt);
+	}
+}
+
+function OnLoad()
+{
+	// First of all, translate the dialog box texts.
+	oEditor.FCKLanguageManager.TranslatePage( document ) ;
+
+	oElement = oEditor.FCKSelection.GetSelectedElement();
+	
+	if(oElement==null){//插入新字段到焦点
+		isInsert=true;//alert('插入新字段到焦点');
+		fieldData={};
+	}else{
+		$('name').value=oElement.innerHTML;
+		fieldId=oElement.getAttribute("name");
+		fieldData=pageWin.Report.data[fieldId];//从存储器取出该字段定义的数据格式
+		Util.selectOption('fieldExt',fieldData.fieldExt);
+		Util.selectOption('dataStyle',fieldData.dataStyle);
+		Util.selectOption('collect',fieldData.collect);		
+		Util.selectOption('fieldName',fieldData.fieldName);
+		$('txtFormat').value=fieldData.txtFormat;
+		if(fieldData.dataStyle=='collect') $('collectRow').style.display='';
+	}//end if.
+	initFromOption(fieldData.formId);
+	dialog.SetOkButton( true );
+	dialog.SetAutoSize( true );
+}
+
+function Ok(){
+	if(Util.getValue('name')==''){
+		alert('标签不能为空!');
+		$('name').focus();
+		return;
+	}
+	if(oElement==null){
+		if(isInsert && oEditor.FCK.EditMode == 0 /*FCK_EDITMODE_WYSIWYG*/ ){
+			fieldId=WeaverUtil.generateId('Field');
+			var sHtml='<button class="Field" name="'+fieldId+'">'+Util.getValue('name')+'</button>';
+			oEditor.FCK.InsertHtml(sHtml);
+			
+		}else return true;//end if.
+	}else{
+		//oElement.setAttribute("_fieldName",document.getElementById('fieldName').value);
+		oElement.innerHTML=$('name').value;
+	}//end if.
+	
+	fieldData.label=Util.getValue('name');
+	fieldData.formId=Util.getValue('formName');
+	fieldData.fieldExt=Util.getValue('fieldExt');
+	fieldData.dataStyle=Util.getValue('dataStyle');
+	fieldData.collect=Util.getValue('collect');
+	fieldData.fieldName=Util.getValue('fieldName');
+	fieldData.txtFormat=Util.getValue('txtFormat');
+	pageWin.Report.data[fieldId]=fieldData;
+	
+	return true;
+}
+var Util={
+selectOption:function(id,val){
+	var opts=$(id).options,opt=null;
+	for(var i=0;i<opts.length;i++){
+		opt=opts[i];
+		if(opt.value==val){opt.selected=true;return;}
+	}//end for.	
+},getValue:function(id){
+	var obj=$(id);
+	if(obj.tagName=='SELECT') return obj.options[obj.selectedIndex].value;
+	else if(obj.tagName=='INPUT') return obj.value;
+	else return id;
+}
+};//end util.
+function chgDataStyle(obj){
+	var index=obj.selectedIndex;
+	var isCollect=(index==2);
+	$('collectRow').style.display=isCollect?'':'none';
+	$('fieldExt').selectedIndex=isCollect?2:0;
+	$('fieldExt').disabled=isCollect;
+}
+		</script>
+	</head>
+	<body onload="OnLoad()" scroll="no" style="OVERFLOW: hidden">
+
+		<table cellSpacing="3" cellPadding="2" width="100%" border="1">
+			<tr>
+				<td nowrap>
+					<label for="name">标签:</label>&nbsp;
+				</td>
+				<td>
+					<input id="name" value="" tabIndex="1" type="text">
+				</td>
+			</tr>
+			<tr><td>表单:</td><td><select name="formName" id="formName"></select></td></tr>
+			<tr>
+			<td>字段名:</td><td><select id="fieldName">
+			<option value="field1">字段一</option>
+			<option value="field2">字段二</option>
+			<option value="field3">字段三</option>
+			<option value="null">无</option>
+			</select>
+			</td>
+			</tr>		
+			<tr><td>数据设置:</td><td>
+			<select name="dataStyle" id="dataStyle" onchange="chgDataStyle(this);">
+			<option value="group">分组</option>
+			<option value="list">列表</option>
+			<option value="collect">汇总</option>
+			</select>
+			</td>
+			</tr>
+			<tr id="collectRow" style="display:none"><td>汇总:</td><td>
+			<select name="collect" id="collect">
+			<option value="sum">求和</option>
+			<option value="avg">平均值</option>
+			<option value="max">最大值</option>
+			<option value="min">最小值</option>
+			<option value="count">个数</option>
+			<option value="null" selected="selected">无</option>
+			</select>
+			</td></tr>
+			
+			<tr><td>字段扩展:</td><td>
+			<select name="fieldExt" id="fieldExt">
+				<option value="1">→横向扩展</option>
+				<option value="2">↓纵向扩展</option>
+				<option value="3">不扩展</option>
+			</select>
+			</td></tr>
+
+			
+			<tr>
+			<td>格式化:</td><td><input id="txtFormat" title="${value}代表字段值，${单元格名称}引用其他值" /></td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+	</body>
+</html>

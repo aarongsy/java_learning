@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="docService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.cpms.project.doc.DocService">
+				<property name="doclinkDao" ref="doclinkDao" />
+				<property name="doctypeLinkDao" ref="doctypeLinkDao" />
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="flowService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.cpms.project.flow.FlowService">
+				<property name="flowlinkDao" ref="flowlinkDao" />
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="taskTempService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.cpms.project.wbstemplate.TaskTempService">
+				<property name="taskTempDao" ref="taskTempDao" />
+				<property name="selectitemService" ref="selectitemService" />
+				<property name="orgunitService" ref="orgunitService" />
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="doclinkDao" class="com.eweaver.cpms.project.doc.DoclinkDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+	<bean id="doctypeLinkDao" class="com.eweaver.cpms.project.doc.DoctypeLinkDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+	<bean id="flowlinkDao" class="com.eweaver.cpms.project.flow.FlowlinkDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+	<bean id="taskTempDao" class="com.eweaver.cpms.project.wbstemplate.TaskTemplateDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+	<bean id="taskService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.cpms.project.task.TaskService">
+				<property name="formfieldService" ref="formfieldService" />
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="preTaskService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.cpms.project.pretask.PreTaskService">
+				<property name="preTaskDao" ref="preTaskDao" />
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="preTaskDao" class="com.eweaver.cpms.project.pretask.PreTaskDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+	<bean id="taskResourceDao" class="com.eweaver.cpms.project.resource.TaskResourceDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="taskResourceService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.cpms.project.resource.TaskResourceService">
+				<property name="taskResourceDao" ref="taskResourceDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="commentDao" class="com.eweaver.cpms.comment.CommentDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="commentService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.cpms.comment.CommentService">
+				<property name="commentDao" ref="commentDao" />
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="changeWbsXmlService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.cpms.project.task.ChangeWbsXmlService">
+				<property name="taskService" ref="taskService" />
+				<property name="taskResourceService" ref="taskResourceService" />
+				<property name="preTaskService" ref="preTaskService" />
+			</bean>
+		</property>
+	</bean>
+	
+	<!-- CPMS中的JMS配置 -->
+	<bean id="flowMessage" class="com.eweaver.cpms.jms.FlowMessage">
+		<property name="flowService" ref="flowService" />
+	</bean>
+	
+	<bean id="flowMessageRegister" class="com.eweaver.base.msg.usermsg.UserMessageRegister" init-method="init">
+		<property name="userMessage" ref="flowMessage" />
+		<property name="userMessageKey" value="flowMessage" />
+		<property name="eweaverMessageConsumer" ref="eweaverMessageConsumer" />
+	</bean>
+	
+	<bean id="docMessage" class="com.eweaver.cpms.jms.DocMessage">
+		<property name="docService" ref="docService" />
+	</bean>
+	
+	<bean id="docMessageRegister" class="com.eweaver.base.msg.usermsg.UserMessageRegister" init-method="init">
+		<property name="userMessage" ref="docMessage" />
+		<property name="userMessageKey" value="docMessage" />
+		<property name="eweaverMessageConsumer" ref="eweaverMessageConsumer" />
+	</bean>
+	
+	<bean id="taskMessage" class="com.eweaver.cpms.jms.TaskMessage">
+		<property name="baseJdbcDao" ref="baseJdbcDao" />
+	</bean>
+	
+	<bean id="taskMessageRegister" class="com.eweaver.base.msg.usermsg.UserMessageRegister" init-method="init">
+		<property name="userMessage" ref="taskMessage" />
+		<property name="userMessageKey" value="taskMessage" />
+		<property name="eweaverMessageConsumer" ref="eweaverMessageConsumer" />
+	</bean>
+</beans>

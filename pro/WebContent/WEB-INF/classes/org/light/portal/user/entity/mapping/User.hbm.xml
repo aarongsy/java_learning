@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!--
+  - Mapping file for the Hibernate implementation of the Clinic interface.
+ -->
+<hibernate-mapping auto-import="true" default-lazy="false">
+ <class name="org.light.portal.user.entity.UserEntity" table="light_user" >
+   <id name="userId" column="userId">
+	   <generator class="assigned"/>
+   </id>   
+   <property name="password"  type="string" 	column="password"/>   
+   <property name="firstName"  type="string" 	column="firstName"/> 
+   <property name="middleName"  type="string" 	column="middleName"/> 
+   <property name="lastName"  type="string" 	column="lastName"/> 
+   <property name="email"  type="string" 	column="email"/>      
+ </class>
+ <!--
+ <class name="org.light.portal.user.entity.UserRoleEntity" table="ExternalUserRole" >
+  <id name="id" column="ID">
+	   <generator class="increment"/>
+   </id>     
+   <property name="userId"  type="string" 	column="userId"/>
+   <property name="roleId"  type="string" 	column="roleId"/>
+ </class> 
+  -->
+</hibernate-mapping>

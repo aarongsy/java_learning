@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2008, Shanghai Weaver software. All Rights Reserved.
+  -->
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="ecologyDS" class="org.logicalcobwebs.proxool.ProxoolDataSource">
+       <property name="driver">
+           <value>com.microsoft.sqlserver.jdbc.SQLServerDriver</value>
+       </property>
+       <property name="driverUrl">
+           <value>jdbc:sqlserver://127.0.0.1:1433;DatabaseName=ecologygroup</value>
+       </property>
+       <property name="user">
+           <value>sa</value>
+       </property>
+       <property name="password">
+           <value>123456</value>
+       </property>
+       <property name="maximumConnectionCount">
+           <value>10</value>
+       </property>
+       <property name="minimumConnectionCount">
+           <value>5</value>
+       </property>
+       <property name="delegateProperties">
+           <value>user=sa,password=123456</value>
+       </property>
+	   <property name="simultaneousBuildThrottle">
+           <value>10</value>
+       </property>
+       <property name="alias">
+           <value>ecologyDS</value>
+       </property>
+    </bean>
+
+	<bean id="ecologyDao" class="com.eweaver.base.BaseJdbcDao">
+		<property name="dataSource">
+			<ref bean="ecologyDS" />
+		</property>
+	</bean>
+
+	<bean id="ecologySyncService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.interfaces.ecology.service.EcologySyncService">
+                <property name="ecologyDao" ref="ecologyDao"/>
+                <property name="eweaverDao" ref="baseJdbcDao"/>
+                <property name="sysuserDao" ref="sysuserDao"/>
+                <property name="humresDao" ref="humresDao"/>
+                <property name="orgunitDao" ref="orgunitDao"/>
+                <property name="orgunitlinkDao" ref="orgunitlinkDao"/>
+                <property name="stationinfoDao" ref="stationinfoDao"/>
+                <property name="stationlinkDao" ref="stationlinkDao"/>
+                <property name="typeid" value="402881e510e8223c0110e83d427f0018"/>
+                <property name="rootid" value="402881e70ad1d990010ad1e5ec930008"/>
+                <property name="rootstationid" value="402881eb112f5af201112ff3afe10004"/>
+                <property name="companytypeid" value="402880c0197ea0b301197ea688870003"/>
+                <property name="subcompanytypeid" value="2c91a0302b19639f012b196ec20e0010"/>
+                <property name="depttypeid" value="2c91a0302a87f19c012a894ce1650003"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="ecologySyncAllTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerBean">
+		 <property name="jobDetail">
+             <bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+           		<property name="targetObject">
+						<ref bean="ecologySyncService"/>	
+				   </property>
+				   <property name="targetMethod">
+					<value>syncAll</value>
+				   </property>
+				   <property name="concurrent">
+					<value>false</value>
+				   </property>
+			</bean>
+         </property>
+		 <property name="cronExpression">            
+		 <value>0 0 23 * * ? *</value>        
+		 </property>
+	</bean>
+	
+	<bean id="ecologySyncDailyTrigger"
+		class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		 <property name="jobDetail">
+             <bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+           		<property name="targetObject">
+						<ref bean="ecologySyncService"/>	
+				   </property>
+				   <property name="targetMethod">
+					<value>syncDaily</value>
+				   </property>
+				   <property name="concurrent">
+					<value>false</value>
+				   </property>
+			</bean>
+         </property>
+     	<property name="repeatInterval">
+		   <value>300000</value>
+		 </property>
+	</bean>
+</beans>

@@ -1,0 +1,16 @@
+<div id="header">
+<div class="line">
+<div class="userinfo">
+#if($isLogin)
+欢迎您:$Userinfo.humres.objname&nbsp;<a href="${root}/../main/logout.jsp">退出</a>
+#end
+</div>
+<div class="link">
+<a href="#">购买咨询</a>&nbsp;<a href="#">设为首页</a>&nbsp;<a href="#">加入收藏</a>
+</div>
+</div>
+<div class="nav">
+<div class="logo"><img src="${path}/images/logo.jpg"/></div>
+<div class="text">#Menu('4028803222879bc30122882346c50007')</div>
+</div>
+</div>

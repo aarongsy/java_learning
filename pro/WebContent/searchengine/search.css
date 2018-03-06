@@ -1,0 +1,138 @@
+.suggest{
+	position:absolute;top:35px;left:353.5px;
+	color:#00c;
+	text-decoration:none;
+	text-align:left;
+	z-index:100;
+	width:305px;
+	border:1px solid #000000;
+	border-top:0px;
+	background:#fff;
+	float:left;
+}
+.main{margin:5px}
+.panel{width:40%; float:left;margin:0px auto; padding:1px;line-height: 17px;height:17px;vertical-align:middle;}
+.panel img {vertical-align:middle;}
+.panelInfo{width:60%; float:right;text-align:right}
+.author{font-color:#666666;}
+.info{ border-top-style:solid;border-color:#b0bdd4}
+.tip{
+	position:relative;
+	color:#00c;
+	text-decoration:none;
+}
+.tip:hover{
+	background:none;
+	color:#000;
+}
+.tip span {
+	display: none;
+}
+.summaryDIV {
+	position:absolute;
+	z-index:105;
+	border-bottom:2px solid #eee;
+	border-right:2px solid #eee;
+	text-decoration:none;
+	width:300px;
+	FILTER:Alpha(Opacity=100);
+	word-break:break-all;
+}
+.summaryDIV p {
+	color:#f60;
+	text-align:left;
+	text-decoration:none;
+	padding:5px;
+	border:1px solid #ccc;
+	background:#fff;
+}
+#logo {
+	font-size:14px;
+	font-weight:bold;
+}
+#logo img{
+	vertical-align:middle;
+}
+#resultview {
+	line-height: 17px;
+	border: #b0bdd4 1px solid;
+	width:99%;
+}
+#resultview ul {
+	margin-top: 8px;
+	margin-bottom: 0px;
+	margin-left: 2px;
+	padding: 0px;
+}
+#resultview ul ul {
+	margin-left: 42px;
+}
+#resultview li {
+	word-break: keep-all;
+	/*white-space: nowrap;*/
+	list-style:none;
+}
+#resultview li div {
+	
+	margin:0px auto 0px 125px;
+	border:"1px";
+
+	padding:0px;
+}
+#resultview div a {
+	color: #333333;
+}
+#resultview div a:hover {
+	color: red;
+	text-decoration: underline;
+}
+/*标题*/
+#resultview ul li label {
+	font-weight: bold;
+}
+#resultview ul li ul li label {
+	font-weight: normal;
+}
+#resultview label a {
+	text-decoration: underline;
+}
+
+#pagenavigator {
+	padding: 10px;
+	text-align: center;
+}
+#pagenavigator label {
+	color: #5276b2;
+}
+#pagenavigator div {
+	margin-bottom: 2px;
+}
+#pagenavigator span.current,#turnpage span.disabled,#pagenavigator a {
+	margin: 2px;
+	padding-right: 6px;
+	padding-left: 6px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+#pagenavigator span.current {
+	border: #5d86ca 1px solid;
+	color: #ffffff;
+	background-color: #5276b2;
+}
+#pagenavigator span.disabled {
+	border: #c5c8d0 1px solid;
+	color: #c5c8d0;
+}
+#pagenavigator a {
+	border: #5d86ca 1px solid;
+	text-decoration: none
+}
+#pagenavigator a:hover {
+	background-color: #aebed9;
+}
+#pagenavigator input {
+	border: none;
+	color: #5276b2;
+	width: 18px;
+	height: 18px
+}

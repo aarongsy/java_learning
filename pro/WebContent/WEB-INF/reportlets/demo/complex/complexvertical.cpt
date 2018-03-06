@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.5</Version>
+<TableDataMap>
+<TableData name="Product" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters>
+</Parameters>
+<ColumnNames><![CDATA[ProductID,,.,,ProductName,,.,,Describe,,.,,Type]]></ColumnNames><ColumnTypes><![CDATA[class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String]]></ColumnTypes><RowData>
+<![CDATA[1ZStiY=qP_bi@b@i\KNccccDEN&_oB;bQZh1/d`7o27S/%Co/_l;BB1F.H5#Wq$fr^ga12:8
+u3t3Dc:bVfP=&IM#Bk86[B:#QO~
+
+
+]]>
+</RowData>
+</TableData>
+<TableData name="ProductType" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters>
+</Parameters>
+<ColumnNames><![CDATA[TypeID,,.,,TypeName]]></ColumnNames><ColumnTypes><![CDATA[class java.lang.String,class java.lang.String]]></ColumnTypes><RowData>
+<![CDATA[1ZWZ'8BoC10&\SFFN`!+!<<~
+
+]]>
+</RowData>
+</TableData>
+<TableData name="CustomerDetail" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters>
+</Parameters>
+<ColumnNames><![CDATA[CustomerID,,.,,Amount,,.,,ProdutID,,.,,Year,,.,,Quantity,,.,,TransportDate,,.,,Paid]]></ColumnNames><ColumnTypes><![CDATA[class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String]]></ColumnTypes><RowData>
+<![CDATA[7?C(N"#1&acgV_rp.YJcYr'Hl/q]gOG1f>f%lq2#Om/j>-0P@(7352%_`Bps]i?M*l?DD;et
+a;XkUnhtSLU(;N]GjNZ__#b_u.G
+:pdLMR5,X:HGR`RVK0_%p<G]:7%:E^gm`D_31"ga4TGG8
+aH+e72Zj4B-UXgjX:N7W'\Z+SG>roNkXa#bUZnM#r+nQi~
+
+]]>
+</RowData>
+</TableData>
+<TableData name="CustomerType" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters>
+</Parameters>
+<ColumnNames><![CDATA[TypeID,,.,,TypeName]]></ColumnNames><ColumnTypes><![CDATA[class java.lang.String,class java.lang.String]]></ColumnTypes><RowData>
+<![CDATA[1Z3B#aNR<<1?<Q#01sJ_cN=.~
+
+]]>
+</RowData>
+</TableData>
+<TableData name="Customer" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters>
+</Parameters>
+<ColumnNames><![CDATA[CustomerID,,.,,CustomerName,,.,,CustomerType]]></ColumnNames><ColumnTypes><![CDATA[class java.lang.String,class java.lang.String,class java.lang.String]]></ColumnTypes><RowData>
+<![CDATA[:!?<=K.mjkiUrO9bR$m?qmT@`*5IQW!=(ER'/6-0gZul=p>P-+kk1i3;Tq$/9Pr&WKm^_eh%
+5:<ROBGL[FC`c7(-+AeK#g4nL8c
+,/8M4I_7M')p[3_f$%;TLjV[@\7_=K#CurG$)Z~
+
+]]>
+</RowData>
+</TableData>
+</TableDataMap>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="0" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.DefaultParameterUI">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<RowHeight defaultValue="19">
+<![CDATA[19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72]]>
+</ColumnWidth>
+<CellElementList>
+</CellElementList>
+</ParameterUI>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.33" footerHeight="0.984251968503937">
+<Margin top="0.27" left="0.7499999999999999" bottom="0.27" right="0.7499999999999999" />
+</ReportSettings>
+<ReportPageAttr>
+</ReportPageAttr>
+<ReportWebAttr>
+<EmailManager mailHost="" password="___" user="" fromEmailAddress="" />
+<ServerPrinter>
+</ServerPrinter>
+<Background name="NullBackground" />
+</ReportWebAttr>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<ReportWriteAttr>
+</ReportWriteAttr>
+<RowHeight defaultValue="19">
+<![CDATA[26,19,19,16,16,16,16,16,16,16,16,16,16,16,16,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[41,74,66,62,67,72,72,72,72,72,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="5" s="0"><O><![CDATA[纵向多源分片报表]]></O>
+</C>
+<C c="0" r="2" cs="5" s="1"></C>
+<C c="0" r="3" cs="4" rs="2" s="2"><O><![CDATA[Vertical]]></O>
+</C>
+<C c="4" r="3" s="3"><O t="DSColumn"><Attributes dsName="ProductType" columnName="TypeID" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="1:I" value="Chemist"/>
+<Dict key="2:I" value="Food"/>
+</CustomDictAttr>
+</Dictionary></Present>
+<Expand dir="1" />
+</C>
+<C c="4" r="4" s="4"><O t="DSColumn"><Attributes dsName="Product" columnName="ProductID" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[Type]]></CNAME><Compare op="0">
+<ColumnRow column="4" row="3"/>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="1:I" value="Soybean"/>
+<Dict key="2:I" value="Oil"/>
+<Dict key="3:I" value="Acetophenone"/>
+<Dict key="4:I" value="SodiumBenzoate"/>
+<Dict key="5:I" value="Besylate"/>
+<Dict key="6:I" value="Chlorodipheny"/>
+</CustomDictAttr>
+</Dictionary></Present>
+<Expand dir="1" />
+</C>
+<C c="0" r="5" rs="2" s="5"><O><![CDATA[Sum as Customers]]></O>
+</C>
+<C c="1" r="5" rs="2" s="5"><O t="DSColumn"><Attributes dsName="CustomerType" columnName="TypeID" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="0:I" value="China"/>
+<Dict key="1:I" value="Foreign"/>
+</CustomDictAttr>
+</Dictionary></Present>
+<Expand dir="0" />
+</C>
+<C c="2" r="5" rs="2" s="5"><O t="DSColumn"><Attributes dsName="Customer" columnName="CustomerID" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[CustomerType]]></CNAME><Compare op="0">
+<ColumnRow column="1" row="5"/>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="1:I" value="Yixing Hongda Food Co."/>
+<Dict key="2:I" value="Health Chemist"/>
+<Dict key="3:I" value="Hanyi Food Co."/>
+<Dict key="4:I" value="China Chemist"/>
+<Dict key="5:I" value="Crystal"/>
+<Dict key="6:I" value="Chemist"/>
+<Dict key="7:I" value="The Davis Food Co"/>
+<Dict key="8:I" value="Freemans Chemist"/>
+</CustomDictAttr>
+</Dictionary></Present>
+<Expand dir="0" />
+</C>
+<C c="3" r="5" s="6"><O><![CDATA[Sales]]></O>
+</C>
+<C c="4" r="5" s="5"><O t="DSColumn"><Attributes dsName="CustomerDetail" columnName="Quantity" />
+<Condition class="com.fr.data.condition.ListCondition"><JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[CustomerID]]></CNAME><Compare op="0">
+<ColumnRow column="2" row="5"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[ProdutID]]></CNAME><Compare op="0">
+<ColumnRow column="4" row="4"/>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+</C>
+<C c="3" r="6" s="6"><O><![CDATA[Amount]]></O>
+</C>
+<C c="4" r="6" s="5"><O t="DSColumn"><Attributes dsName="CustomerDetail" columnName="Paid" />
+<Condition class="com.fr.data.condition.ListCondition"><JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[CustomerID]]></CNAME><Compare op="0">
+<ColumnRow column="2" row="5"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[ProdutID]]></CNAME><Compare op="0">
+<ColumnRow column="4" row="4"/>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+</C>
+<C c="6" r="6" s="7"></C>
+<C c="0" r="7" cs="3" rs="2" s="8"><O><![CDATA[Signed]]></O>
+</C>
+<C c="3" r="7" s="8"><O><![CDATA[Sales]]></O>
+</C>
+<C c="4" r="7" s="9"><O t="DSColumn"><Attributes dsName="CustomerDetail" columnName="Paid" />
+<Condition class="com.fr.data.condition.ListCondition"><JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[ProdutID]]></CNAME><Compare op="0">
+<ColumnRow column="4" row="4"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[Year]]></CNAME><Compare op="3">
+<O><![CDATA[2008]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand upParentDefault="false" up="E5" />
+</C>
+<C c="3" r="8" s="8"><O><![CDATA[Amount]]></O>
+</C>
+<C c="4" r="8" s="9"><O t="DSColumn"><Attributes dsName="CustomerDetail" columnName="Amount" />
+<Condition class="com.fr.data.condition.ListCondition"><JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[ProdutID]]></CNAME><Compare op="0">
+<ColumnRow column="4" row="4"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[Year]]></CNAME><Compare op="3">
+<O><![CDATA[2008]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand upParentDefault="false" up="E5" />
+</C>
+<C c="0" r="9" cs="3" rs="2" s="10"><O><![CDATA[Shipped]]></O>
+</C>
+<C c="3" r="9" s="10"><O><![CDATA[Sales]]></O>
+</C>
+<C c="4" r="9" s="11"><O t="DSColumn"><Attributes dsName="CustomerDetail" columnName="Quantity" />
+<Condition class="com.fr.data.condition.ListCondition"><JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[TransportDate]]></CNAME><Compare op="2">
+<O><![CDATA[0]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[ProdutID]]></CNAME><Compare op="0">
+<ColumnRow column="4" row="4"/>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand upParentDefault="false" up="E5" />
+</C>
+<C c="3" r="10" s="10"><O><![CDATA[Amount]]></O>
+</C>
+<C c="4" r="10" s="11"><O t="DSColumn"><Attributes dsName="CustomerDetail" columnName="Paid" />
+<Condition class="com.fr.data.condition.ListCondition"><JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[TransportDate]]></CNAME><Compare op="2">
+<O><![CDATA[0]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[ProdutID]]></CNAME><Compare op="0">
+<ColumnRow column="4" row="4"/>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand upParentDefault="false" up="E5" />
+</C>
+<C c="0" r="11" rs="2" s="12"><O><![CDATA[Sum as signed time]]></O>
+</C>
+<C c="1" r="11" cs="2" rs="2" s="13"><O t="DSColumn"><Attributes dsName="CustomerDetail" columnName="Year" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="3" r="11" s="13"><O><![CDATA[Sales]]></O>
+</C>
+<C c="4" r="11" s="12"><O t="DSColumn"><Attributes dsName="CustomerDetail" columnName="Quantity" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[ProdutID]]></CNAME><Compare op="0">
+<ColumnRow column="4" row="4"/>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand leftParentDefault="false" left="B12" upParentDefault="false" up="E5" />
+</C>
+<C c="3" r="12" s="13"><O><![CDATA[Amount]]></O>
+</C>
+<C c="4" r="12" s="12"><O t="DSColumn"><Attributes dsName="CustomerDetail" columnName="Paid" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[ProdutID]]></CNAME><Compare op="0">
+<ColumnRow column="4" row="4"/>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand leftParentDefault="false" left="B12" upParentDefault="false" up="E5" />
+</C>
+<C c="0" r="13" cs="3" rs="2" s="14"><O><![CDATA[Paid]]></O>
+</C>
+<C c="3" r="13" s="14"><O><![CDATA[Sales]]></O>
+</C>
+<C c="4" r="13" s="15"><O t="DSColumn"><Attributes dsName="CustomerDetail" columnName="Paid" />
+<Condition class="com.fr.data.condition.ListCondition"><JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[ProdutID]]></CNAME><Compare op="0">
+<ColumnRow column="4" row="4"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[Paid]]></CNAME><Compare op="2">
+<O><![CDATA[0]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand upParentDefault="false" up="E5" />
+</C>
+<C c="3" r="14" s="14"><O><![CDATA[Amount]]></O>
+</C>
+<C c="4" r="14" s="15"><O t="DSColumn"><Attributes dsName="CustomerDetail" columnName="Amount" />
+<Condition class="com.fr.data.condition.ListCondition"><JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[ProdutID]]></CNAME><Compare op="0">
+<ColumnRow column="4" row="4"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[Paid]]></CNAME><Compare op="2">
+<O><![CDATA[0]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand upParentDefault="false" up="E5" />
+</C>
+<C c="2" r="18"><O><![CDATA[]]></O>
+</C>
+<C c="3" r="19"></C>
+<C c="2" r="21"></C>
+<C c="3" r="21"></C>
+<C c="4" r="23"></C>
+</CellElementList>
+<WorkSheetAttr />
+</Report>
+<StyleList>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="1" size="22" foreground="-16751002" />
+<Background name="NullBackground" />
+<Border><Bottom style="6" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ImageBackground"
+ specifiedImageWidth="-1.0"
+ specifiedImageHeight="-1.0"
+ layout="2">
+<Image width="271" height="20">
+<![CDATA[mDD3s_Ctrm_#OF0>K!!9WJ6!OQ7+.ZoaQ9>0E]d2laNppWiE)!WiGp)li!RsTDPW,0?[QWIV
+_g1pu1d?NUQ%!281S82*R8))W+4
+iebJi;<TD!-WQ)u!;iUeW~
+
+]]>
+</Image>
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="22" foreground="-16751002" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="Dialog" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-1900830">
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="Dialog" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-1900830">
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="Dialog" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-52">
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="Dialog" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-52">
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="Dialog" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-3342337">
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="Dialog" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-3342337">
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="Dialog" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-3355393">
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="Dialog" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-3355393">
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="Dialog" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-4144960">
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="Dialog" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-4144960">
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="Dialog" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-26164">
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="Dialog" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-26164">
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+</StyleList>
+</WorkBook>

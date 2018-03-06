@@ -1,0 +1,65 @@
+/*
+.color-block { float:left;width:12;height:20;cursor:pointer;margin: 5 5 0 0;border:thin solid #ffffff;}
+*/
+/* 门户元素样式
+.portlet2{
+	border-radius: 5px;
+	background-color: #fff;
+}
+.portlet2-header{
+	border-radius: 5px 5px 0px 0px;
+}
+.portlet2-header span, td.createdate, td{
+	font-family: Segoe UI;
+	color: #454545;
+}
+
+a, a:link, a:visited{
+	font-family: Segoe UI;
+	color: #454545;
+}
+a:hover{
+	color: blue;
+}
+
+td.itemIcon{
+	background: url(/light/images/esymbol.gif) no-repeat center;
+	height: 20px;
+	width: 14px;
+	padding: 0 2px;
+}
+td.line{
+	background-color: #C2D5FC;
+}
+ */
+/* 门户选项卡元素样式 */
+/*
+ul.x-tab-strip-top {
+	background:url();
+	background-color:#fff;
+	border: 0;
+}
+.x-tab-panel-header {
+	border-bottom: 1px solid #e0e0e0;
+	background-color: #fff;
+	padding: 0;
+}
+.x-tab-strip-top .x-tab-right, .x-tab-strip-top .x-tab-left, .x-tab-strip-top .x-tab-strip-inner{
+	background-image: url();
+	background-color: #fff;
+}
+.x-tab-strip-top .x-tab-strip-active .x-tab-right,.x-tab-strip-top .x-tab-strip-active .x-tab-left,.x-tab-strip-top .x-tab-strip-active .x-tab-inner{
+	background-color: #e0e0e0;
+}
+.x-tab-strip-top span.x-tab-strip-text{
+	
+}
+.x-tab-strip-top .x-tab-strip-active .x-tab-strip-text{
+	background-color: #e0e0e0;
+	font-weight: normal;
+}
+*/
+/*
+table.requestTabTable td{
+	padding: 0;
+}*/

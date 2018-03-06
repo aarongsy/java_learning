@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.2</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes isCache="false" maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT * FROM CUSTOMER order by cast(customerid as int)
+]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings shrinkToFit="false" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<ReportWebAttr>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager><Location>
+<Embed position="1"/>
+</Location>
+<ToolBar><Widget class="com.fr.report.web.ui.impl.write.Submit">
+<WidgetAttr disabled="true"/>
+<Text>提交</Text><IconName>submit</IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.write.SubmitForcibly">
+<WidgetAttr disabled="true"/>
+<Text>强行提交</Text><IconName>submitforcily</IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Export">
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Print">
+</Widget>
+</ToolBar>
+</ToolBarManager></ToolBars>
+</WebWriteContent>
+<Background name="NullBackground" />
+</ReportWebAttr>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<ReportWriteAttr>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL1">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="CUSTOMER"/>
+<ColumnConfig name="CUSTOMERID" isKey="true" skipUnmodified="false" >
+<ColumnRow column="1" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="CUSTOMERNAME" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="CITY" isKey="false" skipUnmodified="false" >
+<ColumnRow column="4" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="COUNTRY" isKey="false" skipUnmodified="false" >
+<ColumnRow column="3" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="TEL" isKey="false" skipUnmodified="false" >
+<ColumnRow column="5" row="3"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+</ReportWriteAttr>
+<RowHeight defaultValue="19">
+<![CDATA[27,19,24]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,72,80,90,95,101,16,17]]>
+</ColumnWidth>
+<CellElementList>
+<C c="1" r="0" s="0"><O><![CDATA[客户统计表]]></O>
+</C>
+<C c="6" r="0" s="1"></C>
+<C c="7" r="0" s="1"></C>
+<C c="1" r="1" s="2"></C>
+<C c="2" r="1" s="2"></C>
+<C c="3" r="1" s="2"></C>
+<C c="4" r="1" s="2"></C>
+<C c="5" r="1" s="2"></C>
+<C c="6" r="1" s="1"></C>
+<C c="7" r="1" s="1"></C>
+<C c="1" r="2" s="3"><O><![CDATA[客户编号]]></O>
+</C>
+<C c="2" r="2" s="3"><O><![CDATA[客户名字]]></O>
+</C>
+<C c="3" r="2" s="3"><O><![CDATA[国家]]></O>
+</C>
+<C c="4" r="2" s="3"><O><![CDATA[城市]]></O>
+</C>
+<C c="5" r="2" s="3"><O><![CDATA[电话]]></O>
+</C>
+<C c="6" r="2" s="1"></C>
+<C c="7" r="2" s="1"></C>
+<C c="1" r="3" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="CUSTOMERID" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<CellInsertPolicy><InsertPolicy>default</InsertPolicy><O t="Formula" class="Formula"><Attributes><![CDATA[=row()-3]]></Attributes></O>
+</CellInsertPolicy><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</C>
+<C c="2" r="3" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="CUSTOMERNAME" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</C>
+<C c="3" r="3" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="COUNTRY" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</C>
+<C c="4" r="3" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="CITY" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</C>
+<C c="5" r="3" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="TEL" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</C>
+<C c="6" r="3" s="1"><Widget class="com.fr.report.web.ui.impl.write.AppendRowButton">
+<WidgetAttr disabled="false"/>
+<IconName>appendrow</IconName>
+<FixCell row="3" col="1"/><OldCell row="3" col="7"/></Widget>
+</C>
+<C c="7" r="3" s="1"><Widget class="com.fr.report.web.ui.impl.write.DeleteRowButton">
+<WidgetAttr disabled="false"/>
+<IconName>deleterow</IconName>
+<FixCell row="3" col="1"/><OldCell row="3" col="7"/></Widget>
+</C>
+<C c="4" r="5" s="5"><O><![CDATA[填报人：]]></O>
+</C>
+<C c="5" r="5" s="6"><O><![CDATA[lily]]></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</C>
+<C c="4" r="6" s="5"><O><![CDATA[填报时间：]]></O>
+</C>
+<C c="5" r="6" s="6"><O t="Formula" class="Formula"><Attributes><![CDATA[=todate(today())]]></Attributes></O>
+</C>
+<C c="4" r="12"></C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style>
+<FRFont name="SimSun" style="1" size="12" foreground="-6697729" />
+<Background name="NullBackground" />
+<Border><Bottom style="6" color="-6697729"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" color="-6697729"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-3342337">
+</Background>
+<Border><Bottom style="1" color="-6697729"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" color="-6697729"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" foreground="-16777088" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" foreground="-16777088" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" color="-6697729"
+ /></Border>
+</Style>
+</StyleList>
+</WorkBook>

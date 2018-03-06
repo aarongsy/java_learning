@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean id="filterChainProxy" class="org.acegisecurity.util.FilterChainProxy">
+        <property name="filterInvocationDefinitionSource">
+            <value>
+                CONVERT_URL_TO_LOWERCASE_BEFORE_COMPARISON
+                PATTERN_TYPE_APACHE_ANT
+					/**=httpSessionContextIntegrationFilter,authenticationProcessingFilter,basicProcessingFilter,exceptionTranslationFilter,filterInvocationInterceptor
+               <!-- /**=httpSessionContextIntegrationFilter,authenticationProcessingFilter,basicProcessingFilter,rememberMeProcessingFilter,anonymousProcessingFilter,exceptionTranslationFilter,filterInvocationInterceptor -->
+            </value>
+        </property>
+    </bean>
+
+    <bean id="authenticationManager" class="org.acegisecurity.providers.ProviderManager">
+        <property name="providers">
+            <list>
+			    <!-- ref local="ldapAuthenticationProvider"/-->
+                <ref local="daoAuthenticationProvider"/>
+                <!-- ref local="anonymousAuthenticationProvider"/-->
+                <!-- ref local="rememberMeAuthenticationProvider"/ -->
+                <!-- testingAuthenticationProvider仅供测试环境用，正式生产平台请去除 -->
+                <!-- ref local="testingAuthenticationProvider"/ -->
+            </list>
+        </property>
+    </bean>
+    <!-- 帐号切换 -->
+    <bean id="switchAuthenticationManager" class="org.acegisecurity.providers.ProviderManager">
+        <property name="providers">
+            <list>
+                <ref local="switchAuthenticationProvider"/>
+                <!-- ref local="anonymousAuthenticationProvider"/-->
+                <!-- ref local="rememberMeAuthenticationProvider"/ -->
+                <!-- testingAuthenticationProvider仅供测试环境用，正式生产平台请去除 -->
+                <!-- ref local="testingAuthenticationProvider"/ -->
+            </list>
+        </property>
+    </bean>
+	<bean id="ldapAuthenticationProvider" class="com.eweaver.base.security.service.acegi.LdapAuthenticationProvider">
+		<property name="ldapService" ref="ldapService"/>
+		<property name="userDetailsService" ref="hibernateDaoImpl"/>
+		<property name="userCache" ref="userCache"/>
+    </bean>
+	<bean id="hibernateDaoImpl" parent="txProxyTemplateNoInterceptor">
+		<property name="target">
+			<bean class="com.eweaver.base.security.service.acegi.HibernateDaoImpl">
+				<property name="userCache" ref="userCache"/>
+				<property name="sysuserDao" ref="sysuserDao"/>
+				<property name="acegiCacheManager" ref="acegiCacheManager"/>
+			</bean>
+		</property>
+	</bean> 
+	
+	<bean id="acegiCacheManager" parent="txProxyTemplateNoInterceptor">
+		<property name="target">
+			<bean class="com.eweaver.base.security.service.logic.AcegiCacheManager">
+				<property name="sysuserDao" ref="sysuserDao"/>
+				<property name="sysresourceDao" ref="sysresourceDao"/>
+				<property name="humresDao" ref="humresDao"/>
+				<property name="userCache" ref="userCache"/>
+				<property name="resourceCache" ref="resourceCache"/>
+				<property name="maxUserCacheNum">
+					<value>10</value>
+				</property>
+			</bean>
+		</property>
+	</bean> 
+
+
+    <bean id="passwordEncoder" class="org.acegisecurity.providers.encoding.Md5PasswordEncoder"/>
+    <bean id="plainEncoder" class="org.acegisecurity.providers.encoding.PlaintextPasswordEncoder"/>
+    <bean id="daoAuthenticationProvider" class="org.acegisecurity.providers.dao.DaoAuthenticationProvider">
+        <property name="userDetailsService" ref="hibernateDaoImpl"/>
+        <property name="userCache" ref="userCache"/>
+        <property name="passwordEncoder" ref="passwordEncoder"/>
+    </bean>
+	<bean id="switchAuthenticationProvider" class="org.acegisecurity.providers.dao.DaoAuthenticationProvider">
+        <property name="userDetailsService" ref="hibernateDaoImpl"/>
+        <property name="userCache" ref="userCache"/>
+        <property name="passwordEncoder" ref="plainEncoder"/>
+    </bean>
+
+    <bean id="userCacheBackend"
+          class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+        <property name="cacheManager" ref="cacheManager"/>
+        <property name="cacheName" value="userCache"/>
+    </bean>
+
+    <bean id="userCache"
+          class="org.acegisecurity.providers.dao.cache.EhCacheBasedUserCache"
+          autowire="byName">
+        <property name="cache" ref="userCacheBackend"/>
+    </bean>
+
+
+    <bean id="resourceCacheBackend"
+          class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+        <property name="cacheManager" ref="cacheManager"/>
+        <property name="cacheName" value="resourceCache"/>
+    </bean>
+
+    <bean id="resourceCache"
+          class="com.eweaver.base.security.cache.SysresourceCache"
+          autowire="byName">
+        <property name="cache" ref="resourceCacheBackend"/>
+    </bean>
+
+
+    <bean id="loggerListener" class="org.acegisecurity.event.authentication.LoggerListener"/>
+
+    <bean id="basicProcessingFilter" class="org.acegisecurity.ui.basicauth.BasicProcessingFilter">
+        <property name="authenticationManager" ref="authenticationManager"/>
+        <property name="authenticationEntryPoint" ref="basicProcessingFilterEntryPoint"/>
+    </bean>
+
+    <bean id="basicProcessingFilterEntryPoint" class="org.acegisecurity.ui.basicauth.BasicProcessingFilterEntryPoint">
+        <property name="realmName" value="Eweaver Realm"/>
+    </bean>
+
+    <bean id="httpSessionContextIntegrationFilter" class="org.acegisecurity.context.HttpSessionContextIntegrationFilter"></bean>
+
+    <bean id="exceptionTranslationFilter" class="org.acegisecurity.ui.ExceptionTranslationFilter">
+        <property name="authenticationEntryPoint" ref="authenticationProcessingFilterEntryPoint"/>
+    </bean>
+	
+    <bean id="authenticationProcessingFilter" class="com.eweaver.base.security.service.acegi.UserAuthenticationProcessingFilter">
+        <property name="authenticationManager" ref="authenticationManager"/>
+        <property name="sysuserService" ref="sysuserService" />
+        <property name="licsService" ref="licsService" />
+        <property name="setitemService" ref="setitemService" />
+        <property name="mainPageDefined" ref="mainPageDefined" />
+        <property name="authenticationFailureUrl" value="/main/login.jsp" />
+        <!-- 
+        	因为mainPageDefined对最终的页面跳转做了后置处理,所以此处设置的defaultTargetUrl在以下情况下有效:
+        	1.用户选择了首页，但是相应的首页的url定义为空时。
+        	2.用户未选择首页,并且默认首页的url定义为空时.
+         -->
+        <property name="defaultTargetUrl" value="/main/main.jsp" />
+        <property name="filterProcessesUrl" value="/j_acegi_security_check" />
+		<property name="exceptionMappings" ref="exceptionMappings" />
+    </bean>
+	
+	<bean id="mainPageDefined" class="com.eweaver.base.security.mainpage.MainPageDefined">
+		<property name="mainPageList">
+			<list>
+				<bean class="com.eweaver.base.security.mainpage.MainPage">
+					<property name="type" ref="mainPageType_Classic"/>	<!-- 类型(标识,不重复即可) -->
+					<property name="name_zh" value="传统首页"/>			<!-- 中文名称 -->
+					<property name="name_cn" value="Classic Home"/>		<!-- 英文名称 -->
+					<property name="url" value="/main/main.jsp"/>		<!-- 链接 -->
+					<property name="isClassic" value="true"/>			<!-- 是否是传统的首页(此项设置决定了当前的系统模式,如果isClassic为true则当前的系统模式一定是软件模式,尽管传统的首页也可能使用到皮肤(如表单，列表等),但是其系统模式不受皮肤的影响。而此项为否时，则此时当前的系统模式是由皮肤决定的) -->
+					<property name="isUseSkin" value="false"/>			<!-- 是否使用皮肤 -->
+					<property name="isDefault" value="false"/>			<!-- 是否默认(当用户在未明确选择使用哪种首页时生效) -->
+				</bean>
+				<bean class="com.eweaver.base.security.mainpage.MainPage">
+					<property name="type" ref="mainPageType_New"/>	<!-- 类型(标识,不重复即可) -->
+					<property name="name_zh" value="新版首页"/>		<!-- 中文名称 -->
+					<property name="name_cn" value="New Home"/>		<!-- 英文名称 -->
+					<property name="url" value="/main/index.jsp"/>	<!-- 链接 -->
+					<property name="isClassic" value="false"/>		<!-- 是否是传统的首页(此项设置决定了当前的系统模式,如果isClassic为true则当前的系统模式一定是软件模式,尽管传统的首页也可能使用到皮肤(如表单，列表等),但是其系统模式不受皮肤的影响。而此项为否时，则此时当前的系统模式是由皮肤决定的) -->
+					<property name="isUseSkin" value="true"/>		<!-- 是否使用皮肤 -->
+					<property name="isDefault" value="true"/>		<!-- 是否默认(当用户在未明确选择使用哪种首页时生效) -->
+				</bean>
+			</list>
+		</property>
+	</bean>	
+	
+	<!-- mainPageType 常量 -->
+	<bean id="mainPageType_Classic" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+		<property name="staticField" value="com.eweaver.base.security.mainpage.MainPageDefined.MAINPAGETYPE_CLASSIC" />
+	</bean>
+	<bean id="mainPageType_New" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+		<property name="staticField" value="com.eweaver.base.security.mainpage.MainPageDefined.MAINPAGETYPE_NEW" />
+	</bean>
+	
+    <bean id="authenticationProcessingFilterEntryPoint" class="org.acegisecurity.ui.webapp.AuthenticationProcessingFilterEntryPoint">
+        <property name="loginFormUrl">
+            <value>/main/login.jsp</value>
+        </property>
+        <property name="forceHttps" value="false"/>
+    </bean>
+
+    <bean id="httpRequestAccessDecisionManager" class="org.acegisecurity.vote.AffirmativeBased">
+        <property name="allowIfAllAbstainDecisions" value="false"/>
+        <property name="decisionVoters">
+            <list>
+                <ref bean="roleVoter"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="filterInvocationInterceptor" class="org.acegisecurity.intercept.web.FilterSecurityInterceptor">
+        <property name="authenticationManager" ref="authenticationManager"/>
+        <property name="accessDecisionManager" ref="httpRequestAccessDecisionManager"/>
+        <property name="objectDefinitionSource" ref="filterDefinitionSource"/>
+        <property name="validateConfigAttributes" value="false"/>
+    </bean>
+    <bean id="filterDefinitionSource" class="com.eweaver.base.security.service.acegi.DBFilterInvocationDefinitionSource">
+        <property name="convertUrlToLowercaseBeforeComparison" value="true"/>
+        <property name="useAntPath" value="true"/>
+        <property name="acegiCacheManager" ref="acegiCacheManager"/>
+    </bean>
+
+	<bean id="methodSecurityInterceptor" class="org.acegisecurity.intercept.method.aopalliance.MethodSecurityInterceptor">
+        <property name="authenticationManager" ref="authenticationManager"/>
+        <property name="accessDecisionManager" ref="httpRequestAccessDecisionManager"/>
+        <property name="objectDefinitionSource" ref="methodDefinitionSource"/>
+        <property name="validateConfigAttributes" value="false"/>
+    </bean>
+    <bean id="methodDefinitionSource" class="com.eweaver.base.security.service.acegi.DBMethodDefinitionSource">
+        <property name="acegiCacheManager" ref="acegiCacheManager"/>
+    </bean>
+	
+    <bean id="roleVoter" class="org.acegisecurity.vote.RoleVoter">
+        <property name="rolePrefix" value="AUTH_"/>
+    </bean>
+	<!-- 单点登录start -->
+    <bean id="ssoAuthenticationProvider" class="com.eweaver.base.security.service.acegi.SSOAuthenticationProvider">
+        <property name="userDetailsService" ref="hibernateDaoImpl"/>
+        <property name="userCache" ref="userCache"/>
+    </bean>
+    <bean id="ssoAuthenticationManager" class="org.acegisecurity.providers.ProviderManager">
+        <property name="providers">
+            <list>
+                <ref local="ssoAuthenticationProvider"/>
+            </list>
+        </property>
+    </bean>
+	<bean id="ssoAuthentication" class="org.acegisecurity.ui.webapp.AuthenticationProcessingFilter">
+		<property name="authenticationManager" ref="ssoAuthenticationManager" />
+		<property name="authenticationFailureUrl" value="/main/login.jsp" />
+		<property name="defaultTargetUrl" value="/main/main.jsp" />
+	</bean>
+	<!-- 单点登录end -->
+</beans>

@@ -1,0 +1,193 @@
+/*门户元素样式*/
+.portlet{	/*窗体样式*/
+	font-size: 12px;
+	font-family: Segoe UI,Microsoft YaHei;
+	border: 1px solid #8DB2E3;
+	overflow-y : hidden;
+}
+.portlet-header{	/*标题栏样式*/
+	height: 20px;
+	background-color: #fff;
+	background-image: url("/js/ext/resources/images/default/grid/grid3-hrow.gif");
+	background-repeat: repeat-x;
+}
+.portlet-header-title {	/*标题的样式*/
+	font-size: 12px;
+	line-height: 20px;
+	height: 20px;
+	vertical-align: middle;
+	float: left;
+	text-align: left;
+	color: #000;
+	padding-left: 4px;
+	font-weight: bold;
+}
+.portlet-header-title span{
+ 	width: 220px; 
+ 	overflow: hidden; 
+ 	display: inline-block; 
+ 	text-overflow: ellipsis;
+ 	white-space:nowrap;
+}
+.portlet-header-button { /*标题栏操作按钮的样式*/
+	light-height: 20px;
+	height: 20px;
+	vertical-align: middle;
+	text-align: right;
+}
+.portlet-header-button img {
+	vertical-align: middle;
+	margin-top: 3px;
+}
+.portlet-footer{	/*底部样式*/
+	
+}
+.portlet-footer-button{  /*底部操作按钮的样式*/
+	light-height: 20px;
+	height: 20px;
+	vertical-align: middle;
+	text-align: right;
+}
+.portlet-footer-button img {
+	vertical-align: middle;
+	margin-top: 3px;
+}
+/*快速入口相关的样式*/
+#shortcut .data ul{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+#shortcut .data ul li{
+	text-align: center;
+	width: 60px;
+	float: left;
+	display: inline;
+	margin: 2px 3px 0px 0px;
+}
+#shortcut .data ul li span.pic{
+	position: relative;
+	width: 60px;
+	height: 60px;
+	display: block;
+	/*background: url("/images/main/shortcut-pic-bg.png") no-repeat;*/
+	overflow: hidden;
+}
+#shortcut .data ul li span.onover{
+	background: url("/images/main/shortcut-pic-available-bg.png") no-repeat;
+}
+#shortcut .data ul li span.pic a{
+	position:absolute;
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+	top: 5;
+	left: 5;
+	cursor: pointer;
+}
+#shortcut .data ul li span.pic a img{
+	width: 50px;
+	height: 50px;
+}
+#shortcut .data ul li span.text{
+	font-family: Microsoft YaHei;
+	font-size: 11px;
+	margin-top: 0px;
+	color: #0282C4;
+	width: 60px;
+}
+#shortcut .handler{/*底部操作栏对应的样式*/
+	height: 20px;	/*高度*/
+	border: 0px solid red;	/*边框 (宽度  样式  颜色)*/ 
+	position: relative;	/*定位*/
+}
+#shortcut .handler div{
+	width: 16px;	/*宽度*/ 
+	height: 16px;	/*高度*/
+	cursor: pointer;/*鼠标以上去的形状(手型)*/
+}
+#shortcut .handler .prev{/*底部操作栏向后滑动对应的样式*/
+	width: 12px;	/*宽度*/ 
+	height: 12px;	/*高度*/
+	background: url("/images/main/shortcut_prev.png") no-repeat;	/*背景 (图片平铺方式：不平铺)*/
+	float: left;
+	position: absolute;
+	top: 4px;
+	right: 100px;
+}
+#shortcut .handler .next{/*底部操作栏向后滑动对应的样式*/
+	width: 12px;	/*宽度*/ 
+	height: 12px;	/*高度*/
+	background: url("/images/main/shortcut_next.png") no-repeat;	/*背景 (图片平铺方式：不平铺)*/
+	float: left;
+	position: absolute;
+	top: 4px;
+	right: 40px;
+}
+#shortcut .handler .setting{/*底部操作栏设置对应的样式*/
+	width: 12px;	/*宽度*/ 
+	height: 12px;	/*高度*/
+	background: url("/images/main/shortcut_setting.png") no-repeat;	/*背景 (图片平铺方式：不平铺)*/
+	position: absolute;
+	top: 4px;
+	right: 15px;
+}
+#shortcut .handler .pageInfo{
+	width: 40px;
+	font-family: Microsoft YaHei;
+	font-size: 11px;
+	float: left;
+	position: absolute;
+	top: 2px;
+	right: 50px;
+	cursor: text;
+}
+#shortcut .handler .pageInfo .currentpage{
+	font-family: Microsoft YaHei;
+	font-size: 11px;
+	margin-right: 2px;	
+}
+#shortcut .handler .pageInfo .pagecount{
+	font-family: Microsoft YaHei;
+	font-size: 11px;
+	margin-left: 4px;	
+}
+
+/*门户流程Tab元素*/
+table.requestTabTable td{
+	font-family: Microsoft YaHei !important;
+	padding: 2px 0;
+}
+table.requestTabTable td.line{
+	height: 1px;
+	background-color: #ddd;
+}
+table.requestTabTable td a{
+	font-family: Microsoft YaHei !important;
+	color: #3B59AA;
+}
+table.requestTabTable tr.even{
+	/*background-color: #FAEFD8;*/
+	background-color: #f5f5f5;
+}
+table.requestTabTable tr.odd{
+	background-color: #fff;
+}
+div.requestTabPortletFooter{
+	text-align: right;
+}
+div.requestTabPortletFooter a{
+	color: #3B59AA;
+}
+span.refresh{
+	margin: 0px 5px 0 0;
+	width: 16px;
+	height: 10px;
+	background: url(/images/silk/refresh.gif) no-repeat;
+	cursor: hand;
+}
+/*门户仪表盘元素对应的样式*/
+.portlet .gaugeChart{
+	display: inline;
+	margin: 1em;	
+}

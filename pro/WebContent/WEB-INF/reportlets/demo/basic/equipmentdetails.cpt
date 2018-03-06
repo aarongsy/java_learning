@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.2</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters>
+</Parameters>
+<ColumnNames><![CDATA[Company,,.,,Department,,.,,UsageTime,,.,,Costs,,.,,Supplier,,.,,MaintenanceCosts,,.,,CompanyID]]></ColumnNames>
+<ColumnTypes><![CDATA[java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[g\#LF`pMB$Y!0O['1/8gETm4aAXpb1??$l$)X&"T(i\mEWnI(-jBdo^=JZ<lgsEjP`"W1~
+
+]]>
+</RowData>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters>
+</Parameters>
+<ColumnNames><![CDATA[EquipmentID,,.,,Equipment,,.,,PurchaseDate,,.,,UsageTime,,.,,Amount,,.,,UpdateTime,,.,,CompanyID,,.,,costs]]></ColumnNames>
+<ColumnTypes><![CDATA[java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer]]></ColumnTypes>
+<RowData>
+<![CDATA[1ZU)XjtnhI0[ho/2)OGPk-P9]/0R,C!s938:(pP.!s:/#cE5ER>e,<6J7:kRTNYjNZeI*N\9
+&]ZXW`F&A!"5JS0qAXIR0K-;pHt
+e/hc#Y$Uq00L0>g`=u4GUX04]3W7DOD3<0~
+
+]]>
+</RowData>
+</TableData>
+</TableDataMap>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="0" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+<ParameterInterface class="com.fr.report.parameter.DefaultParameterInterface">
+</ParameterInterface>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings orientation="1" pageOrder="1" shrinkToFit="false" isHorizontalCenterOnPage="true" headerHeight="0.0" footerHeight="0.0">
+<PaperSize width="5.827" height="8.268" />
+<Margin top="0.348740157480315" left="0.0019685039370078744" bottom="0.03377952755905512" right="0.0019685039370078744" />
+</ReportSettings>
+<ReportPageAttr>
+</ReportPageAttr>
+<ReportWebAttr>
+<EmailManager mailHost="" password="___" user="" fromEmailAddress="" />
+<ServerPrinter>
+</ServerPrinter>
+<Background name="NullBackground" />
+</ReportWebAttr>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<ReportWriteAttr>
+</ReportWriteAttr>
+<RowHeight defaultValue="19">
+<![CDATA[25]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[100,86,82,76,101,104,105,99,101,69]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="8" s="0"><O><![CDATA[IT运维部设备明细查询表]]></O>
+</C>
+<C c="0" r="2"><O><![CDATA[所属分公司：]]></O>
+</C>
+<C c="1" r="2" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="Company" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="6" r="2" s="2"><O><![CDATA[运维部门：]]></O>
+</C>
+<C c="7" r="2" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="Department" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="0" r="4"><O><![CDATA[平均使用年限：]]></O>
+</C>
+<C c="1" r="4" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="UsageTime" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="2" r="4" s="2"><O><![CDATA[总成本：]]></O>
+</C>
+<C c="3" r="4" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="Costs" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="4" r="4" s="2"><O><![CDATA[供应商：]]></O>
+</C>
+<C c="5" r="4" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="Supplier" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="6" r="4"><O><![CDATA[日常维护年支出：]]></O>
+</C>
+<C c="7" r="4" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="MaintenanceCosts" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="0" r="6" cs="8" s="3"></C>
+<C c="0" r="7" s="4"><O><![CDATA[分公司ID]]></O>
+</C>
+<C c="1" r="7" s="4"><O><![CDATA[设备编号]]></O>
+</C>
+<C c="2" r="7" s="4"><O><![CDATA[设备名称]]></O>
+</C>
+<C c="3" r="7" s="4"><O><![CDATA[购入数量]]></O>
+</C>
+<C c="4" r="7" s="4"><O><![CDATA[购入时间]]></O>
+</C>
+<C c="5" r="7" s="4"><O><![CDATA[预计更新时间]]></O>
+</C>
+<C c="6" r="7" s="4"><O><![CDATA[使用年限]]></O>
+</C>
+<C c="7" r="7" s="4"><O><![CDATA[成本]]></O>
+</C>
+<C c="0" r="8" s="5"><O t="DSColumn"><Attributes dsName="ds2" columnName="CompanyID" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[CompanyID]]></CNAME><Compare op="0">
+<AnDSColumn dsName="ds1" columnName="CompanyID" /></Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+<Attr divideMode="1" /></RG>
+<Result><![CDATA[$$$]]></Result></O>
+<HighlightList><Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.FormulaCondition"><Formula>
+<![CDATA[Row()%2==0]]>
+</Formula>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.BackgroundHighlightAction">
+<Background name="ColorBackground"
+ color="-525313">
+</Background>
+<Scope val="1" /></HighlightAction>
+</Highlight>
+</HighlightList><Expand dir="0" leftParentDefault="false" left="B3" />
+</C>
+<C c="1" r="8" s="5"><O t="DSColumn"><Attributes dsName="ds2" columnName="EquipmentID" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="2" r="8" s="5"><O t="DSColumn"><Attributes dsName="ds2" columnName="Equipment" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="3" r="8" s="5"><O t="DSColumn"><Attributes dsName="ds2" columnName="Amount" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="4" r="8" s="6"><O t="DSColumn"><Attributes dsName="ds2" columnName="PurchaseDate" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="5" r="8" s="6"><O t="DSColumn"><Attributes dsName="ds2" columnName="UpdateTime" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="6" r="8" s="5"><O t="DSColumn"><Attributes dsName="ds2" columnName="UsageTime" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="7" r="8" s="7"><O t="DSColumn"><Attributes dsName="ds2" columnName="costs" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="0" r="9" cs="7" s="8"><O><![CDATA[平均每个设备每年成本费：]]></O>
+</C>
+<C c="7" r="9" s="9"><O t="Formula" class="Formula"><Attributes><![CDATA[=(sum(H9)/3)/count(A9)]]></Attributes></O>
+</C>
+<C c="0" r="11"><O><![CDATA[制表人：]]></O>
+</C>
+<C c="1" r="11" s="10"><O><![CDATA[Lee]]></O>
+</C>
+<C c="0" r="12"><O><![CDATA[制表日期：]]></O>
+</C>
+<C c="1" r="12" s="10"><O><![CDATA[2006-10-21]]></O>
+</C>
+<C c="6" r="12" s="2"><O><![CDATA[单位：]]></O>
+</C>
+<C c="7" r="12" s="10"><O><![CDATA[人民币]]></O>
+</C>
+<C c="0" r="13" s="11"></C>
+<C c="1" r="13" s="11"></C>
+<C c="2" r="13" s="11"></C>
+<C c="3" r="13" s="11"></C>
+<C c="4" r="13" s="11"></C>
+<C c="5" r="13" s="11"></C>
+<C c="6" r="13" s="11"></C>
+<C c="7" r="13" s="11"></C>
+<C c="0" r="15" cs="8" s="12"><O><![CDATA[“IT运维部设备明细查询表”报表说明：]]></O>
+</C>
+<C c="0" r="16" cs="8" s="13"><O><![CDATA[1、分组报表]]></O>
+</C>
+<C c="0" r="17" cs="8" s="14"><O><![CDATA[该报表为分组报表，是报表中最为普通、常见的报表类型。]]></O>
+</C>
+<C c="0" r="18"><O><![CDATA[]]></O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="14" foreground="-16739659" />
+<Background name="NullBackground" />
+<Border><Bottom style="6" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ImageBackground"
+ specifiedImageWidth="-1.0"
+ specifiedImageHeight="-1.0"
+ layout="2">
+<Image width="271" height="20">
+<![CDATA[mDD3s_Ctrm_#OF0>K!!9WJ6!OQ7+.ZoaQ9>0E]d2laNppWiE)!WiGp)li!RsTDPW,0?[QWIV
+_g1pu1d?NUQ%!281S82*R8))W+4
+iebJi;<TD!-WQ)u!;iUeW~
+
+]]>
+</Image>
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12" />
+<Background name="ColorBackground"
+ color="-853505">
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.SimpleDateFormat"><![CDATA[yyyy-MM-dd]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat"><![CDATA[#,##0]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6697729"
+ /><Bottom style="1" color="-6697729"
+ /><Left style="1" color="-6697729"
+ /><Right style="1" color="-6697729"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat"><![CDATA[#,##0]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6697729"
+ /><Bottom style="1" color="-6697729"
+ /><Left style="1" color="-6697729"
+ /><Right style="1" color="-6697729"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="2" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-328966">
+</Background>
+<Border><Top style="3" color="-6894375"
+ /><Left style="3" color="-6894375"
+ /><Right style="3" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-328966">
+</Background>
+<Border><Left style="3" color="-6894375"
+ /><Right style="3" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-328966">
+</Background>
+<Border><Bottom style="3" color="-6894375"
+ /><Left style="3" color="-6894375"
+ /><Right style="3" color="-6894375"
+ /></Border>
+</Style>
+</StyleList>
+</WorkBook>

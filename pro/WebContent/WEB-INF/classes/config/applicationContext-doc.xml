@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="docborrowService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.document.base.service.DocborrowService">
+				<property name="setitemService" ref="setitemService" />
+				<property name="workflowinfoService" ref="workflowinfoService" />
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="attachService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.document.base.service.AttachService">
+				<property name="attachDao">
+					<ref local="attachDao" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="docbaseService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.document.base.service.DocbaseService">
+				<property name="docbaseDao">
+					<ref local="docbaseDao" />
+				</property>
+				<property name="docattachDao">
+					<ref local="docattachDao" />
+				</property>
+				<property name="attachService">
+					<ref local="attachService" />
+				</property>
+				<property name="categoryService">
+					<ref bean="categoryService" />
+				</property>
+				<property name="categorylinkDao">
+					<ref bean="categorylinkDao" />
+				</property>
+				<property name="humresService">
+					<ref bean="humresService" />
+				</property>
+				<property name="labelService">
+					<ref bean="labelService" />
+				</property>
+				<property name="keyinfoService">
+					<ref bean="keyinfoService" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+			
+	<bean id="remarkService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.document.remark.service.RemarkService">
+				<property name="remarkDao">
+					<ref local="remarkDao" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+	
+	<bean id="attachDao" class="com.eweaver.document.base.dao.AttachDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+
+	<bean id="docattachDao" class="com.eweaver.document.base.dao.DocattachDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="docauthorDao" class="com.eweaver.document.base.dao.DocauthorDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="docbaseDao" class="com.eweaver.document.base.dao.DocbaseDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="categorylinkDao" class="com.eweaver.base.category.dao.CategorylinkDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="remarkDao" class="com.eweaver.document.remark.dao.RemarkDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+
+	<bean id="wordModuleService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.word.service.WordModuleService">
+				<property name="wordModuleDao">
+					<ref local="WordModuleDao" />
+				</property>
+				<property name="baseJdbcDao" ref="baseJdbcDao"/>
+            </bean>
+        </property>
+    </bean>
+
+	<bean id="WordModuleDao" class="com.eweaver.word.dao.WordModuleDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+			<bean id="docexclusionDao" class="com.eweaver.document.base.dao.DocexclusionDaoHB">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="docexclusionService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.document.base.service.DocexclusionService">
+				<property name="docexclusionDao" ref="docexclusionDao"/>
+			</bean>
+		</property>
+	</bean>
+	
+</beans>

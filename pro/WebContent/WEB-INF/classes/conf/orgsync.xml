@@ -1,0 +1,108 @@
+<xml version="1.0" encoding="utf-8">
+<tables>
+<!-- 人事表信息 -->
+<table ID="humres" SRCID="dbo.OA_employee" SRCDS="otherDataDS" DESTDS="" 
+       CLAZZ="com.eweaver.interfaces.orgsync.HumresStatusDeal" ISSYNC="" 
+	   DESTKEY="objno" ENTITY="com.eweaver.humres.base.model.Humres"
+	   SQL=""
+	   >
+	<field ID="id" srcid="" defaultvalue="" conditions="" 
+	       clazz="com.eweaver.interfaces.orgsync.BillIDGenerator" isUpdate="false" desc="主键ID"></field>
+	<field ID="objno" srcid="badge" defaultvalue="" conditions="" clazz="" desc="员工编号"></field>
+	<field ID="objname" srcid="name" defaultvalue="" conditions="" clazz="" desc="员工姓名"></field>
+	<field ID="gender" srcid="" defaultvalue="" conditions="" clazz="" 
+	       desc="员工性别" ></field>
+	<field ID="orgid" srcid="depid" defaultvalue="" conditions="" 
+	       clazz="com.eweaver.interfaces.orgsync.getIDforDeptid" desc="部门ID"></field>
+	<field ID="orgids" srcid="depid" defaultvalue="" conditions="" 
+	       clazz="com.eweaver.interfaces.orgsync.getIDforDeptid" desc="所在部门和兼岗所在部门"></field>       
+	<!-- <field ID="mainstation" srcid="deptid" defaultvalue="" conditions="" 
+	       clazz="" desc="主岗ID"></field>
+    <field ID="station" srcid="deptid" defaultvalue="" conditions="" 
+	       clazz="" desc="兼岗ID"></field> -->
+	<field ID="hrstatus" srcid="" defaultvalue="4028804c16acfbc00116ccba13802935" 
+	       conditions="" clazz="" isconstant="true"  desc="人事状态"></field>
+	<field ID="workstatus" srcid="" defaultvalue="402881ea0b1c751a010b1cd262610007" 
+	       conditions="" clazz="" isconstant="true"  desc="工作状态"></field>            
+	<field ID="seclevel" srcid="" defaultvalue="10" conditions="" clazz="" isUpdate="false" isconstant="true" desc="安全级别"></field>	
+    <field ID="isdelete" srcid="" defaultvalue="0" conditions="" clazz="" isconstant="true" desc="是否删除"></field>	
+	<!--  <field ID="extdatefield0" srcid="indutydate" defaultvalue="" conditions="" clazz="" desc="入职日期"></field>
+	<field ID="extdatefield4" srcid="outdutydate" defaultvalue="" conditions="" clazz="" desc="离职日期"></field>-->
+	<field ID="email" srcid="email" defaultvalue="" conditions="" clazz="" desc="邮件"></field>
+	<field ID="tel1" srcid="officephone" defaultvalue="" conditions="" clazz="" desc="办公电话"></field>
+	<field ID="tel2" srcid="mobile" defaultvalue="" conditions="" clazz="" desc="手机"></field>
+	<field ID="exttextfield26" srcid="status" defaultvalue="" conditions="" clazz="" desc="人员状态类型"></field>
+	<field ID="exttextfield25" srcid="emptype" defaultvalue="" conditions="" clazz="" desc="人员类型"></field>
+	<!--<field ID="EXTREFOBJFIELD10" srcid="" defaultvalue="" conditions="" clazz="" desc="工作地点"></field>-->
+	<field ID="extdatefield7" srcid="status" defaultvalue="" conditions="" clazz="" desc="考核结束日期"></field>
+</table>
+
+<!-- 账号信息 -->
+<!-- DELLINKSQL="delete from SYSUSERROLELINK where userid = '{id}'" -->
+<table ID="sysuser" SRCID="dbo.OA_employee" SRCDS="otherDataDS" DESTDS="" 
+    CLAZZ="com.eweaver.interfaces.orgsync.SysuserStatusDeal" ISSYNC="" 
+	DESTKEY="objid" ENTITY="com.eweaver.base.security.model.Sysuser"
+	SQL="">
+	<field ID="id" srcid="" defaultvalue="" conditions="" 
+	       clazz="com.eweaver.interfaces.orgsync.BillIDGenerator" isUpdate="false"  desc="主键ID" ></field>
+	<field ID="objid" srcid="badge" defaultvalue="" conditions="" 
+	       clazz="com.eweaver.interfaces.orgsync.getIDforObjid" desc="关联Humres ID"></field>
+	<field ID="longonname" srcid="account" defaultvalue="" conditions="" clazz="com.eweaver.interfaces.orgsync.LowerConvert"
+		desc="账号"></field>
+	<field ID="logonpass" srcid="" defaultvalue="e10adc3949ba59abbe56e057f20f883e" conditions="" isUpdate="false"
+	       clazz="" isconstant="true" desc="密码"></field>
+	<field ID="mtype" srcid="" defaultvalue="1" conditions="" clazz="" desc="" isconstant="true"></field>
+	<field ID="isclosed" srcid="" defaultvalue="0" conditions="" clazz="" desc="" isconstant="true"></field>
+	<field ID="ismaster" srcid="" defaultvalue="1" conditions="" clazz="" desc="" isconstant="true"></field>
+	<field ID="language" srcid="" defaultvalue="zh_CN" conditions="" clazz="" desc="" isconstant="true"></field>
+	<field ID="style" srcid="" defaultvalue="purple" conditions="" clazz="" desc="" isconstant="true"></field>
+    <field ID="isdelete" srcid="" defaultvalue="0" conditions="" clazz="" desc="" isconstant="true"></field>
+    <field ID="isusbkey" srcid="" defaultvalue="0" conditions="" clazz="" desc="" isconstant="true"></field>	
+    <field ID="dynamicpass" srcid="" defaultvalue="0" conditions="" clazz="" desc="" isconstant="true"></field>		
+    <field ID="isrealdel" srcid="status" defaultvalue="" conditions="" isfake="true" clazz="" desc="离职日期"></field>   
+</table>
+
+<!-- 部门信息 -->
+<table ID="orgunit" SRCID="dbo.OA_odepartment" SRCDS="otherDataDS" DESTDS="" CLAZZ="com.eweaver.interfaces.orgsync.OrgunitStatusDeal" ISSYNC="" 
+	DESTKEY="objno" ENTITY="com.eweaver.base.orgunit.model.Orgunit" 
+	 SQL="">
+	<field ID="id" srcid="" defaultvalue="" conditions="" 
+	       clazz="com.eweaver.interfaces.orgsync.BillIDGenerator" isUpdate="false"  desc="主键ID"></field>
+	<field ID="objno" srcid="depid" defaultvalue="" conditions="" clazz="" desc="部门编号"></field>
+	<field ID="objname" srcid="location" defaultvalue="" conditions="" clazz="" desc="部门名称"></field>
+	<!--<field ID="Mstationid" srcid="leader" defaultvalue="" conditions="" 
+	       clazz="com.eweaver.interfaces.orgsync.BillIDNUllGenerator" desc="负责岗位ID"></field>	  -->
+	<field ID="unitStatus" srcid="" defaultvalue="402880d31a04dfba011a04e4db5f0003" 
+	       conditions="" clazz="" desc="" isconstant="true"></field>
+	<!-- <field ID="dsporder" srcid="" defaultvalue="" conditions="" clazz="" desc="排序"></field> -->
+	<field ID="typeid" srcid="" defaultvalue="402880c0197ea0b301197ea688870003" 
+	       conditions="" clazz="" desc="" isconstant="true"></field>
+	<!-- <field ID="col1" srcid="leader1" defaultvalue="" 
+	       conditions="" clazz="com.eweaver.interfaces.orgsync.BillIDNUllGenerator" desc="分管领导1"></field>
+	<field ID="col2" srcid="leader2" defaultvalue="" 
+	       conditions="" clazz="com.eweaver.interfaces.orgsync.BillIDNUllGenerator" desc="分管领导2" ></field>
+	<field ID="col3" srcid="type" defaultvalue="" 
+	       conditions="" clazz="" desc="公司组织类型" ></field> -->
+	<field ID="reftype" srcid="" defaultvalue="402881e510e8223c0110e83d427f0018" 
+	       conditions="" clazz="" desc="" isconstant="true"></field>
+	<field ID="isdelete" srcid="isdisabled" defaultvalue="" conditions="" clazz=""  desc="是否删除"></field>
+</table>
+
+<!-- 部门上下级关系信息 -->
+<table ID="orgunitlink" SRCID="dbo.OA_odepartment" SRCDS="otherDataDS" DESTDS="" 
+       CLAZZ="" ISSYNC="" 
+       AFTERCLASS="com.eweaver.interfaces.orgsync.OrgPidsDeal" DESTKEY="oid"  ENTITY="com.eweaver.base.orgunit.model.Orgunitlink" 
+	   WHERE="">
+	<field ID="id" srcid="" defaultvalue="" conditions="" 
+	       clazz="com.eweaver.interfaces.orgsync.BillIDGenerator" isUpdate="false"  desc="主键ID"></field>
+	<field ID="oid" srcid="depid" defaultvalue="" conditions="" 
+	       clazz="com.eweaver.interfaces.orgsync.getIDforDeptid" desc="部门ID"></field>
+	<field ID="pid" srcid="adminid" defaultvalue="" conditions="" 
+	       clazz="com.eweaver.interfaces.orgsync.getIDforDeptid" desc="上级部门ID"></field>
+	<field ID="typeid" srcid="" defaultvalue="402881e510e8223c0110e83d427f0018" isconstant="true" 
+	       conditions="" clazz="" desc="部门维度ID"></field>
+	<field ID="isdelete" srcid="isdisabled" defaultvalue="" conditions="" clazz=""  desc="是否删除"></field>
+</table>
+
+</tables>
+</xml>

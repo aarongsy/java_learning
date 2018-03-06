@@ -1,0 +1,105 @@
+<xml version="1.0" encoding="utf-8">
+<tables>
+<!-- 部门信息 -->
+<table ID="orgunit" SRCID="HrmDepartment" SRCDS="ecologyDataDS" DESTDS="" CLAZZ="" ISSYNC="" 
+	DESTKEY="id" ENTITY="com.eweaver.base.orgunit.model.Orgunit" 
+	 SQL="select convert(varchar,id)+'c' id,subcompanyname objname,showorder dsporder,canceled isdelete from HrmSubCompany union 
+	 select convert(varchar,id) id,departmentname objname,showorder dsporder,canceled isdelete from HrmDepartment;">
+	<field ID="id" srcid="id" defaultvalue="" conditions="" clazz="com.eweaver.interfaces.ecology.sync.EcologyOrgIDGenerator" desc="主键ID"></field>
+	<field ID="objno" srcid="id" defaultvalue="" conditions="" clazz="" desc="部门编号"></field>
+	<field ID="objname" srcid="objname" defaultvalue="" conditions="" clazz="" desc="部门名称"></field>
+	<field ID="dsporder" srcid="dsporder" defaultvalue="" conditions="" clazz="" desc="排序"></field>
+	<field ID="unitStatus" srcid="" defaultvalue="402880d31a04dfba011a04e4db5f0003" conditions="" clazz="" desc="组织单元状态" isconstant="true"></field>
+	<field ID="typeid" srcid="" defaultvalue="402880c0197ea0b301197ea688870003" conditions="" clazz="" desc="" isconstant="true"></field>
+	<field ID="reftype" srcid="" defaultvalue="402881e510e8223c0110e83d427f0018" conditions="" clazz="" desc="组织维度" isconstant="true"></field>
+	<field ID="isdelete" srcid="isdelete" defaultvalue="0" conditions="" clazz=""  desc="是否删除"></field>
+	<field ID="col3" srcid="" defaultvalue="ecology" conditions="" clazz=""  desc="col3" isconstant="true"></field>
+</table>
+
+<!-- 部门上下级关系信息 -->
+<table ID="orgunitlink" SRCID="HrmDepartment" SRCDS="ecologyDataDS" DESTDS="" 
+       CLAZZ="" ISSYNC="" 
+       AFTERCLASS="com.eweaver.interfaces.ecology.sync.EcologyOrgPidsDeal" DESTKEY="oid"  ENTITY="com.eweaver.base.orgunit.model.Orgunitlink" 
+	   WHERE="" SQL="select convert(varchar,id)+'c' id,convert(varchar,supsubcomid)+'c' pid,canceled isdelete from HrmSubCompany union 
+	   select convert(varchar,id) id,case when supdepid=0 then convert(varchar,subcompanyid1)+'c' else convert(varchar,supdepid) end pid,canceled isdelete from HrmDepartment">
+	<field ID="id" srcid="" defaultvalue="" conditions="" clazz="com.eweaver.interfaces.ecology.sync.EcologyOrgIDGenerator" isUpdate="false"  desc="主键ID"></field>
+	<field ID="oid" srcid="id" defaultvalue="" conditions="" clazz="com.eweaver.interfaces.ecology.sync.EcologyOrgIDGenerator" desc="部门ID"></field>
+	<field ID="pid" srcid="pid" defaultvalue="" conditions="" clazz="com.eweaver.interfaces.ecology.sync.EcologyOrgIDGenerator" desc="上级部门ID"></field>
+	<field ID="typeid" srcid="" defaultvalue="402881e510e8223c0110e83d427f0018" isconstant="true" conditions="" clazz="" desc="部门维度ID"></field>
+	<field ID="isdelete" srcid="isdelete" defaultvalue="0" conditions="" clazz=""  desc="是否删除"></field>
+	<field ID="col3" srcid="" defaultvalue="ecology" conditions="" clazz=""  desc="col3" isconstant="true"></field>
+</table>
+
+<!-- 岗位信息 -->
+<table ID="stationinfo" SRCID="hrmjobtitles" SRCDS="ecologyDataDS" DESTDS="" CLAZZ="" ISSYNC="" 
+	DESTKEY="id" ENTITY="com.eweaver.humres.base.model.Stationinfo" 
+	 SQL="">
+	<field ID="id" srcid="id" defaultvalue="" conditions="" clazz="com.eweaver.interfaces.ecology.sync.EcologyStationIDGenerator" desc="主键ID"></field>
+	<field ID="code" srcid="id" defaultvalue="" conditions="" clazz="" desc="岗位编号"></field>
+	<field ID="objname" srcid="jobtitlename" defaultvalue="" conditions="" clazz="" desc="岗位名称"></field>
+	<field ID="orgid" srcid="jobdepartmentid" defaultvalue="" conditions="" clazz="com.eweaver.interfaces.ecology.sync.EcologyOrgIDGenerator" desc="所属组织单元"></field>
+	<field ID="parentobjid" srcid="" defaultvalue="402881eb112f5af201112ff3afe10004" conditions="" clazz="" isconstant="true"  desc="上级岗位"></field>
+	<field ID="stationstatus" srcid="" defaultvalue="402880d319eb81720119eba4e1e70004" conditions="" clazz="" desc="岗位状态" isconstant="true"></field>
+	<field ID="minlevel" srcid="" defaultvalue="0" conditions="" clazz=""  desc="岗位等级下限" isconstant="true"></field>
+	<field ID="maxlevel" srcid="" defaultvalue="0" conditions="" clazz=""  desc="岗位等级上限" isconstant="true"></field>
+	<field ID="reftype" srcid="" defaultvalue="402881e510e8223c0110e83d427f0018" conditions="" clazz="" desc="组织维度" isconstant="true"></field>
+	<field ID="isdelete" srcid="" defaultvalue="0" conditions="" clazz=""  desc="是否删除" isconstant="true"></field>
+	<field ID="col3" srcid="" defaultvalue="ecology" conditions="" clazz=""  desc="col3" isconstant="true"></field>
+</table>
+
+<!-- 岗位上下级关系信息 -->
+<table ID="stationlink" SRCID="hrmjobtitles" SRCDS="ecologyDataDS" DESTDS="" CLAZZ="" ISSYNC="" DESTKEY="oid" 
+    AFTERCLASS="com.eweaver.interfaces.orgsync.StationLinkPidsDeal"   
+	ENTITY="com.eweaver.humres.base.model.Stationlink" >
+	<field ID="id" srcid="" defaultvalue="" conditions="" clazz="com.eweaver.interfaces.ecology.sync.EcologyStationIDGenerator" isUpdate="false"  desc="主键ID"></field>
+	<field ID="oid" srcid="id" defaultvalue="" conditions="" clazz="com.eweaver.interfaces.ecology.sync.EcologyStationIDGenerator" desc="主键ID"></field>
+	<field ID="pid" srcid="" defaultvalue="402881eb112f5af201112ff3afe10004" conditions="" clazz="" isconstant="true"  desc="上级岗位"></field>
+	<field ID="typeid" srcid="" defaultvalue="402881e510e8223c0110e83d427f0018" conditions="" clazz="" isconstant="true"  desc="岗位维度"></field>
+	<field ID="isdelete" srcid="" defaultvalue="0" conditions="" clazz="" isconstant="true"  desc="是否删除"></field>
+	<field ID="col3" srcid="" defaultvalue="ecology" conditions="" clazz=""  desc="col3" isconstant="true"></field>
+</table>
+
+<!-- 人事表信息 -->
+<table ID="humres" SRCID="hrmresource" SRCDS="ecologyDataDS" DESTDS="" CLAZZ="com.eweaver.interfaces.ecology.sync.EcologyHumresStatusDeal" ISSYNC="" 
+	   DESTKEY="id" ENTITY="com.eweaver.humres.base.model.Humres" SQL="select case when sex='0' then '402881e90cba854b010cba9c9364000c' else '402881e90cba854b010cba9c9364000d' end gender,* from HrmResource;">
+	<field ID="id" srcid="id" defaultvalue="" conditions="" clazz="com.eweaver.interfaces.ecology.sync.EcologyHumresIDGenerator" desc="主键ID"></field>
+	<field ID="objno" srcid="id" defaultvalue="" conditions="" clazz="" desc="员工编号"></field>
+	<field ID="objname" srcid="lastname" defaultvalue="" conditions="" clazz="" desc="员工姓名"></field>
+	<field ID="gender" srcid="gender" defaultvalue="" conditions="" clazz="" desc="员工性别" ></field>
+	<field ID="orgid" srcid="departmentid" defaultvalue="" conditions="" clazz="com.eweaver.interfaces.ecology.sync.EcologyOrgIDGenerator" desc="部门ID"></field>
+	<field ID="orgids" srcid="departmentid" defaultvalue="" conditions="" clazz="com.eweaver.interfaces.ecology.sync.EcologyOrgIDGenerator" desc="所有部门"></field>
+	<field ID="mainstation" srcid="jobtitle" defaultvalue="" conditions="" clazz="com.eweaver.interfaces.ecology.sync.EcologyStationIDGenerator" desc="主岗ID"></field>
+    <field ID="station" srcid="jobtitle" defaultvalue="" conditions="" clazz="com.eweaver.interfaces.ecology.sync.EcologyStationIDGenerator" desc="所有岗位"></field>     
+	<field ID="hrstatus" srcid="" defaultvalue="4028804c16acfbc00116ccba13802935" conditions="" clazz="" isconstant="true"  desc="人事状态"></field>
+	<field ID="workstatus" srcid="" defaultvalue="402881ea0b1c751a010b1cd262610007" conditions="" clazz="" isconstant="true"  desc="工作状态"></field>      
+	<field ID="extrefobjfield15" srcid="managerid" defaultvalue="" conditions="" clazz="com.eweaver.interfaces.ecology.sync.EcologyHumresIDGenerator" isconstant="" desc="直接上级"></field>       
+	<field ID="seclevel" srcid="seclevel" defaultvalue="" conditions="" clazz="" isconstant="" desc="安全级别"></field>
+	<field ID="email" srcid="email" defaultvalue="" conditions="" clazz="" desc="邮件"></field>
+	<field ID="tel1" srcid="telephone" defaultvalue="" conditions="" clazz="" desc="办公电话"></field>
+	<field ID="tel2" srcid="mobile" defaultvalue="" conditions="" clazz="" desc="手机"></field>
+	<field ID="dsporder" srcid="dsporder" defaultvalue="" conditions="" clazz="" desc="排序"></field>
+    <field ID="isdelete" srcid="" defaultvalue="0" conditions="" clazz="" isconstant="true" desc="是否删除"></field>
+    <field ID="col3" srcid="" defaultvalue="ecology" conditions="" clazz=""  desc="col3" isconstant="true"></field>
+    <field ID="status" srcid="status" defaultvalue="" conditions="" isfake="true" clazz="" desc="人事状态"></field>
+</table>
+
+<!-- 账号信息 -->
+<table ID="sysuser" SRCID="hrmresource" SRCDS="ecologyDataDS" DESTDS="" CLAZZ="com.eweaver.interfaces.ecology.sync.EcologySysuserStatusDeal" ISSYNC="" 
+	DESTKEY="objid" ENTITY="com.eweaver.base.security.model.Sysuser">
+	<field ID="id" srcid="id" defaultvalue="" conditions="" clazz="com.eweaver.interfaces.ecology.sync.EcologySysuserIDGenerator" desc="主键ID" ></field>
+	<field ID="objid" srcid="id" defaultvalue="" conditions="" clazz="com.eweaver.interfaces.ecology.sync.EcologyHumresIDGenerator" desc="关联HumresID"></field>
+	<field ID="longonname" srcid="loginid" defaultvalue="" conditions="" clazz="" desc="账号"></field>
+	<field ID="logonpass" srcid="password" defaultvalue="" conditions="" clazz="" isconstant="" desc="密码"></field>
+	<field ID="mtype" srcid="" defaultvalue="1" conditions="" clazz="" desc="" isconstant="true"></field>
+	<field ID="isclosed" srcid="" defaultvalue="0" conditions="" clazz="" desc="" isconstant="true"></field>
+	<field ID="ismaster" srcid="" defaultvalue="1" conditions="" clazz="" desc="" isconstant="true"></field>
+	<field ID="language" srcid="" defaultvalue="zh_CN" conditions="" clazz="" desc="" isconstant="true"></field>
+	<field ID="style" srcid="" defaultvalue="purple" conditions="" clazz="" desc="" isconstant="true"></field>
+    <field ID="isdelete" srcid="" defaultvalue="0" conditions="" clazz="" desc="" isconstant="true"></field>
+    <field ID="isusbkey" srcid="" defaultvalue="0" conditions="" clazz="" desc="" isconstant="true"></field>
+    <field ID="dynamicpass" srcid="" defaultvalue="0" conditions="" clazz="" desc="" isconstant="true"></field>	
+    <field ID="col3" srcid="" defaultvalue="ecology" conditions="" clazz=""  desc="col3" isconstant="true"></field>
+    <field ID="status" srcid="status" defaultvalue="" conditions="" isfake="true" clazz="" desc="人事状态"></field>
+</table>
+</tables>
+</xml>

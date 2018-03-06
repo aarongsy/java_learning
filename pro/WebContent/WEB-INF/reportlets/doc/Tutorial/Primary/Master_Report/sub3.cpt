@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.2</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes isCache="false" maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT orderid,empid,amount,city,shipmethod FROM ORDERS,customer where customer.customerid=orders.customerid]]></Query>
+</TableData>
+</TableDataMap>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+<Parameter>
+<Attributes name="id" shown="false" />
+ />
+<O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</Parameter>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings shrinkToFit="false" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[61,20]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[108,58]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="0"><O t="BiasTextPainter"><IsBackSlash value="false"/>
+<![CDATA[      客户地区|订单数量|送货方式]]>
+</O>
+</C>
+<C c="1" r="0" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="CITY" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[EMPID]]></CNAME><Compare op="0">
+<O t="Formula" class="Formula"><Attributes><![CDATA[=$empid]]></Attributes></O>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="1" />
+</C>
+<C c="0" r="1" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="SHIPMETHOD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="1" r="1" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="ORDERID" />
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.CountFunction]]></FN></RG>
+</O>
+<Expand dir="0" />
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style>
+<FRFont name="SimSun" style="0" size="14" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

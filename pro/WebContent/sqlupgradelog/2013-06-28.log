@@ -1,0 +1,11 @@
+错误时间
+  10:45:34
+错误位置
+  sql2013061701.sql第2行:
+错误语句
+ alter table getemails modify mailaddressto clob
+错误原因
+  java.sql.SQLException: ORA-22858: 数据类型的变更无效
+
+
+

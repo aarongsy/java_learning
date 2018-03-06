@@ -1,0 +1,17 @@
+p {  
+        margin: 0 0 2em;  
+    }  
+    h1 {  
+        margin: 0;  
+    }  
+    a {  
+        color: #339;  
+        text-decoration: none;  
+    }  
+    a:hover {  
+        text-decoration: underline;  
+    }  
+    div {  
+        padding: 20px 0;  
+        border-bottom: solid 1px #ccc;  
+    } 

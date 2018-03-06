@@ -1,0 +1,56 @@
+<%@page import="com.eweaver.base.BaseJdbcDao"%>
+<%@page import="net.sf.json.JSONObject"%>
+<%@page import="com.eweaver.base.security.service.logic.SysuserrolelinkService"%>
+<%@page import="com.eweaver.base.BaseContext"%>
+<%@page import="com.eweaver.base.util.StringHelper"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+String action = StringHelper.null2String(request.getParameter("action"));
+JSONObject jsonObject = new JSONObject();
+if("isInRole".equals(action)){
+	String roleid = StringHelper.null2String(request.getParameter("roleid"));
+	String userid = BaseContext.getRemoteUser().getSysuserid();
+	SysuserrolelinkService sysuserrolelinkService = (SysuserrolelinkService)BaseContext.getBean("sysuserrolelinkService");
+	boolean isInRole = sysuserrolelinkService.isRole(roleid, userid);
+	if(isInRole){
+		jsonObject.put("success", "1");
+	}else{
+		jsonObject.put("success", "0");
+	}
+	response.setContentType("application/json; charset=utf-8");
+	response.getWriter().write(jsonObject.toString());
+	response.getWriter().flush();
+	response.getWriter().close();
+	return;
+}else if("needClose".equals(action)){
+	jsonObject.put("success", "0");
+	String requestid = StringHelper.null2String(request.getParameter("requestid"));
+	String sql = "update uf_lo_dgcar set isover='40288098276fc2120127704884290210' where requestid='"+requestid+"'";
+	BaseJdbcDao baseJdbcDao = (BaseJdbcDao)BaseContext.getBean("baseJdbcDao");
+	int i = baseJdbcDao.update(sql);
+	if(i>0){
+		jsonObject.put("success", "1");
+	}
+	response.setContentType("application/json; charset=utf-8");
+	response.getWriter().write(jsonObject.toString());
+	response.getWriter().flush();
+	response.getWriter().close();
+	return;
+}else if("needOpen".equals(action)){
+	jsonObject.put("success", "0");
+	String requestid = StringHelper.null2String(request.getParameter("requestid"));
+	String sql = "update uf_lo_dgcar set isover='40288098276fc2120127704884290211' where requestid='"+requestid+"'";
+	BaseJdbcDao baseJdbcDao = (BaseJdbcDao)BaseContext.getBean("baseJdbcDao");
+	int i = baseJdbcDao.update(sql);
+	if(i>0){
+		jsonObject.put("success", "1");
+	}
+	response.setContentType("application/json; charset=utf-8");
+	response.getWriter().write(jsonObject.toString());
+	response.getWriter().flush();
+	response.getWriter().close();
+	return;
+}
+%>

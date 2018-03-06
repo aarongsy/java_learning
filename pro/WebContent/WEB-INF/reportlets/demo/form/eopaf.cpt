@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.5</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[erof]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT * FROM erof]]></Query>
+</TableData>
+</TableDataMap>
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<PaperSize width="11.693" height="16.536" />
+<Margin top="0.27" left="0.7499999999999999" bottom="0.27" right="0.7499999999999999" />
+</ReportSettings>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="0" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+<ParameterInterface class="com.fr.report.parameter.DefaultParameterInterface">
+<DPparam /></ParameterInterface>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="第一页">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<ReportPageAttr>
+</ReportPageAttr>
+<ReportWebAttr>
+<EmailManager mailHost="" password="___" user="" fromEmailAddress="" />
+<ServerPrinter>
+</ServerPrinter>
+<WebPageContent>
+<ToolBars>
+</ToolBars>
+<WebMargin margins="0,auto,0,auto" />
+</WebPageContent>
+<WebFormContent>
+<ToolBars>
+</ToolBars>
+</WebFormContent>
+<WebWriteContent>
+<ToolBars>
+</ToolBars>
+</WebWriteContent>
+<Background name="NullBackground" />
+</ReportWebAttr>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<ReportWriteAttr>
+</ReportWriteAttr>
+<RowHeight defaultValue="19">
+<![CDATA[53,29,19,6,25,25,25,25,6,19,6,25,25,25,25,25,25,25,6,19,6,25,25,25,25,6,19,6,25,25,25,25,3,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[119,72,62,90,63,121,83,116,22,27,7,22,8,23,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="14" s="0"><O><![CDATA[Employment Offer and Pre-Hire Approval Form]]></O>
+</C>
+<C c="0" r="2" cs="14" s="1"><O><![CDATA[Candidate`s Personal Information:]]></O>
+</C>
+<C c="0" r="4" s="2"><O><![CDATA[Name:]]></O>
+</C>
+<C c="1" r="4" cs="4"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="5" r="4" cs="2" s="2"><O><![CDATA[Excepted Start Date:]]></O>
+</C>
+<C c="7" r="4" s="3"><Widget class="com.fr.report.web.ui.DateEditor">
+<WidgetAttr/>
+<DateAttr start="" end=""/></Widget>
+</C>
+<C c="0" r="5" s="2"><O><![CDATA[Highest Degree:]]></O>
+</C>
+<C c="1" r="5" cs="4"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="5" r="5" cs="2" s="2"><O><![CDATA[Current Salary:]]></O>
+</C>
+<C c="7" r="5" cs="5"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="0" r="6" s="2"><O><![CDATA[Certifications:]]></O>
+</C>
+<C c="1" r="6" cs="4"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="5" r="6" cs="2" s="2"><O><![CDATA[Excepted Salary:]]></O>
+</C>
+<C c="7" r="6" cs="5"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="2" r="7" cs="5" s="2"><O><![CDATA[Candidate`s Equivalent Experience Start Date:]]></O>
+</C>
+<C c="7" r="7" s="3"><Widget class="com.fr.report.web.ui.DateEditor">
+<WidgetAttr/>
+<DateAttr start="" end=""/></Widget>
+</C>
+<C c="0" r="9" cs="2" s="1"><O><![CDATA[Clearance Required:]]></O>
+</C>
+<C c="2" r="9" cs="2" s="1"></C>
+<C c="4" r="9" cs="10" s="1"></C>
+<C c="0" r="11" cs="2" s="2"><O><![CDATA[Required Prior to Start:]]></O>
+</C>
+<C c="2" r="11" cs="2"></C>
+<C c="5" r="11" s="4"><O><![CDATA[Agency:]]></O>
+</C>
+<C c="7" r="11" s="4"><O><![CDATA[Type:]]></O>
+</C>
+<C c="0" r="12" s="2"><O><![CDATA[Contract Name:]]></O>
+</C>
+<C c="1" r="12" cs="3"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="4" r="12"></C>
+<C c="5" r="12" rs="5"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="7" r="12" rs="4"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="0" r="13" s="2"><O><![CDATA[Contract Number:]]></O>
+</C>
+<C c="1" r="13" cs="3"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="4" r="13"></C>
+<C c="0" r="14" s="2"><O><![CDATA[Task Name:]]></O>
+</C>
+<C c="1" r="14" cs="3"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="4" r="14"></C>
+<C c="0" r="15" s="2"><O><![CDATA[Task Number:]]></O>
+</C>
+<C c="1" r="15" cs="3"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="4" r="15"></C>
+<C c="8" r="15" cs="6"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="0" r="16" s="2"><O><![CDATA[Project Manager:]]></O>
+</C>
+<C c="1" r="16" cs="3"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="4" r="16"></C>
+<C c="6" r="16"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="0" r="17" s="2"><O><![CDATA[Phone:]]></O>
+</C>
+<C c="1" r="17" cs="3"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="4" r="17"></C>
+<C c="0" r="19" cs="14" s="1"><O><![CDATA[Specialized Skills,Knowledge or Current Clearance:]]></O>
+</C>
+<C c="0" r="21" cs="14" rs="4"><Widget class="com.fr.report.web.ui.TextArea">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="0" r="26" cs="2" s="1"><O><![CDATA[Proposed Offer:]]></O>
+</C>
+<C c="2" r="26" cs="2" s="1"></C>
+<C c="4" r="26" cs="10" s="1"></C>
+<C c="0" r="28" s="2"><O><![CDATA[Req. Number:]]></O>
+</C>
+<C c="1" r="28" cs="2"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="3" r="28" s="5"><O><![CDATA[Org.Number:]]></O>
+</C>
+<C c="4" r="28" cs="2"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="6" r="28" cs="3" s="2"><O><![CDATA[Operation/Division/Center:]]></O>
+</C>
+<C c="9" r="28"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="10" r="28"><O><![CDATA[/]]></O>
+</C>
+<C c="11" r="28"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="12" r="28"><O><![CDATA[/]]></O>
+</C>
+<C c="13" r="28"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="0" r="29" s="2"><O><![CDATA[Functional Title:]]></O>
+</C>
+<C c="1" r="29" cs="4"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="5" r="29" cs="2" s="2"><O><![CDATA[Grade/Level:]]></O>
+</C>
+<C c="7" r="29" cs="7"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="0" r="30" s="2"><O><![CDATA[Labor Type:]]></O>
+</C>
+<C c="1" r="30" cs="2"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="5" r="30" cs="2" s="2"><O><![CDATA[Account Code:]]></O>
+</C>
+<C c="7" r="30"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="0" r="31" s="6"><O><![CDATA[Reports to:]]></O>
+</C>
+<C c="1" r="31" cs="3" s="7"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="4" r="31" s="7"></C>
+<C c="5" r="31" cs="2" s="6"><O><![CDATA[Initial Project Assignment:]]></O>
+</C>
+<C c="7" r="31" s="7"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="8" r="31" s="7"></C>
+<C c="9" r="31" s="7"></C>
+<C c="10" r="31" s="7"></C>
+<C c="11" r="31" s="7"></C>
+<C c="12" r="31" s="7"></C>
+<C c="13" r="31" s="7"></C>
+<C c="0" r="33" cs="14" s="8"><O><![CDATA[To be completed by Hiring Manager.]]></O>
+</C>
+</CellElementList>
+</Report>
+<Report class="com.fr.report.WorkSheet" name="第二页">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<PaperSize width="11.693" height="16.536" />
+<Margin top="0.27" left="0.7499999999999999" bottom="0.27" right="0.7499999999999999" />
+</ReportSettings>
+<ReportPageAttr>
+</ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<ReportWriteAttr>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL1">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="erof"/>
+<ColumnConfig name="NAME" isKey="true" skipUnmodified="false" >
+<ColumnRow column="1" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="ESD" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="HD" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="CS" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="CERTIFICATION" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="6"/>
+</ColumnConfig>
+<ColumnConfig name="ES" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="6"/>
+</ColumnConfig>
+<ColumnConfig name="CEESD" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="7"/>
+</ColumnConfig>
+<ColumnConfig name="RPTS" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="11"/>
+</ColumnConfig>
+<ColumnConfig name="AGENCY" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="11"/>
+</ColumnConfig>
+<ColumnConfig name="TYPE" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="12"/>
+</ColumnConfig>
+<ColumnConfig name="CNAME" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="12"/>
+</ColumnConfig>
+<ColumnConfig name="CNUMBER" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="13"/>
+</ColumnConfig>
+<ColumnConfig name="TASKNAME" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="14"/>
+</ColumnConfig>
+<ColumnConfig name="PM" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="16"/>
+</ColumnConfig>
+<ColumnConfig name="PHONE" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="17"/>
+</ColumnConfig>
+<ColumnConfig name="SSKOCC" isKey="false" skipUnmodified="false" >
+<ColumnRow column="0" row="21"/>
+</ColumnConfig>
+<ColumnConfig name="RN" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="28"/>
+</ColumnConfig>
+<ColumnConfig name="ON" isKey="false" skipUnmodified="false" >
+<ColumnRow column="4" row="28"/>
+</ColumnConfig>
+<ColumnConfig name="ODC" isKey="false" skipUnmodified="false" >
+<ColumnRow column="9" row="28"/>
+</ColumnConfig>
+<ColumnConfig name="LT" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="30"/>
+</ColumnConfig>
+<ColumnConfig name="AC" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="30"/>
+</ColumnConfig>
+<ColumnConfig name="RT" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="31"/>
+</ColumnConfig>
+<ColumnConfig name="IPA" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="31"/>
+</ColumnConfig>
+<ColumnConfig name="BCI" isKey="false" skipUnmodified="false" >
+<ColumnRow column="3" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="BCR" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="BCTYPE" isKey="false" skipUnmodified="false" >
+<ColumnRow column="9" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="STATUS" isKey="false" skipUnmodified="false" >
+<ColumnRow column="11" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="IBI" isKey="false" skipUnmodified="false" >
+<ColumnRow column="3" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="IBR" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="PII" isKey="false" skipUnmodified="false" >
+<ColumnRow column="3" row="6"/>
+</ColumnConfig>
+<ColumnConfig name="PIR" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="6"/>
+</ColumnConfig>
+<ColumnConfig name="CII" isKey="false" skipUnmodified="false" >
+<ColumnRow column="3" row="7"/>
+</ColumnConfig>
+<ColumnConfig name="CIR" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="7"/>
+</ColumnConfig>
+<ColumnConfig name="CC" isKey="false" skipUnmodified="false" >
+<ColumnRow column="3" row="12"/>
+</ColumnConfig>
+<ColumnConfig name="BLOG" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="12"/>
+</ColumnConfig>
+<ColumnConfig name="OFFICE" isKey="false" skipUnmodified="false" >
+<ColumnRow column="10" row="12"/>
+</ColumnConfig>
+<ColumnConfig name="FA" isKey="false" skipUnmodified="false" >
+<ColumnRow column="3" row="13"/>
+</ColumnConfig>
+<ColumnConfig name="IYABN" isKey="false" skipUnmodified="false" >
+<ColumnRow column="4" row="19"/>
+</ColumnConfig>
+<ColumnConfig name="WEOACV" isKey="false" skipUnmodified="false" >
+<ColumnRow column="12" row="19"/>
+</ColumnConfig>
+<ColumnConfig name="CR" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="24"/>
+</ColumnConfig>
+<ColumnConfig name="SSR" isKey="false" skipUnmodified="false" >
+<ColumnRow column="11" row="23"/>
+</ColumnConfig>
+<ColumnConfig name="IR" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="25"/>
+</ColumnConfig>
+<ColumnConfig name="HS" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="29"/>
+</ColumnConfig>
+<ColumnConfig name="OTHER" isKey="false" skipUnmodified="false" >
+<ColumnRow column="10" row="29"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+</ReportWriteAttr>
+<RowHeight defaultValue="19">
+<![CDATA[53,19,19,8,25,25,25,25,25,7,19,8,25,25,25,25,6,19,6,25,6,19,6,25,25,25,6,19,6,25,25,25,25,25,25,25,25,4,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[81,72,16,61,61,61,5,61,116,61,61,61,61,57,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="14" s="0"><O><![CDATA[Employment Offer and Pre-Hire Approval Form]]></O>
+</C>
+<C c="0" r="2" cs="3" s="1"><O><![CDATA[Proposed Offer(cont):]]></O>
+</C>
+<C c="3" r="2" cs="3" s="9"><O><![CDATA[Intial]]></O>
+</C>
+<C c="6" r="2" cs="3" s="9"><O><![CDATA[Revised]]></O>
+</C>
+<C c="9" r="2" cs="2" s="9"><O><![CDATA[Type]]></O>
+</C>
+<C c="11" r="2" cs="3" s="9"><O><![CDATA[Status:]]></O>
+</C>
+<C c="0" r="4" cs="3" s="2"><O><![CDATA[Base Compensation:]]></O>
+</C>
+<C c="3" r="4" cs="3"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="7" r="4" cs="2"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="9" r="4" cs="2" rs="4"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="11" r="4" cs="3" rs="4"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="0" r="5" cs="3" s="2"><O><![CDATA[Initial Bonus:]]></O>
+</C>
+<C c="3" r="5" cs="3"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="7" r="5" cs="2"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="0" r="6" cs="3" s="2"><O><![CDATA[Percent Increase:]]></O>
+</C>
+<C c="3" r="6" cs="3"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="7" r="6" cs="2"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="0" r="7" cs="3" s="2"><O><![CDATA[Clearance Incentive:]]></O>
+</C>
+<C c="3" r="7" cs="3"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="7" r="7" cs="2"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="0" r="8" cs="3" s="2"><O><![CDATA[**Hours/Week]]></O>
+</C>
+<C c="4" r="8" s="5"><O><![CDATA[Benefits:]]></O>
+</C>
+<C c="5" r="8" cs="2"></C>
+<C c="0" r="10" cs="3" s="1"><O><![CDATA[Work Location:]]></O>
+</C>
+<C c="3" r="10" cs="6" s="9"></C>
+<C c="9" r="10" cs="2" s="9"></C>
+<C c="11" r="10" cs="3" s="9"></C>
+<C c="0" r="12" cs="3" s="2"><O><![CDATA[Corp.Campus:]]></O>
+</C>
+<C c="3" r="12" cs="2"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="5" r="12" s="2"><O><![CDATA[Blog:]]></O>
+</C>
+<C c="6" r="12" cs="3"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="9" r="12" s="2"><O><![CDATA[Office:]]></O>
+</C>
+<C c="10" r="12" cs="3"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="0" r="13" cs="3" s="2"><O><![CDATA[Full Address:]]></O>
+</C>
+<C c="3" r="13" cs="10" rs="3"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="0" r="17" cs="4" s="1"><O><![CDATA[Participation in Buddy Program:]]></O>
+</C>
+<C c="4" r="17" cs="3" s="9"></C>
+<C c="7" r="17" s="9"></C>
+<C c="8" r="17" cs="6" s="10"><O><![CDATA[Standard -OS: Windows XP Software:MS Office 2003]]></O>
+</C>
+<C c="0" r="19" cs="4" s="2"><O><![CDATA[If yes, assigened Buddy Name:]]></O>
+</C>
+<C c="4" r="19" cs="3"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="7" r="19" cs="5" s="2"><O><![CDATA[Will employee operate a company vehicle:]]></O>
+</C>
+<C c="12" r="19" cs="2"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="0" r="21" cs="4" s="1"><O><![CDATA[Computer Request Information:]]></O>
+</C>
+<C c="4" r="21" cs="7" s="9"></C>
+<C c="11" r="21" cs="3" s="9"></C>
+<C c="6" r="23"></C>
+<C c="7" r="23" cs="4" s="5"><O><![CDATA[Special Software Requirements:]]></O>
+</C>
+<C c="0" r="24" cs="2" s="2"><O><![CDATA[CostPoint Required:]]></O>
+</C>
+<C c="2" r="24" cs="4"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="6" r="24"></C>
+<C c="7" r="24" cs="7" rs="2"><Widget class="com.fr.report.web.ui.TextArea">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="0" r="25" cs="2" s="2"><O><![CDATA[Impromplu Required:]]></O>
+</C>
+<C c="2" r="25" cs="4"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="6" r="25"></C>
+<C c="0" r="27" cs="4" s="1"><O><![CDATA[Basis for Proposed Offer:]]></O>
+</C>
+<C c="4" r="27" cs="10" s="9"></C>
+<C c="0" r="29" s="2"><O><![CDATA[Hire Source:]]></O>
+</C>
+<C c="1" r="29" cs="8"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="9" r="29" s="2"><O><![CDATA[Other:]]></O>
+</C>
+<C c="10" r="29" cs="4"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="0" r="30" s="2"><O><![CDATA[Comments:]]></O>
+</C>
+<C c="1" r="30"></C>
+<C c="0" r="31" cs="14" rs="6" s="7"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="0" r="38" cs="14" s="8"><O><![CDATA[To be completed by Hiring Manager.]]></O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="Verdana" style="1" size="20" foreground="-1" />
+<Background name="ColorBackground"
+ color="-15645824">
+</Background>
+<Border></Border>
+</Style>
+<Style>
+<FRFont name="Verdana" style="1" size="12" foreground="-1" />
+<Background name="ColorBackground"
+ color="-15645824">
+</Background>
+<Border></Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="Verdana" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style>
+<Format class="java.text.SimpleDateFormat"><![CDATA[yyyy-MM-dd]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="Verdana" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style>
+<FRFont name="Verdana" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="Verdana" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" color="-15645824"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" color="-15645824"
+ /></Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="Verdana" style="1" size="12" foreground="-15645824" />
+<Background name="NullBackground" />
+<Border><Top style="2" color="-15645824"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="Verdana" style="1" size="12" foreground="-1" />
+<Background name="ColorBackground"
+ color="-15645824">
+</Background>
+<Border></Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="Verdana" style="1" size="12" foreground="-1" />
+<Background name="ColorBackground"
+ color="-15645824">
+</Background>
+<Border></Border>
+</Style>
+</StyleList>
+</WorkBook>

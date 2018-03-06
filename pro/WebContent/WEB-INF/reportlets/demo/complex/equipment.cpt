@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.2</Version>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<TableDataMap>
+<NameTableData name="ds1">
+<TableData class="com.fr.data.impl.EmbeddedTableData">
+<Parameters>
+</Parameters>
+<ColumnNames><![CDATA[CardNo,,.,,FixedAssetsNO,,.,,Variety,,.,,Name,,.,,Department,,.,,AddFashion,,.,,AddTime,,.,,Status,,.,,UseYear,,.,,DepreciationFashion,,.,,FixedAssetsCost ,,.,,AccumulatedDepreciation ]]></ColumnNames>
+<ColumnTypes><![CDATA[java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[IF1b^_a"b;i:H_N&n^hfl-C(YK3i;mQ;l>+emK4-8N"j9oi/Wg719kk]:(.:2M\M0Fs#RbJk
+1Ej%DRbXkiP&hY$bMR<LgncITe"
+Lb81_G_F*SXM93+akP]'(GrkkNQjq+7aF<<m7g'P4\(KU
+Xc5"VV],/fZ>g`!)`[(tsL*a`,C5)n^jO[09a8,,WIoq&.^0o4RBR[
+?;B7mfWY@YV3&\^/^.
+Yept*kW;YlVMCdW?-TtI?I9E64B8L6'+OK_\MiEPEKb\A?5Vfc.J4EjjBI2f=!aG`/\;*'(g
+AD=`$p2B
+iOO")C_ia<Rds6RX1]Z;gGND5kd.h450sDWm)jg?2h%.S$\'3>q?!~
+
+]]>
+</RowData>
+</TableData>
+</NameTableData>
+</TableDataMap>
+<ReportSettings shrinkToFit="false" headerHeight="0.0" footerHeight="0.0">
+<PaperSize width="11.693" height="16.536" />
+<Margin top="0.27" left="0.7499999999999999" bottom="0.27" right="0.7499999999999999" />
+</ReportSettings>
+<ReportPageAttr>
+</ReportPageAttr>
+<ReportParameterAttr>
+<Parameters>
+</Parameters>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="0" userDefineWindow="false" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<AutoRecalculate>false</AutoRecalculate>
+<DesignAttributes>
+</DesignAttributes>
+<ReportWebAttr>
+<EmailManager mailHost="" password="___" user="" fromEmailAddress="" />
+<ServerPrinter>
+</ServerPrinter>
+</ReportWebAttr>
+<ReportWriteAttr>
+</ReportWriteAttr>
+<RowHeight defaultValue="19">
+<![CDATA[19,11,6,19,6,19,6,19,6,19,6,19,6,19,6,19,6,19,6,19,6,12]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[12,6,70,90,6,70,90,6,12,12]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="9" s="0"><O t="S"><![CDATA[固 定 资 产 卡 片]]></O>
+<Expand leftParentDefault="false" left="D6" />
+</C>
+<C c="9" r="0"></C>
+<C c="6" r="1"></C>
+<C c="7" r="1"><Expand leftParentDefault="false" left="D6" />
+</C>
+<C c="8" r="1"></C>
+<C c="9" r="1"></C>
+<C c="0" r="2" s="1"></C>
+<C c="1" r="2" s="2"></C>
+<C c="2" r="2" s="2"></C>
+<C c="3" r="2" s="2"></C>
+<C c="4" r="2" s="2"></C>
+<C c="5" r="2" s="2"></C>
+<C c="6" r="2"></C>
+<C c="7" r="2" s="2"></C>
+<C c="8" r="2" s="3"><O t="S"><![CDATA[]]></O>
+</C>
+<C c="0" r="3" s="4"></C>
+<C c="1" r="3"></C>
+<C c="2" r="3" cs="5" s="5"><O t="S"><![CDATA[基本资料]]></O>
+</C>
+<C c="7" r="3"></C>
+<C c="8" r="3" s="6"></C>
+<C c="9" r="3"></C>
+<C c="0" r="4" s="4"></C>
+<C c="1" r="4"></C>
+<C c="2" r="4" s="7"></C>
+<C c="3" r="4" s="8"></C>
+<C c="4" r="4" s="7"></C>
+<C c="5" r="4" s="8"></C>
+<C c="6" r="4" s="8"></C>
+<C c="7" r="4"></C>
+<C c="8" r="4" s="6"></C>
+<C c="0" r="5" s="4"><Expand leftParentDefault="false" left="D6" />
+</C>
+<C c="1" r="5" s="9"><Expand leftParentDefault="false" left="D6" />
+</C>
+<C c="2" r="5" s="5"><O t="S"><![CDATA[卡片编号]]></O>
+<Expand leftParentDefault="false" left="D6" />
+</C>
+<C c="3" r="5" s="10"><O t="DSColumn"><Attributes dsName="ds1" columnName="CardNo" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG><Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="4" r="5"></C>
+<C c="5" r="5" s="5"><O t="S"><![CDATA[固资编码]]></O>
+</C>
+<C c="6" r="5" s="10"><O t="DSColumn"><Attributes dsName="ds1" columnName="FixedAssetsNO" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG><Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" leftParentDefault="false" left="D6" />
+</C>
+<C c="7" r="5" s="11"></C>
+<C c="8" r="5" s="6"></C>
+<C c="0" r="6" s="4"></C>
+<C c="1" r="6" s="9"></C>
+<C c="2" r="6" s="5"></C>
+<C c="3" r="6" s="5"></C>
+<C c="4" r="6"></C>
+<C c="5" r="6" s="5"></C>
+<C c="6" r="6" s="5"></C>
+<C c="7" r="6" s="11"></C>
+<C c="8" r="6" s="6"></C>
+<C c="0" r="7" s="4"></C>
+<C c="1" r="7" s="9"></C>
+<C c="2" r="7" s="5"><O t="S"><![CDATA[固资名称]]></O>
+</C>
+<C c="3" r="7" cs="4" s="10"><O t="DSColumn"><Attributes dsName="ds1" columnName="Name" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG><Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" leftParentDefault="false" left="D6" />
+</C>
+<C c="7" r="7" s="11"></C>
+<C c="8" r="7" s="6"></C>
+<C c="0" r="8" s="4"></C>
+<C c="1" r="8" s="9"></C>
+<C c="2" r="8" s="5"></C>
+<C c="3" r="8" s="5"></C>
+<C c="4" r="8"></C>
+<C c="5" r="8" s="5"></C>
+<C c="6" r="8" s="5"></C>
+<C c="7" r="8" s="11"></C>
+<C c="8" r="8" s="6"></C>
+<C c="0" r="9" s="4"></C>
+<C c="1" r="9" s="9"></C>
+<C c="2" r="9" s="5"><O t="S"><![CDATA[固资类别]]></O>
+</C>
+<C c="3" r="9" s="10"><O t="DSColumn"><Attributes dsName="ds1" columnName="Variety" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG><Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" leftParentDefault="false" left="D6" />
+</C>
+<C c="4" r="9"></C>
+<C c="5" r="9" s="5"><O t="S"><![CDATA[所在部门]]></O>
+</C>
+<C c="6" r="9" s="10"><O t="DSColumn"><Attributes dsName="ds1" columnName="Department" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG><Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" leftParentDefault="false" left="D6" />
+</C>
+<C c="7" r="9" s="11"></C>
+<C c="8" r="9" s="6"></C>
+<C c="9" r="9"><Expand leftParentDefault="false" left="D6" />
+</C>
+<C c="0" r="10" s="4"></C>
+<C c="1" r="10" s="9"></C>
+<C c="2" r="10" s="5"></C>
+<C c="3" r="10" s="5"></C>
+<C c="4" r="10"></C>
+<C c="5" r="10" s="5"></C>
+<C c="6" r="10" s="5"></C>
+<C c="7" r="10" s="11"></C>
+<C c="8" r="10" s="6"></C>
+<C c="0" r="11" s="4"></C>
+<C c="1" r="11" s="9"></C>
+<C c="2" r="11" s="5"><O t="S"><![CDATA[增加方式]]></O>
+</C>
+<C c="3" r="11" s="10"><O t="DSColumn"><Attributes dsName="ds1" columnName="AddFashion" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG><Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" leftParentDefault="false" left="D6" />
+</C>
+<C c="4" r="11"></C>
+<C c="5" r="11" s="5"><O t="S"><![CDATA[增加时间]]></O>
+</C>
+<C c="6" r="11" s="10"><O t="DSColumn"><Attributes dsName="ds1" columnName="AddTime" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG><Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" leftParentDefault="false" left="D6" />
+</C>
+<C c="7" r="11" s="11"><Expand leftParentDefault="false" left="D6" />
+</C>
+<C c="8" r="11" s="6"></C>
+<C c="0" r="12" s="4"></C>
+<C c="1" r="12" s="9"></C>
+<C c="2" r="12" s="5"></C>
+<C c="3" r="12" s="5"></C>
+<C c="4" r="12"></C>
+<C c="5" r="12" s="5"></C>
+<C c="6" r="12" s="5"></C>
+<C c="7" r="12" s="11"></C>
+<C c="8" r="12" s="6"></C>
+<C c="0" r="13" s="4"></C>
+<C c="1" r="13" s="9"></C>
+<C c="2" r="13" s="5"><O t="S"><![CDATA[使用状况]]></O>
+</C>
+<C c="3" r="13" s="10"><O t="DSColumn"><Attributes dsName="ds1" columnName="Status" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG><Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" leftParentDefault="false" left="D6" />
+</C>
+<C c="4" r="13"></C>
+<C c="5" r="13" s="5"><O t="S"><![CDATA[使用年限]]></O>
+</C>
+<C c="6" r="13" s="10"><O t="DSColumn"><Attributes dsName="ds1" columnName="UseYear" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG><Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" leftParentDefault="false" left="D6" />
+</C>
+<C c="7" r="13" s="11"></C>
+<C c="8" r="13" s="6"></C>
+<C c="0" r="14" s="4"></C>
+<C c="1" r="14"></C>
+<C c="2" r="14" s="12"></C>
+<C c="3" r="14" s="12"></C>
+<C c="4" r="14" s="13"></C>
+<C c="5" r="14" s="12"></C>
+<C c="6" r="14" s="12"></C>
+<C c="7" r="14"></C>
+<C c="8" r="14" s="6"></C>
+<C c="0" r="15" s="4"></C>
+<C c="1" r="15"></C>
+<C c="2" r="15" s="5"><O t="S"><![CDATA[折旧资料]]></O>
+</C>
+<C c="3" r="15" s="5"></C>
+<C c="4" r="15"></C>
+<C c="5" r="15" s="5"></C>
+<C c="6" r="15" s="5"></C>
+<C c="7" r="15"></C>
+<C c="8" r="15" s="6"></C>
+<C c="0" r="16" s="4"></C>
+<C c="1" r="16" s="9"></C>
+<C c="2" r="16" s="8"></C>
+<C c="3" r="16" s="8"></C>
+<C c="4" r="16" s="7"></C>
+<C c="5" r="16" s="8"></C>
+<C c="6" r="16" s="8"></C>
+<C c="7" r="16" s="11"></C>
+<C c="8" r="16" s="6"></C>
+<C c="0" r="17" s="4"></C>
+<C c="1" r="17" s="9"></C>
+<C c="2" r="17" s="5"><O t="S"><![CDATA[折旧方法]]></O>
+</C>
+<C c="3" r="17" cs="4" s="10"><O t="DSColumn"><Attributes dsName="ds1" columnName="DepreciationFashion" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG><Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" leftParentDefault="false" left="D6" />
+</C>
+<C c="7" r="17" s="11"></C>
+<C c="8" r="17" s="6"></C>
+<C c="0" r="18" s="4"></C>
+<C c="1" r="18" s="9"></C>
+<C c="2" r="18" s="5"></C>
+<C c="3" r="18" s="5"></C>
+<C c="4" r="18"></C>
+<C c="5" r="18" s="5"></C>
+<C c="6" r="18" s="5"></C>
+<C c="7" r="18" s="11"></C>
+<C c="8" r="18" s="6"></C>
+<C c="0" r="19" s="4"></C>
+<C c="1" r="19" s="9"></C>
+<C c="2" r="19" s="5"><O t="S"><![CDATA[原值]]></O>
+</C>
+<C c="3" r="19" s="10"><O t="DSColumn"><Attributes dsName="ds1" columnName="FixedAssetsCost " />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG><Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" leftParentDefault="false" left="D6" />
+</C>
+<C c="4" r="19"></C>
+<C c="5" r="19" s="5"><O t="S"><![CDATA[累计折旧]]></O>
+</C>
+<C c="6" r="19" s="10"><O t="DSColumn"><Attributes dsName="ds1" columnName="AccumulatedDepreciation " />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG><Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" leftParentDefault="false" left="D6" />
+</C>
+<C c="7" r="19" s="11"></C>
+<C c="8" r="19" s="6"></C>
+<C c="0" r="20" s="4"></C>
+<C c="1" r="20"></C>
+<C c="2" r="20" s="13"></C>
+<C c="3" r="20" s="13"><Expand leftParentDefault="false" left="D6" />
+</C>
+<C c="4" r="20" s="13"></C>
+<C c="5" r="20" s="13"></C>
+<C c="6" r="20" s="13"></C>
+<C c="7" r="20"></C>
+<C c="8" r="20" s="6"></C>
+<C c="0" r="21" s="14"></C>
+<C c="1" r="21" s="15"></C>
+<C c="2" r="21"></C>
+<C c="3" r="21" s="15"><Expand leftParentDefault="false" left="D6" />
+</C>
+<C c="4" r="21" s="15"></C>
+<C c="5" r="21" s="15"></C>
+<C c="6" r="21" s="15"></C>
+<C c="7" r="21" s="15"></C>
+<C c="8" r="21" s="16"></C>
+<C c="2" r="22"><Expand leftParentDefault="false" left="B6" />
+</C>
+<C c="3" r="22"><Expand leftParentDefault="false" left="D6" />
+</C>
+<C c="10" r="24"></C>
+</CellElementList>
+<WorkSheetAttr direction="0" start="0" end="22" maxRowOrColumn="92" />
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="14" foreground="-16617053" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="6" color="-6894375"
+ /><Left style="6" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="6" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="6" color="-6894375"
+ /><Right style="6" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Left style="6" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="1" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Right style="6" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="1" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Left style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="1" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="6" color="-6894375"
+ /><Left style="6" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="6" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="6" color="-6894375"
+ /><Right style="6" color="-6894375"
+ /></Border>
+</Style>
+</StyleList>
+</WorkBook>

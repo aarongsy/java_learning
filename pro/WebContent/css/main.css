@@ -1,0 +1,106 @@
+/**存放首页相关的css内容, main.jsp和index.jsp都会引用到此文件**/
+
+/*帐号切换相关*/
+#accountSwitchBox{
+	position: absolute;
+	z-index: 19999;
+	background-color: #eee;
+	padding: 5px;
+	display: none;
+}
+#accountSwitchBox .accountSwitchTitle{
+	padding: 2px 5px;
+	font-size: 12px;
+	font-family: Microsoft YaHei;
+	font-weight: bold;
+}
+#accountSwitchBox .searchTextBox{
+	position: relative;
+	padding:2px 5px;
+	background: #fff;
+}
+.searchTexTip{
+	position: absolute;
+	top: 4px;
+	left: 8px;
+	color: #ccc;
+	font-size: 12px;
+	font-family: Microsoft YaHei;
+	font-style: italic;
+}
+.eweaver-ie-8 .searchTexTip, .eweaver-ie-9 .searchTexTip{
+	top: 5px;
+	left: 4px;
+}
+#accountSwitchBox .searchResult{
+	background: #fff;
+	display: none;
+	border: 1px solid #fff;
+	padding:2px 5px;
+}
+#accountSwitchBox .searchResult .title{
+	margin: 0px 2px 2px 2px;
+	padding: 2px 0px 2px 3px;
+	font-weight: bold;
+	font-family: Microsoft YaHei;
+	font-size: 12px;
+	border-bottom: 1px dotted #ababab;
+}
+#accountSwitchBox .searchResult ul li{
+	border-bottom: 1px dotted #eee;
+}
+#accountSwitchBox .searchResult ul li a{
+	padding: 3px 0px 3px 2px;
+	display: block;
+	text-decoration: none;
+	font-family: Microsoft YaHei;
+	font-size: 12px;
+	color: #333;
+}
+#accountSwitchBox .searchResult ul li.mouseover a, #accountSwitchBox .searchResult ul li.currMove a{
+	background:#0197D6;	
+	color: #fff;
+	cursor: pointer;
+}
+#accountSwitchBox .searchResult ul li a font.red{
+	color: red;
+	font-family: Microsoft YaHei;
+}
+#accountSwitchBox .searchResult ul li a span.account_objname{
+	font-size: 12px;
+	font-family: Microsoft YaHei;
+	color:#000;
+}
+#accountSwitchBox .searchResult ul li a span.account_longonname,
+#accountSwitchBox .searchResult ul li a span.account_objno{
+	font-size: 11px;
+	font-family: Microsoft YaHei;
+	padding-left:7px;
+	color:#777;
+}
+#accountSwitchBox .searchResult ul li.mouseover a span.account_objname,
+#accountSwitchBox .searchResult ul li.mouseover a span.account_longonname,
+#accountSwitchBox .searchResult ul li.mouseover a span.account_objno,
+#accountSwitchBox .searchResult ul li.currMove a span.account_objname,
+#accountSwitchBox .searchResult ul li.currMove a span.account_longonname,
+#accountSwitchBox .searchResult ul li.currMove a span.account_objno{
+	color: #fff;
+}
+#accountSwitchBox .searchResult ul li font.tip{
+	padding: 5px 0px 6px 3px;
+	color: #ccc;
+	font-family: Microsoft YaHei;
+}
+#accountSearchText{
+	width:300px;
+	border:1px solid #ccc;
+	height: 21px;
+	padding-left: 3px;
+	padding-top: 1px;
+	font-family: Microsoft YaHei;
+}
+
+#quickSwitchAccount{
+	display: inline-block;
+	cursor: pointer;
+}

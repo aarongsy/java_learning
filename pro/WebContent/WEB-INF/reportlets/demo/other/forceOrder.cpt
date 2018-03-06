@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Report class="com.fr.report.WorkSheet">
+<Version>6.2</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.EmbeddedTableData">
+<ColumnNames><![CDATA[Isbn,,.,,Title,,.,,Author,,.,,Variety,,.,,Total,,.,,Remain,,.,,BookConcern,,.,,PrintDate,,.,,Position]]></ColumnNames>
+<ColumnTypes><![CDATA[java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[D3J*q)c7H,Y<RM*mUc#AZX/O&kX@--V=[e6d""r4.K)=tE<Bu5),8?-UbP?F0,(+7MUj(SCt
+r61MUHR9X==X"0f(rLH_0[H"c3L
+0Ue)JH[^Na\RB,OI,@[6Wo4(^UmJ.,kEGQQ)LBg&&$k3`
+-$paKD;<LEjGjp^)'-JG@'K4sOQRi'rPl$NB(d/(TO=VMG5U*k<\/i
+%,(h9AIBe$d$pCFo\f
+Ha[/B$%Rqcd*E?iAC2Z*M;\Y_;=TgqaW`dm_A)kp="?9%@F*0/j@(0l,WGt=?ohN(j`bAY)K
+#E'If=C=
+dJ5[pOW9sPO+fP>sAI9B_+DA$UuCji%OD)F2D2D%)<STjc&UHcfoR-&U8V]P;N_!
++cR,/5t>:SI;$^A^TgoZIG][RR%CmBeGeaJ
+I&JJS90s\Pf?m7ub:QqlgFuX^$0S@F&>W^$ho
+hSQB7m$qhNZJF&M3b$5\.[72R[Yf\^!r.8_,@$A@8OKJ\bkcWJbX]Q)n6#H2;d
+Zm+G:A.BBD
+OXD?:E)H^%J-MT;GD,D]jDcBGX#HhOpeoQt3$J$3cY-Bt$k=ul6H5,qdoj?*eirC^$q04N]m
+>qSj2,"Ua.I<TrTr
+Xs#Zf@%I>!+3l7;i#Z0,5'lX=0`[(Lg+.e7rs*RY+&[GI:>&XV5p.4C.
+dAo0MrVla,iW/'"s8SFcEMK$eV0WUSbQM&2Y%,8-/r8
+0q=0c.f'"JM5)dRce&HN5\K3F7&qG
+aQ[.t!p4drB[l:'q%*6`G6D$qJ639&h#n+Fe]*Ee[mmTm8ht`_7280:jBW.cEP=\H3>FR0
+=a
+GWL@Eo<M)QSI7o.[G:b_4+[M(3(1:.tSGVGlHu)-EDgD_o/SRA(&:;^SQ;,%/Z)<n8T0Ko(0
+B(`MZ+\$7%&-J+Q])qddgQ!=
+]42\l:=H%7c\3"1M"YFI$,_579sC&r+ndhF94X"E(Nj8=+m;
+94^"9Jo-CDhIhZ>Kao/'N[CF19s#Y:$)"lfN@2^B2S>`GP;7WZG
+[_IW>]h$f)3tr~
+
+]]>
+</RowData>
+</TableData>
+</TableDataMap>
+<ReportSettings shrinkToFit="false" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[35,19,19,19,19,19,19,19,19,30]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[49,150]]>
+</ColumnWidth>
+<CellElementList>
+<C c="1" r="0" cs="3" s="0"><O><![CDATA[书籍销售统计]]></O>
+</C>
+<C c="1" r="2" cs="3" s="1"></C>
+<C c="1" r="3" s="2"><O><![CDATA[书籍]]></O>
+</C>
+<C c="2" r="3" s="2"><O><![CDATA[总量]]></O>
+</C>
+<C c="3" r="3" s="2"><O><![CDATA[剩余]]></O>
+</C>
+<C c="1" r="4" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="Variety" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.CustomGrouper">
+<Attr other="2" /><ConditionListGroup>
+<Display><![CDATA[计算机软件]]></Display><Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[Variety]]></CNAME><Compare op="0">
+<O><![CDATA[计算机软件]]></O>
+</Compare>
+</Condition>
+</ConditionListGroup>
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="2" r="4" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="Total" />
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="3" r="4" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="Remain" />
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="1" r="5" cs="3" s="4"></C>
+<C c="1" r="6" cs="3"><O><![CDATA[]]></O>
+</C>
+<C c="1" r="7" cs="3" s="5"><O><![CDATA[“书籍销售统计”功能说明：]]></O>
+</C>
+<C c="1" r="8" cs="3" s="6"><O><![CDATA[1、强制排序]]></O>
+</C>
+<C c="1" r="9" cs="3" s="7"><O><![CDATA[根据用户需求，将用户比较关注的书籍排在前列，其他的不做强制要求]]></O>
+</C>
+</CellElementList>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="18" foreground="-16744320" />
+<Background name="NullBackground" />
+<Border><Bottom style="2" color="-6697729"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ImageBackground"
+ specifiedImageWidth="-1.0"
+ specifiedImageHeight="-1.0"
+ layout="2">
+<Image width="271" height="20">
+<![CDATA[mDD3s_Ctrm_#OF0>K!!9WJ6!OQ7+.ZoaQ9>0E]d2laNppWiE)!WiGp)li!RsTDPW,0?[QWIV
+_g1pu1d?NUQ%!281S82*R8))W+4
+iebJi;<TD!-WQ)u!;iUeW~
+
+]]>
+</Image>
+</Background>
+<Border><Top style="1" color="-6697729"
+ /><Bottom style="1" color="-6697729"
+ /><Left style="1" color="-6697729"
+ /><Right style="1" color="-6697729"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6697729"
+ /><Bottom style="1" color="-6697729"
+ /><Left style="1" color="-6697729"
+ /><Right style="1" color="-6697729"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6697729"
+ /><Bottom style="1" color="-6697729"
+ /><Left style="1" color="-6697729"
+ /><Right style="1" color="-6697729"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="5" color="-6697729"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="4" color="-6697729"
+ /><Left style="4" color="-6697729"
+ /><Right style="4" color="-6697729"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Left style="4" color="-6697729"
+ /><Right style="4" color="-6697729"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="4" color="-6697729"
+ /><Left style="4" color="-6697729"
+ /><Right style="4" color="-6697729"
+ /></Border>
+</Style>
+</StyleList>
+</Report>

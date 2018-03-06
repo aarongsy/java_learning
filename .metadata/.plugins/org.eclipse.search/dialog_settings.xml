@@ -3,8 +3,8 @@
 	<section name="DialogBounds_SearchDialog">
 		<item value="494" key="DIALOG_WIDTH"/>
 		<item value="192" key="DIALOG_Y_ORIGIN"/>
-		<item value="437" key="DIALOG_HEIGHT"/>
 		<item value="399" key="DIALOG_X_ORIGIN"/>
+		<item value="437" key="DIALOG_HEIGHT"/>
 		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="Search">
@@ -28,7 +28,7 @@
 		</list>
 	</section>
 	<section name="SearchDialog">
-		<item value="org.eclipse.pde.internal.ui.search.SearchPage" key="PREVIOUS_PAGE"/>
+		<item value="org.eclipse.jdt.ui.JavaSearchPage" key="PREVIOUS_PAGE"/>
 	</section>
 	<section name="SearchDialog.ScopePart">
 		<item value="0" key="scope"/>

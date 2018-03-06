@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Tue Jul 18 03:52:53 CST 2006                         -->
+<hibernate-mapping package="com.eweaver.base.lics.model">
+
+    <class name="Lics" table="lics">
+        <id name="id" column="id" type="string">
+            <generator class="uuid.hex"/>
+        </id>
+ 
+        <property name="cname" column="cname" type="string" />
+        <property name="licscode" column="licscode" type="string" />
+        <property name="usernum" column="usernum" type="string" />
+        <property name="date01" column="date01" type="string" />
+        <property name="licsencode" column="licsencode" type="string" />
+    </class>
+    
+</hibernate-mapping>

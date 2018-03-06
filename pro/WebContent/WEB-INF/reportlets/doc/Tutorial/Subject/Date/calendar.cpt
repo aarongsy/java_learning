@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.2</Version>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="0" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+<ParameterInterface class="com.fr.report.parameter.DefaultParameterInterface">
+</ParameterInterface>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings shrinkToFit="false" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<ReportWebAttr>
+<EmailManager mailHost="" password="___" user="" fromEmailAddress="" />
+<ServerPrinter>
+</ServerPrinter>
+<Background name="NullBackground" />
+</ReportWebAttr>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<ReportWriteAttr>
+</ReportWriteAttr>
+<RowHeight defaultValue="19">
+<![CDATA[34,37,32]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[89,82,95]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="2" s="0"><O><![CDATA[简单日历查询]]></O>
+</C>
+<C c="0" r="1" s="1"><O t="BiasTextPainter"><IsBackSlash value="false"/>
+<![CDATA[星期|星期数]]>
+</O>
+</C>
+<C c="1" r="1" s="1"><O t="Formula" class="Formula"><Attributes><![CDATA[=range(7)]]></Attributes></O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="1:I" value="星期一"/>
+<Dict key="2:I" value="星期二"/>
+<Dict key="3:I" value="星期三"/>
+<Dict key="4:I" value="星期四"/>
+<Dict key="5:I" value="星期五"/>
+<Dict key="6:I" value="星期六"/>
+<Dict key="7:I" value="星期天"/>
+</CustomDictAttr>
+</Dictionary></Present>
+<Expand dir="1" />
+</C>
+<C c="0" r="2" s="2"><O t="Formula" class="Formula"><Attributes><![CDATA[=range(60)]]></Attributes></O>
+<HighlightList><Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.FormulaCondition"><Formula>
+<![CDATA[ROW()%2==0]]>
+</Formula>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.BackgroundHighlightAction">
+<Background name="ColorBackground"
+ color="-3342388">
+</Background>
+<Scope val="1" /></HighlightAction>
+</Highlight>
+</HighlightList><Expand dir="0" />
+</C>
+<C c="1" r="2" s="2"><O t="Formula" class="Formula"><Attributes><![CDATA[=weekdate(2009, 1, A3, B2)]]></Attributes></O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="24" foreground="-6697729" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-3342337">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

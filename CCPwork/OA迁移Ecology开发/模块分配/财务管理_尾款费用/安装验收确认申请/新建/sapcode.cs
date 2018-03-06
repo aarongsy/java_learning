@@ -1,0 +1,31 @@
+{"functionname":"ZOA_MM_PO_INFO",
+"queryparam":
+	[{"queryname":"订单编号","paramname":"EBELN"}],
+
+"resulttablename":"MM_PO_ITEMS",
+"resultfieldnames":
+	[{"displayname":"订单编号","fieldname":"EBELN"},
+	{"displayname":"订单项次","fieldname":"EBELP"},
+	{"displayname":"物料号","fieldname":"MATNR"},
+	{"displayname":"订单短文本","fieldname":"TXZ01"},
+	{"displayname":"采购数量","fieldname":"MENGE"},
+	{"displayname":"采购单位","fieldname":"MEINS"},
+	{"displayname":"预定交货日","fieldname":"EINDT"},
+	{"displayname":"采购单价","fieldname":"NETPR"},
+	{"displayname":"币种","fieldname":"WAERS"},
+	{"displayname":"金额","fieldname":"NETWR"},
+	{"displayname":"请购数量","fieldname":"RMENGE"},
+	{"displayname":"请购单位","fieldname":"RMEINS"}],
+	
+"returnvalue":
+	[{"fieldname":"EBELN","formfieldid":"40285a8d4c1ff2fe014c2063d659099e采购订单号"},
+	{"fieldname":"EBELP",
+	"formfieldid":"40285a8d4c1ff2fe014c2063d67d09a0项次"},
+	{"fieldname":"TXZ01",
+	"formfieldid":"40285a8d4c1ff2fe014c2063d6a109a2短文本"},
+	{"fieldname":"TXZ01",
+	"formfieldid":"40285a8d4c1ff2fe014c2063d6a109a2短文本"},
+	{"fieldname":"MENGE",
+	"formfieldid":"40285a8d4c1ff2fe014c2063d6e909a6采购订单数量"},
+	{"fieldname":"WAERS",
+	"formfieldid":"40285a8d4c1ff2fe014c2063d73309aa货币"}]}

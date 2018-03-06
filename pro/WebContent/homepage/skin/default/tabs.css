@@ -1,0 +1,75 @@
+/*  idTabs ~ Sean Catchpole  */
+
+
+/* Style for Usual tabs */
+.tabs {
+  background:#FFFFFF;
+  color:#111;
+}
+
+.tabs ul{
+	margin:0px;
+	padding-left:0px;
+}
+
+.tabs li {
+	list-style:none;
+	float:left;
+	display:block;
+	margin-left:2px;
+	margin-right:8px;
+	margin-top:0px;	
+	width:auto;
+	height:20px;
+	text-align:center;
+}
+.tabs ul a {
+  display:block;
+  text-decoration:none!important;
+  margin:0px;
+  margin-left:0;
+  font:10px;
+  color:#000;
+	border:1px solid #DDD;
+	border-bottom:0px solid #666;
+  height:19px;
+  width:100%;
+  line-height:19px;
+  vertical-align:middle;
+  background:#F1F1F1;
+}
+.tabs ul a:hover {
+  color:#000000;
+  	border:1px solid #CCC;
+	border-bottom-width:0px;
+  height:20px;
+  background:#EEEEEE;
+}
+.tabs ul a.selected {
+  margin-bottom:0px;
+  color:#000;
+  height:20px;
+  background:snow;
+	border:1px solid #DDD;
+	border-bottom-width:0px;
+  cursor:default;
+  clear:both;
+  }
+.tabs div {
+  padding:2px;
+  clear:left;
+  font:10pt;
+}
+
+.tabs .tabContainer {
+  background:#FFFFFF;
+  border:1px solid #DDD;
+  height:auto;
+  z-index:0px;
+}
+
+/***自定义Tab样式***/
+.customTab{width:247px}
+.customTab .tabContainer{}
+.customTab li{width:60px;margin-left:0px;margin-right:4px;}
+.customTab li.last{margin-left:1px;margin-right:0px !important;}

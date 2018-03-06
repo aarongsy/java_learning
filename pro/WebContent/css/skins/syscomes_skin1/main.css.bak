@@ -1,0 +1,945 @@
+*, p, div, input, select, span, .ztree *{
+	font-family: Microsoft YaHei,Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+body {
+	width:100%;		/*页面宽度*/ 
+	height:100%;	/*页面高度*/ 
+	margin:0;			/*外边距*/ 
+	padding:0;			/*内边距*/ 
+	/*overflow:hidden;	/*内容溢出时(hidden:隐藏溢出内容 scroll:显示滚动条 auto:根据内容自动调整)*/ 
+	overflow-x: hidden; 
+	overflow-y: scroll;
+}
+
+iframe{border:0;}
+
+#header{	/*头部(顶部)界面样式设置,所有以#header开头的均是顶部界面相关设置*/
+	background-image: url("");	/*头部背景图片*/ 
+	width: 100%;				/*宽度*/ 
+	height: 64px;				/*高度*/ 
+	position: relative;			/*定位：相对定位*/ 
+	background-color:#3B5998;
+	z-index: 1000;
+}
+#header .topMenu{	/*包含顶部菜单table的div对应的样式*/
+	background:transparent;
+	position:absolute;
+	left: 242px;/*226*/
+	top: 4px;
+	width: 320px; /*此处取值尽量取菜单宽度的整数倍*/
+	height: 22px;
+	z-index: 11;
+	border: 0px solid red;
+	overflow: hidden;
+}
+#topMenuPrev,#topMenuNext{
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	z-index: 12;
+	cursor: pointer;	
+}
+#topMenuPrev{
+	left: 226px;
+	top: 6px;
+	background: url("images/topMenu_Prev.png") no-repeat;
+}
+#topMenuNext{
+	left: 562px;
+	top: 6px;	
+	background: url("images/topMenu_Next.png") no-repeat;
+}
+.menuItem{
+	display:none;
+}
+.slideItemText{
+	display:none;
+}
+/***override mb menu start (resource: /js/jquery/plugins/mb.menu/css/mbmenu.css)***/
+.rootVoices{/*包含顶部菜单的table对应的样式*/
+	background: none;			/*背景*/
+}
+.rootVoices td.rootVoice{/*顶部单个菜单对应的样式*/
+	color: #fff;		/*颜色*/
+	width: 80px;		/*宽度*/
+	padding:2px;		/*内边距*/
+	text-align: center;	/*文本对齐方式*/
+}
+.rootVoices td.rootVoice.selected{/*顶部单个菜单鼠标经过时对应的样式*/
+	background: #f3f3f3 url("images/mbmenu_bgnd_sel_2.jpg");	/*背景(颜色  背景图片)*/
+	font-size: 12px;	/*字体大小*/
+	padding:2px;		/*内边距*/
+	color: #000;
+}
+.topMenuContainer{/*顶部下拉菜单整体的样式*/
+	background-color: #D4DBE7;
+}
+.topMenuContainer .line.title {/*顶部下拉菜单中标题对应的样式*/
+	
+}
+.topMenuContainer .line.title a{/*顶部下拉菜单中标题中a标签对应的样式*/
+	
+}
+.topMenuContainer td.voice{/*顶部下拉菜单中菜单文字的td对应的样式*/
+	
+}
+.topMenuContainer td a{/*顶部下拉菜单中菜单文字的td中a标签对应的样式*/
+	font-family: Microsoft YaHei;
+	color: #000;
+}
+.topMenuContainer .separator{/*顶部下拉菜单中分割线对应的样式*/
+	background: #627AAD;
+}
+.topMenuContainer td.img{/*顶部下拉菜单中菜单图片的td对应的样式*/
+	
+}
+.topMenuContainer td.img img{/*顶部下拉菜单中菜单图片对应的样式*/
+	
+}
+.topMenuContainer .selected td{/*顶部下拉菜单中每项菜单在鼠标经过时的样式*/
+	background-image:url("images/mbmenu_bgnd_sel_2.jpg");	/*背景*/
+}
+.topMenuContainer .selected td a{/*顶部下拉菜单中每项菜单在鼠标经过时其中a标签的样式*/
+	
+}
+.topMenuContainer .subMenuOpener{/*顶部下拉菜单中当菜单有子项时右边箭头区域对应的样式*/
+	background-image:url("images/mbmenu_menuArrow_w.gif");	/*背景*/
+}
+.topMenuContainer .selected .subMenuOpener{/*顶部下拉菜单中当菜单有子项时右边箭头区域在鼠标经过时对应的样式*/
+	background-image:url("images/mbmenu_menuArrow.gif");	/*背景*/
+}
+
+#header .topVersion{
+	display: none;
+}
+
+/***override mb menu end***/
+#header .optButton{	/*顶部按钮相关区域的样式*/
+	border: 0px solid red;	/*边框 (宽度  样式  颜色)*/ 
+	position: absolute;		/*定位：绝对定位*/ 
+	top: 4px;			/*距离底部的距离*/ 
+	right: 232px;			/*距离右边的距离*/
+	z-index: 10000; 
+}
+#header .optButton ul{
+	border: 0px solid red;		/*边框 (宽度  样式  颜色)*/ 
+	margin: 0px 0px 0px 0px;	/*外边距(上 右 下 左)*/ 
+	color: #fff;				/*字体颜色*/ 
+	list-style: none;			/*列表样式：无*/ 
+}
+#header .optButton ul li{
+	float: left;			/*浮动：向左*/ 
+	margin-left: 10px;		/*右外边距*/
+}
+#header .optButton ul li span{
+	display: block;		/*显示*/
+	height: 16px;		/*高度*/
+	width: 16px;		/*宽度*/
+	cursor: pointer;	/*鼠标移上去时鼠标形状*/
+	color: #fff;
+}
+#header .optButton ul li span label{
+	display: none;
+}
+
+#header .optButton ul li span.ocs{/*RTX 对应的样式*/
+	background: url("images/index_ocs.png") no-repeat;		/*背景*/ 
+}
+/*
+#header .optButton ul li span.ocs_mouseover{
+	padding-left: 18px;
+	width: 30px;	
+}
+.eweaver-ie-8 #header .optButton ul li span.ocs_mouseover,
+.eweaver-ie-9 #header .optButton ul li span.ocs_mouseover{
+	width: 50px;
+}
+#header .optButton ul li span.ocs_mouseover label{
+	display: inline;	
+}*/
+
+#header .optButton ul li span.rtx{/*RTX 对应的样式*/
+	background: url("images/header_optbtn_rtx.png") no-repeat;		/*背景*/ 
+}
+/*
+#header .optButton ul li span.rtx_mouseover{
+	padding-left: 18px;
+	width: 30px;	
+}
+.eweaver-ie-8 #header .optButton ul li span.rtx_mouseover,
+.eweaver-ie-9 #header .optButton ul li span.rtx_mouseover{
+	width: 50px;
+}
+#header .optButton ul li span.rtx_mouseover label{
+	display: inline;	
+}*/
+
+#header .optButton ul li span.sign{/*签到 签退 对应的样式*/
+	background: url("images/header_optbtn_sign.png") no-repeat;		/*背景*/ 
+}
+/*
+#header .optButton ul li span.sign_mouseover{
+	padding-left: 18px;
+	width: 30px;	
+}
+.eweaver-ie-8 #header .optButton ul li span.sign_mouseover,
+.eweaver-ie-9 #header .optButton ul li span.sign_mouseover{
+	width: 50px;
+}
+#header .optButton ul li span.sign_mouseover label{
+	display: inline;	
+}*/
+
+#header .optButton ul li span.changePwd{/*更改密码 对应的样式*/
+	background-image: url("images/header_optbtn_changepwd.png");	/*背景*/ 
+	background-repeat: no-repeat;
+	display: none;
+}
+/*
+#header .optButton ul li span.changePwd_mouseover{
+	padding-left: 18px;	
+	width: 55px;
+}
+.eweaver-ie-8 #header .optButton ul li span.changePwd_mouseover,
+.eweaver-ie-9 #header .optButton ul li span.changePwd_mouseover{
+	width: 72px;
+}
+#header .optButton ul li span.changePwd_mouseover label{
+	display: inline;	
+}*/
+
+#header .optButton ul li span.activeXTest{/*插件检测 对应的样式*/
+	background: url("images/index_plugintest.png") no-repeat;		/*背景*/ 
+}
+/*
+#header .optButton ul li span.activeXTest_mouseover{
+	padding-left: 18px;
+	width: 55px;
+}
+.eweaver-ie-8 #header .optButton ul li span.activeXTest_mouseover,
+.eweaver-ie-9 #header .optButton ul li span.activeXTest_mouseover{
+	width: 72px;
+}
+#header .optButton ul li span.activeXTest_mouseover label{
+	display: inline;	
+}
+*/
+#header .optButton ul li span.setSkin{/*皮肤设置 对应的样式*/
+	background-image: url("images/cog.png");		/*背景*/ 
+	background-repeat: no-repeat;
+}
+/*
+#header .optButton ul li span.setSkin_mouseover{
+	padding-left: 18px;
+	width: 30px;	
+}
+.eweaver-ie-8 #header .optButton ul li span.setSkin_mouseover,
+.eweaver-ie-9 #header .optButton ul li span.setSkin_mouseover{
+	width: 50px;
+}
+#header .optButton ul li span.setSkin_mouseover label{
+	display: inline;	
+}*/
+
+#header .optButton ul li span.refresh{/*刷新 对应的样式*/
+	background-image: url("images/round_and_up.png");		/*背景*/ 
+	background-repeat: no-repeat;
+}
+/*
+#header .optButton ul li span.refresh_mouseover{
+	padding-left: 18px;
+	width: 30px;
+}
+.eweaver-ie-8 #header .optButton ul li span.refresh_mouseover,
+.eweaver-ie-9 #header .optButton ul li span.refresh_mouseover{
+	width: 50px;
+}
+#header .optButton ul li span.refresh_mouseover label{
+	display: inline;		
+}*/
+	
+#header .optButton ul li span.about{/*关于 对应的样式*/
+	background-image: url("images/info.png");		/*背景*/ 
+	background-repeat: no-repeat;
+}
+/*
+#header .optButton ul li span.about_mouseover{
+	padding-left: 18px;
+	width: 30px;	
+}
+.eweaver-ie-8 #header .optButton ul li span.about_mouseover,
+.eweaver-ie-9 #header .optButton ul li span.about_mouseover{
+	width: 50px;
+}
+#header .optButton ul li span.about_mouseover label{
+	display: inline;	
+}*/
+
+#header .optButton ul li span.exit{/*退出 对应的样式*/
+	background: url("images/on-off.png") no-repeat;		/*背景*/ 
+}
+/*
+#header .optButton ul li span.exit_mouseover{
+	padding-left: 20px;
+	width: 30px;	
+}
+.eweaver-ie-8 #header .optButton ul li span.exit_mouseover,
+.eweaver-ie-9 #header .optButton ul li span.exit_mouseover{
+	width: 50px;
+}
+#header .optButton ul li span.exit_mouseover label{
+	display: inline;		
+}*/
+
+#header .optButton ul li span.split{/*分割线 对应的样式*/
+	margin-top: 3px;
+	margin-right: 3px;
+	border-left:1px solid #bbb;	/*边框 (宽度  样式  颜色)*/ 
+	width: 1px;						/*宽度*/
+	height: 11px;					/*高度*/ 
+	font-size: 1px;
+}
+
+#header .logo{	/*logo样式*/
+	background: url("images/logo_eweaver.png") no-repeat;	/**/
+	height: 67px;		/*高度*/
+	width: 220px;		/*宽度*/
+	position: absolute;
+	left: 20px;
+	top:5px;
+	bottom: 0px;
+}	
+#header .search{	/*搜索框*/
+	width: auto;	/*宽度：自动*/
+	height: auto;	/*高度：自动*/
+	position: absolute;	/*定位：绝对定位*/
+	top: 3px;	
+	right: 24px;	/*距离右边的距离*/
+	background-color: #fff;	/*背景颜色(透明)*/
+	z-index: 3;		/*z轴显示位置*/
+}
+#header .searchtype{ /*搜索框下拉类型的相关样式*/
+	float: left;	/*浮动：向左*/
+}
+#header .searchcontent{/*搜索框单行文本包含元素的样式*/
+	float: left;	/*浮动：向左*/
+	position: relative;	/*定位：相对定位*/
+	background-color: #fff;
+}
+#header .searchcontent input{/*搜索框单行文本框的样式*/
+	margin:0;
+	width: 100px;	/*宽度*/
+	border: 0px solid #fff;	/*边框(宽度  样式  颜色)*/
+	border-left: none;		/*左边框(宽度  样式  颜色)*/
+	height: 17px;
+}
+#header .searchbutton{/*搜索框搜索按钮的样式*/
+	height: 17px;	/*高度*/
+	width: 19px;	/*宽度*/
+	background: url("images/btnSearch.png");	/*背景图片*/
+	cursor: pointer;	/*鼠标移上去的样式(手形)*/
+	float:left;
+	right: 2px;	/*距离右边的距离*/
+}
+.searchSplit{/*搜索框分割线的样式*/
+	margin-top: 0px;/*上外边距*/
+	height: 16px;	/*高度*/
+	width:0px;		/*宽度*/
+	border-left: 0px solid #a5bae0;	/*左边框(宽度  样式  颜色)*/
+	display: block;	/*显示(块级元素)*/
+}
+#header .searchcontent .searchSplit{/*搜索框搜索内容分割线对应的样式*/
+	position: absolute;	/*定位：绝对定位*/
+	left: 0px;	/*距离左边的距离*/
+}
+
+#header .bottom{/*头部最下面一栏的样式*/
+	border: 0;	/*边框(宽度  样式  颜色)*/
+	width: 100%;			/*宽度*/
+	height: 25px;			/*高度*/
+	position: absolute;	/*定位：绝对定位*/
+	left: 0px;			/*距离左边的距离*/
+	bottom: 0px;		/*距离底部的距离*/
+	margin: 0 0 0 0px;
+	background-color: #627AAD;	/*背景颜色*/
+	z-index: -1;
+}
+#headerTabs{/*包含顶部tab页相关的样式*/
+	width: 100%;	/*宽度*/
+	position: absolute;	/*定位：绝对定位*/
+	left: 0px;		/*距离左边的距离*/
+	bottom: 0px;	/*距离底部的距离*/
+	border: 0;	/*边框(宽度  样式  颜色)*/
+	z-index: 2;		/*z轴显示位置*/
+}
+#headerTabs ul{
+	height: 25px;	/*高度*/
+	margin-left: 227px;	/*左外边距*/
+	list-style-type:none;	/*列表样式(无)*/
+	background:transparent;	/*背景(透明)*/
+	border-bottom: 0;
+	width: 1000px;
+	overflow: hidden;
+}
+#headerTabs li{
+	float:left;		/*浮动(向左浮动)*/
+	width:auto;		/*宽度*/
+	margin:0 -1px 0 0;	/*外边距(上 右 下 左)*/
+	padding 0;			/*内边距*/
+}
+#headerTabs li.more{	/*页面宽度不够tab页显示时，显示更多tab页的元素对应的样式*/
+	display: none;	
+	cursor: pointer;
+}
+#headerTabs p{/*顶部tab页的内容相关样式*/
+	font-family: Microsoft YaHei;
+	position: relative;	/*定位：相对定位*/
+	padding: 5px 12px 5px 12px;	/*内边距(上 右 下 左)*/
+	margin: 0 2px 0 0;			/*内边距*/
+	text-align:center;	/*文字对齐方式*/
+	background:transparent;	/*背景(透明)*/
+	color:#fff;				/*字体颜色*/
+	border: 0;	/*边框(宽度  样式  颜色)*/
+	background-image:url("images/tab_bg.png");	/**/
+	border-radius: 2px 2px 0 0;
+}
+#headerTabs li.more p{/*效果继承 #headerTabs p*/
+	height: 33px;		/*高度*/
+	height: 29px \9;	/*高度*/
+	width: 30px;		/*宽度*/
+	padding: 0px;		/*内边距*/
+	margin-top: 10px;	/*上外边距*/
+	background-color: #fff;
+	background-image: url("images/tabMore.png");
+	background-repeat: no-repeat;
+	background-position: center -2px;
+}
+#headerTabs a.tabselected span.tabicon{
+	display: none;
+}
+#headerTabs span.tabicon{
+	display: none;
+}
+
+#tabMore{/*页面宽度不够tab页显示时，容纳隐藏的tab页区域的样式*/
+	position: absolute;			/*定位*/
+	background-color: #fff;		/*背景颜色*/
+	border: 1px solid #7B7B7B;	/*边框 (宽度  样式  颜色)*/ 
+	width: 200px;				/*宽度*/
+	z-index: 10;				/*垂直位置*/
+	display: none;				/*显示*/
+}
+#tabMore ul li{
+	float:left;			/*浮动(向左浮动)*/
+	width:auto;			/*宽度*/
+	margin:0 3px 0 0;	/*外边距(上 右 下 左)*/
+	padding 0;			/*内边距*/
+	font: 14px Arial;	/*字体 (大小 样式)*/
+	font-weight:bold;	/*粗体*/
+}
+#tabMore ul li a{
+	text-decoration: none;		
+	cursor: pointer;	/*鼠标移上去时的形状*/
+}
+#tabMore ul li a p{
+	position:relative;			/*定位：相对定位*/
+	padding:12px 12px 2px 12px;	/*内边距(上 右 下 左)*/
+	margin:0px;					/*外边距*/
+	text-align:center;			/*文字对齐方式*/
+	background:transparent;		/*背景(透明)*/
+	color:#000;					/*字体颜色*/
+	border: none;				/*边框*/
+}
+#tabMore ul li a:hover p{	/*鼠标移上去时*/
+	background: #0197D6;	/*背景颜色*/ 
+}
+#tabMore ul li a.mouseover p{	/*For IE*/
+	background: #0197D6;	/*背景颜色*/ 
+}
+
+#headerTabs .pad{/*顶部tab页的内容凸起部分相关样式*/
+	border:0;		/*边框(宽度)*/
+	background:transparent;	/*背景(透明)*/
+	float: left;
+}
+#headerTabs a:active {/*顶部tab页A标签伪类活跃对应样式*/
+	outline: none;	/*无外边线*/ 
+	star:expression(this.onFocus=this.blur());
+}
+#headerTabs a{/*顶部tab页中A标签对应的样式*/
+	text-decoration:none;
+}
+#headerTabs a:hover{/*顶部tab页中A标签鼠标经过时对应的样式/
+	background:transparent;	/*背景(透明)*/
+}
+#headerTabs a:hover p{/*顶部tab页中A标签鼠标经过时P对应的样式/
+	background:url("images/tab_bg_shense.jpg");	/*背景图片*/
+}
+#headerTabs a:hover .pad{/*顶部tab页中A标签鼠标经过时凸起部分对应的样式/
+	/*height:0px;*/
+}
+#headerTabs .tabselected p{/*顶部tab页被选中时P标签对应的样式/
+	padding-bottom:12px;	/*下内边距/
+	background:url("images/tab_bg_shense.jpg");	/*背景图片*/
+	font-weight: bold;
+	background-color: #fff;
+	color: #000;
+}
+#headerTabs .tabselected .pad{/*顶部tab页被选中时凸起部分对应的样式/
+	height:0px;	/*高度*/
+}
+#headerTabs .tabclose,#tabMore .tabclose{/*顶部tab页关闭按钮对应的样式*/
+	background:url("images/tab_close.png") no-repeat;	/*背景图片*/
+	border: 0px solid red;	/*边框(宽度  样式  颜色)*/
+	width: 8px;		/*宽度*/
+	height: 8px;	/*高度*/
+	position: absolute;	/*定位：绝对定位*/
+	top: 2px;			/*距离顶部的距离*/
+	right: 2px;			/*距离右边的距离*/
+	cursor: pointer;	/*鼠标移上去的样式(手形)*/
+	padding:0;			/*内边距*/
+	margin:0;			/*外边距(上 右 下 左)*/
+	display:none;		/*显示(隐藏)*/
+}
+#tabMore .tabclose{	/*顶部被撤下tab页关闭按钮对应的样式*/
+	top: 4px;			/*距离顶部的距离*/
+	right: 5px;			/*距离右边的距离*/
+	display:inline !important;		/*显示(行级)*/
+}
+#headerTabs .tabexpand{
+	display: none;
+	width: 14px;
+	height: 15px;
+	background: url("images/arrows_down.png") no-repeat;
+}
+#headerTabs .tabselected .tabexpand{
+    margin: 0 0 -5px 4px;
+	display: inline-block;
+}
+.contentFrame{/*tab打开的iframe对应的样式*/
+	width: 100%;	/*宽度*/
+	height: 100%;	/*高度*/
+	z-index:8;
+	padding: 0 0 0 15px;
+}
+
+/* 门户下拉菜单 */
+#portalMenuContainer{
+	position:absolute;left:226px;top:65px;background-color:#fff;display:none;
+}
+#portalMenu{
+	width: 200px;
+}
+#portalMenu a{
+	color: #000;	
+}
+#menuTD{
+	width: 227px;	
+}
+#rightTD{
+	width: auto;	
+}
+#menu{/*左侧菜单最外层元素的样式*/
+	position:relative;	/**/
+	width: 190px;
+	width: 188px\9\0;
+	float:left;		/*浮动(向左浮动)*/
+	background-color: #fff;
+	border-left: 1px solid #fff;
+	border-right: 1px solid #B3B3B3;
+	margin-left: 37px;
+}
+#menuContainer{/*菜单容器(包含菜单顶部,菜单树,底部一级菜单)对应的样式*/
+	position:relative;	/*定位：相对定位*/
+	width: 188px;		/*宽度*/
+	height: auto;		/*高度*/
+	float: left;			/*浮动(向左浮动)*/
+	text-align:center;	/*文字对齐方式*/
+}
+#menuTop{/*菜单顶部对应的样式*/
+	padding: 12px 0 2px 10px !important;
+	height: 60px;
+	height: 75px \9;
+	overflow: hidden;
+	position: relative;
+}
+#menuTop .avator{
+	float:left;
+	margin:0 8px 0 0;
+	width: 50px;
+	height: 50px;
+	background: url(images/avator.jpg) no-repeat;
+}
+#menuTop .avator img{
+	width: 45px;
+	height: 45px;
+	margin-left: 1px;
+	margin-top: 2px;
+}
+#menuTop .avatorTitle{
+	float: left;
+	text-align: left;
+	line-height: 18px;
+}
+#menuTop .avatorTitle a{
+	font-family: Segoe UI;
+	color: #3B59AA;
+}
+#menuCenter{/*包含菜单树的元素对应的样式*/
+	position: relative;	/*定位：相对定位*/
+	margin-top: 0px;	/*上外边距*/
+	background: transparent;	/*背景(透明)*/
+	width: 188px;
+}
+#menuCenter .menuLoading{ /*菜单加载中的div相关样式*/
+	background: url("images/loading.gif") no-repeat; /*背景  图片不平铺*/
+	background-position: 2px 9px; /*背景图位置(水平 垂直)*/
+	padding-left: 23px;
+	height: 34px; /*高度*/
+	width: 80px; /*宽度*/
+	text-align: left; /*文字对齐方式*/
+	line-height: 34px; /*行高*/
+	margin-left: 20px;
+	display: none;
+}
+#menuBottom{/*底部一级菜单最外层元素对应的样式*/
+	width: 100%;	/*宽度*/
+	height: 200px;	/*高度*/
+	overflow:hidden !important;	/*内容溢出时隐藏滚动条*/
+	position: relative;
+}
+#menuBottom .levelMenu{/*包含底部一级菜单的元素对应的样式*/
+	width: 100%;	/*宽度*/
+	height: 200px;	/*高度*/
+	overflow:hidden;	/*内容溢出时隐藏滚动条*/
+}
+#menuBottom ul{
+	width:100%;			/*宽度*/
+	margin-top: 5px;	/*上外边距*/
+	list-style: none;	/*列表样式(无)*/
+	background: transparent !important;	/*背景透明(优先级最高)*/
+}
+#menuBottom ul li{
+	border: 0px solid blue;	/*边框(宽度  样式  颜色)*/
+}
+#menuBottom ul li a{
+	width:100%;			/*宽度*/
+	text-decoration: none;	/*下划线(无)*/
+	cursor: pointer;		/*鼠标移上去的样式(手形)*/
+	star:expression(this.onFocus=this.blur());
+}
+#menuBottom ul li a,#menu .bottom ul li a:visited{
+	height: 1em;	/*高度*/
+}
+#menuBottom ul li a p{/*底部一级菜单对应的样式*/
+	text-align:left;
+	padding: 5px 0 5px 20px;
+}
+#menuBottom ul li a:hover p span.text{/*底部一级菜单鼠标移上去时对应的样式*/
+	color: #000;	/*字体颜色*/
+}
+#menuBottom ul li a:hover p{/*底部一级菜单鼠标移上去时对应的样式*/
+	background-color: #eee;	/*背景颜色*/
+}
+#menuBottom ul li a p.selected{
+	color: #000;
+	font-weight: bold;
+	background-color: #eee;
+}
+#menuBottom ul li a p.selected span.text{
+	
+}
+#menuBottom ul li a p span.icon{/*底部一级菜单包含图标的元素对应的样式*/
+	border: 0px solid blue;
+	padding: 0px;
+	/*
+	filter:alpha(opacity=50);
+	-moz-opacity:0.3;
+	-khtml-opacity: 0.3;
+	opacity: 0.5;
+	*/
+}
+#menuBottom ul li a p span.icon img{/*底部一级菜单图标对应的样式*/
+	width: 16px;	/*宽度*/
+	height: 16px;	/*高度*/
+}
+#menuBottom ul li a p span.text{/*底部一级菜单文字对应的样式*/
+	color: #000;	/*字体颜色*/
+	padding-left: 10px;	/*左内边距*/
+}
+#menuHandler{/*操作底部一级菜单的最外层元素对应的样式*/
+	height: 50px;	/*高度*/
+	width: 100%;	/*宽度*/
+	position: relative !important;	/*相对定位(优先级最高)*/
+	clear: both;	/*清除浮动*/
+}
+#menuHandler div{
+	width: 16px;	/*宽度*/
+	height: 16px;	/*高度*/
+	float: left;	/*浮动：向左*/
+	cursor: pointer;	/*鼠标移上去的样式(手形)*/
+}
+#menuHandler .next{/*操作底部一级菜单的向后操作的按钮对应的样式*/
+	background: url("images/rnd_br_next.png") no-repeat;	/*背景图片 不平铺*/
+	margin: 6px 0 0 2px;	/*外边距(上 右 下 左)*/
+}
+#menuHandler .nav{/*包含导航区域的样式*/
+	width: auto;
+	margin: 12px 0 0 70px;
+}
+#menuHandler .nav ul{
+	list-style: none;	/*列表样式(无)*/
+}
+#menuHandler .nav ul li{
+	height: 20px;	/*高度*/
+	width: 9px;		/*宽度*/
+	text-align: center;	/*文字对齐方式*/
+	float: left;		/*浮动：向左*/
+	margin-right: 1px;	/*右外边距*/
+}
+#menuHandler .nav ul .current{	/*操作底部一级菜单导航区域元素的样式(当前元素时)*/
+	background: url("images/dotwhite.png") no-repeat;	/*背景图片 不平铺*/
+}
+#menuHandler .nav ul .uncurrent{ /*操作底部一级菜单导航区域元素的样式(非当前元素时)*/
+	background: url("images/dotwhite.png") no-repeat;	/*背景图片 不平铺*/
+	filter:alpha(opacity=30);
+	-moz-opacity:0.3;
+	-khtml-opacity: 0.3;
+	opacity: 0.3;
+}
+#menuCenter{overflow:hidden !important;padding: 10px 0 10px 0;}
+#menuCenter .menuSplit{
+	height: 1px;
+	width: 168px;
+	position: absolute;
+	background: #ddd;
+	top: 0px;
+	left: 10px;
+}
+#menuTop .menuSplit,  #menuBottom .menuSplit,  #menuHandler .menuSplit{	/*菜单分隔符对应的样式*/
+	height: 1px;
+	width: 168px;
+	position: absolute;
+	background: #ddd;
+	font-size: 0px;
+	overflow:hidden;
+}
+#menuTop .menuSplit{
+	bottom: 0px;
+	left: 10px;
+}
+#menuBottom .menuSplit,  #menuHandler .menuSplit{
+	top: 0px;
+	left: 10px;	
+}
+#content{/*内容区域对应的样式*/
+	height: 530px;	/*高度*/
+	padding: 10px 50px 0px 0;
+	z-index: 9;
+}
+#rightDiv{
+	position: relative;	/*定位：相对定位*/
+}
+#rightDiv .loading{	/*页面加载中的div相关样式*/
+	position: absolute;	/*定位:绝对定位*/
+	/*top: 		          此属性(垂直定位)会在resizeElement方法中设置(垂直居中[目前偏上100像素])*/	
+	/*left: 		此属性(水平定位)会在resizeElement方法中设置(水平居中)*/	
+	background: url("images/loading.gif") no-repeat;	/*背景  图片不平铺*/
+	background-position: 12px 9px; /*背景图位置(水平 垂直)*/
+	padding-left: 33px;
+	border: 1px solid #CBCBCB;	/*边框颜色(宽度  样式  颜色)*/
+	height: 34px;	/*高度*/
+	width: 132px;	/*宽度*/
+	text-align: left;	/*文字对齐方式*/
+	line-height: 34px;	/*行高*/
+	display: none;		/*显示*/
+	font-size: 12px;
+	font-family: Microsoft YaHei;
+	width: 163px \9;	
+}
+#footer{/*底部的样式*/
+	height: 25px;		/*高度*/
+	background-color: #fff;	/*背景颜色*/
+	text-align: center;	/*文本对齐方式*/
+	/*height: 0px; 隐藏可将高度设置为0. 如果使用display:none,那么此部分的高度会影响js进行页面高度调增的准确性*/
+}
+#footer .copyright{/*底部版权说明区域的样式*/
+	display: block;
+	font-family: Arial;
+	font-size: 10px;
+	font-weight: bold;
+	color: #999;	/*颜色*/
+	margin-left: 226px;
+	border-left: 1px solid #b3b3b3;
+	height: 25px;
+}
+#skinChoose{
+	display: none;	
+}
+#skinChoose .skinList{	/*皮肤列表框对应的样式*/
+	margin-top: 20px;	/*上外边距*/
+	margin-left: 20px;	/**/
+}
+#skinChoose .skinList a:hover img{ /*鼠标经过皮肤图片时皮肤图片对应的样式*/
+	border-color: #999;	/*边框颜色(宽度  样式  颜色)*/
+}
+#skinChoose .skinList a img{ /*皮肤图片对应的样式*/
+	height: 60px;	/*高度*/
+	width: 100px;	/*宽度*/
+	margin-right: 20px;	/*右外边距*/
+	margin-bottom: 20px;	/**/	
+	border: 1px solid #DDDDDD;	/*边框(宽度  样式  颜色)*/
+	padding: 1px;	/*内边距*/
+	cursor: pointer;	/*鼠标移上去的样式(手形)*/
+}
+#skinChoose .skinList a.selected img{/*当前用户使用的皮肤的图片对应的样式*/
+	border: 2px solid red;	/*边框颜色*/
+}
+#quickSwitchAccount{
+	display: inline-block;
+	cursor: pointer;
+	color: #3b59aa;
+}
+/*override crselect*/
+.CRselectBox{
+	width: 76px;		/*宽度*/
+	height: 19px;
+	border: 0;
+}
+.CRselectBox a.CRselectValue{
+	font-family: Microsoft YaHei;
+	margin: 0;
+	padding: 0 0px 0 4px;
+	width:55px;	/*宽度*/
+}
+.CRselectBoxOptions{
+	width: auto;
+	width: 150px \9;
+	overflow-x:auto; 
+}
+.CRselectBoxOptions a{
+	font-family: Microsoft YaHei;
+	padding-left: 5px;
+	padding-right: 8px;
+}
+.CRselectBoxOptions a:hover{
+	background: #0197D6;	/**/
+	color: #fff;
+	text-decoration: none;
+}
+/*override ztree*/
+.ztree{
+	width: 191px;
+	overflow-x: auto;	
+}
+.ztree li button.noline_open{/*打开菜单树对应的图标样式*/
+	background: url("images/tree_arrow_open_blue.gif") no-repeat;	/*背景图片 不平铺*/
+	background-position: 4px 3px;	/*背景图位置(水平 垂直)*/
+}
+.ztree li button.noline_close{/*关闭菜单树对应的图标样式*/
+	background: url("images/tree_arrow_close_blue.gif") no-repeat;	/*背景图片 不平铺*/
+	background-position: 5px 2px;	/*背景图位置(水平 垂直)*/
+}
+.ztree li span {	/*菜单字体颜色*/
+	font-family: Microsoft YaHei;
+	color: #000;	/*字体颜色*/
+}
+.ztree li a:hover{	/*鼠标从菜单上经过时*/
+	text-decoration: none;	/*取消下划线*/
+}
+.ztree li a.curSelectedNode {	/*菜单被选中时*/
+	background-color: transparent !important;	/*背景颜色*/
+	border: 0;
+	font-weight: bold;
+	padding: 3px 0 3px 0px;
+}
+
+.menuConditionText{	/*菜单右侧查询条件结果显示区域对应的样式*/
+	/*background: url("images/leftMenu_condition_bg.png") no-repeat;	/*背景(图片地址  不平铺)*/
+	background-color: #FE6600;
+	width: 16px;			/*宽度*/
+	height: 16px;			/*高度*/
+	position: absolute;		/*定位*/
+	right: 10px;			/*距离右边的距离*/
+	font-family: arial !important;
+	font-size: 10px;		/*字体大小*/
+	font-weight: bold;
+	color: #fff !important;
+	padding-left: 4px;		/*内左边距*/
+	border-radius: 2px;
+}
+
+/*override layout*/
+.ui-layout-resizer {
+    background: transparent !important;	/*背景透明 (优先级最高)*/
+}
+.ui-layout-north{
+	border: 0 !important;	/*边框宽度*/
+	background: transparent !important;	/*背景透明 (优先级最高)*/
+}
+.ui-layout-center{
+	border: 0 !important;	/*边框宽度*/
+	background: transparent !important;	/*背景透明 (优先级最高)*/
+}
+.ui-layout-south{
+	border: 0 !important;	/*边框宽度*/
+	background: transparent !important;	/*背景透明 (优先级最高)*/
+}
+.ui-layout-toggler{/*ui layout布局之前的分隔符*/
+	background: transparent !important;	/*背景透明 (优先级最高)*/
+	display: none !important;	/*显示：隐藏*/
+}
+
+.ztree{
+	padding: 0;
+}
+.ztree a.level0 {
+	padding: 3px 0 3px 0px;
+	background-color: ;
+}
+.ztree li.level0 {
+	background-color: ;
+}
+
+.ztree li.mouseover{
+	background:url("images/leftmenu_over_bg.png") repeat-x;
+}
+.ztree li.ztreeNodeBgColor{
+	background:url("images/leftmenu_selected_bg.png") repeat-x;	
+}
+.ztree li.noover{
+	background: none;
+}
+.ztree li.level1 {
+	padding: 2px 0 2px 10px;
+	background-color: ;
+}
+.ztree li.level2 {
+	padding: 2px 0 2px 10px;
+	background-color: ;
+}
+.ztree li ul{
+	padding-left: 0px;
+}
+.ztree a button{
+	width: 20px;
+	margin-left: 2px;
+}
+
+div.pDotBox{
+	width:15px;background-color:;position:absolute;top:100px;z-index:9999 !important;right:20px;
+}
+
+.viewType23Class a{
+	font-family: Microsoft YaHei;
+	font-size: 14px;
+	color: #4f61ea;
+}
+
+
+
+
+.x-grid3-cell-inner a{
+	font-family: Microsoft YaHei;
+}

@@ -1,0 +1,46 @@
+body{
+	margin: 0px 0px 0px 0px;
+}
+tr.header {
+	font-family:"新宋体";
+	font-size:14px;
+	font-weight:bold;
+	color:#204f93;
+	HEIGHT: 26px;
+	BORDER-Spacing: 1pt;
+	background: url(detailTH.png);
+	text-align:center;
+}
+caption{
+	font-family:"Microsoft YaHei";
+	font-size:24px;
+	font-weight:bold;
+	color:#535353;
+	font-style:italic;
+	text-align:left;
+	padding: 20px 10px 30px 80px;
+}
+td.number{
+	font-family:"新宋体";
+	font-size:14px;
+	font-weight:bold;
+	color:#535353;
+	text-align:center;
+}
+a{
+	text-decoration:none;	
+}
+div{
+	background: url(plugtitle.jpg) no-repeat top left ;
+	padding:0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	text-align:center;
+}
+.plug{
+	border:1px solid #D9FDFB;
+	width:100%;
+	margin: 0px 0px 0px 0px;
+}
+.plug td{
+	border:1px solid #D9FDFB;
+}

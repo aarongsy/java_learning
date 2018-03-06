@@ -1,0 +1,11 @@
+错误时间
+  09:49:51
+错误位置
+  sql2012067501.sql第6行:
+错误语句
+ alter table sysuser add isopenim int default 0
+错误原因
+  java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+
+

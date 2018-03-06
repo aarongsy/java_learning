@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.5</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT * FROM ORDERS]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<RowHeight defaultValue="19">
+<![CDATA[19,19,19,19,19,19,19,19,19,19,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,72,72,72,72,72,72,72,72,72,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="1" r="1" s="0"><O><![CDATA[订单号]]></O>
+</C>
+<C c="2" r="1" s="0"><O><![CDATA[客户编号]]></O>
+</C>
+<C c="3" r="1" s="0"><O><![CDATA[签订日期]]></O>
+</C>
+<C c="4" r="1" s="0"><O><![CDATA[付款方式]]></O>
+</C>
+<C c="5" r="1" s="0"><O><![CDATA[应付金额]]></O>
+</C>
+<C c="6" r="1" s="0"><O><![CDATA[实付金额]]></O>
+</C>
+<C c="1" r="2" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="ORDERID" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="2" r="2" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="CUSTOMERID" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<DBDictAttr tableName="CUSTOMER" schemaName="" keyColumnIndex="1" valueColumnIndex="2"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection></Dictionary></Present>
+<Expand dir="0" />
+</C>
+<C c="3" r="2" s="2"><O t="DSColumn"><Attributes dsName="ds1" columnName="SIGNDATE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="4" r="2" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="PAYMETHOD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="5" r="2" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="AMOUNT" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="6" r="2" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="PAID" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<HighlightList><Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ObjectCondition"><Compare op="0">
+<O t="I">0</O>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ValueHighlightAction">
+<O><![CDATA[未付款]]></O>
+</HighlightAction>
+<HighlightAction class="com.fr.report.highlight.ForegroundHighlightAction">
+<Foreground color="-65536" /></HighlightAction>
+</Highlight>
+</HighlightList><Expand dir="0" />
+</C>
+<C c="2" r="5"></C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-3342337">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.SimpleDateFormat"><![CDATA[yyyy-MM-dd]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

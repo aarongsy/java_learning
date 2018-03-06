@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PrivilegeManager enable="false" multiLogin="true"><DefaultLoginoutUI type="0" path="">
+</DefaultLoginoutUI>
+<AP class="com.fr.privilege.providers.embed.EmbedAuthenticationProvider">
+<UserService class="com.fr.privilege.user.services.EmbeddUserService">
+<Attr cache="false"/>
+</UserService>
+<UserChecker class="com.fr.privilege.user.checker.DefaultUserChecker" />
+<PasswordEncoder class="com.fr.privilege.providers.encoding.PlainTextPasswordEncoder" />
+<Salt class="com.fr.privilege.providers.encoding.salt.NullSalt"/>
+</AP>
+<AP class="com.fr.privilege.providers.dao.DaoAuthenticationProvider">
+<UserService class="com.fr.privilege.user.services.DaoUserService">
+<UserConfig>
+</UserConfig>
+<RoleConfig>
+</RoleConfig>
+<Attr cache="false"/>
+</UserService>
+<UserChecker class="com.fr.privilege.user.checker.DefaultUserChecker" />
+<PasswordEncoder class="com.fr.privilege.providers.encoding.PlainTextPasswordEncoder" />
+<Salt class="com.fr.privilege.providers.encoding.salt.NullSalt"/>
+</AP>
+<AP class="com.fr.privilege.providers.ldap.LDAPAuthenticationProvider">
+<UserService class="com.fr.privilege.user.services.LDAPUserService" url="ldap://ip:389" searchBase="dc=YourDomain,dc=Local" authentication="none" contextFactory="follow" referral="com.sun.jndi.ldap.connect.pool">
+<Attr cache="false"/>
+</UserService>
+</AP>
+</PrivilegeManager>

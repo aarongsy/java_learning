@@ -1,0 +1,2 @@
+ERROR:[2014-01-21 23:59:00,010] com.eweaver.base.job.DelAttachJob(quartzScheduler_Worker-8) :org.springframework.dao.DataAccessResourceFailureException: StatementCallback; SQL [select id,imagefileid from imagefiletemp where to_date(to_char(sysdate,'yyyy-MM-dd'),'yyyy-MM-dd')-to_date(createdate,'yyyy-MM-dd') >= ]; Io “Ï≥£: Connection reset by peer: socket write error; nested exception is java.sql.SQLRecoverableException: Io “Ï≥£: Connection reset by peer: socket write error
+ 

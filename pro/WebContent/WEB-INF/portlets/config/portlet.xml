@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+ * Copyright (c) 2006 Jianmin Liu.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+-->
+<portlet-app
+    xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd"
+    version="1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd
+                        http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd">
+    <portlet>
+        <portlet-name>chartPortlet</portlet-name>
+        <portlet-class>org.light.portlets.chart.ChartPortlet</portlet-class>
+        <supports>
+            <mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+            <portlet-mode>EDIT</portlet-mode>
+            <portlet-mode>CONFIG</portlet-mode>
+        </supports>
+        <resource-bundle>resourceBundle</resource-bundle>
+        <portlet-info>
+            <title>chart Portlet</title>
+        </portlet-info>
+    </portlet>
+    <portlet>
+        <portlet-name>templatePortlet</portlet-name>
+        <portlet-class>com.eweaver.portal.servlet.TemplatePortlet</portlet-class>
+        <supports>
+            <mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+            <portlet-mode>EDIT</portlet-mode>
+            <portlet-mode>CONFIG</portlet-mode>
+        </supports>
+        <resource-bundle>resourceBundle</resource-bundle>
+        <portlet-info>
+            <title>Template Portlet</title>
+        </portlet-info>
+    </portlet>
+    
+    <portlet>
+        <portlet-name>mailPortlet</portlet-name>
+        <portlet-class>com.eweaver.portal.servlet.MailPortlet</portlet-class>
+        <supports>
+            <mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+            <portlet-mode>EDIT</portlet-mode>
+            <portlet-mode>CONFIG</portlet-mode>
+        </supports>
+        <resource-bundle>resourceBundle</resource-bundle>
+        <portlet-info>
+            <title>email Portlet</title>
+        </portlet-info>
+    </portlet>
+    
+    <portlet>
+          <portlet-name>gaugePortlet</portlet-name>
+          <portlet-class>org.light.portlets.chart.GaugePortlet</portlet-class>
+          <supports>
+             <mime-type>text/html</mime-type>
+             <portlet-mode>VIEW</portlet-mode>
+             <portlet-mode>EDIT</portlet-mode>
+             <portlet-mode>CONFIG</portlet-mode>
+          </supports>
+           <resource-bundle>resourceBundle</resource-bundle>
+          <portlet-info>
+             <title>gauge Portlet</title>
+          </portlet-info>
+
+       </portlet>
+    
+	<portlet>
+      <portlet-name>iFramePortlet</portlet-name>
+      <portlet-class>org.light.portlets.iframe.IFramePortlet</portlet-class>      
+      <supports>
+         <mime-type>text/html</mime-type>
+         <portlet-mode>VIEW</portlet-mode>
+         <portlet-mode>edit</portlet-mode>
+         <portlet-mode>CONFIG</portlet-mode>
+      </supports>
+       <resource-bundle>resourceBundle</resource-bundle>
+      <portlet-info>
+         <title>iFrame Portlet</title>
+      </portlet-info>
+      <portlet-preferences>            
+            <preference>
+				<name>iframeurl</name>
+				<value>https://light.dev.java.net/</value>
+				<read-only>false</read-only>
+			</preference>	
+			<preference>
+				<name>iframeheight</name>
+				<value>400</value>
+				<read-only>false</read-only>
+			</preference>									              
+        </portlet-preferences>
+   </portlet>
+
+	<portlet>
+        <description>ThemeDescription</description>
+        <portlet-name>themePortlet</portlet-name>
+        <display-name>Theme Portlet</display-name>		        
+        <portlet-class>org.light.portal.config.portlets.ThemePortlet</portlet-class>	        
+        <expiration-cache>-1</expiration-cache>		        
+        <supports>
+			<mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+            <portlet-mode>EDIT</portlet-mode>
+            <portlet-mode>HELP</portlet-mode>
+            <portlet-mode>CONFIG</portlet-mode>
+		</supports>
+        <supported-locale>en</supported-locale>        
+        <supported-locale>fr</supported-locale>
+		<resource-bundle>resourceBundle</resource-bundle>
+		<portlet-info>
+			<title>Theme Portlet</title>
+			<short-title>Theme</short-title>
+			<keywords>Theme</keywords>
+        </portlet-info>	    
+	</portlet>
+	
+	<portlet>
+        <description>TabDescription</description>
+        <portlet-name>tabPortlet</portlet-name>
+        <display-name>Tab Portlet</display-name>		      
+        <portlet-class>org.light.portal.config.portlets.TabPortlet</portlet-class>		        
+        <expiration-cache>-1</expiration-cache>		        
+        <supports>
+			<mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+            <portlet-mode>EDIT</portlet-mode>
+            <portlet-mode>HELP</portlet-mode>
+            <portlet-mode>CONFIG</portlet-mode>
+		</supports>
+        <supported-locale>en</supported-locale>        
+        <supported-locale>fr</supported-locale>
+		<resource-bundle>resourceBundle</resource-bundle>
+		<portlet-info>
+			<title>Tab Portlet</title>
+			<short-title>Tab</short-title>
+			<keywords>Tab</keywords>
+        </portlet-info>	    
+	</portlet>
+	
+	<portlet>
+        <description>ContentDescription</description>
+        <portlet-name>contentPortlet</portlet-name>
+        <display-name>Content Portlet</display-name>		        
+        <portlet-class>org.light.portal.config.portlets.ContentPortlet</portlet-class>		        
+        <expiration-cache>-1</expiration-cache>		        
+        <supports>
+			<mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+            <portlet-mode>EDIT</portlet-mode>
+            <portlet-mode>HELP</portlet-mode>
+            <portlet-mode>CONFIG</portlet-mode>
+		</supports>
+        <supported-locale>en</supported-locale>        
+        <supported-locale>fr</supported-locale>
+		<resource-bundle>resourceBundle</resource-bundle>
+		<portlet-info>
+			<title>Content Portlet</title>
+			<short-title>Content</short-title>
+			<keywords>Content</keywords>
+        </portlet-info>	    
+	</portlet>
+	
+	<portlet>
+        <description>UserDescription</description>
+        <portlet-name>userPortlet</portlet-name>
+        <display-name>User Portlet</display-name>		        
+        <portlet-class>org.light.portal.config.portlets.UserPortlet</portlet-class>		        
+        <expiration-cache>-1</expiration-cache>		        
+        <supports>
+			<mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+            <portlet-mode>EDIT</portlet-mode>
+            <portlet-mode>HELP</portlet-mode>
+            <portlet-mode>CONFIG</portlet-mode>
+		</supports>
+        <supported-locale>en</supported-locale>        
+        <supported-locale>fr</supported-locale>
+		<resource-bundle>resourceBundle</resource-bundle>
+		<portlet-info>
+			<title>User Portlet</title>
+			<short-title>User</short-title>
+			<keywords>User</keywords>
+        </portlet-info>
+	    <portlet-preferences>            
+            <preference>
+				<name>tab.title.news</name>
+				<value>channel_news</value>
+				<read-only>true</read-only>
+			</preference>			
+            <preference>
+				<name>tab.title.sports</name>
+				<value>channel_sports</value>
+				<read-only>true</read-only>
+			</preference>
+            <preference>
+                <name>tab.title.entertainment</name>
+                <value>channel_entertainment</value>
+                <read-only>true</read-only>
+            </preference>
+            <preference>
+                <name>tab.title.health</name>
+                <value>channel_health</value>
+                <read-only>true</read-only>
+            </preference>
+            <preference>
+                <name>tab.title.finance</name>
+                <value>channel_finance</value>
+                <read-only>true</read-only>
+            </preference>
+            <preference>
+                <name>tab.title.tech</name>
+                <value>channel_tech</value>
+                <read-only>true</read-only>
+            </preference>        			
+        </portlet-preferences>
+	</portlet>
+		
+	<portlet>
+        <description>SearchPortletDescription</description>
+        <portlet-name>searchPortlet</portlet-name>
+        <display-name>Search Portlet</display-name>		        
+        <portlet-class>org.light.portlets.search.SearchPortlet</portlet-class>        		        
+        <expiration-cache>-1</expiration-cache>		        
+        <supports>
+			<mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+            <portlet-mode>EDIT</portlet-mode>
+            <portlet-mode>HELP</portlet-mode>
+            <portlet-mode>CONFIG</portlet-mode>
+		</supports>
+        <supported-locale>en</supported-locale>        
+        <supported-locale>fr</supported-locale>
+		<resource-bundle>resourceBundle</resource-bundle>
+		<portlet-info>
+			<title>Search Portlet</title>
+			<short-title>Search</short-title>
+			<keywords>Search</keywords>
+        </portlet-info>
+	    <portlet-preferences>            
+            <preference>
+				<name>Google</name>
+				<value>http://www.google.com/search?q=</value>
+				<read-only>true</read-only>
+			</preference>			
+            <preference>
+				<name>Yahoo</name>
+				<value>http://search.yahoo.com/search?p=</value>
+			</preference>
+            <preference>
+                <name>AskJeeves</name>
+                <value>http://web.ask.com/web?q=</value>                
+            </preference>    
+            <preference>
+				<name>Vivisimo</name>
+				<value>http://vivisimo.com/search?query=</value>
+			</preference>        
+			<preference>
+				<name>Amazon</name>
+				<value>http://www.a9.com/</value>
+			</preference>        			
+        </portlet-preferences>        
+	</portlet>
+	
+	<portlet>
+        <description>WeatherPortletDescription</description>
+        <portlet-name>weatherPortlet</portlet-name>
+        <display-name>Weather Portlet</display-name>		        
+        <portlet-class>org.light.portlets.weather.WeatherPortlet</portlet-class>        
+        <init-param>
+            <name>url</name>
+            <value>http://xoap.weather.com/weather/local/</value>
+        </init-param>        
+        <init-param>
+			<name>partnerId</name>
+			<value></value>
+		</init-param>		
+		<init-param>
+			<name>licence</name>
+			<value></value>
+		</init-param>		        
+        <expiration-cache>-1</expiration-cache>		        
+        <supports>
+			<mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+            <portlet-mode>EDIT</portlet-mode>
+            <portlet-mode>HELP</portlet-mode>
+            <portlet-mode>CONFIG</portlet-mode>
+		</supports>
+
+        <supported-locale>en</supported-locale>        
+        <supported-locale>fr</supported-locale>
+		<resource-bundle>resourceBundle</resource-bundle>
+		<portlet-info>
+			<title>Weather Portlet</title>
+			<short-title>Weather</short-title>
+			<keywords>Weather</keywords>
+        </portlet-info>
+	    
+	</portlet>
+	
+	<portlet>
+        <description>BookmarkPortletDescription</description>
+        <portlet-name>bookmarkPortlet</portlet-name>
+        <display-name>Bookmark Portlet</display-name>		
+        
+        <portlet-class>org.light.portlets.bookmark.BookmarkPortlet</portlet-class>
+        		        
+        <expiration-cache>-1</expiration-cache>
+		        
+        <supports>
+			<mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+            <portlet-mode>EDIT</portlet-mode>
+            <portlet-mode>HELP</portlet-mode>
+            <portlet-mode>CONFIG</portlet-mode>
+		</supports>
+
+        <supported-locale>en</supported-locale>        
+        <supported-locale>fr</supported-locale>
+		<resource-bundle>resourceBundle</resource-bundle>
+		<portlet-info>
+			<title>Bookmark Portlet</title>
+			<short-title>Bookmark</short-title>
+			<keywords>Bookmark</keywords>
+        </portlet-info>
+	    <portlet-preferences>            
+            <preference>
+				<name>http://www.javasight.com</name>
+				<value>Java Sight</value>
+				<read-only>true</read-only>
+			</preference>			
+            <preference>
+				<name>http://java.net</name>
+				<value>Java.net</value>
+			</preference>
+            <preference>
+                <name>http://www.javaworld.com</name>
+                <value>Java World</value>
+                <read-only>false</read-only>
+            </preference>        			
+        </portlet-preferences>        
+	</portlet>
+	
+	<portlet>
+        <description>TodoPortletDescription</description>
+        <portlet-name>todoListPortlet</portlet-name>
+        <display-name>Todo Portlet</display-name>		
+        
+        <portlet-class>org.light.portlets.todolist.ToDoPortlet</portlet-class>
+        		        
+        <expiration-cache>-1</expiration-cache>
+		        
+        <supports>
+			<mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+            <portlet-mode>EDIT</portlet-mode>
+            <portlet-mode>HELP</portlet-mode>
+            <portlet-mode>CONFIG</portlet-mode>
+		</supports>
+
+        <supported-locale>en</supported-locale>        
+        <supported-locale>fr</supported-locale>
+		<resource-bundle>resourceBundle</resource-bundle>
+		<portlet-info>
+			<title>ToDoList Portlet</title>
+			<short-title>ToDoList</short-title>
+			<keywords>ToDoList</keywords>
+        </portlet-info>
+	    <portlet-preferences>            
+            <preference>
+				<name>AOL Music</name>
+				<value>0</value>
+			</preference>			
+            <preference>
+				<name>Video</name>
+				<value>0</value>
+			</preference>
+            <preference>
+                <name>Digg</name>
+                <value>1</value>
+            </preference>        			
+        </portlet-preferences>        
+	</portlet>
+	<portlet>
+        <description>DeliciousPortletDescription</description>
+        <portlet-name>deliciousPortlet</portlet-name>
+        <display-name>Delicious Portlet</display-name>		
+        
+        <portlet-class>org.light.portlets.delicious.DeliciousPortlet</portlet-class>
+        		        
+        <expiration-cache>-1</expiration-cache>
+		        
+        <supports>
+			<mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+            <portlet-mode>EDIT</portlet-mode>
+            <portlet-mode>HELP</portlet-mode>
+            <portlet-mode>CONFIG</portlet-mode>
+		</supports>
+
+        <supported-locale>en</supported-locale>        
+        <supported-locale>fr</supported-locale>
+		<resource-bundle>resourceBundle</resource-bundle>
+		<portlet-info>
+			<title>Delicious Portlet</title>
+			<short-title>Delicious</short-title>
+			<keywords>Delicious</keywords>
+        </portlet-info>        
+	</portlet>
+	
+	<portlet>
+        <description>RssPortletDescription</description>
+        <portlet-name>rssPortlet</portlet-name>
+        <display-name>Rss Portlet</display-name>		
+        
+        <portlet-class>org.light.portlets.rss.RssPortlet</portlet-class>
+		        
+        <expiration-cache>-1</expiration-cache>
+		        
+        <supports>
+			<mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+            <portlet-mode>EDIT</portlet-mode>
+            <portlet-mode>HELP</portlet-mode>
+            <portlet-mode>CONFIG</portlet-mode>
+		</supports>
+
+        <supported-locale>en</supported-locale>        
+        <supported-locale>fr</supported-locale>
+		<resource-bundle>resourceBundle</resource-bundle>
+		<portlet-info>
+			<title>Rss Portlet</title>
+			<short-title>Rss</short-title>
+			<keywords>Rss</keywords>
+        </portlet-info>
+	    
+	</portlet>
+	
+	<portlet>
+        <description>NotePortletDescription</description>
+        <portlet-name>notePortlet</portlet-name>
+        <display-name>Note Portlet</display-name>		
+        
+        <portlet-class>org.light.portlets.note.NotePortlet</portlet-class>
+		        
+        <expiration-cache>-1</expiration-cache>
+		        
+        <supports>
+			<mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+            <portlet-mode>EDIT</portlet-mode>
+            <portlet-mode>HELP</portlet-mode>
+            <portlet-mode>CONFIG</portlet-mode>
+		</supports>
+
+        <supported-locale>en</supported-locale>        
+        <supported-locale>fr</supported-locale>
+		<resource-bundle>resourceBundle</resource-bundle>
+		<portlet-info>
+			<title>Note Portlet</title>
+			<short-title>Note</short-title>
+			<keywords>Note</keywords>
+        </portlet-info>
+	    <portlet-preferences>            
+            <preference>
+				<name>fontColor</name>
+				<value>0000ff</value>
+			</preference>			            
+			
+        </portlet-preferences>
+	</portlet>
+	
+	<portlet>
+        <description>ViewerPortletDescription</description>
+        <portlet-name>viewerPortlet</portlet-name>
+        <display-name>Viewer Portlet</display-name>		
+        
+        <portlet-class>org.light.portlets.viewer.ViewerPortlet</portlet-class>
+		        
+        <expiration-cache>-1</expiration-cache>
+		        
+        <supports>
+			<mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+            <portlet-mode>EDIT</portlet-mode>
+            <portlet-mode>HELP</portlet-mode>
+            <portlet-mode>CONFIG</portlet-mode>
+		</supports>
+
+        <supported-locale>en</supported-locale>        
+        <supported-locale>fr</supported-locale>
+		<resource-bundle>resourceBundle</resource-bundle>
+		<portlet-info>
+			<title>Viewer Portlet</title>
+			<short-title>Viewer</short-title>
+			<keywords>Viewer</keywords>
+        </portlet-info>
+	    
+	</portlet>
+	
+	<portlet>
+        <description>VideoPortletDescription</description>
+        <portlet-name>videoPortlet</portlet-name>
+        <display-name>Video Portlet</display-name>		
+        
+        <portlet-class>org.light.portlets.video.VideoPortlet</portlet-class>
+		        
+        <expiration-cache>-1</expiration-cache>
+		        
+        <supports>
+			<mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+            <portlet-mode>EDIT</portlet-mode>
+            <portlet-mode>HELP</portlet-mode>
+            <portlet-mode>CONFIG</portlet-mode>
+		</supports>
+
+        <supported-locale>en</supported-locale>        
+        <supported-locale>fr</supported-locale>
+		<resource-bundle>resourceBundle</resource-bundle>
+		<portlet-info>
+			<title>Video Portlet</title>
+			<short-title>Video</short-title>
+			<keywords>Video</keywords>
+        </portlet-info>
+	    
+	</portlet>
+<!-- 
+	<portlet>
+        <description>EmailPortletDescription</description>
+        <portlet-name>emailPortlet</portlet-name>
+        <display-name>Email Portlet</display-name>		
+        
+        <portlet-class>org.light.portlets.email.EmailPortlet</portlet-class>
+		        
+        <expiration-cache>-1</expiration-cache>
+		        
+        <supports>
+			<mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+            <portlet-mode>EDIT</portlet-mode>
+            <portlet-mode>HELP</portlet-mode>
+            <portlet-mode>CONFIG</portlet-mode>
+		</supports>
+
+        <supported-locale>en</supported-locale>        
+        <supported-locale>fr</supported-locale>
+		<resource-bundle>resourceBundle</resource-bundle>
+		<portlet-info>
+			<title>Email Portlet</title>
+			<short-title>Email</short-title>
+			<keywords>Email</keywords>
+        </portlet-info>
+	    
+	</portlet>
+ -->
+	<portlet>
+        <description>CalendarPortletDescription</description>
+        <portlet-name>calendarPortlet</portlet-name>
+        <display-name>Calendar Portlet</display-name>		
+        
+        <portlet-class>org.light.portlets.calendar.CalendarPortlet</portlet-class>
+		        
+        <expiration-cache>-1</expiration-cache>
+		        
+        <supports>
+			<mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+            <portlet-mode>EDIT</portlet-mode>
+            <portlet-mode>HELP</portlet-mode>
+            <portlet-mode>CONFIG</portlet-mode>
+		</supports>
+
+        <supported-locale>en</supported-locale>        
+        <supported-locale>fr</supported-locale>
+		<resource-bundle>resourceBundle</resource-bundle>
+		<portlet-info>
+			<title>Calendar Portlet</title>
+			<short-title>Calendar</short-title>
+			<keywords>Calendar</keywords>
+        </portlet-info>
+	    
+	</portlet>
+	
+	<portlet>
+        <description>ForumPortletDescription</description>
+        <portlet-name>forumPortlet</portlet-name>
+        <display-name>Viewer Portlet</display-name>		
+        
+        <portlet-class>org.light.portlets.forum.ForumPortlet</portlet-class>
+		        
+        <expiration-cache>-1</expiration-cache>
+		        
+        <supports>
+			<mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+            <portlet-mode>EDIT</portlet-mode>
+            <portlet-mode>HELP</portlet-mode>
+            <portlet-mode>CONFIG</portlet-mode>
+		</supports>
+
+        <supported-locale>en</supported-locale>        
+        <supported-locale>fr</supported-locale>
+		<resource-bundle>resourceBundle</resource-bundle>
+		<portlet-info>
+			<title>Forum Portlet</title>
+			<short-title>Forum</short-title>
+			<keywords>Forum</keywords>
+        </portlet-info>
+	    
+	</portlet>
+	
+	<!--- new exapmle -->
+	<portlet>
+        <description>this is a portlet for report</description>
+        <portlet-name>reportPortlet</portlet-name>
+        <display-name>report Portlet</display-name>
+        <portlet-class>org.light.portlets.report.ReportPortlet</portlet-class>		        
+        <expiration-cache>-1</expiration-cache>		        
+        <supports>
+			<mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+			<portlet-mode>EDIT</portlet-mode>
+			<portlet-mode>CONFIG</portlet-mode>
+		</supports>
+		<supported-locale>zh_CN</supported-locale>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>resourceBundle</resource-bundle>
+		<portlet-info>
+			<title>Report Portlet</title>
+			<short-title>Report</short-title>
+			<keywords>Report</keywords>
+        </portlet-info>
+	</portlet>
+	
+	<portlet>
+        <description>this is a portlet for TodoWorkflow</description>
+        <portlet-name>todoWorkflowPortlet</portlet-name>
+        <display-name>待办事宜</display-name>		        
+        <portlet-class>org.light.portlets.TodoWorkflow</portlet-class>
+        <expiration-cache>-1</expiration-cache>		        
+        <supports>
+			<mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+			<portlet-mode>EDIT</portlet-mode>
+			<portlet-mode>CONFIG</portlet-mode>
+		</supports>
+		<supported-locale>zh_CN</supported-locale>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>resourceBundle</resource-bundle>
+		<portlet-info>
+			<title>TodoWorkflow</title>
+			<short-title>TodoWorkflow</short-title>
+			<keywords>TodoWorkflow</keywords>
+        </portlet-info>
+	</portlet>
+
+	<portlet>
+        <description>this is a portlet for DocbasePortlet</description>
+        <portlet-name>docbasePortlet</portlet-name>
+        <display-name>文档元素</display-name>		        
+        <portlet-class>org.light.portlets.DocbasePortlet</portlet-class>
+        <expiration-cache>-1</expiration-cache>		        
+        <supports>
+			<mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+			<portlet-mode>EDIT</portlet-mode>
+			<portlet-mode>CONFIG</portlet-mode>
+		</supports>
+		<supported-locale>zh_CN</supported-locale>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>resourceBundle</resource-bundle>
+		<portlet-info>
+			<title>DocbasePortlet</title>
+			<short-title>DocbasePortlet</short-title>
+			<keywords>DocbasePortlet</keywords>
+        </portlet-info>
+	</portlet>	
+	
+	<portlet>
+        <description>this is a portlet for TabPortlet</description>
+        <portlet-name>tabPortlet</portlet-name>
+        <display-name>Tab Portlet</display-name>		        
+        <portlet-class>org.light.portlets.TabPortlet</portlet-class>
+        <expiration-cache>-1</expiration-cache>		        
+        <supports>
+			<mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+			<portlet-mode>EDIT</portlet-mode>
+			<portlet-mode>CONFIG</portlet-mode>
+		</supports>
+		<supported-locale>zh_CN</supported-locale>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>resourceBundle</resource-bundle>
+		<portlet-info>
+			<title>TabPortlet</title>
+			<short-title>TabPortlet</short-title>
+			<keywords>TabPortlet</keywords>
+        </portlet-info>
+	</portlet>
+	<portlet>
+        <description>this is a portlet for RssReadPortlet</description>
+        <portlet-name>rssReadPortlet</portlet-name>
+        <display-name>RSSRead</display-name>         
+        <portlet-class>org.light.portlets.rss.RssReadPortlet</portlet-class>
+        <expiration-cache>-1</expiration-cache>         
+        <supports>
+		<mime-type>text/html</mime-type>
+		<portlet-mode>VIEW</portlet-mode>
+		<portlet-mode>EDIT</portlet-mode>
+		<portlet-mode>CONFIG</portlet-mode>
+		</supports>
+		<supported-locale>zh_CN</supported-locale>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>resourceBundle</resource-bundle>
+		<portlet-info>
+		<title>RssReadPortlet</title>
+		<short-title>RssReadPortlet</short-title>
+		<keywords>RssReadPortlet</keywords>
+		</portlet-info>
+	</portlet> 
+	
+	<portlet>
+        <description>this is a portlet for SlidePortlet</description>
+        <portlet-name>slidePortlet</portlet-name>
+        <display-name>slidePortlet</display-name>		        
+        <portlet-class>org.light.portlets.slide.SlidePortlet</portlet-class>
+        <expiration-cache>-1</expiration-cache>		        
+        <supports>
+			<mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+			<portlet-mode>EDIT</portlet-mode>
+			<portlet-mode>CONFIG</portlet-mode>
+		</supports>
+		<supported-locale>zh_CN</supported-locale>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>resourceBundle</resource-bundle>
+		<portlet-info>
+			<title>SlidePortlet</title>
+			<short-title>SlidePortlet</short-title>
+			<keywords>SlidePortlet</keywords>
+        </portlet-info>
+	</portlet>
+	
+	<portlet>
+        <description>this is a portlet for ShortcutPortlet</description>
+        <portlet-name>shortcutPortlet</portlet-name>
+        <display-name>shortcutPortlet</display-name>		        
+        <portlet-class>org.light.portlets.shortcut.ShortcutPortlet</portlet-class>
+        <expiration-cache>-1</expiration-cache>		        
+        <supports>
+			<mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+			<portlet-mode>EDIT</portlet-mode>
+			<portlet-mode>CONFIG</portlet-mode>
+		</supports>
+		<supported-locale>zh_CN</supported-locale>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>resourceBundle</resource-bundle>
+		<portlet-info>
+			<title>ShortcutPortlet</title>
+			<short-title>ShortcutPortlet</short-title>
+			<keywords>ShortcutPortlet</keywords>
+        </portlet-info>
+	</portlet>
+	
+	<!-- cowork-zone 元素 （begin） -->
+	<portlet>
+        <description>this is a portlet for Cowork-Zone</description>
+        <portlet-name>portletCowork</portlet-name>
+        <display-name>PortletCowork</display-name>		        
+        <portlet-class>org.light.portlets.cowork.PortletCowork</portlet-class>
+        <expiration-cache>-1</expiration-cache>		        
+        <supports>
+			<mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+			<portlet-mode>EDIT</portlet-mode>
+			<portlet-mode>CONFIG</portlet-mode>
+		</supports>
+		<supported-locale>zh_CN</supported-locale>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>resourceBundle</resource-bundle>
+		<portlet-info>
+			<title>PortletCowork</title>
+			<short-title>PortletCowork</short-title>
+			<keywords>PortletCowork</keywords>
+        </portlet-info>
+	 </portlet>	
+	<!-- cowork-zone 元素 （end） -->
+ </portlet-app>

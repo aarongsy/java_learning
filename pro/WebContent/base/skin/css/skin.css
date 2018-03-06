@@ -1,0 +1,219 @@
+html,body{
+	margin: 0;
+	padding: 0;	
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	font-size: 12px;
+}
+#main{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+#objnamespan,#isEnabledSpan{
+	margin-left:3px;
+	color: red;
+	font-size: 12px;
+	display: none;
+}
+#sysMode{
+	width: 1000px;
+	border: 1px solid #999;
+	margin-left: 20px;
+	margin-top: 10px;
+	height: 20px;
+	line-height: 20px;
+	padding-left: 5px;
+}
+#sysMode a{
+	text-decoration: underline;
+	padding: 0px 2px;	
+}
+#skinList{
+	border: 1px solid #999;
+	float: left;
+	width: 250px;
+	height: 450px;	
+	margin-top: 10px;
+	margin-left: 10px;
+	position: relative;
+	overflow: hidden;
+}
+#skinList .title{
+	height: 26px;	
+	border-bottom: 1px solid #999;
+	background: #DFDFDF;
+	position: relative;
+}
+#skinList .title span.name{
+	display:block;
+	font-weight: bold;
+	padding-left: 18px;
+	padding-top: 2px;
+	background: url("/images/silk/text_linespacing.gif") no-repeat;
+	height: 16px;
+	position: absolute;
+	top: 5px;
+	left: 6px;
+}
+#skinList .title span.hideUnEnabledSKin{
+	display:block;
+	position: absolute;
+	bottom: 2px;
+	right: 3px;
+	font-size: 11px;
+}
+#skinList .title span.hideUnEnabledSKin .cbox{
+	height:13px; 
+	vertical-align:text-top; 
+	margin-top: 2px;
+	margin-right: 3px;
+}
+#skinList .bottom{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 20px;
+	border-top: 1px solid #999; 	
+	line-height: 20px;
+	text-align: center;
+}
+#skinList .content{
+	overflow-y: scroll;
+	height: 403px;
+}
+#skinList .content ul{
+	list-style: none;
+	border: 0px solid red;	
+	margin: 20px;	
+}
+#skinList .content ul li a{
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;	
+}
+#skinList .content ul li a p{
+	height: 34px;
+	position: relative;	
+}
+#skinList .software{
+	border-bottom: 1px dotted blue;	
+}
+#skinList .software span{
+	color : blue;
+}
+#skinList .website{
+	border-bottom: 1px dotted red;		
+}
+#skinList .website span{
+	color : red;
+}
+#skinList .content ul li a p .previewpic{
+	display:block;
+	float:left;
+	width: 32px;
+	height: 26px;
+	margin-top: 4px;
+	margin-left: 8px;
+}
+#skinList .content ul li a p .previewpic img{
+	width: 32px;
+	height: 26px;
+}
+#skinList .content ul li a p .skinName{
+	display:block;
+	float:left;
+	margin-top: 16px;
+	margin-left: 8px;
+	padding: 0;
+}
+#skinList .content ul li a p .default{
+	position: absolute;
+	bottom: 0px;
+	right: 2px;	
+	font-size: 11px;
+}
+#skinList .content ul li a:hover p{
+	background: #DFDFDF;
+}
+#skinData{
+	border: 1px solid #999;
+	float: left;
+	width: 730px;
+	height: 450px;	
+	margin-top: 10px;
+	margin-left: 10px;
+	overflow: hidden !important;	
+}
+#skinData .title{
+	height: 26px;	
+	border-bottom: 1px solid #999;
+	background: #DFDFDF;
+	position: relative;
+}
+#skinData .title span{
+	display:block;
+	font-weight: bold;
+	padding-left: 18px;
+	padding-top: 2px;
+	background: url("/images/silk/border_draw.gif") no-repeat;
+	height: 16px;
+	position: absolute;
+	top: 5px;
+	left: 6px;
+}
+#skinData .baseData{
+	margin-top: 15px;	
+}
+#skinData .baseData table{
+	line-height: 30px;	
+	width: 100%;
+	table-layout: fixed;
+}
+#skinData .baseData table td{
+	font-family: Microsoft YaHei;
+	color: #000;
+}
+.textStyle{
+    border: none;
+    border-bottom: 2px solid #D0D0BF;
+    font-family: Microsoft YaHei !important;
+    color: #000;
+}
+#cssData{
+	margin: 15px;
+	width: 690px;
+	height: 382px;
+	position: relative;
+}
+#cssData .edit{
+	position: absolute;
+	right: 20px;
+	bottom: 5px;	
+}
+#cssData .edit a{
+	color: blue;
+	cursor: pointer;	
+}
+#cssData div{
+	padding: 0;	
+}
+#cssData div textarea{
+	width: 690px;
+	height: 347px;
+	border: 0;
+}
+#isEnabledTip{
+	display: none;
+}
+#isEnabledTip td{
+	font-family: Microsoft YaHei;
+	color: red !important;
+	padding-left: 20px;
+}
+
+#menuImgPathSpan{
+	display: block;	
+}

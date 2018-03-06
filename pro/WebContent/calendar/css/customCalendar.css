@@ -1,0 +1,188 @@
+body{
+	background-color: transparent;
+}
+div.cHead
+{
+    display: none;
+}
+div.ctoolbar{
+	background: none;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	border-bottom: 1px solid #ddd;
+	height: 30px;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+div.ctoolbar div.btnseparator{
+	display: none;
+}
+div.ctoolbar div.fbutton 
+{	
+	border: 1px solid #d0d0d0;
+	background-color: #F7F7F7;
+	margin: 0px;
+}
+div.ctoolbar div.fbutton:hover, .div.ctoolbar div.fbutton.fbOver
+{
+    border: 1px solid #d0d0d0;
+    padding: 1px;
+    background-color: #F1EEEE;
+}
+div.ctoolbar div.fbutton.fcurrent
+{
+    border: 1px solid #d0d0d0;
+    padding: 1px;
+    cursor: pointer;
+    background-color: #2E9EB2;
+}
+div.ctoolbar div.fbutton  div
+{
+	padding: 2px 5px;
+}	
+div.ctoolbar div.fbutton:hover div, .div.ctoolbar div.fbutton.fbOver div
+{
+    padding: 2px 5px;
+    border: none;
+}
+div.ctoolbar div.fbutton.fcurrent div
+{
+    padding: 2px 5px;
+    border: none;
+}
+div.ctoolbar div.fbutton span
+{
+    font-family: Microsoft YaHei;
+}
+div.ctoolbar div.fbutton.fcurrent span{
+	color: white;
+}
+#faddbtn{
+	width: 65px;
+	height: 25px; 
+	background: url("/calendar/imgs/addBtn.png") no-repeat;
+	border: none;
+	margin-right: 10px;
+}
+#faddbtn div{
+	padding: 0px;
+	display: none;
+}
+#faddbtn:hover, #faddbtn.fbOver
+{
+	padding: 1px;
+    border: none;
+}
+#showtodaybtn{
+	margin-right: 10px;
+}
+#showweekbtn{
+	border-left: none;
+}
+#showmonthbtn{
+	border-left: none;
+	margin-right: 10px;
+}
+#showreflashbtn{
+	margin-right: 10px;
+}
+#sfnextbtn, #sfnextbtn:hover, #sfnextbtn.fbOver{
+	border-left: none;
+}
+#fshowdatepbtn, #fshowdatepbtn:hover, #fshowdatepbtn.fbOver{
+	border-left: none;
+}
+#showweekbtn:hover, #showweekbtn.fbOver, #showweekbtn.fcurrent{
+	border-left: none;
+}
+#showmonthbtn:hover, #showmonthbtn.fbOver, #showmonthbtn.fcurrent{
+	border-left: none;
+}
+#txtdatetimeshow{
+	background-image: url("/calendar/imgs/datepicker.png");
+	background-repeat:  no-repeat;
+	padding-left: 20px;
+}
+.calmain{
+	background:transparent;
+	border-bottom: none;
+}
+.printborder{
+	border-left-color: transparent;
+}
+#gridcontainer{
+	background:transparent;
+}
+.scolltimeevent
+{
+	border-top:1px solid #d0d0d0;
+	border-left:1px solid #d0d0d0;
+	border-bottom:1px solid #d0d0d0;
+}
+.wk-top{
+	background:transparent;
+}
+.chromeColor {
+	background:transparent;
+	border-color:transparent;
+}
+.tg-times {
+	background-color: #F5F7FA;
+}
+.tg-time{
+	font-family: Microsoft YaHei;
+	font-size: 11px;
+}
+.gcweekname{
+	background: url("/calendar/imgs/caledartitlebg.png") repeat;
+}
+.wk-dayname{
+	background: url("/calendar/imgs/caledartitlebg.png") repeat;
+	font-family: Microsoft YaHei;
+    color: #112abb;
+    text-align: center;
+}
+.wk-daylink, .wk-dayname span
+{
+    font-family: Microsoft YaHei;
+    color: #112abb;
+}
+.wk-allday {
+	background-color:transparent;
+	border-color:#d0d0d0;
+}
+.mv-daynames-table{
+	background:transparent;
+}
+.mv-dayname{
+	background: url("/calendar/imgs/caledartitlebg.png") repeat;
+	font-family: Microsoft YaHei;
+	color: #112abb;
+	text-align: center;
+}
+.monthdayshow
+{
+	font-family: Microsoft YaHei;
+}
+.cb-example {
+	font-family: Microsoft YaHei;
+}
+.cb-key {
+	font-family: Microsoft YaHei;
+}
+.cb-value {
+	font-family: Microsoft YaHei;
+}
+.cb-value div{
+	font-family: Microsoft YaHei;	
+}
+.lk {
+	font-family: Microsoft YaHei;
+}
+#bbit-cal-quickAddBTN{
+	font-family: Microsoft YaHei;
+}
+.chip dd span{
+	font-family: Microsoft YaHei;
+}

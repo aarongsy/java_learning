@@ -1,0 +1,40 @@
+#macro(ViewInclude $id,$args)
+	$sysTemplateObject.parseTemplate($id,$args)
+#end
+
+#macro(SelectItem $id,$name,$selected)
+	$GlobalObject.selectItem($id,$name,$selected)
+#end
+
+#macro(BrowserBox $id,$name,$selected,$fnName)
+	$GlobalObject.browser($id,$name,$selected,$fnName)
+#end
+
+#macro(AttachList $name,$val,$isEdit)
+	$GlobalObject.attachList($name,$val,$isEdit)
+#end
+
+#macro(CheckBox $name,$val,$defVal)
+	$GlobalObject.checkBox($name,$val,$defVal)
+#end
+
+#macro(Menu $id)
+	$GlobalObject.getMenuString($id)
+#end
+#macro(SysMenu $id)
+	$GlobalObject.getSysMenuString($id)
+#end
+#macro(IncludePage $id)
+	#set($vname1=$GlobalObject.getPageName($id))
+	#if($vname1=='')
+		<span style="color:red">[pages.id=$id] is null!</span>
+	#else
+		#parse($vname1)
+	#end
+#end
+
+#macro(SqlValue $objName,$whereMap)$GlobalObject.getSQLValue($viewId,$objName,$whereMap)#end
+
+#macro(SetVariable $name,$objName,$whereMap)
+	#set($name= $GlobalObject.getSQLValue($viewId,$objName,$whereMap))
+#end

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.5</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT SIGNDATE,PRODUCTNAME,PRODUCTTYPE,ORDERSDETAIL.QUANTITY FROM ORDERS,ORDERSDETAIL,PRODUCT WHERE ORDERS.ORDERID=ORDERSDETAIL.ORDERID AND PRODUCT.PRODUCTID=ORDERSDETAIL.PRODUCTID]]></Query>
+</TableData>
+</TableDataMap>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.CustomParameterUI">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<RowHeight defaultValue="19">
+<![CDATA[19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0"><O><![CDATA[查询日期：]]></O>
+</C>
+<C c="1" r="0" s="0"><O><![CDATA[2008-10-15]]></O>
+<Widget class="com.fr.report.web.ui.DateEditor">
+<WidgetAttr/>
+<FieldName>Date</FieldName><DateAttr start="" end=""/></Widget>
+</C>
+<C c="2" r="0"><O><![CDATA[查询]]></O>
+<Widget class="com.fr.report.web.ui.impl.form.FormSubmitButton">
+<WidgetAttr/>
+</Widget>
+</C>
+</CellElementList>
+</ParameterUI>
+<Parameter>
+<Attributes name="Date" />
+<O t="Date"><![CDATA[1224000000000]]></O>
+</Parameter>
+<PP class="com.fr.report.parameter.CustomParameterProcessor">
+<UnitProcessorMap>
+<ParameterUnitProcessor parameter="End">
+<UP class="com.fr.report.parameter.processor.FormulaUnitProcessor">
+<Formula><Attributes><![CDATA[=TODATE($Date)-WEEKDAY(TODATE($Date))+6]]></Attributes><Result type="Date"><![CDATA[2008/10/18 00:00:00]]></Result></Formula></UP>
+</ParameterUnitProcessor>
+<ParameterUnitProcessor parameter="Start">
+<UP class="com.fr.report.parameter.processor.FormulaUnitProcessor">
+<Formula><Attributes><![CDATA[=TODATE($Date)-WEEKDAY(TODATE($Date))]]></Attributes><Result type="Date"><![CDATA[2008/10/12 00:00:00]]></Result></Formula></UP>
+</ParameterUnitProcessor>
+</UnitProcessorMap>
+</PP>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings shrinkToFitMode="1" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.7499999999999999" bottom="0.27" right="0.7499999999999999" />
+</ReportSettings>
+<ReportPageAttr>
+</ReportPageAttr>
+<ReportWebAttr>
+<EmailManager mailHost="" password="___" user="" fromEmailAddress="" />
+<ServerPrinter>
+</ServerPrinter>
+<Background name="NullBackground" />
+</ReportWebAttr>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<ReportWriteAttr>
+</ReportWriteAttr>
+<RowHeight defaultValue="19">
+<![CDATA[22,19,19,22,28,19,18,0,30,19,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[90,96,80,72,72,72,72,72,72,72,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="2" s="1"><O><![CDATA[产品销量季度查询]]></O>
+</C>
+<C c="0" r="1" s="2"><O><![CDATA[查询日期：]]></O>
+</C>
+<C c="1" r="1" s="2"><O t="Formula" class="Formula"><Attributes><![CDATA[=TODATE($Date)]]></Attributes></O>
+</C>
+<C c="0" r="2" s="3"></C>
+<C c="1" r="2" s="3"></C>
+<C c="0" r="3" cs="2" s="4"></C>
+<C c="4" r="3" s="3"></C>
+<C c="0" r="4" s="5"><O t="BiasTextPainter"><IsBackSlash value="false"/>
+<![CDATA[种类|日期]]>
+</O>
+</C>
+<C c="1" r="4" s="6"><O t="DSColumn"><Attributes dsName="ds1" columnName="PRODUCTTYPE" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="1" />
+</C>
+<C c="0" r="5" s="7"><O t="DSColumn"><Attributes dsName="ds1" columnName="SIGNDATE" />
+<Condition class="com.fr.data.condition.ListCondition"><JoinCondition join="0">
+<Condition class="com.fr.data.condition.FormulaCondition"><Formula>
+<![CDATA[YEAR(SIGNDATE)==YEAR($Date)]]>
+</Formula>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.FormulaCondition"><Formula>
+<![CDATA[TOINTEGER(MONTH(SIGNDATE)/3.3)+1==TOINTEGER(MONTH($Date)/3.3)+1]]>
+</Formula>
+</Condition>
+</JoinCondition>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="1" r="5" s="8"><O t="DSColumn"><Attributes dsName="ds1" columnName="QUANTITY" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+<HighlightList><Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ObjectCondition"><Compare op="0">
+<O t="Formula" class="Formula"><Attributes><![CDATA[=NULL]]></Attributes></O>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ValueHighlightAction">
+<O t="I">0</O>
+</HighlightAction>
+</Highlight>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.FormulaCondition"><Formula>
+<![CDATA[row() % 2 == 1]]>
+</Formula>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.BackgroundHighlightAction">
+<Background name="ColorBackground"
+ color="-525313">
+</Background>
+</HighlightAction>
+</Highlight>
+</HighlightList></C>
+<C c="0" r="7"><O t="Formula" class="Formula"><Attributes><![CDATA[=DATEDELTA($Date, if(tointeger(A7) == 0, 0, 7 - A7))]]></Attributes></O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style>
+<Format class="java.text.SimpleDateFormat"><![CDATA[yyyy-MM-dd]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="14" foreground="-16617053" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" foreground="-16617053" />
+<Background name="NullBackground" />
+<Border><Bottom style="6" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ImageBackground"
+ specifiedImageWidth="-1.0"
+ specifiedImageHeight="-1.0"
+ layout="2">
+<Image width="271" height="20">
+<![CDATA[mDD3s_Ctrm_#OF0>K!!9WJ6!OQ7+.ZoaQ9>0E]d2laNppWiE)!WiGp)li!RsTDPW,0?[QWIV
+_g1pu1d?NUQ%!281S82*R8))W+4
+iebJi;<TD!-WQ)u!;iUeW~
+
+]]>
+</Image>
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-853505">
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12" />
+<Background name="ColorBackground"
+ color="-853505">
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.SimpleDateFormat"><![CDATA[yyyy-MM-dd]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-853505">
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+</StyleList>
+</WorkBook>

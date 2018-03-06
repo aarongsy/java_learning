@@ -1,0 +1,44 @@
+错误时间
+  14:13:40
+错误位置
+  sql2011112501.sql第2行
+错误语句
+ alter table  requestlog add nextopername varchar(4000)
+错误原因
+  java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+
+
+错误时间
+  14:13:40
+错误位置
+  sql2011112802.sql第2行
+错误语句
+ alter table requestlog add  nextopername varchar2(4000)
+错误原因
+  java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+
+
+错误时间
+  14:13:40
+错误位置
+  sql2011112802.sql第5行
+错误语句
+  alter table attendance add  ip varchar2(100)
+错误原因
+  java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+
+
+错误时间
+  14:13:40
+错误位置
+  sql2011112802.sql第8行
+错误语句
+  alter table attendance add  time1 varchar2(50)
+错误原因
+  java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+
+

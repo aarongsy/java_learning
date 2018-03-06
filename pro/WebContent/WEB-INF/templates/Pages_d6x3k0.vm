@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>${title}</title>
+${headerFiles}
+</head>
+
+<body>
+<table width="800" align="center" cellpadding="0" cellspacing="0">
+<tr><td>
+#IncludePage('402880322263601101226373c9a40003')
+</td></tr>
+<tr><td>
+<table width="100%">
+<tr>
+    <td height="82" colspan="2" valign="top">
+	<embed src="${root}/files/focus3.swf" flashvars="pics=${root}/files/1.jpg|${root}/files/2.jpg|${root}/files/3.jpg&amp;links=http://bbs.jeecms.com/fzjy/51.htm|http://www.jeecms.com/news/1201.htm|http://www.jeecms.com/rjaz/1069.htm&amp;texts=让我们为您定制CMS系统--JEECMS V2.4版功能完善征求…|JEECMS v2.3.2 正式版发布公告|JEECMS v2.x安装图文指南&amp;borderwidth=522&amp;borderheight=225&amp;textheight=20" menu="false" wmode="opaque" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" height="245" width="522"></embed>
+	</td>
+    <td width="34%" valign="top"><div class="rightNews">
+    <div style="float: right; width: 80px; height: 80px;">&nbsp;</div>
+    &nbsp;&nbsp;&nbsp;&nbsp;JEECMS是国内Java版开源网站内容管理系统（java cms、jsp cms）的简称。<br>
+    · 采用hibernate3+struts2+spring2+freemarker技术架构<br>
+    
+	</div></td>
+</tr>
+</table>
+<table width="100%" border="0">
+<tr>
+    <td width="41%" valign="top">#Element(110) <br/>
+#Element(51)</td>
+    <td width="33%" valign="top">#Element(103)</td>
+<td width="26%" valign="top">
+#if(!$isLogin)
+<div class="Element">
+<div class="title2">
+<div class="icon"></div>
+<div class="text">登录系统</div>
+</div>
+<div class="body">
+<!--Login Block-->
+<form id="form1" name="form1" method="post" action="">
+    <table width="100%" class="login" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td width="30%" align="right" class="label">用户名:</td>
+            <td width="70%" class="field"><input id="username" name="j_username" type="text"/></td>
+        </tr>
+        <tr>
+            <td align="right" class="label">密码:</td>
+            <td class="field" ><input name="j_password" id="password" type="password"/></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input onclick="LoginSystem();" class="btn" name="login2" type="button" id="login2" value="登录" />
+                &nbsp;&nbsp;
+                <input name="btnRest" class="btn" type="reset" id="btnRest" value="清空" /></td>
+        </tr>
+    </table>
+    </form>
+<!--Login Block-->
+</div>
+</div>
+<br/>
+#end
+
+<div class="Element">
+<div class="title2">
+<div class="icon"></div>
+<div class="text">客户服务</div>
+</div>
+<div class="body">
+电话：0791-6573110、13576281815
+【说明】：服务热线电话不接收免费用户的使用问题咨询，免费用户如有问题请到JEECMS官方论坛中和大家一起讨论。
+</div>
+</div>
+<br/>
+<div class="tabs customTab"> 
+  <ul> 
+    <li><a href="#t1">Tab 1</a></li> 
+    <li><a class="selected" href="#t2">Tab 2</a></li> 
+    <li class="last"><a href="#t3">Tab 3</a></li> 
+  </ul>
+  <div class="tabContainer">
+  <div id="t1">#Element(51,false)</div> 
+  <div id="t2">#Element(103,false)</div> 
+  <div id="t3">#Element(108,false)</div> 
+  </div>
+</div> 
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+#IncludePage('40288032226360110122636fbf950002')
+</td></tr>
+</table>
+</body>
+</html>

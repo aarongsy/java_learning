@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.2</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes isCache="false" maxMemRowCount="20000" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT PRODUCTID,AMOUNT,MONTH(SIGNDATE) AS MONTH,SIGNDATE FROM ORDERS,ORDERSDETAIL WHERE ORDERS.ORDERID=ORDERSDETAIL.ORDERID]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings shrinkToFit="false" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<RowHeight defaultValue="19">
+<![CDATA[19,36,23]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[43,100,69]]>
+</ColumnWidth>
+<CellElementList>
+<C c="2" r="0" s="0"><O t="Formula" class="Formula"><Attributes><![CDATA[=today()]]></Attributes></O>
+</C>
+<C c="1" r="1" s="1"><O t="BiasTextPainter"><IsBackSlash value="false"/>
+<![CDATA[ProductID | Month]]>
+</O>
+</C>
+<C c="2" r="1" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="PRODUCTID" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<DBDictAttr tableName="PRODUCT" schemaName="" keyColumnIndex="1" valueColumnIndex="2"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection></Dictionary></Present>
+<Expand dir="1" />
+</C>
+<C c="1" r="2" s="2"><O t="DSColumn"><Attributes dsName="ds1" columnName="MONTH" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="2" r="2" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="AMOUNT" />
+<Condition class="com.fr.data.condition.FormulaCondition"><Formula>
+<![CDATA[month(SIGNDATE)==B3]]>
+</Formula>
+</Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-16711936">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-3342388">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-52">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

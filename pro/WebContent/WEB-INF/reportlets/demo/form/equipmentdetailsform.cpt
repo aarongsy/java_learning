@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.5</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT * FROM Equipment]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT * FROM EquipmentDetail]]></Query>
+</TableData>
+<TableData name="dic" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT * FROM EquipmentDict]]></Query>
+</TableData>
+</TableDataMap>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+<ParameterInterface class="com.fr.report.parameter.CustomEmbeddedParameterInterface">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<RowHeight defaultValue="19">
+<![CDATA[19,19,19,19,19,19,19,19,19,19,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,129,72,72,72,72,72,72,72,72,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0"><O><![CDATA[分公司：]]></O>
+</C>
+<C c="1" r="0"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr/>
+<FieldName>ID</FieldName><MVList class="com.fr.data.impl.DatabaseDictionary">
+<DBDictAttr tableName="Equipment" schemaName="" keyColumnIndex="4" valueColumnIndex="2"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection></MVList>
+</Widget>
+</C>
+<C c="2" r="3"><O><![CDATA[查询]]></O>
+<Widget class="com.fr.report.web.ui.impl.form.FormSubmitButton">
+<WidgetAttr/>
+</Widget>
+</C>
+</CellElementList>
+</ParameterInterface>
+<Parameter>
+<Attributes name="ID" />
+<O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</Parameter>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings orientation="1" pageOrder="1" isHorizontalCenterOnPage="true" headerHeight="0.0" footerHeight="0.0">
+<PaperSize width="5.827" height="8.268" />
+<Margin top="0.348740157480315" left="0.0019685039370078744" bottom="0.03377952755905512" right="0.0019685039370078744" />
+</ReportSettings>
+<ReportPageAttr>
+</ReportPageAttr>
+<ReportWebAttr>
+<EmailManager mailHost="" password="___" user="" fromEmailAddress="" />
+<ServerPrinter>
+</ServerPrinter>
+<Background name="NullBackground" />
+</ReportWebAttr>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<ReportWriteAttr>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL1">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="Equipment"/>
+<ColumnConfig name="Tel" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="2"/>
+</ColumnConfig>
+<ColumnConfig name="Company" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="2"/>
+</ColumnConfig>
+<ColumnConfig name="Department" isKey="false" skipUnmodified="false" >
+<ColumnRow column="3" row="2"/>
+</ColumnConfig>
+<ColumnConfig name="CompanyID" isKey="true" skipUnmodified="false" >
+<ColumnRow column="0" row="1"/>
+</ColumnConfig>
+<ColumnConfig name="Costs" isKey="false" skipUnmodified="false" >
+<ColumnRow column="3" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="MaintenanceCosts" isKey="false" skipUnmodified="false" >
+<ColumnRow column="5" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="Supplier" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="UsageTime" isKey="false" skipUnmodified="false" >
+<ColumnRow column="7" row="4"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL2">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="EquipmentDetail"/>
+<ColumnConfig name="CompanyID" isKey="true" skipUnmodified="false" >
+<ColumnRow column="0" row="1"/>
+</ColumnConfig>
+<ColumnConfig name="Equipment" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="8"/>
+</ColumnConfig>
+<ColumnConfig name="EquipmentID" isKey="true" skipUnmodified="false" >
+<ColumnRow column="0" row="8"/>
+</ColumnConfig>
+<ColumnConfig name="PurchaseDate" isKey="false" skipUnmodified="false" >
+<ColumnRow column="3" row="8"/>
+</ColumnConfig>
+<ColumnConfig name="UpdateTime" isKey="false" skipUnmodified="false" >
+<ColumnRow column="4" row="8"/>
+</ColumnConfig>
+<ColumnConfig name="UsageTime" isKey="false" skipUnmodified="false" >
+<ColumnRow column="5" row="8"/>
+</ColumnConfig>
+<ColumnConfig name="costs" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="8"/>
+</ColumnConfig>
+<ColumnConfig name="Amount" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="8"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<VV>
+<O t="Formula" class="Formula"><Attributes><![CDATA[=REGEXP(G3,"^\\d{3,4}-\\d{7,8}$")=true]]></Attributes></O>
+<Message>
+<![CDATA[电话号码填写不符合规则！]]></Message>
+</VV>
+<VV>
+<O t="Formula" class="Formula"><Attributes><![CDATA[=REGEXP(B5,"^.+$")==true]]></Attributes></O>
+<Message>
+<![CDATA[供应商名称不得为空！]]></Message>
+</VV>
+</ReportWriteAttr>
+<RowHeight defaultValue="19">
+<![CDATA[25,19,19,19,19,19,19,19,19,19,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[92,103,82,126,108,107,107,26,26,23,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="9" s="0"><O><![CDATA[IT运维部设备明细填报表]]></O>
+</C>
+<C c="0" r="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="CompanyID" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[CompanyID]]></CNAME><Compare op="0">
+<Parameter>
+<Attributes name="ID" />
+<O><![CDATA[55471d25-8e01-45d9-b4f7-00eff1714151]]></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</Parameter>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[if($$$==' ',uuid(),$$$)]]></Result></O>
+<HighlightList><Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<HighlightAction class="com.fr.report.highlight.ValueHighlightAction">
+<O><![CDATA[]]></O>
+</HighlightAction>
+</Highlight>
+</HighlightList><Expand dir="0" />
+</C>
+<C c="0" r="2"><O><![CDATA[所属分公司：]]></O>
+</C>
+<C c="1" r="2" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="Company" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" leftParentDefault="false" left="A2" />
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr/>
+<MVList class="com.fr.data.impl.TableDataDictionary">
+<FormulaDictAttr keyColumnIndex="1" valueColumnIndex="1"></FormulaDictAttr>
+<TableDataDictAttr>
+<TableData class="com.fr.data.impl.NameTableData">
+<Name><![CDATA[dic]]></Name>
+</TableData>
+</TableDataDictAttr>
+</MVList>
+</Widget>
+</C>
+<C c="2" r="2" s="2"><O><![CDATA[运维部门：]]></O>
+</C>
+<C c="3" r="2" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="Department" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr/>
+<MVList class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr keyColumnIndex="2" valueColumnIndex="2"></FormulaDictAttr>
+<Formula><![CDATA["SELECT * FROM EquipmentDict where Company= '" + B3 + "'"]]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection></MVList>
+</Widget>
+</C>
+<C c="4" r="2"><O><![CDATA[]]></O>
+</C>
+<C c="5" r="2"><O><![CDATA[分公司电话：]]></O>
+</C>
+<C c="6" r="2" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="Tel" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="0" r="4" s="2"><O><![CDATA[供应商：]]></O>
+</C>
+<C c="1" r="4" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="Supplier" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" leftParentDefault="false" left="A2" />
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="2" r="4" s="2"><O><![CDATA[总成本：]]></O>
+</C>
+<C c="3" r="4" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="Costs" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" leftParentDefault="false" left="A2" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="4" r="4"><O><![CDATA[日常维护年支出：]]></O>
+</C>
+<C c="5" r="4" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="MaintenanceCosts" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="6" r="4"><O><![CDATA[平均使用年限：]]></O>
+</C>
+<C c="7" r="4" cs="2" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="UsageTime" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="0" r="6" cs="8" s="4"></C>
+<C c="8" r="6" s="5"></C>
+<C c="10" r="6"></C>
+<C c="11" r="6"></C>
+<C c="12" r="6"></C>
+<C c="13" r="6"></C>
+<C c="14" r="6"></C>
+<C c="15" r="6"></C>
+<C c="0" r="7" s="6"><O><![CDATA[设备编号]]></O>
+</C>
+<C c="1" r="7" s="6"><O><![CDATA[设备名称]]></O>
+</C>
+<C c="2" r="7" s="6"><O><![CDATA[购入数量]]></O>
+</C>
+<C c="3" r="7" s="6"><O><![CDATA[购入时间]]></O>
+</C>
+<C c="4" r="7" s="6"><O><![CDATA[预计更新时间]]></O>
+</C>
+<C c="5" r="7" s="6"><O><![CDATA[使用年限]]></O>
+</C>
+<C c="6" r="7" s="6"><O><![CDATA[成本]]></O>
+</C>
+<C c="7" r="7" s="6"><O><![CDATA[增]]></O>
+</C>
+<C c="8" r="7" s="6"><O><![CDATA[删]]></O>
+</C>
+<C c="0" r="8" s="7"><O t="DSColumn"><Attributes dsName="ds2" columnName="EquipmentID" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[CompanyID]]></CNAME><Compare op="0">
+<AnDSColumn dsName="ds1" columnName="CompanyID" /></Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" leftParentDefault="false" left="A2" />
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="1" r="8" s="7"><O t="DSColumn"><Attributes dsName="ds2" columnName="Equipment" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="2" r="8" s="7"><O t="DSColumn"><Attributes dsName="ds2" columnName="Amount" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="3" r="8" s="8"><O t="DSColumn"><Attributes dsName="ds2" columnName="PurchaseDate" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.DateEditor">
+<WidgetAttr/>
+<DateAttr start="" end=""/></Widget>
+</C>
+<C c="4" r="8" s="8"><O t="DSColumn"><Attributes dsName="ds2" columnName="UpdateTime" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.DateEditor">
+<WidgetAttr/>
+<DateAttr start="" end=""/></Widget>
+</C>
+<C c="5" r="8" s="7"><O t="DSColumn"><Attributes dsName="ds2" columnName="UsageTime" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="6" r="8" s="9"><O t="DSColumn"><Attributes dsName="ds2" columnName="costs" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="7" r="8" s="10"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.impl.write.AppendRowButton">
+<WidgetAttr/>
+<IconName>add</IconName>
+<FixCell row="8" col="0"/><OldCell row="8" col="7"/></Widget>
+</C>
+<C c="8" r="8" s="10"><Widget class="com.fr.report.web.ui.impl.write.DeleteRowButton">
+<WidgetAttr/>
+<IconName>delete</IconName>
+<FixCell row="8" col="0"/><OldCell row="8" col="8"/></Widget>
+</C>
+<C c="0" r="9" cs="6" s="11"><O><![CDATA[平均每个设备每年成本费：]]></O>
+</C>
+<C c="6" r="9" cs="3" s="12"><O t="Formula" class="Formula"><Attributes><![CDATA[=(sum(G9)/3)/count(A9)]]></Attributes></O>
+</C>
+<C c="9" r="9"></C>
+<C c="0" r="10"></C>
+<C c="0" r="11"><O><![CDATA[制表人：]]></O>
+</C>
+<C c="1" r="11" s="3"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="0" r="12"><O><![CDATA[制表日期：]]></O>
+</C>
+<C c="1" r="12" s="13"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.DateEditor">
+<WidgetAttr/>
+<DateAttr start="" end=""/></Widget>
+</C>
+<C c="3" r="12"></C>
+<C c="5" r="12" s="2"><O><![CDATA[单位：]]></O>
+</C>
+<C c="6" r="12" s="3"><O><![CDATA[人民币]]></O>
+</C>
+<C c="0" r="13" s="14"></C>
+<C c="1" r="13" s="14"></C>
+<C c="2" r="13" s="14"></C>
+<C c="3" r="13" s="14"></C>
+<C c="4" r="13" s="14"></C>
+<C c="5" r="13" s="14"></C>
+<C c="6" r="13" s="14"></C>
+<C c="7" r="13" s="14"></C>
+<C c="8" r="13" s="14"></C>
+<C c="0" r="15" cs="9" s="15"><O><![CDATA[“IT运维部设备明细查询表”报表说明：]]></O>
+</C>
+<C c="0" r="16" cs="9" s="16"><O><![CDATA[1、多源填报]]></O>
+</C>
+<C c="0" r="17" cs="9" s="16"><O><![CDATA[该报表上下两片数据来自于不同的数据库表，数据可编辑，提交到不同的数据表保存数据。]]></O>
+</C>
+<C c="0" r="18" cs="9" s="16"><O><![CDATA[2、增删改]]></O>
+</C>
+<C c="0" r="19" cs="9" s="17"><O><![CDATA[报表下半部分明细数据，可通过右侧的按钮进行增删改的操作。]]></O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="14" foreground="-16739659" />
+<Background name="NullBackground" />
+<Border><Bottom style="6" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ImageBackground"
+ specifiedImageWidth="-1.0"
+ specifiedImageHeight="-1.0"
+ layout="2">
+<Image width="271" height="20">
+<![CDATA[mDD3s_Ctrm_#OF0>K!!9WJ6!OQ7+.ZoaQ9>0E]d2laNppWiE)!WiGp)li!RsTDPW,0?[QWIV
+_g1pu1d?NUQ%!281S82*R8))W+4
+iebJi;<TD!-WQ)u!;iUeW~
+
+]]>
+</Image>
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ImageBackground"
+ specifiedImageWidth="-1.0"
+ specifiedImageHeight="-1.0"
+ layout="2">
+<Image width="271" height="20">
+<![CDATA[mDD3s_Ctrm_#OF0>K!!9WJ6!OQ7+.ZoaQ9>0E]d2laNppWiE)!WiGp)li!RsTDPW,0?[QWIV
+_g1pu1d?NUQ%!281S82*R8))W+4
+iebJi;<TD!-WQ)u!;iUeW~
+
+]]>
+</Image>
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12" />
+<Background name="ColorBackground"
+ color="-853505">
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.SimpleDateFormat"><![CDATA[yyyy-MM-dd]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat"><![CDATA[#,##0]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6697729"
+ /><Bottom style="1" color="-6697729"
+ /><Left style="1" color="-6697729"
+ /><Right style="1" color="-6697729"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat"><![CDATA[#,##0]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6697729"
+ /><Bottom style="1" color="-6697729"
+ /><Left style="1" color="-6697729"
+ /><Right style="1" color="-6697729"
+ /></Border>
+</Style>
+<Style>
+<Format class="java.text.SimpleDateFormat"><![CDATA[yyyy-MM-dd]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="2" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-328966">
+</Background>
+<Border><Top style="3" color="-6894375"
+ /><Left style="3" color="-6894375"
+ /><Right style="3" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-328966">
+</Background>
+<Border><Left style="3" color="-6894375"
+ /><Right style="3" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-328966">
+</Background>
+<Border><Bottom style="3" color="-6894375"
+ /><Left style="3" color="-6894375"
+ /><Right style="3" color="-6894375"
+ /></Border>
+</Style>
+</StyleList>
+</WorkBook>

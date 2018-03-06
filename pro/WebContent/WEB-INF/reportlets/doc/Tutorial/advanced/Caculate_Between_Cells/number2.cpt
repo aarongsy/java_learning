@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.5</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT CITY,CUSTOMERNAME,CUSTOMER.CUSTOMERID,AMOUNT FROM CUSTOMER,ORDERS WHERE CUSTOMER.CUSTOMERID=ORDERS.CUSTOMERID ORDER BY COUNTRY
+]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<RowHeight defaultValue="19">
+<![CDATA[19,19,19,19,19,19,19,19,19,19,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,72,72,72,72,72,72,72,72,72,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="1" r="1" s="0"><O><![CDATA[客户地区]]></O>
+</C>
+<C c="2" r="1" s="0"><O><![CDATA[序号]]></O>
+</C>
+<C c="3" r="1" s="0"><O><![CDATA[客户名称]]></O>
+</C>
+<C c="4" r="1" s="0"><O><![CDATA[订单总额]]></O>
+</C>
+<C c="1" r="2" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="CITY" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="2" r="2" s="2"><O t="Formula" class="Formula"><Attributes><![CDATA[=&D3]]></Attributes></O>
+<Expand leftParentDefault="false" left="D3" />
+</C>
+<C c="3" r="2" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="CUSTOMERNAME" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="4" r="2" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="AMOUNT" />
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="4" r="8"></C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-3342337">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-52">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.5</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="20000" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT orderID,customerID,signDate,payMethod,shipMethod,amount,empid FROM ORDERS]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="20000" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT orderID,ordersdetail.productID,productname,ordersdetail.quantity,price FROM ORDERSDETAIL,product where product.productid=ordersdetail.productid]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<RowHeight defaultValue="19">
+<![CDATA[19,19,19,19,19,19,19,19,19,19,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,72,72,72,72,79,72,72,72,72,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="7" rs="2" s="0"><O><![CDATA[订单统计表]]></O>
+<Expand leftParentDefault="false" left="C3" />
+</C>
+<C c="0" r="2" s="1"></C>
+<C c="1" r="2" s="2"><O><![CDATA[订单号：]]></O>
+<Expand leftParentDefault="false" left="C3" />
+</C>
+<C c="2" r="2" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="ORDERID" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="3" r="2" s="2"></C>
+<C c="4" r="2" s="2"></C>
+<C c="5" r="2" s="2"></C>
+<C c="6" r="2" s="4"></C>
+<C c="0" r="3" s="1"></C>
+<C c="1" r="3" s="2"><O><![CDATA[客户名：]]></O>
+</C>
+<C c="2" r="3" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="CUSTOMERID" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" leftParentDefault="false" left="C3" />
+</C>
+<C c="3" r="3" s="2"></C>
+<C c="4" r="3" s="2"><O><![CDATA[总金额：]]></O>
+</C>
+<C c="5" r="3" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="AMOUNT" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" leftParentDefault="false" left="C3" />
+</C>
+<C c="6" r="3" s="4"></C>
+<C c="0" r="4" s="1"></C>
+<C c="1" r="4" s="2"><O><![CDATA[付款方式：]]></O>
+</C>
+<C c="2" r="4" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="PAYMETHOD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" leftParentDefault="false" left="C3" />
+</C>
+<C c="3" r="4" s="2"></C>
+<C c="4" r="4" s="2"><O><![CDATA[发货方式：]]></O>
+</C>
+<C c="5" r="4" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="SHIPMETHOD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" leftParentDefault="false" left="C3" />
+</C>
+<C c="6" r="4" s="4"></C>
+<C c="0" r="5" s="1"></C>
+<C c="1" r="5" s="2"><O><![CDATA[销售员：]]></O>
+</C>
+<C c="2" r="5" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="EMPID" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" leftParentDefault="false" left="C3" />
+</C>
+<C c="3" r="5" s="2"></C>
+<C c="4" r="5" s="2"><O><![CDATA[发货日期：]]></O>
+</C>
+<C c="5" r="5" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="SIGNDATE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" leftParentDefault="false" left="C3" />
+</C>
+<C c="6" r="5" s="4"></C>
+<C c="0" r="6" s="1"></C>
+<C c="1" r="6" s="2"></C>
+<C c="2" r="6" s="2"></C>
+<C c="3" r="6" s="2"></C>
+<C c="4" r="6" s="2"></C>
+<C c="5" r="6" s="2"></C>
+<C c="6" r="6" s="4"></C>
+<C c="0" r="7" s="1"></C>
+<C c="1" r="7" s="5"><O><![CDATA[产品编号]]></O>
+</C>
+<C c="2" r="7" s="5"><O><![CDATA[产品名]]></O>
+</C>
+<C c="3" r="7" s="5"><O><![CDATA[单价]]></O>
+</C>
+<C c="4" r="7" s="5"><O><![CDATA[订购数量]]></O>
+</C>
+<C c="5" r="7" s="5"><O><![CDATA[金额]]></O>
+</C>
+<C c="6" r="7" s="4"></C>
+<C c="0" r="8" s="1"></C>
+<C c="1" r="8" s="6"><O t="DSColumn"><Attributes dsName="ds2" columnName="PRODUCTID" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[ORDERID]]></CNAME><Compare op="0">
+<AnDSColumn dsName="ds1" columnName="ORDERID" /></Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" leftParentDefault="false" left="C3" />
+</C>
+<C c="2" r="8" s="6"><O t="DSColumn"><Attributes dsName="ds2" columnName="PRODUCTNAME" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="3" r="8" s="6"><O t="DSColumn"><Attributes dsName="ds2" columnName="PRICE" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="4" r="8" s="6"><O t="DSColumn"><Attributes dsName="ds2" columnName="QUANTITY" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="5" r="8" s="6"><O t="Formula" class="Formula"><Attributes><![CDATA[=D9*E9]]></Attributes></O>
+</C>
+<C c="6" r="8" s="4"></C>
+<C c="0" r="9" s="7"></C>
+<C c="1" r="9" s="3"><Expand leftParentDefault="false" left="C3" />
+<CellPageAttr pageAfterRow="true" /></C>
+<C c="2" r="9" s="3"></C>
+<C c="3" r="9" s="3"></C>
+<C c="4" r="9" s="3"></C>
+<C c="5" r="9" s="3"></C>
+<C c="6" r="9" s="8"></C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="20" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Left style="1" /></Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" /></Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" /><Left style="1" /></Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" /><Right style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

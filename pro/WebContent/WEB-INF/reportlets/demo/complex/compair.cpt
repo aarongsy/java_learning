@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.5</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT YEAR(SIGNDATE) AS YEAR,MONTH(SIGNDATE) AS MONTH,ORDERID,AMOUNT,CUSTOMERID FROM ORDERS where month(SIGNDATE)<=6 and LEN(customerid)=1]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT CUSTOMERID,CUSTOMERNAME FROM CUSTOMER]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<ReportPageAttr>
+<HR F="0" T="3" /></ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+<HFElement className="TextHFElement">
+<FRFont name="SimSun" style="1" size="18" foreground="-6697729" />
+<![CDATA[            Over the same period]]>
+</HFElement>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[41,19,19,19,23,19,19,19,19,19,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,56,69,106,101,125,118,72,72,72,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="7" s="0"><O><![CDATA[同期比]]></O>
+</C>
+<C c="0" r="1" cs="7" s="1"><O t="Formula" class="Formula"><Attributes><![CDATA[=today()]]></Attributes></O>
+</C>
+<C c="0" r="2" cs="7" s="2"></C>
+<C c="0" r="3" s="3"><O><![CDATA[客户]]></O>
+</C>
+<C c="1" r="3" s="3"><O><![CDATA[年份]]></O>
+</C>
+<C c="2" r="3" s="3"><O><![CDATA[月份]]></O>
+</C>
+<C c="3" r="3" s="3"><O><![CDATA[订单数量]]></O>
+</C>
+<C c="4" r="3" s="3"><O><![CDATA[订单总额]]></O>
+</C>
+<C c="5" r="3" s="3"><O><![CDATA[同期比]]></O>
+</C>
+<C c="6" r="3" s="3"><O><![CDATA[上月环比]]></O>
+</C>
+<C c="0" r="4" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="CUSTOMERID" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.TableDataDictionary">
+<FormulaDictAttr keyColumnIndex="1" valueColumnIndex="2"></FormulaDictAttr>
+<TableDataDictAttr>
+<TableData class="com.fr.data.impl.NameTableData">
+<Name><![CDATA[ds2]]></Name>
+</TableData>
+</TableDataDictAttr>
+</Dictionary></Present>
+<Expand dir="0" />
+</C>
+<C c="1" r="4" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="YEAR" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="2" r="4" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="MONTH" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="3" r="4" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="ORDERID" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.CountFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+</C>
+<C c="4" r="4" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="AMOUNT" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+</C>
+<C c="5" r="4" s="5"><O t="Formula" class="Formula"><Attributes><![CDATA[=E5 / E5[B5:-1,C6:0]]]></Attributes></O>
+</C>
+<C c="6" r="4" s="5"><O t="Formula" class="Formula"><Attributes><![CDATA[=E5 / E5[C5:-1]]]></Attributes></O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style style_name="RTitle" />
+<Style horizontal_alignment="4">
+<Format class="java.text.SimpleDateFormat"><![CDATA[MM/dd/yyyy]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style style_name="Head" />
+<Style style_name="Head1" />
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" color="-6697729"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat"><![CDATA[#0.00%]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" color="-6697729"
+ /></Border>
+</Style>
+</StyleList>
+</WorkBook>

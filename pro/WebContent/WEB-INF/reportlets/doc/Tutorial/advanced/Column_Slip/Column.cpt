@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.2</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes isCache="false" maxMemRowCount="20000" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT * FROM EMPLOYEE]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings shrinkToFit="false" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[40]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[59,103,55,35]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="4" s="0"><O><![CDATA[员工信息调查表]]></O>
+<Expand leftParentDefault="false" left="B2" />
+</C>
+<C c="4" r="0"><O><![CDATA[]]></O>
+<Expand leftParentDefault="false" left="B2" />
+</C>
+<C c="0" r="1" s="1"><O><![CDATA[编号：]]></O>
+<Expand leftParentDefault="false" left="B2" />
+</C>
+<C c="1" r="1" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="EMPID" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="2" r="1" cs="2" rs="4" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="PHOTO" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" leftParentDefault="false" left="B2" />
+</C>
+<C c="4" r="1"></C>
+<C c="0" r="2" s="1"><O><![CDATA[姓名：]]></O>
+</C>
+<C c="1" r="2" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="EMPNAME" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="0" r="3" s="1"><O><![CDATA[性别：]]></O>
+</C>
+<C c="1" r="3" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="SEX" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" leftParentDefault="false" left="B2" />
+</C>
+<C c="0" r="4" s="1"><O><![CDATA[学校：]]></O>
+</C>
+<C c="1" r="4" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="SCHOOL" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" leftParentDefault="false" left="B2" />
+</C>
+<C c="0" r="5" s="1"><O><![CDATA[学位：]]></O>
+</C>
+<C c="1" r="5" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="QUALIFICATION" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" leftParentDefault="false" left="B2" />
+</C>
+<C c="2" r="5" s="1"><O><![CDATA[专业：]]></O>
+</C>
+<C c="3" r="5" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="MAJOR" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" leftParentDefault="false" left="B2" />
+</C>
+<C c="0" r="6"><O><![CDATA[]]></O>
+<Expand leftParentDefault="false" left="B2" />
+</C>
+<C c="1" r="6"></C>
+<C c="2" r="6"></C>
+<C c="3" r="6"></C>
+</CellElementList>
+<WorkSheetAttr direction="0" start="0" end="6" maxRowOrColumn="42" />
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="20" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

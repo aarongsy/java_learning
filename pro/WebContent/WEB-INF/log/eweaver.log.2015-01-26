@@ -1,0 +1,5 @@
+ERROR:[2015-01-26 09:43:35,117] com.eweaver.document.file.FileUpload(http-0.0.0.0-80-115) :文件上传错误: Could not parse multipart servlet request; nested exception is org.apache.commons.fileupload.FileUploadException: Stream ended unexpectedly
+ ERROR:[2015-01-26 11:22:05,545] com.eweaver.document.file.FileUpload(http-0.0.0.0-80-14) :文件上传错误: Could not parse multipart servlet request; nested exception is org.apache.commons.fileupload.FileUploadException: Read timed out
+ ERROR:[2015-01-26 23:59:00,016] com.eweaver.base.job.DelAttachJob(quartzScheduler_Worker-1) :org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [select id,imagefileid from imagefiletemp where to_date(to_char(sysdate,'yyyy-MM-dd'),'yyyy-MM-dd')-to_date(createdate,'yyyy-MM-dd') >= ]; nested exception is java.sql.SQLSyntaxErrorException: ORA-00936: 缺失表达式
+
+ 

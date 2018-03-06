@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.5</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT * FROM STSCORE]]></Query>
+</TableData>
+</TableDataMap>
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.7499999999999999" bottom="0.27" right="0.7499999999999999" />
+</ReportSettings>
+<ReportPageAttr>
+<HR F="1" T="1" /></ReportPageAttr>
+<RowHeight defaultValue="19">
+<![CDATA[19,30,19,19,19,19,19,19,19,19,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[82,99,72,72,72,72,72,72,72,72,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="1" s="0"><O t="BiasTextPainter"><IsBackSlash value="false"/>
+<![CDATA[科目|班级
+]]>
+</O>
+</C>
+<C c="1" r="1" s="0"><O t="DSColumn"><Attributes dsName="ds1" columnName="COURSE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="1" />
+</C>
+<C c="0" r="2" s="0"><O t="DSColumn"><Attributes dsName="ds1" columnName="CLASSNO" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="1" r="2" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="GRADE" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.AverageFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+</C>
+<C c="0" r="4" cs="5" rs="8"><O t="CC"><LayoutAttr selectedIndex="0" columns="0" /><Chart name="Default">
+<Chart class="com.fr.chart.Chart"><GI>
+<Background name="ColorBackground"
+ color="-1">
+</Background>
+<Border style="0" color="-16777216" /></GI>
+<Plot class="com.fr.chart.plot.Bar2DPlot">
+<GI>
+<Border style="0" color="-16777216" /></GI>
+<SeriesCollection><Default lineStyle="0" alpha="1.0"></Default></SeriesCollection><Legend position="4" legendNum="10">
+<GI>
+<Border style="0" color="-16777216" /></GI>
+<FRFont name="SimSun" style="0" size="12" />
+</Legend>
+<CateAttr bgColor="-1"/><Axis class="com.fr.chart.axis.CategoryAxis"><Title>
+<GI>
+<Border style="0" color="-16777216" /></GI>
+<O><![CDATA[X轴]]></O>
+<TextAttr alignText="0"><FRFont name="SimSun" style="0" size="12" />
+</TextAttr>
+<TitleVisible value="true" />
+</Title>
+<AxisLine style="1" color="-8355712" />
+<AxisPosition value="3" />
+<AxisLabelPosition value="3" />
+<MainGridLine style="0" />
+<SecGridLine style="0" />
+<AxisLabelCount value="-1" />
+<TickLine type = "1" mainStroke = "1.0" len = "4" secType = "1" secStroke = "1.0" secLen = "0" />
+<Stagger value = "false"/>
+<TextAttr alignText="0"></TextAttr>
+</Axis>
+<Axis class="com.fr.chart.axis.ValueAxis"><Title>
+<GI>
+<Border style="0" color="-16777216" /></GI>
+<O><![CDATA[Y轴]]></O>
+<TextAttr alignText="0"><FRFont name="SimSun" style="0" size="12" />
+</TextAttr>
+<TitleVisible value="true" />
+</Title>
+<AxisLine style="1" color="-8355712" />
+<AxisPosition value="2" />
+<AxisLabelPosition value="3" />
+<MainGridLine style="3" color="-8355712" />
+<SecGridLine style="0" />
+<AxisLabelCount value="-1" />
+<TickLine type = "1" mainStroke = "1.0" len = "4" secType = "1" secStroke = "1.0" secLen = "0" />
+<Stagger value = "false"/>
+<TextAttr alignText="0"></TextAttr>
+<AxisRange/></Axis>
+<BarAttr isHorizontal="false" overlap="0.0" interval="2.0"/>
+<Attr2D is3DSimulation="false"/></Plot>
+</Chart>
+</Chart>
+<ReportDataDefinition>
+<CategoryDefintion value="A3" />
+<SeriesDefinition name="B2" value="B3" />
+<SeriesPos value="0" />
+<BaseOn value="true" />
+<Top topCate="-1" topValue="-1" />
+</ReportDataDefinition>
+</O>
+<Expand leftParentDefault="false" left="A3" upParentDefault="false" />
+<CellPageAttr pageAfterRow="true" /></C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style>
+<Format class="java.text.DecimalFormat"><![CDATA[#0.0#]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

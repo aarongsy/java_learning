@@ -1,0 +1,7 @@
+ERROR:[2014-10-21 16:48:32,776] com.eweaver.workflow.request.dao.RequestbaseDaoHB(http-0.0.0.0-80-27) :java.sql.SQLSyntaxErrorException: ORA-00933: SQL 命令未正确结束
+
+ ERROR:[2014-10-21 16:51:18,923] com.eweaver.workflow.request.dao.RequestbaseDaoHB(http-0.0.0.0-80-11) :java.sql.SQLSyntaxErrorException: ORA-00933: SQL 命令未正确结束
+
+ ERROR:[2014-10-21 23:59:00,025] com.eweaver.base.job.DelAttachJob(quartzScheduler_Worker-7) :org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [select id,imagefileid from imagefiletemp where to_date(to_char(sysdate,'yyyy-MM-dd'),'yyyy-MM-dd')-to_date(createdate,'yyyy-MM-dd') >= ]; nested exception is java.sql.SQLSyntaxErrorException: ORA-00936: 缺失表达式
+
+ 

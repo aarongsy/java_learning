@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SchemaDataSet><SchemaData ID="workflowinfo" version="4.0.0"><Fields><Field name="ID" type="string"/><Field name="OBJNAME" type="string"/><Field name="OBJTYPE" type="string"/><Field name="FORMID" type="string"/><Field name="ISACTIVE" type="int"/><Field name="ISAPPROVABLE" type="int"/><Field name="APPROVEOBJ" type="string"/><Field name="APPROVEOBJTYPE" type="string"/><Field name="ISTRIGGER" type="int"/><Field name="TRIGGERCYCLE" type="int"/><Field name="TRIGGERDATE" type="string"/><Field name="TRIGGERTIME" type="string"/><Field name="HELPDOC" type="string"/><Field name="DEFTITLE" type="string"/><Field name="OBJDESC" type="string"/><Field name="COL1" type="string"/><Field name="COL2" type="string"/><Field name="COL3" type="string"/><Field name="REMINDTYPE" type="string"/><Field name="ISEMAIL" type="int"/><Field name="ISSMS" type="int"/><Field name="ISRTX" type="int"/><Field name="EMAILMODEL" type="string"/><Field name="MSGMODEL" type="string"/><Field name="ISDELETE" type="int"/><Field name="DSPORDER" type="int"/><Field name="ISPOPUP" type="int"/><Field name="MODULEID" type="string"/><Field name="GRAPH" type="string"/><Field name="ISDOC" type="int"/><Field name="DOCTEMPLATE" type="string"/></Fields><DataSet><Data><Data name="REMINDTYPE">4028819d0e521bf9010e5238bec2000c</Data><Data name="GRAPH">&lt;mxGraphModel&gt;
+  &lt;root&gt;
+    &lt;mxCell id="0"/&gt;
+    &lt;mxCell id="1" parent="0"/&gt;
+    &lt;mxCell id="2" value="员工报销付款通知" parent="1" vertex="1"&gt;
+      &lt;mxGeometry width="710" height="40" as="geometry"/&gt;
+    &lt;/mxCell&gt;
+    &lt;mxCell id="3" value="" parent="1" vertex="1"&gt;
+      &lt;mxGeometry y="40" height="270" as="geometry"/&gt;
+    &lt;/mxCell&gt;
+    &lt;mxCell id="4" value="" parent="1" vertex="1"&gt;
+      &lt;mxGeometry x="710" y="40" height="270" as="geometry"/&gt;
+    &lt;/mxCell&gt;
+    &lt;mxCell id="7" value="" parent="1" vertex="1"&gt;
+      &lt;mxGeometry y="310" width="710" as="geometry"/&gt;
+    &lt;/mxCell&gt;
+    &lt;mxCell id="40285a8d4aaea6d9014aaf07bb26039f" value="01.开始" style="rounded=1" parent="1" vertex="1"&gt;
+      &lt;mxGeometry x="220" y="90" width="100" height="40" as="geometry"/&gt;
+    &lt;/mxCell&gt;
+    &lt;mxCell id="40285a8d4aaea6d9014aaf07bb3603a1" value="00.归档" style="rounded=1" parent="1" vertex="1"&gt;
+      &lt;mxGeometry x="390" y="90" width="100" height="40" as="geometry"/&gt;
+    &lt;/mxCell&gt;
+    &lt;mxCell id="40285a8d4aaea6d9014aaf07bb4503a3" parent="1" source="40285a8d4aaea6d9014aaf07bb26039f" target="40285a8d4aaea6d9014aaf07bb3603a1" edge="1"&gt;
+      &lt;mxGeometry relative="1" as="geometry"/&gt;
+    &lt;/mxCell&gt;
+  &lt;/root&gt;
+&lt;/mxGraphModel&gt;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </Data><Data name="TRIGGERTIME"></Data><Data name="HELPDOC"></Data><Data name="COL3"></Data><Data name="APPROVEOBJ">40285a8d4aaea6d9014aaebc73a1000c</Data><Data name="COL2"></Data><Data name="COL1"></Data><Data name="TRIGGERCYCLE"></Data><Data name="ID">40285a8d4aaea6d9014aaf03638e039b</Data><Data name="ISDELETE">0</Data><Data name="ISAPPROVABLE">0</Data><Data name="FORMID">40285a8d4aaea6d9014aaeb722d60005</Data><Data name="ISDOC">0</Data><Data name="APPROVEOBJTYPE">40285a8d4aaea6d9014aaebc73a1000c</Data><Data name="OBJNAME">员工报销付款通知</Data><Data name="ISRTX">0</Data><Data name="DOCTEMPLATE"></Data><Data name="EMAILMODEL"></Data><Data name="MSGMODEL"></Data><Data name="OBJTYPE"></Data><Data name="DEFTITLE">您的报销单（$40285a8d4aaea6d9014aaf0448bf039d$）已于 $40285a8d4aaea6d9014aaed3aad700c3$ 付款</Data><Data name="DSPORDER">0</Data><Data name="MODULEID">40285a8d4aaea6d9014aaea807000003</Data><Data name="ISPOPUP">0</Data><Data name="TRIGGERDATE"></Data><Data name="ISTRIGGER">0</Data><Data name="OBJDESC"></Data><Data name="ISEMAIL">0</Data><Data name="ISACTIVE">1</Data><Data name="ISSMS">0</Data></Data></DataSet></SchemaData></SchemaDataSet>

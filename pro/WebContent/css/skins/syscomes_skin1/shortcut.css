@@ -1,0 +1,85 @@
+/*
+	shortcut.css
+	������ڶ�Ӧ����ʽ
+*/
+html,body{
+	margin: 0;	/*��߾�*/ 
+	padding: 0;	/*�ڱ߾�*/ 
+}
+#shortcut{
+	border: 0px solid red;	/*�߿� (���  ��ʽ  ��ɫ)*/ 
+}
+#shortcut .data{/*��ݷ�ʽ��������Ӧ����ʽ*/
+}
+#shortcut .data table{
+	border: none;	/*�߿� (��)*/ 
+	margin: 0;	/*��߾�*/ 
+}
+#shortcut .data ul{
+	list-style: none;	/*�б���ʽ(��)*/
+}
+#shortcut .data ul li{
+	float: left;	/*����*/
+	margin-top: 10px;	/*����߾�*/
+	margin-left: 0px;	/*����߾�*/
+}
+#shortcut .data ul li a{
+	cursor: pointer;/*�������ȥ����״(����)*/
+	height: 1em;	/*�߶�*/
+	text-decoration: none;
+	padding: 4px 4px 0px 4px;
+	border: 1px solid #fff;
+}
+#shortcut .data ul li a:hover{
+	background-color: #E8F5FD;
+	border: 1px solid #75B3F3;
+	padding: 4px 4px 0px 4px;
+}
+#shortcut .data ul li a div{
+	text-align: center;	/*���ֶ��뷽ʽ*/
+}
+#shortcut .data ul li .pic{	/*ͼƬ��Ӧ��div����ʽ*/
+	height: 50px;	/*�߶�*/
+	width: 50px;	/*���*/ 
+	background-color: transparent;	/*������ɫ*/
+	padding: 0px;	/*�ڱ߾�*/ 
+}
+#shortcut .data ul li .pic img{	/*ͼƬ����ʽ*/
+	height: 50px;	/*�߶�*/
+	width: 50px;	/*���*/ 
+}
+#shortcut .data ul li .text{/*ͼƬ�·����������Ӧ����ʽ*/
+	font-size: 11px;	/*�����С*/
+	color: #333;/*��ɫ*/
+}
+#shortcut .handler{/*�ײ���������Ӧ����ʽ*/
+	border: 0px solid red;	/*�߿� (���  ��ʽ  ��ɫ)*/ 
+	position: absolute;	/*��λ*/
+	top: 30;
+	right: 0;
+}
+#shortcut .handler div{
+	width: 16px;	/*���*/ 
+	height: 16px;	/*�߶�*/
+	cursor: pointer;/*�������ȥ����״(����)*/
+}
+#shortcut .handler .prev{/*�ײ���������ǰ������Ӧ����ʽ*/
+	background: url("images/shortcut_prev.png") no-repeat;	/*���� (ͼƬƽ�̷�ʽ����ƽ��)*/
+	float: left;		/*����*/
+	margin-top: 2px;	/*����߾�*/
+	margin-left: 20px;	/*����߾�*/
+	display: none;
+}
+#shortcut .handler .next{/*�ײ���������󻬶���Ӧ����ʽ*/
+	background: url("images/rightArrow.png") no-repeat;	/*���� (ͼƬƽ�̷�ʽ����ƽ��)*/
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+#shortcut .handler .setting{/*�ײ����������ö�Ӧ����ʽ*/
+	background: url("images/shortcut_setting.png") no-repeat;	/*���� (ͼƬƽ�̷�ʽ����ƽ��)*/
+	float: right;		/*����*/
+	margin-top: 2px;	/*����߾�*/
+	margin-right: 15px;	/*����߾�*/
+	display: none;
+}

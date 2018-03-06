@@ -1,0 +1,108 @@
+/*
+	workflow.css
+	流程页面相关的样式
+*/
+
+
+
+
+
+
+/******签字意见表格对应的样式******/
+#layoutFrame{
+	width: 100%;
+	padding: 0;
+}
+table.layouttable,table.detailtable {
+	border: 0;
+}
+table.detailtable {
+	margin: 10px 0;
+}
+table.layouttable caption{
+	padding: 0 0 5px 0; 
+	text-align: center; 
+	font-family: Microsoft YaHei;
+	font-size: 26px; 
+	font-weight: normal; 
+	letter-spacing: 0px !important;
+	border-top: 0 !important;
+}
+table.detailtable caption{/*明细表标题对应的样式*/
+	font-family: Microsoft YaHei;
+	text-align: left;			/*文本对齐方式*/
+	font-size: 12px;
+	font-weight: bold;
+	border: 0px !important;
+	border-bottom: 1px solid #D8DFEA;
+	padding: 0;
+	margin: 0;
+}
+table.layouttable table.detailtable thead td{
+	background-color: #EDF0F5;
+	font-weight: bold;
+}
+table.layouttable table.detailtable tbody td{
+	border: 1px solid #EDF0F5;
+	padding: 2px 4px;
+}
+table.layouttable td{
+	border: 0;
+}
+table.layouttable td a,table.tableApprovalOpinions td a {
+	color: #3B59AA !important;
+	font-family: Segoe UI;
+	font-weight: bold !important;
+}
+
+table.layouttable {/*主表表格样式*/
+	border-top: 2px solid #D8DFEA;
+	border-bottom: 0px solid #D8DFEA;
+}
+table.layouttable td.fieldname, table.layouttable td.FieldName{
+	text-align: left;
+	padding-left: 3px;
+	border-bottom: 1px solid #EDF0F5;
+	color: #000;
+}
+table.layouttable td.fieldvalue, table.layouttable td.FieldValue{
+	border-bottom: 1px solid #fff;
+}
+span.formFlowNo{
+	font-weight: bold;
+	color: #3B59AA;
+}
+
+
+table.signature{
+	border-top: 1px solid #EDF0F5 !important;
+	border-bottom: 1px solid #EDF0F5 !important;
+	margin: 10px 0;
+}
+table.signature td.fieldname{
+	width: 12% !important;
+}
+table.signature td.fieldvalue{
+	background-color: #EDF0F5;
+}
+
+.requestlog{
+
+}
+.tableApprovalOpinions {
+	border: 1px solid #D8DFEA;
+}
+.tableApprovalOpinions tr.bg th {
+	background-color: #EDF0F5;
+	font-weight: bold;
+}
+.tableApprovalOpinions th,  .tableApprovalOpinions td {
+	padding: 4px 5px;
+	border-top: 1px solid #D8DFEA;
+	border-bottom: 0px solid #D8DFEA;
+	font-family: Microsoft YaHei;
+	color: #333;
+}
+.tableApprovalOpinions td a{
+	font-family: Microsoft YaHei;
+}

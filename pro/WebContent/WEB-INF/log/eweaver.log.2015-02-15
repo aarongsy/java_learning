@@ -1,0 +1,8 @@
+ERROR:[2015-02-15 08:50:13,176] com.eweaver.document.file.FileUpload(http-0.0.0.0-80-120) :文件上传错误: Could not parse multipart servlet request; nested exception is org.apache.commons.fileupload.FileUploadException: Read timed out
+ ERROR:[2015-02-15 09:08:37,966] com.eweaver.document.file.FileUpload(http-0.0.0.0-80-79) :文件上传错误: Could not parse multipart servlet request; nested exception is org.apache.commons.fileupload.FileUploadException: Read timed out
+ ERROR:[2015-02-15 09:29:00,816] com.eweaver.document.file.FileUpload(http-0.0.0.0-80-108) :文件上传错误: Could not parse multipart servlet request; nested exception is org.apache.commons.fileupload.FileUploadException: Read timed out
+ ERROR:[2015-02-15 10:05:45,884] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-0.0.0.0-80-144) :java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+ ERROR:[2015-02-15 23:59:00,015] com.eweaver.base.job.DelAttachJob(quartzScheduler_Worker-3) :org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [select id,imagefileid from imagefiletemp where to_date(to_char(sysdate,'yyyy-MM-dd'),'yyyy-MM-dd')-to_date(createdate,'yyyy-MM-dd') >= ]; nested exception is java.sql.SQLSyntaxErrorException: ORA-00936: 缺失表达式
+
+ 

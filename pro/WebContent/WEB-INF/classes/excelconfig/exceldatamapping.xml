@@ -1,0 +1,72 @@
+<xml version="1.0" encoding="utf-8">
+<!-- 
+ID为在formfield表中字段所对应的id
+cols为此字段在excel所对应的列，第一列cols为0,第二列cols为1,...
+desc为描述字段含义
+foreignds:为引用的外部数据源。
+conditions：需要从其他字段取值的Sql语句 其中 语句中的 {32位ID} 为其他field ID。
+shownameMustQuery: 显示名称是否需要查询数据库,该设置仅对关联选择有效。
+shownameMustQuery的用法解释如下:
+如果关联选择的最终显示名称和excel中的数据是不一致的，则需要开启此设置。
+假设有一个导入的列字段为人员字段，Excel中相应的数据为人员的英文名,而browser框会显示人员的中文名称，则此时就需要打开此设置:shownameMustQuery="true"
+如果导入excel中的那列数据和browser框的显示名称是一致的，则不建议开启，因为不开启的话，导入时的效率要明显优于开启，在关联选择字段有多个的时候这种情况会表现的更为明显。
+ -->
+<tables>
+<table ID="uf_substeeldraw">
+	<field ID="28289a0728287dbe012828a5c57a01d2" 
+	name="" selectitem="" refobj = "" cols="0" desc="供应商编码" ></field>
+	<field ID="28289a0728287dbe012828ad5573023f" 
+	name="" selectitem="" refobj = "" cols="1" desc="日程单号"></field>
+	<field ID="28289a0728287dbe012828ad55830240" 
+	name="" selectitem="" refobj = "" cols="2" desc="零件号"></field>
+	<field ID="28289a0728287dbe012828ad5573023e" 
+	name="" selectitem="" refobj = "" cols="3" desc="项号"></field>
+	<field ID="28289a0728287dbe012828ae459f0241" 
+	name="" selectitem="" refobj = "" cols="4" desc="描述"></field>
+	<field ID="28289a0728287dbe012828af7a760242" 
+	name="" selectitem="" refobj = "" cols="5" desc="供应商零件号"></field>	
+	<field ID="28289a0728287dbe012828b074950276" 
+	name="" selectitem="" refobj = "" cols="6" desc="图号" foreignds="sdsDS" 
+	 conditions="select pt__chr01 from pt_mstr where pt_part = '{28289a0728287dbe012828ad55830240}'"></field>
+	<field ID="28289a0728287dbe012828b1075f0277" 
+	name="" selectitem="" refobj = "" cols="7" desc="规格"></field>
+	<field ID="28289a0728287dbe012828b1cb6b0278" 
+	name="" selectitem="" refobj = "" cols="8" desc="采购数量"></field>
+	<field ID="28289a07282900f501282a515e710f41"
+	 name="" selectitem="" refobj = "" cols="9" desc="备注" foreignds="sdsDS" 
+	 conditions="select pt_desc1 from pt_mstr where pt_part = '{28289a0728287dbe012828ad55830240}'"></field>
+</table>
+<table ID="uf_hr_backdetails">
+	<field ID="40285a90495b4eb0014974b12da05397" 
+	name="" selectitem="" refobj = "" cols="0" desc="序号" ></field>
+	<field ID="40285a90495b4eb0014974b12de8539d" 
+	name="" selectitem="" refobj = "" cols="1" desc="起算日期" ></field>
+	<field ID="40285a90495b4eb0014974b12e05539f" 
+	name="" selectitem="" refobj = "" cols="2" desc="返台时间"></field>
+	<field ID="40285a90495b4eb0014974b12e2153a1" 
+	name="" selectitem="" refobj = "" cols="3" desc="来常时间"></field>
+	<field ID="40285a90495b4eb0014974b12e3d53a3" 
+	name="" selectitem="" refobj = "" cols="4" desc="本次累计在常天数"></field>
+	<field ID="40285a90495b4eb0014974b12e5753a5" 
+	name="" selectitem="" refobj = "" cols="5" desc="本期结余"></field>
+	<field ID="40285a90495b4eb0014974b12e7253a7" 
+	name="" selectitem="" refobj = "" cols="6" desc="眷属机票数"></field>	
+	<field ID="40285a90495b4eb0014974b12e9b53a9" 
+	name="" selectitem="" refobj = "" cols="7" desc="出差单号" ></field>
+</table>
+
+<table ID="uf_hr_dormmoneysub">
+	<field ID="40285a904931f62b0149597f46010aac" 
+	name="" selectitem="" refobj = "" cols="0" desc="员工工号" 
+	conditions="select id from humres where objno = '{40285a904931f62b0149597f46010aac}'"></field>
+	<field ID="40285a904931f62b0149597f46700ab4" 
+	name="" selectitem="" refobj = "" cols="1" desc="电费" ></field>
+	<field ID="40285a904931f62b0149597f46880ab6" 
+	name="" selectitem="" refobj = "" cols="2" desc="押金"></field>
+	<field ID="40285a904931f62b0149597f46a20ab8" 
+	name="" selectitem="" refobj = "" cols="3" desc="交通费"></field>
+	<field ID="40285a904931f62b0149597f46b90aba" 
+	name="" selectitem="" refobj = "" cols="4" desc="其他"></field>
+</table>
+</tables>
+</xml>

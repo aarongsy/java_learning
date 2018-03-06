@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.2</Version>
+<TableDataMap>
+<TableData name="Host" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters>
+</Parameters>
+<ColumnNames><![CDATA[System,,.,,Type,,.,,Value,,.,,Date]]></ColumnNames>
+<ColumnTypes><![CDATA[java.lang.String,java.lang.String,java.lang.Double,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[NKueI'JU<?lf5S[fm[`*Eu@E2Lf4jl&fM;f&<nAj963?`S4%q$V1O:;.3_u,GK,)mU\=K/cH
+^@ph=gdCj6;?^X/#?_Ma+h_Dml]
+c=3";J5nD+($?r*@4F>L*C')B)k5>)BgVp?k2&&m#IeRR
+Jq=Nrr^KUll_o)/S'F=o/H1pObpO4=j`L"X"(Yp!Oi-WL[4ooP?FF9
+]n%P[\9ON2>"mafP*f
+97;_,V;NEMjGuo+<`O4-D2P=H*IFV>;o,NEM;&\P%Y'AlmG@o4S3/4T+t-V3U36p`_m`!#mP
+$<:G+<X0
+>DjrUr?8u-qMEXOqj4DW?d*\P\*icOUERL;b<^nf5)q?K)86=dV+Uo3giU8Jobj(
+jmU.Jm4@DaJ""So2l<Ah]U7,bC8@)U*3>5_
+[1R9<M_l#g$6f,e7h-qqTG:65_;HFH"GD7I?`
+I2#N/SYalEsH-R$VQ1-m(sK&uF!L2D*'m$eHf]@J2+u,?@!"1);O9bX1t8aphe
+pWQ/L*R?(B
+8\QDH;;+=`XN-Z3T45br*'DSS.M:0),]ac>0`2c]9IP_rW"];B'V;kOU5>dQMWDD]:O?2=+E
+d<gFg$2<c/&;O))*
+HpSQ[?MhdZX\o.:T]8pTbU*Ga?t^cX34^i4T8J/tPu7]eI8Un\Z`Q1,C
+Wl./kTc@`C4a1.FCd^2q(/;u-`t_I/j-kZ)?'M=^)WW
+1%WN^)Wlf3B-`sJ^/2SA<>)4a)%I;
+h'K&8C#DRSqO9s-=lu]p(ZpC"gFu_%_T=5K]^.@C<qr&+[F452H;oYH@,?kkrCnJ:[(Vn>
+n%
+l?+6N.#~
+
+]]>
+</RowData>
+</TableData>
+</TableDataMap>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="0" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+<ParameterInterface class="com.fr.report.parameter.DefaultParameterInterface">
+</ParameterInterface>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings orientation="1" shrinkToFit="true" headerHeight="0.33" footerHeight="0.33">
+<Margin top="0.27" left="0.7499999999999999" bottom="0.27" right="0.7499999999999999" />
+</ReportSettings>
+<ReportPageAttr>
+</ReportPageAttr>
+<ReportWebAttr>
+<EmailManager mailHost="" password="___" user="" fromEmailAddress="" />
+<ServerPrinter>
+</ServerPrinter>
+<Background name="NullBackground" />
+</ReportWebAttr>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<ReportWriteAttr>
+</ReportWriteAttr>
+<RowHeight defaultValue="19">
+<![CDATA[32,19,19,19,35]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[66,42,42,66,73,1,54,54,54,54,55,54,53]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="5" s="0"><O><![CDATA[IT系统平台资源利用率交叉分布]]></O>
+</C>
+<C c="0" r="1" cs="5" s="1"><O><![CDATA[查询时间:2008年8月13日]]></O>
+</C>
+<C c="5" r="1" s="2"></C>
+<C c="0" r="3" cs="5" s="3"></C>
+<C c="0" r="4" cs="3" s="4"><O t="BiasTextPainter"><IsBackSlash value="false"/>
+<![CDATA[系统名|利用率|类型]]>
+</O>
+</C>
+<C c="3" r="4" s="4"><O t="DSColumn"><Attributes dsName="Host" columnName="System" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="1" />
+</C>
+<C c="4" r="4" s="5"><O><![CDATA[最高利用率]]></O>
+</C>
+<C c="5" r="4" s="6"><O><![CDATA[]]></O>
+<CellGUIAttr trueRowHeight="false" visible="false" ></CellGUIAttr></C>
+<C c="0" r="5" s="7"><O t="DSColumn"><Attributes dsName="Host" columnName="Date" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="1" r="5" cs="2" s="7"><O t="DSColumn"><Attributes dsName="Host" columnName="Type" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<Complex order="1" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<SortFormula><![CDATA[Host.select(Type)]]></SortFormula><Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="3" r="5" s="8"><O t="DSColumn"><Attributes dsName="Host" columnName="Value" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.AverageFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+<HighlightList><Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.FormulaCondition"><Formula>
+<![CDATA[Row()%2==1]]>
+</Formula>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.BackgroundHighlightAction">
+<Background name="ColorBackground"
+ color="-525313">
+</Background>
+</HighlightAction>
+</Highlight>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ObjectCondition"><Compare op="0">
+<ColumnRow column="4" row="5"/>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.FRFontHighlightAction">
+<FRFont name="Dialog" style="0" size="11" foreground="-26368" />
+</HighlightAction>
+</Highlight>
+</HighlightList></C>
+<C c="4" r="5" s="8"><O t="Formula" class="Formula"><Attributes><![CDATA[=max(D6)]]></Attributes></O>
+</C>
+<C c="5" r="5" s="9"><CellGUIAttr trueRowHeight="false" visible="false" ></CellGUIAttr></C>
+<C c="0" r="7" cs="5" s="10"><O><![CDATA[“IT系统平台资源利用率交叉分布”报表说明：]]></O>
+<Expand leftParentDefault="false" upParentDefault="false" />
+</C>
+<C c="0" r="8" cs="5" s="11"><O><![CDATA[1、交叉表]]></O>
+<Expand leftParentDefault="false" upParentDefault="false" />
+</C>
+<C c="0" r="9" cs="5" s="12"><O><![CDATA[该表横向为系统名称的分组，纵向为资源类型的分组，这种常见的交叉表也是报表的基本类型。其中用黄色标记出来的是该资源针对在该日期的最高利用率。]]></O>
+<Expand leftParentDefault="false" upParentDefault="false" />
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style>
+<FRFont name="SimSun" style="1" size="14" foreground="-16739659" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" foreground="-16739659" />
+<Background name="NullBackground" />
+<Border><Bottom style="6" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="6" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ImageBackground"
+ specifiedImageWidth="-1.0"
+ specifiedImageHeight="-1.0"
+ layout="2">
+<Image width="271" height="20">
+<![CDATA[mDD3s_Ctrm_#OF0>K!!9WJ6!OQ7+.ZoaQ9>0E]d2laNppWiE)!WiGp)li!RsTDPW,0?[QWIV
+_g1pu1d?NUQ%!281S82*R8))W+4
+iebJi;<TD!-WQ)u!;iUeW~
+
+]]>
+</Image>
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12" />
+<Background name="ColorBackground"
+ color="-1377546">
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="1" size="12" />
+<Background name="ColorBackground"
+ color="-1377546">
+</Background>
+<Border></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-2362369">
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-525313">
+</Background>
+<Border><Top style="1" color="-6697729"
+ /><Bottom style="1" color="-6697729"
+ /><Left style="1" color="-6697729"
+ /><Right style="1" color="-6697729"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat"><![CDATA[#0.00%]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6697729"
+ /><Bottom style="1" color="-6697729"
+ /><Left style="1" color="-6697729"
+ /><Right style="1" color="-6697729"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-328966">
+</Background>
+<Border><Top style="3" color="-6894375"
+ /><Left style="3" color="-6894375"
+ /><Right style="3" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-328966">
+</Background>
+<Border><Left style="3" color="-6894375"
+ /><Right style="3" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-328966">
+</Background>
+<Border><Bottom style="3" color="-6894375"
+ /><Left style="3" color="-6894375"
+ /><Right style="3" color="-6894375"
+ /></Border>
+</Style>
+</StyleList>
+</WorkBook>

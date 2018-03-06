@@ -1,0 +1,110 @@
+错误时间
+  19:43:15
+错误位置
+  sql20111115_CPMS_oracle.sql第14行
+错误语句
+ create table cpms_doclink ( id        VARCHAR2(32) not null PRIMARY KEY, docid   VARCHAR2(32), taskid   VARCHAR2(32), templateid  VARCHAR2(32), projectid     VARCHAR2(32), objtype      VARCHAR2(256), categoryid      VARCHAR2(256), operator      VARCHAR2(32), operatetime      VARCHAR2(256), description VARCHAR2(1024) )
+错误原因
+  java.sql.SQLException: ORA-00955: 名称已由现有对象使用
+
+
+
+错误时间
+  19:43:15
+错误位置
+  sql20111115_CPMS_oracle.sql第30行
+错误语句
+ create table cpms_doctypelink ( id        VARCHAR2(32) not null PRIMARY KEY, doctypeid   VARCHAR2(32), taskid   VARCHAR2(32),--????id templateid  VARCHAR2(32),--???????????id projectid     VARCHAR2(32),--???????????id isnecessary INTEGER, description VARCHAR2(1024), isdelete INTEGER, workflowid VARCHAR2(32), col1      VARCHAR2(256), col2      VARCHAR2(256), col3      VARCHAR2(256) )
+错误原因
+  java.sql.SQLException: ORA-00904: : 标识符无效
+
+
+
+错误时间
+  19:56:13
+错误位置
+  sql20111115_CPMS_oracle.sql第14行:
+错误语句
+ create table cpms_doclink ( id        VARCHAR2(32) not null PRIMARY KEY, docid   VARCHAR2(32), taskid   VARCHAR2(32), templateid  VARCHAR2(32), projectid     VARCHAR2(32), objtype      VARCHAR2(256), categoryid      VARCHAR2(256), operator      VARCHAR2(32), operatetime      VARCHAR2(256), description VARCHAR2(1024) )
+错误原因
+  java.sql.SQLSyntaxErrorException: ORA-00955: 名称已由现有对象使用
+
+
+
+错误时间
+  19:56:13
+错误位置
+  sql20111115_CPMS_oracle.sql第30行:
+错误语句
+ create table cpms_doctypelink ( id        VARCHAR2(32) not null PRIMARY KEY, doctypeid   VARCHAR2(32), taskid   VARCHAR2(32),--????id templateid  VARCHAR2(32),--???????????id projectid     VARCHAR2(32),--???????????id isnecessary INTEGER, description VARCHAR2(1024), isdelete INTEGER, workflowid VARCHAR2(32), col1      VARCHAR2(256), col2      VARCHAR2(256), col3      VARCHAR2(256) )
+错误原因
+  java.sql.SQLSyntaxErrorException: ORA-00904: : 标识符无效
+
+
+
+错误时间
+  19:56:13
+错误位置
+  sql20111115_CPMS_oracle.sql第45行:
+错误语句
+ create table cpms_flowlink ( id        VARCHAR2(32) not null PRIMARY KEY, workflowid   VARCHAR2(32), taskid   VARCHAR2(32), templateid  VARCHAR2(32), projectid     VARCHAR2(32), description VARCHAR2(1024), requestid VARCHAR2(32), isnecessary INTEGER, operator      VARCHAR2(32), operatetime      VARCHAR2(256), objtype VARCHAR2(32) )
+错误原因
+  java.sql.SQLSyntaxErrorException: ORA-00955: 名称已由现有对象使用
+
+
+
+错误时间
+  19:56:13
+错误位置
+  sql20111115_CPMS_oracle.sql第56行:
+错误语句
+ create table cpms_tasklink ( id        VARCHAR2(32) not null PRIMARY KEY, pretaskid   VARCHAR2(32), objid   VARCHAR2(32), objtype  VARCHAR2(32), projectid     VARCHAR2(32), lag  NUMBER(24,1), description VARCHAR2(1024) )
+错误原因
+  java.sql.SQLSyntaxErrorException: ORA-00955: 名称已由现有对象使用
+
+
+
+错误时间
+  19:56:13
+错误位置
+  sql20111115_CPMS_oracle.sql第69行:
+错误语句
+ create table cpms_taskresource ( id VARCHAR2(32) not null PRIMARY KEY, taskid VARCHAR2(32), projectid VARCHAR2(32), humresid VARCHAR2(32), role VARCHAR2(256), theunit INTEGER, plantime NUMBER(8,1), realtime NUMBER(8,1), description VARCHAR2(1024) )
+错误原因
+  java.sql.SQLSyntaxErrorException: ORA-00955: 名称已由现有对象使用
+
+
+
+错误时间
+  19:56:13
+错误位置
+  sql20111115_CPMS_oracle.sql第89行:
+错误语句
+ create table cpms_tasktemplate ( id        VARCHAR2(32) not null PRIMARY KEY, objname   VARCHAR2(1024), wbscode varchar(64), pid   VARCHAR2(32), orgid  VARCHAR2(32), tempid     VARCHAR2(32), limittime number, iskey INTEGER, tasktype VARCHAR2(32), controlPoint varchar2(256), description varchar2(1024), tlevel INTEGER, dsporder INTEGER, isdelete INTEGER, workflowid   VARCHAR2(32), doctypeid  VARCHAR2(32) )
+错误原因
+  java.sql.SQLSyntaxErrorException: ORA-00955: 名称已由现有对象使用
+
+
+
+错误时间
+  19:56:13
+错误位置
+  sql20111115_CPMS_oracle.sql第107行:
+错误语句
+ create table cpms_comment ( id          VARCHAR2(32) not null PRIMARY KEY, objid       VARCHAR2(32), subject    VARCHAR2(256), content     CLOB, creator    VARCHAR2(32), createdate  VARCHAR2(256), createtime  VARCHAR2(256), parentid    VARCHAR2(32), docid       VARCHAR2(32), taskid      VARCHAR2(32), attachs     VARCHAR2(1024), refobj1     VARCHAR2(32), refobj2     VARCHAR2(32), refobj3     VARCHAR2(32) )
+错误原因
+  java.sql.SQLSyntaxErrorException: ORA-00955: 名称已由现有对象使用
+
+
+
+错误时间
+  19:56:13
+错误位置
+  sql20111115_CPMS_oracle.sql第109行:
+错误语句
+ alter table cpms_task add controlpoint varchar2(32)
+错误原因
+  java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+
+

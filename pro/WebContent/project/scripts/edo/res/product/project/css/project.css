@@ -1,0 +1,255 @@
+.e-gantt {
+	FONT-SIZE: 12px
+}
+.e-gantt .e-table-header-row {
+	WIDTH: 100%
+}
+.e-gantt-row {
+	Z-INDEX: 20; POSITION: absolute; MARGIN-TOP: 1px; WIDTH: 100%; TOP: 0px; LEFT: 0px
+}
+.e-gantt .e-table-row-selected {
+	Z-INDEX: 18; BORDER-BOTTOM: #ccc 1px solid; MARGIN-TOP: 0px; BACKGROUND: #dfebfb; BORDER-TOP: #ccc 1px solid
+}
+.e-gantt-draging .e-gantt-item-selected {
+	MARGIN-TOP: 1px; BACKGROUND: none transparent scroll repeat 0% 0%; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px
+}
+.e-gantt-dateview-hour {
+	BACKGROUND: url(../images/hour.gif) no-repeat -1px bottom; HEIGHT: 24px; OVERFLOW: hidden
+}
+.e-gantt-linkinfo {
+	Z-INDEX: 102
+}
+.e-gantt-milestone {
+	POSITION: absolute; WIDTH: 12px; BACKGROUND: url(../images/zeroduration.gif) no-repeat; HEIGHT: 12px; OVERFLOW: hidden
+}
+.e-gantt-zeroduration {
+	POSITION: absolute; WIDTH: 12px; BACKGROUND: url(../images/zeroduration.gif) no-repeat; HEIGHT: 12px; OVERFLOW: hidden
+}
+.e-gantt-item {
+	BORDER-BOTTOM: blue 1px solid; POSITION: absolute; BORDER-LEFT: blue 1px solid; BACKGROUND: url(../images/task-bg.gif); OVERFLOW: hidden; BORDER-TOP: blue 1px solid; BORDER-RIGHT: blue 1px solid
+}
+.e-gantt-item-outer {
+	HEIGHT: 100%; OVERFLOW: hidden
+}
+.e-gantt-item-inner {
+	HEIGHT: 100%; MARGIN-LEFT: 10px; OVERFLOW: hidden; MARGIN-RIGHT: 10px
+}
+.e-gantt-critical .e-gantt-item {
+	BACKGROUND-IMAGE: url(../images/task-bg-red.gif); BORDER-BOTTOM: red 1px solid; BORDER-LEFT: red 1px solid; BORDER-TOP: red 1px solid; BORDER-RIGHT: red 1px solid
+}
+.e-gantt-item-name {
+	POSITION: absolute; WHITE-SPACE: nowrap; TOP: 4px
+}
+.e-gantt-item-calendar {
+	BACKGROUND: url(../images/calendar-bg.bmp) repeat-x
+}
+.e-gantt .e-gantt-row .e-gantt-item-track {
+	BACKGROUND-IMAGE: url(../images/task-bg-black.gif); BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-TOP: black 1px solid; CURSOR: default; BORDER-RIGHT: black 1px solid
+}
+.e-gantt-sumary .e-gantt-item {
+	BORDER-RIGHT-WIDTH: 0px; BACKGROUND: url(../images/task_summary.gif) no-repeat; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px
+}
+.e-gantt-sumary .e-gantt-item-outer {
+	BACKGROUND: url(../images/task_summary.gif) no-repeat right 0px
+}
+.e-gantt-sumary .e-gantt-item-inner {
+	BACKGROUND: black; HEIGHT: 6px
+}
+.e-gantt-subproject .e-gantt-item {
+	BORDER-RIGHT-WIDTH: 0px; BACKGROUND: url(../images/subproject.gif) no-repeat; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px
+}
+.e-gantt-subproject .e-gantt-item-outer {
+	BACKGROUND: url(../images/subproject.gif) no-repeat right 0px
+}
+.e-gantt-subproject .e-gantt-item-inner {
+	BACKGROUND: url(../images/subproject-bg.gif) repeat-x
+}
+.e-gantt-collapse {
+	POSITION: absolute; WIDTH: 16px; BACKGROUND: url(../images/icon/collapse.gif) no-repeat center center; HEIGHT: 14px; OVERFLOW: hidden; CURSOR: pointer
+}
+.e-gantt-expanded {
+	POSITION: absolute; WIDTH: 16px; BACKGROUND: url(../images/icon/collapse.gif) no-repeat center center; HEIGHT: 14px; OVERFLOW: hidden; CURSOR: pointer
+}
+.e-gantt-expanded {
+	BACKGROUND-IMAGE: url(../images/icon/expanded.gif)
+}
+.e-gantt-weekend {
+	BACKGROUND: url(../images/weekend.gif)
+}
+.e-gantt-taskstatus {
+	WIDTH: 16px; BACKGROUND: url(../images/taskstatus.gif) center center; HEIGHT: 16px; OVERFLOW: hidden
+}
+.e-gantt-finished {
+	WIDTH: 16px; DISPLAY: block; BACKGROUND: url(../images/finished.gif) no-repeat center center; FLOAT: left; HEIGHT: 20px; OVERFLOW: hidden
+}
+.e-gantt-notes {
+	WIDTH: 16px; DISPLAY: block; BACKGROUND: url(../images/finished.gif) no-repeat center center; FLOAT: left; HEIGHT: 20px; OVERFLOW: hidden
+}
+.e-gantt-milestone-green {
+	WIDTH: 16px; DISPLAY: block; BACKGROUND: url(../images/finished.gif) no-repeat center center; FLOAT: left; HEIGHT: 20px; OVERFLOW: hidden
+}
+.e-gantt-milestone-red {
+	WIDTH: 16px; DISPLAY: block; BACKGROUND: url(../images/finished.gif) no-repeat center center; FLOAT: left; HEIGHT: 20px; OVERFLOW: hidden
+}
+.e-gantt-project {
+	WIDTH: 16px; DISPLAY: block; BACKGROUND: url(../images/finished.gif) no-repeat center center; FLOAT: left; HEIGHT: 20px; OVERFLOW: hidden
+}
+.e-gantt-project {
+	BACKGROUND-IMAGE: url(../images/project-icon.gif)
+}
+.e-gantt-notes {
+	BACKGROUND-IMAGE: url(../images/notes.gif)
+}
+.e-gantt-milestone-green {
+	BACKGROUND-IMAGE: url(../images/milestone-green.gif)
+}
+.e-gantt-milestone-red {
+	BACKGROUND-IMAGE: url(../images/milestone-red.gif)
+}
+.e-gantt-arrowhead-down {
+	POSITION: absolute; WIDTH: 10px; BACKGROUND: url(../images/arrow_blue_down.gif) no-repeat left top; HEIGHT: 5px; OVERFLOW: hidden
+}
+.e-gantt-arrowhead-left {
+	POSITION: absolute; WIDTH: 10px; BACKGROUND: url(../images/arrow_blue_down.gif) no-repeat left top; HEIGHT: 5px; OVERFLOW: hidden
+}
+.e-gantt-arrowhead-right {
+	POSITION: absolute; WIDTH: 10px; BACKGROUND: url(../images/arrow_blue_down.gif) no-repeat left top; HEIGHT: 5px; OVERFLOW: hidden
+}
+.e-gantt-arrowhead-up {
+	POSITION: absolute; WIDTH: 10px; BACKGROUND: url(../images/arrow_blue_down.gif) no-repeat left top; HEIGHT: 5px; OVERFLOW: hidden
+}
+.e-gantt-arrowhead-up {
+	BACKGROUND: url(../images/arrow_blue_up.gif) no-repeat left top
+}
+.e-gantt-arrowhead-left {
+	WIDTH: 5px; BACKGROUND: url(../images/arrow_blue_left.gif) no-repeat left top; HEIGHT: 10px
+}
+.e-gantt-arrowhead-right {
+	WIDTH: 5px; BACKGROUND: url(../images/arrow_blue_right.gif) no-repeat left top; HEIGHT: 10px
+}
+.e-gantt-percentcomplete {
+	POSITION: absolute; BACKGROUND-COLOR: blue; HEIGHT: 4px; OVERFLOW: hidden; TOP: 3px
+}
+.e-gantt-resize-percentcomplete {
+	Z-INDEX: 201; POSITION: absolute; MARGIN-TOP: 2px; WIDTH: 4px; HEIGHT: 5px; OVERFLOW: hidden; CURSOR: col-resize
+}
+.e-gantt-rezie-l {
+	Z-INDEX: 201; POSITION: absolute; WIDTH: 3px; HEIGHT: 11px; OVERFLOW: hidden; CURSOR: w-resize
+}
+.e-gantt-rezie-r {
+	Z-INDEX: 201; POSITION: absolute; WIDTH: 3px; HEIGHT: 11px; OVERFLOW: hidden; CURSOR: w-resize
+}
+.e-point {
+	POSITION: absolute; BACKGROUND-COLOR: blue; OVERFLOW: hidden
+}
+.e-point-critical {
+	BACKGROUND-COLOR: red
+}
+.e-gantt-arrowhead-down-critical {
+	BACKGROUND-IMAGE: url(../images/arrow_red_down.gif)
+}
+.e-gantt-arrowhead-up-critical {
+	BACKGROUND-IMAGE: url(../images/arrow_red_up.gif)
+}
+.e-gantt-arrowhead-left-critical {
+	BACKGROUND-IMAGE: url(../images/arrow_red_left.gif)
+}
+.e-gantt-arrowhead-right-critical {
+	BACKGROUND-IMAGE: url(../images/arrow_red_right.gif)
+}
+.e-gantt-notdayview .e-gantt * {
+	CURSOR: default
+}
+.e-critical .e-point {
+	BACKGROUND-COLOR: red
+}
+.e-critical .e-gantt-arrowhead-down {
+	BACKGROUND-IMAGE: url(../images/arrow_red_down.gif)
+}
+.e-critical .e-gantt-arrowhead-up {
+	BACKGROUND-IMAGE: url(../images/arrow_red_up.gif)
+}
+.e-critical .e-gantt-arrowhead-left {
+	BACKGROUND-IMAGE: url(../images/arrow_red_left.gif)
+}
+.e-critical .e-gantt-arrowhead-right {
+	BACKGROUND-IMAGE: url(../images/arrow_red_right.gif)
+}
+.e-gantt-constraint2 {
+	WIDTH: 16px; DISPLAY: block; BACKGROUND: url(../images/constraint-finish.gif) no-repeat center center; FLOAT: left; HEIGHT: 20px; OVERFLOW: hidden
+}
+.e-gantt-constraint3 {
+	WIDTH: 16px; DISPLAY: block; BACKGROUND: url(../images/constraint-finish.gif) no-repeat center center; FLOAT: left; HEIGHT: 20px; OVERFLOW: hidden
+}
+.e-gantt-constraint4 {
+	WIDTH: 16px; DISPLAY: block; BACKGROUND: url(../images/constraint-finish.gif) no-repeat center center; FLOAT: left; HEIGHT: 20px; OVERFLOW: hidden
+}
+.e-gantt-constraint5 {
+	WIDTH: 16px; DISPLAY: block; BACKGROUND: url(../images/constraint-finish.gif) no-repeat center center; FLOAT: left; HEIGHT: 20px; OVERFLOW: hidden
+}
+.e-gantt-constraint6 {
+	WIDTH: 16px; DISPLAY: block; BACKGROUND: url(../images/constraint-finish.gif) no-repeat center center; FLOAT: left; HEIGHT: 20px; OVERFLOW: hidden
+}
+.e-gantt-constraint7 {
+	WIDTH: 16px; DISPLAY: block; BACKGROUND: url(../images/constraint-finish.gif) no-repeat center center; FLOAT: left; HEIGHT: 20px; OVERFLOW: hidden
+}
+.e-gantt-constraint4 {
+	BACKGROUND-IMAGE: url(../images/constraint-start.gif)
+}
+.e-gantt-constraint5 {
+	BACKGROUND-IMAGE: url(../images/constraint-start.gif)
+}
+.e-icon-new {
+	BACKGROUND-IMAGE: url(../images/icon/new.gif)
+}
+.e-icon-edit {
+	BACKGROUND-IMAGE: url(../images/icon/edit.gif)
+}
+.e-icon-add {
+	BACKGROUND-IMAGE: url(../images/icon/add.gif)
+}
+.e-icon-delete {
+	BACKGROUND-IMAGE: url(../images/icon/delete.gif)
+}
+.e-icon-edit {
+	BACKGROUND-IMAGE: url(../images/icon/edit.gif)
+}
+.e-icon-search {
+	BACKGROUND-IMAGE: url(../images/icon/search.gif)
+}
+.e-icon-download {
+	BACKGROUND-IMAGE: url(../images/icon/download.gif)
+}
+.e-icon-save {
+	BACKGROUND-IMAGE: url(../images/icon/save.gif)
+}
+.e-icon-refresh {
+	BACKGROUND-IMAGE: url(../images/icon/refresh.png)
+}
+.e-icon-help {
+	BACKGROUND-IMAGE: url(../images/icon/help.png)
+}
+.e-icon-upgrade {
+	BACKGROUND-IMAGE: url(../images/icon/upgrade.gif)
+}
+.e-icon-downgrade {
+	BACKGROUND-IMAGE: url(../images/icon/downgrade.gif)
+}
+.e-icon-print {
+	BACKGROUND-IMAGE: url(../images/icon/print.gif)
+}
+.e-icon-gototask {
+	BACKGROUND-IMAGE: url(../images/icon/gototask.gif)
+}
+.e-gantt-progress-icon {
+	Z-INDEX: 160; POSITION: absolute; WIDTH: 11px; BACKGROUND: url(../images/progress-icon.gif) no-repeat; HEIGHT: 11px; OVERFLOW: hidden
+}
+.e-gantt-viewhour-am {
+	POSITION: absolute; WIDTH: 50%; HEIGHT: 20px; FONT-SIZE: 11px; BORDER-RIGHT: #444 1px solid; LEFT: 0px
+}
+.e-gantt-viewhour-pm {
+	POSITION: absolute; WIDTH: 50%; HEIGHT: 20px; FONT-SIZE: 11px; BORDER-RIGHT: #444 1px solid; LEFT: 0px
+}
+.e-gantt-viewhour-pm {
+	LEFT: 50%
+}

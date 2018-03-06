@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.2</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes isCache="false" maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT YEAR(SIGNDATE) AS YEAR,MONTH(SIGNDATE) AS MONTH,ORDERID,AMOUNT FROM ORDERS]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings shrinkToFit="false" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<RowHeight defaultValue="19">
+<![CDATA[19,19,19,23]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,78,106,101,125,118]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="6" s="0"><O><![CDATA[同期比]]></O>
+</C>
+<C c="0" r="1" cs="6" s="1"><O t="Formula" class="Formula"><Attributes><![CDATA[=date(2008,8,18)]]></Attributes></O>
+</C>
+<C c="0" r="2" s="2"><O><![CDATA[年份]]></O>
+</C>
+<C c="1" r="2" s="2"><O><![CDATA[月份]]></O>
+</C>
+<C c="2" r="2" s="2"><O><![CDATA[订单数量]]></O>
+</C>
+<C c="3" r="2" s="2"><O><![CDATA[订单总额]]></O>
+</C>
+<C c="4" r="2" s="2"><O><![CDATA[同期比]]></O>
+</C>
+<C c="5" r="2" s="2"><O><![CDATA[上月环比]]></O>
+</C>
+<C c="0" r="3" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="YEAR" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="1" r="3" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="MONTH" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="2" r="3" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="ORDERID" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.CountFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+</C>
+<C c="3" r="3" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="AMOUNT" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+</C>
+<C c="4" r="3" s="4"><O t="Formula" class="Formula"><Attributes><![CDATA[=D4/D4[A4:-1,B4:+0]]]></Attributes></O>
+</C>
+<C c="5" r="3" s="4"><O t="Formula" class="Formula"><Attributes><![CDATA[=D4/D4[B4:-1]]]></Attributes></O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-3342388">
+</Background>
+<Border><Bottom style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat"><![CDATA[#0.00%]]>
+</Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

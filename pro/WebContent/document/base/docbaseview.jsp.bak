@@ -1,0 +1,836 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ include file="/base/init.jsp"%>
+<%@ include file="/plugin/iWebOfficeConf.jsp"%>
+<%@ page import="com.eweaver.base.BaseContext"%>
+<%@ page import="com.eweaver.document.base.service.*"%>
+<%@ page import="com.eweaver.humres.base.service.HumresService"%>
+<%@ page import="com.eweaver.base.log.service.LogService"%>
+<%@ page import="com.eweaver.document.base.model.*"%>
+<%@ page import="com.eweaver.document.base.servlet.DocbaseAction" %>
+<%@ page import="com.eweaver.base.category.service.CategoryService"%>
+<%@ page import="com.eweaver.base.category.model.Category"%>
+<%@ page import="java.lang.Integer"%>
+<%@ page import="com.eweaver.base.security.service.logic.PermissionruleService"%>
+<%@ page import="com.eweaver.base.security.service.logic.PermissiondetailService"%>
+<%@ page import="com.eweaver.base.setitem.service.*"%>
+<%@ page import="com.eweaver.base.setitem.model.*"%>
+<%@ page import="com.eweaver.base.menu.service.PagemenuService"%>
+<%@ page import="com.eweaver.base.menu.model.Pagemenu"%>
+<%@ page import="com.eweaver.base.refobj.service.RefobjlinkService"%>
+<%@ page import="com.eweaver.base.refobj.model.Refobjlink"%>
+<%@ page import="com.eweaver.base.orgunit.model.Orgunit"%>
+<%@ page import="com.eweaver.base.orgunit.service.OrgunitService"%>
+<%@ page import="com.eweaver.workflow.form.service.*"%>
+<%@ page import="com.eweaver.workflow.form.model.*"%>
+<%@ page import="com.eweaver.workflow.request.service.FormService"%>
+<%@ page import="com.eweaver.base.security.service.logic.PermissiondetailService"%>
+<%@ page import="com.eweaver.document.base.service.DocborrowService"%>
+<%@ page import="java.util.HashMap"%>
+<%@ page import="com.eweaver.base.log.model.Log" %>
+<%
+String id = StringHelper.null2String(request.getParameter("id"));
+
+//如果没有权限转入流程借阅
+PermissiondetailService permissiondetailService = (PermissiondetailService) BaseContext.getBean("permissiondetailService");
+DocborrowService docborrowService = (DocborrowService) BaseContext.getBean("docborrowService");
+
+boolean opttype = permissiondetailService.checkOpttype(id,OptType.VIEW);
+//boolean ishasPermit = docborrowService.hasPermit(id,OptType.VIEW);
+if(!opttype){
+   	response.sendRedirect(request.getContextPath()+"/nopermit.jsp");
+    //response.sendRedirect("gotoworkflow.jsp?docid="+ id);    //先暂时把借阅的功能给屏蔽掉
+	return;
+}
+
+DocbaseService docbaseService = (DocbaseService) BaseContext.getBean("docbaseService");
+Docbase docbase = docbaseService.getPermissionObjectById(id);
+ 
+if(docbase == null){
+		response.sendRedirect(request.getContextPath()+"/nopermit.jsp");
+		return;
+}
+if("40284882133e6fba011342327d2c0af0".equals(docbase.getTypeid())){
+	response.sendRedirect(request.getContextPath()+"/document/base/docbaseview2.jsp?id="+id);
+	return;
+}
+if("40284882136b70f901136c89feed19b8".equals(docbase.getTypeid())){
+	response.sendRedirect(request.getContextPath()+"/document/base/docbaseview4.jsp?id="+id);
+	return;
+}
+if(!StringHelper.isEmpty(docbase.getContent())){
+	//response.sendRedirect("/document/base/docbaseview3.jsp?id="+id);
+	//return;
+}
+OrgunitService orgunitService = (OrgunitService)BaseContext.getBean("orgunitService");
+RefobjlinkService refobjlinkService=(RefobjlinkService)BaseContext.getBean("refobjlinkService");
+boolean useRTX=false;
+SetitemService setitemService=(SetitemService)BaseContext.getBean("setitemService");
+Setitem rtxSet=setitemService.getSetitem("4028819d0e52bb04010e5342dd5a0048");
+if(rtxSet!=null&&"1".equals(rtxSet.getItemvalue())){
+	useRTX=true;
+}
+
+CategoryService categoryService = (CategoryService) BaseContext.getBean("categoryService");
+
+AttachService attachService = (AttachService) BaseContext.getBean("attachService");
+HumresService humresService = (HumresService) BaseContext.getBean("humresService");
+LogService logService = (LogService) BaseContext.getBean("logService");
+String action=request.getContextPath()+"/ServiceAction/com.eweaver.document.base.servlet.DocbaseAction?action=replydocs";
+    String actionversion=request.getContextPath()+"/ServiceAction/com.eweaver.document.base.servlet.DocbaseAction?action=versioninfo";
+
+if(docbase.getIsdelete().intValue() ==1){
+%>
+<script language='javascript'>	
+	alert('该文档已经删除');
+	if(window.opener!=null||window.dialogArguments!=null){//关闭窗口		
+		self.close();
+	}else{
+		window.location = "<%=request.getContextPath()%>/ServiceAction/com.eweaver.document.base.servlet.DocbaseAction?action=search";
+	}
+</script>
+
+<%
+return;
+}
+List docauthorList = docbaseService.getAuthorList(id);
+//List docattachList = docbaseService.getAttachList(id);
+Map authorMap = docbaseService.getAuthorStringMap(id);
+Log log=new Log();
+log.setIsdelete(0);
+log.setLogdesc("操作日志");
+log.setLogtype("402881e40b6093bf010b60a5849c0007");
+log.setMid("");
+log.setObjid(docbase.getId());
+log.setObjname(docbase.getSubject());
+log.setSubmitdate(DateHelper.getCurrentDate());
+log.setSubmittime(DateHelper.getCurrentTime());
+
+EweaverUser eweaverUser=BaseContext.getRemoteUser();
+log.setSubmitor(eweaveruser.getId());
+log.setSubmitip(eweaveruser.getRemoteIpAddress());
+
+logService.createLog(log);    
+int viewcount = logService.getOpCount(docbase.getId(),"402881e40b6093bf010b60a5849c0007");
+//int viewcount = 0;
+String attachid = StringHelper.trimToNull(request.getParameter("attachid"));
+Attach attach =null;
+if(attachid!=null){
+	attach = attachService.getAttach(attachid);
+}
+if(attach==null){
+	Docattach docattach = docbaseService.getDoccontentLastVerList(id);
+	if(docattach!=null){
+		attach = attachService.getAttach(docattach.getAttachid());
+	}
+}
+int docType = docbase.getDoctype().intValue();
+String attachstr=(attach==null?"":attach.getId());
+
+
+String workflowid="";
+String typeid="";
+if(docbase!=null){
+typeid=StringHelper.null2String(docbase.getTypeid());
+}
+	
+String state =labelService.getLabelName(docbaseService.getLabelidByDocstatus(docbase.getDocstatus().intValue()));
+
+//附件操作权限
+
+int righttype = permissiondetailService.getOpttype(docbase.getId());
+%>
+<!--页面菜单开始-->
+<%
+paravaluehm.put("{id}",id);
+paravaluehm.put("{docType}",new Integer(docType).toString());
+paravaluehm.put("{attachstr}",attachstr);
+paravaluehm.put("{typeid}",""+docType);
+PagemenuService _pagemenuService2 =(PagemenuService)BaseContext.getBean("pagemenuService");
+ArrayList<String> menuList= _pagemenuService2.getPagemenuStrExt(theuri,paravaluehm);
+pagemenustr += menuList.get(0);
+if(righttype%15==0&&(docType==4 || docType==5)){
+    pagemenustr +="addBtn(tb,'"+labelService.getLabelName("402881e70d962d51010d96fca8720008")+"','L','save',function(){javascript:savelocalFile()});";
+}
+%>
+<html>
+	<head>
+     <style type="text/css">
+
+         .x-toolbar table {width:0}
+         #pagemenubar table {width:0}
+         /*TD{*/
+             /*width:16%;*/
+         /*}*/
+         .x-panel-btns-ct {
+               padding: 0px;
+           }
+           .x-panel-btns-ct table {width:0}
+            .ux-maximgb-treegrid-breadcrumbs{
+              display:none;
+          }
+           a { color:blue; cursor:pointer; }
+
+         .x-layout-collapsed {
+             z-index: 20;
+             border-bottom: #98c0f4 0px solid;
+             position: absolute;
+             border-left: #98c0f4 0px solid;
+             overflow: hidden;
+             border-top: #98c0f4 0px solid;
+             border-right: #98c0f4 0px solid
+         }
+     </style>
+        <script type="text/javascript" src="<%=request.getContextPath()%>/js/ext/adapter/ext/ext-base.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath()%>/js/ext/ext-all.js"></script>
+        <script type='text/javascript' src='<%=request.getContextPath()%>/js/ext/examples/grid/RowExpander.js'></script>
+        <script type='text/javascript' src='<%=request.getContextPath()%>/js/ext/ux/TreeGrid.js'></script>
+        <script type="text/javascript" src="<%=request.getContextPath()%>/js/ext/ux/toolbar.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath()%>/js/ext/ux/iconMgr.js"></script>
+        <script language="JScript.Encode" src="<%=request.getContextPath()%>/js/rtxint.js"></script>
+        <script language="JScript.Encode" src="<%=request.getContextPath()%>/js/browinfo.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath()%>/js/ext/ux/miframe.js"></script>
+    <script type="text/javascript">
+        Ext.LoadMask.prototype.msg='正在加载,请稍候...';
+        var grid;
+        var gridversion;
+       var sm=new Ext.grid.RowSelectionModel({selectRow:Ext.emptyFn});
+       var contentPanel=null;
+       var viewport=null;
+        Ext.onReady(function() {
+
+            Ext.QuickTips.init();
+        <%if(!pagemenustr.equals("")){%>
+            var tb = new Ext.Toolbar();
+            tb.render('pagemenubar');
+            <%=pagemenustr%>
+        <%}%>
+    // create the data store
+            	var strTable="<table><tr>";
+   strTable = "<td width='105px'>&nbsp;&nbsp;<a><img align='absmiddle' src='<%=request.getContextPath()%>/images/silk/application_osx.gif'> <b>文档相关属性 &nbsp;&nbsp;&nbsp;</b></a></td>" +
+                      "<td width='16px'></td>" +
+                      "</tr></table> ";
+
+       var tt = new Ext.Template(
+               '<div  style="width:100%;cursor:hand;border-bottom:#98c0f4 1px solid;height: 22px; border-right:#98c0f4 1px solid;border-left:#98c0f4 1px solid;border-top:#98c0f4 1px solid;" ><div style="float:left">'+ strTable +'</div><div class="x-tool x-tool-expand-south" style="height:14px"></div></div>'
+               );
+       tt.disableFormats = true;
+       tt.compile();
+       Ext.override(Ext.layout.BorderLayout.Region,{
+           toolTemplate:tt
+       });
+      var store = new Ext.data.Store({
+           proxy: new Ext.data.HttpProxy({
+               url: '<%=action%>'
+           }),
+           reader: new Ext.data.JsonReader({
+               root: 'result',
+               totalProperty: 'totalcount',
+               fields: ['subject','createdate','humresname','attachnum','status','categoryname','content']
+
+
+           })
+
+       });
+             var versionstore = new Ext.data.Store({
+           proxy: new Ext.data.HttpProxy({
+               url: '<%=actionversion%>'
+           }),
+           reader: new Ext.data.JsonReader({
+               root: 'result',
+               totalProperty: 'totalcount',
+               fields: ['docname','versioninfo','rollback','look','delete']
+
+
+           })
+
+       });
+    // create the Grid
+             var cmversion = new Ext.grid.ColumnModel([{
+              header: "文档名称",
+               width:400,
+              dataIndex: 'docname'
+          },
+          {
+              header: "版本信息",
+              width:300,
+              dataIndex: 'versioninfo'
+          }, {
+              header: "操作",
+              width:100,
+              dataIndex: 'rollback'
+          }, {
+              header: "操作",
+              width:100,
+              dataIndex: 'look'
+          }, {
+              header: "操作",
+              width:100,
+              dataIndex: 'delete'
+          }
+       ]);
+     var cm = new Ext.grid.ColumnModel([{
+              header: "标题",
+              width:300,
+              dataIndex: 'subject'
+          },
+          {
+              header: "创建日期",
+              width:100,
+              dataIndex: 'createdate'
+          },
+          {
+              header: "创建者",
+              width:100,
+              dataIndex: 'humresname'
+          },
+          {
+              header: "附件数",
+              width:200,
+              dataIndex: 'attachnum'
+          }, {
+              header: "状态",
+             width:100,
+              dataIndex: 'status'
+          } ,
+               {
+              header: "分类",
+                   width:200,
+              dataIndex: 'categoryname'
+          }, {
+              header: "摘要",
+             width:100,
+              dataIndex: 'content'
+          }
+       ]);
+             grid = new Ext.grid.GridPanel({
+                      //region: 'center',
+                      store: store,
+                      cm: cm,
+                      trackMouseOver:false,
+                       height:350,
+                      loadMask: true,
+                      title:'回复信息',
+                       viewConfig: {
+                                             //  forceFit:true,
+                                               enableRowBody:true,
+                                               sortAscText:'升序',
+                                               sortDescText:'降序',
+                                               columnsText:'列定义',
+                                               getRowClass : function(record, rowIndex, p, store){
+                                                   return 'x-grid3-row-collapsed';
+                                               }
+                                           },
+                                           bbar: new Ext.PagingToolbar({
+                                               pageSize: 20,
+                                store: store,
+                                displayInfo: true,
+                                beforePageText:"第",
+                                afterPageText:"页/{0}",
+                                firstText:"第一页",
+                                prevText:"上页",
+                                nextText:"下页",
+                                lastText:"最后页",
+                                displayMsg: '显示 {0} - {1}条记录 / {2}',
+                                emptyMsg: "没有结果返回"
+                            })
+
+                  });
+               gridversion = new Ext.grid.GridPanel({
+                      //region: 'center',
+                      store: versionstore,
+                      cm: cmversion,
+                      title:'版本信息',
+                      trackMouseOver:false,
+                      sm:sm ,
+                       height:350,
+                      loadMask: true,
+                       viewConfig: {
+                                             //  forceFit:true,
+                                               enableRowBody:true,
+                                               sortAscText:'升序',
+                                               sortDescText:'降序',
+                                               columnsText:'列定义',
+                                               getRowClass : function(record, rowIndex, p, store){
+                                                   return 'x-grid3-row-collapsed';
+                                               }
+                                           },
+                                           bbar: new Ext.PagingToolbar({
+                                               pageSize: 20,
+                                store: store,
+                                displayInfo: true,
+                                beforePageText:"第",
+                                afterPageText:"页/{0}",
+                                firstText:"第一页",
+                                prevText:"上页",
+                                nextText:"下页",
+                                lastText:"最后页",
+                                displayMsg: '显示 {0} - {1}条记录 / {2}',
+                                emptyMsg: "没有结果返回"
+                            })
+
+                  });
+     versionstore.baseParams.objid='<%=id%>'
+            versionstore.load({params:{start:0, limit:<%=20%>},paged:""});
+            // gridversion.render('versioninfo')
+     store.baseParams.objid='<%=id%>';
+    store.load({params:{start:0, limit:<%=20%>},paged:""});
+   // grid.render('docreplay');
+                 contentPanel =   new Ext.TabPanel({
+                            border:false,
+                           activeTab:0,
+                            tabPosition:'bottom',
+                            items:[ {
+                               contentEl:'docattribute',
+                                title: '基本属性',
+                                autoScroll:true
+                            }, grid,gridversion,
+                               /*{
+                               contentEl:'docreplay',
+                                title: '回复信息',
+                                autoScroll:true
+                            }, {
+                               contentEl:'versioninfo',
+                                title: '版本信息',
+                                autoScroll:true
+                            },*/
+                            {
+                                    title: '点评该文档',
+                                    closable:false,
+                                    xtype     :'iframepanel',
+                                    frameConfig: {
+                                        autoCreate:{
+                                            frameborder:0
+                                        },
+                                        eventsFollowFrameLinks : false
+                                    },
+                                    defaultSrc:' <%=request.getContextPath()%>/document/remark/remarkcreate.jsp?objid=<%=id%>',
+                                    autoScroll:true
+                                },
+                                {
+                                    title: '查看点评记录',
+                                    closable:false,
+                                    xtype     :'iframepanel',
+                                    frameConfig: {
+                                        autoCreate:{
+                                            frameborder:0
+                                        },
+                                        eventsFollowFrameLinks : false
+                                    },
+                                    defaultSrc:'<%=request.getContextPath()%>/document/remark/remarklist.jsp?objid=<%=id%>',
+                                    autoScroll:true
+                                },{
+                                    title: '查看积分统计',
+                                    closable:false,
+                                    xtype     :'iframepanel',
+                                    frameConfig: {
+                                        autoCreate:{
+                                            frameborder:0
+                                        },
+                                        eventsFollowFrameLinks : false
+                                    },
+                                    defaultSrc:'<%=request.getContextPath()%>/document/score/docscore.jsp?objid=<%=id%>',
+                                    autoScroll:true
+                                }
+                            ]
+                        });
+          viewport=new Ext.Viewport({
+                layout: 'border',
+                 items:[
+                         {
+                        region: 'center',
+                        contentEl: 'content',
+                        autoScroll:true
+                    },
+              {
+                  region:'south',
+                  title:'文档属性',
+                  collapsible: true,
+                  split:true,
+                  width: 225,
+                  height:400,
+                  collapsed:true,
+                  id:'divformcontentPanel',
+                  layout:'fit',
+                  items:contentPanel   
+                 }
+             ]
+            });
+        });
+    </script>
+	</head>
+	<body <%if(docbase.getDoctype().intValue()==4||docbase.getDoctype().intValue()==5){%>onload="initObject();"<%}%>>
+
+
+
+<!--页面菜单结束-->
+
+
+
+
+<!-- 标题 -->
+	<hr style="WIDTH: 99.5%; HEIGHT: 2px" align=center width="99.5%" color=#A1A1A1 size=1>
+
+<!-- 正文 -->
+
+   <div id="content">
+    <div id="pagemenubar"></div>
+
+		<table id="contentDiv" class=noborder>
+			<tbody>
+				<tr>
+					<td valign=top>
+						<%if(attach!=null&&attach.getFiledir()!=null){
+						if(docType==3){%>
+
+<!--html显示模板开始-->
+<TBODY><tr><td><TABLE class=text height="294" cellSpacing=0 cellPadding=0 width="100%" 
+border=0>
+  <TBODY>
+  <TR>
+    <TD width=24 height=18><font face="Arial"> </font></TD>
+    <TD width=891 height=18><font face="Arial">
+	<FONT color=#dc143c><FONT color=#000000><FONT size=1>文档编号：<%=docbase.getObjno()%></FONT> <BR></FONT>
+	<FONT color=forestgreen><STRONG>凝聚分散智慧 协同提速发展<BR></STRONG>
+	<FONT color=#000000 size=1>发布日期：<%=docbase.getCreatedate()%></FONT> </FONT></FONT></font>
+	</TD>
+
+<TD colSpan=2 height=18>
+      <IMG alt=weaver_logo.gif src="<%=request.getContextPath()%>/images/doc/weaver_logo.gif"></TD></TR>
+  <TR>
+    <TD width=24 height="375"><font face="Arial"> </font></TD>
+    <TD vAlign=top height="375"> 
+      <p><STRONG>
+	  <FONT face=Arial>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<BR>
+	  </FONT></STRONG><FONT 
+      color=#000000><FONT face=Arial>  
+      </FONT></FONT>
+      </p>
+      <P align=center>
+	  <FONT color=black size=5><STRONG><%=docbase.getSubject()%></STRONG><BR></FONT>
+	  著者：<FONT color=crimson><a href="javascript:onUrl('<%=request.getContextPath()%>/humres/base/humresview.jsp?id=<%=docbase.getCreator()%>','<%=humresService.getHumresById(docbase.getCreator()).getObjname()%>','tab<%=docbase.getCreator()%>')"><%=humresService.getHumresById(docbase.getCreator()).getObjname()%></a></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      部门：<FONT color=crimson><a href="javascript:onUrl('<%=request.getContextPath()%>/base/orgunit/orgunitview.jsp?id=<%=humresService.getHumresOrgById(docbase.getCreator())%>','<%=orgunitService.getOrgunit(humresService.getHumresOrgById(docbase.getCreator())).getObjname()%>','tab<%=humresService.getHumresOrgById(docbase.getCreator())%>')"><%=orgunitService.getOrgunit(humresService.getHumresOrgById(docbase.getCreator())).getObjname()%></a></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  状态：<FONT size=2><FONT color=#dc143c><%=labelService.getLabelName(docbaseService.getLabelidByDocstatus(docbase.getDocstatus()))%></FONT></FONT></P>
+	  
+	  <div class="fckContent">
+      <P align=left>
+	  <%=docbaseService.getDocContent(docbase.getId(),attachid)%>
+	  </p>
+	  </div>
+<div></div>
+<P align=left></P>
+
+      <P align=right>
+	  	<%=humresService.getHumresById(docbase.getCreator()).getObjname()%><BR>
+		<%=docbase.getCreatedate()%>
+	  </P>
+      <P>  <br> 
+        <br>
+        <br></P>
+      <p>　</p>
+    </TD>    
+    <TD width=19 height="375">　</TD>
+    <TD vAlign=bottom align=left width=69 bgColor=#000066 height="510">
+      <IMG alt=weaver_right.gif src="<%=request.getContextPath()%>/images/doc/weaver_right.gif"><A
+      href="http://www.weaver.com.cn" target=_blank></A></TD></TR>    
+  <TR bgColor=#ffffff>    
+    <TD colSpan=4 height=1><IMG height=3 src="3" width=1></TD></TR>    
+  <TR bgColor=#999999>    
+    <TD colSpan=4 height=1><IMG height=3 src="3" width=1></TD></TR>
+  <TR align=left bgColor=#000066>    
+    <TD colSpan=4 height=1>
+<IMG alt=weaver_bottom_software.gif src="<%=request.getContextPath()%>/images/doc/weaver_bottom_software.gif"></TD></TR></TBODY></TABLE></BODY></HTML>
+	</td>
+</tr>
+<TR class=Spacing><TD class=Line1></TD></TR>
+
+<!--html显示模板结束-->
+
+
+						<%}else if(docType==4 || docType==5){%>	
+							<div style="POSITION: relative;width:100%;height:660;OVERFLOW:hidden;">
+							<object id="WebOffice" style="POSITION: relative;top:-20" width=100% height=680 classid="<%=mClassId %>" codebase="<%=mClientName%>">
+								<param name="WebUrl" value="<%=mServerUrl%>">
+								<param name="RecordID" value="<%=id%>">
+								<param name="Template" value="">
+								<param name="FileName" value="<%=attach.getObjname()%>">
+								<param name="FileType" value="<%=docType==4?".doc":".xls"%>">
+								<param name="UserName" value="<%=currentuser.getObjname()%>">
+								<param name="EditType" value="0">
+								<param name="PenColor" value="#FF0000">
+                                <param name="Print" value="false">
+								<param name="PenWidth" value="1">
+								<param name="ShowToolBar" value="0">
+								<param name="ShowMenu" value="0">
+								<param name="MaxFileSize" value="300*1024">
+							</object>
+							</div>
+							&nbsp;
+						<%}else if(docType==6){
+							String filePath = setitemService.getSetitem("402881e80b7544bb010b754c7cd8000a").getItemvalue();	
+						%>
+						<div style="POSITION: relative;width:100%;height:660;OVERFLOW:hidden;">
+						<object style="POSITION: relative;top:-36"  classid="clsid:CA8A9780-280D-11CF-A24D-444553540000" width="100%" height="696">
+							<param name="_Version" value="65539">
+							<param name="_ExtentX" value="20108">
+							<param name="_ExtentY" value="10866">
+							<param name="_StockProps" value="0">
+							<param name="SRC" value="<%=attach.getFiledir().substring(filePath.length()-1,attach.getFiledir().length())%>">
+						</object>
+						</div>
+						&nbsp;
+						<%}
+						}%>	
+					</td>
+
+				</tr>
+			</tbody>
+		</table>
+</div>
+
+<!-- 版本信息 start -->
+
+    <div id="versioninfo">
+        
+    </div>
+
+<!-- 文档回复 start -->
+        <%
+            Docbase maindocbase = docbaseService.getMainDocbase(id);
+            String categoryid = null;
+            if (categoryService.getCategoryByObj(maindocbase.getId()) != null)
+                categoryid = (categoryService.getCategoryidStrByObj(maindocbase.getId()));
+        %>
+    <div id="docreplay" ></div>
+
+<!-- 文档回复 end -->
+
+
+<!-- 附件 start -->
+<!-- 
+<tr><td>	
+	<table width="100%" border=0 cellPadding=0 cellSpacing=0>
+		<tr>
+			<td width="99%"></td>
+			<td nowrap>
+				<b><a href="javascript:onExpand('attach')"><FONT COLOR="#000000">附件信息</FONT></a></b>
+			</td>
+			<td nowrap>
+				<img id="attach_up" src="/images/doc/ArrowUpGreen.gif" onclick="onExpand('attach');" style="cursor:hand;display:block">
+				<img id="attach_down" src="/images/doc/ArrowDownRed.gif" onclick="onExpand('attach');" style="cursor:hand;display:none">
+			</td>
+		</tr>
+	</table>
+	<hr style="WIDTH: 99.5%; HEIGHT: 2px" align=center width="99.5%" color=#A1A1A1 size=1>
+</td></tr>
+
+<tr id="attach_tr" style="display:block">
+<td>
+<DIV align=center> 
+<FIELDSET style="WIDTH: 98%"><LEGEND>附件信息</LEGEND> 
+<table>
+    <colgroup>
+    <col width="20%">
+    <col width="80%">
+    </colgroup>
+<tr>
+ 		<td class="FieldName" nowrap><%=labelService.getLabelName("402881eb0bcd354e010bcd9dfe6b0017")%></td>
+ 		<td class="FieldValue" colspan="3">
+ 		<%--	
+   		for (int i=0; i<docattachList.size();i++){
+   			if(righttype%3==0){
+   		%>
+		<div id=<%=((Attach)docattachList.get(i)).getId()%>><a href="/ServiceAction/com.eweaver.document.file.FileDownload?attachid=<%=((Attach)docattachList.get(i)).getId()%>&download=1"><%=((Attach)docattachList.get(i)).getObjname()%></a><br>
+		</div>
+ 		<%}
+ 		}--%>
+ 		</td>
+</tr>
+</table>
+</FIELDSET>
+</div>
+</td>
+</tr>
+ -->
+<!-- 文档属性页 start -->
+
+    <div id="docattribute">
+
+
+
+
+<%
+	Category category = categoryService.getCategoryById(categoryid);
+	String formcontent ="";
+	Map initparameters = new HashMap();
+	Map parameters = new HashMap();
+
+	parameters.put("bWorkflowform","0");
+    parameters.put("isview","1");
+	parameters.put("formid","402881e50bff706e010bff7fd5640006");
+	parameters.put("objid",id);
+	parameters.put("object",docbase);
+	parameters.put("layoutid",category.getPViewlayoutid());
+	parameters.put("initparameters",initparameters);
+
+	FormService fs = (FormService)BaseContext.getBean("formService");
+    parameters = fs.WorkflowView(parameters);
+
+	formcontent = StringHelper.null2String(parameters.get("formcontent"));
+	if(formcontent.equals(""))
+		formcontent = "<b><font color=red>没有定义对应的布局，请和系统管理员联系！</font></a>";
+
+%>
+
+<%=formcontent%>
+
+  </div>
+<!-- 点评 -->
+<!--文章推荐或点评开始-->
+
+
+<!--文章推荐或点评结束 -->
+
+
+
+
+<script language="javascript">
+ <!--
+ function initObject(){
+ 	document.WebOffice.WebSetMsgByName("ATTACHID","<%=attach==null?"":attach.getId()%>");
+//    document.WebOffice.WebToolsEnable('Standard',109,false)
+
+
+    document.WebOffice.WebOpen();
+    <%
+        if(righttype%15!=0){    
+    %>
+    document.WebOffice.WebToolsEnable('Standard',2521,false);
+    <%
+        }
+    %>
+     //document.WebOffice.WebToolsEnable('Standard',2521,false);
+}
+ function onModify(id,doctype,attachid){
+
+ 	if(doctype==3){
+ 		var url="docbasemodify.jsp?id="+id+"&attachid="+attachid;
+    }else if(doctype==4||doctype==5){
+    	var url="docbasemodify2.jsp?id="+id+"&attachid="+attachid;
+    }else if(doctype==6){
+    	var url="docbasemodify3.jsp?id="+id+"&attachid="+attachid;
+    }
+    window.location.href=url;
+ }
+ function onRepay(pid){
+  	var url="docbasecreate.jsp?pid="+pid+"&categoryid=<%=categoryid%>";
+    window.location.href=url;
+ }
+//作用：保存office正文到本地
+
+function savelocalFile(){
+   try{
+	document.WebOffice.WebSaveLocalFile();
+   }catch(e){}
+}
+  -->
+ </script>
+<script type="text/javascript">
+    function getVersion(docid){
+      var  url = "<%=request.getContextPath()%>/document/base/docbaseversion.jsp?id="+docid;
+          try{
+    id=window.showModalDialog('<%= request.getContextPath()%>/base/popupmain.jsp?url='+url);
+    }catch(e){}
+        if (id!=null) {
+	if (id[0] != '0') {
+        window.location.href="docbaseview.jsp?id="+id[0]+"&attachid="+id[1]
+    }else{
+        window.location.href="docbaseview.jsp?id="+docid
+
+            }
+         }
+    }
+</script>
+<script language=javascript>
+function onOpenWindow(url){
+window.open(url,"newdocwindow","height=600, width=900, top=0, left=0,toolbar=no, menubar=no, scrollbars=yes, resizable=yes, location=no, status=yes");
+}
+function openchild(inputvalue){
+	var returnvalue = new String(window.showModalDialog("<%=request.getContextPath()%>/document/base/basechild.jsp?objid=" + inputvalue,"Width=110,Height=100"));
+} 
+
+	function setCookie(name,value){
+	  var Days = 1;
+	  var exp  = new Date();
+	  exp.setTime(exp.getTime()+Days*24*60*60*1000);
+	  document.cookie = name + "="+ escape(value) +";expires="+ exp.toGMTString();
+	}
+	
+	function getCookie(name){
+	  var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
+	  if(arr != null) 
+	  	return unescape(arr[2]);
+	  return null;
+	}
+	
+	function delCookie(name){
+	  var exp = new Date();
+	  exp.setTime(exp.getTime() - 1);
+	  var cval=getCookie(name);
+	  if(cval!=null) 
+	  	document.cookie=name +"="+cval+";expires="+exp.toGMTString();
+	}
+
+	function initExpand(){
+		var objstr1 = new Array("reply","attach","properties","mark");
+		var objstr2 = new Array("tr","up","down");
+		for(var i =0;i<objstr1.length;i++){
+			for(var j=0;j<objstr2.length;j++){
+				var tmpname = objstr1[i] + "_" + objstr2[j];
+				var tmpdisplay = getCookie(tmpname);
+				if(tmpdisplay!=null){
+					document.all(tmpname).style.display = tmpdisplay;
+				}
+			}
+		}
+	}
+	
+	initExpand();
+	
+	function onExpand(objstr){
+		if(objstr!=null){
+
+			if(document.all(objstr+"_tr").style.display=="none"){
+				document.all(objstr+"_tr").style.display = "block";
+				setCookie(objstr+"_tr","block");
+			} else {
+				document.all(objstr+"_tr").style.display = "none";
+				setCookie(objstr+"_tr","none");
+			}
+
+			if(document.all(objstr+"_up").style.display=="none"){
+				document.all(objstr+"_up").style.display = "block";
+				setCookie(objstr+"_up","block");
+			} else {
+				document.all(objstr+"_up").style.display = "none";
+				setCookie(objstr+"_up","none");
+			}
+
+			if(document.all(objstr+"_down").style.display=="none"){
+				document.all(objstr+"_down").style.display = "block";
+				setCookie(objstr+"_down","block");
+			} else {
+				document.all(objstr+"_down").style.display = "none";
+				setCookie(objstr+"_down","none");
+			}
+
+		}
+	}
+     function selectVersion(id){
+ 	window.location.href = "<%=request.getContextPath()%>/ServiceAction/com.eweaver.document.base.servlet.DocbaseAction?action=selectver&id=<%=id%>&ver="+id;
+ }
+function deleteVersion(id){
+	window.location.href = "<%=request.getContextPath()%>/ServiceAction/com.eweaver.document.base.servlet.DocbaseAction?action=deletever&id=<%=id%>&ver="+id;
+}
+</script>
+	</body>
+</html>

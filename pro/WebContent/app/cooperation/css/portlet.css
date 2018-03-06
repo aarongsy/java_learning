@@ -1,0 +1,213 @@
+body {
+	margin: 0;
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+	hide-focus: expression(this . hideFocus = true);
+	outline: none;
+}
+
+a:link,a:visited,a:active {
+	text-decoration: none;
+	color: #000000;
+}
+
+a:focus {
+	outline: 0;
+}
+
+<!--
+.item {
+	padding: 4px 0;
+	width: 100%;
+}
+
+.itemgcolor1 {
+	background-color: #F1F4F6;
+}
+
+.d1 {
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	width: 20px;
+	text-align: left;
+}
+
+.d2 {
+	float: left;
+	line-height: 20px;
+	margin-left: 5px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-right: 0px;
+	padding-left: 8px;
+	padding-bottom: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	font-family: Microsoft YaHei;
+	font-size: 12px;
+	text-decoration: none;
+	text-align: left;
+}
+
+.d3 {
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	font-family: Microsoft YaHei;
+	font-size: 10px;
+	width: auto;
+	vertical-align: bottom;
+	color: #999;
+	border: 0 solid red;
+}
+
+.d4 {
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	font-family: Microsoft YaHei;
+	font-size: 11px;
+	color: #333;
+	width: 50px;
+	text-align:left;
+	border: 0 solid red;
+}
+
+.title { 
+	word-break: break-all;
+	text-overflow: ellipsis;
+	font-family: Microsoft YaHei;
+	color: #999;
+}
+
+.title a:link {
+	font-weight: normal;
+	font-size: 12px;
+	text-decoration: none;
+	color: #000000;
+	font-family: Microsoft YaHei;
+}
+
+.title a:visited {
+	font-weight: normal;
+	font-size: 12px;
+	text-decoration: none;
+	color: #000000;
+	font-family: Microsoft YaHei;
+}
+
+.title a:hover {
+	font-weight: normal;
+	font-size: 12px;
+	text-decoration: none;
+	color: blue;
+	font-family: Microsoft YaHei;
+}
+
+.more {
+	word-break: break-all;
+	text-overflow: ellipsis;
+	font-family: Microsoft YaHei;
+	font-weight: normal;
+	font-size: 10px;
+	text-decoration: none;
+	color: #000000;
+}
+
+.more:link {
+	font-weight: normal;
+	font-size: 13px;
+	text-decoration: none;
+	color: blue;
+}
+
+.more:visited {
+	font-weight: normal;
+	font-size: 13px;
+	text-decoration: none;
+	color: blue;
+}
+
+.more:hover {
+	font-weight: normal;
+	font-size: 13px;
+	text-decoration: none;
+	color: blue;
+}
+
+.remark {
+	font-family: Microsoft YaHei;
+	font-size: 11px;
+	color: #999;
+}
+
+.nbody {
+	background-color: #F8F8FA;
+}
+
+/* qtip 提示框基础样式 */
+.qtip .qtip-content {
+	padding: 10px;
+	overflow: hidden;
+	z-index: 1000;
+}
+
+.qtip .qtip-content .qtip-title,.qtip-cream .qtip-content .qtip-title {
+	background-color: #F0DE7D;
+}
+
+.qtip-light .qtip-content .qtip-title {
+	background-color: #f1f1f1;
+}
+
+.qtip-dark .qtip-content .qtip-title {
+	background-color: #404040;
+}
+
+.qtip-red .qtip-content .qtip-title {
+	background-color: #F28279;
+}
+
+.qtip-green .qtip-content .qtip-title {
+	background-color: #B9DB8C;
+}
+
+.tipfont {
+	font-size: 11px;
+	color: #666;
+}
+
+-->
+table.unread {
+	float: left;
+	height: 13px;
+	border: 0;
+	border-collapse: collapse;
+	width:auto;
+}
+
+table.unread td {
+	padding: 0;
+}
+
+table.unread td.unreadCenter {
+	background-color: red;
+	color: #fff;
+	font: 10px Arial;
+	font-weight: bold;
+	padding-bottom: 1px;
+}
+
+table.unread td.unreadLeft {
+	width: 5px;
+	background: url(/app/cooperation/images/radiusleft.png);
+}
+
+table.unread td.unreadRight {
+	width: 5px;
+	background: url(/app/cooperation/images/radiusright.png);
+}

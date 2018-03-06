@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.5</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT PRODUCTID,PRODUCTNAME,COUNTRY,PRODUCERNAME FROM PRODUCT,PRODUCER WHERE PRODUCT.PRODUCERID=PRODUCER.PRODUCERID]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT CUSTOMERNAME, PRODUCTID,SIGNDATE,ORDERSDETAIL.QUANTITY,PRICE*ORDERSDETAIL.QUANTITY AS AMOUNT,SHIPDATE FROM ORDERSDETAIL,ORDERS,CUSTOMER WHERE ORDERSDETAIL.ORDERID=ORDERS.ORDERID AND CUSTOMER.CUSTOMERID=ORDERS.CUSTOMERID AND year(SIGNDATE)=2009]]></Query>
+</TableData>
+<TableData name="ds3" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT PRODUCTID,PRODUCTNAME,COUNTRY,PRODUCERNAME FROM PRODUCT,PRODUCER WHERE PRODUCT.PRODUCERID=PRODUCER.PRODUCERID]]></Query>
+</TableData>
+</TableDataMap>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.CustomParameterUI">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT PRODUCTID,PRODUCTNAME,COUNTRY,PRODUCERNAME FROM PRODUCT,PRODUCER WHERE PRODUCT.PRODUCERID=PRODUCER.PRODUCERID]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT CUSTOMERNAME, PRODUCTID,SIGNDATE,ORDERSDETAIL.QUANTITY,PRICE*ORDERSDETAIL.QUANTITY AS AMOUNT,SHIPDATE FROM ORDERSDETAIL,ORDERS,CUSTOMER WHERE ORDERSDETAIL.ORDERID=ORDERS.ORDERID AND CUSTOMER.CUSTOMERID=ORDERS.CUSTOMERID AND year(SIGNDATE)=2009]]></Query>
+</TableData>
+</TableDataMap>
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<RowHeight defaultValue="19">
+<![CDATA[10,23,10,23,10,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,120,72,120,72,120,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="1" s="0"><O><![CDATA[国家:]]></O>
+</C>
+<C c="1" r="1"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr/>
+<FieldName>COUNTRY</FieldName><MVList class="com.fr.data.impl.TableDataDictionary">
+<FormulaDictAttr keyColumnIndex="3" valueColumnIndex="3"></FormulaDictAttr>
+<TableDataDictAttr>
+<TableData class="com.fr.data.impl.NameTableData">
+<Name><![CDATA[ds1]]></Name>
+</TableData>
+</TableDataDictAttr>
+</MVList>
+</Widget>
+</C>
+<C c="2" r="1" s="0"><O><![CDATA[生产厂商:]]></O>
+</C>
+<C c="3" r="1"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr/>
+<FieldName>PRODUCERNAME</FieldName><MVList class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr keyColumnIndex="4" valueColumnIndex="4"></FormulaDictAttr>
+<Formula><![CDATA[SELECT PRODUCTID,PRODUCTNAME,COUNTRY,PRODUCERNAME FROM PRODUCT,PRODUCER WHERE PRODUCT.PRODUCERID=PRODUCER.PRODUCERID and COUNTRY='${COUNTRY}']]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection></MVList>
+</Widget>
+</C>
+<C c="4" r="1" s="0"><O><![CDATA[产品:]]></O>
+</C>
+<C c="5" r="1"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr/>
+<FieldName>PRODUCTID</FieldName><MVList class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr keyColumnIndex="1" valueColumnIndex="2"></FormulaDictAttr>
+<Formula><![CDATA[SELECT PRODUCTID,PRODUCTNAME,COUNTRY,PRODUCERNAME FROM PRODUCT,PRODUCER WHERE PRODUCT.PRODUCERID=PRODUCER.PRODUCERID AND PRODUCERNAME ='${PRODUCERNAME}']]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection></MVList>
+</Widget>
+</C>
+<C c="1" r="3" cs="6" s="0"><Widget class="com.fr.report.web.ui.impl.form.FormSubmitButton">
+<WidgetAttr/>
+<Text>查询</Text></Widget>
+</C>
+<C c="0" r="4"></C>
+</CellElementList>
+</ParameterUI>
+<Parameter>
+<Attributes name="COUNTRY" />
+<O><![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="PRODUCERNAME" />
+<O><![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="PRODUCTID" />
+<O><![CDATA[]]></O>
+</Parameter>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<ReportPageAttr>
+<HR F="0" T="3" /></ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[50,19,19,20,18,19,19,19,30,19,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[110,127,119,106,125,72,72,72,72,72,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="5" s="1"><O t="Formula" class="Formula"><Attributes><![CDATA[=$COUNTRY + "  " + $PRODUCERNAME + "制造商" + $PRODUCTID + "号产品订货情况查询"]]></Attributes></O>
+</C>
+<C c="0" r="2" cs="5" s="2"></C>
+<C c="0" r="3" s="3"><O><![CDATA[客户]]></O>
+</C>
+<C c="1" r="3" s="3"><O><![CDATA[订货时间]]></O>
+</C>
+<C c="2" r="3" s="3"><O><![CDATA[发货时间]]></O>
+</C>
+<C c="3" r="3" s="3"><O><![CDATA[数量]]></O>
+</C>
+<C c="4" r="3" s="3"><O><![CDATA[总额]]></O>
+</C>
+<C c="0" r="4" s="4"><O t="DSColumn"><Attributes dsName="ds2" columnName="CUSTOMERNAME" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[PRODUCTID]]></CNAME><Compare op="0">
+<Parameter>
+<Attributes name="PRODUCTID" />
+<O><![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+<Attr divideMode="1" /></RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="1" r="4" s="5"><O t="DSColumn"><Attributes dsName="ds2" columnName="SIGNDATE" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="2" r="4" s="5"><O t="DSColumn"><Attributes dsName="ds2" columnName="SHIPDATE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="3" r="4" s="4"><O t="DSColumn"><Attributes dsName="ds2" columnName="QUANTITY" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="4" r="4" s="4"><O t="DSColumn"><Attributes dsName="ds2" columnName="AMOUNT" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="0" r="6" cs="5" s="6"><O><![CDATA[“产品订货情况查询”的功能应用说明：]]></O>
+<Expand leftParentDefault="false" upParentDefault="false" />
+</C>
+<C c="0" r="7" cs="5" s="7"><O><![CDATA[1、参数连动]]></O>
+<Expand leftParentDefault="false" upParentDefault="false" />
+</C>
+<C c="0" r="8" cs="5" s="8"><O><![CDATA[   “制造商”下拉框中的内容会随着“国家”的选择，而与该省一一对应，同样产品的名字也会随着“制造商”的选择而与该制造商一一对应]]></O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style style_name="Title" />
+<Style style_name="Head" />
+<Style style_name="Head2" />
+<Style style_name="cell" />
+<Style horizontal_alignment="0">
+<Format class="java.text.SimpleDateFormat"><![CDATA[yyyy-MM-dd]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6697729"
+ /><Bottom style="1" color="-6697729"
+ /><Left style="1" color="-6697729"
+ /><Right style="1" color="-6697729"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="3" color="-6697729"
+ /><Left style="3" color="-6697729"
+ /><Right style="3" color="-6697729"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Left style="3" color="-6697729"
+ /><Right style="3" color="-6697729"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="3" color="-6697729"
+ /><Left style="3" color="-6697729"
+ /><Right style="3" color="-6697729"
+ /></Border>
+</Style>
+</StyleList>
+</WorkBook>

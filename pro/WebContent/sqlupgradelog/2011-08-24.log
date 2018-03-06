@@ -1,0 +1,22 @@
+错误时间
+  15:26:14
+错误位置
+  sql2011022501.sql第8行:
+错误语句
+ alter table nodeinfo add doctourl2 varchar(256);
+错误原因
+  java.sql.SQLSyntaxErrorException: ORA-00911: 无效字符
+
+
+
+错误时间
+  15:28:03
+错误位置
+  sql2011022501.sql第2行:
+错误语句
+ alter table nodeinfo add iscrossds int
+错误原因
+  java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+
+

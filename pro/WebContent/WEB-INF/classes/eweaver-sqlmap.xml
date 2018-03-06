@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqlmap>
+	<key id="com.eweaver.base.DataService.getFormfieldForPermission">
+		<mssql>SELECT a.id as id,(b.objname+'.'+a.labelname) as labelname from formfield a,forminfo b where a.formid = b.id and a.formid in(#) and a.fieldtype in (#) order by b.id desc</mssql>
+		<oracle>SELECT a.id as id,(b.objname || '.' || a.labelname) as labelname from formfield a,forminfo b where a.formid = b.id and a.formid in(#) and a.fieldtype in (#) and a.isdelete=0 order by b.id desc</oracle>
+		<db2>SELECT a.id as id,(b.objname || '.' || a.labelname) as labelname from formfield a,forminfo b where a.formid = b.id and a.formid in(#) and a.fieldtype in (#) order by b.id desc</db2>
+	</key>
+	<key id="com.eweaver.attendance.service.AttendanceService.getTodayAttendance.sql1">
+		<mssql>from Attendance where substring(date1,1,10)='#' and hrmid='#' and attendance=#</mssql>
+		<oracle>from Attendance where substr(date1,1,10)='#' and hrmid='#' and attendance=#</oracle>
+		<db2>from Attendance where substr(date1,1,10)='#' and hrmid='#' and attendance=#</db2>
+	</key>
+	<key id="com.eweaver.attendance.service.AttendanceService.getTodayAttendance.sql2">
+		<mssql> and substring(date1,12,9)&gt;'#'</mssql>
+		<oracle> and substr(date1,12,9)&gt;'#'</oracle>
+		<db2> and substr(date1,12,9)&gt;'#'</db2>
+	</key>
+	<key id="com.eweaver.attendance.service.AttendanceService.getTodayAttendance.sql3">
+		<mssql> and substring(date1,12,9)&gt;'#'</mssql>
+		<oracle> and substr(date1,12,9)&gt;'#'</oracle>
+		<db2> and substr(date1,12,9)&gt;'#'</db2>
+	</key>
+	<key id="com.eweaver.base.security.service.logic.SysuserService.checkUserPerm">
+		<mssql> where oid='#' and CHARINDEX(col1,'#')&gt;-1</mssql>
+		<oracle> where oid='#' and instr(col1,'#')&gt;-1</oracle>
+		<db2> where oid='#' and locate('#',col1)&gt;0</db2>
+	</key>
+	<key id="com.eweaver.attendance.service.AttendanceService.getAttendanceCount">
+		<mssql>select count(*) as nums from Attendance where hrmid='#' and substring(date1,1,10) between '#' and '#' and substring(date1,12,9)</mssql>
+		<oracle>select count(*) as nums from Attendance where hrmid='#' and substr(date1,1,10) between '#' and '#' and substr(date1,12,9)</oracle>
+		<db2>select count(*) as nums from Attendance where hrmid='#' and substr(date1,1,10) between '#' and '#' and substr(date1,12,9)</db2>
+	</key>
+	<key id="com.eweaver.attendance.service.AttendanceService.getAttendanceList">
+		<mssql>select count(*) as nums from Attendance where hrmid='#' and substring(date1,1,10) between '#' and '#'</mssql>
+		<oracle>select count(*) as nums from Attendance where hrmid='#' and substr(date1,1,10) between '#' and '#'</oracle>
+		<db2>select count(*) as nums from Attendance where hrmid='#' and substr(date1,1,10) between '#' and '#'</db2>
+	</key>
+	<key id="com.eweaver.base.util.SqlHelper.modifyTableField">
+		<mssql>exec sp_rename @objname='#.#', @newname='#', @objtype='column'</mssql>
+		<oracle>alter table # rename column # to #</oracle>
+		<db2>alter table # rename column # to #</db2>
+	</key>
+	
+	<key id="com.eweaver.base.util.SqlHelper.modifyTableFieldVLenght">
+		<mssql>alter table #  ALTER COLUMN  # VARCHAR(#)</mssql>
+		<oracle>alter table # modify  # VARCHAR2(#)</oracle>
+		<db2>alter table # alter  # set data type varchar(#)</db2>
+	</key>
+	<key id="com.eweaver.base.util.SqlHelper.modifyTableFieldFLenght">
+		<mssql>alter table #  ALTER COLUMN  # numeric(24,#)</mssql>
+		<oracle>alter table # modify  # number(24,#)</oracle>
+		<db2>alter table # alter  # set data type DECIMAL(24,#)</db2>
+	</key>
+	
+	<key id="com.eweaver.base.util.SqlHelper.deleteTableField">
+		<mssql>alter table # drop column #</mssql>
+		<oracle>alter table # drop column #</oracle>
+		<db2>alter table # drop column #</db2>
+	</key>
+	<key id="com.eweaver.document.report.ReportService.getDocNumDependViewlog.sql1">
+		<mssql>select top 50 d.id,count(*) c </mssql>
+		<oracle>select d.id,count(*) c </oracle>
+		<db2>select d.id,count(*) c</db2>
+	</key>
+	<key id="com.eweaver.document.report.ReportService.getDocNumDependViewlog.sql2">
+		<mssql></mssql>
+		<oracle>and rownum &lt; 51  </oracle>
+		<db2>fetch first 50 rows only </db2>
+	</key>
+	<key id="org.light.portlets.TodoWorkflow.returnHadValue">
+		<mssql>operatedate+' '+operatortime</mssql>
+		<oracle>operatedate||' '||operatortime</oracle>
+		<db2>operatedate||' '||operatortime</db2>
+	</key>
+	<key id="org.light.portlets.TodoWorkflow.getQuerySql">
+		<mssql>select requestid,operatedate+' '+operatortime as feedtime from requestlog where logtype='297e269b2d5a04ba012d5a31ef5e0072' and isfeedbackread='0' and operator='#' order by operatedate desc,operatortime desc</mssql>
+		<oracle>select requestid,operatedate||' '||operatortime as feedtime from requestlog where logtype='297e269b2d5a04ba012d5a31ef5e0072' and isfeedbackread='0' and operator='#' order by operatedate desc,operatortime desc</oracle>
+		<db2>select requestid,operatedate||' '||operatortime as feedtime from requestlog where logtype='297e269b2d5a04ba012d5a31ef5e0072' and isfeedbackread='0' and operator='#' order by operatedate desc,operatortime desc</db2>
+	</key>
+	<key id="com.eweaver.base.job.WorkflowCreateJob.check">
+		<mssql>select distinct b.id from sysuser a,humres b,permissiondetail d,nodeinfo e where a.isclosed != 1 and (a.objid = b.id or (a.objid is not null and b.station like '%'+a.objid+'%')) and (d.userid = b.id or (d.stationid is not null and b.station like '%'+d.stationid+'%') or (( d.isalluser=1 or (d.orgid is not null and b.orgid like '%'+d.orgid+'%' )) and d.minseclevel &lt;=b.seclevel and (((d.maxseclevel is not null) and (b.seclevel &lt;=d.maxseclevel)) or (d.maxseclevel is null)))) and  d.objid = e.id and e.nodetype = 1 and e.isdelete &lt; 1 and e.workflowid = '#'</mssql>
+		<oracle>select distinct b.id from sysuser a,humres b,permissiondetail d,nodeinfo e where a.isclosed != 1 and (a.objid = b.id or (a.objid is not null and b.station like '%'||a.objid||'%')) and (d.userid = b.id or (d.stationid is not null and b.station like '%'||d.stationid||'%') or (( d.isalluser=1 or (d.orgid is not null and b.orgid like '%'||d.orgid||'%' )) and d.minseclevel &lt;=b.seclevel and (((d.maxseclevel is not null) and (b.seclevel &lt;=d.maxseclevel)) or (d.maxseclevel is null)))) and  d.objid = e.id and e.nodetype = 1 and e.isdelete &lt; 1 and e.workflowid = '#'</oracle>
+		<db2>select distinct b.id from sysuser a,humres b,permissiondetail d,nodeinfo e where a.isclosed != 1 and (a.objid = b.id or (a.objid is not null and locate(a.objid,b.station)&gt; 0)) and (d.userid = b.id or (d.stationid is not null and locate(d.stationid,b.station)&gt;0 ) or (( d.isalluser=1 or (d.orgid is not null and locate(d.orgid,b.orgid)&gt;0 )) and d.minseclevel &lt;=b.seclevel and (((d.maxseclevel is not null) and (b.seclevel &lt;=d.maxseclevel)) or (d.maxseclevel is null)))) and  d.objid = e.id and e.nodetype = 1 and e.isdelete &lt; 1 and e.workflowid = '#'</db2>
+	</key>
+	<key id="com.eweaver.base.notify.service.NotifyService.parseReceiver">
+		<mssql>select distinct a.id from Permissiondetail c,Humres a where  ((a.id = c.userid) or (c.stationid is not null and a.station like '%'+c.stationid+'%')  or ((c.isalluser = 1 or (c.orgid is not null and a.orgid like '%'+c.orgid+'%' )) and (c.minseclevel &lt;= a.seclevel and ( ( (c.maxseclevel is not null) and (c.maxseclevel &gt;= a.seclevel) ) or (c.maxseclevel is null) ) ))) and objid = '#' and opttype =9</mssql>
+		<oracle>select distinct a.id from Permissiondetail c,Humres a where  ((a.id = c.userid) or (c.stationid is not null and a.station like '%'||c.stationid||'%')  or ((c.isalluser = 1 or (c.orgid is not null and a.orgid like '%'||c.orgid||'%' )) and (c.minseclevel &lt;= a.seclevel and ( ( (c.maxseclevel is not null) and (c.maxseclevel &gt;= a.seclevel) ) or (c.maxseclevel is null) ) ))) and objid = '#' and opttype =9</oracle>
+		<db2>select distinct a.id from Permissiondetail c,Humres a where  ((a.id = c.userid) or (c.stationid is not null and locate(c.stationid,a.station)&gt;0 )  or ((c.isalluser = 1 or (c.orgid is not null and locate(c.orgid,a.orgid)&gt;0 )) and (c.minseclevel &lt;= a.seclevel and ( ( (c.maxseclevel is not null) and (c.maxseclevel &gt;= a.seclevel) ) or (c.maxseclevel is null) ) ))) and objid = '#' and opttype =9</db2>
+	</key>
+	<key id="com.eweaver.base.orgunit.dao.OrgunitlinkDaoHB.getBudgetSubOrgunitList1">
+		<mssql>select o from Orgunit o,Orgunitlink l where o.id = l.oid and o.isdelete != 1 and exists (select 'X' from Orgsubjectlink where orgid='orgids' and o.id is not null and subjectids like '%'+o.id+'%')</mssql>
+		<oracle>select o from Orgunit o,Orgunitlink l where o.id = l.oid and o.isdelete != 1 and exists (select 'X' from Orgsubjectlink where orgid='orgids' and o.id is not null and subjectids like '%'||o.id||'%')</oracle>
+		<db2>select o from Orgunit o,Orgunitlink l where o.id = l.oid and o.isdelete != 1 and exists (select 'X' from Orgsubjectlink where orgid='orgids' and o.id is not null and locate(o.id,subjectids)&gt;0 )</db2>
+	</key>
+	<key id="com.eweaver.base.orgunit.dao.OrgunitlinkDaoHB.getBudgetSubOrgunitList2">
+		<mssql>select o from Orgunit o,Orgunitlink l where o.id = l.oid and o.isdelete != 1 and exists (select 'X' from Orgsubjectlink where orgid='orgids_v' and o.id is not null and subjectids like '%'+o.id+'%')</mssql>
+		<oracle>select o from Orgunit o,Orgunitlink l where o.id = l.oid and o.isdelete != 1 and exists (select 'X' from Orgsubjectlink where orgid='orgids_v' and o.id is not null and subjectids like '%'||o.id||'%')</oracle>
+		<db2>select o from Orgunit o,Orgunitlink l where o.id = l.oid and o.isdelete != 1 and exists (select 'X' from Orgsubjectlink where orgid='orgids_v' and o.id is not null and locate(o.id,subjectids)&gt;0 )</db2>
+	</key>
+	<key id="com.eweaver.base.security.dao.PermissiondetailDaoHB.checkWorkflowCreateRight">
+		<mssql>from Workflowinfo where id = '#'  and isactive = '1' and id in (select n.workflowid from Permissiondetail  p ,nodeinfo  n where	((p.userid='#')  or (p.stationid is not null and '#' like '%'+p.stationid+'%') or (( p.isalluser=1 or (p.orgid is not null and '#' like '%'+p.orgid+'%')) and (p.minseclevel &lt;= # and ((( maxseclevel is not null) and (#&lt;= maxseclevel)) or (maxseclevel is null))))) and opttype=2 and p.objid = n.id )</mssql>
+		<oracle>from Workflowinfo where id = '#'  and isactive = '1' and id in (select n.workflowid from Permissiondetail  p ,nodeinfo  n where	((p.userid='#')  or (p.stationid is not null and '#' like '%'||p.stationid||'%') or (( p.isalluser=1 or (p.orgid is not null and '#' like '%'||p.orgid||'%')) and (p.minseclevel &lt;= # and ((( maxseclevel is not null) and (#&lt;= maxseclevel)) or (maxseclevel is null))))) and opttype=2 and p.objid = n.id )</oracle>
+		<db2>from Workflowinfo where id = '#'  and isactive = '1' and id in (select n.workflowid from Permissiondetail  p ,nodeinfo  n where	((p.userid='#')  or (p.stationid is not null and locate(p.stationid,'#')&gt;0) or (( p.isalluser=1 or (p.orgid is not null and locate(p.orgid,'#')&gt;0 )) and (p.minseclevel &lt;= # and ((( maxseclevel is not null) and (#&lt;= maxseclevel)) or (maxseclevel is null))))) and opttype=2 and p.objid = n.id )</db2>
+	</key>
+	
+	<key id="com.eweaver.base.security.dao.PermissionruleDaoHB.getHumresFileds">
+		<mssql>where a.id = b.userid  and d.id=b.roleid  and ((a.objid = c.id and a.mtype=1) or (a.objid is not null and c.station like '%'+a.objid+'%' and a.mtype=2))</mssql>
+		<oracle>where a.id = b.userid  and d.id=b.roleid  and ((a.objid = c.id and a.mtype=1) or (a.objid is not null and c.station like '%'||a.objid||'%' and a.mtype=2))</oracle>
+		<db2>where a.id = b.userid  and d.id=b.roleid  and ((a.objid = c.id and a.mtype=1) or (a.objid is not null and locate(a.objid,c.station)&gt;0  and a.mtype=2))</db2>
+	</key>
+	
+	
+	<key id="com.eweaver.base.security.dao.SysuserDaoHB.findPermisByUser">
+		<mssql>select u from Sysuser u,Humres h where u.objid is not null and h.station like '%'+u.objid+'%' and u.mtype=2  and h.id='#'</mssql>
+		<oracle>select u from Sysuser u,Humres h where u.objid is not null and h.station like '%'||u.objid||'%' and u.mtype=2  and h.id='#'</oracle>
+		<db2>select u from Sysuser u,Humres h where u.objid is not null and locate(u.objid,h.station)&gt;0 and u.mtype=2  and h.id='#'</db2>
+	</key>
+	
+	
+	<key id="com.eweaver.base.security.dao.SysuserrolelinkDaoHB.getAllSysuserrolelinkByUserid">
+		<mssql>select distinct rl from Sysuserrolelink rl,Sysuser su,Humres h where su.id = rl.userid and ((su.objid = h.id and su.mtype=1) or (su.objid is not null and h.station like '%'+su.objid+'%' and su.mtype=2)) and su.id = '#'</mssql>
+		<oracle>select distinct rl from Sysuserrolelink rl,Sysuser su,Humres h where su.id = rl.userid and ((su.objid = h.id and su.mtype=1) or (su.objid is not null and h.station like '%'||su.objid||'%' and su.mtype=2)) and su.id = '#'</oracle>
+		<db2>select distinct rl from Sysuserrolelink rl,Sysuser su,Humres h where su.id = rl.userid and ((su.objid = h.id and su.mtype=1) or (su.objid is not null and locate(su.objid,h.station)&gt;0 and su.mtype=2)) and su.id = '#'</db2>
+	</key>
+	
+	
+	<key id="com.eweaver.base.security.dao.SysuserrolelinkDaoHB.isRole">
+		<mssql>select distinct rl from Sysuserrolelink rl,Sysuser su,Humres h where su.id = rl.userid and ((su.objid = h.id and su.mtype=1) or (su.objid is not null and h.station like '%'+su.objid+'%' and su.mtype=2)) and su.id = '#' and rl.roleid='#'</mssql>
+		<oracle>select distinct rl from Sysuserrolelink rl,Sysuser su,Humres h where su.id = rl.userid and ((su.objid = h.id and su.mtype=1) or (su.objid is not null and h.station like '%'||su.objid||'%' and su.mtype=2)) and su.id = '#' and rl.roleid='#'</oracle>
+		<db2>select distinct rl from Sysuserrolelink rl,Sysuser su,Humres h where su.id = rl.userid and ((su.objid = h.id and su.mtype=1) or (su.objid is not null and locate(su.objid,h.station)&gt;0 and su.mtype=2)) and su.id = '#' and rl.roleid='#'</db2>
+	</key>
+	
+	<key id="com.eweaver.base.security.service.logic.PermissionruleService.getObjectByOpttype">
+		<mssql>(p.stationid is not null and '#' like '%'+p.stationid+'%') or (( p.isalluser=1 or (p.orgid is not null and '#' like '%'+p.orgid+'%'))</mssql>
+		<oracle>(p.stationid is not null and '#' like '%'||p.stationid||'%') or (( p.isalluser=1 or (p.orgid is not null and '#' like '%'||p.orgid||'%'))</oracle>
+		<db2>(p.stationid is not null and locate(p.stationid,'#')&gt;0) or (( p.isalluser=1 or (p.orgid is not null and locate(p.orgid,'#')&gt;0 ))</db2>
+	</key>
+	 
+	
+	<key id="com.eweaver.base.security.servlet.PermissiondetailAction.execute">
+		<mssql> where  ((p.userid = h.id)  or (p.stationid is not null and h.station like '%'+p.stationid+'%') or (( p.isalluser=1 or (p.orgid is not null and h.orgid like '%'+p.orgid+'%' )) </mssql>
+		<oracle> where  ((p.userid = h.id)  or (p.stationid is not null and h.station like '%'||p.stationid||'%') or (( p.isalluser=1 or (p.orgid is not null and h.orgid like '%'||p.orgid||'%' )) </oracle>
+		<db2> where  ((p.userid = h.id)  or (p.stationid is not null and locate(p.stationid,h.station)&gt;0) or (( p.isalluser=1 or (p.orgid is not null and locate(p.orgid,h.orgid)&gt;0  )) </db2>
+	</key>
+	<key id="com.eweaver.base.security.util.PermissionUtil.getBaseHql">
+		<mssql>(p.stationid is not null and '#' like '%'+p.stationid+'%') or (( p.isalluser=1 or (p.orgid is not null and '#' like '%'+p.orgid+'%'))</mssql>
+		<oracle>(p.stationid is not null and '#' like '%'||p.stationid||'%') or (( p.isalluser=1 or (p.orgid is not null and '#' like '%'||p.orgid||'%'))</oracle>
+		<db2>(p.stationid is not null and locate(p.stationid,'#')&gt;0) or (( p.isalluser=1 or (p.orgid is not null and locate(p.orgid,'#')&gt;0 )) </db2>
+	</key>
+	<key id="com.eweaver.document.base.servlet.DocbaseAction.getSqlwhereByReportSearch">
+		<mssql> exists (select h.oid from Orgunitlink h where h.oid is not null and tbalias.orgids like '%'+h.oid+'%'  and h.col1 like '%#%')</mssql>
+		<oracle> exists (select h.oid from Orgunitlink h where h.oid is not null and tbalias.orgids like '%'||h.oid||'%'  and h.col1 like '%#%')</oracle>
+		<db2> exists (select h.oid from Orgunitlink h where h.oid is not null and locate(h.oid,tbalias.orgids)&gt;0  and h.col1 like '%#%') </db2>
+	</key>
+	<key id="com.eweaver.humres.base.dao.HumresDaoHB.filterCriteria">
+		<mssql> id in (select distinct hu.id from stationinfo s,humres hu where s.id  in (select distinct oid from stationlink l,humres h where l.pid is not null and h.station like '%'+l.pid+'%' and l.typeid = '402881e510e8223c0110e83d427f0018' and h.id = '#') and s.id is not null and hu.station like '%'+s.id+'%') </mssql>
+		<oracle> id in (select distinct hu.id from stationinfo s,humres hu where s.id  in (select distinct oid from stationlink l,humres h where l.pid is not null and h.station like '%'||l.pid||'%' and l.typeid = '402881e510e8223c0110e83d427f0018' and h.id = '#') and s.id is not null and hu.station like '%'||s.id||'%') </oracle>
+		<db2> id in (select distinct hu.id from stationinfo s,humres hu where s.id  in (select distinct oid from stationlink l,humres h where l.pid is not null and locate(l.pid,h.station)&gt;0  and l.typeid = '402881e510e8223c0110e83d427f0018' and h.id = '#') and s.id is not null and locate(s.id,hu.station)&gt;0 ) </db2>
+	</key>
+	<key id="com.eweaver.humres.base.service.HumresService.getUnderlings">
+		<mssql>select h1 from Humres h1,Humres h2,Stationlink s where s.pid is not null and h2.station like '%'+s.pid+'%' and h2.id = '#' and s.oid is not null and h1.station like '%'+s.oid+'%'</mssql>
+		<oracle>select h1 from Humres h1,Humres h2,Stationlink s where s.pid is not null and h2.station like '%'||s.pid||'%' and h2.id = '#' and s.oid is not null and h1.station like '%'||s.oid||'%'</oracle>
+		<db2>select h1 from Humres h1,Humres h2,Stationlink s where s.pid is not null and locate(s.pid,h2.station)&gt;0  and h2.id = '#' and s.oid is not null and locate(s.oid,h1.station)&gt;0 </db2>
+	</key>
+	<key id="com.eweaver.humres.base.service.HumresService.getUnderlings1">
+		<mssql>select  h1 from Humres h1,Stationlink s where s.pids like '%#%' and s.oid is not null and h1.station like '%'+s.oid+'%'</mssql>
+		<oracle>select  h1 from Humres h1,Stationlink s where s.pids like '%#%' and s.oid is not null and h1.station like '%'||s.oid||'%'</oracle>
+		<db2>select  h1 from Humres h1,Stationlink s where s.pids like '%#%' and s.oid is not null and locate(s.oid,h1.station)&gt;0</db2>
+	</key>
+	<key id="com.eweaver.humres.base.service.HumresService.isManager">
+		<mssql>select  h1 from Humres h1,Stationlink s where s.pids like '%#%' and h1.station not like '%#%' and s.oid is not null and h1.station like '%'+s.oid+'%' and h1.id='#'</mssql>
+		<oracle>select  h1 from Humres h1,Stationlink s where s.pids like '%#%' and h1.station not like '%#%' and s.oid is not null and h1.station like '%'||s.oid||'%' and h1.id='#'</oracle>
+		<db2>select  h1 from Humres h1,Stationlink s where s.pids like '%#%' and h1.station not like '%#%' and s.oid is not null and locate(s.oid,h1.station)&gt;0 and h1.id='#'</db2>
+	</key>
+	<key id="com.eweaver.humres.base.service.StationinfoService.modifyAllStationlinkPids">
+		<mssql>select l from Stationlink l,Stationinfo s where s.id is not null and l.pids like '%'+s.id+'%' and s.isdelete = 1</mssql>
+		<oracle>select l from Stationlink l,Stationinfo s where s.id is not null and l.pids like '%'||s.id||'%' and s.isdelete = 1</oracle>
+		<db2>select l from Stationlink l,Stationinfo s where s.id is not null and locate(s.id,l.pids)&gt;0 and s.isdelete = 1</db2>
+	</key>
+	<key id="com.eweaver.humres.base.servlet.HumresAction.humresidslimited3sql">
+		<mssql> exists (select 'X' from humres h1,humres h2,stationlink s where h1.id=this_.id and s.pid is not null and h2.station like '%'+s.pid+'%' and h2.id = '#' and s.oid is not null and h1.station like '%'+s.oid+'%')</mssql>
+		<oracle> exists (select 'X' from humres h1,humres h2,stationlink s where h1.id=this_.id and s.pid is not null and h2.station like '%'||s.pid||'%' and h2.id = '#' and s.oid is not null and h1.station like '%'||s.oid||'%')</oracle>
+		<db2> exists (select 'X' from humres h1,humres h2,stationlink s where h1.id=this_.id and s.pid is not null and locate(s.pid,h2.station)&gt;0  and h2.id = '#' and s.oid is not null and locate(s.oid,h1.station)&gt;0 )</db2>
+	</key>
+	<key id="com.eweaver.humres.base.servlet.HumresAction.humresidslimited4sql">
+		<mssql> exists (select h.oid from Orgunitlink h where h.oid is not null and this_.orgids like '%'+h.oid+'%'  and h.col1 like '%#%')</mssql>
+		<oracle> exists (select h.oid from Orgunitlink h where h.oid is not null and this_.orgids like '%'||h.oid||'%'  and h.col1 like '%#%')</oracle>
+		<db2> exists (select h.oid from Orgunitlink h where h.oid is not null and locate(h.oid,this_.orgids)&gt;0 and h.col1 like '%#%')</db2>
+	</key>
+	<key id="com.eweaver.humres.base.servlet.StationAction.execute">
+		<mssql> and exists (select h.oid from Orgunitlink h where h.typeid = '402881e510e8223c0110e83d427f0018' and s.orgid like '%'+h.oid+'%'  and h.col1 like '%#%')</mssql>
+		<oracle> and exists (select h.oid from Orgunitlink h where h.typeid = '402881e510e8223c0110e83d427f0018' and s.orgid like '%'||h.oid||'%'  and h.col1 like '%#%')</oracle>
+		<db2> and exists (select h.oid from Orgunitlink h where h.typeid = '402881e510e8223c0110e83d427f0018' and locate(h.oid,s.orgid)&gt;0   and h.col1 like '%#%')</db2>
+	</key>
+	<key id="com.eweaver.workflow.report.servlet.ReportAction.humresidslimited4sql1">
+		<mssql> exists (select h.oid from Orgunitlink h where h.oid is not null and #.orgids like '%'+h.oid+'%'  and h.col1 like ?)</mssql>
+		<oracle> exists (select h.oid from Orgunitlink h where h.oid is not null and #.orgids like '%'||h.oid||'%'  and h.col1 like ?)</oracle>
+		<db2> exists (select h.oid from Orgunitlink h where h.oid is not null and locate(h.oid,#.orgids)&gt;0 and h.col1 like ?)</db2>
+	</key>
+	<key id="com.eweaver.workflow.report.servlet.ReportAction.humresidslimited4sql2">
+		<mssql> exists (select h.oid from Orgunitlink h where h.oid is not null and #.orgids like '%'+h.oid+'%'  and h.col1 like ?)</mssql>
+		<oracle> exists (select h.oid from Orgunitlink h where h.oid is not null and #.orgids like '%'||h.oid||'%'  and h.col1 like ?)</oracle>
+		<db2> exists (select h.oid from Orgunitlink h where h.oid is not null and locate(h.oid,#.orgids)&gt;0 and h.col1 like ?)</db2>
+	</key>
+	<key id="com.eweaver.workflow.report.servlet.SysModelReportAction.humresidslimited4sql1">
+		<mssql> exists (select h.oid from Orgunitlink h where tbalias.# like '%'+h.oid+'%' and h.col1 like ?)</mssql>
+		<oracle> exists (select h.oid from Orgunitlink h where tbalias.# like '%'||h.oid||'%' and h.col1 like ?)</oracle>
+		<db2> exists (select h.oid from Orgunitlink h where locate(h.oid,tbalias.#)&gt;0  and h.col1 like ?)</db2>
+	</key>
+	<key id="com.eweaver.workflow.report.servlet.SysModelReportAction.humresidslimited4sql2">
+		<mssql> exists (select h.oid from Orgunitlink h where h.oid is not null and tbalias.orgids like '%'+h.oid+'%'  and h.col1 like ?)</mssql>
+		<oracle> exists (select h.oid from Orgunitlink h where h.oid is not null and tbalias.orgids like '%'||h.oid||'%'  and h.col1 like ?)</oracle>
+		<db2> exists (select h.oid from Orgunitlink h where h.oid is not null and locate(h.oid,tbalias.orgids)&gt;0  and h.col1 like ?)</db2>
+	</key>
+	<key id="com.eweaver.workflow.report.servlet.SysModelReportAction.sqlwhere">
+		<mssql> and upper('#') like upper('%'+#+'%')</mssql>
+		<oracle> and upper('#') like upper('%'||#||'%')</oracle>
+		<db2> and locate(#,upper('#'))&gt;0 </db2>
+	</key>
+	<key id="com.eweaver.workflow.request.service.WorkflowCreateService.parseOperatorrule">
+		<mssql>select distinct a.id,c.wfopttype,a.seclevel,c.id from Humres a,Requestoptrule c where  ((a.id = c.userid) or (c.stationid is not null and a.station like '%'+c.stationid+'%')  or ((c.isalluser = 1 or (c.orgid is not null and a.orgid like '%'+c.orgid+'%' )) and (c.minseclevel &lt;= a.seclevel and ( ( (c.maxseclevel is not null) and (c.maxseclevel &gt;= a.seclevel) ) or (c.maxseclevel is null) ) ))) and requestid = '#' and ruleid = '#' order by c.id </mssql>
+		<oracle>select distinct a.id,c.wfopttype,a.seclevel,c.id from Humres a,Requestoptrule c where  ((a.id = c.userid) or (c.stationid is not null and a.station like '%'||c.stationid||'%')  or ((c.isalluser = 1 or (c.orgid is not null and a.orgid like '%'||c.orgid||'%' )) and (c.minseclevel &lt;= a.seclevel and ( ( (c.maxseclevel is not null) and (c.maxseclevel &gt;= a.seclevel) ) or (c.maxseclevel is null) ) ))) and requestid = '#' and ruleid = '#' order by c.id </oracle>
+		<db2>select distinct a.id,c.wfopttype,a.seclevel,c.id from Humres a,Requestoptrule c where  ((a.id = c.userid) or (c.stationid is not null and locate(c.stationid,a.station)&gt;0)  or ((c.isalluser = 1 or (c.orgid is not null and locate(c.orgid,a.orgid)&gt;0  )) and (c.minseclevel &lt;= a.seclevel and ( ( (c.maxseclevel is not null) and (c.maxseclevel &gt;= a.seclevel) ) or (c.maxseclevel is null) ) ))) and requestid = '#' and ruleid = '#' order by c.id </db2>
+	</key>
+	<key id="com.eweaver.workflow.request.service.WorkflowService.WorkflowAction">
+		<mssql>select r.layoutid,r.layoutid1 from Permissionrule r,Permissiondetail p where r.id=p.ruleid and r.objid='#' and ((p.userid='#') or (p.stationid is not null and '#' like '%'+p.stationid+'%') or (( p.isalluser=1 or (p.orgid is not null and '#' like '%'+p.orgid+'%')) and (p.minseclevel &lt;= # and ((( p.maxseclevel is not null) and (# &lt;= p.maxseclevel)) or (p.maxseclevel is null))))) order by r.priority</mssql>
+		<oracle>select r.layoutid,r.layoutid1 from Permissionrule r,Permissiondetail p where r.id=p.ruleid and r.objid='#' and ((p.userid='#') or (p.stationid is not null and '#' like '%'||p.stationid||'%') or (( p.isalluser=1 or (p.orgid is not null and '#' like '%'||p.orgid||'%')) and (p.minseclevel &lt;= # and ((( p.maxseclevel is not null) and (# &lt;= p.maxseclevel)) or (p.maxseclevel is null))))) order by r.priority</oracle>
+		<db2>select r.layoutid,r.layoutid1 from Permissionrule r,Permissiondetail p where r.id=p.ruleid and r.objid='#' and ((p.userid='#') or (p.stationid is not null and locate(p.stationid,'#')&gt;0 ) or (( p.isalluser=1 or (p.orgid is not null and locate(p.orgid,'#')&gt;0 )) and (p.minseclevel &lt;= # and ((( p.maxseclevel is not null) and (# &lt;= p.maxseclevel)) or (p.maxseclevel is null))))) order by r.priority</db2>
+	</key>
+	<key id="com.eweaver.workflow.request.service.WorkflowService.parseOperatorrule">
+		<mssql>select distinct a.id,c.wfopttype,a.seclevel,c.id,a.dsporder from Humres a,Requestoptrule c where  (((a.id = c.userid or (c.stationid is not null and(a.station like '%'+c.stationid+'%'))) and (c.minseclevel is null or (c.minseclevel is not null and c.minseclevel &lt;= a.seclevel)) and (c.maxseclevel is null or (c.maxseclevel is not null and c.maxseclevel &gt;= a.seclevel))) or ((c.isalluser = 1 or (c.orgid is not null and(a.orgids like '%'+c.orgid+'%' ))) and (c.minseclevel &lt;= a.seclevel and ( ( (c.maxseclevel is not null) and (c.maxseclevel &gt;= a.seclevel) ) or (c.maxseclevel is null) ) ))) and hrstatus='4028804c16acfbc00116ccba13802935' and a.isdelete=0 and requestid = '#' and ruleid = '#' </mssql>
+		<oracle>select distinct a.id,c.wfopttype,a.seclevel,c.id,a.dsporder from Humres a,Requestoptrule c where  (((a.id = c.userid or (c.stationid is not null and(a.station like '%'||c.stationid||'%'))) and (c.minseclevel is null or (c.minseclevel is not null and c.minseclevel &lt;= a.seclevel)) and (c.maxseclevel is null or (c.maxseclevel is not null and c.maxseclevel &gt;= a.seclevel))) or ((c.isalluser = 1 or (c.orgid is not null and(a.orgids like '%'||c.orgid||'%' ))) and (c.minseclevel &lt;= a.seclevel and ( ( (c.maxseclevel is not null) and (c.maxseclevel &gt;= a.seclevel) ) or (c.maxseclevel is null) ) ))) and hrstatus='4028804c16acfbc00116ccba13802935' and a.isdelete=0 and requestid = '#' and ruleid = '#' </oracle>
+		<db2>select distinct a.id,c.wfopttype,a.seclevel,c.id,a.dsporder from Humres a,Requestoptrule c where  (((a.id = c.userid or (c.stationid is not null and(locate(c.stationid,a.station)&gt;0))) and (c.minseclevel is null or (c.minseclevel is not null and c.minseclevel &lt;= a.seclevel)) and (c.maxseclevel is null or (c.maxseclevel is not null and c.maxseclevel &gt;= a.seclevel))) or ((c.isalluser = 1 or (c.orgid is not null and(locate(c.orgid,a.orgids)&gt;0 ))) and (c.minseclevel &lt;= a.seclevel and ( ( (c.maxseclevel is not null) and (c.maxseclevel &gt;= a.seclevel) ) or (c.maxseclevel is null) ) ))) and hrstatus='4028804c16acfbc00116ccba13802935' and a.isdelete=0 and requestid = '#' and ruleid = '#' </db2>
+	</key>
+	<key id="com.eweaver.workflow.request.servlet.FormAction.execute">
+		<mssql>select distinct a.id from Permissiondetail c,Humres a where  ((a.id = c.userid) or (c.stationid is not null and a.station like '%'+c.stationid+'%')  or ((c.isalluser = 1 or (c.orgid is not null and a.orgid like '%'+c.orgid+'%' )) and (c.minseclevel &lt;= a.seclevel and ( ( (c.maxseclevel is not null) and (c.maxseclevel &gt;= a.seclevel) ) or (c.maxseclevel is null) ) ))) and objid = '#' and opttype =9 and ruleid='#'</mssql>
+		<oracle>select distinct a.id from Permissiondetail c,Humres a where  ((a.id = c.userid) or (c.stationid is not null and a.station like '%'||c.stationid||'%')  or ((c.isalluser = 1 or (c.orgid is not null and a.orgid like '%'||c.orgid||'%' )) and (c.minseclevel &lt;= a.seclevel and ( ( (c.maxseclevel is not null) and (c.maxseclevel &gt;= a.seclevel) ) or (c.maxseclevel is null) ) ))) and objid = '#' and opttype =9 and ruleid='#'</oracle>
+		<db2>select distinct a.id from Permissiondetail c,Humres a where  ((a.id = c.userid) or (c.stationid is not null and locate(c.stationid,a.station)&gt;0)  or ((c.isalluser = 1 or (c.orgid is not null and locate(c.orgid,a.orgid)&gt;0 )) and (c.minseclevel &lt;= a.seclevel and ( ( (c.maxseclevel is not null) and (c.maxseclevel &gt;= a.seclevel) ) or (c.maxseclevel is null) ) ))) and objid = '#' and opttype =9 and ruleid='#'</db2>
+	</key>
+	<key id="org.light.portlets.DocbasePortlet.getDocbaseList">
+		<mssql> upper('#') like upper('%'+categoryids+'%') </mssql>
+		<oracle> upper('#') like upper('%'||categoryids||'%') </oracle>
+		<db2> locate(upper(categoryids),upper('#'))&gt;0  </db2>
+	</key>
+		
+	<key id="calendar/schedule.jsp">
+		<mssql>extrefobjfield15='#' or (exists (select 'X' from (select oid from stationlink where pid in(#) ) tmp where tbalias.station like '%'+tmp.oid+'%'  ))</mssql>
+		<oracle>extrefobjfield15='#' or (exists (select 'X' from (select oid from stationlink where pid in(#) ) tmp where tbalias.station like '%'||tmp.oid||'%'  ))</oracle>
+		<db2>extrefobjfield15='#' or (exists (select 'X' from (select oid from stationlink where pid in(#) ) tmp where locate(tmp.oid,tbalias.station)&gt;0   ))</db2>
+	</key>
+	
+    <key id="indagate/indagateview.jsp.sql1">
+		<mssql>select distinct a.id from Humres a,permissiondetail c where  ((a.id = c.userid) or (c.stationid is not null and(a.station like '%'+c.stationid+'%'))  or ((c.isalluser = 1 or (c.orgid is not null and(a.orgids like '%'+c.orgid+'%' ))) and (c.minseclevel &lt;= a.seclevel and ( ( (c.maxseclevel is not null) and (c.maxseclevel &gt;= a.seclevel) ) or (c.maxseclevel is null) ) ))) and a.hrstatus='4028804c16acfbc00116ccba13802935' and a.isdelete=0 and c.objid='#' and c.opttype=6</mssql>
+		<oracle>select distinct a.id from Humres a,permissiondetail c where  ((a.id = c.userid) or (c.stationid is not null and(a.station like '%'||c.stationid||'%'))  or ((c.isalluser = 1 or (c.orgid is not null and(a.orgids like '%'||c.orgid||'%' ))) and (c.minseclevel &lt;= a.seclevel and ( ( (c.maxseclevel is not null) and (c.maxseclevel &gt;= a.seclevel) ) or (c.maxseclevel is null) ) ))) and a.hrstatus='4028804c16acfbc00116ccba13802935' and a.isdelete=0 and c.objid='#' and c.opttype=6</oracle>
+		<db2>select distinct a.id from Humres a,permissiondetail c where  ((a.id = c.userid) or (c.stationid is not null and(locate(c.stationid,a.station)&gt;0 ))  or ((c.isalluser = 1 or (c.orgid is not null and(locate(c.orgid,a.orgids)&gt;0  ))) and (c.minseclevel &lt;= a.seclevel and ( ( (c.maxseclevel is not null) and (c.maxseclevel &gt;= a.seclevel) ) or (c.maxseclevel is null) ) ))) and a.hrstatus='4028804c16acfbc00116ccba13802935' and a.isdelete=0 and c.objid='#' and c.opttype=6</db2>
+	</key>
+	
+	<key id="indagate/indagateview.jsp.sql2">
+		<mssql>select distinct a.id from Humres a,permissiondetail c where  ((a.id = c.userid) or (c.stationid is not null and(a.station like '%'+c.stationid+'%'))  or ((c.isalluser = 1 or (c.orgid is not null and(a.orgids like '%'+c.orgid+'%' ))) and (c.minseclevel &lt;= a.seclevel and ( ( (c.maxseclevel is not null) and (c.maxseclevel &gt;= a.seclevel) ) or (c.maxseclevel is null) ) ))) and a.hrstatus='4028804c16acfbc00116ccba13802935' and a.isdelete=0 and c.objid='#' and c.opttype=6 and a.id not in(select creator from indagateremark  where requestid=c.objid)</mssql>
+		<oracle>select distinct a.id from Humres a,permissiondetail c where  ((a.id = c.userid) or (c.stationid is not null and(a.station like '%'||c.stationid||'%'))  or ((c.isalluser = 1 or (c.orgid is not null and(a.orgids like '%'||c.orgid||'%' ))) and (c.minseclevel &lt;= a.seclevel and ( ( (c.maxseclevel is not null) and (c.maxseclevel &gt;= a.seclevel) ) or (c.maxseclevel is null) ) ))) and a.hrstatus='4028804c16acfbc00116ccba13802935' and a.isdelete=0 and c.objid='#' and c.opttype=6 and a.id not in(select creator from indagateremark  where requestid=c.objid)</oracle>
+		<db2>select distinct a.id from Humres a,permissiondetail c where  ((a.id = c.userid) or (c.stationid is not null and(locate(c.stationid,a.station)&gt;0))  or ((c.isalluser = 1 or (c.orgid is not null and(locate(c.orgid,a.orgids)&gt;0  ))) and (c.minseclevel &lt;= a.seclevel and ( ( (c.maxseclevel is not null) and (c.maxseclevel &gt;= a.seclevel) ) or (c.maxseclevel is null) ) ))) and a.hrstatus='4028804c16acfbc00116ccba13802935' and a.isdelete=0 and c.objid='#' and c.opttype=6 and a.id not in(select creator from indagateremark   where requestid=c.objid)</db2>
+	</key>
+	
+	<key id="base/cardcombination/cardcombinationmodify.jsp">
+		<mssql>select ''  id,' '  objname union (select id,objname from selectitem where pid = '"+elementvalue+"')</mssql>
+		<oracle>select ''  id,' '  objname from dual union (select id,objname from selectitem where pid = '"+elementvalue+"')</oracle>
+		<db2>select ''  id,' '  objname from SYSIBM.SYSDUMMY1 union (select id,objname from selectitem where pid = '"+elementvalue+"')</db2>
+	</key>
+	<key id="base/security/permissionBatchAction/resultlist.jsp">
+		<mssql>select ''  id,' '  objname union (select id,objname from selectitem where pid = '"+elementvalue+"')</mssql>
+		<oracle>select ''  id,' '  objname from dual union (select id,objname from selectitem where pid = '"+elementvalue+"')</oracle>
+		<db2>select ''  id,' '  objname from SYSIBM.SYSDUMMY1 union (select id,objname from selectitem where pid = '"+elementvalue+"')</db2>
+	</key>
+	<key id="base/security/permissionBatchActionInterim.jsp">
+		<mssql>select id, objname from (select ''  id,' '  objname union (select id,objname from selectitem where pid = '"+elementvalue+"')) order by id desc</mssql>
+		<oracle>select id,objname from (select ''  id,' '  objname from dual union (select id,objname from selectitem where pid = '"+elementvalue+"')) order by id desc</oracle>
+		<db2>select id,objname from (select ''  id,' '  objname from SYSIBM.SYSDUMMY1 union (select id,objname from selectitem where pid = '"+elementvalue+"')) order by id desc</db2>
+	</key>
+	<key id="customaction/customactiondetailcreate.jsp">
+		<mssql>select ''  id,' '  objname union (select id,objname from selectitem where pid = '"+elementvalue+"')</mssql>
+		<oracle>select ''  id,' '  objname from dual union (select id,objname from selectitem where pid = '"+elementvalue+"')</oracle>
+		<db2>select ''  id,' '  objname from SYSIBM.SYSDUMMY1 union (select id,objname from selectitem where pid = '"+elementvalue+"')</db2>
+	</key>
+	<key id="humres/base/humresBrowsermResult.jsp">
+		<mssql>select ''  id,' '  objname union (select id,objname from selectitem where pid = '"+elementvalue+"')</mssql>
+		<oracle>select ''  id,' '  objname from dual union (select id,objname from selectitem where pid = '"+elementvalue+"')</oracle>
+		<db2>select ''  id,' '  objname from SYSIBM.SYSDUMMY1 union (select id,objname from selectitem where pid = '"+elementvalue+"')</db2>
+	</key>
+	<key id="humres/base/humresBrowserResult.jsp">
+		<mssql>select ''  id,' '  objname union (select id,objname from selectitem where pid = '"+elementvalue+"')</mssql>
+		<oracle>select ''  id,' '  objname from dual union (select id,objname from selectitem where pid = '"+elementvalue+"')</oracle>
+		<db2>select ''  id,' '  objname from SYSIBM.SYSDUMMY1 union (select id,objname from selectitem where pid = '"+elementvalue+"')</db2>
+	</key>
+	<key id="workflow/chart/todo_chart.jsp">
+		<mssql>select top 20  h.id as id,h.objname as name,o.objname as org, count(distinct wb.id) as sum from requestbase wb, requestoperators wo,requeststatus wi,humres h,orgunit o where  wb.isdelete!=1 and wb.id = wo.requestid and wi.curstepid=wo.stepid and wo.userid=h.id and h.isdelete=0 and h.orgid=o.id and wb.isfinished=0 and  (wi.isreceived=0 or wi.issubmited=0) and wi.ispaused=0 group by h.id, h.objname, o.objname order by sum desc</mssql>
+		<oracle>select id,name,org,sum from(select h.id as id,h.objname as name,o.objname as org, count(distinct wb.id) as sum from requestbase wb, requestoperators wo,requeststatus wi,humres h,orgunit o where  wb.isdelete!=1 and wb.id = wo.requestid and wi.curstepid=wo.stepid and wo.userid=h.id and h.isdelete=0 and h.orgid=o.id and wb.isfinished=0 and  (wi.isreceived=0 or wi.issubmited=0) and wi.ispaused=0 group by h.id, h.objname, o.objname order by sum desc)where rownum &lt;=20</oracle>
+		<db2>select h.id as id,h.objname as name,o.objname as org, count(distinct wb.id) as sum from requestbase wb, requestoperators wo,requeststatus wi,humres h,orgunit o where  wb.isdelete!=1 and wb.id = wo.requestid and wi.curstepid=wo.stepid and wo.userid=h.id and h.isdelete=0 and h.orgid=o.id and wb.isfinished=0 and  (wi.isreceived=0 or wi.issubmited=0) and wi.ispaused=0 group by h.id, h.objname, o.objname order by sum desc fetch first 20 rows only</db2>
+	</key>
+	<key id="workflow/chart/usage_chart.jsp">
+		<mssql>select id,objname as name, sum(a1) as a1,sum(a2) as a2,sum(a3) as a3 from(select w.id as id,w.objname as objname, count(*)as a1,0 as a2,0 as a3 from workflowinfo w,requestbase r where w.id=r.workflowid and r.isdelete=0 group by w.id, w.objname, 0, 0 union select w.id as id,w.objname as objname, 0 as a1, count(*) as a2,0 as a3  from workflowinfo w,requestbase r  where r.isfinished=1 and w.id=r.workflowid and r.isdelete=0 group by w.id, w.objname, 0, 0 union select w.id as id,w.objname as objname, 0 as a1, 0 as a2,count(*) as a3  from workflowinfo w,requestbase r  where r.isfinished=0 and w.id=r.workflowid and r.isdelete=0 group by w.id, w.objname, 0, 0 )group by id, objname order by a1 desc</mssql>
+		<oracle>select id,name,a1,a2,a3 from(select id,objname as name, sum(a1) as a1,sum(a2) as a2,sum(a3) as a3 from(select w.id as id,w.objname as objname, count(*)as a1,0 as a2,0 as a3 from workflowinfo w,requestbase r where w.id=r.workflowid and r.isdelete=0 group by w.id, w.objname, 0, 0 union select w.id as id,w.objname as objname, 0 as a1, count(*) as a2,0 as a3  from workflowinfo w,requestbase r  where r.isfinished=1 and w.id=r.workflowid and r.isdelete=0 group by w.id, w.objname, 0, 0 union select w.id as id,w.objname as objname, 0 as a1, 0 as a2,count(*) as a3  from workflowinfo w,requestbase r  where r.isfinished=0 and w.id=r.workflowid and r.isdelete=0 group by w.id, w.objname, 0, 0 )group by id, objname order by a1 desc)where rownum &lt;=20</oracle>
+		<db2>select id,objname as name, sum(a1) as a1,sum(a2) as a2,sum(a3) as a3 from(select w.id as id,w.objname as objname, count(*)as a1,0 as a2,0 as a3 from workflowinfo w,requestbase r where w.id=r.workflowid and r.isdelete=0 group by w.id, w.objname, 0, 0 union select w.id as id,w.objname as objname, 0 as a1, count(*) as a2,0 as a3  from workflowinfo w,requestbase r  where r.isfinished=1 and w.id=r.workflowid and r.isdelete=0 group by w.id, w.objname, 0, 0 union select w.id as id,w.objname as objname, 0 as a1, 0 as a2,count(*) as a3  from workflowinfo w,requestbase r  where r.isfinished=0 and w.id=r.workflowid and r.isdelete=0 group by w.id, w.objname, 0, 0 )group by id, objname order by a1 desc</db2>
+	</key>
+	<key id="workflow/chart/usage_hr_chart.jsp">
+		<mssql>select id,hr,org,sum(s1)as s1,sum(s2)as s2,sum(s3)as s3 from   (select h.id as id,h.objname as hr, o.objname as org,count(*) as s1,0 as s2,0 as s3   from requestbase r,humres h,orgunit o    where r.isdelete=0   and r.creater=h.id    and h.orgid=o.id   group by h.id,h.objname, o.objname, 0, 0   union   select h.id as id,h.objname as hr,o.objname as org,0 as s1,count(*) as s2,0 as s3   from requestbase r,humres h,orgunit o   where r.isdelete=0   and r.isfinished=1   and r.creater=h.id   and h.orgid=o.id   group by h.id,h.objname,o.objname, 0, 0   union   select h.id as id,h.objname as hr,o.objname as org,0 as s1,0 as s2,count(*) as s3    from requestbase r,humres h,orgunit o   where r.isdelete=0   and r.isfinished=0   and r.creater=h.id   and h.orgid=o.id   group by h.id,h.objname,o.objname, 0, 0   )   group by id,hr,org   order by s1 desc</mssql>
+		<oracle>select id,hr,org,s1,s2,s3 from(select id,hr,org,sum(s1)as s1,sum(s2)as s2,sum(s3)as s3 from   (select h.id as id,h.objname as hr, o.objname as org,count(*) as s1,0 as s2,0 as s3   from requestbase r,humres h,orgunit o    where r.isdelete=0   and r.creater=h.id    and h.orgid=o.id   group by h.id,h.objname, o.objname, 0, 0   union   select h.id as id,h.objname as hr,o.objname as org,0 as s1,count(*) as s2,0 as s3   from requestbase r,humres h,orgunit o   where r.isdelete=0   and r.isfinished=1   and r.creater=h.id   and h.orgid=o.id   group by h.id,h.objname,o.objname, 0, 0   union   select h.id as id,h.objname as hr,o.objname as org,0 as s1,0 as s2,count(*) as s3    from requestbase r,humres h,orgunit o   where r.isdelete=0   and r.isfinished=0   and r.creater=h.id   and h.orgid=o.id   group by h.id,h.objname,o.objname, 0, 0   )   group by id,hr,org   order by s1 desc)where rownum &lt;=20</oracle>
+		<db2>select id,hr,org,sum(s1)as s1,sum(s2)as s2,sum(s3)as s3 from   (select h.id as id,h.objname as hr, o.objname as org,count(*) as s1,0 as s2,0 as s3   from requestbase r,humres h,orgunit o    where r.isdelete=0   and r.creater=h.id    and h.orgid=o.id   group by h.id,h.objname, o.objname, 0, 0   union   select h.id as id,h.objname as hr,o.objname as org,0 as s1,count(*) as s2,0 as s3   from requestbase r,humres h,orgunit o   where r.isdelete=0   and r.isfinished=1   and r.creater=h.id   and h.orgid=o.id   group by h.id,h.objname,o.objname, 0, 0   union   select h.id as id,h.objname as hr,o.objname as org,0 as s1,0 as s2,count(*) as s3    from requestbase r,humres h,orgunit o   where r.isdelete=0   and r.isfinished=0   and r.creater=h.id   and h.orgid=o.id   group by h.id,h.objname,o.objname, 0, 0   )   group by id,hr,org   order by s1 desc</db2>
+	</key>
+	<key id="workflow/chart/usage_org_chart.jsp">
+		<mssql>select org,sum(s1)as s1,sum(s2)as s2,sum(s3)as s3 from  (select o.objname as org,count(*) as s1,0 as s2,0 as s3  from requestbase r,humres h,orgunit o  where r.isdelete=0  and r.creater=h.id  and h.orgid=o.id  group by o.objname, 0, 0  union  select o.objname as org,0 as s1,count(*) as s2,0 as s3   from requestbase r,humres h,orgunit o  where r.isdelete=0  and r.isfinished=1  and r.creater=h.id  and h.orgid=o.id  group by o.objname, 0, 0  union  select o.objname as org,0 as s1,0 as s2,count(*) as s3   from requestbase r,humres h,orgunit o  where r.isdelete=0  and r.isfinished=0  and r.creater=h.id  and h.orgid=o.id  group by o.objname, 0, 0  )  group by org  order by s1 desc</mssql>
+		<oracle>select org,s1,s2,s3 from(select org,sum(s1)as s1,sum(s2)as s2,sum(s3)as s3 from  (select o.objname as org,count(*) as s1,0 as s2,0 as s3  from requestbase r,humres h,orgunit o  where r.isdelete=0  and r.creater=h.id  and h.orgid=o.id  group by o.objname, 0, 0  union  select o.objname as org,0 as s1,count(*) as s2,0 as s3   from requestbase r,humres h,orgunit o  where r.isdelete=0  and r.isfinished=1  and r.creater=h.id  and h.orgid=o.id  group by o.objname, 0, 0  union  select o.objname as org,0 as s1,0 as s2,count(*) as s3   from requestbase r,humres h,orgunit o  where r.isdelete=0  and r.isfinished=0  and r.creater=h.id  and h.orgid=o.id  group by o.objname, 0, 0  )  group by org  order by s1 desc)where rownum &lt;=20</oracle>
+		<db2>select org,sum(s1)as s1,sum(s2)as s2,sum(s3)as s3 from  (select o.objname as org,count(*) as s1,0 as s2,0 as s3  from requestbase r,humres h,orgunit o  where r.isdelete=0  and r.creater=h.id  and h.orgid=o.id  group by o.objname, 0, 0  union  select o.objname as org,0 as s1,count(*) as s2,0 as s3   from requestbase r,humres h,orgunit o  where r.isdelete=0  and r.isfinished=1  and r.creater=h.id  and h.orgid=o.id  group by o.objname, 0, 0  union  select o.objname as org,0 as s1,0 as s2,count(*) as s3   from requestbase r,humres h,orgunit o  where r.isdelete=0  and r.isfinished=0  and r.creater=h.id  and h.orgid=o.id  group by o.objname, 0, 0  )  group by org  order by s1 desc</db2>
+	</key>
+	<key id="workflow/report/reportresultlist.jsp">
+		<mssql>select id, objname from (select ''  id,' '  objname union (select id,objname from selectitem where pid = '"+elementvalue+"')) t order by id desc</mssql>
+		<oracle>select id,objname from (select ''  id,' '  objname from dual union (select id,objname from selectitem where pid = '"+elementvalue+"')) t order by id desc</oracle>
+		<db2>select id,objname from (select ''  id,' '  objname from SYSIBM.SYSDUMMY1 union (select id,objname from selectitem where pid = '"+elementvalue+"')) order by id desc</db2>
+	</key>
+	<key id="workflow/report/reportresultlist2.jsp">
+		<mssql>select id, objname from (select ''  id,' '  objname union (select id,objname from selectitem where pid = '"+elementvalue+"')) t order by id desc</mssql>
+		<oracle>select id,objname from (select ''  id,' '  objname from dual union (select id,objname from selectitem where pid = '"+elementvalue+"')) t order by id desc</oracle>
+		<db2>select id,objname from (select ''  id,' '  objname from SYSIBM.SYSDUMMY1 union (select id,objname from selectitem where pid = '"+elementvalue+"')) order by id desc</db2>
+	</key>
+	<key id="workflow/report/reportresultlistTree.jsp">
+		<mssql>select id, objname from (select ''  id,' '  objname union (select id,objname from selectitem where pid = '"+elementvalue+"')) t order by id desc</mssql>
+		<oracle>select id,objname from (select ''  id,' '  objname from dual union (select id,objname from selectitem where pid = '"+elementvalue+"')) t order by id desc</oracle>
+		<db2>select id,objname from (select ''  id,' '  objname from SYSIBM.SYSDUMMY1 union (select id,objname from selectitem where pid = '"+elementvalue+"')) order by id desc</db2>
+	</key>
+	<key id="workflow/report/reportsearch.jsp">
+		<mssql>select id, objname from (select ''  id,' '  objname union (select id,objname from selectitem where pid = '"+elementvalue+"')) t order by id desc</mssql>
+		<oracle>select id,objname from (select ''  id,' '  objname from dual union (select id,objname from selectitem where pid = '"+elementvalue+"')) t order by id desc</oracle>
+		<db2>select id,objname from (select ''  id,' '  objname from SYSIBM.SYSDUMMY1 union (select id,objname from selectitem where pid = '"+elementvalue+"')) order by id desc</db2>
+	</key>
+	<key id="workflow/report/resultlistbrowser.jsp">
+		<mssql>select id, objname from (select ''  id,' '  objname union (select id,objname from selectitem where pid = '"+elementvalue+"')) t order by id desc</mssql>
+		<oracle>select id,objname from (select ''  id,' '  objname from dual union (select id,objname from selectitem where pid = '"+elementvalue+"')) t order by id desc</oracle>
+		<db2>select id,objname from (select ''  id,' '  objname from SYSIBM.SYSDUMMY1 union (select id,objname from selectitem where pid = '"+elementvalue+"')) order by id desc</db2>
+	</key>
+	<key id="workflow/report/resultlistbrowserm.jsp">
+		<mssql>select id, objname from (select ''  id,' '  objname union (select id,objname from selectitem where pid = '"+elementvalue+"')) t order by id desc</mssql>
+		<oracle>select id,objname from (select ''  id,' '  objname from dual union (select id,objname from selectitem where pid = '"+elementvalue+"')) t order by id desc</oracle>
+		<db2>select id,objname from (select ''  id,' '  objname from SYSIBM.SYSDUMMY1 union (select id,objname from selectitem where pid = '"+elementvalue+"')) order by id desc</db2>
+	</key>
+	<key id="workflow/workflow/exportbrowser.jsp">
+		<mssql>select id, objname from (select ''  id,' '  objname union (select id,objname from selectitem where pid = '"+elementvalue+"')) t order by id desc</mssql>
+		<oracle>select id,objname from (select ''  id,' '  objname from dual union (select id,objname from selectitem where pid = '"+elementvalue+"')) t order by id desc</oracle>
+		<db2>select id,objname from (select ''  id,' '  objname from SYSIBM.SYSDUMMY1 union (select id,objname from selectitem where pid = '"+elementvalue+"')) order by id desc</db2>
+	</key>
+	<key id="workflow/workflow/exportbrowserbyagent.jsp">
+		<mssql>select id, objname from (select ''  id,' '  objname union (select id,objname from selectitem where pid = '"+elementvalue+"')) t order by id desc</mssql>
+		<oracle>select id,objname from (select ''  id,' '  objname from dual union (select id,objname from selectitem where pid = '"+elementvalue+"')) t order by id desc</oracle>
+		<db2>select id,objname from (select ''  id,' '  objname from SYSIBM.SYSDUMMY1 union (select id,objname from selectitem where pid = '"+elementvalue+"')) order by id desc</db2>
+	</key>
+</sqlmap>

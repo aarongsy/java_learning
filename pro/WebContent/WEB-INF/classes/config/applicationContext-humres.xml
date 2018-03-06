@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="humresService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.humres.base.service.HumresService">
+				<property name="humresDao">
+					<ref local="humresDao" />
+				</property>
+				<property name="humreslinkDao">
+					<ref local="humreslinkDao" />
+				</property>
+				<property name="sysuserDao" ref="sysuserDao"/>
+			</bean>
+		</property>
+	</bean>	
+
+    <!--<bean id="personalsetService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.humres.base.service.PersonalsetService">
+				<property name="personalsetDao">
+					<ref local="personalsetDao" />
+				</property>
+                <property name="sysuserService" ref="sysuserService"></property>
+			</bean>
+		</property>
+	</bean>
+	--><bean id="humreslinkService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.humres.base.service.HumreslinkService">
+				<property name="humreslinkDao">
+					<ref local="humreslinkDao" />
+				</property>
+			</bean>
+		</property>
+	</bean>	
+
+	<bean id="humresorgService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.humres.base.service.HumresorgService">
+				<property name="humresorgDao">
+					<ref local="humresorgDao" />
+				</property>
+			</bean>
+		</property>
+	</bean>		
+               
+	<bean id="humrescustomizeService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.humres.base.service.HumrescustomizeService">
+				<property name="humrescustomizeDao">
+					<ref local="humrescustomizeDao" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="humresDao" class="com.eweaver.humres.base.dao.HumresDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+    <!--<bean id="personalsetDao" class="com.eweaver.humres.base.dao.PersonalsetDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	--><bean id="humresorgDao" class="com.eweaver.humres.base.dao.HumresorgDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="humreslinkDao" class="com.eweaver.humres.base.dao.HumreslinkDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="humrescustomizeDao" class="com.eweaver.humres.base.dao.HumrescustomizeDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+
+	<bean id="stationinfoService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.humres.base.service.StationinfoService">
+				<property name="stationinfoDao">
+					<ref local="stationinfoDao" />
+				</property>
+				<property name="stationlinkDao">
+					<ref local="stationlinkDao" />
+				</property>
+				<property name="humresDao" ref="humresDao"/>
+                <property name="orgunitDao" ref="orgunitDao"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="stationinfoDao" class="com.eweaver.humres.base.dao.StationinfoDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+	<bean id="stationlinkDao" class="com.eweaver.humres.base.dao.StationlinkDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+
+    <bean id="reportExcelService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.excel.service.ReportExcelService">
+            <property name="baseJdbcDao" ref="baseJdbcDao"></property>
+            <property name="forminfoDao" ref="forminfoDao"></property>
+            <property name="refobjService" ref="refobjService"></property>
+            <property name="categoryService" ref="categoryService"></property>
+            <property name="reportfieldService" ref="reportfieldService"></property>
+            <property name="reportdefService" ref="reportdefService"></property>
+            <property name="formfieldDao" ref="formfieldDao"></property>
+            <property name="labelCustomService" ref="labelCustomService"></property>
+            </bean>
+		</property>
+    </bean>
+
+    <bean id="usersCategoryExcelService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.excel.service.UsersCategoryExcelService">
+            <property name="baseJdbcDao" ref="baseJdbcDao"></property>
+            <property name="formfieldDao" ref="formfieldDao"></property>
+            <property name="humresService" ref="humresService"></property>
+            <property name="forminfoDao" ref="forminfoDao"></property>
+            <property name="refobjService" ref="refobjService"></property>
+            <property name="formbaseService" ref="formbaseService"></property>
+            <property name="permissionruleService" ref="permissionruleService"></property>
+            <property name="categoryService" ref="categoryService"></property>
+            <property name="logService" ref="logService"></property>
+            </bean>
+		</property>
+    </bean>
+
+	<bean id="usersWorkflowExcelService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.excel.service.UsersWorkflowExcelService">
+            <property name="baseJdbcDao" ref="baseJdbcDao"></property>
+            <property name="formfieldDao" ref="formfieldDao"></property>
+            <property name="humresService" ref="humresService"></property>
+            <property name="forminfoDao" ref="forminfoDao"></property>
+            <property name="refobjService" ref="refobjService"></property>
+            <property name="formbaseService" ref="formbaseService"></property>
+            <property name="permissionruleService" ref="permissionruleService"></property>
+            <property name="workflowinfoService" ref="workflowinfoService"></property>
+            <property name="logService" ref="logService"></property>
+            <property name="keyinfoService" ref="keyinfoService"></property>
+            <property name="requestbaseDao" ref="requestbaseDao"></property>
+            <property name="nodeinfoService" ref="nodeinfoService"></property>
+            </bean>
+		</property>
+    </bean>
+	<bean id="humresExcelService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.excel.service.HumresExcelService">
+            <property name="baseJdbcDao" ref="baseJdbcDao"></property>
+            <property name="formfieldDao" ref="formfieldDao"></property>
+            <property name="humresService" ref="humresService"></property>
+            <property name="forminfoDao" ref="forminfoDao"></property>
+            <property name="refobjService" ref="refobjService"></property>
+            <property name="formbaseService" ref="formbaseService"></property>
+            <property name="permissionruleService" ref="permissionruleService"></property>
+            <property name="categoryService" ref="categoryService"></property>
+            <property name="logService" ref="logService"></property>
+            <property name="licsService" ref="licsService"></property>
+            <property name="stationinfoService" ref="stationinfoService"></property>
+            </bean>
+		</property>
+    </bean>
+
+	<bean id="userKeyService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.userkey.service.UserKeyService">
+                <property name="baseJdbcDao" ref="baseJdbcDao"></property>
+                <property name="userKeyDao" ref="userKeyDao"></property>
+            </bean>
+		</property>
+    </bean>
+
+	<bean id="userKeyDao" class="com.eweaver.userkey.dao.UserKeyDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+	<bean id="rtxSyncData" class="com.eweaver.external.RtxSyncDataImpl">
+		<property name="sysuserDao" ref="sysuserDao"/>
+		<property name="orgunitService" ref="orgunitService"/>
+		<property name="humresService" ref="humresService"/>
+		<property name="setitemService" ref="setitemService"/>
+		<property name="sequenceService" ref="sequenceService"></property>
+	</bean>
+	
+	<bean id="attendanceDao" class="com.eweaver.attendance.dao.AttendanceDaoHB">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="attendanceService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.attendance.service.AttendanceService">
+				<property name="attendanceDao" ref="attendanceDao"/>
+				<property name="setitemService" ref="setitemService"/>
+				<property name="holidaysService" ref="holidaysService"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="holidaysInfoDao" class="com.eweaver.attendance.dao.HolidaysInfoDaoHB">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="holidaysService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.attendance.service.HolidaysService">
+				<property name="holidaysInfoDao" ref="holidaysInfoDao"/>
+			</bean>
+		</property>
+	</bean>
+	
+</beans>

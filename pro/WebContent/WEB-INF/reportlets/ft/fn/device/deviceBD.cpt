@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100331">
+<TableDataMap>
+<TableData name="设备变动查询表" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="reqname"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="assetsnumber"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="fromdate"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="todate"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="flowno"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[weaver]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select ude.reqname,ude.assetsnumber,ude.leavefactoryno,ude.standardmodel,ude.equipmenttm,'业务类型',
+uda.reqdate,uda.flowno,uda.numbers,(select objname from selectitem where id = ude.compunit) compunit,
+(select objname from humres where id = uda.reqman) reqman,(select objname from humres where id = uda.reqname) reqname1,
+(select objname from orgunit where id = uda.reqorg) reqorg
+from UF_DEVICE_EQUIPMENT ude, uf_device_allot uda,requestbase rb 
+where ude.requestid= to_char(uda.devicecoding) and uda.requestid=rb.id and rb.isfinished=1 and
+ude.assetsnumber like '%${assetsnumber}%' and
+ude.reqname like '%${reqname}%' and
+uda.flowno like '%${flowno}%' and
+uda.reqdate between nvl('${fromdate}','2000-01-01') and  nvl('${todate}',2099-01-01)]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings orientation="1" headerHeight="0.0" footerHeight="0.0">
+<PaperSize width="8.268" height="15.63"/>
+<Margin top="0.27" left="0.7499999999999999" bottom="0.27" right="0.7499999999999999"/>
+</ReportSettings>
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[19,19,19,19,19,19,19,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,72,72,72,91,72,72,90,72,72,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="1" s="0">
+<O>
+<![CDATA[名称]]></O>
+<Expand/>
+</C>
+<C c="1" r="1" s="0">
+<O>
+<![CDATA[资产编号]]></O>
+<Expand/>
+</C>
+<C c="2" r="1" s="0">
+<O>
+<![CDATA[出厂编号]]></O>
+<Expand/>
+</C>
+<C c="3" r="1" s="0">
+<O>
+<![CDATA[规格]]></O>
+<Expand/>
+</C>
+<C c="4" r="1" s="0">
+<O>
+<![CDATA[条码]]></O>
+<Expand/>
+</C>
+<C c="5" r="1" s="0">
+<O>
+<![CDATA[业务类型]]></O>
+<Expand/>
+</C>
+<C c="6" r="1" s="0">
+<O>
+<![CDATA[发生日期]]></O>
+<Expand/>
+</C>
+<C c="7" r="1" s="0">
+<O>
+<![CDATA[单据编号]]></O>
+<Expand/>
+</C>
+<C c="8" r="1" s="0">
+<O>
+<![CDATA[数量]]></O>
+<Expand/>
+</C>
+<C c="9" r="1" s="0">
+<O>
+<![CDATA[单位]]></O>
+<Expand/>
+</C>
+<C c="10" r="1" s="0">
+<O>
+<![CDATA[经办人]]></O>
+<Expand/>
+</C>
+<C c="11" r="1" s="0">
+<O>
+<![CDATA[申请人]]></O>
+<Expand/>
+</C>
+<C c="12" r="1" s="0">
+<O>
+<![CDATA[申请部门]]></O>
+<Expand/>
+</C>
+<C c="0" r="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="设备变动查询表" columnName="REQNAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="设备变动查询表" columnName="ASSETSNUMBER"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="设备变动查询表" columnName="LEAVEFACTORYNO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="设备变动查询表" columnName="STANDARDMODEL"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="设备变动查询表" columnName="EQUIPMENTTM"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="设备变动查询表" columnName="&apos;业务类型&apos;"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="设备变动查询表" columnName="REQDATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="设备变动查询表" columnName="FLOWNO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="设备变动查询表" columnName="NUMBERS"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="设备变动查询表" columnName="COMPUNIT"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="设备变动查询表" columnName="REQMAN"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="设备变动查询表" columnName="REQNAME1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="设备变动查询表" columnName="REQORG"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12"/>
+<Background name="ColorBackground" color="-6908266"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

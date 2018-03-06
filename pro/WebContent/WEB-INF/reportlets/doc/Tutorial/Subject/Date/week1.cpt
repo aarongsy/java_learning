@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.2</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes isCache="false" maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT SIGNDATE,PRODUCTTYPE,ORDERSDETAIL.QUANTITY FROM ORDERS,ORDERSDETAIL,PRODUCT WHERE ORDERS.ORDERID=ORDERSDETAIL.ORDERID AND PRODUCT.PRODUCTID=ORDERSDETAIL.PRODUCTID]]></Query>
+</TableData>
+</TableDataMap>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+<Parameter>
+<Attributes name="Date" />
+<O><![CDATA[2008-01-30]]></O>
+<Widget class="com.fr.report.web.ui.DateEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><DateAttr start="" end=""/></Widget>
+</Parameter>
+<Parameter>
+<Attributes name="day" />
+<O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr disabled="false"/>
+<TextAttr /><MVList class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="1:I" value="1天前"/>
+<Dict key="5:I" value="5天前"/>
+<Dict key="8:I" value="8天前"/>
+<Dict key="10:I" value="10天前"/>
+<Dict key="15:I" value="15天前"/>
+<Dict key="20:I" value="20天前"/>
+<Dict key="25:I" value="25天前"/>
+<Dict key="30:I" value="30天前"/>
+</CustomDictAttr>
+</MVList>
+</Widget>
+</Parameter>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings shrinkToFit="false" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[19,19,28]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,93]]>
+</ColumnWidth>
+<CellElementList>
+<C c="3" r="1"></C>
+<C c="1" r="2" s="0"><O t="BiasTextPainter"><IsBackSlash value="false"/>
+<![CDATA[类别|日期]]>
+</O>
+</C>
+<C c="2" r="2" cs="2" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="PRODUCTTYPE" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="1" />
+</C>
+<C c="1" r="3" s="2"><O t="DSColumn"><Attributes dsName="ds1" columnName="SIGNDATE" />
+<Condition class="com.fr.data.condition.ListCondition"><JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[SIGNDATE]]></CNAME><Compare op="3">
+<O t="Formula" class="Formula"><Attributes><![CDATA[=DATEDELTA($Date,0-tointeger($day))]]></Attributes></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[SIGNDATE]]></CNAME><Compare op="4">
+<Parameter>
+<Attributes name="Date" />
+<O><![CDATA[2008-01-30]]></O>
+<Widget class="com.fr.report.web.ui.DateEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><DateAttr start="" end=""/></Widget>
+</Parameter>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="2" r="3" cs="2" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="QUANTITY" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-3342388">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-52">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-3342337">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

@@ -1,0 +1,55 @@
+错误时间
+  18:13:43
+错误位置
+  sql2012062802.sql第2行:
+错误语句
+ alter table FORMFIELD add isencryption INTEGER
+错误原因
+  java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+
+
+错误时间
+  18:13:43
+错误位置
+  sql2012062802.sql第4行:
+错误语句
+ insert into label(id,labelname,col1,isdelete,keyword,language) values ('FB3D40AF7B6C4F21BD9F53622232E890','是否加密','FB3D40AF7B6C4F21BD9F53622232E890',0,'是否加密','zh_CN')
+错误原因
+  java.sql.SQLIntegrityConstraintViolationException: ORA-00001: 违反唯一约束条件 (WEAVERBZ4332TO5722.SYS_C0047556)
+
+
+
+错误时间
+  18:13:43
+错误位置
+  sql2012062802.sql第6行:
+错误语句
+ insert into labeldictory(id,keyword) values ('FB3D40AF7B6C4F21BD9F53622232E890','是否加密')
+错误原因
+  java.sql.SQLIntegrityConstraintViolationException: ORA-00001: 违反唯一约束条件 (WEAVERBZ4332TO5722.SYS_C0048030)
+
+
+
+错误时间
+  18:13:43
+错误位置
+  sql2012062802.sql第8行:
+错误语句
+ insert into label (id,labelname,col1,isdelete,keyword,language) values('1F48BFC1BC284EBCB732FAB8AFBADC91','whether to need encryption','FB3D40AF7B6C4F21BD9F53622232E890',0,'是否加密','en_US')
+错误原因
+  java.sql.SQLIntegrityConstraintViolationException: ORA-00001: 违反唯一约束条件 (WEAVERBZ4332TO5722.SYS_C0047556)
+
+
+
+错误时间
+  18:13:43
+错误位置
+  sql2012067501.sql第6行:
+错误语句
+ alter table sysuser add isopenim int default 0
+错误原因
+  java.sql.SQLException: ORA-01430: 表中已存在要添加的列
+
+
+

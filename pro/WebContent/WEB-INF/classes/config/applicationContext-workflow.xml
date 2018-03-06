@@ -1,0 +1,974 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="formlinkService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.form.service.FormlinkService">
+				<property name="formlinkDao">
+					<ref local="formlinkDao" />
+				</property>
+            </bean>
+        </property>
+    </bean>
+	
+	<bean id="forminfoService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.form.service.ForminfoService">
+				<property name="forminfoDao">	
+					<ref local="forminfoDao" />
+				</property>
+				<property name="selectitemDao" ref="selectitemDao"/>
+				<property name="attachDao" ref="attachDao"/>
+				<property name="refobjDao" ref="refobjDao"/>
+				<property name="baseJdbcDao" ref="baseJdbcDao"/>
+				<property name="labelCustomService" ref="labelCustomService"/>
+            </bean>
+        </property>
+    </bean>
+	
+	<bean id="workflowinfoService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.workflow.service.WorkflowinfoService">
+				<property name="workflowinfoDao">	
+					<ref local="workflowinfoDao" />
+				</property>
+				<property name="workflowUseCountDao">	
+					<ref local="workflowUseCountDao" />
+				</property>
+            </bean>
+        </property>
+    </bean>
+	
+	<bean id="nodeinfoService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.workflow.service.NodeinfoService">
+				<property name="nodeinfoDao">	
+					<ref local="nodeinfoDao" />
+				</property>
+            </bean>
+        </property>
+    </bean>
+	
+	<bean id="nodeinfoFreeService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.workflow.service.NodeinfoFreeService">
+				<property name="nodeinfoFreeDao">	
+					<ref local="nodeinfoFreeDao" />
+				</property>
+            </bean>
+        </property>
+    </bean>
+	
+	<bean id="exportService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.workflow.service.ExportService">
+				<property name="exportDao">	
+					<ref local="exportDao" />
+				</property>
+            </bean>
+        </property>
+    </bean>
+    
+    <bean id="sendOutThread" class="com.eweaver.workflow.request.thread.SendOutThread">
+    </bean>
+    
+    <bean id="exportFreeService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.workflow.service.ExportFreeService">
+				<property name="exportFreeDao">	
+					<ref local="exportFreeDao" />
+				</property>
+            </bean>
+        </property>
+    </bean>
+		
+	<bean id="formfieldService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.form.service.FormfieldService">
+				<property name="formfieldDao">
+					<ref local="formfieldDao" />
+				</property>
+				<property name="forminfoService">
+					<ref local="forminfoService" />
+				</property>		
+				<property name="formlinkService">
+					<ref local="formlinkService" />
+				</property>
+                <property name="reportdefService" ref="reportdefService"/>
+                <property name="workflowinfoService" ref="workflowinfoService"/>
+                <property name="categoryService" ref="categoryService"/>
+            </bean>
+        </property>
+    </bean>
+	
+	<bean id="formlayoutService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.form.service.FormlayoutService">
+				<property name="formlayoutDao">	
+					<ref local="formlayoutDao" />
+				</property>
+				<property name="formlayoutfieldDao">	
+					<ref local="formlayoutfieldDao" />
+				</property>
+				<property name="forminfoDao">	
+					<ref local="forminfoDao" />
+				</property>
+				<property name="formfieldDao">	
+					<ref local="formfieldDao" />
+				</property>
+				<property name="formlinkDao">	
+					<ref local="formlinkDao" />
+				</property>
+				<property name="baseJdbcDao" ref="baseJdbcDao"/>
+                <property name="workflowinfoDao" ref="workflowinfoDao"/>
+                <property name="nodeinfoDao" ref="nodeinfoDao"/>
+                <property name="categoryDao" ref="categoryDao"/>
+                <property name="selectitemService" ref="selectitemService"/>
+                <property name="humresService" ref="humresService"/>
+                <property name="labelService" ref="labelService"/>
+                <property name="orgunitService" ref="orgunitService"/>
+                <property name="orgunittypeService" ref="orgunittypeService"/>
+                <property name="sysroleService" ref="sysroleService"/>
+                <property name="permissionruleService" ref="permissionruleService"/>
+            </bean>
+        </property>
+    </bean>
+	
+	<bean id="requestlogService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.request.service.RequestlogService">
+				<property name="requestlogDao">	
+					<ref local="requestlogDao" />
+				</property>
+				<property name="requeststepDao">	
+					<ref local="requeststepDao" />
+				</property>
+                <property name="baseJdbcDao" ref="baseJdbcDao"/>
+                <property name="nodeinfoService" ref="nodeinfoService"/>
+            </bean>
+        </property>
+    </bean>	
+	<bean id="requestbaseService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.workflow.request.service.RequestbaseService">
+				<property name="requestbaseDao">
+					<ref local="requestbaseDao" />
+				</property>
+                <property name="requestoperatorsDao" ref="requestoperatorsDao"></property>
+                <property name="humresService" ref="humresService"></property>
+                <property name="baseJdbcDao" ref="baseJdbcDao"></property>
+			</bean>
+		</property>
+	</bean>		
+	
+	<bean id="reportdefService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.report.service.ReportdefService">
+				<property name="reportdefDao">	
+					<ref local="reportdefDao" />
+				</property>
+				<property name="forminfoDao" ref="forminfoDao"/>
+				<property name="reportfieldDao" ref="reportfieldDao"/>
+				<property name="formfieldDao" ref="formfieldDao"/>
+				<property name="baseJdbcDao" ref="baseJdbcDao"/>
+				<property name="selectitemDao" ref="selectitemDao"/>
+				<property name="refobjDao" ref="refobjDao"/>
+				<property name="attachDao" ref="attachDao"/>
+				<property name="permissiondetailService" ref="permissiondetailService"/>
+				<property name="labelCustomService" ref="labelCustomService"/>
+            </bean>
+        </property>
+    </bean>	
+    
+	<bean id="reportfieldService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.report.service.ReportfieldService">
+				<property name="reportfieldDao">	
+					<ref local="reportfieldDao" />
+				</property>
+            </bean>
+        </property>
+    </bean>	
+	<bean id="reportSearchfieldService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.report.service.ReportSearchfieldService">
+				<property name="reportsearchfieldDao">	
+					<ref local="reportsearchfieldDao" />
+				</property>
+            </bean>
+        </property>
+    </bean>
+    	<bean id="combinefieldService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.report.service.CombinefieldService">
+				<property name="combinefieldDao">
+					<ref local="combinefieldDao" />
+				</property>
+            </bean>
+        </property>
+    </bean>
+	
+	<bean id="workflowpreService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.request.service.WorkflowpreService">
+				<property name="baseJdbcDao">	
+					<ref bean="baseJdbcDao" />
+				</property>
+				<property name="requestbaseDao">	
+					<ref bean="requestbaseDao" />
+				</property>
+            </bean>
+        </property>
+    </bean>	 
+	
+	<bean id="extendJspService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.workflow.service.ExtendJspService">
+				<property name="baseJdbcDao">	
+					<ref bean="baseJdbcDao" />
+				</property>
+				<property name="workflowinfoService">	
+					<ref bean="workflowinfoService" />
+				</property>
+				<property name="forminfoService">	
+					<ref bean="forminfoService" />
+				</property>
+				<property name="formlinkService">	
+					<ref bean="formlinkService" />
+				</property>
+				<property name="formfieldService">	
+					<ref bean="formfieldService" />
+				</property>
+				<property name="requestbaseDao">	
+					<ref bean="requestbaseDao" />
+				</property>
+            </bean>
+        </property>
+    </bean>	 
+	
+	<bean id="workflowdoctypeService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.workflow.service.WorkflowdoctypeService">
+				<property name="workflowdoctypeDao">	
+					<ref bean="workflowdoctypeDao" />
+				</property>
+            </bean>
+        </property>
+    </bean>	 
+	
+	<bean id="workflowaccreditService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.workflow.service.WorkflowaccreditService">
+				<property name="workflowaccreditDao">	
+					<ref local="workflowaccreditDao" />
+				</property>
+            </bean>
+        </property>
+    </bean>
+
+	<bean id="workflowactingService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.workflow.service.WorkflowactingService">
+				<property name="workflowactingDao">
+					<ref local="workflowactingDao" />
+				</property>
+				<property name="baseJdbcDao" ref="baseJdbcDao"/>
+            </bean>
+        </property>
+    </bean>
+
+	<bean id="exceloptService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.excel.service.ExceloptService">
+				<property name="exceloptDao">
+					<ref local="ExceloptDao" />
+				</property>
+				<property name="baseJdbcDao" ref="baseJdbcDao"/>
+            </bean>
+        </property>
+    </bean>
+	
+	<bean id="workflowCreateService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.request.service.WorkflowCreateService">
+				<property name="workflowinfoDao">	
+					<ref local="workflowinfoDao" />
+				</property>
+                <property name="workflowService">
+					<ref local="workflowService" />
+				</property>
+				<property name="nodeinfoDao">	
+					<ref local="nodeinfoDao" />
+				</property>
+				<property name="requestbaseDao">	
+					<ref local="requestbaseDao" />
+				</property>
+				<property name="requeststepDao">	
+					<ref local="requeststepDao" />
+				</property>
+				<property name="requestlogDao">	
+					<ref local="requestlogDao" />
+				</property>
+				<property name="permissionruleDao">	
+					<ref bean="permissionruleDao" />
+				</property>
+				<property name="requestoperatorsDao">	
+					<ref local="requestoperatorsDao" />
+				</property>
+				<property name="requeststatusDao">	
+					<ref local="requeststatusDao" />
+				</property>
+				<property name="exportDao">	
+					<ref bean="exportDao" />
+				</property>
+				<property name="baseJdbcDao">	
+					<ref bean="baseJdbcDao" />
+				</property>
+				<property name="forminfoDao">	
+					<ref bean="forminfoDao" />
+				</property>
+				<property name="formfieldDao">	
+					<ref bean="formfieldDao" />
+				</property>
+				<property name="formlinkDao">	
+					<ref bean="formlinkDao" />
+				</property>
+				<property name="noderemindDao">	
+					<ref bean="noderemindDao" />
+				</property>
+                <property name="eweaverMessageProducer">
+					<ref bean="eweaverMessageProducer" />
+				</property>
+            </bean>
+        </property>
+    </bean>	 
+	
+
+	<bean id="contemplateService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.report.service.ContemplateService">
+				<property name="contemplateDao">	
+					<ref bean="contemplateDao" />
+				</property>
+				<property name="baseJdbcDao">	
+					<ref bean="baseJdbcDao" />
+				</property>
+            </bean>
+        </property>
+    </bean>	 
+	
+	<bean id="contempfieldService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.report.service.ContempfieldService">
+				<property name="contempfieldDao">	
+					<ref bean="contempfieldDao" />
+				</property>
+            </bean>
+        </property>
+    </bean>	 
+
+	<bean id="forminfoDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces" value="com.eweaver.workflow.form.dao.ForminfoDao"/>
+		<property name="target">
+			<bean class="com.eweaver.workflow.form.dao.ForminfoDaoHB">
+				<property name="sessionFactory" ref="sessionFactory" />
+			</bean>
+		</property>
+		<property name="interceptorNames">
+	        <list>
+	        	<value>methodAfterInterceptor</value>
+	        </list>
+	    </property>
+	</bean>
+	
+    <bean id="formbaseDao" class="com.eweaver.workflow.form.dao.FormBaseDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+    <bean id="formfieldDao" class="com.eweaver.workflow.form.dao.FormfieldDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="formlayoutDao" class="com.eweaver.workflow.form.dao.FormlayoutDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>	
+	<bean id="formlayoutfieldDao" class="com.eweaver.workflow.form.dao.FormlayoutfieldDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>	
+	<bean id="formlinkDao" class="com.eweaver.workflow.form.dao.FormlinkDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>	
+	<bean id="refobjectDao" class="com.eweaver.workflow.form.dao.RefobjectDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>	
+	
+	<bean id="workflowinfoDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces" value="com.eweaver.workflow.workflow.dao.WorkflowinfoDao"/>
+		<property name="target">
+			<bean class="com.eweaver.workflow.workflow.dao.WorkflowinfoDaoHB">
+				<property name="sessionFactory" ref="sessionFactory" />
+			</bean>
+		</property>
+		<property name="interceptorNames">
+	        <list>
+	        	<value>methodAfterInterceptor</value>
+	        </list>
+	    </property>
+	</bean>
+	
+	<bean id="nodeinfoDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces" value="com.eweaver.workflow.workflow.dao.NodeinfoDao"/>
+		<property name="target">
+			<bean class="com.eweaver.workflow.workflow.dao.NodeinfoDaoHB">
+				<property name="sessionFactory" ref="sessionFactory" />
+			</bean>
+		</property>
+		<property name="interceptorNames">
+	        <list>
+	        	<value>methodAfterInterceptor</value>
+	        </list>
+	    </property>
+	</bean>
+	
+	<bean id="nodeinfoFreeDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces" value="com.eweaver.workflow.workflow.dao.NodeinfoFreeDao"/>
+		<property name="target">
+			<bean class="com.eweaver.workflow.workflow.dao.NodeinfoFreeDaoHB">
+				<property name="sessionFactory" ref="sessionFactory" />
+			</bean>
+		</property>
+		<property name="interceptorNames">
+	        <list>
+	        	<value>methodAfterInterceptor</value>
+	        </list>
+	    </property>
+	</bean>
+	
+	<bean id="exportDao" class="com.eweaver.workflow.workflow.dao.ExportDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>		
+	
+	<bean id="exportFreeDao" class="com.eweaver.workflow.workflow.dao.ExportFreeDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>	
+	
+	<bean id="requestbaseDao" class="com.eweaver.workflow.request.dao.RequestbaseDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>		
+	<bean id="requeststatusDao" class="com.eweaver.workflow.request.dao.RequeststatusDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>	
+	<bean id="requestlogDao" class="com.eweaver.workflow.request.dao.RequestlogDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>	
+	<bean id="requestoperatorsDao" class="com.eweaver.workflow.request.dao.RequestoperatorsDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>	
+	<bean id="requestoptruleDao" class="com.eweaver.workflow.request.dao.RequestoptruleDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>	
+	<bean id="requeststepDao" class="com.eweaver.workflow.request.dao.RequeststepDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>	
+
+	<bean id="reportdefDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces" value="com.eweaver.workflow.report.dao.ReportdefDao"/>
+		<property name="target">
+			<bean class="com.eweaver.workflow.report.dao.ReportdefDaoHB">
+				<property name="sessionFactory" ref="sessionFactory" />
+			</bean>
+		</property>
+		<property name="interceptorNames">
+	        <list>
+	        	<value>methodAfterInterceptor</value>
+	        </list>
+	    </property>
+	</bean>
+	
+	<bean id="reportfieldDao" class="com.eweaver.workflow.report.dao.ReportfieldDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>	
+	<bean id="reportsearchfieldDao" class="com.eweaver.workflow.report.dao.ReportsearchfieldDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+    <bean id="combinefieldDao" class="com.eweaver.workflow.report.dao.CombinefieldDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="workflowdoctypeDao" class="com.eweaver.workflow.workflow.dao.WorkflowdoctypeDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>	
+	<bean id="workflowaccreditDao" class="com.eweaver.workflow.workflow.dao.WorkflowaccreditDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="workflowactingDao" class="com.eweaver.workflow.workflow.dao.WorkflowactingDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="ExceloptDao" class="com.eweaver.excel.dao.ExceloptDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="noderemindDao" class="com.eweaver.workflow.request.dao.NoderemindDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+    <bean id="messageurlDao" class="com.eweaver.workflow.request.dao.MessageurlDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="contemplateDao" class="com.eweaver.workflow.report.dao.ContemplateDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>		
+	<bean id="contempfieldDao" class="com.eweaver.workflow.report.dao.ContempfieldDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>	
+	<bean id="workflowNodeStyleDao" class="com.eweaver.workflow.request.dao.WorkflowNodeStyleDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="workflowService" class="com.eweaver.workflow.request.service.WorkflowService">
+        <property name="humresDao" ref="humresDao"></property>
+        <property name="messageurlDao" ref="messageurlDao"></property>
+        <property name="notifyService" ref="notifyService"></property>
+		<property name="labelService" ref="labelService"></property>
+        <property name="keyinfoService" ref="keyinfoService"></property>
+        <property name="workflowactingService" ref="workflowactingService"></property>
+        <property name="docbaseService" ref="docbaseService"></property>
+        <property name="attachService" ref="attachService"></property>
+        <property name="formService" ref="formService"></property>
+        <property name="permissionruleService" ref="permissionruleService"></property>
+        <property name="subprocesssetService" ref="subprocesssetService"></property>
+        <property name="formbaseService" ref="formbaseService"></property>
+        <property name="categoryService" ref="categoryService"></property>
+        <property name="formlayoutService" ref="formlayoutService"></property>
+        <property name="stationinfoService" ref="stationinfoService"></property>
+        <property name="humresService" ref="humresService"></property>
+        <property name="sysuserService" ref="sysuserService"></property>
+        <property name="acegiCacheManager" ref="acegiCacheManager"></property>
+        <property name="requestlogService" ref="requestlogService"></property>
+        <property name="exportService" ref="exportService"></property>
+        <property name="sendOutThread" ref="sendOutThread"></property>
+        <property name="workflowinfoDao">
+				<bean  parent="txProxyTemplate">
+					<property name="target">
+						<bean class="com.eweaver.workflow.workflow.dao.WorkflowinfoDaoHB">
+							<property name="sessionFactory">
+								<ref bean="sessionFactory"/>
+							</property>
+						</bean>	
+					</property>			
+				</bean>
+			</property>
+		<property name="nodeinfoDao">	
+				<bean  parent="txProxyTemplate">
+					<property name="target">
+						<bean class="com.eweaver.workflow.workflow.dao.NodeinfoDaoHB">
+							<property name="sessionFactory">
+								<ref bean="sessionFactory"/>
+							</property>
+						</bean>	
+					</property>			
+				</bean>
+			</property>
+		<property name="exportDao">	
+				<bean  parent="txProxyTemplate">
+					<property name="target">
+						<bean class="com.eweaver.workflow.workflow.dao.ExportDaoHB">
+							<property name="sessionFactory">
+								<ref bean="sessionFactory"/>
+							</property>
+						</bean>	
+					</property>			
+				</bean>
+			</property>
+		<property name="forminfoDao">	
+				<bean  parent="txProxyTemplate">
+					<property name="target">
+						<bean class="com.eweaver.workflow.form.dao.ForminfoDaoHB">
+							<property name="sessionFactory">
+								<ref bean="sessionFactory"/>
+							</property>
+						</bean>	
+					</property>			
+				</bean>
+			</property>
+		<property name="formfieldDao">	
+				<bean  parent="txProxyTemplate">
+					<property name="target">
+						<bean class="com.eweaver.workflow.form.dao.FormfieldDaoHB">
+							<property name="sessionFactory">
+								<ref bean="sessionFactory"/>
+							</property>
+						</bean>	
+					</property>			
+				</bean>
+			</property>
+		<property name="noderemindDao">	
+				<bean  parent="txProxyTemplate">
+					<property name="target">
+						<bean class="com.eweaver.workflow.request.dao.NoderemindDaoHB">
+							<property name="sessionFactory">
+								<ref bean="sessionFactory"/>
+							</property>
+						</bean>	
+					</property>			
+				</bean>
+			</property>
+		<property name="requestbaseDao">	
+				<bean  parent="txProxyTemplate">
+					<property name="target">
+						<bean class="com.eweaver.workflow.request.dao.RequestbaseDaoHB">
+							<property name="sessionFactory">
+								<ref bean="sessionFactory"/>
+							</property>
+						</bean>	
+					</property>			
+				</bean>
+			</property>
+		<property name="requeststatusDao">	
+				<bean  parent="txProxyTemplate">
+					<property name="target">
+						<bean class="com.eweaver.workflow.request.dao.RequeststatusDaoHB">
+							<property name="sessionFactory">
+								<ref bean="sessionFactory"/>
+							</property>
+						</bean>	
+					</property>			
+				</bean>
+			</property>
+		<property name="requestlogDao">	
+				<bean  parent="txProxyTemplate">
+					<property name="target">
+						<bean class="com.eweaver.workflow.request.dao.RequestlogDaoHB">
+							<property name="sessionFactory">
+								<ref bean="sessionFactory"/>
+							</property>
+						</bean>	
+					</property>			
+				</bean>
+			</property>
+		<property name="requestoperatorsDao">	
+				<bean  parent="txProxyTemplate">
+					<property name="target">
+						<bean class="com.eweaver.workflow.request.dao.RequestoperatorsDaoHB">
+							<property name="sessionFactory">
+								<ref bean="sessionFactory"/>
+							</property>
+						</bean>	
+					</property>			
+				</bean>
+			</property>
+		<property name="requeststepDao">	
+				<bean  parent="txProxyTemplate">
+					<property name="target">
+						<bean class="com.eweaver.workflow.request.dao.RequeststepDaoHB">
+							<property name="sessionFactory">
+								<ref bean="sessionFactory"/>
+							</property>
+						</bean>	
+					</property>			
+				</bean>
+			</property>
+				<property name="baseJdbcDao">
+					<ref bean="baseJdbcDao"/>
+				</property>
+		
+		<property name="refobjlinkDao">	
+				<bean  parent="txProxyTemplate">
+					<property name="target">
+						<bean class="com.eweaver.base.refobj.dao.RefobjlinkDaoHB">
+							<property name="sessionFactory">
+								<ref bean="sessionFactory"/>
+							</property>
+						</bean>	
+					</property>			
+				</bean>
+			</property>
+		<property name="permissionruleDao">	
+				<bean  parent="txProxyTemplate">
+					<property name="target">
+						<bean class="com.eweaver.base.security.dao.PermissionruleDaoHB">
+							<property name="sessionFactory">
+								<ref bean="sessionFactory"/>
+							</property>
+						</bean>	
+					</property>			
+				</bean>
+			</property>
+		<property name="formlinkDao">	
+				<bean  parent="txProxyTemplate">
+					<property name="target">
+						<bean class="com.eweaver.workflow.form.dao.FormlinkDaoHB">
+							<property name="sessionFactory">
+								<ref bean="sessionFactory"/>
+							</property>
+						</bean>	
+					</property>			
+				</bean>
+			</property>
+		<property name="refobjDao">	
+				<bean  parent="txProxyTemplate">
+					<property name="target">
+						<bean class="com.eweaver.base.refobj.dao.RefobjDaoHB">
+							<property name="sessionFactory">
+								<ref bean="sessionFactory"/>
+							</property>
+						</bean>	
+					</property>			
+				</bean>
+			</property>
+				<property name="selectitemService">
+					<ref bean="selectitemService"/>
+				</property>
+				<property name="refobjService">
+					<ref bean="refobjService"/>
+				</property>
+				<property name="eweaverMessageProducer">
+					<ref bean="eweaverMessageProducer"/>
+				</property>
+				<property name="setitemService">
+					<ref bean="setitemService"/>
+				</property>
+            </bean>
+
+	<bean id="requestfreeService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.workflow.request.service.RequestfreeService">
+				<property name="baseJdbcDao" ref="baseJdbcDao"></property>
+				<property name="requestbaseDao" ref="requestbaseDao"></property>
+				<property name="requestoperatorsDao" ref="requestoperatorsDao"></property>
+				<property name="exportDao" ref="exportDao"></property>
+				<property name="exportFreeDao" ref="exportFreeDao"></property>
+				<property name="nodeinfoDao" ref="nodeinfoDao"></property>
+				<property name="nodeinfoFreeDao" ref="nodeinfoFreeDao"></property>
+				<property name="requestlogDao" ref="requestlogDao"></property>
+				<property name="requestFlowpathDao" ref="requestFlowpathDao"></property>
+				<property name="workflowService" ref="workflowService"></property>
+				<property name="nodeinfoService" ref="nodeinfoService"></property>
+				<property name="setitemService" ref="setitemService"></property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="formbaseService" class="com.eweaver.workflow.form.service.FormBaseService">
+         <property name="baseJdbcDao" ref="baseJdbcDao"/>
+		    <property name="formbaseDao">
+					<ref bean="formbaseDao" />
+			</property>
+        <property name="customactionService" ref="customactionService"/>
+        <property name="formfieldService">
+					<ref local="formfieldService" />
+				</property>
+        <property name="forminfoService">
+					<ref local="forminfoService" />
+				</property>
+          <property name="permissionruleService" ref="permissionruleService"/>
+        <property name="permissiondetailService" ref="permissiondetailService"/>
+
+
+    </bean>
+    <bean id="formService" class="com.eweaver.workflow.request.service.FormService">
+				<property name="baseJdbcDao">	
+					<ref bean="baseJdbcDao" />
+				</property>
+                <property name="authenticationProcessingFilter">
+					<ref bean="authenticationProcessingFilter" />
+				</property>
+		<property name="forminfoDao">	
+				<bean  parent="txProxyTemplate">
+					<property name="target">
+						<bean class="com.eweaver.workflow.form.dao.ForminfoDaoHB">
+							<property name="sessionFactory">
+								<ref bean="sessionFactory"/>
+							</property>
+						</bean>	
+					</property>			
+				</bean>
+			</property>
+
+		<property name="formfieldDao">	
+				<bean  parent="txProxyTemplate">
+					<property name="target">
+						<bean class="com.eweaver.workflow.form.dao.FormfieldDaoHB">
+							<property name="sessionFactory">
+								<ref bean="sessionFactory"/>
+							</property>
+						</bean>	
+					</property>
+				</bean>
+			</property>
+
+		<property name="formlinkDao">	
+				<bean  parent="txProxyTemplate">
+					<property name="target">
+						<bean class="com.eweaver.workflow.form.dao.FormlinkDaoHB">
+							<property name="sessionFactory">
+								<ref bean="sessionFactory"/>
+							</property>
+						</bean>	
+					</property>			
+				</bean>
+			</property>
+
+
+		<property name="workflowdoctypeDao">	
+				<bean  parent="txProxyTemplate">
+					<property name="target">
+						<bean class="com.eweaver.workflow.workflow.dao.WorkflowdoctypeDaoHB">
+							<property name="sessionFactory">
+								<ref bean="sessionFactory"/>
+							</property>
+						</bean>	
+					</property>			
+				</bean>
+			</property>
+
+		<property name="formlayoutService">
+			<ref local="formlayoutService"/>
+		</property>
+		<property name="selectitemService">
+			<ref bean="selectitemService"/>
+		</property>
+		<property name="refobjService">
+			<ref bean="refobjService"/>
+		</property>
+		<property name="reportdefService" ref="reportdefService"/>
+		<property name="attachService">
+			<ref bean="attachService"/>
+		</property>
+		<property name="humresService">
+			<ref bean="humresService"/>
+		</property>
+        <property name="logService">
+			<ref bean="logService"/>
+		</property>
+		<property name="requestlogService" ref="requestlogService"/>
+		<property name="docbaseService" ref="docbaseService"/>
+		<property name="permissiondetailService" ref="permissiondetailService"/>
+        <property name="permissionruleService" ref="permissionruleService"/>
+        <property name="forminfoService" ref="forminfoService"/>
+        <property name="labelCustomService" ref="labelCustomService" />
+        <property name="formfieldService" ref="formfieldService" />
+    </bean>
+
+	<bean id="formlayoutfieldService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.form.service.FormlayoutfieldService">
+				<property name="formlayoutfieldDao">
+					<ref local="formlayoutfieldDao"/>
+				</property>
+            </bean>
+        </property>
+    </bean>
+	<bean id="workflowNodeStyleService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.request.service.WorkflowNodeStyleService">
+				<property name="workflowNodeStyleDao">
+					<ref local="workflowNodeStyleDao"/>
+				</property>
+            </bean>
+        </property>
+    </bean>
+        
+    <bean id="requestOperatorService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.request.service.RequestOperatorService">
+				<property name="requestoperatorsDao">
+					<ref local="requestoperatorsDao"/>
+				</property>
+            </bean>
+        </property>
+    </bean>
+    
+    <bean id="noderemindService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.request.service.NoderemindService">
+				<property name="noderemindDao">
+					<ref local="noderemindDao"/>
+				</property>
+            </bean>
+        </property> 
+    </bean>
+    <bean id="XlsFormService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.eweaver.workflow.request.service.XlsFormService">
+				<property name="forminfoService" ref="forminfoService"/>
+				<property name="selectitemService" ref="selectitemService"/>
+				<property name="refobjService" ref="refobjService"/>
+				<property name="reportdefService" ref="reportdefService"/>
+				<property name="baseJdbcDao" ref="baseJdbcDao"/>
+				<property name="formlayoutService" ref="formlayoutService"/>
+				<property name="formfieldService" ref="formfieldService"/>
+            </bean>
+        </property>
+    </bean>
+    <bean id="requestinfoService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.workflow.request.service.RequestinfoService">
+				<property name="requestinfoDao">
+					<ref local="requestinfoDao" />
+				</property>
+                <property name="baseJdbcDao" ref="baseJdbcDao"></property>
+                <property name="requestlogService" ref="requestlogService"></property>
+			</bean>
+		</property>
+	</bean>
+	<bean id="requestinfoDao" class="com.eweaver.workflow.request.dao.RequestinfoDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>	
+	
+	<bean id="workflowUseCountDao" class="com.eweaver.workflow.workflow.dao.WorkflowUseCountDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+</beans>

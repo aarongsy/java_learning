@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.2</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes isCache="false" maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT EMPID,PRODUCTNAME,ORDERSDETAIL.QUANTITY,PRICE,COST FROM ORDERSDETAIL,ORDERS,PRODUCT where ORDERS.ORDERID=ORDERSDETAIL.ORDERID AND PRODUCT.PRODUCTID=ORDERSDETAIL.PRODUCTID AND PRODUCTTYPE='Office' and YEAR(SIGNDATE)=2008]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes isCache="false" maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT EMPID,EMPNAME FROM EMPLOYEE]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings shrinkToFit="false" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<ReportPageAttr>
+<HR F="0" T="4" /></ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[33,18,19,19,19,19,19,19,19,19,19,50]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[62,70,55,57,61,62,60,62]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="9" s="0"><O><![CDATA[2008年办公用品销售累计]]></O>
+</C>
+<C c="0" r="2" cs="9" s="1"></C>
+<C c="0" r="3" s="2"><O><![CDATA[销售员]]></O>
+</C>
+<C c="1" r="3" s="2"><O><![CDATA[产品名称]]></O>
+</C>
+<C c="2" r="3" s="2"><O><![CDATA[数量]]></O>
+</C>
+<C c="3" r="3" s="2"><O><![CDATA[零售价]]></O>
+</C>
+<C c="4" r="3" s="2"><O><![CDATA[总价]]></O>
+</C>
+<C c="5" r="3" s="2"><O><![CDATA[累计]]></O>
+</C>
+<C c="6" r="3" s="2"><O><![CDATA[进价]]></O>
+</C>
+<C c="7" r="3" s="2"><O><![CDATA[总成本]]></O>
+</C>
+<C c="8" r="3" s="2"><O><![CDATA[累计]]></O>
+</C>
+<C c="0" r="4" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="EMPID" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="1" r="4" s="4"></C>
+<C c="2" r="4" s="4"></C>
+<C c="3" r="4" s="4"></C>
+<C c="4" r="4" s="4"></C>
+<C c="5" r="4" s="4"></C>
+<C c="6" r="4" s="4"></C>
+<C c="7" r="4" s="4"></C>
+<C c="8" r="4" s="4"></C>
+<C c="0" r="5" s="5"></C>
+<C c="1" r="5" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="PRODUCTNAME" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" leftParentDefault="false" left="A5" />
+</C>
+<C c="2" r="5" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="QUANTITY" />
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="3" r="5" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="PRICE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="4" r="5" s="3"><O t="Formula" class="Formula"><Attributes><![CDATA[=C6 * D6]]></Attributes></O>
+</C>
+<C c="5" r="5" s="6"><O t="Formula" class="Formula"><Attributes><![CDATA[=if(&B6 > 1, F6[B6:-1], F6[A5:-1,b6:!-1]) + E6]]></Attributes></O>
+</C>
+<C c="6" r="5" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="COST" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="7" r="5" s="3"><O t="Formula" class="Formula"><Attributes><![CDATA[=C6 * G6]]></Attributes></O>
+</C>
+<C c="8" r="5" s="6"><O t="Formula" class="Formula"><Attributes><![CDATA[=if(&B6 > 1, I6[B6:-1], I6[A5:-1,B6:!-1]) + H6]]></Attributes></O>
+</C>
+<C c="0" r="7" cs="2" s="7"><O><![CDATA[售出办公用品数量：]]></O>
+</C>
+<C c="2" r="7" s="7"><O t="Formula" class="Formula"><Attributes><![CDATA[=sum(C6)]]></Attributes></O>
+</C>
+<C c="3" r="7" s="8"></C>
+<C c="4" r="7" cs="2" s="9"><O><![CDATA[销售额：]]></O>
+</C>
+<C c="6" r="7" s="10"><O t="Formula" class="Formula"><Attributes><![CDATA[=sum(E6)]]></Attributes></O>
+</C>
+<C c="7" r="7" s="9"><O><![CDATA[毛利润：]]></O>
+</C>
+<C c="8" r="7" s="10"><O t="Formula" class="Formula"><Attributes><![CDATA[=sum(E6) - sum(H6)]]></Attributes></O>
+</C>
+<C c="0" r="9" cs="9" s="11"><O><![CDATA[“2008年办公用品销售累计”报表功能应用说明：]]></O>
+<Expand leftParentDefault="false" upParentDefault="false" />
+</C>
+<C c="0" r="10" cs="9" s="12"><O><![CDATA[1、跨层累计]]></O>
+<Expand leftParentDefault="false" upParentDefault="false" />
+</C>
+<C c="0" r="11" cs="9" s="12"><O><![CDATA[     该报表中，如“累计”列（蓝色背景），分别对“总价”、“总成本”进行跨层累计，从而能够最终统计出2008年销售额及毛利润。]]></O>
+<Expand leftParentDefault="false" upParentDefault="false" />
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style style_name="Title" />
+<Style style_name="Head" />
+<Style style_name="Head1" />
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6697729"
+ /><Bottom style="1" color="-6697729"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6697729"
+ /><Bottom style="1" color="-6697729"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-1048577">
+</Background>
+<Border><Top style="1" color="-6697729"
+ /><Bottom style="1" color="-6697729"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12" />
+<Background name="ColorBackground"
+ color="-1">
+</Background>
+<Border><Bottom style="2" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-1">
+</Background>
+<Border><Bottom style="2" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="1" size="12" />
+<Background name="ColorBackground"
+ color="-1">
+</Background>
+<Border><Bottom style="2" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<Format class="java.text.DecimalFormat"><![CDATA[¤#0.00]]></Format>
+<FRFont name="SimSun" style="1" size="12" />
+<Background name="ColorBackground"
+ color="-1">
+</Background>
+<Border><Bottom style="2" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-328966">
+</Background>
+<Border><Top style="3" color="-6894375"
+ /><Left style="3" color="-6894375"
+ /><Right style="3" color="-6894375"
+ /></Border>
+</Style>
+<Style style_name="Explanation" />
+</StyleList>
+</WorkBook>

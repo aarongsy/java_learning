@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100331">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[ftpom]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select u.reqorgunit,u.sum,u.yes,'送检率',round((u.yes/u.sum*100),2)||'%',u.no,round((u.no/u.sum*100),2)||'%' from 
+	(select (select objname from orgunit where id = reqorgunit) reqorgunit,count(*) sum,
+		(select count(*) from UF_DEVICE_EQUIPMENT  where nextsydate >= TO_CHAR(SYSDATE,'YYYY-MM-DD') and reqorgunit=ude.reqorgunit and (utenstilstate<>'2c91a0303103b67a0131042267cc01b7' or utenstilstate is null)
+   and reqorgunit not in('2c91a0302f016469012f10e07c1364f7','2c91a0302f016469012f10e0f3b464f9')) yes,
+		(count(*)-(select count(*) from UF_DEVICE_EQUIPMENT  where nextsydate >= TO_CHAR(SYSDATE,'YYYY-MM-DD') and reqorgunit=ude.reqorgunit and (utenstilstate<>'2c91a0303103b67a0131042267cc01b7' or utenstilstate is null)
+   and reqorgunit not in('2c91a0302f016469012f10e07c1364f7','2c91a0302f016469012f10e0f3b464f9'))) no
+  from UF_DEVICE_EQUIPMENT ude where devicetype = '2c91a0302c14a583012c2e998a990e08' 
+  and equipmentstate not in ('2c91a0302c2fe2d1012c349aa31e0391','2c91a0302c2fe2d1012c349aa31e0393') and (utenstilstate<>'2c91a0303103b67a0131042267cc01b7' or utenstilstate is null)
+   and reqorgunit not in('2c91a0302f016469012f10e07c1364f7','2c91a0302f016469012f10e0f3b464f9')
+ group by reqorgunit ) u]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75"/>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[19,19,19,19,19,19,19,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[128,100,103,98,103,102,72,72,72,72,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="0">
+<O>
+<![CDATA[部门]]></O>
+<Expand/>
+</C>
+<C c="1" r="0" s="0">
+<O>
+<![CDATA[在用数量]]></O>
+<Expand/>
+</C>
+<C c="2" r="0" s="0">
+<O>
+<![CDATA[在用合格数量]]></O>
+<Expand/>
+</C>
+<C c="3" r="0" s="0">
+<O>
+<![CDATA[合格率]]></O>
+<Expand/>
+</C>
+<C c="4" r="0" s="0">
+<O>
+<![CDATA[在用不合格数量]]></O>
+<Expand/>
+</C>
+<C c="5" r="0" s="0">
+<O>
+<![CDATA[不合格率]]></O>
+<Expand/>
+</C>
+<C c="0" r="1" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="REQORGUNIT"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="1" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="SUM"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="1" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="YES"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="1" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ROUND((U.YES/U.SUM*100),2)||&apos;%&apos;"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="1" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="NO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="1" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ROUND((U.NO/U.SUM*100),2)||&apos;%&apos;"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="5">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12"/>
+<Background name="ColorBackground" color="-6908266"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

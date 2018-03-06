@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!--
+	<bean id="smsService" class="com.eweaver.interfaces.sms.SMSServiceJassonSoft">
+       <property name="smType" value="0"/>
+       <property name="url" value=""/>
+       <property name="host" value="124.160.33.202"/>
+       <property name="dbName" value="mas"/>
+       <property name="apiCode" value="dpi"/>
+       <property name="name" value="huxh59"/>
+       <property name="pwd" value="hu661081"/>
+       <property name="isWap" value="0"/>
+       <property name="smId" value="10"/>
+       <property name="srcId" value="10"/>
+    </bean>
+    
+    <bean id="smsService" class="com.eweaver.interfaces.sms.SMSServiceJDBC">
+       <property name="ds">
+           <ref bean="interfaceDataSource" />
+       </property>
+       <property name="sql">
+			<value>insert into TBL_SMSENDTASK( CREATORID,SMSENDEDNUM,OPERATIONTYPE,SUBOPERATIONTYPE,SENDTYPE,ORGADDR,DESTADDR,SM_CONTENT,SENDTIME,NEEDSTATEREPORT,SERVICEID,FEETYPE,FEECODE,SMTYPE,MESSAGEID,DESTADDRTYPE,SUBTIME,TASKSTATUS,SENDLEVEL,SENDSTATE,TRYTIMES,COUNT) values ('0000',0,'api','0',1,'106573000988',?,?,current timestamp,1,'MSH4710101','01','0',0,'0',0,current timestamp,0,0,0,0,1)</value>
+       </property>
+   </bean>
+	-->
+	<!--
+	<bean id="smsService" class="com.eweaver.interfaces.sms.SMSServiceGold">
+		<property name="smsserver" value="127.0.0.1"/>
+		<property name="port" value="8090"/>
+	</bean>
+	-->
+	<!-- <bean id="smsService" class="com.eweaver.interfaces.sms.SMSServiceGold">
+		<property name="smsserver" value="127.0.0.1"/>
+		<property name="port" value="8090"/>
+	</bean>
+	 -->
+	<!-- EMA短信接口
+	     enterprise_id 由英斯克分配的企业代码
+	     password	        由英斯克系统管理员设定的密码
+	     ip			        短信通服务器的IP地址
+	     account_id    由英斯克分配的企业用户帐号（必须为3位数字）
+	 
+	<bean id="smsService" class="com.eweaver.interfaces.sms.SMSServiceEMA">
+		<property name="enterprise_id" value="12312312"/>
+		<property name="password" value="123123123"/>
+		<property name="ip" value="127.0.0.1"/>
+		<property name="account_id" value="012"/>
+	</bean>
+	-->
+	<!-- EMPP短信接口
+		 host 服务器ip
+		 port 服务端口
+		 accountId 由英斯克分配的企业用户帐号
+		 password 密码
+		 serviceId serviceId
+	 -->
+	<bean id="smsService" class="com.eweaver.interfaces.sms.SMSServiceEMPP">
+		<property name="host" value="127.0.0.1"/>
+		<property name="port" value="8099"/>
+		<property name="accountId" value="012"/>
+		<property name="password" value="123123"/>
+		<property name="serviceId" value="12333"/>
+	</bean>
+	<!-- 
+	<bean id="ocsService" class="ocs.OCSService" init-method="init">
+		<property name="address" value="http://127.0.0.1:9090/webservice6/services/Generic"/>
+	</bean>
+	 -->
+</beans>

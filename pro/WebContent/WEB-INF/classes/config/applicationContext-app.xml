@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	
+	<bean id="albumDao" class="com.eweaver.app.album.dao.AlbumDaoHB">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="photoDao" class="com.eweaver.app.album.dao.PhotoDaoHB">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="albumService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.app.album.service.AlbumService">
+				<property name="albumDao" ref="albumDao" />
+				<property name="photoDao" ref="photoDao" />
+				<property name="permissionruleService" ref="permissionruleService" />
+			</bean>
+		</property>
+	</bean>
+	
+</beans>

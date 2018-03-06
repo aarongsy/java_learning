@@ -1,0 +1,5 @@
+ERROR:[2014-12-09 14:26:15,568] com.eweaver.base.security.dao.PermissionruleDaoHB(http-0.0.0.0-80-3) :java.sql.SQLSyntaxErrorException: ORA-00904: "ID": 标识符无效
+
+ ERROR:[2014-12-09 14:26:59,039] com.eweaver.base.security.dao.PermissionruleDaoHB(http-0.0.0.0-80-32) :java.sql.SQLSyntaxErrorException: ORA-00904: "ID": 标识符无效
+
+ 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!--
+  - Mapping file for the Hibernate implementation of the Clinic interface.
+ -->
+<hibernate-mapping auto-import="true" default-lazy="false">
+ 
+  <class name="org.light.portlets.bookmark.Bookmark" table="light_bookmark"  >
+  <id name="id" column="ID">
+      <generator class="increment"/>
+  </id>
+  <property name="name"  type="string"        column="name"    />
+  <property name="url"  type="string"        column="url"    />
+  <property name="tagId"  type="string"        column="tagId"    />
+  <property name="tagName"  type="string"        column="tagName"    />
+  <property name="desc"  type="text"        column="bookmarkDesc"    />
+  <property name="userId"  type="string"        column="userId"    />
+ </class>
+ 
+</hibernate-mapping>

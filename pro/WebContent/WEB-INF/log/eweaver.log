@@ -1,0 +1,2 @@
+ERROR:[2015-02-17 13:40:19,362] com.eweaver.document.file.FileUpload(http-0.0.0.0-80-143) :文件上传错误: Could not parse multipart servlet request; nested exception is org.apache.commons.fileupload.FileUploadBase$IOFileUploadException: Processing of multipart/form-data request failed. Connection reset
+ 

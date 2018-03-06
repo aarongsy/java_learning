@@ -1,0 +1,225 @@
+body{
+	font-family: Microsoft YaHei;
+	margin: 0px;
+}
+#leftDiv{
+	width: 135px;
+	border: 0px solid #000;
+	float: left;
+	height: 100%;
+}
+#leftDiv .title{
+	font-family: Microsoft YaHei;
+	color: #333;
+	margin-top: 10px;
+	padding-left: 20px;
+	font-size: 16px;
+}
+#leftDiv .groupName{
+	padding: 0px;
+	margin: 0px;
+}
+#leftDiv .groupName ul{
+	list-style: none;
+	margin: 10px 0px 0px 0px;
+	font-size: 12px;
+}
+#leftDiv .groupName ul li{
+	position: relative;
+}
+#leftDiv .groupName ul li .tag{
+	display: none;
+	position: absolute;
+	left: 0px;
+	top: 5px;
+	background-color: #464E5A;
+	width: 5px;
+	height: 15px;
+	overflow: hidden;
+}
+#leftDiv .groupName ul li a{
+	font-family: Microsoft YaHei;
+	display: block;
+	text-decoration: none;
+	color: #999;
+	padding-left: 20px;
+	height: 25px;
+	line-height: 25px;
+	outline: none;	/*去掉单击之后的外边线*/ 
+	star:expression(this.onFocus=this.blur());
+}
+#leftDiv .groupName ul li a.over{
+	color: #777;
+}
+#leftDiv .groupName ul li a.current{
+	color: #333 !important;
+}
+#rightDiv{
+	position: relative;
+	float: left;
+	width: 740px;
+	border: 0px solid #000;
+	height: 100%;
+	padding-bottom: 30px;
+}
+#rightDiv .setting{
+	width: 720px;
+	border: 0px solid red;
+	float: left;
+	padding-left: 20px;
+}
+#rightDiv .setting .header{
+	font-family: Microsoft YaHei;
+	margin-top: 10px;
+	color: #333; 
+	border-bottom: 1px solid #EFEFEF;
+	padding-bottom: 8px;
+	font-size: 16px;
+}
+#rightDiv .setting .group{
+	margin: 20px 0px 0px 0px;
+	font-family: Microsoft YaHei;
+}
+#rightDiv .setting .firstGroup{
+	margin-top: 15px;
+}
+#rightDiv .setting .group .name{
+	font-family: Microsoft YaHei;
+	font-size: 14px;
+}
+#rightDiv .setting .group .entry{
+	font-family: Microsoft YaHei;
+	font-size: 12px;
+	margin-top: 2px;
+	padding-left: 20px;
+	line-height: 28px;
+	border: 0px solid red;
+}
+#rightDiv .setting .group .subEntry{
+	padding-left: 10px !important;	
+}
+#rightDiv .setting .group .entry div{
+	font-family: Microsoft YaHei;	
+}
+#rightDiv .setting .group .entry .label{
+	font-family: Microsoft YaHei;
+	color: #303942;	
+	display: inline-block;
+}
+#rightDiv .setting .group .entry:hover{
+	background: url("/images/arrow_hidden.jpg") no-repeat;
+	background-position: 0px 8px;
+}
+#rightDiv .setting .group .entry:hover .label{
+	color: #000;	
+}
+#rightDiv .setting .group .entry .content{
+	font-family: Microsoft YaHei;	
+}
+#rightDiv .setting .group .entry .content .text{
+	width: 336px;
+	color: #303942;
+	border: 1px solid #ADAEB5;
+	height: 19px;
+}
+#rightDiv .setting .group .entry:hover .content .text{
+	color: #000;		
+}
+#rightDiv .setting .group .entry .content select{
+	width: 150px;
+}
+#rightDiv .setting .unFirstRadio{
+	margin-left: 20px;
+}
+#search{
+	position: absolute;
+	right: 0px;
+	top: 10px;
+	z-index: 100;
+}
+#search input{
+	border: 1px solid #BFBFBF;
+	width:170px; 
+	height: 20px;
+	padding-left: 3px;
+	padding-top: 2px;
+	font-family: Microsoft YaHei;
+}
+#search input.focus{
+	border: 1px solid #4D90FE;
+}
+#search .tip{
+	position: absolute;
+	top: 4px;
+	left: 7px;
+	color: #A9A9A9;
+	font-size: 12px;
+	font-family: Microsoft YaHei;
+}
+#setting1 .label{
+	width: 125px;
+}
+#setting2 .label{
+	width: 180px;
+}
+#setting3 .label{
+	width: 145px;
+}
+#setting4 .label{
+	width: 135px;
+}
+#setting5 .label{
+	width: 236px;
+}
+#setting6 .label{
+	width: 150px;
+}
+#setting7 .label{
+	width: 160px;
+}
+#setting8 .label{
+	width: 235px;
+}
+#dynamicpassruleDiv,#firstPassChangeDiv{
+	padding-left: 25px;
+	margin-bottom: 20px;
+	display: none;
+}
+#searchResultDiv{
+	position: absolute;	
+	top: 0px;
+	left: 0px;
+	z-index: 99;
+	background: #fff;
+	height: 100%;
+	display: none;
+}
+#searchResultDiv .label{
+	width: 236px;
+}
+#searchResultDiv .searchKey{
+	background: #FFF784;
+}
+#cancelSearchBtn{
+	background: url("/images/cancel.jpg") no-repeat;
+	position: absolute;	
+	top: 4px;
+	right: 3px;
+	width: 16px;
+	height:16px;
+	cursor: pointer;
+	display: none;
+}
+
+.jqGridTip{
+	border: 1px dotted #CCC;
+	padding-left: 5px;	
+	margin-bottom: 20px;	
+	display: none;
+}
+
+.jqGridTipControl{
+	font-family: Microsoft YaHei;
+	font-size: 11px;	
+	float: right;
+}

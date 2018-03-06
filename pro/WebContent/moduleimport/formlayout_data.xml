@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SchemaDataSet><SchemaData ID="formlayout" version="4.0.0"><Fields><Field name="ID" type="string"/><Field name="FORMID" type="string"/><Field name="NODEID" type="string"/><Field name="TYPEID" type="string"/><Field name="LAYOUTINFO" type="clob"/><Field name="LAYOUTFORMATTED" type="clob"/><Field name="LAYOUTNAME" type="string"/><Field name="ISDEFAULT" type="int"/><Field name="ISDELETE" type="int"/><Field name="SUPPORTEDCLIENT" type="int"/></Fields><DataSet><Data><Data name="FORMID">40285a8d4aaea6d9014aaeb722d60005</Data><Data name="ISDEFAULT">0</Data><Data name="LAYOUTFORMATTED">&lt;CENTER&gt;
+&lt;DIV id=layoutDiv&gt;
+&lt;TABLE class=layouttable border=1&gt;
+&lt;CAPTION&gt;员工报销付款通知单&lt;/CAPTION&gt;
+&lt;COLGROUP&gt;
+&lt;COL width="12%"&gt;
+&lt;COL width="38%"&gt;
+&lt;COL width="12%"&gt;
+&lt;COL width="38%"&gt;&lt;/COLGROUP&gt;
+&lt;TBODY&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73140006 name=MultiLanguageLabel&gt;填单人&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaebc73140006$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73430008 name=MultiLanguageLabel&gt;填单日期&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaebc73430008$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc7372000a name=MultiLanguageLabel&gt;报销单号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaebc7372000a$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73a1000c name=MultiLanguageLabel&gt;报销人姓名&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaebc73a1000c$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73c0000e name=MultiLanguageLabel&gt;工号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaebc73c0000e$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaec509b600a5 name=MultiLanguageLabel&gt;内部订单号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaec509b600a5$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfac4c00a7 name=MultiLanguageLabel&gt;报销人部门&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfac4c00a7$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfac7b00a9 name=MultiLanguageLabel&gt;一级部门&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfac7b00a9$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfac9a00ab name=MultiLanguageLabel&gt;二级部门&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfac9a00ab$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfacc900ad name=MultiLanguageLabel&gt;所属公司&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfacc900ad$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfacf800af name=MultiLanguageLabel&gt;厂区别&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfacf800af$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad1700b1 name=MultiLanguageLabel&gt;报销凭证号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfad1700b1$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad4600b3 name=MultiLanguageLabel&gt;公司代码&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfad4600b3$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad7500b5 name=MultiLanguageLabel&gt;会计年度&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfad7500b5$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad9400b7 name=MultiLanguageLabel&gt;报销币种&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfad9400b7$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfadd300b9 name=MultiLanguageLabel&gt;报销金额&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfadd300b9$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed3aaa800c1 name=MultiLanguageLabel&gt;付款凭证号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaed3aaa800c1$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed3aad700c3 name=MultiLanguageLabel&gt;付款日期&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaed3aad700c3$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed3ab0600c5 name=MultiLanguageLabel&gt;支付币种&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaed3ab0600c5$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed4359300c7 name=MultiLanguageLabel&gt;支付金额&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaed4359300c7$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed507d800c9 name=MultiLanguageLabel&gt;凭证抬头文本&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaed507d800c9$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed5080700cb name=MultiLanguageLabel&gt;项目文本&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaed5080700cb$&lt;/TD&gt;&lt;/TR&gt;&lt;/TBODY&gt;&lt;/TABLE&gt;&lt;/DIV&gt;&lt;/CENTER&gt;$40285a8d4aaea6d9014aaf0448bf039d$</Data><Data name="LAYOUTNAME">显示</Data><Data name="ISDELETE">0</Data><Data name="ID">40285a8d4aaea6d9014aaed6767e00fb</Data><Data name="SUPPORTEDCLIENT">0</Data><Data name="LAYOUTINFO">&lt;CENTER&gt;
+&lt;DIV id=layoutDiv&gt;
+&lt;TABLE class=layouttable border=1&gt;
+&lt;CAPTION&gt;员工报销付款通知单&lt;/CAPTION&gt;
+&lt;COLGROUP&gt;
+&lt;COL width="12%"&gt;
+&lt;COL width="38%"&gt;
+&lt;COL width="12%"&gt;
+&lt;COL width="38%"&gt;&lt;/COLGROUP&gt;
+&lt;TBODY&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73140006 name=MultiLanguageLabel&gt;填单人&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaebc73140006$ class=InputStyle2 value=[可编辑]员工报销付款通知单.填单人 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73430008 name=MultiLanguageLabel&gt;填单日期&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaebc73430008$ class=InputStyle2 value=[可编辑]员工报销付款通知单.填单日期 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc7372000a name=MultiLanguageLabel&gt;报销单号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaebc7372000a$ class=InputStyle2 value=[可编辑]员工报销付款通知单.报销单号 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73a1000c name=MultiLanguageLabel&gt;报销人姓名&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaebc73a1000c$ class=InputStyle2 value=[可编辑]员工报销付款通知单.报销人姓名 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73c0000e name=MultiLanguageLabel&gt;工号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaebc73c0000e$ class=InputStyle2 value=[可编辑]员工报销付款通知单.工号 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaec509b600a5 name=MultiLanguageLabel&gt;内部订单号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaec509b600a5$ class=InputStyle2 value=[可编辑]员工报销付款通知单.内部订单号 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfac4c00a7 name=MultiLanguageLabel&gt;报销人部门&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfac4c00a7$ class=InputStyle2 value=[可编辑]员工报销付款通知单.报销人部门 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfac7b00a9 name=MultiLanguageLabel&gt;一级部门&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfac7b00a9$ class=InputStyle2 value=[可编辑]员工报销付款通知单.一级部门 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfac9a00ab name=MultiLanguageLabel&gt;二级部门&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfac9a00ab$ class=InputStyle2 value=[可编辑]员工报销付款通知单.二级部门 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfacc900ad name=MultiLanguageLabel&gt;所属公司&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfacc900ad$ class=InputStyle2 value=[可编辑]员工报销付款通知单.所属公司 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfacf800af name=MultiLanguageLabel&gt;厂区别&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfacf800af$ class=InputStyle2 value=[可编辑]员工报销付款通知单.厂区别 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad1700b1 name=MultiLanguageLabel&gt;报销凭证号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfad1700b1$ class=InputStyle2 value=[可编辑]员工报销付款通知单.报销凭证号 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad4600b3 name=MultiLanguageLabel&gt;公司代码&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfad4600b3$ class=InputStyle2 value=[可编辑]员工报销付款通知单.公司代码 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad7500b5 name=MultiLanguageLabel&gt;会计年度&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfad7500b5$ class=InputStyle2 value=[可编辑]员工报销付款通知单.会计年度 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad9400b7 name=MultiLanguageLabel&gt;报销币种&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfad9400b7$ class=InputStyle2 value=[可编辑]员工报销付款通知单.报销币种 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfadd300b9 name=MultiLanguageLabel&gt;报销金额&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfadd300b9$ class=InputStyle2 value=[可编辑]员工报销付款通知单.报销金额 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed3aaa800c1 name=MultiLanguageLabel&gt;付款凭证号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaed3aaa800c1$ class=InputStyle2 value=[可编辑]员工报销付款通知单.付款凭证号 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed3aad700c3 name=MultiLanguageLabel&gt;付款日期&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaed3aad700c3$ class=InputStyle2 value=[可编辑]员工报销付款通知单.付款日期 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed3ab0600c5 name=MultiLanguageLabel&gt;支付币种&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaed3ab0600c5$ class=InputStyle2 value=[可编辑]员工报销付款通知单.支付币种 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed4359300c7 name=MultiLanguageLabel&gt;支付金额&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaed4359300c7$ class=InputStyle2 value=[可编辑]员工报销付款通知单.支付金额 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed507d800c9 name=MultiLanguageLabel&gt;凭证抬头文本&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaed507d800c9$ class=InputStyle2 value=[可编辑]员工报销付款通知单.凭证抬头文本 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed5080700cb name=MultiLanguageLabel&gt;项目文本&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaed5080700cb$ class=InputStyle2 value=[可编辑]员工报销付款通知单.项目文本 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TBODY&gt;&lt;/TABLE&gt;&lt;/DIV&gt;&lt;/CENTER&gt;&lt;INPUT id=$40285a8d4aaea6d9014aaf0448bf039d$ class=InputStyle2 value=[可编辑]员工报销付款通知单.报销单号 name=40285a8d4aaea6d9014aaeb722d60005&gt;</Data><Data name="NODEID"></Data><Data name="TYPEID">1</Data></Data><Data><Data name="FORMID">40285a8d4aaea6d9014aaeb722d60005</Data><Data name="ISDEFAULT">0</Data><Data name="LAYOUTFORMATTED">&lt;CENTER&gt;
+&lt;DIV id=layoutDiv&gt;
+&lt;TABLE class=layouttable border=1&gt;
+&lt;CAPTION&gt;员工报销付款通知单&lt;/CAPTION&gt;
+&lt;COLGROUP&gt;
+&lt;COL width="12%"&gt;
+&lt;COL width="38%"&gt;
+&lt;COL width="12%"&gt;
+&lt;COL width="38%"&gt;&lt;/COLGROUP&gt;
+&lt;TBODY&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73140006 name=MultiLanguageLabel&gt;填单人&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaebc73140006$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73430008 name=MultiLanguageLabel&gt;填单日期&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaebc73430008$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc7372000a name=MultiLanguageLabel&gt;报销单号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaebc7372000a$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73a1000c name=MultiLanguageLabel&gt;报销人姓名&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaebc73a1000c$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73c0000e name=MultiLanguageLabel&gt;工号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaebc73c0000e$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaec509b600a5 name=MultiLanguageLabel&gt;内部订单号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaec509b600a5$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfac4c00a7 name=MultiLanguageLabel&gt;报销人部门&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfac4c00a7$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad4600b3 name=MultiLanguageLabel&gt;公司代码&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfad4600b3$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad1700b1 name=MultiLanguageLabel&gt;报销凭证号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfad1700b1$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad7500b5 name=MultiLanguageLabel&gt;会计年度&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfad7500b5$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad9400b7 name=MultiLanguageLabel&gt;报销币种&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfad9400b7$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfadd300b9 name=MultiLanguageLabel&gt;报销金额&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfadd300b9$ &lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD colSpan=4&gt;&lt;STRONG&gt;&lt;FONT size=4&gt;&amp;nbsp;付款信息&lt;/FONT&gt;&lt;/STRONG&gt; &lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed3aaa800c1 name=MultiLanguageLabel&gt;付款凭证号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaed3aaa800c1$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed3aad700c3 name=MultiLanguageLabel&gt;付款日期&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaed3aad700c3$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed3ab0600c5 name=MultiLanguageLabel&gt;支付币种&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaed3ab0600c5$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed4359300c7 name=MultiLanguageLabel&gt;支付金额&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaed4359300c7$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed507d800c9 name=MultiLanguageLabel&gt;凭证抬头文本&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaed507d800c9$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed5080700cb name=MultiLanguageLabel&gt;项目文本&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaed5080700cb$&lt;/TD&gt;&lt;/TR&gt;&lt;/TBODY&gt;&lt;/TABLE&gt;&lt;/DIV&gt;&lt;/CENTER&gt;$40285a8d4aaea6d9014aaf0448bf039d$</Data><Data name="LAYOUTNAME">显示（报销人）</Data><Data name="ISDELETE">0</Data><Data name="ID">40285a8d4aaea6d9014aaedb498f0112</Data><Data name="SUPPORTEDCLIENT">0</Data><Data name="LAYOUTINFO">&lt;CENTER&gt;
+&lt;DIV id=layoutDiv&gt;
+&lt;TABLE class=layouttable border=1&gt;
+&lt;CAPTION&gt;员工报销付款通知单&lt;/CAPTION&gt;
+&lt;COLGROUP&gt;
+&lt;COL width="12%"&gt;
+&lt;COL width="38%"&gt;
+&lt;COL width="12%"&gt;
+&lt;COL width="38%"&gt;&lt;/COLGROUP&gt;
+&lt;TBODY&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73140006 name=MultiLanguageLabel&gt;填单人&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaebc73140006$ class=InputStyle2 value=[可编辑]员工报销付款通知单.填单人 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73430008 name=MultiLanguageLabel&gt;填单日期&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaebc73430008$ class=InputStyle2 value=[可编辑]员工报销付款通知单.填单日期 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc7372000a name=MultiLanguageLabel&gt;报销单号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaebc7372000a$ class=InputStyle2 value=[可编辑]员工报销付款通知单.报销单号 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73a1000c name=MultiLanguageLabel&gt;报销人姓名&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaebc73a1000c$ class=InputStyle2 value=[可编辑]员工报销付款通知单.报销人姓名 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73c0000e name=MultiLanguageLabel&gt;工号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaebc73c0000e$ class=InputStyle2 value=[可编辑]员工报销付款通知单.工号 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaec509b600a5 name=MultiLanguageLabel&gt;内部订单号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaec509b600a5$ class=InputStyle2 value=[可编辑]员工报销付款通知单.内部订单号 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfac4c00a7 name=MultiLanguageLabel&gt;报销人部门&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfac4c00a7$ class=InputStyle2 value=[可编辑]员工报销付款通知单.报销人部门 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad4600b3 name=MultiLanguageLabel&gt;公司代码&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfad4600b3$ class=InputStyle2 value=[可编辑]员工报销付款通知单.公司代码 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad1700b1 name=MultiLanguageLabel&gt;报销凭证号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfad1700b1$ class=InputStyle2 value=[可编辑]员工报销付款通知单.报销凭证号 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad7500b5 name=MultiLanguageLabel&gt;会计年度&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfad7500b5$ class=InputStyle2 value=[可编辑]员工报销付款通知单.会计年度 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad9400b7 name=MultiLanguageLabel&gt;报销币种&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfad9400b7$ class=InputStyle2 value=[可编辑]员工报销付款通知单.报销币种 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfadd300b9 name=MultiLanguageLabel&gt;报销金额&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfadd300b9$ class=InputStyle2 value=[可编辑]员工报销付款通知单.报销金额 name=40285a8d4aaea6d9014aaeb722d60005&gt; &lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD colSpan=4&gt;&lt;STRONG&gt;&lt;FONT size=4&gt;&amp;nbsp;付款信息&lt;/FONT&gt;&lt;/STRONG&gt; &lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed3aaa800c1 name=MultiLanguageLabel&gt;付款凭证号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaed3aaa800c1$ class=InputStyle2 value=[可编辑]员工报销付款通知单.付款凭证号 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed3aad700c3 name=MultiLanguageLabel&gt;付款日期&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaed3aad700c3$ class=InputStyle2 value=[可编辑]员工报销付款通知单.付款日期 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed3ab0600c5 name=MultiLanguageLabel&gt;支付币种&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaed3ab0600c5$ class=InputStyle2 value=[可编辑]员工报销付款通知单.支付币种 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed4359300c7 name=MultiLanguageLabel&gt;支付金额&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaed4359300c7$ class=InputStyle2 value=[可编辑]员工报销付款通知单.支付金额 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed507d800c9 name=MultiLanguageLabel&gt;凭证抬头文本&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaed507d800c9$ class=InputStyle2 value=[可编辑]员工报销付款通知单.凭证抬头文本 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed5080700cb name=MultiLanguageLabel&gt;项目文本&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaed5080700cb$ class=InputStyle2 value=[可编辑]员工报销付款通知单.项目文本 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TBODY&gt;&lt;/TABLE&gt;&lt;/DIV&gt;&lt;/CENTER&gt;&lt;INPUT id=$40285a8d4aaea6d9014aaf0448bf039d$ class=InputStyle2 value=[隐藏]员工报销付款通知单.报销单号 name=40285a8d4aaea6d9014aaeb722d60005&gt;</Data><Data name="NODEID"></Data><Data name="TYPEID">1</Data></Data><Data><Data name="FORMID">40285a8d4aaea6d9014aaeb722d60005</Data><Data name="ISDEFAULT">0</Data><Data name="LAYOUTFORMATTED">&lt;CENTER&gt;
+&lt;DIV id=layoutDiv&gt;
+&lt;TABLE class=layouttable border=1&gt;
+&lt;CAPTION&gt;员工报销付款通知单&lt;/CAPTION&gt;
+&lt;COLGROUP&gt;
+&lt;COL width="12%"&gt;
+&lt;COL width="38%"&gt;
+&lt;COL width="12%"&gt;
+&lt;COL width="38%"&gt;&lt;/COLGROUP&gt;
+&lt;TBODY&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73140006 name=MultiLanguageLabel&gt;填单人&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaebc73140006$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73430008 name=MultiLanguageLabel&gt;填单日期&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaebc73430008$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc7372000a name=MultiLanguageLabel&gt;报销单号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaebc7372000a$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73a1000c name=MultiLanguageLabel&gt;报销人姓名&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaebc73a1000c$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73c0000e name=MultiLanguageLabel&gt;工号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaebc73c0000e$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaec509b600a5 name=MultiLanguageLabel&gt;内部订单号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaec509b600a5$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfac4c00a7 name=MultiLanguageLabel&gt;报销人部门&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfac4c00a7$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfac7b00a9 name=MultiLanguageLabel&gt;一级部门&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfac7b00a9$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfac9a00ab name=MultiLanguageLabel&gt;二级部门&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfac9a00ab$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfacc900ad name=MultiLanguageLabel&gt;所属公司&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfacc900ad$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfacf800af name=MultiLanguageLabel&gt;厂区别&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfacf800af$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad1700b1 name=MultiLanguageLabel&gt;报销凭证号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfad1700b1$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad4600b3 name=MultiLanguageLabel&gt;公司代码&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfad4600b3$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad7500b5 name=MultiLanguageLabel&gt;会计年度&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfad7500b5$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad9400b7 name=MultiLanguageLabel&gt;报销币种&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfad9400b7$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfadd300b9 name=MultiLanguageLabel&gt;报销金额&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfadd300b9$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed3aaa800c1 name=MultiLanguageLabel&gt;付款凭证号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaed3aaa800c1$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed3aad700c3 name=MultiLanguageLabel&gt;付款日期&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaed3aad700c3$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed3ab0600c5 name=MultiLanguageLabel&gt;支付币种&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaed3ab0600c5$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed4359300c7 name=MultiLanguageLabel&gt;支付金额&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaed4359300c7$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed507d800c9 name=MultiLanguageLabel&gt;凭证抬头文本&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaed507d800c9$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed5080700cb name=MultiLanguageLabel&gt;项目文本&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaed5080700cb$&lt;/TD&gt;&lt;/TR&gt;&lt;/TBODY&gt;&lt;/TABLE&gt;&lt;/DIV&gt;&lt;/CENTER&gt;$40285a8d4aaea6d9014aaf0448bf039d$
+
+&lt;SCRIPT&gt;     
+Ext.onReady(function(){  
+    addBtn(tb,'&lt;span ext:qtip=\'点击回写SAP按钮后系统会自动抛SAP并接收SAP返回值。\'&gt;抛SAP&lt;/span&gt;','M','toSap',function(){toSAP();});              
+    document.getElementById('M').parentNode.previousSibling.style.cssText  =  'width:10px;';              
+    document.getElementById('M').parentNode.style.cssText  =  'width:100%;';   
+});      
+
+function toSAP(){          
+    var requestid = document.getElementsByName('requestid')[0].value;           
+    if(requestid){          
+        var myMask = new Ext.LoadMask(Ext.getBody(), {          
+        msg: '正在抛SAP,请稍后...',          
+        removeMask: true          
+        });          
+        myMask.show();          
+        jQuery.ajax({          
+        async:true,          
+        url:'/app/sap/JsonSapAction.jsp?fresh=' + Math.random(),          
+        data:{         
+        action:'tosap',         
+        id:'40285a9049a3a72a0149a6ef88180acb',         
+        requestid:requestid         
+        },          
+        dataType:'json',          
+        success: function(result) {          
+        myMask.hide();          
+        if(result.msg &amp;&amp; result.msg=='true'){          
+            alert('抛SAP成功！请检查SAP取值是否OK?');          
+        }else {          
+            alert('抛SAP失败！');          
+        }          
+        location.reload();          
+        },          
+        failure:function(result){          
+        myMask.hide();          
+        alert('抛SAP失败！');          
+        }          
+    });          
+    }else alert('请先保存数据！');          
+}          
+      
+
+
+&lt;/SCRIPT&gt;</Data><Data name="LAYOUTNAME">编辑</Data><Data name="ISDELETE">0</Data><Data name="ID">40285a8d4aaea6d9014aaed5cf9e00cd</Data><Data name="SUPPORTEDCLIENT">0</Data><Data name="LAYOUTINFO">&lt;CENTER&gt;
+&lt;DIV id=layoutDiv&gt;
+&lt;TABLE class=layouttable border=1&gt;
+&lt;CAPTION&gt;员工报销付款通知单&lt;/CAPTION&gt;
+&lt;COLGROUP&gt;
+&lt;COL width="12%"&gt;
+&lt;COL width="38%"&gt;
+&lt;COL width="12%"&gt;
+&lt;COL width="38%"&gt;&lt;/COLGROUP&gt;
+&lt;TBODY&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73140006 name=MultiLanguageLabel&gt;填单人&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaebc73140006$ class=InputStyle2 value=[可编辑]员工报销付款通知表.填单人 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73430008 name=MultiLanguageLabel&gt;填单日期&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaebc73430008$ class=InputStyle2 value=[可编辑]员工报销付款通知表.填单日期 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc7372000a name=MultiLanguageLabel&gt;报销单号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaebc7372000a$ class=InputStyle2 value=[可编辑]员工报销付款通知表.报销单号 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73a1000c name=MultiLanguageLabel&gt;报销人姓名&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaebc73a1000c$ class=InputStyle2 value=[可编辑]员工报销付款通知表.报销人姓名 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73c0000e name=MultiLanguageLabel&gt;工号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaebc73c0000e$ class=InputStyle2 value=[可编辑]员工报销付款通知表.工号 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaec509b600a5 name=MultiLanguageLabel&gt;内部订单号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaec509b600a5$ class=InputStyle2 value=[可编辑]员工报销付款通知表.内部订单号 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfac4c00a7 name=MultiLanguageLabel&gt;报销人部门&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfac4c00a7$ class=InputStyle2 value=[可编辑]员工报销付款通知表.报销人部门 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfac7b00a9 name=MultiLanguageLabel&gt;一级部门&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfac7b00a9$ class=InputStyle2 value=[可编辑]员工报销付款通知表.一级部门 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfac9a00ab name=MultiLanguageLabel&gt;二级部门&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfac9a00ab$ class=InputStyle2 value=[可编辑]员工报销付款通知表.二级部门 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfacc900ad name=MultiLanguageLabel&gt;所属公司&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfacc900ad$ class=InputStyle2 value=[可编辑]员工报销付款通知表.所属公司 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfacf800af name=MultiLanguageLabel&gt;厂区别&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfacf800af$ class=InputStyle2 value=[可编辑]员工报销付款通知表.厂区别 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad1700b1 name=MultiLanguageLabel&gt;报销凭证号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfad1700b1$ class=InputStyle2 value=[可编辑]员工报销付款通知表.报销凭证号 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad4600b3 name=MultiLanguageLabel&gt;公司代码&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfad4600b3$ class=InputStyle2 value=[可编辑]员工报销付款通知表.公司代码 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad7500b5 name=MultiLanguageLabel&gt;会计年度&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfad7500b5$ class=InputStyle2 value=[可编辑]员工报销付款通知表.会计年度 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad9400b7 name=MultiLanguageLabel&gt;报销币种&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfad9400b7$ class=InputStyle2 value=[可编辑]员工报销付款通知表.报销币种 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfadd300b9 name=MultiLanguageLabel&gt;报销金额&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfadd300b9$ class=InputStyle2 value=[可编辑]员工报销付款通知表.报销金额 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed3aaa800c1 name=MultiLanguageLabel&gt;付款凭证号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaed3aaa800c1$ class=InputStyle2 value=[可编辑]员工报销付款通知表.付款凭证号 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed3aad700c3 name=MultiLanguageLabel&gt;付款日期&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaed3aad700c3$ class=InputStyle2 value=[可编辑]员工报销付款通知表.付款日期 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed3ab0600c5 name=MultiLanguageLabel&gt;支付币种&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaed3ab0600c5$ class=InputStyle2 value=[可编辑]员工报销付款通知表.支付币种 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed4359300c7 name=MultiLanguageLabel&gt;支付金额&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaed4359300c7$ class=InputStyle2 value=[可编辑]员工报销付款通知表.支付金额 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed507d800c9 name=MultiLanguageLabel&gt;凭证抬头文本&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaed507d800c9$ class=InputStyle2 value=[可编辑]员工报销付款通知表.凭证抬头文本 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed5080700cb name=MultiLanguageLabel&gt;项目文本&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaed5080700cb$ class=InputStyle2 value=[可编辑]员工报销付款通知表.项目文本 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TBODY&gt;&lt;/TABLE&gt;&lt;/DIV&gt;&lt;/CENTER&gt;&lt;INPUT id=$40285a8d4aaea6d9014aaf0448bf039d$ class=InputStyle2 value=[可编辑]员工报销付款通知单.报销单号 name=40285a8d4aaea6d9014aaeb722d60005&gt;
+
+&lt;SCRIPT&gt;     
+Ext.onReady(function(){  
+    addBtn(tb,'&lt;span ext:qtip=\'点击回写SAP按钮后系统会自动抛SAP并接收SAP返回值。\'&gt;抛SAP&lt;/span&gt;','M','toSap',function(){toSAP();});              
+    document.getElementById('M').parentNode.previousSibling.style.cssText  =  'width:10px;';              
+    document.getElementById('M').parentNode.style.cssText  =  'width:100%;';   
+});      
+
+function toSAP(){          
+    var requestid = document.getElementsByName('requestid')[0].value;           
+    if(requestid){          
+        var myMask = new Ext.LoadMask(Ext.getBody(), {          
+        msg: '正在抛SAP,请稍后...',          
+        removeMask: true          
+        });          
+        myMask.show();          
+        jQuery.ajax({          
+        async:true,          
+        url:'/app/sap/JsonSapAction.jsp?fresh=' + Math.random(),          
+        data:{         
+        action:'tosap',         
+        id:'40285a9049a3a72a0149a6ef88180acb',         
+        requestid:requestid         
+        },          
+        dataType:'json',          
+        success: function(result) {          
+        myMask.hide();          
+        if(result.msg &amp;&amp; result.msg=='true'){          
+            alert('抛SAP成功！请检查SAP取值是否OK?');          
+        }else {          
+            alert('抛SAP失败！');          
+        }          
+        location.reload();          
+        },          
+        failure:function(result){          
+        myMask.hide();          
+        alert('抛SAP失败！');          
+        }          
+    });          
+    }else alert('请先保存数据！');          
+}          
+      
+
+
+&lt;/SCRIPT&gt;</Data><Data name="NODEID"></Data><Data name="TYPEID">2</Data></Data><Data><Data name="FORMID">40285a8d4aaea6d9014aaeb722d60005</Data><Data name="ISDEFAULT">0</Data><Data name="LAYOUTFORMATTED">&lt;CENTER&gt;
+&lt;DIV id=layoutDiv&gt;
+&lt;TABLE class=layouttable border=1&gt;
+&lt;CAPTION&gt;员工报销付款通知单&lt;/CAPTION&gt;
+&lt;COLGROUP&gt;
+&lt;COL width="12%"&gt;
+&lt;COL width="38%"&gt;
+&lt;COL width="12%"&gt;
+&lt;COL width="38%"&gt;&lt;/COLGROUP&gt;
+&lt;TBODY&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73140006 name=MultiLanguageLabel&gt;填单人&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaebc73140006$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73430008 name=MultiLanguageLabel&gt;填单日期&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaebc73430008$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc7372000a name=MultiLanguageLabel&gt;报销单号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaebc7372000a$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73a1000c name=MultiLanguageLabel&gt;报销人姓名&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaebc73a1000c$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73c0000e name=MultiLanguageLabel&gt;工号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaebc73c0000e$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaec509b600a5 name=MultiLanguageLabel&gt;内部订单号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaec509b600a5$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfac4c00a7 name=MultiLanguageLabel&gt;报销人部门&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfac4c00a7$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfac7b00a9 name=MultiLanguageLabel&gt;一级部门&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfac7b00a9$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfac9a00ab name=MultiLanguageLabel&gt;二级部门&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfac9a00ab$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfacc900ad name=MultiLanguageLabel&gt;所属公司&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfacc900ad$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfacf800af name=MultiLanguageLabel&gt;厂区别&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfacf800af$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad1700b1 name=MultiLanguageLabel&gt;报销凭证号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfad1700b1$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad4600b3 name=MultiLanguageLabel&gt;公司代码&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfad4600b3$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad7500b5 name=MultiLanguageLabel&gt;会计年度&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfad7500b5$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad9400b7 name=MultiLanguageLabel&gt;报销币种&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfad9400b7$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfadd300b9 name=MultiLanguageLabel&gt;报销金额&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaecfadd300b9$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed3aaa800c1 name=MultiLanguageLabel&gt;付款凭证号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaed3aaa800c1$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed3aad700c3 name=MultiLanguageLabel&gt;付款日期&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaed3aad700c3$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed3ab0600c5 name=MultiLanguageLabel&gt;支付币种&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaed3ab0600c5$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed4359300c7 name=MultiLanguageLabel&gt;支付金额&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaed4359300c7$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed507d800c9 name=MultiLanguageLabel&gt;凭证抬头文本&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaed507d800c9$&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed5080700cb name=MultiLanguageLabel&gt;项目文本&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;$40285a8d4aaea6d9014aaed5080700cb$&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD&gt;&amp;nbsp;SAP消息类型&lt;/TD&gt;
+&lt;TD&gt;&amp;nbsp;$40285a8d4ab7d98c014ab80b9c810684$&lt;/TD&gt;
+&lt;TD&gt;&amp;nbsp;SAP消息内容&lt;/TD&gt;
+&lt;TD&gt;&amp;nbsp;$40285a8d4ab7d98c014ab80b9cb20686$&lt;/TD&gt;&lt;/TR&gt;&lt;/TBODY&gt;&lt;/TABLE&gt;&lt;/DIV&gt;&lt;/CENTER&gt;$40285a8d4aaea6d9014aaf0448bf039d$
+&lt;SCRIPT&gt;     
+Ext.onReady(function(){  
+    addBtn(tb,'&lt;span ext:qtip=\'点击回写SAP按钮后系统会自动抛SAP并接收SAP返回值。\'&gt;抛SAP&lt;/span&gt;','M','toSap',function(){toSAP();});              
+    document.getElementById('M').parentNode.previousSibling.style.cssText  =  'width:10px;';              
+    document.getElementById('M').parentNode.style.cssText  =  'width:100%;';   
+});      
+
+function toSAP(){          
+    var requestid = document.getElementsByName('requestid')[0].value;           
+    if(requestid){          
+        var myMask = new Ext.LoadMask(Ext.getBody(), {          
+        msg: '正在抛SAP,请稍后...',          
+        removeMask: true          
+        });          
+        myMask.show();          
+        jQuery.ajax({          
+        async:true,          
+        url:'/app/sap/JsonSapAction.jsp?fresh=' + Math.random(),          
+        data:{         
+        action:'tosap',         
+        id:'402864d24aae74ba014aaee3e733000d',         
+        requestid:requestid         
+        },          
+        dataType:'json',          
+        success: function(result) {          
+        myMask.hide();          
+        if(result.msg &amp;&amp; result.msg=='true'){          
+            alert('抛SAP成功！请检查SAP取值是否OK?');          
+        }else {          
+            alert('抛SAP失败！');          
+        }          
+        location.reload();          
+        },          
+        failure:function(result){          
+        myMask.hide();          
+        alert('抛SAP失败！');          
+        }          
+    });          
+    }else alert('请先保存数据！');          
+}          
+      
+
+
+&lt;/SCRIPT&gt;</Data><Data name="LAYOUTNAME">新建</Data><Data name="ISDELETE">0</Data><Data name="ID">40285a8d4aaea6d9014aaed63ca100e4</Data><Data name="SUPPORTEDCLIENT">0</Data><Data name="LAYOUTINFO">&lt;CENTER&gt;
+&lt;DIV id=layoutDiv&gt;
+&lt;TABLE class=layouttable border=1&gt;
+&lt;CAPTION&gt;员工报销付款通知单&lt;/CAPTION&gt;
+&lt;COLGROUP&gt;
+&lt;COL width="12%"&gt;
+&lt;COL width="38%"&gt;
+&lt;COL width="12%"&gt;
+&lt;COL width="38%"&gt;&lt;/COLGROUP&gt;
+&lt;TBODY&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73140006 name=MultiLanguageLabel&gt;填单人&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaebc73140006$ class=InputStyle2 value=[可编辑]员工报销付款通知单.填单人 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73430008 name=MultiLanguageLabel&gt;填单日期&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaebc73430008$ class=InputStyle2 value=[可编辑]员工报销付款通知单.填单日期 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc7372000a name=MultiLanguageLabel&gt;报销单号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaebc7372000a$ class=InputStyle2 value=[可编辑]员工报销付款通知单.报销单号 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73a1000c name=MultiLanguageLabel&gt;报销人姓名&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaebc73a1000c$ class=InputStyle2 value=[可编辑]员工报销付款通知单.报销人姓名 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaebc73c0000e name=MultiLanguageLabel&gt;工号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaebc73c0000e$ class=InputStyle2 value=[可编辑]员工报销付款通知单.工号 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaec509b600a5 name=MultiLanguageLabel&gt;内部订单号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaec509b600a5$ class=InputStyle2 value=[可编辑]员工报销付款通知单.内部订单号 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfac4c00a7 name=MultiLanguageLabel&gt;报销人部门&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfac4c00a7$ class=InputStyle2 value=[可编辑]员工报销付款通知单.报销人部门 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfac7b00a9 name=MultiLanguageLabel&gt;一级部门&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfac7b00a9$ class=InputStyle2 value=[可编辑]员工报销付款通知单.一级部门 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfac9a00ab name=MultiLanguageLabel&gt;二级部门&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfac9a00ab$ class=InputStyle2 value=[可编辑]员工报销付款通知单.二级部门 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfacc900ad name=MultiLanguageLabel&gt;所属公司&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfacc900ad$ class=InputStyle2 value=[可编辑]员工报销付款通知单.所属公司 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfacf800af name=MultiLanguageLabel&gt;厂区别&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfacf800af$ class=InputStyle2 value=[可编辑]员工报销付款通知单.厂区别 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad1700b1 name=MultiLanguageLabel&gt;报销凭证号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfad1700b1$ class=InputStyle2 value=[可编辑]员工报销付款通知单.报销凭证号 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad4600b3 name=MultiLanguageLabel&gt;公司代码&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfad4600b3$ class=InputStyle2 value=[可编辑]员工报销付款通知单.公司代码 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad7500b5 name=MultiLanguageLabel&gt;会计年度&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfad7500b5$ class=InputStyle2 value=[可编辑]员工报销付款通知单.会计年度 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfad9400b7 name=MultiLanguageLabel&gt;报销币种&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfad9400b7$ class=InputStyle2 value=[可编辑]员工报销付款通知单.报销币种 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaecfadd300b9 name=MultiLanguageLabel&gt;报销金额&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaecfadd300b9$ class=InputStyle2 value=[可编辑]员工报销付款通知单.报销金额 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed3aaa800c1 name=MultiLanguageLabel&gt;付款凭证号&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaed3aaa800c1$ class=InputStyle2 value=[可编辑]员工报销付款通知单.付款凭证号 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed3aad700c3 name=MultiLanguageLabel&gt;付款日期&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaed3aad700c3$ class=InputStyle2 value=[可编辑]员工报销付款通知单.付款日期 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed3ab0600c5 name=MultiLanguageLabel&gt;支付币种&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaed3ab0600c5$ class=InputStyle2 value=[可编辑]员工报销付款通知单.支付币种 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed4359300c7 name=MultiLanguageLabel&gt;支付金额&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaed4359300c7$ class=InputStyle2 value=[可编辑]员工报销付款通知单.支付金额 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed507d800c9 name=MultiLanguageLabel&gt;凭证抬头文本&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaed507d800c9$ class=InputStyle2 value=[可编辑]员工报销付款通知单.凭证抬头文本 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD class=FieldName noWrap&gt;&lt;A id=MultiLanguageLabel_40285a8d4aaea6d9014aaed5080700cb name=MultiLanguageLabel&gt;项目文本&lt;/A&gt;&lt;/TD&gt;
+&lt;TD class=FieldValue&gt;&lt;INPUT style='WIDTH: 80%' id=$40285a8d4aaea6d9014aaed5080700cb$ class=InputStyle2 value=[可编辑]员工报销付款通知单.项目文本 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;
+&lt;TD&gt;&amp;nbsp;SAP消息类型&lt;/TD&gt;
+&lt;TD&gt;&amp;nbsp;&lt;INPUT id=$40285a8d4ab7d98c014ab80b9c810684$ class=InputStyle2 value=[可编辑]员工报销付款通知单.SAP消息类型 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;
+&lt;TD&gt;&amp;nbsp;SAP消息内容&lt;/TD&gt;
+&lt;TD&gt;&amp;nbsp;&lt;INPUT id=$40285a8d4ab7d98c014ab80b9cb20686$ class=InputStyle2 value=[可编辑]员工报销付款通知单.SAP消息内容 name=40285a8d4aaea6d9014aaeb722d60005&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TBODY&gt;&lt;/TABLE&gt;&lt;/DIV&gt;&lt;/CENTER&gt;&lt;INPUT id=$40285a8d4aaea6d9014aaf0448bf039d$ class=InputStyle2 value=[可编辑]员工报销付款通知单.报销单号 name=40285a8d4aaea6d9014aaeb722d60005&gt;
+&lt;SCRIPT&gt;     
+Ext.onReady(function(){  
+    addBtn(tb,'&lt;span ext:qtip=\'点击回写SAP按钮后系统会自动抛SAP并接收SAP返回值。\'&gt;抛SAP&lt;/span&gt;','M','toSap',function(){toSAP();});              
+    document.getElementById('M').parentNode.previousSibling.style.cssText  =  'width:10px;';              
+    document.getElementById('M').parentNode.style.cssText  =  'width:100%;';   
+});      
+
+function toSAP(){          
+    var requestid = document.getElementsByName('requestid')[0].value;           
+    if(requestid){          
+        var myMask = new Ext.LoadMask(Ext.getBody(), {          
+        msg: '正在抛SAP,请稍后...',          
+        removeMask: true          
+        });          
+        myMask.show();          
+        jQuery.ajax({          
+        async:true,          
+        url:'/app/sap/JsonSapAction.jsp?fresh=' + Math.random(),          
+        data:{         
+        action:'tosap',         
+        id:'402864d24aae74ba014aaee3e733000d',         
+        requestid:requestid         
+        },          
+        dataType:'json',          
+        success: function(result) {          
+        myMask.hide();          
+        if(result.msg &amp;&amp; result.msg=='true'){          
+            alert('抛SAP成功！请检查SAP取值是否OK?');          
+        }else {          
+            alert('抛SAP失败！');          
+        }          
+        location.reload();          
+        },          
+        failure:function(result){          
+        myMask.hide();          
+        alert('抛SAP失败！');          
+        }          
+    });          
+    }else alert('请先保存数据！');          
+}          
+      
+
+
+&lt;/SCRIPT&gt;</Data><Data name="NODEID"></Data><Data name="TYPEID">2</Data></Data></DataSet></SchemaData></SchemaDataSet>

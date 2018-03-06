@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SchemaDataSet><SchemaData ID="selectitemtype" version="4.0.0"><Fields><Field name="ID" type="string"/><Field name="OBJNAME" type="string"/><Field name="PID" type="string"/><Field name="DSPORDER" type="int"/><Field name="COL3" type="string"/><Field name="COL2" type="string"/><Field name="COL1" type="string"/><Field name="ISDELETE" type="int"/><Field name="MODULEID" type="string"/></Fields><DataSet/></SchemaData></SchemaDataSet>

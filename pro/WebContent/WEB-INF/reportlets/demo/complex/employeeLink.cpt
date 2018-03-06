@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.2</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="orderby" shown="false" />
+ />
+<O><![CDATA[asc]]></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</Parameter>
+<Parameter>
+<Attributes name="cname" shown="false" />
+ />
+<O><![CDATA[empid]]></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</Parameter>
+</Parameters>
+<Attributes isCache="true" maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT * FROM EMPLOYEE order by ${cname} ${orderby}]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings orientation="1" shrinkToFit="false" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.7499999999999999" bottom="0.27" right="0.7499999999999999" />
+</ReportSettings>
+<ReportPageAttr>
+</ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[29]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[33,62,72,72,72,120,72,72,164]]>
+</ColumnWidth>
+<CellElementList>
+<C c="1" r="0" cs="8" s="0"><O><![CDATA[员工信息表]]></O>
+</C>
+<C c="1" r="2" cs="8" s="1"></C>
+<C c="1" r="3" s="2"><O><![CDATA[员工编号]]></O>
+<NameJavaScriptGroup>
+<NameJavaScript name="升序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname" />
+<O><![CDATA[empid]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby" />
+<O><![CDATA[asc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+<NameJavaScript name="降序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname" />
+<O><![CDATA[empid]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby" />
+<O><![CDATA[desc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+</C>
+<C c="2" r="3" s="2"><O><![CDATA[姓名]]></O>
+<NameJavaScriptGroup>
+<NameJavaScript name="升序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname" />
+<O><![CDATA[empname]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby" />
+<O><![CDATA[asc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+<NameJavaScript name="降序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="orderby" />
+<O><![CDATA[desc]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="cname" />
+<O><![CDATA[empname]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+</C>
+<C c="3" r="3" s="2"><O><![CDATA[性别]]></O>
+<NameJavaScriptGroup>
+<NameJavaScript name="升序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname" />
+<O><![CDATA[sex]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby" />
+<O><![CDATA[asc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+<NameJavaScript name="降序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname" />
+<O><![CDATA[sex]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby" />
+<O><![CDATA[desc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+</C>
+<C c="4" r="3" s="2"><O><![CDATA[生日]]></O>
+<NameJavaScriptGroup>
+<NameJavaScript name="升序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname" />
+<O><![CDATA[birthdate]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby" />
+<O><![CDATA[asc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+<NameJavaScript name="降序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname" />
+<O><![CDATA[birthdate]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby" />
+<O><![CDATA[desc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+</C>
+<C c="5" r="3" s="2"><O><![CDATA[Email]]></O>
+<NameJavaScriptGroup>
+<NameJavaScript name="升序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname" />
+<O><![CDATA[email]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby" />
+<O><![CDATA[asc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+<NameJavaScript name="降序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname" />
+<O><![CDATA[email]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby" />
+<O><![CDATA[desc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+</C>
+<C c="6" r="3" s="2"><O><![CDATA[毕业时间]]></O>
+<NameJavaScriptGroup>
+<NameJavaScript name="升序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname" />
+<O><![CDATA[graduated]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby" />
+<O><![CDATA[asc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+<NameJavaScript name="降序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname" />
+<O><![CDATA[graduated]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby" />
+<O><![CDATA[desc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+</C>
+<C c="7" r="3" s="2"><O><![CDATA[到职时间]]></O>
+<NameJavaScriptGroup>
+<NameJavaScript name="升序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname" />
+<O><![CDATA[reportdate]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby" />
+<O><![CDATA[asc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+<NameJavaScript name="降序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname" />
+<O><![CDATA[reportdate]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby" />
+<O><![CDATA[desc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+</C>
+<C c="8" r="3" s="2"><O><![CDATA[职称]]></O>
+<NameJavaScriptGroup>
+<NameJavaScript name="升序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname" />
+<O><![CDATA[title]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby" />
+<O><![CDATA[asc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+<NameJavaScript name="降序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname" />
+<O><![CDATA[title]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby" />
+<O><![CDATA[desc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+</C>
+<C c="1" r="4" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="EMPID" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="2" r="4" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="EMPNAME" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="3" r="4" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="SEX" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="4" r="4" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="BIRTHDATE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="5" r="4" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="EMAIL" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="6" r="4" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="GRADUATED" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="7" r="4" s="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="REPORTDATE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="8" r="4" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="TITLE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="1" r="6" cs="8" s="5"><O><![CDATA[“员工信息表”功能应用说明：]]></O>
+<Expand leftParentDefault="false" upParentDefault="false" />
+</C>
+<C c="1" r="7" cs="8" s="6"><O><![CDATA[1、BS动态网页排序]]></O>
+<Expand leftParentDefault="false" upParentDefault="false" />
+</C>
+<C c="1" r="8" cs="8" s="7"><O><![CDATA[该表中，点击“员工编号”、“姓名”等标题，弹出升降序排列方式，选择任一排列方式，则页面按该排序方式重新排列。]]></O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style style_name="Title" />
+<Style style_name="Head" />
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" foreground="-16776961" underline="1" />
+<Background name="ColorBackground"
+ color="-1577999">
+</Background>
+<Border><Top style="1" color="-6697729"
+ /><Bottom style="1" color="-6697729"
+ /><Left style="1" color="-6697729"
+ /><Right style="1" color="-6697729"
+ /></Border>
+</Style>
+<Style style_name="cell" />
+<Style horizontal_alignment="0">
+<Format class="java.text.SimpleDateFormat"><![CDATA[yyyy-MM-dd]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6697729"
+ /><Bottom style="1" color="-6697729"
+ /><Left style="1" color="-6697729"
+ /><Right style="1" color="-6697729"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="3" color="-6697729"
+ /><Left style="3" color="-6697729"
+ /><Right style="3" color="-6697729"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Left style="3" color="-6697729"
+ /><Right style="3" color="-6697729"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="3" color="-6697729"
+ /><Left style="3" color="-6697729"
+ /><Right style="3" color="-6697729"
+ /></Border>
+</Style>
+</StyleList>
+</WorkBook>

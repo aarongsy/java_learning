@@ -1,0 +1,157 @@
+ERROR:[2013-12-03 16:04:48,843] com.eweaver.workflow.form.dao.ForminfoDaoHB(http-9086-14) :java.sql.SQLException: ORA-01658: 无法为表空间 USERS 中的段创建 INITIAL 区
+
+ ERROR:[2013-12-03 16:05:32,265] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-6) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:05:32,296] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-6) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:05:32,312] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-6) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:05:32,343] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-6) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:05:32,359] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-6) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:05:32,374] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-6) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:05:32,390] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-6) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:05:51,406] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:05:51,421] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:05:51,437] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:05:51,453] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:05:51,484] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:08:24,343] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:08:24,359] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:08:24,374] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:08:24,453] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:08:24,468] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:13:05,859] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:13:05,890] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:13:05,937] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:13:05,968] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:13:06,015] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:13:52,124] com.eweaver.workflow.form.dao.ForminfoDaoHB(http-9086-8) :java.sql.SQLException: ORA-01658: 无法为表空间 USERS 中的段创建 INITIAL 区
+
+ ERROR:[2013-12-03 16:14:10,203] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:14:10,218] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:14:10,249] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:14:10,265] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:14:10,281] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:15:44,421] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-2) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:15:44,468] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-2) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:15:44,499] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-2) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:15:44,531] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-2) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:15:44,578] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-2) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:17:37,421] com.eweaver.workflow.form.dao.ForminfoDaoHB(http-9086-5) :java.sql.SQLException: ORA-01658: 无法为表空间 USERS 中的段创建 INITIAL 区
+
+ ERROR:[2013-12-03 16:17:47,390] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-2) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:17:47,515] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-2) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:17:47,624] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-2) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:17:47,734] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-2) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:17:47,828] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-2) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:20:59,468] com.eweaver.workflow.form.dao.ForminfoDaoHB(http-9086-1) :java.sql.SQLException: ORA-01658: 无法为表空间 USERS 中的段创建 INITIAL 区
+
+ ERROR:[2013-12-03 16:21:11,359] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:21:11,374] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:21:11,390] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:21:11,406] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:21:11,421] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-3) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:21:31,499] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-4) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:36:27,578] com.eweaver.workflow.form.dao.ForminfoDaoHB(http-9086-5) :java.sql.SQLException: ORA-01658: 无法为表空间 USERS 中的段创建 INITIAL 区
+
+ ERROR:[2013-12-03 16:36:43,359] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-11) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:37:12,796] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-11) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:39:06,265] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-14) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:39:06,421] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-14) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:39:06,562] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-14) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:39:06,671] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-14) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:39:06,921] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-14) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:43:13,937] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-6) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:44:23,078] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-6) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:44:23,343] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-6) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:44:23,609] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-6) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:44:23,890] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-6) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:44:24,156] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-6) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:44:49,265] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-2) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:50:40,624] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-1) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:50:40,640] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-1) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:50:40,656] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-1) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:50:40,671] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-1) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 16:50:40,687] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-1) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 18:09:51,593] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-6) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 18:09:51,624] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-6) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 18:09:51,640] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-6) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 18:09:51,656] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-6) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 18:09:51,671] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-6) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 18:11:35,124] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-15) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 18:11:35,140] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-15) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 18:11:35,171] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-15) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 18:11:35,187] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-15) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 18:11:35,203] com.eweaver.workflow.form.dao.FormfieldDaoHB(http-9086-15) :java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+ ERROR:[2013-12-03 23:59:00,031] com.eweaver.base.job.DelAttachJob(quartzScheduler_Worker-6) :org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [select id,imagefileid from imagefiletemp where to_date(to_char(sysdate,'yyyy-MM-dd'),'yyyy-MM-dd')-to_date(createdate,'yyyy-MM-dd') >= ]; nested exception is java.sql.SQLSyntaxErrorException: ORA-00936: 缺失表达式
+
+ 

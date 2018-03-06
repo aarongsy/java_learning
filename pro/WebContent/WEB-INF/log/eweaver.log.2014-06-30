@@ -1,0 +1,3 @@
+ERROR:[2014-06-30 23:59:00,156] com.eweaver.base.job.DelAttachJob(quartzScheduler_Worker-7) :org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [select id,imagefileid from imagefiletemp where to_date(to_char(sysdate,'yyyy-MM-dd'),'yyyy-MM-dd')-to_date(createdate,'yyyy-MM-dd') >= ]; nested exception is java.sql.SQLSyntaxErrorException: ORA-00936: »± ß±Ì¥Ô Ω
+
+ 

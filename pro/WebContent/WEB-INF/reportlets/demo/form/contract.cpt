@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.2</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes isCache="false" maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT ORDERID,PRICE,PRODUCTID,QUANTITY,AMOUNT,CUSTOMERID,PAYMETHOD,SHIPDATE,SIGNDATE,SHIPPORT,SHIPMETHOD FROM ORDERS,ORDERSDETAIL WHERE ORDERS.ORDERID=ORDERSDETAIL.ORDERID]]></Query>
+</TableData>
+</TableDataMap>
+<ReportSettings orientation="1" shrinkToFit="false" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.7499999999999999" bottom="0.27" right="0.7499999999999999" />
+</ReportSettings>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+<Parameter>
+<Attributes name="OEDERID" />
+<O t="I">10001</O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</Parameter>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings orientation="1" shrinkToFit="false" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.7499999999999999" bottom="0.27" right="0.7499999999999999" />
+</ReportSettings>
+<ReportPageAttr>
+</ReportPageAttr>
+<ReportWebAttr>
+<WebPageContent>
+<ToolBars>
+</ToolBars>
+<WebMargin margins="0,auto,0,auto" />
+</WebPageContent>
+<WebFormContent>
+<ToolBars>
+</ToolBars>
+</WebFormContent>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager><Location>
+<Embed position="1"/>
+</Location>
+<ToolBar><Widget class="com.fr.report.web.ui.impl.write.Submit">
+<WidgetAttr disabled="true"/>
+<Text>提交</Text><IconName>submit</IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Print">
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.write.ImportExcelData">
+<WidgetAttr disabled="true"/>
+<Text>导入[Excel]</Text><IconName>excel</IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.write.ShowCellValue">
+<WidgetAttr disabled="false"/>
+</Widget>
+</ToolBar>
+</ToolBarManager></ToolBars>
+</WebWriteContent>
+<Background name="NullBackground" />
+</ReportWebAttr>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<ReportWriteAttr>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL1">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="ORDERS"/>
+<ColumnConfig name="ORDERID" isKey="true" skipUnmodified="true" >
+<ColumnRow column="3" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="CUSTOMERID" isKey="false" skipUnmodified="true" >
+<ColumnRow column="3" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="SIGNDATE" isKey="false" skipUnmodified="true" >
+<ColumnRow column="7" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="SHIPDATE" isKey="false" skipUnmodified="true" >
+<ColumnRow column="5" row="6"/>
+</ColumnConfig>
+<ColumnConfig name="PAYMETHOD" isKey="false" skipUnmodified="true" >
+<ColumnRow column="7" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="SHIPMETHOD" isKey="false" skipUnmodified="true" >
+<ColumnRow column="7" row="6"/>
+</ColumnConfig>
+<ColumnConfig name="SHIPPORT" isKey="false" skipUnmodified="true" >
+<ColumnRow column="3" row="6"/>
+</ColumnConfig>
+<ColumnConfig name="AMOUNT" isKey="false" skipUnmodified="true" >
+<ColumnRow column="5" row="4"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL2">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="ORDERSDETAIL"/>
+<ColumnConfig name="ORDERID" isKey="true" skipUnmodified="true" >
+<ColumnRow column="3" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="PRODUCTID" isKey="true" skipUnmodified="true" >
+<ColumnRow column="2" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="QUANTITY" isKey="false" skipUnmodified="true" >
+<ColumnRow column="4" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="PRICE" isKey="false" skipUnmodified="true" >
+<ColumnRow column="5" row="9"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<VV>
+<O t="Formula" class="Formula"><Attributes><![CDATA[=E3==sum(E8[!0]{})]]></Attributes></O>
+<Message>
+<![CDATA[总金额计算不正确！]]></Message>
+</VV>
+</ReportWriteAttr>
+<RowHeight defaultValue="19">
+<![CDATA[19,19,23,19,28,26,27,19,21,26,19,19,19,19,19,19,19,19,23,39,23,36]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[54,43,72,83,86,87,79,89]]>
+</ColumnWidth>
+<CellElementList>
+<C c="1" r="1" s="0"></C>
+<C c="2" r="1" s="1"></C>
+<C c="3" r="1" s="1"></C>
+<C c="4" r="1" s="1"></C>
+<C c="5" r="1" s="1"></C>
+<C c="6" r="1" s="1"></C>
+<C c="7" r="1" s="1"></C>
+<C c="8" r="1" s="2"></C>
+<C c="1" r="2" s="3"></C>
+<C c="2" r="2" s="4"></C>
+<C c="3" r="2" cs="4" s="5"><O><![CDATA[客户订单]]></O>
+</C>
+<C c="7" r="2" s="4"></C>
+<C c="8" r="2" s="6"></C>
+<C c="1" r="3" s="3"></C>
+<C c="2" r="3" s="4"></C>
+<C c="3" r="3" s="4"></C>
+<C c="4" r="3" s="4"></C>
+<C c="5" r="3" s="4"></C>
+<C c="6" r="3" s="4"></C>
+<C c="7" r="3" s="4"></C>
+<C c="8" r="3" s="6"></C>
+<C c="1" r="4" s="3"></C>
+<C c="2" r="4" s="7"><O><![CDATA[订单编号：]]></O>
+<Expand leftParentDefault="false" left="D5" />
+</C>
+<C c="3" r="4" s="8"><O t="DSColumn"><Attributes dsName="ds1" columnName="ORDERID" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[ORDERID]]></CNAME><Compare op="0">
+<Parameter>
+<Attributes name="OEDERID" />
+<O t="I">10001</O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</Parameter>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><NumberAttr/></Widget>
+</C>
+<C c="4" r="4" s="9"><O><![CDATA[总金额：]]></O>
+</C>
+<C c="5" r="4" s="8"><O t="DSColumn"><Attributes dsName="ds1" columnName="AMOUNT" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><NumberAttr/></Widget>
+</C>
+<C c="6" r="4" s="9"><O><![CDATA[付款方式：]]></O>
+</C>
+<C c="7" r="4" s="8"><O t="DSColumn"><Attributes dsName="ds1" columnName="PAYMETHOD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr disabled="false"/>
+<TextAttr /><MVList class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="credit" value="credit"/>
+<Dict key="visa" value="visa"/>
+</CustomDictAttr>
+</MVList>
+</Widget>
+</C>
+<C c="8" r="4" s="6"></C>
+<C c="1" r="5" s="3"></C>
+<C c="2" r="5" s="9"><O><![CDATA[客户名称：]]></O>
+</C>
+<C c="3" r="5" s="8"><O t="DSColumn"><Attributes dsName="ds1" columnName="CUSTOMERID" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<DBDictAttr tableName="CUSTOMER" schemaName="" keyColumnIndex="1" valueColumnIndex="2"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection></Dictionary></Present>
+<Expand dir="0" leftParentDefault="false" left="D5" />
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</C>
+<C c="4" r="5" s="9"></C>
+<C c="5" r="5" s="4"></C>
+<C c="6" r="5" s="9"><O><![CDATA[签订日期：]]></O>
+</C>
+<C c="7" r="5" s="10"><O t="DSColumn"><Attributes dsName="ds1" columnName="SIGNDATE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" leftParentDefault="false" left="D5" />
+<Widget class="com.fr.report.web.ui.DateEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><DateAttr start="" end=""/></Widget>
+</C>
+<C c="8" r="5" s="6"></C>
+<C c="1" r="6" s="3"></C>
+<C c="2" r="6" s="9"><O><![CDATA[发货港口：]]></O>
+</C>
+<C c="3" r="6" s="8"><O t="DSColumn"><Attributes dsName="ds1" columnName="SHIPPORT" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" leftParentDefault="false" left="D5" />
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</C>
+<C c="4" r="6" s="9"><O><![CDATA[发货日期：]]></O>
+</C>
+<C c="5" r="6" s="10"><O t="DSColumn"><Attributes dsName="ds1" columnName="SHIPDATE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.DateEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><DateAttr start="" end=""/></Widget>
+</C>
+<C c="6" r="6" s="9"><O><![CDATA[运输方式：]]></O>
+</C>
+<C c="7" r="6" s="8"><O t="DSColumn"><Attributes dsName="ds1" columnName="SHIPMETHOD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr disabled="false"/>
+<TextAttr /><MVList class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="ＤＨＬ" value="ＤＨＬ"/>
+<Dict key="ＵＰＳ" value="ＵＰＳ"/>
+<Dict key="ＵＳ mail" value="ＵＳ mail"/>
+<Dict key="Ｅmery" value="Ｅmery"/>
+</CustomDictAttr>
+</MVList>
+</Widget>
+</C>
+<C c="8" r="6" s="6"></C>
+<C c="1" r="7" s="3"></C>
+<C c="2" r="7" s="4"></C>
+<C c="3" r="7" s="8"></C>
+<C c="4" r="7" s="4"></C>
+<C c="5" r="7" s="4"></C>
+<C c="6" r="7" s="4"></C>
+<C c="7" r="7" s="4"></C>
+<C c="8" r="7" s="6"></C>
+<C c="1" r="8" s="3"></C>
+<C c="2" r="8"></C>
+<C c="3" r="8" s="11"><O><![CDATA[产品编号]]></O>
+</C>
+<C c="4" r="8" s="11"><O><![CDATA[数量 (吨)]]></O>
+</C>
+<C c="5" r="8" s="11"><O><![CDATA[单价(元)]]></O>
+</C>
+<C c="6" r="8" s="11"><O><![CDATA[金额(元)]]></O>
+</C>
+<C c="7" r="8"></C>
+<C c="8" r="8" s="6"></C>
+<C c="1" r="9" s="3"></C>
+<C c="2" r="9"></C>
+<C c="3" r="9" s="12"><O t="DSColumn"><Attributes dsName="ds1" columnName="PRODUCTID" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<DBDictAttr tableName="CUSTOMER" schemaName="" keyColumnIndex="1" valueColumnIndex="2"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection></Dictionary></Present>
+<Expand dir="0" leftParentDefault="false" left="D5" />
+<CellInsertPolicy></CellInsertPolicy><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /></Widget>
+</C>
+<C c="4" r="9" s="12"><O t="DSColumn"><Attributes dsName="ds1" columnName="QUANTITY" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<CellInsertPolicy></CellInsertPolicy><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><NumberAttr/></Widget>
+</C>
+<C c="5" r="9" s="12"><O t="DSColumn"><Attributes dsName="ds1" columnName="PRICE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<CellInsertPolicy></CellInsertPolicy><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><NumberAttr/></Widget>
+</C>
+<C c="6" r="9" s="12"><O t="Formula" class="Formula"><Attributes><![CDATA[=E10 * F10]]></Attributes></O>
+<CellInsertPolicy></CellInsertPolicy><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr disabled="false"/>
+<TextAttr /><NumberAttr/></Widget>
+</C>
+<C c="8" r="9" s="6"></C>
+<C c="1" r="10" s="13"></C>
+<C c="2" r="10" s="14"></C>
+<C c="3" r="10" s="14"></C>
+<C c="4" r="10" s="14"></C>
+<C c="5" r="10" s="14"></C>
+<C c="6" r="10" s="14"></C>
+<C c="7" r="10" s="14"></C>
+<C c="8" r="10" s="15"></C>
+<C c="1" r="12" cs="8" s="16"><O><![CDATA[“客户订单”表单功能应用说明：]]></O>
+</C>
+<C c="1" r="13" cs="8" s="17"><O><![CDATA[1、多源填报]]></O>
+</C>
+<C c="9" r="13"></C>
+<C c="1" r="14" cs="8" s="17"><O><![CDATA[该表为多源填报表，订单主表与订单明细在同一个表单录入，但是提交到两个不同的物理表中。]]></O>
+</C>
+<C c="9" r="14"></C>
+<C c="1" r="15" cs="8" s="17"><O><![CDATA[2、数据校验]]></O>
+</C>
+<C c="9" r="15"></C>
+<C c="1" r="16" cs="8" s="17"><O><![CDATA[该表中，总金额应为各产品金额之和，在总金额录入正确的情况下，点击数据校验，则弹出“校验成功”]]></O>
+</C>
+<C c="9" r="16"></C>
+<C c="1" r="17" cs="8" s="17"><O><![CDATA[总金额录入错误的情况下，点击“数据校验”，则弹出“总金额计算不正确”对话框。]]></O>
+</C>
+<C c="9" r="17"></C>
+<C c="1" r="18" cs="8" s="18"><O><![CDATA[3、参数展现组合填报，修改数据并回填 ]]></O>
+</C>
+<C c="9" r="18"></C>
+<C c="1" r="19" cs="8" s="18"><O><![CDATA[该表单中，如果我们希望对已经从数据库中读出的数据进行修改，修改之后并回填，可以通过定义参数实现。 表单中已经定义参数，可以通过订单编号查询相关记录，在需要修改的地方进行修改，提交后即可回填到数据库中。 ]]></O>
+</C>
+<C c="1" r="20" cs="8" s="18"><O><![CDATA[4、公式自动计算  ]]></O>
+</C>
+<C c="1" r="21" cs="8" s="19"><O><![CDATA[该报表中，所有者权益、营业收入累计、营业总成本累计包括利润总额，都不可直接填写，是根据实际公式计算所得。]]></O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="2" color="-6697729"
+ /><Left style="2" color="-6697729"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="2" color="-6697729"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="2" color="-6697729"
+ /><Right style="2" color="-6697729"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Left style="2" color="-6697729"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style style_name="Title" />
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Right style="2" color="-6697729"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12" />
+<Background name="ColorBackground"
+ color="-1">
+</Background>
+<Border></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" color="-6697729"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.SimpleDateFormat"><![CDATA[yyyy-MM-dd]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" color="-6697729"
+ /></Border>
+</Style>
+<Style style_name="Head2" />
+<Style style_name="cell" />
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="2" color="-6697729"
+ /><Left style="2" color="-6697729"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="2" color="-6697729"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="2" color="-6697729"
+ /><Right style="2" color="-6697729"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="3" color="-6697729"
+ /><Left style="3" color="-6697729"
+ /><Right style="3" color="-6697729"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-328966">
+</Background>
+<Border><Left style="3" color="-6894375"
+ /><Right style="3" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Left style="3" color="-6697729"
+ /><Right style="3" color="-6697729"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="3" color="-6697729"
+ /><Left style="3" color="-6697729"
+ /><Right style="3" color="-6697729"
+ /></Border>
+</Style>
+</StyleList>
+</WorkBook>

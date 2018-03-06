@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.2</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters>
+</Parameters>
+<ColumnNames><![CDATA[Id,,.,,Preid,,.,,Sales,,.,,OutStanding]]></ColumnNames>
+<ColumnTypes><![CDATA[java.lang.String,java.lang.String,java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[9o_LP5VWC/fD]J66$rWqIFP!-1/B6j/*GBXCPe(kU\X+Y\P=A7EC3Y5ou)SG2WeDo4Cj4OB3
+,;k*FZhC`>HfIpY!U!^"i9J#1KX
+3@LUPb/Y4+M~
+
+]]>
+</RowData>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings shrinkToFit="false" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<RowHeight defaultValue="19">
+<![CDATA[]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="0"><O t="DSColumn"><Attributes dsName="ds1" columnName="Id" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[Preid]]></CNAME><Compare op="0">
+<O t="NULL" />
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="1" r="0" s="0"><O t="Formula" class="Formula"><Attributes><![CDATA[=sum(B3)]]></Attributes></O>
+</C>
+<C c="2" r="0" s="0"><O t="Formula" class="Formula"><Attributes><![CDATA[=sum(C3)]]></Attributes></O>
+</C>
+<C c="0" r="1" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="Id" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[Preid]]></CNAME><Compare op="0">
+<ColumnRow column="0" row="0"/>
+</Compare>
+</Condition>
+<Complex reselect="true" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" leftParentDefault="false" left="A1" />
+</C>
+<C c="1" r="1" s="0"><O t="Formula" class="Formula"><Attributes><![CDATA[=sum(B3)]]></Attributes></O>
+</C>
+<C c="2" r="1" s="0"><O t="Formula" class="Formula"><Attributes><![CDATA[=sum(C3)]]></Attributes></O>
+</C>
+<C c="0" r="2" s="2"><O t="DSColumn"><Attributes dsName="ds1" columnName="Id" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[Preid]]></CNAME><Compare op="0">
+<ColumnRow column="0" row="1"/>
+</Compare>
+</Condition>
+<Complex reselect="true" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" leftParentDefault="false" left="A2" />
+</C>
+<C c="1" r="2" s="0"><O t="DSColumn"><Attributes dsName="ds1" columnName="Sales" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+</C>
+<C c="2" r="2" s="0"><O t="DSColumn"><Attributes dsName="ds1" columnName="OutStanding" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-256">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-3342337">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

@@ -1,0 +1,5 @@
+#Thu Nov 18 09:09:39 CST 2010
+org.light.portlet.config.Portlet=org.light.portlet.config.descriptors.PortletDescriptor
+org.light.portlet.config.Portlets=org.light.portlet.config.descriptors.PortletsDescriptor
+org.light.portlet.config.Parameter=org.light.portlet.config.descriptors.ParameterDescriptor
+org.light.portlet.config.Roles=org.light.portlet.config.descriptors.RolesDescriptor

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.2</Version>
+<TableDataMap>
+<TableData name="Simple" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes isCache="true" maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT * FROM STSCORE ORDER BY STSCORE.CLASSNO ASC,STSCORE.SEX ASC]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings shrinkToFit="false" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<RowHeight defaultValue="19">
+<![CDATA[37,19,248]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,447]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="2" s="0"><O><![CDATA[交叉的图表表示在特定性别(左父格A3)和特定课程(上父格B2)]]></O>
+</C>
+<C c="0" r="1" s="1"></C>
+<C c="1" r="1" s="2"><O t="DSColumn"><Attributes dsName="Simple" columnName="COURSE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="1" />
+</C>
+<C c="0" r="2" s="2"><O t="DSColumn"><Attributes dsName="Simple" columnName="SEX" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="1" r="2" s="1"><O t="CC"><LayoutAttr selectedIndex="0" columns="0" /><Chart name="Default">
+<Chart class="com.fr.chart.Chart"><GI>
+<Background name="ColorBackground"
+ color="-1">
+</Background>
+<Border style="0" color="-16777216" /></GI>
+<Plot class="com.fr.chart.plot.Bar3DPlot">
+<GI>
+<Border style="0" color="-16777216" /></GI>
+<SeriesCollection><Default lineStyle="0" alpha="1.0"></Default></SeriesCollection><Legend position="4" legendNum="10">
+<GI>
+<Border style="0" color="-16777216" /></GI>
+<FRFont name="SimSun" style="0" size="12" />
+</Legend>
+<CateAttr/><Axis class="com.fr.chart.axis.CategoryAxis"><Title>
+<GI>
+<Border style="0" color="-16777216" /></GI>
+<O><![CDATA[X轴]]></O>
+<TextAttr><FRFont name="SimSun" style="0" size="12" />
+</TextAttr>
+<TitleVisible value="true" />
+</Title>
+<AxisLine style="1" color="-8355712" />
+<MainGridLine style="0" />
+<SecGridLine style="0" />
+<TickLine type = "1" len = "4" />
+<TextAttr></TextAttr>
+</Axis>
+<Axis class="com.fr.chart.axis.ValueAxis"><Title>
+<GI>
+<Border style="0" color="-16777216" /></GI>
+<O><![CDATA[Y轴]]></O>
+<TextAttr><FRFont name="SimSun" style="0" size="12" />
+</TextAttr>
+<TitleVisible value="true" />
+</Title>
+<AxisLine style="1" color="-8355712" />
+<MainGridLine style="3" color="-8355712" />
+<SecGridLine style="0" />
+<TickLine type = "1" len = "4" />
+<TextAttr></TextAttr>
+<AxisRange/></Axis>
+<BarAttr isHorizontal="false" overlap="1.0" interval="2.0"/><Attr3D isCubic3D="false" isCascade="true" seriesIntervalPercent="0.0"/><Projection mode="2" elevation="15" rotation="20" focus="800"/></Plot>
+</Chart>
+</Chart>
+<MoreNameCDDefinition>
+<TableData class="com.fr.data.impl.NameTableData">
+<Name><![CDATA[Simple]]></Name>
+</TableData>
+<CategoryName value="CLASSNO"/><ChartSummaryColumn name="GRADE" function="com.fr.data.util.function.SumFunction" customName="GRADE"/>
+</MoreNameCDDefinition>
+</O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="28" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-16777216"
+ /><Bottom style="1" color="-16777216"
+ /><Left style="1" color="-16777216"
+ /><Right style="1" color="-16777216"
+ /></Border>
+</Style>
+</StyleList>
+</WorkBook>

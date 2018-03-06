@@ -1,0 +1,26 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+		http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+	
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+
+	<jaxws:endpoint id="workflowservice" implementor="com.eweaver.interfaces.workflow.WorkflowServiceImpl"
+		address="/workflow" />
+	<jaxws:endpoint
+            id="formdataservice"
+            implementor="#FormdataServiceImpl"
+            address="/formdata">
+		<jaxws:properties>
+      		<entry key="mtom-enabled" value="true"/>
+    	</jaxws:properties> 
+	</jaxws:endpoint>
+	<bean id="FormdataServiceImpl" class="com.eweaver.interfaces.form.FormdataServiceImpl">
+		<property name="baseJdbcDao" ref="baseJdbcDao"></property>
+	</bean>
+	<jaxws:endpoint id="queryservice" implementor="com.eweaver.interfaces.query.QueryServiceImpl" address="/query" />
+	
+	<jaxws:endpoint id="eweaverservice" implementor="com.eweaver.webservice.EweaverServiceImpl" address="/ew" />
+	
+</beans>

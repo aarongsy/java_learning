@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SchemaDataSet><SchemaData ID="reportdef" version="4.0.0"><Fields><Field name="ID" type="string"/><Field name="FORMID" type="string"/><Field name="OBJNAME" type="string"/><Field name="OBJTYPE" type="string"/><Field name="OBJDESC" type="string"/><Field name="COL1" type="string"/><Field name="COL2" type="string"/><Field name="COL3" type="string"/><Field name="OBJOPTS" type="string"/><Field name="OBJMODELNAME" type="string"/><Field name="OBJSAVEPATH" type="string"/><Field name="OBJTYPE2" type="string"/><Field name="VIEWTYPE" type="int"/><Field name="GROUPBY" type="string"/><Field name="ISDELETE" type="int"/><Field name="SELECTCONDITIONS" type="string"/><Field name="TREEBY" type="string"/><Field name="GROUPBYTREE" type="string"/><Field name="SECFORMID" type="string"/><Field name="ISFORMBASE" type="string"/><Field name="REPORTUSAGE" type="int"/><Field name="MODULEID" type="string"/><Field name="ISREFRESH" type="int"/><Field name="ISEXPEXCEL" type="int"/><Field name="DEFAULTTIME" type="int"/><Field name="ISBATCHUPDATE" type="int"/><Field name="GROUPBY1" type="string"/><Field name="GROUPBY2" type="string"/><Field name="JSCONTENT" type="CLOB"/></Fields><DataSet><Data><Data name="OBJOPTS"></Data><Data name="SELECTCONDITIONS"></Data><Data name="REPORTUSAGE">0</Data><Data name="VIEWTYPE">0</Data><Data name="ISFORMBASE">2</Data><Data name="COL3"></Data><Data name="COL2"></Data><Data name="COL1"></Data><Data name="GROUPBYTREE"></Data><Data name="ID">40285a8d4ab7d98c014ab804f8b3060b</Data><Data name="ISDELETE">0</Data><Data name="ISBATCHUPDATE">0</Data><Data name="SECFORMID"></Data><Data name="JSCONTENT"></Data><Data name="OBJMODELNAME"></Data><Data name="GROUPBY1"></Data><Data name="FORMID">40285a8d4aaea6d9014aaeb722d60005</Data><Data name="GROUPBY2"></Data><Data name="OBJNAME">员工报销付款通知（员工）</Data><Data name="OBJTYPE"></Data><Data name="OBJTYPE2">workflow</Data><Data name="TREEBY">40285a8d4aaea6d9014aaed3aaa800c1</Data><Data name="MODULEID">40285a8d4aaea6d9014aaea807000003</Data><Data name="OBJDESC"></Data><Data name="DEFAULTTIME">5</Data><Data name="OBJSAVEPATH"></Data><Data name="ISEXPEXCEL">1</Data><Data name="ISREFRESH">0</Data><Data name="GROUPBY">40285a8d4aaea6d9014aaed3aaa800c1</Data></Data><Data><Data name="OBJOPTS"></Data><Data name="SELECTCONDITIONS"></Data><Data name="REPORTUSAGE">0</Data><Data name="VIEWTYPE">0</Data><Data name="ISFORMBASE">1 </Data><Data name="COL3"></Data><Data name="COL2"></Data><Data name="COL1"></Data><Data name="GROUPBYTREE"></Data><Data name="ID">40285a8d4abdc01f014abde6b8810381</Data><Data name="ISDELETE">0</Data><Data name="ISBATCHUPDATE">0</Data><Data name="SECFORMID"></Data><Data name="JSCONTENT">&lt;script&gt;
+//判断当前用户是否财务付款人员审核角色中
+function judgePermision(){
+	DWREngine.setAsync(false);//设置为同步获取数据
+	var czz = document.getElementById('currentuserid');
+	var sql = 'select userid from sysuserrolelink where roleid=\'40285a904931f62b0149549e04884b38\' and userid=(select id from sysuser where objid=\''+czz.value+'\')';
+	var flag = true;
+    DataService.getValues(sql,{callback:function(data){            
+        if(data&amp;&amp;data.length&gt;0){   
+				flag = true;
+				return  flag;  
+			} else {
+				flag = false;			
+				alert('您没有此权限！');
+				return flag;
+			}                     
+     }            
+    });
+	DWREngine.setAsync(true);//设置为不同步获取数据
+	return flag;
+}
+
+//手动触发生成员工报销付款通知流程
+function doPayNotice(){
+
+	//if (judgePermision())
+	//{
+			Ext.Ajax.request({          
+				url:'/app/fimanage/paynotice/doPayNotice.jsp?action=create',          
+				params:{},       
+				success: function(res) {     
+					 alert(res.responseText);  
+					 jsonResult = eval('('+res.responseText+')');    
+                    					 
+					if (jsonResult) {        
+						if(jsonResult.msg &amp;&amp; jsonResult.msg=='true'){      
+							alert('手动触发生成员工报销付款成功！'); 
+						}else{ 					
+							if(jsonResult.err=='0'){     
+								alert('当前年月没有要触发的员工报销付款，请确认！');     
+							}else{ 
+								var passpsn = jsonResult.passpsn;
+								var failpsn = jsonResult.failpsn;								
+								alert("员工报销付款通知成功:\n"+jsonResult.passpsn+'\n触发失败员工：\n'+jsonResult.failpsn);   
+							}                     					
+						}   
+					}				
+				}         
+			}); 
+
+	//}
+
+}
+
+&lt;/script&gt;</Data><Data name="OBJMODELNAME"></Data><Data name="GROUPBY1"></Data><Data name="FORMID">40285a8d4abdc01f014abde0f3c601f5</Data><Data name="GROUPBY2"></Data><Data name="OBJNAME">员工报销应付款视图</Data><Data name="OBJTYPE"></Data><Data name="OBJTYPE2">workflow</Data><Data name="TREEBY">40285a8d4abdc01f014abde0f40c01f7</Data><Data name="MODULEID">40285a8d4aaea6d9014aaea807000003</Data><Data name="OBJDESC"></Data><Data name="DEFAULTTIME">5</Data><Data name="OBJSAVEPATH"></Data><Data name="ISEXPEXCEL">1</Data><Data name="ISREFRESH">0</Data><Data name="GROUPBY">40285a8d4abdc01f014abde0f40c01f7</Data></Data><Data><Data name="OBJOPTS"></Data><Data name="SELECTCONDITIONS"></Data><Data name="REPORTUSAGE">0</Data><Data name="VIEWTYPE">0</Data><Data name="ISFORMBASE">1 </Data><Data name="COL3"></Data><Data name="COL2"></Data><Data name="COL1"></Data><Data name="GROUPBYTREE"></Data><Data name="ID">40285a8d4abdc01f014abe31f1890800</Data><Data name="ISDELETE">0</Data><Data name="ISBATCHUPDATE">0</Data><Data name="SECFORMID"></Data><Data name="JSCONTENT"></Data><Data name="OBJMODELNAME"></Data><Data name="GROUPBY1"></Data><Data name="FORMID">40285a8d4abdc01f014abde0f3c601f5</Data><Data name="GROUPBY2"></Data><Data name="OBJNAME">员工报销应付款视图22</Data><Data name="OBJTYPE"></Data><Data name="OBJTYPE2">workflow</Data><Data name="TREEBY"></Data><Data name="MODULEID">40285a8d4aaea6d9014aaea807000003</Data><Data name="OBJDESC"></Data><Data name="DEFAULTTIME">5</Data><Data name="OBJSAVEPATH"></Data><Data name="ISEXPEXCEL">1</Data><Data name="ISREFRESH">0</Data><Data name="GROUPBY"></Data></Data></DataSet></SchemaData></SchemaDataSet>

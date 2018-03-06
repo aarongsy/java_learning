@@ -1,0 +1,301 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ page import="com.eweaver.base.BaseJdbcDao"%>
+<%@ page import="java.util.*"%>
+<%@ page import="java.text.*"%>
+<%@ page import="com.eweaver.base.util.*" %>
+<%@ page import="com.eweaver.base.*" %>
+<%@ page import="com.eweaver.base.BaseContext" %>
+<%@ page import="com.eweaver.base.label.service.LabelService" %>
+<%@ page import="com.eweaver.base.security.service.acegi.EweaverUser" %>
+<%@ page import="com.eweaver.humres.base.model.Humres" %>
+<%@ page import="com.eweaver.humres.base.service.HumresService" %>
+<%@ page import="com.eweaver.base.setitem.service.SetitemService"%>
+<%@ page import="com.eweaver.base.util.DateHelper"%>
+
+<%
+String sql = StringHelper.null2String(request.getParameter("sql"));
+
+BaseJdbcDao baseJdbc = (BaseJdbcDao) BaseContext.getBean("baseJdbcDao");
+%>
+<style type="text/css"> 
+
+
+tr.tr1{     
+    TEXT-INDENT: -1pt; 
+    TEXT-ALIGN: left; 
+    height: 22px; 
+    background-color:#f8f8f0; 
+} 
+tr.title{ 
+	font-size:12px; 
+	font-weight:bold;
+    TEXT-INDENT: -1pt; 
+    TEXT-ALIGN: left; 
+    height: 22px; 
+    background-color:#f8f8f0; 
+} 
+tr.hj{     
+    TEXT-INDENT: -1pt; 
+    TEXT-ALIGN: left; 
+    height: 22px; 
+    background-color:#e46d0a; 
+} 
+td.td1{ 
+    font-size:12px; 
+    PADDING-RIGHT: 4px; 
+    PADDING-LEFT: 4px;     
+    TEXT-DECORATION: none 
+
+} 
+td.td2{ 
+	height: 22px;
+    font-size:12px; 
+    PADDING-RIGHT: 4px; 
+    PADDING-LEFT: 4px;     
+    TEXT-DECORATION: none; 
+    color:#000; 
+
+} 
+
+
+</style>
+<script type='text/javascript' language="javascript" src='/js/main.js'></script>
+
+
+<!--<div id="warpp" style="height:600px;overflow-y:auto">-->
+
+ <DIV id="warpp">
+
+
+<TABLE id=oTable40285a8f489c17ce0148f405a13278b8 class=detailtable border=1>
+<COLGROUP>
+<COL width="4%">
+<COL width="4%">
+<COL style="DISPLAY: none" width="4%">
+<COL style="DISPLAY: none" width="4%">
+<COL width="4%">
+<COL width="4%">
+<COL width="4%">
+<COL width="4%">
+<COL width="4%">
+<COL width="4%">
+<COL width="4%">
+<COL width="4%">
+<COL width="4%">
+<COL width="4%">
+<COL width="4%">
+<COL width="4%">
+<COL width="4%">
+<COL width="4%">
+<COL width="4%">
+<COL width="4%">
+<COL width="4%">
+<COL width="4%">
+<COL width="4%">
+<COL width="4%">
+<COL width="4%">
+<COL width="4%">
+<COL style="DISPLAY: none" width="4%">
+<COL width="4%">
+<COL style="DISPLAY: none" width="4%">
+<COL style="DISPLAY: none" width="4%"></COLGROUP>
+<TBODY>
+<TR class=Header>
+<TD noWrap><INPUT id=check_node_all onclick="selectAll(this,'40285a8f489c17ce0148f405a13278b8')" value=-1 type=checkbox name=check_node_all>序号</TD>
+<TD noWrap>物品类型</TD>
+<TD noWrap>公司别</TD>
+<TD noWrap>申请部门</TD>
+<TD noWrap>申请人</TD>
+<TD noWrap>品名</TD>
+<TD noWrap>规格</TD>
+<TD noWrap>单位</TD>
+<TD noWrap>单价</TD>
+<TD noWrap>申请数量</TD>
+<TD noWrap>供应商名称</TD>
+<TD noWrap>预计送货日期</TD>
+<TD noWrap>需求日期</TD>
+<TD noWrap>送货地址</TD>
+<TD noWrap>物品类别</TD>
+<TD noWrap>次类别</TD>
+<TD noWrap>总务用品申请单号</TD>
+<TD noWrap>申请单行号</TD>
+<TD noWrap>总账科目</TD>
+<TD noWrap>内部订单</TD>
+<TD noWrap>供应商ID</TD>
+<TD noWrap>税码</TD>
+<TD noWrap>税别</TD>
+<TD noWrap>税率(%)</TD>
+<TD noWrap>币种</TD>
+<TD noWrap>采购数量</TD>
+<TD noWrap>到货数</TD>
+<TD noWrap>备注</TD></TR>
+<%
+
+       List sublist = baseJdbc.executeSqlForList(sql);
+       if(sublist.size()>0){
+	          for(int k=0,sizek=sublist.size();k<sizek;k++){
+		      Map mk = (Map)sublist.get(k);
+			  String goodsno=StringHelper.null2String(mk.get("goodsno"));
+			  String goodsname=StringHelper.null2String(mk.get("goodsname"));
+			  String applyer=StringHelper.null2String(mk.get("applyer"));
+			  String applyname=StringHelper.null2String(mk.get("applyname"));
+			  String deptid=StringHelper.null2String(mk.get("deptid"));
+			  String deptname=StringHelper.null2String(mk.get("deptname"));
+			  String comid=StringHelper.null2String(mk.get("comid"));
+			  String compname=StringHelper.null2String(mk.get("compname"));
+			  String goodstyle=StringHelper.null2String(mk.get("goodstyle"));
+			  String stylename=StringHelper.null2String(mk.get("stylename"));
+			  String specify=StringHelper.null2String(mk.get("specify"));
+			  String unit=StringHelper.null2String(mk.get("unit"));
+			  String price=StringHelper.null2String(mk.get("price"));
+			  String num=StringHelper.null2String(mk.get("num"));
+			  String spna=StringHelper.null2String(mk.get("spna"));
+			  String supplyname=StringHelper.null2String(mk.get("supplyname"));
+			  String scode=StringHelper.null2String(mk.get("scode"));
+			  String needdate=StringHelper.null2String(mk.get("needdate"));
+			  String address=StringHelper.null2String(mk.get("address"));
+			  String appnumber=StringHelper.null2String(mk.get("appnumber"));
+			  String no=StringHelper.null2String(mk.get("no"));
+			  String subject=StringHelper.null2String(mk.get("subject"));
+			  String subjectname=StringHelper.null2String(mk.get("subjectname"));
+			  String innerorder=StringHelper.null2String(mk.get("innerorder"));
+			  String innerid=StringHelper.null2String(mk.get("innerid"));
+			  String cate=StringHelper.null2String(mk.get("cate"));
+			  String catename=StringHelper.null2String(mk.get("catename"));
+			  String subcate=StringHelper.null2String(mk.get("subcate"));
+			  String subcatename=StringHelper.null2String(mk.get("subcatename"));
+			  String appno=StringHelper.null2String(mk.get("appno"));
+			  String taxcode="";
+			  String taxtype="";
+			  String codename="";
+			  String taxtypename="";
+			  String taxrate="";
+			  String currency="40285a8f490d114a014917755e486996";
+			  String currencycode="RMB";
+			  List sublist1 =null;
+			  Map mk1=null;
+			if(goodstyle.equals("40285a8f489c17ce0148a6f30a642b7d"))     
+			{     
+				String sqltax="select a.taxcode,(select taxcode  from uf_oa_taxcode where requestid=a.taxcode) as codename,a.taxtype,(select objname from selectitem where id=a.taxtype) as taxtypename,a.taxrate,a.currency,(select currencycode from uf_oa_currencymaintain where requestid=a.currency) as currencycode from uf_oa_pricesummary  a where  a.goodsname = '"+goodsno+"' and a.specify =  '"+specify+"'  and a.unit ='"+unit+"' and a.suppliercode='"+scode+"'  and vailideflag = '40285a8f489c17ce01489c7f3d940189' and (isvalid ='40285a8f489c17ce01489c7f3d940189' or isvalid is null)";      
+				sublist1 = baseJdbc.executeSqlForList(sqltax);
+				if(sublist1.size()>0)
+				{
+					mk1 = (Map)sublist1.get(0);
+					taxcode=StringHelper.null2String(mk1.get("taxcode"));
+					codename=StringHelper.null2String(mk1.get("codename"));
+					taxtype=StringHelper.null2String(mk1.get("taxtype"));
+					taxtypename=StringHelper.null2String(mk1.get("taxtypename"));
+					taxrate=StringHelper.null2String(mk1.get("taxrate"));
+					currency=StringHelper.null2String(mk1.get("currency"));
+					currencycode=StringHelper.null2String(mk1.get("currencycode"));
+				}
+
+			}                  
+                     
+		%>
+<TR id=oTR40285a8f489c17ce0148f405a13278b8 class=DataLight><!-- 明细表ID，请勿删除。-->
+<TD noWrap><span ><input type="checkbox" name="check_node_40285a8f489c17ce0148f405a13278b8" value="<%=k%>"><input type=hidden name=<%="detailid_40285a8f489c17ce0148f405a13278b8_"+k %> value=""></span><input type="hidden" id=<%="field_40285a8f489c17ce0148f42104807b9c_"+k %> name=<%="field_40285a8f489c17ce0148f42104807b9c_"+k %> value="<%=k+1%>" maxlength=24  ><span style='width: 40.62%; height: 19px' id=<%="field_40285a8f489c17ce0148f42104807b9c_"+k+"span" %> name=<%="field_40285a8f489c17ce0148f42104807b9c_"+k+"span" %> ><%=k+1%></span></TD>
+<TD noWrap><input type="hidden" id=<%="field_40285a8f489c17ce0148f421049f7b9e_"+k %> name=<%="field_40285a8f489c17ce0148f421049f7b9e_"+k %> value="<%=goodstyle%>" ><span style='width: 80%; height: 19px' id=<%="field_40285a8f489c17ce0148f421049f7b9e_"+k+"span" %> name=<%="field_40285a8f489c17ce0148f421049f7b9e_"+k+"span" %> ><%=stylename%></span></TD>
+<TD noWrap><input type="hidden" id=<%="field_40285a8f489c17ce0148f42104bb7ba0_"+k %> name=<%="field_40285a8f489c17ce0148f42104bb7ba0_"+k %> value="<%=comid%>" ><span   style='width: 80%; height: 19px' id=<%="field_40285a8f489c17ce0148f42104bb7ba0_"+k+"span" %> name=<%="field_40285a8f489c17ce0148f42104bb7ba0_"+k+"span" %> ><%=compname%></span></TD>
+<TD noWrap><input type="hidden" id=<%="field_40285a8f489c17ce0148f42104d47ba2_"+k %> name=<%="field_40285a8f489c17ce0148f42104d47ba2_"+k %> value="<%=deptid%>" ><span   style='width: 80%; height: 19px' id=<%="field_40285a8f489c17ce0148f42104d47ba2_"+k+"span" %> name=<%="field_40285a8f489c17ce0148f42104d47ba2_"+k+"span" %> ><%=deptname%></span></TD>
+<TD noWrap><input type="hidden" id=<%="field_40285a8f489c17ce0148f42104f07ba4_"+k %> name=<%="field_40285a8f489c17ce0148f42104f07ba4_"+k %> value="<%=applyer%>" ><span   style='width: 80%; height: 19px' id=<%="field_40285a8f489c17ce0148f42104f07ba4_"+k+"span" %> name=<%="field_40285a8f489c17ce0148f42104f07ba4_"+k+"span" %> ><%=applyname%></span></TD>
+<TD noWrap><input type="hidden" id=<%="field_40285a8f489c17ce0148f421050e7ba6_"+k %> name=<%="field_40285a8f489c17ce0148f421050e7ba6_"+k %> value="<%=goodsno%>" ><span   style='width: 83.9%; height: 17px' id=<%="field_40285a8f489c17ce0148f421050e7ba6_"+k+"span"%> name=<%="field_40285a8f489c17ce0148f421050e7ba6_"+k+"span"  %>
+><%=goodsname%></span> </TD>
+<TD noWrap><input type="hidden" id=<%="field_40285a8f489c17ce0148f421052f7ba8_"+k%> name=<%="field_40285a8f489c17ce0148f421052f7ba8_"+k%>  value="<%=specify%>"  ><span style='width: 80%; height: 19px' id=<%="field_40285a8f489c17ce0148f421052f7ba8_"+k+"span"%> name=<%="field_40285a8f489c17ce0148f421052f7ba8_"+k+"span"%> ><%=specify%></span></TD>
+<TD noWrap><input type="hidden" id=<%="field_40285a8f489c17ce0148f42105467baa_"+k%> name=<%="field_40285a8f489c17ce0148f42105467baa_"+k%>  value="<%=unit%>"  ><span style='width: 80%; height: 19px' id=<%="field_40285a8f489c17ce0148f42105467baa_"+k+"span"%> name=<%="field_40285a8f489c17ce0148f42105467baa_"+k+"span"%> ><%=unit%></span></TD>
+<%
+	//物品类型    
+	if(goodstyle.equals("40285a8f489c17ce0148a6f30a642b7d")) //如果是定价采购           
+	{  
+		%>
+		<TD noWrap><input type="text" class="InputStyle2" name=<%="field_40285a8f489c17ce0148f42105697bac_"+k%>  id=<%="field_40285a8f489c17ce0148f42105697bac_"+k%> value="<%=price%>"  style='width: 80%; height: 19px' >
+		<span id=<%="field_40285a8f489c17ce0148f42105697bac_"+k+"span"%> name=<%="field_40285a8f489c17ce0148f42105697bac_"+k+"span"%> > </span></TD>
+		<%
+	}
+	else
+	  {
+		%>
+		<TD noWrap><input type="text" class="InputStyle2" name=<%="field_40285a8f489c17ce0148f42105697bac_"+k%>  id=<%="field_40285a8f489c17ce0148f42105697bac_"+k%> value=""  style='width: 80%; height: 19px'  onblur="fieldcheck(this,'^(-?[\\d+]{1,22})(\\.[\\d+]{1,2})?$','单价')"  onChange="fieldcheck(this,'^(-?[\\d+]{1,22})(\\.[\\d+]{1,2})?$','单价');checkInput('<%="field_40285a8f489c17ce0148f42105697bac_"+k%>','<%="field_40285a8f489c17ce0148f42105697bac_"+k+"span"%>');" ><span id=<%="field_40285a8f489c17ce0148f42105697bac_"+k+"span"%> name=<%="field_40285a8f489c17ce0148f42105697bac_"+k+"span"%> ><img src="/images/base/checkinput.gif" align=absMiddle></span></TD>
+
+		<%
+
+	  }
+%>
+
+<TD style="TEXT-ALIGN: center" noWrap><input type="hidden" id=<%="field_40285a8f489c17ce0148f421058c7bae_"+k%> name=<%="field_40285a8f489c17ce0148f421058c7bae_"+k%> value="<%=num%>" maxlength=24  ><span style='width: 80%; height: 19px' id=<%="field_40285a8f489c17ce0148f421058c7bae_"+k+"span"%> name=<%="field_40285a8f489c17ce0148f421058c7bae_"+k+"span"%> ><%=num%></span></TD>
+<TD noWrap><button type=button  class=Browser id=<%="button_40285a8f489c17ce0148f42105a47bb0_"+k%> name=<%="button_40285a8f489c17ce0148f42105a47bb0_"+k%> onclick="javascript:getrefobj('<%="field_40285a8f489c17ce0148f42105a47bb0_"+k%>','<%="field_40285a8f489c17ce0148f42105a47bb0_"+k+"span"%>','40285a8f48988ad501489d1a4dc6023e','sqlwhere=classify=%2740285a8f489c17ce0148a0fd7dbe0a6a%27 ','','1');supplierchange();"></button><input type="hidden" id=<%="field_40285a8f489c17ce0148f42105a47bb0_"+k%> name=<%="field_40285a8f489c17ce0148f42105a47bb0_"+k%> value="<%=spna%>"  onChange="javascript:supplierchange();"   ><span id=<%="field_40285a8f489c17ce0148f42105a47bb0_"+k+"span"%> name=<%="field_40285a8f489c17ce0148f42105a47bb0_"+k+"span"%> ><%=supplyname%><img src="/images/base/checkinput.gif" align=absMiddle></span></TD>
+<TD noWrap><input type="text" id=<%="field_40285a8f489c17ce0148f42105bb7bb2_"+k%> name=<%="field_40285a8f489c17ce0148f42105bb7bb2_"+k%> value=""  style='width: 80%; height: 18px' class=inputstyle size=10 onclick="WdatePicker()" onblur="fieldcheck(this,'(([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))-02-29)','预计送货日期');return false;"  datecheck="(([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))-02-29)"  datefieldname="预计送货日期"   onChange="checkInput('<%="field_40285a8f489c17ce0148f42105bb7bb2_"+k%>','<%="field_40285a8f489c17ce0148f42105bb7bb2_"+k+"span"%>')" ><span id=<%="field_40285a8f489c17ce0148f42105bb7bb2_"+k+"span"%> name=<%="field_40285a8f489c17ce0148f42105bb7bb2_"+k+"span"%> ><img src="/images/base/checkinput.gif" align=absMiddle></span></TD>
+<TD noWrap><input type="hidden" id=<%="field_40285a8f489c17ce0148f42105d57bb4_"+k%> name=<%="field_40285a8f489c17ce0148f42105d57bb4_"+k%> value="<%=needdate%>"  style='width: 80%; height: 18px'  ><span id=<%="field_40285a8f489c17ce0148f42105d57bb4_"+k+"span"%> name=<%="field_40285a8f489c17ce0148f42105d57bb4_"+k+"span"%> ><%=needdate%></span></TD>
+<TD noWrap><input type="hidden" id=<%="field_40285a8f489c17ce0148f42105f27bb6_"+k%> name=<%="field_40285a8f489c17ce0148f42105f27bb6_"+k%>  value="<%=address%>"  ><span style='width: 100%; height: 23px' id=<%="field_40285a8f489c17ce0148f42105f27bb6_"+k+"span"%> name=<%="field_40285a8f489c17ce0148f42105f27bb6_"+k+"span"%> ><%=address%></span></TD>
+<TD noWrap><input type="hidden" id=<%="field_40285a8f489c17ce0148f42106107bb8_"+k%> name=<%="field_40285a8f489c17ce0148f42106107bb8_"+k%> value="<%=cate%>" ><span   style='width: 80%; height: 18px' id=<%="field_40285a8f489c17ce0148f42106107bb8_"+k+"span"%> name=<%="field_40285a8f489c17ce0148f42106107bb8_"+k+"span"%> ><%=catename%></span></TD>
+<TD noWrap><input type="hidden" id=<%="field_40285a8f489c17ce0148f421062d7bba_"+k%> name=<%="field_40285a8f489c17ce0148f421062d7bba_"+k%> value="<%=subcate%>" ><span   style='width: 80%; height: 17px' id=<%="field_40285a8f489c17ce0148f421062d7bba_"+k+"span"%> name=<%="field_40285a8f489c17ce0148f421062d7bba_"+k+"span"%> ><%=subcatename%></span></TD>
+<TD noWrap><input type="hidden" id=<%="field_40285a8f489c17ce0148f421064b7bbc_"+k%> name=<%="field_40285a8f489c17ce0148f421064b7bbc_"+k%> value="<%=appno%>" ><span   style='width: 99%; height: 20px' id=<%="field_40285a8f489c17ce0148f421064b7bbc_"+k+"span"%> name=<%="field_40285a8f489c17ce0148f421064b7bbc_"+k+"span"%> ><%=appnumber%></span></TD>
+<TD style="TEXT-ALIGN: center" noWrap><input type="hidden" id=<%="field_40285a8f489c17ce0148f42106657bbe_"+k%> name=<%="field_40285a8f489c17ce0148f42106657bbe_"+k%> value="<%=no%>" maxlength=24  ><span style='width: 80%; height: 18px' id=<%="field_40285a8f489c17ce0148f42106657bbe_"+k+"span"%> name=<%="field_40285a8f489c17ce0148f42106657bbe_"+k+"span"%> ><%=no%></span></TD>
+<TD noWrap><input type="hidden" id=<%="field_40285a8f489c17ce0148f42106837bc0_"+k%> name=<%="field_40285a8f489c17ce0148f42106837bc0_"+k%> value="<%=subject%>" ><span   style='width: 80%; height: 19px' id=<%="field_40285a8f489c17ce0148f42106837bc0_"+k+"span"%> name=<%="field_40285a8f489c17ce0148f42106837bc0_"+k+"span"%> ><%=subjectname%></span></TD>
+<TD noWrap><input type="hidden" id=<%="field_40285a8f489c17ce0148f42106a17bc2_"+k%> name=<%="field_40285a8f489c17ce0148f42106a17bc2_"+k%> value="<%=innerid%>" ><span   style='width: 80%; height: 17px' id=<%="field_40285a8f489c17ce0148f42106a17bc2_"+k+"span"%> name=<%="field_40285a8f489c17ce0148f42106a17bc2_"+k+"span"%> ><%=innerorder%></span></TD>
+<TD noWrap><input type="hidden" id=<%="field_40285a8f489c17ce0148f42106be7bc4_"+k%> name=<%="field_40285a8f489c17ce0148f42106be7bc4_"+k%>  value="<%=scode%>"  ><span style='width: 80%; height: 17px' id=<%="field_40285a8f489c17ce0148f42106be7bc4_"+k+"span"%> name=<%="field_40285a8f489c17ce0148f42106be7bc4_"+k+"span"%> ><%=scode%></span></TD>
+<%
+	//物品类型    
+	if(goodstyle.equals("40285a8f489c17ce0148a6f30a642b7d")) //如果是定价采购           
+	{  
+		%>
+		<TD noWrap><input type="hidden" id=<%="field_40285a8f489c17ce0148f42106dc7bc6_"+k%> name=<%="field_40285a8f489c17ce0148f42106dc7bc6_"+k%> value="<%=taxcode%>"  style='width: 80%; height: 17px'  onChange="taxchange()"><span id=<%="field_40285a8f489c17ce0148f42106dc7bc6_"+k+"span"%> name=<%="field_40285a8f489c17ce0148f42106dc7bc6_"+k+"span"%> ><%=codename%></span></TD>
+		<%
+	}
+	else
+	  {
+		%>
+		<TD noWrap><button type=button  class=Browser  id=<%="button_40285a8f489c17ce0148f42106dc7bc6_"+k%> name=<%="button_40285a8f489c17ce0148f42106dc7bc6_"+k%> onclick="javascript:getrefobj('<%="field_40285a8f489c17ce0148f42106dc7bc6_"+k%>','<%="field_40285a8f489c17ce0148f42106dc7bc6_"+k+"span"%>','40285a8f489c17ce0149075523563b8b','','','0');taxchange();"></button><input type="hidden" id=<%="field_40285a8f489c17ce0148f42106dc7bc6_"+k%> name=<%="field_40285a8f489c17ce0148f42106dc7bc6_"+k%> value="<%=taxcode%>"  style='width: 80%; height: 17px' onChange="taxchange()" ><span id=<%="field_40285a8f489c17ce0148f42106dc7bc6_"+k+"span"%> name=<%="field_40285a8f489c17ce0148f42106dc7bc6_"+k+"span"%> ><%=codename%><img src="/images/base/checkinput.gif" align=absMiddle></span></TD>
+
+		<%
+
+	  }
+%>
+
+<TD noWrap><input type="hidden" id=<%="field_40285a8f489c17ce0148f42106f67bc8_"+k%> name=<%="field_40285a8f489c17ce0148f42106f67bc8_"+k%> value="<%=taxtype%>" ><span style='width: 80%; height: 18px' id=<%="field_40285a8f489c17ce0148f42106f67bc8_"+k+"span"%> name=<%="field_40285a8f489c17ce0148f42106f67bc8_"+k+"span"%> ><%=taxtypename%></span></TD>
+<TD noWrap><input type="hidden" id=<%="field_40285a8f489c17ce0148f421070f7bca_"+k%> name=<%="field_40285a8f489c17ce0148f421070f7bca_"+k%>  value="<%=taxrate%>"  ><span style='width: 80%; height: 17px' id=<%="field_40285a8f489c17ce0148f421070f7bca_"+k+"span"%> name=<%="field_40285a8f489c17ce0148f421070f7bca_"+k+"span"%> ><%=taxrate%></span></TD>
+<TD noWrap><input type="hidden" id=<%="field_40285a8f489c17ce0148f421072b7bcc_"+k%> name=<%="field_40285a8f489c17ce0148f421072b7bcc_"+k%> value="<%=currency%>" ><span   style='width: 80%; height: 18px' id=<%="field_40285a8f489c17ce0148f421072b7bcc_"+k+"span"%> name=<%="field_40285a8f489c17ce0148f421072b7bcc_"+k+"span"%> ><%=currencycode%></span></TD>
+<TD noWrap><input type="hidden" id=<%="field_40285a8f489c17ce01490c34562f611c_"+k%> name=<%="field_40285a8f489c17ce01490c34562f611c_"+k%> value="<%=num%>" maxlength=24  ><span style='width: 80%; height: 17px' id=<%="field_40285a8f489c17ce01490c34562f611c_"+k+"span"%> name=<%="field_40285a8f489c17ce01490c34562f611c_"+k+"span"%> ><%=num%></span></TD>
+<TD noWrap><input type="hidden" id=<%="field_40285a8f489c17ce01490c34565a611e_"+k%> name=<%="field_40285a8f489c17ce01490c34565a611e_"+k%> value="0" maxlength=24  ><span style='width: 80%; height: 17px' id=<%="field_40285a8f489c17ce01490c34565a611e_"+k+"span"%> name=<%="field_40285a8f489c17ce01490c34565a611e_"+k+"span"%> >0</span></TD>
+<TD noWrap><input type="text" class="InputStyle2" MAXLENGTH=256 name=<%="field_40285a8f489c17ce01490c34567c6120_"+k%>  id=<%="field_40285a8f489c17ce01490c34567c6120_"+k%> style='width: 80%; height: 17px' value="" onblur="while(value.replace(/[^\x00-\xff]/g,'**').length>maxLength)value=value.slice(0,-1);fieldcheck(this,'','备注')" ></TD>
+<TD><input type="hidden" id=<%="field_40285a8f490d114a01491ceb7d290e5d_"+k%> name=<%="field_40285a8f490d114a01491ceb7d290e5d_"+k%>  value="<%=goodsname%>"  ><span style='width: 80%; height: 20px' id=<%="field_40285a8f490d114a01491ceb7d290e5d_"+k+"span"%> name=<%="field_40285a8f490d114a01491ceb7d290e5d_"+k+"span"%> ><%=goodsname%></span></TD>
+<TD><input type="hidden" name="field_40285a8d4acccf8c014ad1d008f27e5a_fieldcheck" value="" ><select class="InputStyle6"  name=<%="field_40285a8d4acccf8c014ad1d008f27e5a_"+k%>  id=<%="field_40285a8d4acccf8c014ad1d008f27e5a_"+k%>   onchange="fillotherselect(this,'40285a8d4acccf8c014ad1d008f27e5a',0);"  ><option value=""  selected  ></option><option value="40288098276fc2120127704884290210"  >是</option><option value="40288098276fc2120127704884290211"  >否</option></select></TD></TR>
+		<%		
+	}
+}else{%> 
+	<TR id=oTR40285a8f489c17ce0148f405a13278b8 class=DataLight><!-- 明细表ID，请勿删除。-->
+<TD noWrap><span ><input type="checkbox" name="check_node_40285a8f489c17ce0148f405a13278b8" value="0"><input type=hidden name="detailid_40285a8f489c17ce0148f405a13278b8_0" value=""></span><input type="hidden" id="field_40285a8f489c17ce0148f42104807b9c_0" name="field_40285a8f489c17ce0148f42104807b9c_0" value="" maxlength=24  ><span style='width: 40.62%; height: 19px' id="field_40285a8f489c17ce0148f42104807b9c_0span" name="field_40285a8f489c17ce0148f42104807b9c_0span" ></span></TD>
+<TD noWrap><input type="hidden" id="field_40285a8f489c17ce0148f421049f7b9e_0" name="field_40285a8f489c17ce0148f421049f7b9e_0" value="" ><span style='width: 80%; height: 19px' id="field_40285a8f489c17ce0148f421049f7b9e_0span" name="field_40285a8f489c17ce0148f421049f7b9e_0span" ></span></TD>
+<TD noWrap><input type="hidden" id="field_40285a8f489c17ce0148f42104bb7ba0_0" name="field_40285a8f489c17ce0148f42104bb7ba0_0" value="" ><span   style='width: 80%; height: 19px' id="field_40285a8f489c17ce0148f42104bb7ba0_0span" name="field_40285a8f489c17ce0148f42104bb7ba0_0span" ></span></TD>
+<TD noWrap><input type="hidden" id="field_40285a8f489c17ce0148f42104d47ba2_0" name="field_40285a8f489c17ce0148f42104d47ba2_0" value="" ><span   style='width: 80%; height: 19px' id="field_40285a8f489c17ce0148f42104d47ba2_0span" name="field_40285a8f489c17ce0148f42104d47ba2_0span" ></span></TD>
+<TD noWrap><input type="hidden" id="field_40285a8f489c17ce0148f42104f07ba4_0" name="field_40285a8f489c17ce0148f42104f07ba4_0" value="" ><span   style='width: 80%; height: 19px' id="field_40285a8f489c17ce0148f42104f07ba4_0span" name="field_40285a8f489c17ce0148f42104f07ba4_0span" ></span></TD>
+<TD noWrap><input type="hidden" id="field_40285a8f489c17ce0148f421050e7ba6_0" name="field_40285a8f489c17ce0148f421050e7ba6_0" value="" ><span   style='width: 83.9%; height: 17px' id="field_40285a8f489c17ce0148f421050e7ba6_0span" name="field_40285a8f489c17ce0148f421050e7ba6_0span" ></span> </TD>
+<TD noWrap><input type="hidden" id="field_40285a8f489c17ce0148f421052f7ba8_0" name="field_40285a8f489c17ce0148f421052f7ba8_0"  value=""  ><span style='width: 80%; height: 19px' id="field_40285a8f489c17ce0148f421052f7ba8_0span" name="field_40285a8f489c17ce0148f421052f7ba8_0span" ></span></TD>
+<TD noWrap><input type="hidden" id="field_40285a8f489c17ce0148f42105467baa_0" name="field_40285a8f489c17ce0148f42105467baa_0"  value=""  ><span style='width: 80%; height: 19px' id="field_40285a8f489c17ce0148f42105467baa_0span" name="field_40285a8f489c17ce0148f42105467baa_0span" ></span></TD>
+<TD noWrap><input type="text" class="InputStyle2" name="field_40285a8f489c17ce0148f42105697bac_0"  id="field_40285a8f489c17ce0148f42105697bac_0" value=""  style='width: 80%; height: 19px'  onblur="fieldcheck(this,'^(-?[\\d+]{1,22})(\\.[\\d+]{1,2})?$','单价')"  onChange="fieldcheck(this,'^(-?[\\d+]{1,22})(\\.[\\d+]{1,2})?$','单价');checkInput('field_40285a8f489c17ce0148f42105697bac_0','field_40285a8f489c17ce0148f42105697bac_0span');" ><span id="field_40285a8f489c17ce0148f42105697bac_0span" name="field_40285a8f489c17ce0148f42105697bac_0span" ><img src="/images/base/checkinput.gif" align=absMiddle></span></TD>
+<TD style="TEXT-ALIGN: center" noWrap><input type="hidden" id="field_40285a8f489c17ce0148f421058c7bae_0" name="field_40285a8f489c17ce0148f421058c7bae_0" value="" maxlength=24  ><span style='width: 80%; height: 19px' id="field_40285a8f489c17ce0148f421058c7bae_0span" name="field_40285a8f489c17ce0148f421058c7bae_0span" ></span></TD>
+<TD noWrap><button type=button  class=Browser id="button_40285a8f489c17ce0148f42105a47bb0_0" name="button_40285a8f489c17ce0148f42105a47bb0_0" onclick="javascript:getrefobj('field_40285a8f489c17ce0148f42105a47bb0_0','field_40285a8f489c17ce0148f42105a47bb0_0span','40285a8f48988ad501489d1a4dc6023e','sqlwhere= classify=%2740285a8f489c17ce0148a0fd7dbe0a6a%27 ','','1');supplierchange();"></button><input type="hidden" id="field_40285a8f489c17ce0148f42105a47bb0_0" name="field_40285a8f489c17ce0148f42105a47bb0_0" value=""     ><span id="field_40285a8f489c17ce0148f42105a47bb0_0span" name="field_40285a8f489c17ce0148f42105a47bb0_0span" ><img src="/images/base/checkinput.gif" align=absMiddle></span></TD>
+<TD noWrap><input type="text" id="field_40285a8f489c17ce0148f42105bb7bb2_0" name="field_40285a8f489c17ce0148f42105bb7bb2_0" value=""  style='width: 80%; height: 18px' class=inputstyle size=10 onclick="WdatePicker()" onblur="fieldcheck(this,'(([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))-02-29)','预计送货日期');return false;"  datecheck="(([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))-02-29)"  datefieldname="预计送货日期"   onChange="checkInput('field_40285a8f489c17ce0148f42105bb7bb2_0','field_40285a8f489c17ce0148f42105bb7bb2_0span')" ><span id="field_40285a8f489c17ce0148f42105bb7bb2_0span" name="field_40285a8f489c17ce0148f42105bb7bb2_0span" ><img src="/images/base/checkinput.gif" align=absMiddle></span></TD>
+<TD noWrap><input type="hidden" id="field_40285a8f489c17ce0148f42105d57bb4_0" name="field_40285a8f489c17ce0148f42105d57bb4_0" value=""  style='width: 80%; height: 18px'  ><span id="field_40285a8f489c17ce0148f42105d57bb4_0span" name="field_40285a8f489c17ce0148f42105d57bb4_0span" ></span></TD>
+<TD noWrap><input type="hidden" id="field_40285a8f489c17ce0148f42105f27bb6_0" name="field_40285a8f489c17ce0148f42105f27bb6_0"  value=""  ><span style='width: 100%; height: 23px' id="field_40285a8f489c17ce0148f42105f27bb6_0span" name="field_40285a8f489c17ce0148f42105f27bb6_0span" ></span></TD>
+<TD noWrap><input type="hidden" id="field_40285a8f489c17ce0148f42106107bb8_0" name="field_40285a8f489c17ce0148f42106107bb8_0" value="" ><span   style='width: 80%; height: 18px' id="field_40285a8f489c17ce0148f42106107bb8_0span" name="field_40285a8f489c17ce0148f42106107bb8_0span" ></span></TD>
+<TD noWrap><input type="hidden" id="field_40285a8f489c17ce0148f421062d7bba_0" name="field_40285a8f489c17ce0148f421062d7bba_0" value="" ><span   style='width: 80%; height: 17px' id="field_40285a8f489c17ce0148f421062d7bba_0span" name="field_40285a8f489c17ce0148f421062d7bba_0span" ></span></TD>
+<TD noWrap><input type="hidden" id="field_40285a8f489c17ce0148f421064b7bbc_0" name="field_40285a8f489c17ce0148f421064b7bbc_0" value="" ><span   style='width: 99%; height: 20px' id="field_40285a8f489c17ce0148f421064b7bbc_0span" name="field_40285a8f489c17ce0148f421064b7bbc_0span" ></span></TD>
+<TD style="TEXT-ALIGN: center" noWrap><input type="hidden" id="field_40285a8f489c17ce0148f42106657bbe_0" name="field_40285a8f489c17ce0148f42106657bbe_0" value="" maxlength=24  ><span style='width: 80%; height: 18px' id="field_40285a8f489c17ce0148f42106657bbe_0span" name="field_40285a8f489c17ce0148f42106657bbe_0span" ></span></TD>
+<TD noWrap><input type="hidden" id="field_40285a8f489c17ce0148f42106837bc0_0" name="field_40285a8f489c17ce0148f42106837bc0_0" value="" ><span   style='width: 80%; height: 19px' id="field_40285a8f489c17ce0148f42106837bc0_0span" name="field_40285a8f489c17ce0148f42106837bc0_0span" ></span></TD>
+<TD noWrap><input type="hidden" id="field_40285a8f489c17ce0148f42106a17bc2_0" name="field_40285a8f489c17ce0148f42106a17bc2_0" value="" ><span   style='width: 80%; height: 17px' id="field_40285a8f489c17ce0148f42106a17bc2_0span" name="field_40285a8f489c17ce0148f42106a17bc2_0span" ></span></TD>
+<TD noWrap><input type="hidden" id="field_40285a8f489c17ce0148f42106be7bc4_0" name="field_40285a8f489c17ce0148f42106be7bc4_0"  value=""  ><span style='width: 80%; height: 17px' id="field_40285a8f489c17ce0148f42106be7bc4_0span" name="field_40285a8f489c17ce0148f42106be7bc4_0span" ></span></TD>
+<TD noWrap><button type=button  class=Browser  id="button_40285a8f489c17ce0148f42106dc7bc6_0" name="button_40285a8f489c17ce0148f42106dc7bc6_0" onclick="javascript:getrefobj('field_40285a8f489c17ce0148f42106dc7bc6_0','field_40285a8f489c17ce0148f42106dc7bc6_0span','40285a8f489c17ce0149075523563b8b','','','0');taxchange();"></button><input type="hidden" id="field_40285a8f489c17ce0148f42106dc7bc6_0" name="field_40285a8f489c17ce0148f42106dc7bc6_0" value=""  style='width: 80%; height: 17px'  ><span id="field_40285a8f489c17ce0148f42106dc7bc6_0span" name="field_40285a8f489c17ce0148f42106dc7bc6_0span" ></span></TD>
+<TD noWrap><input type="hidden" id="field_40285a8f489c17ce0148f42106f67bc8_0" name="field_40285a8f489c17ce0148f42106f67bc8_0" value="" ><span style='width: 80%; height: 18px' id="field_40285a8f489c17ce0148f42106f67bc8_0span" name="field_40285a8f489c17ce0148f42106f67bc8_0span" ></span></TD>
+<TD noWrap><input type="hidden" id="field_40285a8f489c17ce0148f421070f7bca_0" name="field_40285a8f489c17ce0148f421070f7bca_0"  value=""  ><span style='width: 80%; height: 17px' id="field_40285a8f489c17ce0148f421070f7bca_0span" name="field_40285a8f489c17ce0148f421070f7bca_0span" ></span></TD>
+<TD noWrap><input type="hidden" id="field_40285a8f489c17ce0148f421072b7bcc_0" name="field_40285a8f489c17ce0148f421072b7bcc_0" value="" ><span   style='width: 80%; height: 18px' id="field_40285a8f489c17ce0148f421072b7bcc_0span" name="field_40285a8f489c17ce0148f421072b7bcc_0span" ></span></TD>
+<TD noWrap><input type="hidden" id="field_40285a8f489c17ce01490c34562f611c_0" name="field_40285a8f489c17ce01490c34562f611c_0" value="" maxlength=24  ><span style='width: 80%; height: 17px' id="field_40285a8f489c17ce01490c34562f611c_0span" name="field_40285a8f489c17ce01490c34562f611c_0span" ></span></TD>
+<TD noWrap><input type="hidden" id="field_40285a8f489c17ce01490c34565a611e_0" name="field_40285a8f489c17ce01490c34565a611e_0" value="" maxlength=24  ><span style='width: 80%; height: 17px' id="field_40285a8f489c17ce01490c34565a611e_0span" name="field_40285a8f489c17ce01490c34565a611e_0span" ></span></TD>
+<TD noWrap><input type="text" class="InputStyle2" MAXLENGTH=256 name="field_40285a8f489c17ce01490c34567c6120_0"  id="field_40285a8f489c17ce01490c34567c6120_0" style='width: 80%; height: 17px' value="" onblur="while(value.replace(/[^\x00-\xff]/g,'**').length>maxLength)value=value.slice(0,-1);fieldcheck(this,'','备注')" ></TD>
+<TD><input type="hidden" id="field_40285a8f490d114a01491ceb7d290e5d_0" name="field_40285a8f490d114a01491ceb7d290e5d_0"  value=""  ><span style='width: 80%; height: 20px' id="field_40285a8f490d114a01491ceb7d290e5d_0span" name="field_40285a8f490d114a01491ceb7d290e5d_0span" ></span></TD>
+<TD><input type="hidden" name="field_40285a8d4acccf8c014ad1d008f27e5a_fieldcheck" value="" ><select class="InputStyle6"  name="field_40285a8d4acccf8c014ad1d008f27e5a_0"  id="field_40285a8d4acccf8c014ad1d008f27e5a_0"   onchange="fillotherselect(this,'40285a8d4acccf8c014ad1d008f27e5a',0);"  ><option value=""  selected  ></option><option value="40288098276fc2120127704884290210"  >是</option><option value="40288098276fc2120127704884290211"  >否</option></select></TD></TR>
+<%} %>
+</TBODY>
+</table>
+</div>
+                        

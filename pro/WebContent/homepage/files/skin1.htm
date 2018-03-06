@@ -1,0 +1,57 @@
+
+<html>
+<!-- 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ -->
+<head>
+<style>
+	@import url(/homepage/skin/default/tabs.css);
+
+</style>
+</head>
+<body>
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery.idTabs.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".tabs ul").idTabs({ start:1, change:false },true);
+});
+</script>
+<table border="1">
+<tr><td>dasfsdf</td>
+</tr>
+<tr><td>
+<div class="tabs customTab"> 
+  <ul> 
+    <li><a href="#t1">Tab 1</a></li> 
+    <li><a class="selected" href="#t2">Tab 2</a></li> 
+    <li class="last"><a href="#t3">Tab 3</a></li> 
+  </ul>
+  <div class="tabContainer">
+  <div id="t1">This is tab 1.</div> 
+  <div id="t2">More content in tab 2.</div> 
+  <div id="t3">Tab 3 is always last!</div> 
+  </div>
+</div> 
+</td>
+</tr></table>
+<hr/>
+<div class="tabs"> 
+  <ul> 
+    <li><a class="selected" href="#a1">Tab 1</a></li> 
+    <li><a href="#a2">Tab 2</a></li> 
+    <li><a href="#a3">Tab 3</a></li> 
+  </ul>
+  <div class="tabContainer">
+  <div id="a1">This is tab 1.</div> 
+  <div id="a2">More content in tab 2.</div> 
+  <div id="a3">Tab 3 is always last!</div>
+  </div>
+</div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="ldapConfig" class="com.eweaver.ldap.config.LdapConfig" init-method="loadConfig" lazy-init="false" />
+
+	<bean id="userAttributeMapper" class="com.eweaver.ldap.model.user.UserAttributeMapper" />
+
+	<bean id="ldapConnector" class="com.eweaver.ldap.connector.LdapConnectorFactory" depends-on="ldapConfig" />
+
+	<bean id="ldapUserService" class="com.eweaver.ldap.service.MicrosoftADUserService">
+		<property name="ldapConnector" ref="ldapConnector" />
+		<property name="userAttributeMapper" ref="userAttributeMapper" />
+	</bean>
+
+	<bean id="ldapSyncService" class="com.eweaver.ldap.service.MicrosoftADSyncService">
+		<property name="ldapConnector" ref="ldapConnector" />
+		<property name="ldapUserService" ref="ldapUserService" />
+		<property name="humresService" ref="humresService" />
+		<property name="sysuserService" ref="sysuserService"/>
+		<property name="selectitemService" ref="selectitemService" />
+		<property name="stationinfoService" ref="stationinfoService" />
+		<property name="orgunitService" ref="orgunitService" />
+		<property name="acegiCacheManager" ref="acegiCacheManager" />
+	</bean>
+
+</beans>

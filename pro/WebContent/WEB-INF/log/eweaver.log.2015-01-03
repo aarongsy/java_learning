@@ -1,0 +1,4 @@
+ERROR:[2015-01-03 16:30:03,468] com.eweaver.document.file.FileUpload(http-0.0.0.0-80-4) :文件上传错误: Could not parse multipart servlet request; nested exception is org.apache.commons.fileupload.FileUploadBase$IOFileUploadException: Processing of multipart/form-data request failed. Read timed out
+ ERROR:[2015-01-03 23:59:00,022] com.eweaver.base.job.DelAttachJob(quartzScheduler_Worker-6) :org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [select id,imagefileid from imagefiletemp where to_date(to_char(sysdate,'yyyy-MM-dd'),'yyyy-MM-dd')-to_date(createdate,'yyyy-MM-dd') >= ]; nested exception is java.sql.SQLSyntaxErrorException: ORA-00936: 缺失表达式
+
+ 

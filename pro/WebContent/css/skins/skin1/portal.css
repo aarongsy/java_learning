@@ -1,0 +1,167 @@
+body{
+	padding: 0 0 0 5px;
+	margin: 0; 
+	overflow-x: hidden !important; 
+	overflow-y: auto;
+	/*background: url(/images/bg/22.jpg);*/
+	background-position: 0 -150;
+}
+.portal-tabs{
+	display:none;
+}
+/*门户元素样式*/
+.portlet{	/*窗体样式*/
+	border: none;
+}
+.portlet-header{	/*标题栏样式*/
+	padding: 3px 0 3px 3px;
+	background-image: url("images/portlet_header_bg.png");
+}
+.portlet-header-title {	/*标题的样式*/
+	
+}
+.portlet-header-title span {
+	color: #023B8C;
+}
+/* 门户选项卡元素样式 */
+ul.x-tab-strip-top {/*tab页头部对应的样式*/
+	background-image: url('images/portlet_header_bg.png');
+	background-repeat: no-repeat;
+	background-color:#fff;	/*背景颜色*/
+	border: none !important;				/*边框(无)*/
+	padding: 4px 0 3px 0px !important;
+}
+ul.x-tab-strip-top LI{
+	margin-left: -4px !important;
+}
+.x-tab-panel-header {
+	border-bottom: none;
+	background-color: #fff;
+	padding: 0;
+}
+.x-tab-strip-top .x-tab-right, .x-tab-strip-top .x-tab-left, .x-tab-strip-top .x-tab-strip-inner{/*未被选中时,tab页对应的样式*/
+	background-image: none !important;
+}
+/*被选中时,tab页左右两侧对应的样式*/
+.x-tab-strip-top .x-tab-strip-active .x-tab-right,.x-tab-strip-top .x-tab-strip-active .x-tab-left,.x-tab-strip-top .x-tab-strip-active .x-tab-strip-inner{
+	background-image: none !important;
+}
+.x-tab-strip-top span.x-tab-strip-text{/*未被选中时,tab页中字体对应的样式*/
+	font-family: Microsoft YaHei;
+	font-weight: bold;			/*字体宽度*/
+	color: #aaa;				/*字体颜色*/
+}
+.x-tab-strip-top .x-tab-strip-active .x-tab-strip-text{/*被选中时,tab页字体区域对应的样式*/
+	font-family: Microsoft YaHei;
+	font-weight: bold;			/*字体宽度*/
+	color: #023B8C;				/*字体颜色*/
+	padding: 1px 0;
+}
+ul.x-tab-strip-top li{
+	border: 0 !important;	
+}
+ul.x-tab-strip-top li.x-tab-strip-active{
+	border: 0px solid #475c6f !important;
+	border-bottom: none !important;
+}
+.x-tab-strip-top .x-tab-strip-over .x-tab-right,.x-tab-strip-top .x-tab-strip-over .x-tab-left,.x-tab-strip-top .x-tab-strip-over .x-tab-inner{
+
+}
+.x-tab-strip-top .x-tab-strip-over .x-tab-strip-text{
+
+}
+.x-tab-strip SPAN.x-tab-strip-text{
+	font-family: Microsoft YaHei;
+	padding: 1px 0 0 0;
+}
+.docAbstract{
+	background-color: #f5f5f5;
+}
+
+table.Econtent td a, table.Econtent td.subject a{
+	font-family: Microsoft YaHei;
+	color: #333 !important;
+}
+table.Econtent td.createdate, table.requestTabTable td.createDatetime{
+	font: 11px Microsoft YaHei;
+	color: #666;
+}
+table.Econtent td.itemIcon{
+	padding-right: 10px;
+}
+table.Econtent td.line{
+	background-color: #f5f5f5;
+}
+table.requestTabTable td a, table.requestTabTable td a:visited{
+	color: #333;
+}
+table.requestTabTable TR.even{
+	background-color: #fff;
+}
+table.requestTabTable tr td{
+	border-bottom: 1px dotted #eee;
+	padding: 2px 0 !important;
+}
+span.refresh{
+	margin: 0px 5px 0 0;
+	width: 12px;
+	height: 16px;
+	display: inline-block;
+	vertical-align: middle;
+	background: url(images/refresh.gif) no-repeat;
+	cursor: hand;
+}
+div.requestTabPortletFooter a, .portlet a{
+	font-family: Microsoft YaHei;
+	color: #023B8C;
+}
+
+
+#shortcut .data ul li{
+	text-align: center;
+	width: 60px;
+	float: left;
+	display: inline;
+	margin: 2px 0px 0px 0px;
+}
+#shortcut .handler{/*底部操作栏对应的样式*/
+	border: 0px solid red;	/*边框 (宽度  样式  颜色)*/ 
+	position: absolute !important;	/*定位*/
+	top: 44;
+	right: 0;
+}
+#shortcut .handler div{
+	width: 16px;	/*宽度*/ 
+	height: 16px;	/*高度*/
+	cursor: pointer;/*鼠标以上去的形状(手型)*/
+}
+#shortcut .handler .prev{/*底部操作栏向前滑动对应的样式*/
+	background: url("images/shortcut_prev.png") no-repeat;	/*背景 (图片平铺方式：不平铺)*/
+	float: left;		/*浮动*/
+	margin-top: 2px;	/*上外边距*/
+	margin-left: 20px;	/*左外边距*/
+	display: none;
+}
+#shortcut .handler .next{/*底部操作栏向后滑动对应的样式*/
+	background: url("images/rightArrow.png") no-repeat;	/*背景 (图片平铺方式：不平铺)*/
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 20px;
+}
+#shortcut .handler .setting{/*底部操作栏设置对应的样式*/
+	background: url("images/shortcut_setting.png") no-repeat;	/*背景 (图片平铺方式：不平铺)*/
+	float: right;		/*浮动*/
+	margin-top: 2px;	/*上外边距*/
+	margin-right: 15px;	/*右外边距*/
+	display: none;
+}
+#shortcut .data ul li span.onover{
+	background: url("images/shortcut-pic-available-bg.png") no-repeat;
+}
+#shortcut .handler .pageInfo{
+	display: none;
+}
+#shortcut .data ul li span.text{
+	color: #333;
+}

@@ -1,0 +1,85 @@
+/*
+	shortcut.css
+	快速入口对应的样式
+*/
+html,body{
+	margin: 0;	/*外边距*/ 
+	padding: 0;	/*内边距*/ 
+}
+#shortcut{
+	border: 0px solid red;	/*边框 (宽度  样式  颜色)*/ 
+}
+#shortcut .data{/*快捷方式数据区域对应的样式*/
+}
+#shortcut .data table{
+	border: none;	/*边框 (无)*/ 
+	margin: 0;	/*外边距*/ 
+}
+#shortcut .data ul{
+	list-style: none;	/*列表样式(无)*/
+}
+#shortcut .data ul li{
+	float: left;	/*浮动*/
+	margin-top: 10px;	/*上外边距*/
+	margin-left: 0px;	/*左外边距*/
+}
+#shortcut .data ul li a{
+	cursor: pointer;/*鼠标以上去的形状(手型)*/
+	height: 1em;	/*高度*/
+	text-decoration: none;
+	padding: 4px 4px 0px 4px;
+	border: 1px solid #fff;
+}
+#shortcut .data ul li a:hover{
+	background-color: #EDD6C9;
+	border: 1px solid #C7AEA9;
+	padding: 4px 4px 0px 4px;
+}
+#shortcut .data ul li a div{
+	text-align: center;	/*文字对齐方式*/
+}
+#shortcut .data ul li .pic{	/*图片对应的div的样式*/
+	height: 50px;	/*高度*/
+	width: 50px;	/*宽度*/ 
+	background-color: transparent;	/*背景颜色*/
+	padding: 0px;	/*内边距*/ 
+}
+#shortcut .data ul li .pic img{	/*图片的样式*/
+	height: 50px;	/*高度*/
+	width: 50px;	/*宽度*/ 
+}
+#shortcut .data ul li .text{/*图片下方文字区域对应的样式*/
+	font-size: 11px;	/*字体大小*/
+	color: #672D2B;/*颜色*/
+}
+#shortcut .handler{/*底部操作栏对应的样式*/
+	border: 1px solid red;	/*边框 (宽度  样式  颜色)*/ 
+	position: absolute !important;	/*定位*/
+	top: 30;
+	right: 0;
+}
+#shortcut .handler div{border: 1px solid red;
+	width: 16px;	/*宽度*/ 
+	height: 16px;	/*高度*/
+	cursor: pointer;/*鼠标以上去的形状(手型)*/
+}
+#shortcut .handler .prev{/*底部操作栏向前滑动对应的样式*/
+	background: url("images/shortcut_prev.png") no-repeat;	/*背景 (图片平铺方式：不平铺)*/
+	float: left;		/*浮动*/
+	margin-top: 2px;	/*上外边距*/
+	margin-left: 20px;	/*左外边距*/
+	display: none;
+}
+#shortcut .handler .next{/*底部操作栏向后滑动对应的样式*/
+	background: url("images/rightArrow.png") no-repeat;	/*背景 (图片平铺方式：不平铺)*/
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+#shortcut .handler .setting{/*底部操作栏设置对应的样式*/
+	background: url("images/shortcut_setting.png") no-repeat;	/*背景 (图片平铺方式：不平铺)*/
+	float: right;		/*浮动*/
+	margin-top: 2px;	/*上外边距*/
+	margin-right: 15px;	/*右外边距*/
+	display: none;
+}

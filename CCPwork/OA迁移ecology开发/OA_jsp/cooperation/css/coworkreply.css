@@ -1,0 +1,128 @@
+*{
+	font-family: Microsoft YaHei;
+	font-size: 12px;
+}
+ul.ugccmt-comments {
+	clear: both;
+	zoom: 1;
+	margin: 0;
+	list-style-type: none;
+}
+.ugccmt-comment {
+	border-top: 1px solid #EBEBEB;
+	margin: 0;
+	padding: 10px 10px 5px 10px;
+	overflow: hidden;
+	zoom: 1
+}
+#ugccmt-container-b .ugccmt-comment {
+	border-top-width: 0;
+	margin: 0 10px;
+	padding: 17px 0;
+	overflow: hidden;
+	zoom: 1
+}
+.ugccmt-comment .ugccmt-avatar-container {
+	float: left;
+	margin-right: 12px
+}
+.ugccmt-comment .ugccmt-info {
+	position: relative;
+	overflow: hidden;
+	_zoom: 1
+}
+.ugccmt-comment cite {
+	float: left;
+	font-style: normal
+}
+.ugccmt-comment cite em,.ugccmt-comment cite span,.ugccmt-comment cite a {
+	vertical-align: top
+}
+.ugccmt-comment cite a strong {
+	font-weight: bold;
+	font-style: normal;
+	text-transform: capitalize
+}
+.ugccmt-comment cite a.ugccmt-delete-cmt,.ugccmt-comment cite a.ugccmt-cancle-delete-cmt {
+	solid #7E7E7E;
+	padding-left: 5px;
+	margin-left: 2px
+}
+.ugccmt-comment cite .ugccmt-timestamp {
+	padding-left: 3px;
+	color: #7E7E7E
+}
+#ugccmt-comments .ugccmt-user-comment .ugccmt-timestamp {
+	padding-left: 0;
+	color: #7E7E7E
+}
+#ugccmt-comments .ugccmt-user-comment {
+	padding-left: 20px
+}
+.ugccmt-comment cite .ugccmt-timestamp abbr {
+	display: inline-block;
+	font: 11px;
+}
+.ugccmt-comment cite .ugccmt-delete-confirm {
+	padding-left: 3px
+}
+.ugccmt-comment blockquote {
+	clear: both;
+	margin: 0 0 0 0;
+	/*line-height: 1.4em;*/
+}
+.ugccmt-commenttext p{
+	font-family: Microsoft YaHei, Verdana;
+	color: #333;
+}
+.ugccmt-commenttext a:link{
+	font-family: Microsoft YaHei, Verdana;
+	color: blue;
+}
+.ugccmt-comment .ugccmt-negative-rating {
+	clear: both;
+	color: #777
+}
+.ugccmt-comment .ugccmt-rate {
+	float: right;
+	zoom: 1
+}
+.ugccmt-replies,.ugccmt-replies-mycmt {
+	margin-left: 58px
+}
+.ugccmt-replies .ugccmt-comment,.ugccmt-replies-mycmt .ugccmt-comment {
+	padding-left: 0
+}
+.ugccmt-bull {
+	font-size: 18px;
+	line-height: 14px;
+	color: #9b9b9b;
+	vertical-align: bottom;
+	display: none;
+}
+div.replyDivBase{
+	background-color: #f5f5f5;
+	color: #999;
+	padding: 5px;
+	margin-bottom: 5px;
+}
+span.replyDivBase11{
+	color: #999;
+	font-size: 11px;
+}
+div.replyDivBase p{
+	color: #999;
+}
+.ugccmt-rate a, .ugccmt-rate a:link, .ugccmt-rate a:visited{
+	color: blue;
+	font: 11px Microsoft YaHei;
+}
+
+div.replyResource{
+	color: #999;
+	padding: 5px;
+	background-color: #F5F5F5;
+}
+div.replyResource a{
+	font: 12px Microsoft YaHei;
+}

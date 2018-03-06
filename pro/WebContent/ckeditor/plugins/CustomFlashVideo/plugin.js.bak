@@ -1,0 +1,16 @@
+(function () {
+
+	var pluginName = 'CustomFlashVideo'; 
+	
+	var commandHandler =  {        
+		exec: function (editor) {            
+			CKEditorExt.showFlashVideoDialog(editor);        
+		}    
+	};
+	
+	CKEDITOR.plugins.add(pluginName, {
+		init: function (editor) {         
+		
+		} 
+	});
+})();

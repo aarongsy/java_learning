@@ -1,0 +1,132 @@
+@charset "utf-8";
+
+
+/* "文化建设"左栏导航 */
+#wrapper .left .sidebar dl dd a.mainmenu span {background-image: url(../images/document/ico_sidebar_mainmenu.gif);}
+
+/* == 通用的表格列表样式 == */
+.tableWrap { margin: 16px 20px 0 11px}
+/*--
+	.tableWrap .cpt : 列表标题：“我的办公”、“待办事宜”
+*/
+.tableWrap .cpt { height: 85px }
+.tableWrap .cpt strong { float: left; display: inline-block; font-size:14px;font:12px/1.5 "宋体",Arial,Helvetica,sans-serif;color:#666;  padding: 3px 0px 0px 10px; background: url(../images/ico_tableWrap_cpt.gif) 0 4px no-repeat;}
+.tableWrap .cpt strong img { margin:-2px 0 0 5px; vertical-align: middle}
+.tableWrap .cpt .float_r { float:right}
+
+
+/*--
+	.tab: 		Tab按扭的容器引用的类
+	.tab li: 	Tab按扭
+--*/
+.tableWrap .cpt .tab {float: left; margin-right: 10px;}
+.tableWrap .cpt .tab li { float:left; line-height: 18px;}
+.tableWrap .cpt .tab li img { vertical-align: middle}
+.tableWrap .cpt .tab li.div {padding: 3px 3px 0;}
+.tableWrap .cpt .tab li a { display: inline-block; padding: 3px 5px 2px;}
+.tableWrap .cpt .tab li a:hover { text-decoration: none}
+.tableWrap .cpt .tab li a:hover span { color: #c83e31}
+.tableWrap .cpt .tab li a strong { display: inline; float:none; background: none; padding: 0; cursor: pointer}
+.tableWrap .cpt .tab li a span { display: inline-block; margin: 0 3px; padding-right:0; color: #333; font-size: 12px; background: url(../images/ico_tab_expand.gif) right -1000px no-repeat; cursor: pointer}
+.tableWrap .cpt .tab li.now a { background:#c83e31; color: #fff}
+.tableWrap .cpt .tab li.now a:link span, .tableWrap .cpt .tab li.now a:visited span, .tableWrap .cpt .tab li.now a:active span, .tableWrap .cpt .tab li.now a:hover span {color:#ffd800; background-position: right 3px; padding-right:10px;text-decoration: none}
+
+/* “发起”Button */
+.tableWrap .cpt a.btnStartSign { display: inline-block; height: 20px; padding-right: 13px; background: url(../images/bg_signButtons.gif) right -600px no-repeat;}
+.tableWrap .cpt a.btnStartSign span { display: inline-block; height: 20px; padding-left: 23px; line-height: 20px; color: #fff; font-weight: bold; background: url(../images/bg_signButtons.gif) 0 -650px no-repeat; cursor: pointer}
+.tableWrap .cpt a.btnStartSign:hover { text-decoration: none}
+
+/* --表格列表及相应Tab功能样式-- */
+.tableWrap dl {clear:both; float:none; border-top: solid 2px #b7b7b7;}
+.tableWrap dl dd {}
+/*-- 
+	dl.tabC: Tab内容的容器类.
+	dd.cont: Tab内容
+--*/
+.tableWrap dl.tabC {}
+.tableWrap dl.tabC dd.cont { display: none}
+/*-- 
+	.tableWrap .tb_cpt: Tab内容对应的表格左侧标题，如“待审”、“已审”、“办结”、“驳回”、“发起”等
+--*/
+.tableWrap .tb_cpt { width: 25px; text-align: center; padding-top: 13px; font-size: 14px; font-weight:bold; background: url(../images/bg_tb_left_cpt.gif) 0 0 no-repeat;}
+.tableWrap .tb_cpt span { display: inline-block; width: 25px; padding-bottom: 13px; background: url(../images/bg_tb_left_cpt.gif) 0 bottom no-repeat;}
+
+.tableWrap tr.bg th, .tableWrap tr.bg td{ background:#f6f4ec;}
+.tableWrap th, .tableWrap td { padding: 8px 5px; *padding: 10px 5px 6px;}
+.tableWrap,table th{color: #4e4e4e;font-weight: bold;}
+
+/* “更多”Button */
+.tableWrap .btnMore { margin-bottom: -15px; text-align: right}
+.tableWrap a.more { color: #c83e31; line-height: 30px;}
+
+/* 表格中超链接样式 */
+.tableWrap a:hover {color: #c83e31; text-decoration: underline}
+.tableWrap td a { *vertical-align:baseline; *zoom: 1}
+
+/* --分页按钮及功能-- */
+.page { text-align: center; margin-top: 18px; color: #999;}
+.page .pagelink {display: inline-block; width: 290px; float: none; clear: both; }
+.page .pagelink span { float: left;}
+.page .pagelink a { float:left; display: inline-block; margin: 0 3px; height: 19px; line-height: 19px; padding: 0 7px; border: solid 1px #e0e0e0; color: #999; font-family: Verdana, Arial; overflow:hidden;}
+.page .pagelink a:link, .page a:visited, .page a:active {color: #999;}
+.page .pagelink a.now { color: #c83e31;}
+.page .pagelink a:hover { text-decoration: none; color: #c83e31;}
+.page .pagelink a.prev { background: url(../images/ico_page_arrow.gif) center 4px no-repeat;}
+.page .pagelink a.next {padding-right: 15px; background: url(../images/ico_page_arrow.gif) 45px -15px no-repeat;}
+.page .pageFunction { display: inline; position:relative; top: -7px; float: none; clear: both;}
+.page .pageFunction .jumpNum { width: 13px; margin: 0 3px; border: 1px solid #e0e0e0; padding:2px; vertical-align: middle}
+.page .pageFunction input.btnJumpTo { border: none; height: 19px; width: 33px; vertical-align:middle; color: #fff; text-align: center; background:#999; line-height: 19px; cursor: pointer}
+
+/*--"文化平台 > 协会"--*/
+.preview { height:auto; overflow: auto; padding: 10px 0; line-height: 1.5; zoom: 1 }
+.preview img {float: left; margin-right: 17px;}
+.preview strong { float: left; line-height: 2.5; *margin-bottom: -10px}
+.preview strong a:link, .preview strong a:active, .preview strong a:visited, .preview strong a:hover { color: #c79732}
+.preview .date { float: right; color: #b2b2b2; font-family: Verdana, Arial; line-height: 2.5;  *margin-bottom: -10px}
+.preview p { clear:right; line-height: 1.5}
+.preview a.more { color: #C83E31}
+/*新增协会*/
+#newasso{display: inline-block; height: 20px; padding-right:13px; background: url(../images/bg_signButtons.gif) right -600px no-repeat;}
+#newasso span { display: inline-block; height: 20px; padding-left: 5px; line-height: 20px; color: #fff; font-weight: bold; background: url(../images/bg_signButtons.gif) 0 -650px no-repeat; cursor: pointer}
+#newasso hover { text-decoration: none }
+.newasso{display: inline-block; height: 20px; padding-right:13px; background: url(../images/bg_signButtons.gif) right -600px no-repeat;}
+.newasso span { display: inline-block; height: 20px; padding-left: 7px; line-height: 20px; color: #fff; font-weight: bold; background: url(../images/bg_signButtons.gif) 0 -650px no-repeat; cursor: pointer}
+.newasso hover { text-decoration: none }
+
+/*活动展示信息*/
+.activeshowmain{text-align: center;background: white;}
+
+/*分页居中*/
+.pagecenter{float: left;margin-left: 350px;}
+
+/*协会中的搜索条件*/
+.association li{float: left;}
+.association li,input{padding: 0px 5px 3px 0px;}
+.association li.textcss{margin-top: 2px;color: #b2b2b2; font:12px/1.5 "宋体",Arial,Helvetica,sans-serif;color:#666;font-size: 14px;}
+/*私塾中的搜索条件*/
+.privateschool li{float: left;}
+.privateschool li,input{padding: 0px 5px 0px 0px;}
+.privateschool li.textcss{color: #b2b2b2; font:12px/1.5 "宋体",Arial,Helvetica,sans-serif;color:#666;font-size: 14px;font-weight: normal;}
+/*协会中活动的搜索条件*/
+.associationdetail li{float: left;}
+.associationdetail li,input{padding: 0px 5px 3px 0px;}
+.associationdetail li.textcss{margin-top: 2px;color: #b2b2b2; font:12px/1.5 "宋体",Arial,Helvetica,sans-serif;color:#666;font-weight: bold;font:12px/1.5 "宋体",Arial,Helvetica,sans-serif;color:#666;}
+.associationdetail li.textright{float: right;margin-right: 0px;}
+/*协会活动中的协会信息*/
+.assocss{color: #666;font:12px/1.5 "宋体",Arial,Helvetica,sans-serif;color:#666;}
+.associationinfo{ width:560px; padding:0px 0;}
+.associationinfo p{  line-height:24px; padding:6px 0; font-size:14px;float: left;text-align: left;}
+.associationinfo .p1{text-indent:2em;}
+.associationinfo a:hover{color: #c83e31;}
+/*会议取消中的搜索条件*/
+.firstdiv{height: 33px;}
+.firstdiv .meetingcancle li{float: left;}
+.firstdiv .meetingcancle li.vligncss{margin-top: 2px;font:12px/1.5 "宋体",Arial,Helvetica,sans-serif;color:#666;font-weight: bold;font:12px/1.5 "宋体",Arial,Helvetica,sans-serif;color:#666;}
+.firstdiv .meetingcancle li,input{padding-right: 8px;}
+.towdiv{height: 33px;}
+.towdiv .meetingcancle li{float: left;}
+.towdiv .meetingcancle li.vligncss{margin: 2px 1px;font:12px/1.5 "宋体",Arial,Helvetica,sans-serif;color:#666;font-weight: bold;font:12px/1.5 "宋体",Arial,Helvetica,sans-serif;color:#666;}
+.towdiv .meetingcancle li,input{padding-right: 8px;}
+.towdiv span{float: right;}
+.serachmeet{float: right;margin-top:-30px;}
+

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SchemaDataSet><SchemaData ID="formlink" version="4.0.0"><Fields><Field name="ID" type="string"/><Field name="OID" type="string"/><Field name="PID" type="string"/><Field name="TYPEID" type="int"/><Field name="FIELDMAP" type="string"/><Field name="ISDELETE" type="int"/></Fields><DataSet/></SchemaData></SchemaDataSet>

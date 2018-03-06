@@ -1,0 +1,954 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100331">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="orgunit"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="isback"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orgmessage3"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="status"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="name"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="fromdate"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="todate"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="hosttype"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="flowno"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="customercoding"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[weaver]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select a.requestid as id,remark3 as 备注,remark1 as 备注1,(select objname from selectitem where id=a.isback) as 是否返回,(select reqdate From uf_ctr_income  where requestid=a.ctrflow) as 评审开始日期,no as 编号,(select objname from selectitem where id=a.hosttypep) as 合同主类型,(select objname from selectitem where id=a.divideclasses) as 合同分类型,      (decode(length(orgunit),65,(select objname from orgunit where id=substr(orgunit,0,32))||','||(select objname from orgunit where id=substr(orgunit,34,32)),98,(select objname from orgunit where id=substr(orgunit,0,32))||','||(select objname from orgunit where id=substr(a.orgunit,34,32))||','||(select objname from orgunit where id=substr(a.orgunit,67,32)),131,(select objname from orgunit where id=substr(orgunit,0,32))||','||(select objname from orgunit where id=substr(a.orgunit,34,32))||','||(select objname from orgunit where id=substr(a.orgunit,67,32))||','||(select objname from orgunit where id=substr(a.orgunit,100,32)),(select objname from orgunit where id=a.orgunit)))  as 事业部, (select objname from orgunit where id=a.dodept) as 实施部门,name as 合同名称,(select unitname from uf_customer where requestid=a.customercoding) as 甲方单位, a.field001 as 甲方联系方式,       (select customerno from uf_customer where requestid=a.customercoding) as 客户编号,signterrace as 签署平台,money as 合同金额,to_number(to_char(to_date(registerdate,'yyyy-mm-dd'),'yyyymmdd')) as 登记日期,to_number(to_char(to_date(csdate,'yyyy-mm-dd'),'yyyymmdd')) as 签订日期,       (select objname from humres where id=a.csman) as 合同签订人,(select objname from humres where id=a.pjprincipal) as 项目负责人,to_number(to_char(to_date(a.predictdate,'yyyy-mm-dd'),'yyyymmdd')) as 预计完成日期,to_number(to_char(to_date(a.implementdate,'yyyy-mm-dd'),'yyyymmdd')) as 任务完成时间,       a.aptyear as 核算年份,a.bgetbudget0 as 预算外包A0,a.bg1 as 预算中间件,a.bg2 as 预算大宗,a.kplimit as 累计开票额,to_number(to_char(to_date(a.implementdate,'yyyy-mm-dd'),'yyyymmdd')) as 结项时间,       a.dklimit as 累计到款额,remark2 as 备注2,0 as 未开票,0 as 未到账,a.revenue as 应收收入,totalno as 合同总编号,orgmessage1 as 合同信息一,       orgmessage2 as 合同信息二,orgmessage3 as 合同信息三,a.isback as 是否返还 from  uf_contract a where exists(select id from formbase v where a.requestid=v.id and v.isdelete=0) and ((registerdate>='${fromdate}' and registerdate<='${todate}') or '${fromdate}' is null) ${status} 
+and ('${flowno}' is null or a.no like '%${flowno}%')
+and ('${name}' is null or a.name like '%${name}%')
+and ('${orgmessage3}' is null or a.orgmessage3 like '%${orgmessage3}%')
+and ('${customercoding}' is null or '${customercoding}' like '%'||a.customercoding||'%')
+and ('${isback}' is null or a.isback ='${isback}')
+and ('${hosttype}' is null or a.hosttypep ='${hosttype}')
+and ('${orgunit}' is null or a.orgunit like '%${orgunit}%') and ('${customercoding}' is null  or a.customercoding like '%${customercoding}%')
+]]></Query>
+</TableData>
+<TableData name="开票" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="orgunit"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="isback"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orgmessage3"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="status"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="name"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="fromdate"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="todate"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="hosttype"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="flowno"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="customercoding"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[weaver]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from (select requestid as id,kpmoney1 as 开票金额,kpdate1 as 开票时间 from uf_contract a where (kpmoney1<>0) and  ((registerdate>='${fromdate}' and registerdate<='${todate}') or '${fromdate}' is null) ${status}union all select requestid as id,kpmoney2 as 开票金额,kpdate2 as 开票时间 from uf_contract a where (kpmoney2<>0) and exists(select id from formbase v where a.requestid=v.id and v.isdelete=0) and ((registerdate>='${fromdate}' and registerdate<='${todate}') or '${fromdate}' is null) ${status}union all select requestid as id,kpmoney3 as 开票金额,kpdate3 as 开票时间 from uf_contract a where (kpmoney3<>0) and ((registerdate>='${fromdate}' and registerdate<='${todate}') or '${fromdate}' is null) ${status}union all select requestid as id,kpmoney4 as 开票金额,kpdate4 as 开票时间 from uf_contract a where (kpmoney4<>0)  and ((registerdate>='${fromdate}' and registerdate<='${todate}') or '${fromdate}' is null) ${status}union all select a.requestid as id,b.currentinvoice as 开票金额,b.invoicedate as 开票时间 from uf_contract a, uf_invoice b where a.requestid=b.contract and exists(select id from requestbase where id=b.requestid and isfinished=1) and ((registerdate>='${fromdate}' and registerdate<='${todate}') or '${fromdate}' is null) ${status}
+and ('${flowno}' is null or a.no like '%${flowno}%')
+and ('${name}' is null or a.name like '%${name}%')
+and ('${orgmessage3}' is null or a.orgmessage3 like '%${orgmessage3}%')
+and ('${customercoding}' is null or '${customercoding}' like '%'||a.customercoding||'%')
+and ('${isback}' is null or a.isback ='${isback}')
+and ('${hosttype}' is null or a.hosttypep ='${hosttype}')
+and ('${orgunit}' is null or a.orgunit like '%${orgunit}%')
+) t where  exists(select id from formbase v where t.id=v.id and v.isdelete=0)order by id,开票时间]]></Query>
+</TableData>
+<TableData name="到账" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="orgunit"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="isback"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orgmessage3"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="status"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="name"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="fromdate"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="todate"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="hosttype"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="flowno"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="customercoding"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[weaver]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from (select requestid as id,dkmoney1 as 到账金额,dkdate1 as 到账日期 from uf_contract a where a.dkmoney1>0 and ((registerdate>='${fromdate}' and registerdate<='${todate}') or '${fromdate}' is null) ${status}union all select requestid as id,dkmoney2 as 到账金额,dkdate2 as 到账日期 from uf_contract a where a.dkmoney2>0 and ((registerdate>='${fromdate}' and registerdate<='${todate}') or '${fromdate}' is null) ${status}union all select requestid as id,dkmoney3 as 到账金额,dkdate3 as 到账日期 from uf_contract a where a.dkmoney3>0 and ((registerdate>='${fromdate}' and registerdate<='${todate}') or '${fromdate}' is null) ${status}union all select requestid as id,dkmoney4 as 到账金额,dkdate4 as 到账日期 from uf_contract a where a.dkmoney4>0  and ((registerdate>='${fromdate}' and registerdate<='${todate}') or '${fromdate}' is null) ${status}union all select a.requestid as id,j.SKmongey as 到账金额,j.DKdate as 到账日期 from uf_contract a, uf_ctr_receipt j where a.requestid=j.contract and ((registerdate>='${fromdate}' and registerdate<='${todate}') or '${fromdate}' is null) ${status}
+and ('${flowno}' is null or a.no like '%${flowno}%')
+and ('${name}' is null or a.name like '%${name}%')
+and ('${orgmessage3}' is null or a.orgmessage3 like '%${orgmessage3}%')
+and ('${customercoding}' is null or '${customercoding}' like '%'||a.customercoding||'%')
+and ('${isback}' is null or a.isback ='${isback}')
+and ('${hosttype}' is null or a.hosttypep ='${hosttype}')
+and ('${orgunit}' is null or a.orgunit like '%${orgunit}%')
+) t where   exists(select id  from formbase v where t.id=v.id and v.isdelete=0)order by id,到账日期]]></Query>
+</TableData>
+<TableData name="部门分摊" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[weaver]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select a.requestid,b.objname,a.distsumfrom uf_contract_dist a,orgunit bwhere a.orgid=b.id]]></Query>
+</TableData>
+</TableDataMap>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings orientation="1" headerHeight="0.0" footerHeight="0.0">
+<PaperSize width="9.88216535433071" height="59.21267716535433"/>
+<Margin top="0.27" left="0.7500000000000002" bottom="0.27" right="0.7500000000000002"/>
+</ReportSettings>
+<ReportPageAttr>
+<HR F="0" T="0"/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[47,20,19,19,19,19,19,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,72,72,72,72,78,72,72,72,72,72,72,72,96,101,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,60,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="0">
+<O>
+<![CDATA[备注]]></O>
+<Expand/>
+</C>
+<C c="1" r="0" s="0">
+<O>
+<![CDATA[合同编号]]></O>
+<Expand/>
+</C>
+<C c="2" r="0" s="0">
+<O>
+<![CDATA[合同名称]]></O>
+<Expand/>
+</C>
+<C c="3" r="0" s="0">
+<O>
+<![CDATA[甲方单位]]></O>
+<Expand/>
+</C>
+<C c="4" r="0" s="0">
+<O>
+<![CDATA[合同金额]]></O>
+<Expand/>
+</C>
+<C c="5" r="0" s="0">
+<O>
+<![CDATA[所属事业部]]></O>
+<Expand/>
+</C>
+<C c="6" r="0" s="0">
+<O>
+<![CDATA[集团]]></O>
+<Expand/>
+</C>
+<C c="7" r="0" s="0">
+<O>
+<![CDATA[登记日期]]></O>
+<Expand/>
+</C>
+<C c="8" r="0" s="1">
+<O>
+<![CDATA[评审开始日期]]></O>
+<Expand/>
+</C>
+<C c="9" r="0" s="0">
+<O>
+<![CDATA[结项时间]]></O>
+<Expand/>
+</C>
+<C c="10" r="0" s="0">
+<O>
+<![CDATA[核算年份]]></O>
+<Expand/>
+</C>
+<C c="11" r="0" s="0">
+<O>
+<![CDATA[合同主类型]]></O>
+<Expand/>
+</C>
+<C c="12" r="0" s="0">
+<O>
+<![CDATA[合同分类型]]></O>
+<Expand/>
+</C>
+<C c="13" r="0" s="0">
+<O>
+<![CDATA[实施部门(组)]]></O>
+<Expand/>
+</C>
+<C c="14" r="0" s="0">
+<O>
+<![CDATA[甲方联系方式]]></O>
+<Expand/>
+</C>
+<C c="15" r="0" s="0">
+<O>
+<![CDATA[客户编码]]></O>
+<Expand/>
+</C>
+<C c="16" r="0" s="0">
+<O>
+<![CDATA[ 签署平台]]></O>
+<Expand/>
+</C>
+<C c="17" r="0" s="0">
+<O>
+<![CDATA[合同签订人]]></O>
+<Expand/>
+</C>
+<C c="18" r="0" s="0">
+<O>
+<![CDATA[签订日期]]></O>
+<Expand/>
+</C>
+<C c="19" r="0" s="0">
+<O>
+<![CDATA[项目负责人]]></O>
+<Expand/>
+</C>
+<C c="20" r="0" s="0">
+<O>
+<![CDATA[预计完成时间]]></O>
+<Expand/>
+</C>
+<C c="21" r="0" s="0">
+<O>
+<![CDATA[任务完成时间]]></O>
+<Expand/>
+</C>
+<C c="22" r="0" s="0">
+<O>
+<![CDATA[预算中间产品A1]]></O>
+<Expand/>
+</C>
+<C c="23" r="0" s="0">
+<O>
+<![CDATA[预算外包A0]]></O>
+<Expand/>
+</C>
+<C c="24" r="0" s="0">
+<O>
+<![CDATA[预算大宗材料A2]]></O>
+<Expand/>
+</C>
+<C c="25" r="0" s="0">
+<O>
+<![CDATA[开票金额]]></O>
+<Expand/>
+</C>
+<C c="26" r="0" s="0">
+<O>
+<![CDATA[开票日期]]></O>
+<Expand/>
+</C>
+<C c="27" r="0" s="0">
+<O>
+<![CDATA[到账金额]]></O>
+<Expand/>
+</C>
+<C c="28" r="0" s="0">
+<O>
+<![CDATA[到账日期]]></O>
+<Expand/>
+</C>
+<C c="29" r="0" s="0">
+<O>
+<![CDATA[累计开票额]]></O>
+<Expand/>
+</C>
+<C c="30" r="0" s="0">
+<O>
+<![CDATA[累计到款额]]></O>
+<Expand/>
+</C>
+<C c="31" r="0" s="0">
+<O>
+<![CDATA[未开票]]></O>
+<Expand/>
+</C>
+<C c="32" r="0" s="0">
+<O>
+<![CDATA[应收账款]]></O>
+<Expand/>
+</C>
+<C c="33" r="0" s="0">
+<O>
+<![CDATA[合同信息一]]></O>
+<Expand/>
+</C>
+<C c="34" r="0" s="0">
+<O>
+<![CDATA[合同信息二]]></O>
+<Expand/>
+</C>
+<C c="35" r="0" s="0">
+<O>
+<![CDATA[部门信息一]]></O>
+<Expand/>
+</C>
+<C c="36" r="0" s="0">
+<O>
+<![CDATA[部门信息二]]></O>
+<Expand/>
+</C>
+<C c="37" r="0" s="0">
+<O>
+<![CDATA[是否返回]]></O>
+<Expand/>
+</C>
+<C c="0" r="1" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="备注"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="1" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="编号"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="2" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="合同名称"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="3" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="甲方单位"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="4" r="1" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="合同金额"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="5" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="事业部"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="6" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="合同信息三"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="7" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="登记日期"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="8" r="1" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="评审开始日期"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="结项时间"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="10" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="核算年份"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="11" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="合同主类型"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="12" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="合同分类型"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="13" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="实施部门"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="14" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="甲方联系方式"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="15" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="客户编号"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="16" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="签署平台"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="17" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="合同签订人"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="18" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="签订日期"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="19" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="项目负责人"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="20" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="预计完成日期"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="21" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="任务完成时间"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="22" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="预算外包A0"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="23" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="预算中间件"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="24" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="预算大宗"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="25" r="1" s="2">
+<O t="DSColumn">
+<Attributes dsName="开票" columnName="开票金额"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ID]]></CNAME>
+<Compare op="0">
+<AnDSColumn dsName="ds1" columnName="ID"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="1"/>
+<CellInsertPolicy/>
+</C>
+<C c="26" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="开票" columnName="开票时间"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ID]]></CNAME>
+<Compare op="0">
+<AnDSColumn dsName="ds1" columnName="ID"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="1"/>
+<CellInsertPolicy/>
+</C>
+<C c="27" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="到账" columnName="到账金额"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ID]]></CNAME>
+<Compare op="0">
+<AnDSColumn dsName="ds1" columnName="ID"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="1"/>
+<CellInsertPolicy/>
+</C>
+<C c="28" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="到账" columnName="到账日期"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ID]]></CNAME>
+<Compare op="0">
+<AnDSColumn dsName="ds1" columnName="ID"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="1"/>
+<CellInsertPolicy/>
+</C>
+<C c="29" r="1" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=Sum(Z2)]]></Attributes>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand/>
+<CellInsertPolicy/>
+</C>
+<C c="30" r="1" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=Sum(AB2)]]></Attributes>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand/>
+<CellInsertPolicy/>
+</C>
+<C c="31" r="1" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E2 - AD2]]></Attributes>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="32" r="1" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AD2 - AE2]]></Attributes>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="33" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="备注1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="34" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="备注2"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="35" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="合同信息一"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="36" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="合同信息二"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="37" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="是否返回"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<Expand dir="0"/>
+<CellInsertPolicy/>
+</C>
+<C c="0" r="4">
+<Expand/>
+</C>
+<C c="40" r="6">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="24" r="13">
+<Expand/>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#,##0.00]]></Format>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

@@ -1,0 +1,29 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">   
+<base target="_self">
+<script language="javascript">
+function window_onload(){
+	formMain.action=dialogArguments.action;
+	formMain.updatestring.value=dialogArguments.updatestring;
+	setTimeout("formMain.submit()", 0);
+}
+</script>
+</head>
+<body language="javascript" onload="return window_onload()" scroll="no"  bgcolor="buttonface">
+
+<table width="100%" height="100%" style="font-size: 9pt">
+<tr valign="center">
+	<td align="center">
+		<span><img src='../plugin/ajaxtabs/loading.gif' /></span>&nbsp;&nbsp;正在处理,请稍候...
+	</td>
+</tr>
+</table>
+
+<form method="post" id="formMain" action="updateservice">
+	<input type="hidden" name="submitmode" value="default">
+	<input type="hidden" name="updatestring">
+</form>
+
+</body>
+</html>

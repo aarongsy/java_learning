@@ -1,0 +1,125 @@
+/*override crselect*/
+.search{	/*搜索框*/
+	height: auto;	/*高度：自动*/
+	position: absolute;	/*定位：绝对定位*/
+	top: 17px;	
+	left: 95px;	/*距离右边的距离*/
+	z-index: 3;		/*z轴显示位置*/
+	background-color: #F9FFFF;
+	border: 1px solid #CFCFCC;
+	height: 22px;
+	width: 287px;
+}
+.searchtype{ /*搜索框下拉类型的相关样式*/
+	float: left;	/*浮动：向左*/
+	margin-left: 2px;
+}
+.searchcontent{/*搜索框单行文本包含元素的样式*/
+	float: left;	/*浮动：向左*/
+	position: relative;	/*定位：相对定位*/
+	background-color: #F9FFFF;
+}
+.searchcontent input{/*搜索框单行文本框的样式*/
+	margin: 3px 0 0 5px;
+	width: 168px;	/*宽度*/
+	border: 0px solid #fff;	/*边框(宽度  样式  颜色)*/
+	border-left: none;		/*左边框(宽度  样式  颜色)*/
+	height: 17px;
+	background-color: #F9FFFF;
+}
+.searchbutton{/*搜索框搜索按钮的样式*/
+	height: 22px;	/*高度*/
+	width: 24px;	/*宽度*/
+	background: url("/css/skins/default/images/search_button.png");	/*背景图片*/
+	cursor: pointer;	/*鼠标移上去的样式(手形)*/
+	float: right;
+}
+.searchSplit{/*搜索框分割线的样式*/
+	margin: 2px 0 0 0;
+	height: 5px;	/*高度*/
+	width:1px;		/*宽度*/
+	border-left: 1px solid #CFCFCC;	/*左边框(宽度  样式  颜色)*/
+
+}
+.CRselectBox{
+	width: 76px;		/*宽度*/
+	height: 19px;
+	border: 0;
+	background-color: #F9FFFF;
+	background-image: url("../images/select_box_off.png");
+}
+.CRselectBox a.CRselectValue{
+	font-family: Microsoft YaHei;
+	font-size: 12px;
+	color: #666;
+	margin: 0;
+	padding: 3px 0px 0 4px;
+	width:55px;	/*宽度*/
+}
+.CRselectBoxOptions{
+	width: auto;
+	width: 150px \9;
+	overflow-x:auto; 
+	margin: 2px 0 0 -3px;
+	border-color: #CFCFCC;
+}
+.CRselectBoxOptions a{
+	font-family: Microsoft YaHei;
+	padding-left: 5px;
+	padding-right: 8px;
+}
+.CRselectBoxOptions a:hover{
+	background: #f5f5f5;	/**/
+	color: #333;
+	text-decoration: none;
+}
+
+
+a{  
+    cursor:pointer;  
+    text-decoration:none;  
+    hide-focus: expression(this.hideFocus=true);  
+    outline:none;  
+}  
+a:link,a:visited,a:active{  
+    text-decoration:none;  
+    color: #000000;
+}  
+  
+a:focus{  
+    outline:0;   
+}  
+.imgtitle {
+	vertical-align: middle;
+}
+.allcbox{
+    background-color:#F5F6F8;
+	padding:1px;
+	border:1px solid #F5F6F8;
+	position:relative;
+	top:-2px !important;
+	top:-2px;
+	left:-15px;
+}
+.createbtn_mouseout {
+  BORDER-RIGHT: #D4CEC7 1px solid; 
+  PADDING:0px; 
+  BORDER-TOP: #D4CEC7 1px solid;
+  FONT-SIZE: 12px; 
+  FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#D4CEC7);
+  BORDER-LEFT: #D4CEC7 1px solid; 
+  CURSOR: hand; 
+  COLOR: black; 
+  BORDER-BOTTOM: #D4CEC7 1px solid;
+}
+.createbtn_mouseover {
+   BORDER-RIGHT: #D4CEC7 1px solid;
+   PADDING: 0px; 
+   BORDER-TOP: #D4CEC7 1px solid;
+   FONT-SIZE: 12px; 
+   FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#D4CEC7); 
+   BORDER-LEFT: #D4CEC7 1px solid; 
+   CURSOR: hand; 
+   COLOR: black;
+   BORDER-BOTTOM: #D4CEC7 1px solid;
+}

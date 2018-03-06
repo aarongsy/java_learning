@@ -1,0 +1,367 @@
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 1.0//EN"
+    "http://www.getahead.ltd.uk/dwr/dwr10.dtd">
+
+<dwr>
+    <allow>
+        <convert converter="bean" match="com.eweaver.base.menu.model.Menu"/>
+		<create javascript="MenuService" creator="script">
+			<param name="language" value="beanshell"/>
+			<param name="script">
+            <![CDATA[
+					import com.eweaver.base.BaseContext;
+					import com.eweaver.base.menu.service.MenuService;
+					return (MenuService)BaseContext.getBean("menuService");
+           ]]>
+        </param>
+			<include  method="getSubMenus"></include>
+            <include  method="setCheckList"></include>
+            <include  method="setPid"></include>
+		</create>
+
+
+		<convert converter="bean" match="com.eweaver.base.orgunit.model.Orgunit"/>
+		<create javascript="OrgunitService" creator="script">
+			<param name="language" value="beanshell"/>
+			<param name="script">
+				<![CDATA[
+					import com.eweaver.base.BaseContext;
+					import com.eweaver.base.orgunit.service.OrgunitService;
+					return (OrgunitService)BaseContext.getBean("orgunitService");
+           ]]>
+			</param>
+			<include  method="getSubOrgunitList"></include>
+			<include  method="getOrgunitPathExceptRoot"></include>
+		</create>
+
+		<convert converter="bean" match="com.eweaver.base.category.model.Category"/>
+		<create javascript="CategoryService" creator="script">
+			<param name="language" value="beanshell"/>
+			<param name="script">
+				<![CDATA[
+					import com.eweaver.base.BaseContext;
+					import com.eweaver.base.category.service.CategoryService;
+					return (CategoryService)BaseContext.getBean("categoryService");
+           ]]>
+			</param>
+			<include  method="getSubCategoryList"></include>
+			<include  method="getSubCategoryList2"></include>
+			<include  method="getParentCategoryList"></include>
+		</create>
+
+		<convert converter="bean" match="com.eweaver.humres.base.model.Humrescustomize"/>
+		<create javascript="HumrescustomizeService" creator="script">
+			<param name="language" value="beanshell"/>
+			<param name="script">
+				<![CDATA[
+					import com.eweaver.base.BaseContext;
+					import com.eweaver.humres.base.service.HumrescustomizeService;
+					return (HumrescustomizeService)BaseContext.getBean("humrescustomizeService");
+           ]]>
+			</param>
+			<include method="getHumrescustomizeById"></include>
+		</create>
+
+		<convert converter="bean" match="com.eweaver.humres.base.model.HumresService"/>
+		<create javascript="HumresService" creator="script">
+			<param name="language" value="beanshell"/>
+			<param name="script">
+				<![CDATA[
+					import com.eweaver.base.BaseContext;
+					import com.eweaver.humres.base.service.HumresService;
+					return (HumresService)BaseContext.getBean("humresService");
+           ]]>
+			</param>
+			<include method="getHrmresNameById"></include>
+			<include method="initAllHumresManagers"></include>
+		</create>
+
+		<convert converter="bean" match="com.eweaver.base.security.model.Sysresource"/>
+		<create javascript="SysresourceService" creator="script">
+			<param name="language" value="beanshell"/>
+			<param name="script">
+				<![CDATA[
+					import com.eweaver.base.BaseContext;
+					import com.eweaver.base.security.service.logic.SysresourceService;
+					return (SysresourceService)BaseContext.getBean("sysresourceService");
+           ]]>
+			</param>
+			<include method="get"></include>
+		</create>
+
+		<convert converter="bean" match="com.eweaver.base.security.model.Sysperms"/>
+		<create javascript="SyspermsService" creator="script">
+			<param name="language" value="beanshell"/>
+			<param name="script">
+				<![CDATA[
+					import com.eweaver.base.BaseContext;
+					import com.eweaver.base.security.service.logic.SyspermsService;
+					return (SyspermsService)BaseContext.getBean("syspermsService");
+           ]]>
+			</param>
+			<include method="get"></include>
+		</create>
+
+        <create creator="new" javascript="DataService">
+       		<param name="class" value="com.eweaver.base.DataService"/>
+            <include method="getValue"/>
+			<include method="getValues"/>
+            <include method="getValue1"/>
+			<include method="getValues1"/>
+			<include method="getValuesForMap"/>
+			<include method="isNotUnique"/>
+			<include method="getUniqueList"/>
+			<include method="getUniqueDocList"/>
+			<include method="getFormfieldForPermission"/>
+			<include method="getValues2String"/>
+            <include method="executeSql"/>
+            <include method="executeSql1"/>
+            <include method="getValuesWithReplaceByLabelCustom"/>
+        </create>
+         <convert converter="bean" match="com.eweaver.workflow.workflow.model.Workflowinfo"/>
+		<convert converter="bean" match="com.eweaver.workflow.form.model.Formfield"/>
+		<create javascript="FormfieldService" creator="script">
+			<param name="language" value="beanshell"/>
+			<param name="script">
+				<![CDATA[
+					import com.eweaver.base.BaseContext;
+					import com.eweaver.workflow.form.service.FormfieldService;
+					return (FormfieldService)BaseContext.getBean("formfieldService");
+           ]]>
+			</param>
+			<include  method="getFieldByForm"></include>
+			<include  method="getAbstractFieldByForm"></include>
+            <include  method="getAllFieldByFormIdExist"></include>
+            <include  method="saveExcelField"></include>
+            <include  method="getForminfos"></include>
+            <include  method="getFormfieldName"></include>
+			<include method="getTablesByDS"/>
+            <include method="getFieldsByTable"/>
+            <include method="getFeildsByWorkflow"/>
+        </create>
+
+		<convert converter="bean" match="com.eweaver.base.selectitem.model.Selectitemtype"/>
+		<create javascript="SelectitemtypeService" creator="script">
+			<param name="language" value="beanshell"/>
+			<param name="script">
+				<![CDATA[
+					import com.eweaver.base.BaseContext;
+					import com.eweaver.base.selectitem.service.SelectitemtypeService;
+					return (SelectitemtypeService)BaseContext.getBean("selectitemtypeService");
+           ]]>
+			</param>
+			<include  method="getSelectitemtypeList"></include>
+		</create>
+
+
+		<convert converter="bean" match="com.eweaver.base.selectitem.model.Selectitem"/>
+		<create javascript="SelectitemService" creator="script">
+			<param name="language" value="beanshell"/>
+			<param name="script">
+				<![CDATA[
+					import com.eweaver.base.BaseContext;
+					import com.eweaver.base.selectitem.service.SelectitemService;
+					return (SelectitemService)BaseContext.getBean("selectitemService");
+           ]]>
+			</param>
+			<include  method="getSelectitemList"></include>
+            <include  method="getSelectitemListByfromfieldid"></include>
+        </create>
+
+        <convert converter="bean" match="com.eweaver.base.security.model.PermissionObj"/>
+        <convert converter="bean" match="com.eweaver.workflow.form.model.Formlayout"/>
+        <create creator="spring" javascript="FormlayoutService">
+			<param name="beanName" value="formlayoutService"/>
+			<!--<param name="script">-->
+				<!--<![CDATA[-->
+					<!--import com.eweaver.base.BaseContext;-->
+					<!--import com.eweaver.workflow.form.service.FormlayoutService.java;-->
+					<!--return (FormlayoutService)BaseContext.getBean("formlayoutService");-->
+           <!--]]>-->
+			<!--</param>-->
+            <include  method="checkOptLayout"></include>
+            <include  method="getPermissionObj"></include>
+            <include  method="deletepermissionrule"></include>
+            <include  method="findFormlayout"></include>
+        </create>
+
+
+        <create creator="spring" javascript="ContemplateService">
+			<param name="beanName" value="contemplateService"/>
+			<!--<param name="script">-->
+				<!--<![CDATA[-->
+					<!--import com.eweaver.base.BaseContext;-->
+					<!--import com.eweaver.workflow.form.service.FormlayoutService.java;-->
+					<!--return (FormlayoutService)BaseContext.getBean("formlayoutService");-->
+           <!--]]>-->
+			<!--</param>-->
+            <include  method="saveContemplate"></include>
+            <include  method="updateState"></include>
+        </create>
+
+        <create javascript="ExtfieldService" creator="script">
+			<param name="language" value="beanshell"/>
+			<param name="script">
+				<![CDATA[
+					import com.eweaver.base.BaseContext;
+					import com.eweaver.base.extfield.service.ExtfieldService;
+					return (ExtfieldService)BaseContext.getBean("extfieldService");
+           ]]>
+			</param>
+			<include  method="getExtfieldValue"></include>
+		</create>
+        <create creator="spring" javascript="NotifyService">
+            <param name="beanName" value="notifyService"/>
+            <include  method="pullNotify"></include>
+            <include  method="markRead"></include>
+        </create>
+
+		<create creator="new" javascript="TreeViewer">
+			<param name="class">com.eweaver.base.treeviewer.service.TreeViewerRemote</param>
+		</create>
+        <create creator="spring" javascript="RightTransferService">
+            <param name="beanName" value="rightTransferService"/>
+            <include  method="transfer"></include>
+            <include  method="getCurrentCount"></include>
+            <include  method="refactor"></include>
+            <include  method="permissionBatchAction"></include>
+            <include  method="permissionBatchActionHumres"></include>
+            <include  method="refactorWorkflowinfo"></include>
+            <include  method="refactorWorkflowinfoShare"></include>
+            <include  method="requestRefactor"></include>
+            <include  method="refactorWorkflowinfoSingel"></include>
+            <include  method="refactorNodeinfoSingel"></include>           
+            <include  method="refactor1"></include>
+        </create>
+
+        <!--<create creator="spring" javascript="ConformEcologyService">-->
+            <!--<param name="beanName" value="conformEcologyService"/>-->
+            <!--<include  method="importEcologyHumres"></include>-->
+        <!--</create>-->
+
+        <create creator="spring" javascript="HumresExcelService">
+            <param name="beanName" value="humresExcelService"/>
+            <include  method="outputExcel"></include>
+            <include  method="inputExcel"></include>
+            <include  method="getInPutCurrentCount"></include>
+            <include  method="getOutPutCurrentCount"></include>
+        </create>
+        <convert converter="bean" match="com.eweaver.workflow.workflow.model.Workflowinfo"/>
+             <create creator="spring" javascript="WorkflowinfoService">
+            <param name="beanName" value="workflowinfoService"/>
+            <include  method="getFormlist"></include>
+        </create>
+        <create creator="spring" javascript="UsersCategoryExcelService">
+            <param name="beanName" value="usersCategoryExcelService"/>
+            <include  method="outputExcel"></include>
+            <include  method="inputExcel"></include>
+            <include  method="outputExcelDetail"></include>
+            <include  method="inputExcelDetail"></include>
+            <include  method="getInPutCurrentCount"></include>
+            <include  method="getOutPutCurrentCount"></include>
+        </create>
+
+        <create creator="spring" javascript="UsersWorkflowExcelService">
+            <param name="beanName" value="usersWorkflowExcelService"/>
+            <include  method="outputExcel"></include>
+            <include  method="inputExcel"></include>
+            <include  method="outputExcelDetail"></include>
+            <include  method="inputExcelDetail"></include>
+            <include  method="getInPutCurrentCount"></include>
+            <include  method="getOutPutCurrentCount"></include>
+        </create>
+
+        <create creator="spring" javascript="RequestlogService">
+            <param name="beanName" value="requestlogService"/>
+            <include  method="getOperatorList0Str"></include>
+        </create>
+
+        <create creator="spring" javascript="JaxbOptService">
+            <param name="beanName" value="jaxbOptService"/>
+            <include  method="moduleExport"></include>
+            <include  method="moduleImport"></include>
+            <include  method="getInPutCurrentCount"></include>
+            <include  method="getOutPutCurrentCount"></include>
+        </create>
+
+		<!-- lightPortal homepage -->
+		<create creator="new" javascript="RemotePortal">
+			<param name="class">org.light.portal.web.RemotePortal</param>
+		</create>
+		<convert converter="bean" match="org.light.portal.core.entity.PortletObject"/>
+		<convert converter="bean" match="org.light.portal.core.entity.PortletObjectRef"/>
+		<create creator="spring" javascript="menuorgService">
+            <param name="beanName" value="menuorgService"/>
+            <include  method="createMenuByOrgid"></include>
+            <include  method="delMenuByOrgid"></include>
+            <include  method="setCheckList"></include>
+        </create>
+        <convert converter="bean" match="org.light.portal.core.entity.PortletObject"/>
+		<convert converter="bean" match="org.light.portal.core.entity.PortletObjectRef"/>
+        <convert converter="bean" match="com.eweaver.portal.model.Portalorg"/>
+        <create creator="spring" javascript="portalorgService">
+            <param name="beanName" value="portalorgService"/>
+            <include  method="createportalorgByOrgid"></include>
+            <include  method="delportalorguByOrgid"></include>
+            <include  method="setCheckList"></include>
+        </create>
+        <convert converter="bean" match="com.eweaver.workflow.report.model.Reportdef"/>
+        <convert converter="bean" match="com.eweaver.workflow.workflow.model.Workflowinfo"/>
+        <convert converter="bean" match="com.eweaver.customaction.model.Customaction"/>
+		<create creator="spring" javascript="ModuleService">
+            <param name="beanName" value="moduleService"/>
+            <include  method="getworkflowinfolist"></include>
+            <include  method="getModules"></include>
+            <include  method="getreportdeflist"></include>
+            <include  method="setPid"></include>
+            <include method="getModuleByWorkflowid"></include>
+        </create>
+          <convert converter="bean" match="com.eweaver.workflow.form.model.Forminfo" >
+          	<param name="exclude" value="fromfields, formlayouts"/>
+          </convert>
+        <convert converter="bean" match="com.eweaver.workflow.form.model.Formfield"/>
+         <convert converter="bean" match="com.eweaver.workflow.workflow.model.Formfield"/>
+        <create creator="spring" javascript="FormbaseService">
+            <param name="beanName" value="formbaseService"/>
+            <include  method="getValueChange"></include>
+        </create>
+           <convert converter="bean" match="com.eweaver.email.model.Sendemail"/>
+         	<create creator="spring" javascript="SendemailService">
+            <param name="beanName" value="sendemailService"/>
+            <include  method="setisreaddraft"></include>
+        </create>
+         <convert converter="bean" match="com.eweaver.email.model.Getemails"/>
+         	<create creator="spring" javascript="GetemailsService">
+            <param name="beanName" value="getemailsService"/>
+            <include  method="setisnew"></include>
+            <include method="getEamilNew"/>
+        </create>
+        <convert converter="bean" match="com.eweaver.workflow.request.model.RequestoperatorsObj"/>
+		<create creator="spring" javascript="RequestbaseService">
+            <param name="beanName" value="requestbaseService"/>
+            <include  method="getCurrentNodeOperators"></include>
+        </create>
+
+		<create creator="spring" javascript="WorkflowService">
+            <param name="beanName" value="workflowService"/>
+            <include  method="wordDocCreate"></include>
+            <include  method="modifyWorkflowMeddle"></include>
+            <include  method="modifyWorkflowForceFinish"></include>
+        </create>
+
+        <create creator="spring" javascript="WordModuleService">
+            <param name="beanName" value="wordModuleService"/>
+            <include  method="getAttachByWordModule"></include>
+        </create>
+
+        <create creator="spring" javascript="UserKeyService">
+            <param name="beanName" value="userKeyService"/>
+            <include  method="inputUserkey"></include>
+            <include  method="getInPutCurrentCount"></include>
+        </create>
+        <create creator="spring" javascript="StationinfoService">
+              <param name="beanName" value="stationinfoService"/>
+            <include  method="updateAllStationHumres"></include>            
+        </create>
+  </allow>
+</dwr>

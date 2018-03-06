@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.2</Version>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes isCache="false" maxMemRowCount="20000" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT title,year(now())-year(birthdate)+1 as age FROM employee]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings shrinkToFit="false" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<RowHeight defaultValue="19">
+<![CDATA[37,19,19,36]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[63,120,69]]>
+</ColumnWidth>
+<CellElementList>
+<C c="1" r="0" cs="2" s="0"><O><![CDATA[age count of employees]]></O>
+</C>
+<C c="0" r="1"></C>
+<C c="1" r="1" s="1"></C>
+<C c="2" r="1" s="1"><O t="Formula" class="Formula"><Attributes><![CDATA[=date(2009,7,31)]]></Attributes></O>
+</C>
+<C c="1" r="2" s="2"></C>
+<C c="2" r="2" s="2"><O t="DSColumn"><Attributes dsName="ds1" columnName="AGE" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.CustomGrouper">
+<Attr other="0" odisplay="其他" /><ConditionListGroup>
+<Display><![CDATA[20~25]]></Display><Condition class="com.fr.data.condition.ListCondition"><JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[AGE]]></CNAME><Compare op="4">
+<O><![CDATA[25]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[AGE]]></CNAME><Compare op="3">
+<O><![CDATA[20]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionListGroup>
+<ConditionListGroup>
+<Display><![CDATA[25~30]]></Display><Condition class="com.fr.data.condition.ListCondition"><JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[AGE]]></CNAME><Compare op="3">
+<O><![CDATA[25]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[AGE]]></CNAME><Compare op="4">
+<O><![CDATA[30]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionListGroup>
+<ConditionListGroup>
+<Display><![CDATA[30~35]]></Display><Condition class="com.fr.data.condition.ListCondition"><JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[AGE]]></CNAME><Compare op="4">
+<O><![CDATA[35]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[AGE]]></CNAME><Compare op="3">
+<O><![CDATA[30]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionListGroup>
+<ConditionListGroup>
+<Display><![CDATA[35~40]]></Display><Condition class="com.fr.data.condition.ListCondition"><JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[AGE]]></CNAME><Compare op="3">
+<O><![CDATA[35]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[AGE]]></CNAME><Compare op="4">
+<O><![CDATA[40]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionListGroup>
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="1" />
+</C>
+<C c="1" r="3" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="TITLE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="2" r="3" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="AGE" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.CountFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+</C>
+<C c="1" r="4" s="4"><O><![CDATA[Total:]]></O>
+</C>
+<C c="2" r="4" s="4"><O t="Formula" class="Formula"><Attributes><![CDATA[=sum(C4)]]></Attributes></O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="1" size="18" foreground="-8355840" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-6711040">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /></Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /></Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-6710887">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

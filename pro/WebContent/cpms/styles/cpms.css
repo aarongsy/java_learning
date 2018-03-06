@@ -1,0 +1,71 @@
+#taskinfo{
+	width:100%;
+	padding: 1 10 5 10;
+}
+#taskinfo .layouttable table td{
+	border: none;
+}
+
+#wbsdiv table {
+	border-collapse: collapse;
+	width:100%;
+	border: solid 1px #909090;
+}
+#wbsdiv td {
+	padding: 2px;
+}
+a.weight{
+	font-weight: bold;
+}
+.taskProcess{
+	width: 150px;
+	font-size: 9px;
+	vertical-align: middle;
+}
+.taskProcess img{
+	float: left;
+}
+.taskProcess div{
+	width: 100px;
+	height: 10px;
+	margin:3 0 0 0;
+	border: 1px solid;
+	float: left;
+}
+.taskProcess div div{
+	margin:1 0 0 0;
+	border:none;
+	height:8px;
+	overflow:hidden;
+}
+#CommentForm{
+	width:95%;
+	border: solid 1px #909090;
+	padding: 5 5 -5 5;
+	margin: 0 0 10 2;
+}
+#comments{
+	width:95%;
+	padding: 0;
+}
+.processList ul{
+	list-style: none; 
+	padding: 2; 
+	margin: 2 0 2 0;
+}
+.processList ul div{
+	border: dotted 1px #909090;
+	padding: 2;
+	margin: 2 0 2 0;
+}
+.processList ul li{
+	vertical-align:middle;
+	list-style: url("/images/silk/bullet_yellow.gif"); 
+	padding: 2; 
+	margin: 0 0 0 15;
+}
+tr.header {
+	HEIGHT: 21px;
+	BORDER-Spacing: 1pt;
+	background: url(/images/base/thead_bg.jpg);
+}

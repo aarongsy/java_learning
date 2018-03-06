@@ -1,0 +1,382 @@
+<%@page import="java.lang.Exception"%>
+<%@ page language="java" contentType="application/json" pageEncoding="UTF-8"%>
+<%@ page import="org.json.simple.JSONObject"%>
+<%@ page import="java.util.*" %>
+<%@ page import="com.eweaver.base.*" %>
+<%@ page import="com.eweaver.app.weight.service.*" %>
+<%@ page import="com.eweaver.base.util.*" %>
+<%@ page import="com.eweaver.app.logi.LogiSendCarAction"%>
+<%@ page import="java.util.List"%>
+<%@ page import="java.util.Map"%>
+<%@ page import="com.eweaver.base.BaseContext"%>
+<%@ page import="com.eweaver.base.BaseJdbcDao"%>
+<%@ page import="com.eweaver.base.DataService"%>
+<%@ page import="com.eweaver.base.util.DateHelper"%>
+<%@ page import="com.eweaver.app.sap.product.*"%>
+<%@ page import="org.springframework.dao.DataAccessException"%>
+<%@ page import="org.springframework.jdbc.core.JdbcTemplate"%>
+<%@ page import="org.springframework.jdbc.datasource.DataSourceTransactionManager"%>
+<%@ page import="org.springframework.transaction.*"%>
+<%@ page import="org.springframework.transaction.PlatformTransactionManager"%>
+<%@ page import="org.springframework.transaction.support.DefaultTransactionDefinition"%>
+<%@ page import="org.springframework.transaction.TransactionStatus"%>
+<%@ page import="com.sap.conn.jco.*"%>
+<%@ page import="com.sap.mw.jco.JCO.*"%>
+<%@ page import="com.eweaver.app.configsap.SapConnector"%>
+<%@page import="org.hsqldb.jdbc.jdbcBlob"%>
+<%
+	String action=StringHelper.null2String(request.getParameter("action"));
+	response.setContentType("application/json; charset=utf-8");
+	JSONObject jo = new JSONObject();
+	BaseJdbcDao baseJdbcDao = (BaseJdbcDao)BaseContext.getBean("baseJdbcDao");
+	DataService dataService = new DataService();
+	//System.out.println(action.equals("upFreightclean"));
+	if (action.equals("upFreightclean")){//清账单
+		System.out.println("---------------------SAP运费清帐开始-----------------------");
+		String flag = "true";
+		Map<String,String> retMap = new HashMap<String,String>();
+		String requestid=StringHelper.null2String(request.getParameter("requestid"));
+		System.out.println("-------------------------------------------- requestid = " + requestid);
+			String errorMessage = "";
+			String throwstr="";
+			//生成函数
+			SapConnector sapConnector = new SapConnector();
+			String functionName = "Z_CCP_POST_DG";
+			JCoFunction function = SapConnector.getRfcFunction(functionName);
+			if (function == null) {
+				System.out.println(functionName + " not found in SAP.");
+				System.out.println("SAP_RFC中没有此函数!");
+				errorMessage = functionName + " not found in SAP.";
+			}
+			//插入值
+			//给字段类型的参数 赋值
+			//function.getImportParameterList().setValue("FLAG", "UP");
+			
+			//给结构类型的参数 赋值 structure
+			JCoStructure jcostruc1 = function.getImportParameterList().getStructure("ZHEAD");
+			//System.out.println("-------------------------------------------- ZHEAD = " + jcostruc1);
+			String companyno="";
+			//List mainlist = baseJdbcDao.executeSqlForList("select t.*,nvl((select sum(amount-notaxamount) from uf_lo_loadclean where requestid=t.requestid),0.0) taxsum from uf_lo_freightclean  t where exists(select 1 from formbase f where requestid = f.id and isdelete <> 1) and  and requestid = '"
+			List mainlist = baseJdbcDao.executeSqlForList("select t.* from uf_lo_freightclean  t where requestid = '"+ requestid + "'");
+			//System.out.println("-------------------------------------------- mainlist = " + mainlist);				
+			if(mainlist.size()>0){
+				Map mm = (Map) mainlist.get(0);
+				String  voucherdate = StringHelper.null2String(mm.get("voucherdate"),DateHelper.getCurrentDate()); //凭证日期
+				voucherdate=StringHelper.replaceString(voucherdate,"-","");							
+				String  reqdate = StringHelper.null2String(mm.get("reqdate"),DateHelper.getCurrentDate());		   //清帐日期
+				reqdate=StringHelper.replaceString(reqdate,"-","");
+				//String  reqdate = StringHelper.null2String(mm.get("reqdate"),DateHelper.getCurrentDate());
+				String  vouchertype = StringHelper.null2String(mm.get("vouchertype"));							   //凭证类型
+				String  accinterval = StringHelper.null2String(mm.get("accinterval"));							   //会计期间
+				String  company = StringHelper.null2String(mm.get("company"));									   //公司代码
+				String  currency = StringHelper.null2String(mm.get("currency"));								   //货币码
+				String  voucher = StringHelper.null2String(mm.get("voucher"));									   //参考凭证号
+				String  projecttext = StringHelper.null2String(mm.get("vouchertext"));							   //项目文本
+				String state= StringHelper.null2String(mm.get("state"));										   //状态
+				
+				companyno=company;
+				//jcostruc1.setValue("BLDAT", voucherdate);//凭证日期
+				jcostruc1.setValue("BLDAT", reqdate);//凭证日期
+				jcostruc1.setValue("BUDAT", reqdate);//过帐日期
+				jcostruc1.setValue("BLART", "KG");//凭证类型
+				jcostruc1.setValue("MONAT", accinterval);//会计期间
+				jcostruc1.setValue("BUKRS", company);//公司代码
+				jcostruc1.setValue("WAERS", currency);//货币码
+				jcostruc1.setValue("XBLNR", voucher);//参考凭证号
+				jcostruc1.setValue("BKTXT", projecttext);//凭证抬头文本
+
+				System.out.println("-------------------------------------------- BLDAT = " + reqdate);
+				System.out.println("-------------------------------------------- BUDAT = " + reqdate);
+				System.out.println("-------------------------------------------- BLART = KG");
+				System.out.println("-------------------------------------------- MONAT = " + accinterval);
+				System.out.println("-------------------------------------------- BUKRS = " + company);
+				System.out.println("-------------------------------------------- WAERS = " + currency);
+				System.out.println("-------------------------------------------- XBLNR = " + voucher);
+				System.out.println("-------------------------------------------- BKTXT = " + projecttext);
+			}
+
+			JCoStructure jcostruc2 = function.getImportParameterList().getStructure("ZVENDOR");
+			//System.out.println("-------------------------------------------- ZVENDOR = " + jcostruc2);
+			if(mainlist.size()>0){
+				Map mm = (Map) mainlist.get(0);
+				String  keepcode = StringHelper.null2String(mm.get("keepcode"));
+				String  concode = StringHelper.null2String(mm.get("concode"));
+				String  sglmark = StringHelper.null2String(mm.get("sglmark"));
+				String  vouamount = StringHelper.null2String(mm.get("vouamount"));
+				String  basedate = StringHelper.null2String(mm.get("basedate"));
+				basedate=StringHelper.replaceString(basedate,"-","");
+				String  freezepay = StringHelper.null2String(mm.get("freezepay"));
+				String  paytype = StringHelper.null2String(mm.get("paytype"));
+				String payterm= StringHelper.null2String(mm.get("payterm"));
+				String  projecttext = StringHelper.null2String(mm.get("projecttext"));
+				String  cobank = StringHelper.null2String(mm.get("cobank"));
+				String  plandate = StringHelper.null2String(mm.get("plandate"));
+				plandate=StringHelper.replaceString(plandate,"-","");
+				String taxsum= StringHelper.null2String(mm.get("taxsum"));
+				
+				//fjl add
+				//String  reqdate001 = StringHelper.null2String(mm.get("reqdate"),DateHelper.getCurrentDate());		   //清帐日期
+				String  reqdate001 = StringHelper.null2String(mm.get("basedate"));		   //清帐日期
+				String  reqdate002 = StringHelper.null2String(mm.get("reqdate"),DateHelper.getCurrentDate());		   //清帐日期
+				reqdate001=StringHelper.replaceString(reqdate001,"-","");
+				reqdate002=StringHelper.replaceString(reqdate002,"-","");
+				if("".equals(basedate) || "".equals(plandate)){
+					basedate = reqdate002;
+					plandate = reqdate002;
+				}
+				//end 
+				
+				jcostruc2.setValue("NEWBS", keepcode);//记帐代码
+				jcostruc2.setValue("NEWKO", concode); //科目
+				jcostruc2.setValue("NEWUM", sglmark);//SGL标识
+				jcostruc2.setValue("WRBTR", vouamount);//凭证货币金额
+				jcostruc2.setValue("ZTERM", payterm);//付款条件
+				//jcostruc2.setValue("ZFBDT", basedate);//付款基准日期
+				jcostruc2.setValue("ZFBDT", reqdate001);//付款基准日期
+				jcostruc2.setValue("ZLSPR", freezepay);//冻结付款
+				jcostruc2.setValue("ZLSCH", paytype);//付款方式
+				jcostruc2.setValue("SGTXT", projecttext);//项目文本
+				jcostruc2.setValue("BVTYP", cobank);//合作银行类型
+				jcostruc2.setValue("FDTAG", plandate);//计划日期
+				jcostruc2.setValue("FAX", "");//税收金额
+				
+				System.out.println("-------------------------------------------- NEWBS = " + keepcode);
+				System.out.println("-------------------------------------------- NEWKO = " + concode);
+				System.out.println("-------------------------------------------- NEWUM = " + sglmark);
+				System.out.println("-------------------------------------------- WRBTR = " + vouamount);
+				System.out.println("-------------------------------------------- ZTERM = " + payterm);
+				
+				System.out.println("-------------------------------------------- ZFBDT = " + basedate);
+				System.out.println("-------------------------------------------- ZLSPR = " + freezepay);
+				System.out.println("-------------------------------------------- ZLSCH = " + paytype);
+				System.out.println("-------------------------------------------- SGTXT = " + projecttext);
+				System.out.println("-------------------------------------------- BVTYP = " + cobank);
+				System.out.println("-------------------------------------------- FDTAG = " + plandate);
+				System.out.println("-------------------------------------------- FAX = ");
+				
+			} 
+			System.out.println("----------------------------------------------------------------------------------------");
+			//运费清帐装卸暂估明细
+			List sublist01 = baseJdbcDao.executeSqlForList("select * from uf_lo_loadclean  where requestid = '"
+								+ requestid + "' order by rowindex");
+			//System.out.println("-------------------------------------------- sublist 运费清帐装卸暂估明细 = " + sublist01);	
+			//System.out.println("-------------------------------------------- sublist01 = " + sublist01.size());
+			if(sublist01.size()>0){
+				//给表类型的参数 赋值 item
+				JCoTable jcotable1 = function.getTableParameterList().getTable("ZAG");
+				//System.out.println("-------------------------------------------- ZAG = "+jcotable1);
+				for(int k=0,sizei0=sublist01.size();k<sizei0; k++){
+					Map sm = (Map) sublist01.get(k);
+					String  voucherno = StringHelper.null2String(sm.get("voucherno"));
+					jcotable1.appendRow();
+					jcotable1.setValue("BUKRS", companyno);//公司代码
+					jcotable1.setValue("KTONR", "21810990");//科目编号
+					jcotable1.setValue("BELNR", voucherno);//参考凭证号
+					//FJL add
+					String vondtdate = "";
+					List ls = baseJdbcDao.executeSqlForList("select createdate from uf_lo_budget  where voucherno = '"+ voucherno +"'");
+					if(ls.size()>0){
+						Map m1 = (Map)ls.get(0);
+						vondtdate = StringHelper.null2String(m1.get("zguploadingdae"));
+						vondtdate=StringHelper.replaceString(vondtdate,"-","");
+					}
+					jcotable1.setValue("VONDT", vondtdate);//需求日期
+					//end
+					System.out.println("-------------------------------------------- BUKRS = " + companyno);
+					System.out.println("-------------------------------------------- KTONR = 21810990");
+					System.out.println("-------------------------------------------- BELNR = " + voucherno);
+					System.out.println("-------------------------------------------- VONDT = " + vondtdate);
+				}
+			}
+			
+			
+			System.out.println("----------------------------------------------------------------------------------------");
+			//清帐调整明细
+			List sublist = baseJdbcDao.executeSqlForList("select * from uf_lo_adjustclean  where requestid = '"
+								+ requestid + "' order by rowindex");
+			//System.out.println("-------------------------------------------- sublist 清帐调整明细 = " + sublist);
+			if(sublist.size()>0){
+				//给表类型的参数 赋值 item
+				JCoTable jcotable2 = function.getTableParameterList().getTable("ZITEM");
+				//System.out.println("-------------------------------------------- ZITEM = " + jcotable2);
+				for(int i=0,sizei=sublist.size();i<sizei; i++){
+					//jcotable2.appendRow();//添加一实例行 相当于在集合中 新增一个变量然后赋值 不执行得话 相当于空集合中 内有内容 下面赋值也会有问题
+					Map sm = (Map) sublist.get(i);
+					String  chargecode = StringHelper.null2String(sm.get("chargecode"));	//记帐代码
+					String  subject = StringHelper.null2String(sm.get("subject"));			//科目
+					String  difference = StringHelper.null2String(sm.get("difference"));	//与暂估差异金额
+					String  saletax = StringHelper.null2String(sm.get("saletax"));			//销售税代码
+					String  costcentre = StringHelper.null2String(sm.get("costcentre"));	//成本中心
+					String  saleorder = StringHelper.null2String(sm.get("saleorder"));		//销售订单号
+					String  itemno = StringHelper.null2String(sm.get("itemno"));			//订单行项目
+					String  projecttext = StringHelper.null2String(sm.get("projecttext"));	//项目文本
+					
+					jcotable2.appendRow();//添加一实例行 相当于在集合中 新增一个变量然后赋值 不执行得话 相当于空集合中 内有内容 下面赋值也会有问题
+					jcotable2.setValue("NEWBS", chargecode);//记帐代码
+					jcotable2.setValue("NEWKO", subject);//科目
+					jcotable2.setValue("WRBTR", difference);//金额
+					jcotable2.setValue("MWSKZ", saletax);//销售税代码
+					jcotable2.setValue("KOSTL", costcentre);//成本中心
+					jcotable2.setValue("KDAUF", saleorder);//销售订单
+					jcotable2.setValue("KDPOS", itemno);//销售订单项目
+					jcotable2.setValue("SGTXT", projecttext);//项目文本
+					System.out.println("-------------------------------------------- NEWBS = " + chargecode);
+					System.out.println("-------------------------------------------- NEWKO = " + subject);
+					System.out.println("-------------------------------------------- WRBTR = " + difference);
+					System.out.println("-------------------------------------------- MWSKZ = " + saletax);
+					System.out.println("-------------------------------------------- KOSTL = " + costcentre);
+					System.out.println("-------------------------------------------- KDAUF = " + saleorder);
+					System.out.println("-------------------------------------------- KDPOS = " + itemno);
+					System.out.println("-------------------------------------------- SGTXT = " + projecttext);
+					
+				}
+				System.out.println("----------------------------------------------------------------------------------------");
+			}
+			//执行函数
+			function.execute(sapConnector.getDestination(sapConnector.fdPoolName));
+			JCoTable retable = function.getTableParameterList().getTable("ZLOG");
+			//String hrhr = function.getTableParameterList().getString("BELNR");
+			String belnr = function.getExportParameterList().getValue("BELNR").toString();
+			
+			System.out.println("-------------------------------------------- belnr : " + belnr);
+			System.out.println("-------------------------------------------- retable : " + retable);
+			if (retable != null) {
+				retMap.put("ZMARK", StringHelper.null2String(retable.getString("ZMARK")));
+				retMap.put("ZMESS", StringHelper.null2String(retable.getString("ZMESS")));
+				throwstr=StringHelper.null2String(retable.getString("ZMESS"));
+				System.out.println("-------------------------------------------- ZMARK " + StringHelper.null2String(retable.getString("ZMARK")));
+				System.out.println("-------------------------------------------- ZMESS " + StringHelper.null2String(retable.getString("ZMESS")));
+			}
+			//if(retMap!=null&&StringHelper.null2String(retMap.get("ZMARK")).equals("S")&&(belnr!=null || belnr !=" ")){//squareup
+			if(belnr !=""){
+				baseJdbcDao.update("update uf_lo_freightclean set state='40285a8d4b246d79014b2a66cff70b0a',sapvchno='"+belnr+"',squareup='"+belnr+"',uploadman='"+BaseContext.getRemoteUser().getId()+"',uploadtime='"+DateHelper.getCurDateTime()+"' where requestid='"+requestid+"'");
+				jo.put("msg",flag);	
+			}
+			else{
+				jo.put("msg","清账上抛失败！");
+			}
+		
+
+		System.out.println("清账上抛:"+throwstr);		
+		response.setContentType("application/json; charset=utf-8");
+		
+		response.getWriter().write(jo.toString());
+		response.getWriter().flush();
+		response.getWriter().close();
+		System.out.println("---------------------SAP运费清帐结束-----------------------");
+	}else if("upwlh".equals(action)){
+		jo.put("msg","上抛失败!");
+		String requestid=StringHelper.null2String(request.getParameter("requestid"));
+		/*生成函数  2016-02-29 xxy注释
+		SapConnector sapConnector = new SapConnector();
+		String functionName = "ZOA_MM_DOC_POST";
+		JCoFunction function = SapConnector.getRfcFunction(functionName);
+		String errorMessage = "";
+		if (function == null) {
+			System.out.println(functionName + " not found in SAP.");
+			System.out.println("SAP_RFC中没有此函数!");
+			errorMessage = functionName + " not found in SAP.";
+		}
+		*/
+		
+		List mainlist = baseJdbcDao.executeSqlForList("select t.*,o.objname from uf_lo_freightclean  t left join orgunittype o on t.factory=o.id where t.requestid = '"+ requestid + "'");
+		if(mainlist.size()>0){
+			Map mm = (Map) mainlist.get(0);
+			String  reqdate = StringHelper.null2String(mm.get("reqdate"),DateHelper.getCurrentDate());		   //清帐日期
+			String  company = StringHelper.null2String(mm.get("company"));									   //公司代码
+			String  projecttext = StringHelper.null2String(mm.get("projecttext"));							   //项目文本
+			String  fact = company;
+			String  ref = "";
+			/*	  2016-02-29 xxy注释
+			function.getImportParameterList().setValue("BKTXT",projecttext);//凭证抬头
+			System.out.println("--------------------------------------------物料凭证 凭证抬头 : " + projecttext);
+			function.getImportParameterList().setValue("BUDAT",reqdate);//过账日期
+			System.out.println("--------------------------------------------物料凭证 过账日期 : " + reqdate);
+			function.getImportParameterList().setValue("BUKRS",company);//公司代码
+			System.out.println("--------------------------------------------物料凭证 凭证抬头 : " + company);
+			
+			function.getImportParameterList().setValue("RUN_MODE","N");//调用方式
+			System.out.println("--------------------------------------------物料凭证 调用方式 : " + company);
+			function.getImportParameterList().setValue("WERKS",fact);//工厂
+			System.out.println("--------------------------------------------物料凭证 工厂 : " + company);
+			function.getImportParameterList().setValue("XBLNR",ref);//参照
+			System.out.println("--------------------------------------------物料凭证 参照 : " + company);
+			*/
+		}
+		String wlsql = "select * from uf_lo_cleanwlh where requestid='"+requestid+"'";
+		List<Map> wlList = baseJdbcDao.executeSqlForList(wlsql);
+		if(wlList!=null&&wlList.size()>0){
+			System.out.println("-------------------------------------------- 物料凭证上抛开始 requestid: " + requestid);
+			for(Map map:wlList){
+				//2016-02-29 xxy add begin
+				SapConnector sapConnector = new SapConnector();
+				String functionName = "ZOA_MM_DOC_POST";
+				JCoFunction function = SapConnector.getRfcFunction(functionName);
+				String errorMessage = "";
+				if (function == null) {
+					System.out.println(functionName + " not found in SAP.");
+					System.out.println("SAP_RFC中没有此函数!");
+					errorMessage = functionName + " not found in SAP.";
+				}
+				function.getImportParameterList().setValue("BKTXT",projecttext);//凭证抬头
+				System.out.println("--------------------------------------------物料凭证 凭证抬头 : " + projecttext);
+				function.getImportParameterList().setValue("BUDAT",reqdate);//过账日期
+				System.out.println("--------------------------------------------物料凭证 过账日期 : " + reqdate);
+				function.getImportParameterList().setValue("BUKRS",company);//公司代码
+				System.out.println("--------------------------------------------物料凭证 凭证抬头 : " + company);
+				
+				function.getImportParameterList().setValue("RUN_MODE","N");//调用方式
+				System.out.println("--------------------------------------------物料凭证 调用方式 : " + company);
+				function.getImportParameterList().setValue("WERKS",fact);//工厂
+				System.out.println("--------------------------------------------物料凭证 工厂 : " + company);
+				function.getImportParameterList().setValue("XBLNR",ref);//参照
+				System.out.println("--------------------------------------------物料凭证 参照 : " + company);
+				//2016-02-29 xxy add end			
+				
+				String materialid = StringHelper.null2String(map.get("wlh"));//物料号				
+				//String money = StringHelper.null2String(map.get("wlje"));//金额
+				String money = StringHelper.null2String(map.get("wlwsje"));//未税金额
+				String notesid = StringHelper.null2String(map.get("id"));
+				function.getImportParameterList().setValue("NOTESID",notesid);//NotesID
+				System.out.println("--------------------------------------------物料凭证 notesid : " + notesid);
+				JCoTable retTable = function.getTableParameterList().getTable("MM_DOC_ITEM");//物料凭证表格
+				retTable.appendRow();
+				retTable.setValue("MATNR",materialid);//物料号
+				System.out.println("-------------------------------------------- materialid : " + materialid);
+				retTable.setValue("ZUUMB",money);//金额
+				System.out.println("-------------------------------------------- money : " + money);
+				try {
+					function.execute(sapConnector.getDestination(sapConnector.fdPoolName));
+				} catch (JCoException e) {
+					e.printStackTrace();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				String ERR_MSG = function.getExportParameterList().getValue("ERR_MSG").toString();//错误消息
+				System.out.println(ERR_MSG);
+				String AC_DOC_NO = function.getExportParameterList().getValue("MBLNR").toString();//凭证号
+				System.out.println("-------------------------------------------- 物料凭证号AC_DOC_NO : " + AC_DOC_NO);
+				String FLAG = function.getExportParameterList().getValue("FLAG").toString();//消息类型
+				System.out.println("-------------------------------------------- 物料凭证返回FLAG : " + FLAG);
+				System.out.println(AC_DOC_NO);
+				if(!StringHelper.isEmpty(AC_DOC_NO)){
+					String insertsql = "update uf_lo_cleanwlh set wlpz=? where id=?";
+					Object[] values = new Object[2];
+					values[0] = AC_DOC_NO;
+					values[1] = notesid;
+					baseJdbcDao.update(insertsql, values);
+					jo.put("msg","true");
+				}
+			}
+			System.out.println("-------------------------------------------- 物料凭证上抛结束 requestid: " + requestid);
+		}else{
+			jo.put("msg","没有需要上抛的物料数据!");
+		}
+		response.setContentType("application/json; charset=utf-8");
+		response.getWriter().write(jo.toString());
+		response.getWriter().flush();
+		response.getWriter().close();
+		return;
+	}
+%>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<activexs>
+	<activex name="smsx" clsid="1663ed61-23eb-11d2-b92f-008048fdd814"  progid="ScriptX.Printing.3"  clsname="MeadCo HTML Printing" 
+		version="0" filepath="/plugin/smsx.exe"  filesize="677k" infos="用于系统中流程、表单打印" 
+		 checkver="0" ></activex>
+	<activex name="iWebOffice2003" clsid="23739A7E-5741-4D1C-88D5-D50B18F7C347"  progid="iWebOffice2003.iWebOffice"  clsname="WeaverOcx.file" 
+		version="8.0.0.9" filepath="/plugin/pluginexe/iWebOffice2003.exe"  filesize="707K" infos="用于知识管理中Office文档的显示，编辑。" 
+		 checkver="0" ></activex>
+	<activex name="iWebOffice2009" clsid="8B23EA28-2009-402F-92C4-59BE0E063499"  progid="iWebOffice2009.HandWriteCtrl"  clsname="WeaverOcx.file" 
+		version="10,1,0,4" filepath="/plugin/pluginexe/iWebOffice2009.exe"  filesize="740K"  infos="用于知识管理中高版本Office文档的显示，编辑。" 
+		checkver="0" ></activex>
+	
+</activexs>

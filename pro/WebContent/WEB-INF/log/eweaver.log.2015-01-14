@@ -1,0 +1,5 @@
+ERROR:[2015-01-14 00:41:48,336] com.eweaver.humres.base.servlet.HumresInfoAction(http-0.0.0.0-80-9) :org.apache.commons.fileupload.FileUploadBase$InvalidContentTypeException: the request doesn't contain a multipart/form-data or multipart/mixed stream, content type header is null
+ ERROR:[2015-01-14 19:17:08,833] com.eweaver.humres.base.servlet.HumresInfoAction(http-0.0.0.0-80-14) :org.apache.commons.fileupload.FileUploadBase$IOFileUploadException: Processing of multipart/form-data request failed. Stream ended unexpectedly
+ ERROR:[2015-01-14 23:59:00,019] com.eweaver.base.job.DelAttachJob(quartzScheduler_Worker-2) :org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [select id,imagefileid from imagefiletemp where to_date(to_char(sysdate,'yyyy-MM-dd'),'yyyy-MM-dd')-to_date(createdate,'yyyy-MM-dd') >= ]; nested exception is java.sql.SQLSyntaxErrorException: ORA-00936: »± ß±Ì¥Ô Ω
+
+ 

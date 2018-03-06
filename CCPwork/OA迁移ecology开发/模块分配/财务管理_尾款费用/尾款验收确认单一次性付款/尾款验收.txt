@@ -1,0 +1,633 @@
+<CENTER>
+<DIV id=layoutDiv>
+<TABLE class=layouttable border=1>
+<CAPTION>尾款验收确认单-一次性付款(新建)</CAPTION>
+<COLGROUP>
+<COL width="12%">
+<COL width="38%">
+<COL width="12%">
+<COL width="38%"></COLGROUP>
+<TBODY>
+<TR>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4c7d2952014c932948ca3c5d name=MultiLanguageLabel>申请单号</A></TD>
+<TD class=FieldValue colSpan=3><INPUT style="WIDTH: 80%" id=$40285a8d4c7d2952014c932948ca3c5d$ class=InputStyle2 value=[可编辑]尾款验收确认单-一次性付款主表.申请单号 name=40285a8d4c7d2952014c929bb1820f3e></TD></TR>
+<TR>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4c7d2952014c929f4b5e0f3f name=MultiLanguageLabel>公司代码</A></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 20%" id=$40285a8d4c7d2952014c929f4b5e0f3f$ class=InputStyle2 value=[可编辑]尾款验收确认单-一次性付款主表.公司代码 name=40285a8d4c7d2952014c929bb1820f3e>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <INPUT style="WIDTH: 55%" id=$40285a8d4c7d2952014c96cccf9b4035$ class=InputStyle2 value=[隐藏]尾款验收确认单-一次性付款主表.所属公司 name=40285a8d4c7d2952014c929bb1820f3e> </TD>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4c7d2952014c929f4b950f41 name=MultiLanguageLabel>填单日期</A></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4c7d2952014c929f4b950f41$ class=InputStyle2 value=[可编辑]尾款验收确认单-一次性付款主表.填单日期 name=40285a8d4c7d2952014c929bb1820f3e></TD></TR>
+<TR>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4c7d2952014c929f4bda0f43 name=MultiLanguageLabel>承办人</A></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4c7d2952014c929f4bda0f43$ class=InputStyle2 value=[可编辑]尾款验收确认单-一次性付款主表.承办人 name=40285a8d4c7d2952014c929bb1820f3e></TD>
+<TD class=FieldName noWrap>制程</TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4c7d2952014c929f4c080f45$ class=InputStyle2 value=[可编辑]尾款验收确认单-一次性付款主表.验收部门 name=40285a8d4c7d2952014c929bb1820f3e></TD></TR>
+<TR>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4c7d2952014c92a1db4d0f47 name=MultiLanguageLabel>供应商简码</A></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4c7d2952014c92a1db4d0f47$ class=InputStyle2 value=[可编辑]尾款验收确认单-一次性付款主表.供应商简码 name=40285a8d4c7d2952014c929bb1820f3e></TD>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4c7d2952014c92a1db780f49 name=MultiLanguageLabel>供应商名称</A></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4c7d2952014c92a1db780f49$ class=InputStyle2 value=[可编辑]尾款验收确认单-一次性付款主表.供应商名称 name=40285a8d4c7d2952014c929bb1820f3e></TD></TR>
+<TR>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4c7d2952014c92a1db9e0f4b name=MultiLanguageLabel>采购订单号</A></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 25.3%; HEIGHT: 19px" id=$40285a8d4c7d2952014c92a1db9e0f4b$ class=InputStyle2 value=[可编辑]尾款验收确认单-一次性付款主表.采购订单号 size=1 name=40285a8d4c7d2952014c929bb1820f3e><INPUT onclick=getinfo() value=查询 type=button><INPUT onclick=getnu() value=获取总付款金额 type=button></TD>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4c7d2952014c92a1dbc40f4d name=MultiLanguageLabel>采购员</A></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 36.12%; HEIGHT: 24px" id=$40285a8d4c7d2952014c92a1dbc40f4d$ class=InputStyle2 value=[可编辑]尾款验收确认单-一次性付款主表.采购员 size=1 name=40285a8d4c7d2952014c929bb1820f3e><INPUT style="WIDTH: 132px; HEIGHT: 24px" id=$40285a8d52f37b040152f6f2adb4011e$ class=InputStyle2 value=[隐藏]尾款验收确认单-一次性付款主表.采购员1 size=17 name=40285a8d4c7d2952014c929bb1820f3e></TD></TR>
+<TR>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4c7d2952014c92b7522e0f4f name=MultiLanguageLabel>尾款单类型</A></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4c7d2952014c92b7522e0f4f$ class=InputStyle2 value=[可编辑]尾款验收确认单-一次性付款主表.尾款单类型 name=40285a8d4c7d2952014c929bb1820f3e></TD>
+<TD class=FieldName noWrap><INPUT id=$40285a8d539be6170153a0fcdf375b92$ class=InputStyle2 value=[隐藏]尾款验收确认单-一次性付款主表.专案非专案 name=40285a8d4c7d2952014c929bb1820f3e><A id=MultiLanguageLabel_40285a8d4c7d2952014c96ccd052403b name=MultiLanguageLabel></A></TD>
+<TD class=FieldValue><INPUT id=$40285a8d4c7d2952014c97f7dbe6702d$ class=InputStyle2 value=[隐藏]尾款验收确认单-一次性付款主表.关务人员 name=40285a8d4c7d2952014c929bb1820f3e></TD></TR>
+<TR>
+<TD colSpan=4><STRONG>采购订单行项明细</STRONG></TD></TR></TBODY></TABLE></DIV>
+<DIV style="BORDER-BOTTOM: #000000 0px solid; BORDER-LEFT: #000000 0px solid; WIDTH: 100%; OVERFLOW: scroll; BORDER-TOP: #000000 0px solid; BORDER-RIGHT: #000000 0px solid">
+<DIV id=detailHtml></DIV></DIV>
+<TABLE class=layouttable border=1>
+<COLGROUP>
+<COL width="12%">
+<COL width="38%">
+<COL width="12%">
+<COL width="38%"></COLGROUP>
+<TBODY>
+<TR>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4c7d2952014c96ce1687403d name=MultiLanguageLabel>总付款金额</A></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4c7d2952014c96ce1687403d$ class=InputStyle2 value=[可编辑]尾款验收确认单-一次性付款主表.总付款金额 name=40285a8d4c7d2952014c929bb1820f3e></TD></TR></CENTER>
+<TR style="DISPLAY: none" id=show1>
+<TD colSpan=4><FONT color=#000000><STRONG><SPAN style="FONT-FAMILY: 宋体; FONT-SIZE: 10.5pt; mso-bidi-font-size: 12.0pt; mso-ascii-font-family: " Times mso-hansi-font-family: mso-bidi-font-family: ?Times New Roman?; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA?>设备信息</SPAN></STRONG></FONT></TD></TR>
+<TR style="DISPLAY: none" id=show2>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4c7d2952014c92df43e03a51 name=MultiLanguageLabel>是否逾期交货</A></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4c7d2952014c92df43e03a51$ class=InputStyle2 value=[可编辑]尾款验收确认单-一次性付款主表.是否逾期交货 name=40285a8d4c7d2952014c929bb1820f3e></TD>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4c7d2952014c92df44083a53 name=MultiLanguageLabel>设备已开始使用</A></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4c7d2952014c92df44083a53$ class=InputStyle2 value=[可编辑]尾款验收确认单-一次性付款主表.设备已开始使用 name=40285a8d4c7d2952014c929bb1820f3e></TD></TR>
+<TR style="DISPLAY: none" id=show9>
+<TD>逾期交货理由<A id=MultiLanguageLabel_40285a8d4c7d2952014c92df44083a53 name=MultiLanguageLabel></A></TD>
+<TD>&nbsp;<INPUT style="WIDTH: 274px; HEIGHT: 18px" id=$40285a8d53a219850153a222ec000058$ class=InputStyle2 value=[可编辑]尾款验收确认单-一次性付款主表.理由 size=25 name=40285a8d4c7d2952014c929bb1820f3e></TD>
+<TD>&nbsp;</TD>
+<TD>&nbsp;</TD></TR>
+<TR style="DISPLAY: none" id=show3>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4c7d2952014c92e5e4463a7c name=MultiLanguageLabel>已提供产品质量证明书、合格证</A></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4c7d2952014c92e5e4463a7c$ class=InputStyle2 value=[可编辑]尾款验收确认单-一次性付款主表.已提供产品质量证明书、合格证 name=40285a8d4c7d2952014c929bb1820f3e></TD>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4c7d2952014c92e7a7c83a7e name=MultiLanguageLabel>已提供材料质保书</A></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4c7d2952014c92e7a7c83a7e$ class=InputStyle2 value=[可编辑]尾款验收确认单-一次性付款主表.已提供材料质保书 name=40285a8d4c7d2952014c929bb1820f3e></TD></TR>
+<TR style="DISPLAY: none" id=show4>
+<TD colSpan=4><FONT color=#000000><STRONG><SPAN style="FONT-FAMILY: 宋体; FONT-SIZE: 10.5pt; mso-bidi-font-size: 12.0pt; mso-ascii-font-family: " Times mso-hansi-font-family: mso-bidi-font-family: ?Times New Roman?; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA?>工程信息</SPAN></STRONG></FONT></TD></TR>
+<TR style="DISPLAY: none" id=show5>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4c7d2952014c92e975c23a81 name=MultiLanguageLabel>是否属压力管道工程</A></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4c7d2952014c92e975c23a81$ class=InputStyle2 value=[可编辑]尾款验收确认单-一次性付款主表.是否属压力管道工程 name=40285a8d4c7d2952014c929bb1820f3e></TD>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4c7d2952014c92ebacf03a84 name=MultiLanguageLabel>厂商是否延迟完工</A></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4c7d2952014c92ebacf03a84$ class=InputStyle2 value=[可编辑]尾款验收确认单-一次性付款主表.厂商是否延迟完工 name=40285a8d4c7d2952014c929bb1820f3e></TD></TR>
+<TR style="DISPLAY: none" id=show6>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4c7d2952014c92ed1ff73a86 name=MultiLanguageLabel>晚于交货日期说明</A></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4c7d2952014c92ed1ff73a86$ class=InputStyle2 value=[可编辑]尾款验收确认单-一次性付款主表.晚于交货日期说明 name=40285a8d4c7d2952014c929bb1820f3e></TD>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4c7d2952014c92efc45d3aa6 name=MultiLanguageLabel>已依照图纸全数完工</A></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4c7d2952014c92efc45d3aa6$ class=InputStyle2 value=[可编辑]尾款验收确认单-一次性付款主表.已依照图纸全数完工 name=40285a8d4c7d2952014c929bb1820f3e></TD></TR>
+<TR style="DISPLAY: none" id=show7>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4c7d2952014c92efc4893aa8 name=MultiLanguageLabel>施作图纸已全数归还</A></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4c7d2952014c92efc4893aa8$ class=InputStyle2 value=[可编辑]尾款验收确认单-一次性付款主表.施作图纸已全数归还 name=40285a8d4c7d2952014c929bb1820f3e></TD>
+<TD class=FieldName noWrap><A id=MultiLanguageLabel_40285a8d4c7d2952014c92f0f39b3aaa name=MultiLanguageLabel>现场已全数清理完毕</A></TD>
+<TD class=FieldValue><INPUT style="WIDTH: 80%" id=$40285a8d4c7d2952014c92f0f39b3aaa$ class=InputStyle2 value=[可编辑]尾款验收确认单-一次性付款主表.现场已全数清理完毕 name=40285a8d4c7d2952014c929bb1820f3e></TD></TR></TBODY>
+<SCRIPT> 
+WeaverUtil.load(function(){  
+DWREngine.setAsync(false);   
+getvalue();
+showinfo(); 
+//getname(); 
+}); 
+
+function showinfo() 
+{ 
+DWREngine.setAsync(false);   
+
+    var purchno=document.getElementById('field_40285a8d4c7d2952014c92a1db9e0f4b').value;//采购订单号  
+
+    Ext.Ajax.request({                                                              
+         url: '/app/weikuan/weikuan.jsp',                                                             
+         params:{requestid:requestid,purchno:purchno},                                                              
+         success: function(res) {                                                              
+            var str=res.responseText;                                           
+            document.getElementById('detailHtml').innerHTML=str;                                              
+         }                                                             
+    }); 
+    getsupplyinfo(); 
+} 
+function getsupplyinfo() 
+{ 
+DWREngine.setAsync(false);   
+
+alert('获取供应商信息'); 
+    var purchno=document.getElementById('field_40285a8d4c7d2952014c92a1db9e0f4b').value;//采购订单号  
+
+    Ext.Ajax.request({                                                                
+         url: '/app/weikuan/getsupplyinfo.jsp',                                                               
+         params:{requestid:requestid,purchno:purchno},                                                                
+         success: function(res) {     
+         jsonResult = eval('('+res.responseText+')');    
+        //alert(jsonResult .LIFNR);      
+        document.getElementById('field_40285a8d4c7d2952014c92a1db4d0f47').value=jsonResult .LIFNR    ;                           //供应商简码  
+        document.getElementById('field_40285a8d4c7d2952014c92a1db4d0f47span').innerHTML=jsonResult .LIFNR  ; 
+        document.getElementById('field_40285a8d4c7d2952014c92a1db780f49').value=jsonResult .NAME1;                           //供应商名称  
+        document.getElementById('field_40285a8d4c7d2952014c92a1db780f49span').innerHTML=jsonResult .NAME1 ; 
+        document.getElementById('field_40285a8d5363b1860153644a44fe0212').value=jsonResult .ZTERM;                                           
+       // document.getElementById('field_40285a8d5363b1860153644a44fe0212span').innerHTML=jsonResult .ZTERM
+                                                                                                      
+         }                                                               
+    });
+ getsupplyinfo2()   
+} 
+
+
+function getsupplyinfo2()    
+{    
+DWREngine.setAsync(false);   
+
+alert('获取采购员');  
+    var purchno=document.getElementById('field_40285a8d4c7d2952014c92a1db9e0f4b').value;//采购订单号   
+    if(purchno!=''){   
+
+//alert('2121'); 
+    Ext.Ajax.request({                                                                   
+         url: '/app/weikuan/getname.jsp',                                                                  
+         params:{requestid:requestid,purchno:purchno},                                                                   
+         success: function(res) {        
+         jsonResult = eval('('+res.responseText+')');       
+        //alert(jsonResult .EKGRP);         
+        document.getElementById('field_40285a8d4c7d2952014c92a1dbc40f4d').value=jsonResult .EKGRP                    //采购员     
+    document.getElementById('field_40285a8d4c7d2952014c92a1dbc40f4dspan').innerHTML=jsonResult .EKGRP 
+                                                                                                         
+         }                                                                  
+    });      
+    }else{  
+        //alert('请先输入采购订单号！');  
+         document.getElementById('field_40285a8d4c7d2952014c92a1dbc40f4d').value='';                    //采购组            
+          document.getElementById('field_40285a8d4c7d2952014c92a1dbc40f4dspan').innerHTML='';    
+   }  
+DWREngine.setAsync(true);    
+
+
+}    
+
+
+
+
+
+
+
+function getinfo(){ 
+DWREngine.setAsync(false);
+    var purchno=document.getElementById('field_40285a8d4c7d2952014c92a1db9e0f4b').value;//采购订单号 
+    if(requestid=='')  
+    {  
+    //getsupplyinfo();   
+        onSubmit(1) ;
+}  
+else
+{
+    Ext.Ajax.request({                                                             
+         url: '/app/weikuan/weikuan.jsp',                                                            
+         params:{requestid:requestid,purchno:purchno},                                                             
+         success: function(res) {                                         
+            var str=res.responseText;                                          
+            document.getElementById('detailHtml').innerHTML=str;                                           
+         }                                                            
+    });      
+    getsupplyinfo();  
+}
+//getnu();
+DWREngine.setAsync(true);
+} 
+
+
+
+
+
+
+
+function getnu()  
+{  
+DWREngine.setAsync(false);  
+    var money=0;  
+    var pay='';  
+    var sql='select amount from uf_fn_wkpodetail where requestid=\''+requestid+'\''  
+    DataService.getValues(sql,{      
+        callback:function(data)      
+        {    
+         if(data&&data.length>0){   
+             for (var i=0;i<data.length ; i++)  
+             {  
+                 money=money*1+data[i].amount *1; 
+                     //alert(money);  
+             }  
+//alert(money); 
+  
+
+    
+  }          
+        }    
+    }); 
+var a=document.getElementById('field_40285a8d5363b1860153644a44fe0212').value ;
+//alert(a);
+var sql1='select pay,cpaycode from uf_fn_installmentdata  where code=\''+a+'\'' ; 
+    DataService.getValues(sql1,{       
+        callback:function(data)       
+        {     
+//alert(data.length); 
+         if(data&&data.length>0){ 
+             for (var i=0;i<data.length ; i++)   
+             { 
+                 pay=data[0].pay; 
+                 cpaycode=data[0].cpaycode; 
+//alert(pay);
+             } 
+
+           }           
+        }     
+    });   
+if (pay=='') 
+{ 
+    pay='1'; 
+//alert(pay);  
+} 
+else 
+    {
+     pay =pay*0.01 ; 
+//alert(pay);   
+    } 
+document.getElementById('field_40285a8d4c7d2952014c96ce1687403d').value=(money*pay).toFixed(2) ;    
+document.getElementById('field_40285a8d4c7d2952014c96ce1687403dspan').innerHTML=(money*pay).toFixed(2) ;                                    //总付款金额
+
+ 
+     var b='';  
+    var sql2='select currency from uf_fn_wkpodetail where requestid=\''+requestid+'\'';  
+    DataService.getValues(sql2,{           
+     callback:function(data)           
+        {         
+         if(data&&data.length>0)     
+             {     
+                 b=data[0].currency;  
+                 //alert(b);  
+             }               
+        }         
+    });   
+    var s='';  
+    var sql3='select ddtype from uf_fn_wkoneoffpay where requestid=\''+requestid+'\'';    
+    DataService.getValues(sql3,{            
+     callback:function(data)            
+        {          
+         if(data&&data.length>0)      
+             {      
+                 s=data[0].ddtype ;   
+                 alert(s);   
+             }                
+        }          
+    });    
+    if (s=='ZC05'||s=='ZC06'||s=='ZC07'||s=='ZC17'||s=='ZC18')   
+    {   
+        if (b=='RMB'&&money>='100000')  
+        {  
+            return true;  
+        }  
+        else if (b!='RMB')  
+        {  
+
+            return true;  
+        }  
+        else  
+        {  
+            alert('订单不符合，请勿提交！'); 
+        document.getElementById('field_40285a8d4c7d2952014c92b7522e0f4f').value='';  
+            return false;  
+        }  
+           
+    }   
+    else   
+    {   
+         alert('订单不符合，请勿提交！');   
+        document.getElementById('field_40285a8d4c7d2952014c92b7522e0f4f').value=''; 
+        return false;   
+    }   
+
+DWREngine.setAsync(true);  
+
+}
+
+
+
+
+
+function getcode()
+{
+    var  a=document.getElementById('field_40285a8d4c7d2952014c92a1db9e0f4b').value
+    document.getElementById('field_40285a8d4c7d2952014c932948ca3c5d').value='WK'+a;
+    document.getElementById('field_40285a8d4c7d2952014c932948ca3c5dspan').innerHTML= 'WK'+a; 
+
+
+}
+
+
+
+
+
+/*
+function getformat(){  
+    DWREngine.setAsync(false);    
+    var a='';
+    var  amount='';
+    var sql='select payamt,amount from uf_fn_wkpodetail where requestid=\''+requestid+'\'';  
+     DataService.getValues(sql,{        
+        callback:function(data)        
+        {      
+         if(data&&data.length>0)  
+//alert('length:'+data.length);  
+             {      
+             for (var i=0;i<data.length ;i++ )  
+             {  
+                 a=data[i].payamt; 
+                 amount=data[i].amount; 
+//alert(format_number(a));  
+              var sql2='update uf_fn_wkpodetail set  payamt=\''+format_number(a)+'\' where requestid=\''+requestid+'\'';         
+             DataService.executeSql(sql2,{callback:function(data){}}); 
+             }  
+             }            
+        }      
+    });  
+           DWREngine.setAsync(true);    
+ }   
+
+function format_number(n){    
+   var b=parseInt(n).toString();    
+   var len=b.length;    
+   if(len<=3){return b;}    
+   var r=len%3;    
+   return r>0?b.slice(0,r)+','+b.slice(r,len).match(/\d{3}/g).join(','):b.slice(r,len).match(/\d{3}/g).join(',');    
+ }   
+
+*/
+
+
+function getapply()
+{  
+    DWREngine.setAsync(false);  
+    var b=''; 
+    var sql='select currency from uf_fn_wkpodetail where requestid=\''+requestid+'\''; 
+    DataService.getValues(sql,{          
+     callback:function(data)          
+        {        
+         if(data&&data.length>0)    
+             {    
+                 b=data[0].currency; 
+                 alert(b); 
+             }              
+        }        
+    });  
+    var a=''; 
+    var sql1='select ddtype from uf_fn_wkoneoffpay where requestid=\''+requestid+'\'';   
+    DataService.getValues(sql1,{           
+     callback:function(data)           
+        {         
+         if(data&&data.length>0)     
+             {     
+                 a=data[0].ddtype ;  
+                 alert(a);  
+             }               
+        }         
+    });   
+    if (a=='ZC05'||a=='ZC06'||a=='ZC07'||a=='ZC17'||a=='ZC18')  
+    {  
+        if (b=='RMB'&&document.getElementById('field_40285a8d4c7d2952014c96ce1687403d').value>'100000') 
+        { 
+            return true; 
+        } 
+        else if (b!='RMB') 
+        { 
+
+            return true; 
+        } 
+        else 
+        { 
+            alert('订单不符合，请勿提交！');
+        document.getElementById('field_40285a8d4c7d2952014c92b7522e0f4f').value=''; 
+            return false; 
+        } 
+          
+    }  
+    else  
+    {  
+         alert('订单不符合，请勿提交！');  
+        document.getElementById('field_40285a8d4c7d2952014c92b7522e0f4f').value='';
+        return false;  
+    }  
+    DWREngine.setAsync(true);  
+} 
+
+
+
+function getjudge() 
+{ 
+DWREngine.setAsync(false);   
+    var pono=''; 
+    var sql='select a.pono from uf_fn_wkoneoffpay a left join requestbase b on a.requestid=b.id  where isfinished=1'; 
+    DataService.getValues(sql,{      
+        callback:function(data)      
+        {    
+         if(data&&data.length>0){   
+             for (var i=0;i<data.length ; i++)  
+             {  
+                pono=data[i].pono; 
+    if (document.getElementById('field_40285a8d4c7d2952014c92a1db9e0f4b').value==pono)  
+    {  
+alert('该采购订单已在流程内！'); 
+document.getElementById('field_40285a8d4c7d2952014c92a1db9e0f4b').value='';
+    }  
+else{}
+             }  
+  
+           }          
+        }    
+    }); 
+DWREngine.setAsync(true);   
+
+}
+
+function getvalue(){    
+    if (document.getElementById('field_40285a8d4c7d2952014c92b7522e0f4f').value=='40285a8d4c7d2952014c92b836350f53')    //设备  
+    {    
+        document.getElementById('show1').style.display='';    
+        document.getElementById('show2').style.display='';    
+        document.getElementById('show3').style.display='';  
+
+        document.getElementById('show4').style.display='none';     
+        document.getElementById('show5').style.display='none';     
+        document.getElementById('show6').style.display='none';     
+        document.getElementById('show7').style.display='none';    
+
+        setNeedCheck('40285a8d4c7d2952014c92df43e03a51',true);   
+        setNeedCheck('40285a8d4c7d2952014c92df44083a53',true);    
+        setNeedCheck('40285a8d4c7d2952014c92e5e4463a7c',true);    
+        setNeedCheck('40285a8d4c7d2952014c92e7a7c83a7e',true);    
+
+        setNeedCheck('40285a8d4c7d2952014c92e975c23a81',false);     
+        setNeedCheck('40285a8d4c7d2952014c92ebacf03a84',false);      
+       // setNeedCheck('40285a8d4c7d2952014c92ed1ff73a86',false);      
+        setNeedCheck('40285a8d4c7d2952014c92efc45d3aa6',false);      
+        setNeedCheck('40285a8d4c7d2952014c92efc4893aa8 ',false);  
+        setNeedCheck('40285a8d4c7d2952014c92f0f39b3aaa',false);          
+
+    }    
+    else if (document.getElementById('field_40285a8d4c7d2952014c92b7522e0f4f').value=='40285a8d4c7d2952014c92b836340f52')    
+    {    
+        document.getElementById('show1').style.display='none';     
+        document.getElementById('show2').style.display='none';     
+        document.getElementById('show3').style.display='none';   
+
+        document.getElementById('show4').style.display='';    
+        document.getElementById('show5').style.display='';    
+        document.getElementById('show6').style.display='';    
+        document.getElementById('show7').style.display='';   
+        setNeedCheck('40285a8d4c7d2952014c92e975c23a81',true);    
+        setNeedCheck('40285a8d4c7d2952014c92ebacf03a84',true);     
+       // setNeedCheck('40285a8d4c7d2952014c92ed1ff73a86',true);     
+        setNeedCheck('40285a8d4c7d2952014c92efc45d3aa6',true);     
+        setNeedCheck('40285a8d4c7d2952014c92efc4893aa8 ',true); 
+        setNeedCheck('40285a8d4c7d2952014c92f0f39b3aaa',true);         
+
+        setNeedCheck('40285a8d4c7d2952014c92df43e03a51',false);    
+        setNeedCheck('40285a8d4c7d2952014c92df44083a53',false);     
+        setNeedCheck('40285a8d4c7d2952014c92e5e4463a7c',false);     
+        setNeedCheck('40285a8d4c7d2952014c92e7a7c83a7e',false); 
+    }    
+}    
+
+
+
+
+function getvalue2(){     
+    if (document.getElementById('field_40285a8d4c7d2952014c92df43e03a51').value=='40288098276fc2120127704884290210')        {     
+        document.getElementById('show9').style.display='';     
+        setNeedCheck('40285a8d53a219850153a222ec000058',true);           
+    }   
+    else    {     
+        document.getElementById('show9').style.display='none';      
+        setNeedCheck('40285a8d53a219850153a222ec000058',false);            
+    
+    }     
+}     
+
+
+
+
+
+
+
+
+function getaaa()  
+{  
+//alert('1111');  
+var sql='select id from humres where id=(select name from uf_oa_purchaser where num=\''+document.getElementById('field_40285a8d4c7d2952014c92a1dbc40f4d').value+'\')';  
+DataService.getValues(sql,{         
+        callback:function(data)         
+        {       
+         if(data&&data.length>0){      
+//alert(data[0].objname );  
+          document.getElementById('field_40285a8d52f37b040152f6f2adb4011e').value=data[0].id ;     
+         document.getElementById('field_40285a8d52f37b040152f6f2adb4011espan').innerHTML=data[0].id ;  
+             } 
+        }       
+    });    
+}  
+
+
+
+
+
+
+
+
+function onSubmitBefore(issave)      
+{      
+   DWREngine.setAsync(false);     
+    if(issave==1)//保存          
+    {          
+        return true;          
+    }      
+    var length=0;          
+    var sql='select * from uf_fn_wkpodetail  where requestid=\''+requestid+'\''                
+    DataService.getValues(sql,{                
+        callback:function(data)                
+        {           
+//alert(data.length);          
+         if(data&&data.length>0)          
+             {      
+                length=data.length;      
+             }                    
+        }              
+    });          
+
+    if(document.getElementById('field_40285a8d4c7d2952014c92a1dbc40f4d').value==''||length==0)       
+    {       
+alert('未获取采购订单或采购员！');    
+        return false;       
+    }       
+    else        
+    {       
+        if (document.getElementById('field_40285a8d4c7d2952014c96ce1687403d').value=='')    
+        {    
+            alert('请获取总付款金额');    
+            return false;      
+        }    
+        else{    
+var b='';    
+    var sql='select currency from uf_fn_wkpodetail where requestid=\''+requestid+'\'';    
+    DataService.getValues(sql,{             
+     callback:function(data)             
+        {           
+         if(data&&data.length>0)       
+             {       
+                 b=data[0].currency;    
+                 alert(b);    
+             }                 
+        }           
+    });     
+    var a='';    
+    var sql1='select ddtype from uf_fn_wkoneoffpay where requestid=\''+requestid+'\'';      
+    DataService.getValues(sql1,{              
+     callback:function(data)              
+        {            
+         if(data&&data.length>0)        
+             {        
+                 a=data[0].ddtype ;     
+                 alert(a);     
+             }                  
+        }            
+    });      
+    if (a=='ZC05'||a=='ZC06'||a=='ZC07'||a=='ZC17'||a=='ZC18')     
+    {     
+        if (b=='RMB'&&document.getElementById('field_40285a8d4c7d2952014c96ce1687403d').value>='100000')    
+        {    
+            return true;    
+        }    
+        else if (b!='RMB')    
+        {    
+
+            return true;    
+        }    
+        else    
+        {    
+            alert('订单不符合，请勿提交！');   
+        //document.getElementById('field_40285a8d4c7d2952014c92b7522e0f4f').value='';    
+            return false;    
+        }    
+             
+    }     
+    else     
+    {     
+         alert('订单不符合，请勿提交！');     
+      //  document.getElementById('field_40285a8d4c7d2952014c92b7522e0f4f').value='';   
+        return false;     
+    }     
+        }    
+             
+    }       
+    DWREngine.setAsync(true);        
+}      
+
+</SCRIPT>
+</TBODY></TABLE><INPUT id=$40285a8d5363b1860153644a44fe0212$ class=InputStyle2 value=[隐藏]尾款验收确认单-一次性付款主表.付款代码 name=40285a8d4c7d2952014c929bb1820f3e> 
+<DIV><INPUT id=$40285a8d4c7d2952014c96cccf5d4033$ class=InputStyle2 value=[隐藏]尾款验收确认单-一次性付款主表.厂区别 name=40285a8d4c7d2952014c929bb1820f3e><INPUT id=$40285a8d4c7d2952014c96cccfda4037$ class=InputStyle2 value=[隐藏]尾款验收确认单-一次性付款主表.一级部门 name=40285a8d4c7d2952014c929bb1820f3e><INPUT id=$40285a8d4c7d2952014c96ccd0174039$ class=InputStyle2 value=[隐藏]尾款验收确认单-一次性付款主表.二级部门 name=40285a8d4c7d2952014c929bb1820f3e><INPUT id=$40285a8d4c7d2952014c932949033c5f$ class=InputStyle2 value=[隐藏]尾款验收确认单-一次性付款主表.当前环节 name=40285a8d4c7d2952014c929bb1820f3e></DIV>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="vcalendarService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.calendar.base.service.VcaclendarService">
+				<property name="vcalendarDao">
+					<ref local="vcalendarDao" />
+				</property>
+			</bean>
+		</property>
+	</bean>		
+
+ <bean id="calendarSettingService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.calendar.base.service.CalendarSettingService">
+				<property name="calendarSettingDao">
+					<ref local="calendarSettingDao" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+    <bean id="schedulesetService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.calendar.base.service.SchedulesetService">
+				<property name="schedulesetDao">
+					<ref local="schedulesetDao" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+    <bean id="coworksetService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.cowork.service.CoworksetService">
+				<property name="coworksetDao">
+					<ref local="coworksetDao" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+	<bean id="eventService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.eweaver.calendar.event.service.EventService">
+				<property name="eventDao">
+					<ref local="eventDao" />
+				</property>
+				<property name="repeatpatternDao">
+					<ref local="repeatpatternDao" />
+				</property>
+			</bean>
+		</property>
+	</bean>	  
+
+	<bean id="calendarSettingDao" class="com.eweaver.calendar.base.dao.CalendarSettingDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>	
+	
+	<bean id="vcalendarDao" class="com.eweaver.calendar.base.dao.VcalendarDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+    <bean id="schedulesetDao" class="com.eweaver.calendar.base.dao.SchedulesetHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+
+     <bean id="coworksetDao" class="com.eweaver.cowork.dao.CoworksetHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="eventDao" class="com.eweaver.calendar.event.dao.EventDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>	
+	
+	<bean id="repeatpatternDao" class="com.eweaver.calendar.event.dao.RepeatpatternDaoHB">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>	
+</beans>

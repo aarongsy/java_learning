@@ -1,0 +1,3278 @@
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第2行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b23352770199'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第4行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('378300708b69430daa82459b60cff9e9','正文格式','4028818411b2334e0111b23352770199','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第6行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('b668cf4fab3d488ea22af85d80a04755','Text format','4028818411b2334e0111b23352770199','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第8行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b2335277019a'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第10行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('6fec842bb60141bd9c2b8e3377edede7','文档类别','4028818411b2334e0111b2335277019a','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第12行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('fd3b898bb1ef425989207d87c477321c','Document category','4028818411b2334e0111b2335277019a','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第14行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b2335277019b'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第16行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('f347752ac4cf489cad7c35a8f576ddff','重要性','4028818411b2334e0111b2335277019b','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第18行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('3ef243e21adc42b4b80a8e4b91d7ee46','Importance','4028818411b2334e0111b2335277019b','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第20行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b2335277019c'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第22行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('4364eea8ddd6478b8ff027c841756044','专业类别','4028818411b2334e0111b2335277019c','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第24行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('ca309d38d7b24a5c9c9816c25b87b1b8','Professional category','4028818411b2334e0111b2335277019c','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第26行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b2335277019d'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第28行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('24273c990cf34ff29e7b840bcb9ed59d','专业方向','4028818411b2334e0111b2335277019d','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第30行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('f9c001e794c44e31b0978c965dfcd1cc','Professional direction','4028818411b2334e0111b2335277019d','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第32行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b233527701a7'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第34行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('a645f5d2dd5343739739a8069c3ec065','所属部门','4028818411b2334e0111b233527701a7','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第36行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('efaed5be52114f368fd24e86abe1aec9','Department','4028818411b2334e0111b233527701a7','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第38行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b233527701a8'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第40行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('16397b6447e045b1b057fed95fec318e','权限部门','4028818411b2334e0111b233527701a8','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第42行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('e4700a5d78c24779ad11026dd2e3bfeb','Permissions department','4028818411b2334e0111b233527701a8','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第44行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b233527701a9'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第46行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('8b1134e41dd84ab5816231704bbf1ea8','客户','4028818411b2334e0111b233527701a9','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第48行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('0ed74dbde3eb4702bca2650b6bd28879','Client','4028818411b2334e0111b233527701a9','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第50行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b233527701aa'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第52行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('33312d3952d44872ad58bb9d5260a859','合同编号','4028818411b2334e0111b233527701aa','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第54行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('e37b8d0aa11a44b4913c06d58595577c','Contract Number','4028818411b2334e0111b233527701aa','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第56行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b233527701ab'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第58行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('ae45b30040ed48b2886c5a5ffeee35ef','任务编号','4028818411b2334e0111b233527701ab','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第60行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('46265fbe9db7427eb7ee7f65713f9aa8','Task Number','4028818411b2334e0111b233527701ab','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第62行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b233527701ac'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第64行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('81067b372c424680a76a927bd7fd858b','关联竞争对手','4028818411b2334e0111b233527701ac','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第66行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('8a547b9d053a42c2bccde3982b7b18e9','Associated with competitors','4028818411b2334e0111b233527701ac','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第68行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b233527701ad'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第70行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('76c17de386074f1199230f655d390f47','审核人','4028818411b2334e0111b233527701ad','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第72行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('9ea5e0a714e54b34b014099dbc24bcb4','Reviewed by','4028818411b2334e0111b233527701ad','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第74行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b233527701ae'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第76行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('e0b9ce65437f4925ac584fb4c9d816b3','关联员工','4028818411b2334e0111b233527701ae','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第78行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('d9b3f28501064bde819e1c9c4d09e61f','Associated with staff','4028818411b2334e0111b233527701ae','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第80行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b233527701af'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第82行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('1290702d203845faa16ddad7e0dff135','项目编号','4028818411b2334e0111b233527701af','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第84行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('405d15b3e1764231933f63de7384233c','Item Number','4028818411b2334e0111b233527701af','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第86行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b23352670177'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第88行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('afa5f51439844c3c97aa556caad443b3','关键字','4028818411b2334e0111b23352670177','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第90行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('3754fcc9627d45d29d686f46491a2cfa','Keyword','4028818411b2334e0111b23352670177','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第92行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b23352670178'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第94行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('7e35166d12684633bb0081b910fed9bf','任务节点','4028818411b2334e0111b23352670178','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第96行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('c69b65c64e684dc98b52c53185819659','Task nodes','4028818411b2334e0111b23352670178','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第98行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b233527701b5'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第100行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('83015283fa2a467eac185d193c60abd5','相关文档','4028818411b2334e0111b233527701b5','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第102行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('0fa6edaa413741bfaf151ba49c0c68aa','Documentation','4028818411b2334e0111b233527701b5','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第104行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b233527701b6'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第106行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('3d149081673545ea8d13c5da9ce3a80e','审批流程','4028818411b2334e0111b233527701b6','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第108行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('2065852c49e64dcca9102368a717f630','Approval process','4028818411b2334e0111b233527701b6','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第110行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b233527701bd'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第112行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('7d6909a8ff1045de9d383f42693e893a','附件','4028818411b2334e0111b233527701bd','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第114行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('c094f5c2c9a344a9a1b86302c3de20d6','Attachment','4028818411b2334e0111b233527701bd','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第116行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b233527701ef'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第118行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('10244f2004f94cb19e21cc19c4d01356','次作者','4028818411b2334e0111b233527701ef','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第120行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('f5ce846fed104d69ab3cd56fe8f831c1','Times of','4028818411b2334e0111b233527701ef','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第122行
+错误语句
+ delete from labelcustom where keyword = '402881ed0bccbe5b010bcd015664000f'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第124行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('f5b87d0862de4984b0be758829f01f53','文档本身','402881ed0bccbe5b010bcd015664000f','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第126行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('0f52ad6ab0d142deb12bff7f8f322f64','The document itself','402881ed0bccbe5b010bcd015664000f','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第128行
+错误语句
+ delete from labelcustom where keyword = '4028819b124662b301124662b7310356'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第130行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('96209f085f374a62baf30a104f0ef9d7','文档分类','4028819b124662b301124662b7310356','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第132行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('e88ec9fa0e3d4289a8c7edc3879b55ca','Document classification','4028819b124662b301124662b7310356','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第134行
+错误语句
+ delete from labelcustom where keyword = '402881e50bff706e010bff8a1c210008'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第136行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('79547113bb9f4d49a4d418e1c14a3758','最后编辑人','402881e50bff706e010bff8a1c210008','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第138行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('143edce0c0214959a9cdb6b4a0b10fe7','Last editors','402881e50bff706e010bff8a1c210008','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第140行
+错误语句
+ delete from labelcustom where keyword = '4028814811cb84ab0111d3e98bff0001'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第142行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('a6dad94c5f0142baa87617abcdf488c2','安全级别','4028814811cb84ab0111d3e98bff0001','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第144行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('1b0b9faef6c8439a87eb2c9b69a71598','Security level','4028814811cb84ab0111d3e98bff0001','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第146行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b2335267014e'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第148行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('89e1acf796bd4ace98f2e7d0d958d1af','流水号','4028818411b2334e0111b2335267014e','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第150行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('9fecce979131448ebc88cfe6e0e3e538','Serial number','4028818411b2334e0111b2335267014e','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第152行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b2335267014f'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第154行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('f2392fd159fa4d35a46c43a255b3646e','标题','4028818411b2334e0111b2335267014f','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第156行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('954ee57758db4d6c88adb9c9af9c0e1b','Title','4028818411b2334e0111b2335267014f','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第158行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b23352670150'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第160行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('0bcbed2b26f8477ca5e5602261f1764b','摘要','4028818411b2334e0111b23352670150','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第162行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('745302ff07e94403b624e7e92984be2e','Summary','4028818411b2334e0111b23352670150','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第164行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b23352670151'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第166行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('6a06d0a3f84a46338a03fd220e6c6121','内容','4028818411b2334e0111b23352670151','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第168行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('4485899df6cc413a814c796388de4eba','Content','4028818411b2334e0111b23352670151','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第170行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b23352670152'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第172行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('df4594bccfe2478da7f025aed7085543','文档作者','4028818411b2334e0111b23352670152','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第174行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('0118c01331e549379fadb52170ca3462','Document''s author','4028818411b2334e0111b23352670152','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第176行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b23352670153'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第178行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('2ec0546955604554a8a3ba4ffcff5a7a','创建日期','4028818411b2334e0111b23352670153','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第180行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('ce1f3da7380b4e83af878d88c976693c','Creation date','4028818411b2334e0111b23352670153','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第182行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b23352670154'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第184行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('1c1fcf4c694140a1a17b81863894ae40','创建时间','4028818411b2334e0111b23352670154','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第186行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('42c87fc4034541099fd1bb72ea7287ab','Creation time','4028818411b2334e0111b23352670154','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第188行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b23352670155'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第190行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('ac50e3408c42400da669dce71c7a6030','修改者','4028818411b2334e0111b23352670155','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第192行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('78730f723ce34d36afb042ebc3ce690e','Modified by','4028818411b2334e0111b23352670155','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第194行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b23352670156'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第196行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('46ce68d1ebf540978e4832bec35e495c','修改日期','4028818411b2334e0111b23352670156','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第198行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('ee1fc35b2d0042039b0e3de3428f13db','Modified date','4028818411b2334e0111b23352670156','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第200行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b23352670157'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第202行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('81422c206e7f4511bfcdd91c1ac05329','修改时间','4028818411b2334e0111b23352670157','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第204行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('84342a3759634aa4a8d9ed16c4cfd95f','Modified','4028818411b2334e0111b23352670157','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第206行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b23352670158'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第208行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('d7d02f8b407c4747b5e9060f0a3d12af','文档形式','4028818411b2334e0111b23352670158','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第210行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('83d9a7bbc4b144228e2bc8a0c6e002d9','Documentation in the form','4028818411b2334e0111b23352670158','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第212行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b23352670159'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第214行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('c16571ee8d90481f9c6ee9e44956a83f','文档状态','4028818411b2334e0111b23352670159','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第216行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('6d0092c1d2cc4454a125a733a5b72792','Document status','4028818411b2334e0111b23352670159','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第218行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b2335267015b'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第220行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('90565af457e645ea8900d036693748bf','附件数目','4028818411b2334e0111b2335267015b','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第222行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('d126203a81874acb825221f65abab222','The number of attachments','4028818411b2334e0111b2335267015b','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第224行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b2335267015c'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第226行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('1e86b674f7884311a66463f5a5dfa195','上级文档','4028818411b2334e0111b2335267015c','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第228行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('e21aaa88140c4909b96c20f555e5a6a0','Higher level document','4028818411b2334e0111b2335267015c','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第230行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b2335267015d'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第232行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('715ba9732b5647cd8ac037a7db32a91a','回复数','4028818411b2334e0111b2335267015d','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第234行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('9de0028f8e4e4311b071463a1927fc78','Replies','4028818411b2334e0111b2335267015d','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第236行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b2335267015f'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第238行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('3faa90ae45d64ccca1e56eb619c9120d','col1','4028818411b2334e0111b2335267015f','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第240行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('6069182bc3c7437281899aeb7edca1d2','COL1','4028818411b2334e0111b2335267015f','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第242行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b23352670160'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第244行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('e4dabac0483447ea844c82b3c0c2b4bc','col2','4028818411b2334e0111b23352670160','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第246行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('529f4f47ab5544f1a73df9b9690af170','COL2','4028818411b2334e0111b23352670160','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第248行
+错误语句
+ delete from labelcustom where keyword = '4028818411b2334e0111b23352670176'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第250行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('765a7ad1d19046969b031a838841ce17','文档编号','4028818411b2334e0111b23352670176','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:01
+错误位置
+  sql2012021603-docbase.sql第252行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('f9f3cd29b1d64171a8aabb3ef7f4a20d','Document Number','4028818411b2334e0111b23352670176','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第2行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887aca000a'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第4行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('cdebfe1bd92d475db946bc37bf1c6722','基本工资','4028801511ad88780111ad887aca000a','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第6行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('03b5925e5b0d4d7e926b58c2455a84d8','Basic wage','4028801511ad88780111ad887aca000a','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第8行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887aca000b'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第10行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('68dfc824f46e449093568b8e4836b0fc','岗位工资','4028801511ad88780111ad887aca000b','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第12行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('06109fbcc3814d1a9fe4df64184e764a','Post wages','4028801511ad88780111ad887aca000b','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第14行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887aca000c'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第16行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('a581cf5280664cc9b25dfd52a8874698','试用期工资','4028801511ad88780111ad887aca000c','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第18行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('6cf88fd6d87246608ea31264822c21fe','Probationary period wages','4028801511ad88780111ad887aca000c','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第20行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887aca000d'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第22行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('afd89c9cf3114dcc8d4e39219f63ad7e','转正工资','4028801511ad88780111ad887aca000d','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第24行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('d55d92149b594a0ead6307d3ae1be9d9','Positive wage','4028801511ad88780111ad887aca000d','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第26行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887aca000e'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第28行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('7b3835229c90417f82e15747926e7578','地区差异补贴','4028801511ad88780111ad887aca000e','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第30行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('82d1150dc41745ddaeb9d41c26959ad4','Regional differences in subsidies','4028801511ad88780111ad887aca000e','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第32行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887aca000f'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第34行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('6a2f1c6c6a364131b350c2a614b3e503','特殊技能补贴','4028801511ad88780111ad887aca000f','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第36行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('3488c1f181ff44768648ed430b7d90c6','Special skills subsidies','4028801511ad88780111ad887aca000f','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第38行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887aca0010'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第40行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('49d5bb1eb8b14e1cbd079afa18be9bc4','交通补贴','4028801511ad88780111ad887aca0010','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第42行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('2d5071bc73854f969dfe782f07a59228','Transport subsidies','4028801511ad88780111ad887aca0010','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第44行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb0011'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第46行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('9e37463f8dfc493fa02feb3dff4a2229','通讯补贴','4028801511ad88780111ad887acb0011','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第48行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('376c9b3175554aac920a0f74ae2d7022','Communication allowance','4028801511ad88780111ad887acb0011','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第50行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb0012'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第52行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('210ce69a680745e6b256e4926718412c','午餐补贴','4028801511ad88780111ad887acb0012','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第54行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('781de542eda746be91149ff6d515b1c9','Lunch subsidies','4028801511ad88780111ad887acb0012','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第56行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb0013'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第58行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('aea8cfb640294b5cb1b499e08b1d8a2e','高温补贴','4028801511ad88780111ad887acb0013','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第60行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('7fb09d71196e45f2ac49866574c72dd9','High subsidies','4028801511ad88780111ad887acb0013','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第62行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb0014'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第64行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('ef92fb0463c343efb6c2560cdc85910f','备注（离职原因）','4028801511ad88780111ad887acb0014','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第66行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('be0936db779c43c7b84ad3e305ffc8bc','Remarks (reasons for departure)','4028801511ad88780111ad887acb0014','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第68行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb0015'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第70行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('c80faef1b8974ff78cb01c7e1d3eddf1','养老金','4028801511ad88780111ad887acb0015','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第72行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('53511533e08448ab8c8dd25f827aebd0','Pension','4028801511ad88780111ad887acb0015','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第74行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb0016'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第76行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('0b188ca5e95f4c59ba0728c8ee033832','住房公积金','4028801511ad88780111ad887acb0016','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第78行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('e12e6c957b634accaf2a8688f3e1b64b','Housing fund','4028801511ad88780111ad887acb0016','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第80行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb0017'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第82行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('6604a11f652c4fbe9b1782717432da54','失业金','4028801511ad88780111ad887acb0017','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第84行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('17e8dab741784e2796de538b98d6e8f7','Unemployment benefits','4028801511ad88780111ad887acb0017','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第86行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb0018'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第88行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('dda5134cd26249f78958ed6202079158','基本医疗','4028801511ad88780111ad887acb0018','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第90行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('dc65d2bd8f50428e937bc6ab495af094','Basic medical','4028801511ad88780111ad887acb0018','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第92行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb0019'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第94行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('14dd11dc84894fccbd761d0c53d2e73e','工会经费','4028801511ad88780111ad887acb0019','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第96行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('1b8c3f52953b49b3be7165c9c55abafe','Trade union funds','4028801511ad88780111ad887acb0019','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第98行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb001a'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第100行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('9f1eafcdd2e9456d9fff70cf56a583c9','毕业学校','4028801511ad88780111ad887acb001a','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第102行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('fdc143aa75d64fb3a40da53bb2cde8d9','Graduate school','4028801511ad88780111ad887acb001a','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第104行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb001c'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第106行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('b677c29b732f411e942a453f0159ce78','第二专业','4028801511ad88780111ad887acb001c','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第108行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('9abdf8c10cf04604ba6f5afbf5c288ed','Second major','4028801511ad88780111ad887acb001c','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第110行
+错误语句
+ delete from labelcustom where keyword = '402881821197b641011197b644660000'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第112行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('ae9453a52a464d7ebdae94970297bc96','员工号','402881821197b641011197b644660000','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第114行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('03fa86edaab34bd484785e494e07b196','Employee number','402881821197b641011197b644660000','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第116行
+错误语句
+ delete from labelcustom where keyword = '402881821197b641011197b644670001'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第118行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('b7c4a82a21a7424382d9c175f08b65c3','姓名','402881821197b641011197b644670001','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第120行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('24638aa39ea4446e816b3bda7550ac89','Name','402881821197b641011197b644670001','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第122行
+错误语句
+ delete from labelcustom where keyword = '402881821197b641011197b644670002'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第124行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('1a90a5d3368a40cb9f7e1e84c3e11f46','性别','402881821197b641011197b644670002','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第126行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('145fd6f46e68453f990638fd9afff367','Gender','402881821197b641011197b644670002','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第128行
+错误语句
+ delete from labelcustom where keyword = '402881821197b641011197b644670003'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第130行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('e943859d3b874a46a2634f43749e69b0','兼任岗位','402881821197b641011197b644670003','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第132行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('bcbf65635fb24887b3769b2bf1f8615b','Part-time jobs','402881821197b641011197b644670003','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第134行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb001e'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第136行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('61faccc77ed14d0881b8c07ef8e449dd','入职日期','4028801511ad88780111ad887acb001e','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第138行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('eab92908c6e04418b0f7b81b780e281f','The date of the entry','4028801511ad88780111ad887acb001e','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第140行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb001f'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第142行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('f441014c56a0459992bb978ef597db34','转正日期','4028801511ad88780111ad887acb001f','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第144行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('11f8728e13b541498e21fa2895a1baf1','Positive date','4028801511ad88780111ad887acb001f','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第146行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb0020'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第148行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('3b33ca9fcf0e4a37b936896363287661','毕业日期','4028801511ad88780111ad887acb0020','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第150行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('9cb1d6d4a4b64ea4a9df59f0bef2f6f5','Date of graduation','4028801511ad88780111ad887acb0020','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第152行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb0021'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第154行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('9c3ba6d663134baa84f9a045c48edb42','工资等级调整时间','4028801511ad88780111ad887acb0021','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第156行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('c04e39ce7c534698a46f4ad61ab89b05','Wage scale adjustment time','4028801511ad88780111ad887acb0021','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第158行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb0022'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第160行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('59875c71b92a4b9285b3f0b6997b208a','离职时间','4028801511ad88780111ad887acb0022','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第162行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('1427f618cf06401e8f4851052e7b4f31','Departure time','4028801511ad88780111ad887acb0022','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第164行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb0028'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第166行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('26f793ebb52e4bd6be2924c27d47ede8','面试记录','4028801511ad88780111ad887acb0028','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第168行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('4631d44091954f64a1ec6a844eef57c6','Records of interviews','4028801511ad88780111ad887acb0028','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第170行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb0029'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第172行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('fd0a222aafd343bdb12399d14ba7fccc','备注（文字描述的日志）','4028801511ad88780111ad887acb0029','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第174行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('465b69bd8ad54087b96d209ee0799a26','Remarks (text description of the log)','4028801511ad88780111ad887acb0029','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第176行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb0037'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第178行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('11c2f200a37642558d35ef10780c4047','办公语言','4028801511ad88780111ad887acb0037','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第180行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('6f985944d19b4b5e9e98edef53d64906','Office language','4028801511ad88780111ad887acb0037','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第182行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb0039'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第184行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('0e5f914ac8914e13b628d67caf091e0f','员工来源','4028801511ad88780111ad887acb0039','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第186行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('21befed64f48483880f5b0cf03721113','Staff sources','4028801511ad88780111ad887acb0039','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第188行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb003a'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第190行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('dfce1223dd844910a4dbc159c22e56cb','小专业','4028801511ad88780111ad887acb003a','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第192行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('f694e647cee649b2bedbb4479cbbdd8f','Small professional','4028801511ad88780111ad887acb003a','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第194行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb003b'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第196行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('8e5d601e982c42889ee3d58c734951eb','学历','4028801511ad88780111ad887acb003b','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第198行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('c8caa784f36942acbaf03ca23d0abbae','Degree','4028801511ad88780111ad887acb003b','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第200行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb003c'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第202行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('bca4f45a6492465b84a752797333668a','民族','4028801511ad88780111ad887acb003c','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第204行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('eba9a93646504750820d173f92a09b6f','Ethnic','4028801511ad88780111ad887acb003c','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第206行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb003d'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第208行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('65ad00d106ef49df869241378ed2ecf2','婚姻状况','4028801511ad88780111ad887acb003d','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第210行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('9561bd8adf4c444393e1d356175ad444','Marital status','4028801511ad88780111ad887acb003d','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第212行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb003e'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第214行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('8a786032fb70472cb157b229b2bd93c5','岗位类别','4028801511ad88780111ad887acb003e','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第216行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('83c631fdcd80475b92d24fbdd636c2e5','Job category','4028801511ad88780111ad887acb003e','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第218行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb003f'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第220行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('c7a80d9a80a8494f96cb1bd208380ca3','岗位序列','4028801511ad88780111ad887acb003f','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第222行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('a7cccb2cc4a54dbb857ddc1921945be0','Job sequence','4028801511ad88780111ad887acb003f','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第224行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb0040'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第226行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('c33fa8200b8940bb9ce5f60baab13a56','岗位等级','4028801511ad88780111ad887acb0040','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第228行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('e66ed803f1d047978a3f876c5588bd1b','Post grades','4028801511ad88780111ad887acb0040','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第230行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb0041'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第232行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('c0bfbd7c2379466e9101a3b5509aaee6','合同文本','4028801511ad88780111ad887acb0041','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第234行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('be60cce0cb9746f4a9c6bbedbd83a2bf','The text of the contract','4028801511ad88780111ad887acb0041','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第236行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb0042'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第238行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('9cd880b333b6416d82916d4b681da7ab','性格测试结果','4028801511ad88780111ad887acb0042','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第240行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('7c8bffcee2ee4e038c3ef11e74b364e5','Personality test results','4028801511ad88780111ad887acb0042','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第242行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb0043'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第244行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('f0e561c55c654adc943fb100385b3b1f','个人简历','4028801511ad88780111ad887acb0043','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第246行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('8fe6bcc961a445d084b57f28504d7f16','Resume','4028801511ad88780111ad887acb0043','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第248行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb004b'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第250行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('44d3a695930849f6855baef76ff9865e','部门/事业部','4028801511ad88780111ad887acb004b','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第252行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('e5854d1a305b44dcb75de11308dfeaee','Department / Division','4028801511ad88780111ad887acb004b','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第254行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887aca0001'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第256行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('477776f865634cea97b4f71a62859289','年假天数','4028801511ad88780111ad887aca0001','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第258行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('8eaccaabb67c4644ac0d8f3d11fbe309','Annual leave days','4028801511ad88780111ad887aca0001','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第260行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887aca0002'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第262行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('36d67296190b4109b415252a23079a47','剩余年假','4028801511ad88780111ad887aca0002','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第264行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('8957d7f5b02e44b6b5cf05f0056c8955','Remaining annual leave','4028801511ad88780111ad887aca0002','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第266行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb005b'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第268行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('e6c217642bf242d9910d78a0170c5de1','附件上传','4028801511ad88780111ad887acb005b','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第270行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('1ef59158ad614e11bd2951978651e739','Attachment upload','4028801511ad88780111ad887acb005b','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第272行
+错误语句
+ delete from labelcustom where keyword = '4028801511ad88780111ad887acb005c'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第274行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('fdf1b80399074793bbd996193d2a2180','学历证书','4028801511ad88780111ad887acb005c','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第276行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('4e81167d79804488bc2ef174968d043c','Education certificate','4028801511ad88780111ad887acb005c','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第278行
+错误语句
+ delete from labelcustom where keyword = '402881821197b641011197b644670004'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第280行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('3cf98fa201844b77aa1a040e03fd9c02','主要职责','402881821197b641011197b644670004','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第282行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('9f1e9a38face4f25a0d7f23dab0ca184','The primary duties of','402881821197b641011197b644670004','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第284行
+错误语句
+ delete from labelcustom where keyword = '402881821197b641011197b644670005'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第286行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('79ea902be5e34ba9a018c9301f3e8eb5','办公地址及邮政编码','402881821197b641011197b644670005','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第288行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('2d8b4241729042d49b59bbc0e6fb0f09','Office address and ZIP code','402881821197b641011197b644670005','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第290行
+错误语句
+ delete from labelcustom where keyword = '402881821197b641011197b644670006'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第292行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('efb34d261b644639a47b28ac88d25213','办公室','402881821197b641011197b644670006','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第294行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('3a869022e7c04da798b30dde868fa708','Office','402881821197b641011197b644670006','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第296行
+错误语句
+ delete from labelcustom where keyword = '402881821197b641011197b644670007'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第298行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('87ca80108d7347b7a8a9812e1846631f','人事状态','402881821197b641011197b644670007','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第300行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('3b1443af191c4abcad52dfd0a33c286b','Personnel status','402881821197b641011197b644670007','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第302行
+错误语句
+ delete from labelcustom where keyword = '402881821197b641011197b644670009'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第304行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('6e7841353e5a446c856a352b8ebbd7bc','工作类型','402881821197b641011197b644670009','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第306行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('ceb5bb28e1984e3dbec287a7af00ed9c','The type of work','402881821197b641011197b644670009','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第308行
+错误语句
+ delete from labelcustom where keyword = '402881821197b641011197b64467000a'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第310行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('b6d7c0740e904191b752235bb19c22bc','办公室电话','402881821197b641011197b64467000a','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第312行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('7e459e889e354a17ac9233686efbc61c','Office Tel','402881821197b641011197b64467000a','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第314行
+错误语句
+ delete from labelcustom where keyword = '402881821197b641011197b64467000b'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第316行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('f3d93ecdaecf4e6182aaedef3053870f','工作手机号码','402881821197b641011197b64467000b','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第318行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('7bf1d79c34be4690a0c9546ed43863a4','Work phone number','402881821197b641011197b64467000b','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第320行
+错误语句
+ delete from labelcustom where keyword = '402881821197b641011197b64467000c'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第322行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('273462c2156e4a009faa62ff810641f5','固定电话','402881821197b641011197b64467000c','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第324行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('7a7626abe29b4b36ac7ee09a94e0a07d','Fixed telephone','402881821197b641011197b64467000c','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第326行
+错误语句
+ delete from labelcustom where keyword = '402881821197b641011197b644690015'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第328行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('52ca628d44c94ec4b647514c88b6284b','成本中心','402881821197b641011197b644690015','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第330行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('a453327085ef46ad8661ba82df7c7149','Cost center','402881821197b641011197b644690015','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第332行
+错误语句
+ delete from labelcustom where keyword = '402881821197b641011197b644690016'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第334行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('ddd2a1ad488c4ae59c3dc9a5f6b0e531','身份证号码','402881821197b641011197b644690016','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第336行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('eb77bdb90db7418ebdb136e68f1479bb','Identity card number','402881821197b641011197b644690016','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第338行
+错误语句
+ delete from labelcustom where keyword = '402881821197b641011197b644690017'
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第340行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('66af7d5d876541b697fb201e4a42bece','护照号','402881821197b641011197b644690017','zh_CN','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:28:02
+错误位置
+  sql2012021603-humres.sql第342行
+错误语句
+ insert into labelcustom(id,labelname,keyword,language,labeltype) values('d41a46e4083449da939e8ea9bcb8b4b2','Passport No','402881821197b641011197b644690017','en_US','FormField')
+错误原因
+  java.sql.SQLException: ORA-00942: 表或视图不存在
+
+
+
+错误时间
+  19:34:23
+错误位置
+  sql20120301_doc.sql第9行:
+错误语句
+ create table DOCEXCLUSION( id varchar2(32) primary key, objid varchar2(32) , userid varchar2(32), opentime varchar2(32), closetime varchar2(32), openstatus number(16) )
+错误原因
+  java.sql.SQLSyntaxErrorException: ORA-00955: 名称已由现有对象使用
+
+
+

@@ -1,0 +1,25 @@
+/*
+	workflow.css
+	流程页面相关的样式
+*/
+span.formFlowNo{
+	font-weight: bold;
+	color: #3C5369;
+}
+/******签字意见表格对应的样式******/
+table.signature{/*签字意见表格对应的样式*/
+
+}
+table.signature td{/*签字意见表格中列对应的样式*/
+	border: 0px solid #d5d5d5;	/*边框(宽度  样式  颜色)*/
+}
+table.signature td.FieldName{/*签字意见表格中样式为FieldName的列对应的样式*/
+	
+}
+table.signature td.FieldValue{/*签字意见表格中样式为FieldValue的列对应的样式*/
+	background: none;		/*边框*/
+	padding-left: 4px;		/*左内边距*/
+}
+.x-toolbar{/*toolbar的样式*/
+	padding-left: 15px !important;
+}

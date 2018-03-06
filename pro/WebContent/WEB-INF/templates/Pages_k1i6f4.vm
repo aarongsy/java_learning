@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+${headerFiles}
+<title>${title}</title>
+</head>
+
+<body>
+
+<table width="100%" border="0" style="background-color:#FFFFFF;">
+<tr>
+    <td width="41%" valign="top">#Element(21) <br/>
+#Element(51)</td>
+    <td width="33%" valign="top">#Element(23)</td>
+</tr>
+</table>
+
+</body>
+</html>

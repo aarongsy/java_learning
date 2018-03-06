@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DatasourceManager>
+<ConnectionMap>
+<Connection name="weaver" class="com.fr.data.impl.JDBCDatabaseConnection">
+<DatabaseAttr/>
+<JDBCDatabaseAttr url="jdbc:oracle:thin:@192.168.0.243:1521:orclewv" driver="oracle.jdbc.driver.OracleDriver" user="weaverv4" password="___0064002b006b0079000100a7005d0023" encryptPassword="true">
+</JDBCDatabaseAttr></Connection></ConnectionMap>
+</DatasourceManager>

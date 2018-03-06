@@ -1,0 +1,110 @@
+#styleDiv{
+	position: relative;	
+}
+#leftDiv{
+	margin: 10px; 
+	width: 425px;
+	float: left;
+}
+#baseinfoDiv{
+	margin-bottom: 20px;
+	height:90px;	
+}
+#previewDiv{
+	border:1px solid #999;
+	height:375px;
+	width: 425px;
+	position: relative;
+}
+#previewHead{
+	width: 100%;
+	border:0px solid red;
+	height:35px;
+	background-color: #DFDFDF;
+	line-height: 35px;
+	border-bottom: 1px solid #999;
+	position: relative;
+}
+#previewHead span{
+	color: #878788;
+	font-size: 12px;
+	font-weight: bold;	
+	margin-left: 10px;
+}
+#previewHead img{
+	width: 16px;
+	height: 16px;	
+	position: absolute;
+	right: 9px;
+	top: 9px;
+	cursor: pointer;
+}
+#previewContent{
+	width: 380px;
+	margin: 19px 20px;
+}
+.immediatePreview{
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	padding: 5px 10px;	
+}
+.immediatePreview a{
+	color: #999;	
+}
+#rightDiv{
+	margin-left: 10px;
+	margin-top: 12px;
+	width: 55%;	
+	height: 478px;
+	float: left;
+}
+.content span{
+	padding-left: 2px;	
+}
+fieldset{
+	margin-bottom: 5px;
+}
+legend{
+	font-weight:bold;
+	color:#878788;
+}
+.explain{
+	padding-left: 10px;
+	border-bottom: 1px solid #efefde;
+	height: 32px;
+}
+.content{
+	border-bottom: 1px solid #efefde;
+	height: 32px;
+}
+.textStyle{
+    border: none;
+    border-bottom: 2px solid #D0D0BF;
+}
+.arrow{
+	margin-right: 3px;
+	cursor: pointer;
+}
+body{
+	overflow-y : auto;
+}
+.tip{
+	display:block;
+	background: url("/images/tip.gif") no-repeat;
+	margin: 10px;
+	margin-top: 20px;
+	padding-left: 20px;
+	padding-top: 2px;
+}
+#objnameTipMessage{
+	font-weight: bolder;
+	color: red;
+}
+input.html_color{width:18px;height:18px;padding:0;border:none;background:#000 url(/js/jquery/plugins/colorselect/img/color_picker.png) no-repeat;font-size:0;line-height:0;vertical-align:middle;cursor:pointer;}
+.html_colorpane{display:none;position:absolute;z-index:999; width: 220px;} 
+.html_colorpane h5{position:relative;width:220px;padding:0 5px;border:1px solid #000;border-bottom:none;background:#fff;color:#999;font:normal 12px/20px "\5B8B\4F53";} 
+.html_colorpane h5 span{cursor:pointer;} 
+.html_colorpane h5 em{position:absolute;top:0;right:5px;font:normal 16px/20px Tahoma;cursor:pointer;} 
+.html_colorpane table{border-collapse:collapse;table-layout:fixed;empty-cells:show;} 
+.html_colorpane td{position:static;width:10px;height:10px;padding:0;border:1px solid #000;font-size:0;line-height:0;cursor:pointer;}

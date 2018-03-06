@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Report class="com.fr.report.WorkSheet">
+<Version>6.2</Version>
+<TableDataMap>
+<NameTableData name="ds1">
+<TableData class="com.fr.data.impl.EmbeddedTableData">
+<Parameters>
+</Parameters>
+<ColumnNames><![CDATA[ContractNo,,.,,Amount,,.,,SignDate]]></ColumnNames>
+<ColumnTypes><![CDATA[java.lang.String,java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[L!eW]688n!iTE1S$QR:eiW*TkpE.C'#d",]^6JV]YNbjJMuqD.\01nudXcQQ?4lYpFi2DU'k
+JK,C\t*D_biFUYch1LW$;\Ce@!F
+$AQ5=gk.8Ek^T0cLZ@B)(@%uZ<Y2jc28o:f#$#n"4=i4u
+Rg2d_G%@3bETMi$(2BVa`X+^?SMie1!$2P`G2GBK>f_k4i?l,pS2Yb
+gXKP%[/Ak!n2lRWt:9
+D&D~
+
+]]>
+</RowData>
+</TableData>
+</NameTableData>
+</TableDataMap>
+<ReportSettings shrinkToFit="true" headerHeight="0.33" footerHeight="0.33">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<ReportParameterAttr>
+<Parameters>
+</Parameters>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="0" userDefineWindow="false" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<AutoRecalculate>false</AutoRecalculate>
+<DesignAttributes>
+</DesignAttributes>
+<ReportWebAttr>
+<EmailManager mailHost="" password="___" user="" fromEmailAddress="" />
+<ServerPrinter>
+</ServerPrinter>
+</ReportWebAttr>
+<ReportWriteAttr>
+</ReportWriteAttr>
+<RowHeight defaultValue="19">
+<![CDATA[24]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[129,129,129,129,129]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="4" s="0"><O t="S"><![CDATA[设备采购成本累计占比分析]]></O>
+</C>
+<C c="0" r="1" s="1"><O t="S"><![CDATA[统计日期：]]></O>
+</C>
+<C c="1" r="1" s="1"><O t="Formula" class="Formula" ><Attributes reserveExecute="true"><![CDATA[=date(2007,3,4)]]></Attributes></O>
+</C>
+<C c="2" r="1" s="2"></C>
+<C c="3" r="1" s="2"></C>
+<C c="4" r="1" s="2"></C>
+<C c="0" r="3" cs="5" s="3"></C>
+<C c="0" r="4" s="4"><O t="S"><![CDATA[采购合同编号]]></O>
+</C>
+<C c="1" r="4" s="4"><O t="S"><![CDATA[签订日期]]></O>
+</C>
+<C c="2" r="4" s="4"><O t="S"><![CDATA[合同金额]]></O>
+</C>
+<C c="3" r="4" s="4"><O t="S"><![CDATA[累计]]></O>
+</C>
+<C c="4" r="4" s="5"><O t="S"><![CDATA[占比]]></O>
+</C>
+<C c="0" r="5" s="6"><O t="DSColumn"><Attributes dsName="ds1" columnName="ContractNo" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG><Result><![CDATA[$$$]]></Result></O>
+<HighlightList><Highlight class="com.fr.report.highlight.DefaultHighlight"><Condition class="com.fr.data.condition.FormulaCondition"><Formula>
+<![CDATA[=Row()%2==1]]>
+</Formula>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.BackgroundHighlightAction">
+<Background name="ColorBackground"
+ color="-853505">
+</Background>
+<Scope val="1" /></HighlightAction>
+</Highlight></HighlightList><Expand dir="0" />
+</C>
+<C c="1" r="5" s="7"><O t="DSColumn"><Attributes dsName="ds1" columnName="SignDate" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG><Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="2" r="5" s="8"><O t="DSColumn"><Attributes dsName="ds1" columnName="Amount" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper"><FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG><Result><![CDATA[$$$]]></Result></O>
+</C>
+<C c="3" r="5" s="8"><O t="Formula" class="Formula" ><Attributes reserveExecute="true"><![CDATA[=D6[A6:-1]+C6]]></Attributes></O>
+</C>
+<C c="4" r="5" s="9"><O t="Formula" class="Formula" ><Attributes><![CDATA[=C6/sum(C6[`0]{})]]></Attributes></O>
+</C>
+<C c="0" r="7" cs="5" s="10"><O t="S"><![CDATA[“设备采购成本累计占比分析”报表功能应用说明：]]></O>
+</C>
+<C c="0" r="8" cs="5" s="11"><O t="S"><![CDATA[1、占比]]></O>
+</C>
+<C c="0" r="9" cs="5" s="11"><O t="S"><![CDATA[     该报表中，占比表示每份合同金额在合同订单总额中所占的比例。]]></O>
+</C>
+<C c="0" r="10" cs="5" s="11"><O t="S"><![CDATA[2、累计]]></O>
+</C>
+<C c="0" r="11" cs="5" s="12"><O t="S"><![CDATA[     该报表中，将每份合同订单金额逐层进行累加，最终得出合同总额。]]></O>
+</C>
+</CellElementList>
+<WorkSheetAttr />
+<StyleList>
+<Style>
+<FRFont name="宋体" style="1" size="14" foreground="-15639139" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style>
+<FRFont name="宋体" style="0" size="12" foreground="-15639139" />
+<Background name="NullBackground" />
+<Border><Bottom style="6" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Bottom style="6" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ImageBackground"
+ specifiedImageWidth="-1.0"
+ specifiedImageHeight="-1.0"
+ layout="2">
+<Image width="271" height="20">
+<![CDATA[mDD3s_Ctrm_#OF0>K!!9WJ6!OQ7+.ZoaQ9>0E]d2laNppWiE)!WiGp)li!RsTDPW,0?[QWIV
+_g1pu1d?NUQ%!281S82*R8))W+4
+iebJi;<TD!-WQ)u!;iUeW~
+
+]]>
+</Image>
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="宋体" style="1" size="12" />
+<Background name="ColorBackground"
+ color="-852225">
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12" />
+<Background name="ColorBackground"
+ color="-852225">
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="宋体" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.SimpleDateFormat"><![CDATA[MMMM d, yyyy]]>
+</Format>
+<FRFont name="宋体" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat"><![CDATA[¤#0]]>
+</Format>
+<FRFont name="宋体" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat"><![CDATA[#0.00%]]>
+</Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-328966">
+</Background>
+<Border><Top style="3" color="-6894375"
+ /><Left style="3" color="-6894375"
+ /><Right style="3" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-328966">
+</Background>
+<Border><Left style="3" color="-6894375"
+ /><Right style="3" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-328966">
+</Background>
+<Border><Bottom style="3" color="-6894375"
+ /><Left style="3" color="-6894375"
+ /><Right style="3" color="-6894375"
+ /></Border>
+</Style>
+</StyleList>
+</Report>

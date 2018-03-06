@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ReportServerParameter language="0" >
+<Write serverCharacterEncoding="GBK" />
+<GZip run="true" />
+<SM concurrency="30" />
+<ReportWebAttr>
+<Background name="NullBackground" />
+</ReportWebAttr>
+<Parameters>
+</Parameters>
+<Styles>
+<SAttr name="Title">
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="18" foreground="-16737895" />
+<Background name="NullBackground" />
+<Border><Bottom style="6" color="-6697729"
+ /></Border>
+</Style>
+</SAttr>
+<SAttr name="Head">
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ImageBackground"
+ specifiedImageWidth="-1.0"
+ specifiedImageHeight="-1.0"
+ layout="2">
+<Image width="271" height="20">
+<![CDATA[mDD3s_Ctrm_#OF0>K!!9WJ6!OQ7+.ZoaQ9>0E]d2laNppWiE)!WiGp)li!RsTDPW,0?[QWIV
+_g1pu1d?NUQ%!281S82*R8))W+4
+iebJi;<TD!-WQ)u!;iUeW~
+
+]]>
+</Image>
+</Background>
+<Border><Top style="1" color="-6697729"
+ /><Bottom style="1" color="-6697729"
+ /><Left style="1" color="-6697729"
+ /><Right style="1" color="-6697729"
+ /></Border>
+</Style>
+</SAttr>
+<SAttr name="Explanation">
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="3" color="-6697729"
+ /><Bottom style="3" color="-6697729"
+ /><Left style="3" color="-6697729"
+ /><Right style="3" color="-6697729"
+ /></Border>
+</Style>
+</SAttr>
+<SAttr name="RTitle">
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="1" size="22" foreground="-16751002" />
+<Background name="NullBackground" />
+<Border><Bottom style="6" color="-6697729"
+ /></Border>
+</Style>
+</SAttr>
+<SAttr name="Head1">
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-1577999">
+</Background>
+<Border><Top style="1" color="-6697729"
+ /><Bottom style="1" color="-6697729"
+ /></Border>
+</Style>
+</SAttr>
+<SAttr name="Head2">
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12" />
+<Background name="ColorBackground"
+ color="-1577999">
+</Background>
+<Border><Top style="1" color="-6697729"
+ /><Bottom style="1" color="-6697729"
+ /><Left style="1" color="-6697729"
+ /><Right style="1" color="-6697729"
+ /></Border>
+</Style>
+</SAttr>
+<SAttr name="cell">
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6697729"
+ /><Bottom style="1" color="-6697729"
+ /><Left style="1" color="-6697729"
+ /><Right style="1" color="-6697729"
+ /></Border>
+</Style>
+</SAttr>
+</Styles>
+<FlashPrint popupFlashPrintSetting="true" /></ReportServerParameter>

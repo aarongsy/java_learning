@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="ExternalProjectImportWizard">
-		<item value="true" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="true" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Documents and Settings\gsy\桌面\pro"/>
 			<item value=""/>
 			<item value="C:\Documents and Settings\gsy\桌面\发短信"/>
 			<item value="C:\Documents and Settings\gsy\workspace\ccp\CCP"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
 			<item value="C:\Documents and Settings\gsy\桌面\file_ecology&amp;OA\发短信\readtext.zip"/>
 			<item value="C:\Documents and Settings\gsy\桌面\smsServiceTest.zip"/>
 			<item value="C:\Documents and Settings\gsy\桌面\mntext.zip"/>
 			<item value="C:\Documents and Settings\gsy\桌面\apcvalues.zip"/>
 			<item value="C:\Documents and Settings\gsy\桌面\readtext.zip"/>
-			<item value=""/>
 		</list>
 	</section>
+	<section name="CleanDialogSettings">
+		<item value="411" key="DIALOG_WIDTH"/>
+		<item value="479" key="DIALOG_Y_ORIGIN"/>
+		<item value="353" key="DIALOG_HEIGHT"/>
+		<item value="686" key="DIALOG_X_ORIGIN"/>
+		<item value="true" key="TOGGLE_SELECTED"/>
+	</section>
 	<section name="NewWizardAction">
-		<item value="org.eclipse.jdt.ui.wizards.JavaProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<item value="org.eclipse.m2e.core.wizards.Maven2ProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="org.eclipse.ui.Basic"/>
 			<item value="org.eclipse.emf.codegen.ecore.ui.wizardCategory"/>

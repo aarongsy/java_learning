@@ -1,0 +1,23 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+		http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+	
+	<!-- bean id="systemDataDS" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${db.driver}" />
+		<property name="url" value="${db.url}" />
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" />
+	</bean--><!--
+		 <bean id="otherDataDS" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${otherds.driver}" />
+		<property name="url" value="${otherds.url}" />
+		<property name="username" value="${otherds.username}" />
+		<property name="password" value="${otherds.password}" />
+	</bean>-->
+	<!--<bean id="ecologyDataDS" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${ecology.driver}" />
+		<property name="url" value="${ecology.url}" />
+		<property name="username" value="${ecology.username}" />
+		<property name="password" value="${ecology.password}" />
+	</bean>
+	--></beans>

@@ -1,0 +1,558 @@
+*, p, div, input, select, span, .ztree *{
+	font-family: Microsoft YaHei,Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+html,body {
+	width:100%;		/*页面宽度*/ 
+	height:100%;	/*页面高度*/ 
+	margin:0;			/*外边距*/ 
+	padding:0;			/*内边距*/ 
+	overflow:hidden;	/*内容溢出时(hidden:隐藏溢出内容 scroll:显示滚动条 auto:根据内容自动调整)*/ 
+}
+iframe{border:0;}
+body{
+	background-image: url("images/body_bg.jpg");
+}
+#header{	/*头部(顶部)界面样式设置,所有以#header开头的均是顶部界面相关设置*/
+	background: url("");	/*头部背景图片*/ 
+	width: 100%;				/*宽度*/ 
+	height: 70px;				/*高度*/ 
+	position: relative;			/*定位：相对定位*/ 
+}
+#header .popup{	/*头部弹出菜单样式设置*/
+	border: 1px solid #7B7B7B;	/*边框 (宽度  样式  颜色)*/ 
+	background:#FFFFFF;			/*背景颜色*/ 
+	position: absolute;			/*定位：绝对定位*/ 
+	z-index: 10;				/*z轴显示位置*/ 
+	display: none;				/*显示:隐藏*/ 
+}
+#header .popup_user{/*头部弹出菜单样式设置(用户信息)*/
+	width: 117px;	/*宽度*/ 
+	top: 75px;		/*距离顶部的距离*/ 
+	right: 66px;	/*距离右边的距离*/ 
+}
+#header .popup_more{/*头部弹出菜单样式设置(更多)*/
+	width: 80px;	/*宽度*/ 
+	top: 75px;		/*距离顶部的距离*/ 
+	right: 22px;	/*距离右边的距离*/ 
+}
+#header .popup ul li{/*头部弹出菜单中每一行的样式*/
+	border: 0px solid red;	/*边框 (宽度  样式  颜色)*/ 
+}
+#header .popup a{/*头部弹出菜单中A标签的样式*/
+	text-decoration: none;	/*下划线：不显示*/ 
+	color: #000;			/*字体颜色*/ 
+}
+#header .popup a p{/*头部弹出菜单中A标签中P的样式*/
+	padding: 5px;		/*内边距*/ 
+	padding-left: 10px;	/*左内边距*/ 
+}
+#header .popup a:hover p{	/*鼠标移上去时*/
+	background: #0197D6;	/*背景颜色*/ 
+}
+#header .popup a p img{/*头部弹出菜单中左侧图片的样式*/
+	margin-right: 5px;	/*右外边距*/ 
+}
+#header .popup ul .first{/*头部弹出菜单中第一行的样式*/
+	height: 10px;	/*高度*/ 
+}
+#header .popup ul .last{/*头部弹出菜单中最后一行的样式*/
+	height: 10px;	/*高度*/ 
+}
+#header .top{	/*顶部栏相关样式设置(您好，管理员那一栏)*/
+	border: 0px solid red;	/*边框 (宽度  样式  颜色)*/ 
+	position: absolute;		/*定位：绝对定位*/ 
+	bottom: 45px;			/*距离底部的距离*/ 
+	right: 15px;			/*距离右边的距离*/ 
+}
+#header .top ul{
+	border: 0px solid red;		/*边框 (宽度  样式  颜色)*/ 
+	height: 20px;				/*高度*/ 
+	margin: 0px 0px 0px 0px;	/*外边距(上 右 下 左)*/ 
+	color: #fff;				/*字体颜色*/ 
+	list-style: none;			/*列表样式：无*/ 
+	height: 32px;				/*高度*/ 
+}
+#header .top ul li{
+	padding-top:19px;		/*上内边距*/ 
+	padding-right:5px;		/*右内边距*/ 
+	float: left;			/*浮动：向左*/ 
+	border: 0px solid red;	/*边框 (宽度  样式  颜色)*/ 
+}
+#header .top ul .avatar{ /*顶部栏头像相关的设置*/
+	padding-top:0px;	/*上内边距*/ 
+	padding-right:3px;	/*右内边距*/ 
+}
+#header .top ul .avatar img{/*顶部栏头像相关的设置(头像图片)*/
+	width: 32px;	/*宽度*/ 
+	height: 32px;	/*高度*/ 
+}
+#header .top ul .split{
+	padding-top:17px;	/*上内边距*/ 
+}
+#header .top ul .split span{
+	border-left:1px solid #8DCDB8;	/*边框 (宽度  样式  颜色)*/ 
+	height: 15px;					/*高度*/ 
+}
+#header .top ul .more{
+	padding-right:3px;	/*右内边距*/ 
+}
+#header .top ul li .arrow{
+	padding-right: 5px;	/*右内边距*/ 
+}
+#header .top ul li .arrow img{
+	cursor: pointer;	/*鼠标移上去的样式(手形)*/
+}
+#header .logo{	/*logo样式*/
+	background: url("images/logo_eweaver.png") no-repeat;	/**/
+	height: 67px;		/*高度*/
+	width: 278px;		/*宽度*/
+	margin: 5px 0 0 0;		/*外边距*/
+}	
+#header .search{	/*搜索框*/
+	width: auto;	/*宽度：自动*/
+	height: auto;	/*高度：自动*/
+	border: 2px solid #6C97BC;	/*边框(宽度  样式  颜色)*/
+	position: absolute;	/*定位：绝对定位*/
+	bottom: 2px;	/*距离底部的距离*/
+	right: 100px;	/*距离右边的距离*/
+	background-color: transparent;	/*背景颜色(透明)*/
+	z-index: 3;		/*z轴显示位置*/
+}
+#header .searchtype{ /*搜索框下拉类型的相关样式*/
+	float: left;	/*浮动：向左*/
+}
+#header .searchcontent{/*搜索框单行文本包含元素的样式*/
+	float: left;	/*浮动：向左*/
+	position: relative;	/*定位：相对定位*/
+}
+#header .searchcontent input{/*搜索框单行文本框的样式*/
+	height:20px;	/*高度*/
+	width:150px;	/*宽度*/
+	border:1px solid #fff;	/*边框(宽度  样式  颜色)*/
+	border-left: none;		/*左边框(宽度  样式  颜色)*/
+}
+#header .searchbutton{/*搜索框搜索按钮的样式*/
+	height: 22px;	/*高度*/
+	width: 22px;	/*宽度*/
+	background: url("images/search_button.png");	/*背景图片*/
+	cursor: pointer;	/*鼠标移上去的样式(手形)*/
+	position: absolute;	/*定位：绝对定位*/
+	right: 2px;	/*距离右边的距离*/
+}
+.searchSplit{/*搜索框分割线的样式*/
+	margin-top: 3px;/*上外边距*/
+	height: 16px;	/*高度*/
+	width:0px;		/*宽度*/
+	border-left: 1px solid #a5bae0;	/*左边框(宽度  样式  颜色)*/
+	display: block;	/*显示(块级元素)*/
+}
+#header .searchcontent .searchSplit{/*搜索框搜索内容分割线对应的样式*/
+	position: absolute;	/*定位：绝对定位*/
+	left: 0px;	/*距离左边的距离*/
+}
+#header .handlerbutton{/*包含操作按钮相关的样式(刷新，退出按钮)*/
+	width: auto;	/*宽度*/
+	height: 23px;	/*高度*/
+	border: 0px solid red;	/*边框(宽度  样式  颜色)*/
+	position: absolute;	/*定位：绝对定位*/
+	bottom: 2px;	/*距离底部的距离*/
+	right: 15px;	/*距离右边的距离*/
+	z-index: 3;		/*z轴显示位置*/
+}
+#header .handlerbutton img{/*操作按钮的样式(刷新，退出按钮)*/
+	width: 23px;	/*宽度*/
+	height: 23px;	/*高度*/
+	border: 0px solid red;	/*边框(宽度  样式  颜色)*/
+	margin-right: 8px;		/*右外边距*/
+	cursor: pointer;	/*鼠标移上去的样式(手形)*/
+}
+#header .bottom{/*头部最下面一栏的样式*/
+	border: 0;	/*边框(宽度  样式  颜色)*/
+	width: 100%;			/*宽度*/
+	height: 30px;			/*高度*/
+	position: absolute;	/*定位：绝对定位*/
+	left: 0px;			/*距离左边的距离*/
+	bottom: 0px;		/*距离底部的距离*/
+	filter:alpha(opacity=10);/*透明度*/
+	-moz-opacity:0.1;
+	-khtml-opacity: 0.1;
+	opacity: 0.1;	
+	background-color: ;	/*背景颜色*/
+}
+#headerTabs{/*包含顶部tab页相关的样式*/
+	width: 100%;	/*宽度*/
+	position: absolute;	/*定位：绝对定位*/
+	left: 0px;		/*距离左边的距离*/
+	bottom: 0px;	/*距离底部的距离*/
+	border: 0;	/*边框(宽度  样式  颜色)*/
+	z-index: 2;		/*z轴显示位置*/
+}
+#headerTabs ul{
+	height: 27px;	/*高度*/
+	margin-left: 230px;	/*左外边距*/
+	list-style-type:none;	/*列表样式(无)*/
+	background:transparent;	/*背景(透明)*/
+}
+#headerTabs li{
+	float:left;		/*浮动(向左浮动)*/
+	width:auto;		/*宽度*/
+	margin:0 -1px 0 0;	/*外边距(上 右 下 左)*/
+	padding 0;			/*内边距*/
+}
+#headerTabs p{/*顶部tab页的内容相关样式*/
+	position: relative;	/*定位：相对定位*/
+	padding: 5px 12px 5px 12px;	/*内边距(上 右 下 左)*/
+	margin: 0 2px 0 0;			/*内边距*/
+	text-align:center;	/*文字对齐方式*/
+	background:transparent;	/*背景(透明)*/
+	color:#fff;				/*字体颜色*/
+	border: 0;	/*边框(宽度  样式  颜色)*/
+	background-image:url("images/tab_bg.png");	/**/
+	border-radius: 2px 2px 0 0;
+}
+#headerTabs .pad{/*顶部tab页的内容凸起部分相关样式*/
+	border:0;		/*边框(宽度)*/
+	background:transparent;	/*背景(透明)*/
+}
+#headerTabs a:active {/*顶部tab页A标签伪类活跃对应样式*/
+	outline: none;	/*无外边线*/ 
+	star:expression(this.onFocus=this.blur());
+}
+#headerTabs a{/*顶部tab页中A标签对应的样式*/
+	text-decoration:none;
+}
+#headerTabs a:hover{/*顶部tab页中A标签鼠标经过时对应的样式/
+	background:transparent;	/*背景(透明)*/
+}
+#headerTabs a:hover p{/*顶部tab页中A标签鼠标经过时P对应的样式/
+	background:url("images/tab_bg_shense.jpg");	/*背景图片*/
+}
+#headerTabs a:hover .pad{/*顶部tab页中A标签鼠标经过时凸起部分对应的样式/
+	/*height:0px;*/
+}
+#headerTabs .tabselected p{/*顶部tab页被选中时P标签对应的样式/
+	padding-bottom:12px;	/*下内边距/
+	background:url("images/tab_bg_shense.jpg");	/*背景图片*/
+	background-color: #fff;
+	color: #000;
+}
+#headerTabs .tabselected .pad{/*顶部tab页被选中时凸起部分对应的样式/
+	height:0px;	/*高度*/
+}
+#headerTabs .tabclose{/*顶部tab页关闭按钮对应的样式*/
+	background:url("images/tab_close.png") no-repeat;	/*背景图片*/
+	border: 0px solid red;	/*边框(宽度  样式  颜色)*/
+	width: 8px;		/*宽度*/
+	height: 8px;	/*高度*/
+	position: absolute;	/*定位：绝对定位*/
+	top: 2px;			/*距离顶部的距离*/
+	right: 2px;			/*距离右边的距离*/
+	cursor: pointer;	/*鼠标移上去的样式(手形)*/
+	padding:0;			/*内边距*/
+	margin:0;			/*外边距(上 右 下 左)*/
+	display:none;		/*显示(隐藏)*/
+}
+.contentFrame{/*tab打开的iframe对应的样式*/
+	width: 100%;	/*宽度*/
+	height: 100%;	/*高度*/
+}
+#menu{/*左侧菜单最外层元素的样式*/
+	position:relative;	/**/
+	width:200px;	/*宽度*/
+	height:509px;	/*高度*/
+	float:left;		/*浮动(向左浮动)*/
+	text-align:center;	/*文字对齐方式*/
+	background: url("images/bg_leftnav.png");
+	background: url("/images/main/shadow.png") repeat-y;	
+	background-position: right;	
+}
+#menuContainer{/*菜单容器(包含菜单顶部,菜单树,底部一级菜单)对应的样式*/
+	position:relative;	/*定位：相对定位*/
+	width:200px;		/*宽度*/
+	height:484px;		/*高度*/
+	float:left;			/*浮动(向左浮动)*/
+	text-align:center;	/*文字对齐方式*/
+}
+#menuTop{/*菜单顶部对应的样式*/
+        padding: 15px 0 0 0 !important;
+}
+#menuTop .current_menu{
+        color: #000;
+        font-size: 14px;
+        font-weight: bold;
+        float: left;
+}
+#menuTop .current_menu_icon{
+        float: left;
+        margin: 3px 8px 0 30px;
+}
+#menuCenter{/*包含菜单树的元素对应的样式*/
+	position: relative;	/*定位：相对定位*/
+	margin-top: 0px;	/*上外边距*/
+	background: transparent;	/*背景(透明)*/
+}
+#menuBottom{/*底部一级菜单最外层元素对应的样式*/
+	width: 100%;	/*宽度*/
+	height: 200px;	/*高度*/
+	overflow:hidden !important;	/*内容溢出时隐藏滚动条*/
+}
+#menuBottom .levelMenu{/*包含底部一级菜单的元素对应的样式*/
+	width: 100%;	/*宽度*/
+	height: 200px;	/*高度*/
+	overflow:hidden;	/*内容溢出时隐藏滚动条*/
+}
+#menuBottom ul{
+	width:100%;			/*宽度*/
+	margin-top: 0px;	/*上外边距*/
+	list-style: none;	/*列表样式(无)*/
+	background: transparent !important;	/*背景透明(优先级最高)*/
+}
+#menuBottom ul li{
+	border: 0px solid blue;	/*边框(宽度  样式  颜色)*/
+}
+#menuBottom ul li a{
+	text-decoration: none;	/*下划线(无)*/
+	cursor: pointer;		/*鼠标移上去的样式(手形)*/
+}
+#menuBottom ul li a,#menu .bottom ul li a:visited{
+	height: 1em;	/*高度*/
+}
+#menuBottom ul li a p{/*底部一级菜单对应的样式*/
+	text-align:left;
+	padding: 8px 0 8px 20px;
+}
+#menuBottom ul li a:hover p span{/*底部一级菜单鼠标移上去时对应的样式*/
+	color: #fff;	/*字体颜色*/
+}
+#menuBottom ul li a:hover p{/*底部一级菜单鼠标移上去时对应的样式*/
+	background-color: #1c629a;	/*背景颜色*/
+}
+#menuBottom ul li a .selected{
+                background-color: #1c629a;
+}
+#menuBottom ul li a .selected span.text{
+                color: #fff;
+}
+#menuBottom ul li a p span{
+	color: #000;	/*字体颜色*/
+}
+#menuBottom ul li a p .icon{/*底部一级菜单包含图标的元素对应的样式*/
+	border: 0px solid blue;
+	padding: 5px;
+	background-color: #000;
+}
+#menuBottom ul li a p .icon img{/*底部一级菜单图标对应的样式*/
+	width: 16px;	/*宽度*/
+	height: 16px;	/*高度*/
+}
+#menuBottom ul li a p .text{/*底部一级菜单文字对应的样式*/
+	padding-left: 10px;	/*左内边距*/
+}
+#menuHandler{/*操作底部一级菜单的最外层元素对应的样式*/
+	height: 50px;	/*高度*/
+	width: 100%;	/*宽度*/
+	position: relative !important;	/*相对定位(优先级最高)*/
+	clear: both;	/*清除浮动*/
+}
+#menuHandler div{
+	width: 16px;	/*宽度*/
+	height: 16px;	/*高度*/
+	float: left;	/*浮动：向左*/
+	cursor: pointer;	/*鼠标移上去的样式(手形)*/
+}
+#menuHandler .up{/*操作底部一级菜单的向上操作的按钮对应的样式*/
+	background: url("images/br_up.png") no-repeat;	/*背景图片 不平铺*/
+	margin: 4px 10px 4px 70px;	/*外边距(上 右 下 左)*/
+}
+#menuHandler .down{/*操作底部一级菜单的向下操作的按钮对应的样式*/
+	background: url("images/br_down.png") no-repeat;	/*背景图片 不平铺*/
+	margin: 4px 10px 4px 10px;	/*外边距(上 右 下 左)*/
+}
+#menuHandler .prev{/*操作底部一级菜单的向前操作的按钮对应的样式*/
+	background: url("images/brackets.png") no-repeat;	/*背景图片 不平铺*/
+	margin: 4px 10px 4px 30px;	/*外边距(上 右 下 左)*/
+	width: 8px;	/*宽度*/
+	background-position: 0px 0px;	/*背景图位置(水平 垂直)*/
+}
+#menuHandler .next{/*操作底部一级菜单的向后操作的按钮对应的样式*/
+	background: url("images/rnd_br_next.png") no-repeat;	/*背景图片 不平铺*/
+	margin: 6px 0 0 2px;	/*外边距(上 右 下 左)*/
+}
+#menuHandler .nav{/*包含导航区域的样式*/
+	width: auto;
+	margin: 12px 0 0 70px;
+}
+#menuHandler .nav ul{
+	list-style: none;	/*列表样式(无)*/
+}
+#menuHandler .nav ul li{
+	height: 20px;	/*高度*/
+	width: 9px;		/*宽度*/
+	text-align: center;	/*文字对齐方式*/
+	float: left;		/*浮动：向左*/
+	margin-right: 1px;	/*右外边距*/
+}
+#menuHandler .nav ul .current{	/*操作底部一级菜单导航区域元素的样式(当前元素时)*/
+	background: url("images/dotblack.png") no-repeat;	/*背景图片 不平铺*/
+}
+#menuHandler .nav ul .uncurrent{ /*操作底部一级菜单导航区域元素的样式(非当前元素时)*/
+	background: url("images/dotwhite.png") no-repeat;	/*背景图片 不平铺*/
+	filter:alpha(opacity=30);
+	-moz-opacity:0.3;
+	-khtml-opacity: 0.3;
+	opacity: 0.3;
+}
+.menuSplit, #menuBottom .menuSplit,  #menuHandler .menuSplit{	/*菜单分隔符对应的样式*/
+	height: 1px;
+	width: 168px;
+	position: absolute;
+	background: url("images/split.png") ;
+	top: 0px;
+	left: 10px;
+}
+#content{/*内容区域对应的样式*/
+	width:100%;		/*宽度*/
+	height:530px;	/*高度*/
+}
+#rightDiv{
+	position: relative;	/*定位：相对定位*/
+}
+#rightDiv .levelSplit{/*水平分割元素对应的样式*/
+	position: absolute;	/*定位:绝对定位*/
+	top:0px;			/*距离顶部的距离*/
+	left: 0px;			/*距离左边的距离*/
+	width: 20px;		/*宽度*/
+	cursor: pointer;	/*鼠标移上去时鼠标形状(手形)*/
+	/*background-position: 此属性会在resizeElement方法中设置*/ 
+}
+#rightDiv .levelSplit_Contraction{/*点击收缩菜单时的样式(鼠标移上去时)*/
+	background: url("images/leftMenu_Contraction.png") no-repeat;	/*背景图片 不平铺*/
+	background-color: #EFEFEF;	/*背景颜色*/
+}
+
+#rightDiv .levelSplit_Expand{/*点击展开菜单时的样式(鼠标移上去时)*/
+	background: url("images/leftMenu_Expand.png") no-repeat;	/*背景图片 不平铺*/
+	background-color: #EFEFEF;	/*背景颜色*/
+}
+
+#rightDiv .verticalSplit{
+	position: absolute;	/*定位:绝对定位*/
+	top:0px;			/*距离顶部的距离*/
+	left: 0px;			/*距离左边的距离*/
+	height: 20px;		/*高度*/
+	cursor: pointer;	/*鼠标移上去时鼠标形状(手形)*/
+	/*background-position: 此属性会在resizeElement方法中设置*/ 
+}
+#rightDiv .verticalSplit_Contraction{/*点击收缩头部时的样式(鼠标移上去时)*/
+	background: url("images/top_Contraction.png") no-repeat;	/*背景图片 不平铺*/
+	background-color: #EFEFEF;	/*背景颜色*/
+}
+#rightDiv .verticalSplit_Expand{/*点击展开头部时的样式(鼠标移上去时)*/
+	background: url("images/top_Expand.png") no-repeat;		/*背景图片 不平铺*/
+	background-color: #EFEFEF;	/*背景颜色*/
+}
+#skinChoose .skinList{	/*皮肤列表框对应的样式*/
+	margin-top: 20px;	/*上外边距*/
+	margin-left: 20px;	/**/
+}
+#skinChoose .skinList a:hover img{ /*鼠标经过皮肤图片时皮肤图片对应的样式*/
+	border-color: #999;	/*边框颜色(宽度  样式  颜色)*/
+}
+#skinChoose .skinList a img{ /*皮肤图片对应的样式*/
+	height: 60px;	/*高度*/
+	width: 100px;	/*宽度*/
+	margin-right: 20px;	/*右外边距*/
+	margin-bottom: 20px;	/**/	
+	border: 1px solid #DDDDDD;	/*边框(宽度  样式  颜色)*/
+	padding: 1px;	/*内边距*/
+	cursor: pointer;	/*鼠标移上去的样式(手形)*/
+}
+/*override crselect*/
+.CRselectBox{
+	width: 76px;		/*宽度*/
+	border-color: #fff;	/*边框颜色*/
+	line-height: 20px;	/*行高*/
+}
+.CRselectBox a.CRselectValue{
+	width:60px;	/*宽度*/
+}
+.CRselectBoxOptions{
+	width:76px;	/*宽度*/
+}
+.CRselectBoxOptions a:hover{
+	background:#0197D6;	/**/
+}
+/*override ztree*/
+.ztree li button.noline_open{/*打开菜单树对应的图标样式*/
+	background: url("images/tree_arrow_open_black.gif") no-repeat;	/*背景图片 不平铺*/
+	background-position: 4px 3px;	/*背景图位置(水平 垂直)*/
+}
+.ztree li button.noline_close{/*关闭菜单树对应的图标样式*/
+	background: url("images/tree_arrow_close_black.gif") no-repeat;	/*背景图片 不平铺*/
+	background-position: 5px 2px;	/*背景图位置(水平 垂直)*/
+}
+.ztree li span {	/*菜单字体颜色*/
+	color: #000;	/*字体颜色*/
+}
+.ztree li a:hover{	/*鼠标从菜单上经过时*/
+	background-color:#1c629a;	/*背景颜色*/
+	text-decoration: none;	/*取消下划线*/
+}
+.ztree li a.curSelectedNode {	/*菜单被选中时*/
+	background-color:#1c629a;	/*背景颜色*/
+}
+/*override layout*/
+.ui-layout-resizer {
+    background: transparent !important;	/*背景透明 (优先级最高)*/
+}
+.ui-layout-north{
+	border: 0 !important;	/*边框宽度*/
+	background: transparent !important;	/*背景透明 (优先级最高)*/
+}
+.ui-layout-center{
+	border: 0 !important;	/*边框宽度*/
+	background: transparent !important;	/*背景透明 (优先级最高)*/
+}
+.ui-layout-south{
+	border: 0 !important;	/*边框宽度*/
+	background: transparent !important;	/*背景透明 (优先级最高)*/
+}
+.ui-layout-toggler{/*ui layout布局之前的分隔符*/
+	background: transparent !important;	/*背景透明 (优先级最高)*/
+	display: none !important;	/*显示：隐藏*/
+}
+/*style for bar(自定义滚动条相关的样式)*/
+#menuCenter .customScrollBox{position:relative; height:100%; overflow:hidden;}
+#menuCenter .customScrollBox .container{position:relative; width:<%=menuWidth%>; top:0; float:left;}
+#menuCenter .customScrollBox .content{clear:both;}
+#menuCenter .dragger_container{position:absolute; right:0px;top:0px; background:#999 !important; width:6px; height:150px; float:left; margin:10px 0 0 10px; cursor:pointer;
+	border: 1px solid #fff;
+	filter:alpha(opacity=50);
+	-moz-opacity:0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+}
+#menuCenter .dragger{position:absolute; left:0px;top:0px; width:6px; height:60px; background:#EAEAEA; text-align:center; overflow:hidden; cursor:pointer;}
+#menuCenter .dragger_pressed{position:absolute; width:6px; height:60px; background:#EAEAEA; text-align:center; overflow:hidden; cursor:pointer;}
+
+
+
+.ztree a.level0 {
+	padding: 4px 0 4px 0px;
+	background-color: ;
+}
+.ztree li.level0 {
+	background-color: ;
+}
+.ztree li.level1 {
+	padding: 2px 0 2px 0px;
+	background-color: ;
+}
+.ztree li ul{
+	padding-left: 0px;
+}
+.ztree a button{
+	width: 20px;
+	margin-left: 2px;
+}

@@ -1,0 +1,207 @@
+.portal-container {position: absolute; color: #83C2CD; background-color:#ffffff; }
+.portal-header {  display: block; padding : 10 5 5 5; text-align:right; font-size:12; font-family: Verdana, helvetica, arial; height:60;}
+.portal-header2 {  display: block; padding : 10 5 5 5; text-align:right; font-size:12; font-family: Verdana, helvetica, arial; background:url("../images/portal-header11.png"); height:60;}
+.portal-header-logo {position: absolute; left:20;top:0; padding : 20 5 5 5; color: #83C2CD; font-size:20; font-family: Verdana, helvetica, arial; height:80; width:200;}
+.portal-header-title { display: block; padding : 20 5 5 5; text-align:center; color: #83C2CD; font-size:20; font-family: Verdana, helvetica, arial; }
+.portal-header-title-view { color: #83C2CD;  padding : 20 5 5 5; font-size:20; font-family: Verdana, helvetica, arial; }
+.portal-header-title-edit { color: #83C2CD;  padding : 20 5 5 5; font-size:20; font-family: Verdana, helvetica, arial; border-color: #83C2CD; border-style: solid; border-width: 1px;}
+.portal-header-menu-item {padding : 5 5 5 5; text-align:right; }
+.portal-header-menu-item-separater { width:1; height:6; border-left: thin solid #83C2CD; font-size:8; }
+.portal-header-menu-item A:link {text-decoration: none; color:#83C2CD; padding : 5 5 5 5; font-size:10; font-family: Verdana, helvetica, arial;}
+.portal-header-menu-item A:visited {text-decoration: none; color:#83C2CD;}
+.portal-header-menu-item A:active { text-decoration: none; color:#83C2CD;}
+.portal-header-menu-item A:hover { text-decoration: underline; color:#ACDAD5;}
+.portal-body { margin: 0 0 0 0;}
+.portal-footer {position: absolute; display: block; font-size:12; font-family: Verdana, helvetica, arial; text-align:center;}
+.portal-footer A:link {text-decoration: none; color: #83C2CD;}
+.portal-footer A:visited {text-decoration: none; color: #83C2CD;}
+.portal-footer A:active { text-decoration: none; color: #83C2CD;} 
+.portal-footer A:hover { text-decoration: underline; color: #ACDAD5;}
+.portal-footer span {font-size:10;}
+
+.portal-tab-container {width: 400px;}
+.portal-tabs {float:left; width:100%; font-size:12; font-family: Verdana, helvetica, arial;}
+.portal-tabs ul {margin:0; padding:14px 10px 0; list-style:none;}
+.portal-tabs li {float:left; border-top: thin solid #83C2CD; border-left: thin solid #83C2CD;  margin:0; padding:0 0 0 0px;}
+.portal-tabs span {float:left;	display:block; background:url("../images/tab_bkgdOcean.gif") no-repeat right top; padding:5px 15px 4px 6px;	text-decoration:none; color:#321;}
+.portal-tabs li.blue {background:url("../images/leftBlue.gif") no-repeat left top;}
+.portal-tabs span.blue {background:url("../images/rightBlue.gif") no-repeat right top;}
+.portal-tabs li.red {background:url("../images/leftRed.gif") no-repeat left top;}
+.portal-tabs span.red {background:url("../images/rightRed.gif") no-repeat right top;}
+.portal-tabs li.green {background:url("../images/leftGreen.gif") no-repeat left top;}
+.portal-tabs span.green {background:url("../images/rightGreen.gif") no-repeat right top;}
+.portal-tabs li.darkgreen {background:url("../images/leftDarkGreen.gif") no-repeat left top;}
+.portal-tabs span.darkgreen {background:url("../images/rightDarkGreen.gif") no-repeat right top;}
+.portal-tabs li.orange {background:url("../images/leftOrange.gif") no-repeat left top;}
+.portal-tabs span.orange {background:url("../images/rightOrange.gif") no-repeat right top;}
+.portal-tabs .current span {color:black; padding-bottom:5px; font-weight: bold;}
+.portal-tabs .bluecurrent {background-image:url("../images/leftBlue.gif");}
+.portal-tabs .bluecurrent span {background-image:url("../images/rightBlue.gif");color:black;padding-bottom:5px;font-weight: bold;}
+.portal-tabs .redcurrent {	background-image:url("../images/leftRed.gif");}
+.portal-tabs .redcurrent span {background-image:url("../images/rightRed.gif");	padding-bottom:5px;	font-weight: bold;}
+.portal-tabs .greencurrent {background-image:url("../images/leftGreen.gif");}
+.portal-tabs .greencurrent span {background-image:url("../images/rightGreen.gif");	color:black;padding-bottom:5px;	font-weight: bold;}
+.portal-tabs .darkgreencurrent {background-image:url("../images/leftDarkGreen.gif");}
+.portal-tabs .darkgreencurrent span {background-image:url("../images/rightDarkGreen.gif");	color:black;padding-bottom:5px;	font-weight: bold;}
+.portal-tabs .orangecurrent {background-image:url("../images/leftOrange.gif");}
+.portal-tabs .orangecurrent span {background-image:url("../images/rightOrange.gif");color:black;padding-bottom:5px;font-weight: bold;}
+.portal-tab-handle {border: 0px;display: inline;cursor:pointer;	cursor:hand;}
+.portal-tab-handle A:link {text-decoration: none; color: #83C2CD;}
+.portal-tab-handle A:visited {text-decoration: none; color: #83C2CD;}
+.portal-tab-handle A:active { text-decoration: none; color: #83C2CD;} 
+.portal-tab-handle A:hover { text-decoration: underline; color: #ACDAD5;}
+.portal-tab-button {border: 0px;display: inline;cursor:pointer;	cursor:hand;padding : 0 0 0 5px; height: 7; width: 7;}
+.portal-tab-panels {}
+.portal-tab-panel {background: #ffffff;padding: 5px; }
+.portal-tab-panel_blue {background: #acc6d5;padding: 5px;border: 1px solid black;border-top: 0px;}
+.portal-tab-panel_red {	background: #e6d2cd;	padding: 5px;	border: 1px solid black;	border-top: 0px;}
+.portal-tab-panel_green {background: #94ee83;padding: 5px;border: 1px solid black;border-top: 0px;}
+.portal-tab-panel_darkgreen {background: #08ea08;padding: 5px;border: 1px solid black;border-top: 0px;}
+.portal-tab-panel_orange {background: #ee8d10;padding: 5px;border: 1px solid black;border-top: 0px;color: white;}
+
+.portlet {height:auto; border: thin solid #83C2CD;}
+.portlet-header { z-index: 2; visibility:visible; color: #FFFFFF; background-color: #83C2CD;  padding : 2 25 2 5; text-align:left; font-size:12; font-family: Verdana, helvetica, arial; font-weight: bold;}
+.portlet-header A:link {text-decoration: none; color: #FFFFFF;}
+.portlet-header A:visited {text-decoration: none; color: #FFFFFF;}
+.portlet-header A:active { text-decoration: none; color: #FFFFFF;} 
+.portlet-header A:hover { text-decoration: underline; color: #0088E4;}
+.portlet-header-button {position: absolute;}
+.portlet-title { display: block; text-align:left; color: #83C2CD; padding : 0 0 5 5; font-size:16; font-family: Verdana, helvetica, arial; }
+
+.portlet-body { }
+.portlet span.portlet { color: #000000; text-align:left; font-size:12; font-family: Verdana, helvetica, arial; padding : 10 0 0 5; display: block; }
+.portlet-popup { color: #000000; background-color: #EEF6FF; border-color: #83C2CD; border-style: solid; border-width: 1px; padding : 5 25 5 5; text-align:left; font-size:12; font-family: Verdana, helvetica, arial; }
+.portlet-popup2 { color: #000000; background-color: #ffffff; border-color: #83C2CD; border-style: solid; border-width: 1px; padding : 5 25 5 5; text-align:left; font-size:12; font-family: Verdana, helvetica, arial; }
+.portlet-popup3 { color: #000000; background-color: #F5F2DB; border-color: #83C2CD; border-style: solid; border-width: 1px; padding : 5 25 5 5; text-align:left; font-size:12; font-family: Verdana, helvetica, arial; }
+
+.portlet-rss { color: #000000; text-align:left;  font-family: Arial; padding : 0 0 0 5; display: block; }
+.portlet-rss A:link {text-decoration: none; color: #3169B5;}
+.portlet-rss A:visited {text-decoration: none; color: #3169B5;}
+.portlet-rss A:active { text-decoration: none; color: #3169B5;} 
+.portlet-rss A:hover { text-decoration: underline; color: #0088E4;}
+.portlet-item { color: #000000; text-align:left;  font-family: Arial; padding : 0 0 0 5; }
+.portlet-item A:link {text-decoration: none; color: #3169B5;}
+.portlet-item A:visited {text-decoration: none; color: #3169B5;}
+.portlet-item A:active { text-decoration: none; color: #3169B5;} 
+.portlet-item A:hover { text-decoration: underline; color: #0088E4;}
+
+.portlet2 {border: thin solid #196b9b; font-size:12; font-family: Verdana, helvetica, arial;  padding : 0 0 0 0; }
+.portlet2 span.portlet { text-align:left; font-size:12; font-family: Verdana, helvetica, arial; padding : 0 0 0 5; display: block; }
+.portlet2-header { clear: both;background-imaeg:url(\light\images\style1\headBg.gif);/*background-color: #83C2CD; color: #ffffff;*/ height: 26; font-size:12; display: block; text-align:right;  padding : 1 0 1 0;}
+.portlet2-header-title { float: left; text-align: left;  color: #ffffff; padding : 0 5 0 5; font-weight: bold;}
+.portlet2-header A:link {text-decoration: none; color: #FFFFFF;}
+.portlet2-header A:visited {text-decoration: none; color: #FFFFFF;}
+.portlet2-header A:active { text-decoration: none; color: #FFFFFF;} 
+.portlet2-header A:hover { text-decoration: underline; color: #0088E4;}
+.portlet2-header-button { text-align:right; padding : 0 0 0 0;}
+.portlet2-header-button A:link {text-decoration: none; color: #FFFFFF;}
+.portlet2-header-button A:visited {text-decoration: none; color: #FFFFFF;}
+.portlet2-header-button A:active { text-decoration: none; color: #FFFFFF;} 
+.portlet2-header-button A:hover { text-decoration: none; color: #0088E4;}
+
+.portlet-link { text-align:right; padding : 10 0 5 0; font-size:12; font-family: Verdana, helvetica, arial; }
+.portlet-link A:link {text-decoration: none; color: #83C2CD;}
+.portlet-link A:visited {text-decoration: none; color: #83C2CD;}
+.portlet-link A:active { text-decoration: none; color: #83C2CD;} 
+.portlet-link A:hover { text-decoration: underline; color: #ACDAD5;}
+
+.portlet-link-left { text-align:left; padding : 10 0 5 5; font-size:12; font-family: Verdana, helvetica, arial; }
+.portlet-link-left A:link {text-decoration: none; color: #83C2CD;}
+.portlet-link-left A:visited {text-decoration: none; color: #83C2CD;}
+.portlet-link-left A:active { text-decoration: none; color: #83C2CD;} 
+.portlet-link-left A:hover { text-decoration: underline; color: #ACDAD5;}
+
+.portlet-footer {color: #83C2CD; text-align:left; font-size:10; font-family: Verdana, helvetica, arial; padding : 10 0 5 5;}
+.portlet-footer A:link {text-decoration: none; color: #83C2CD;}
+.portlet-footer A:visited {text-decoration: none; color: #83C2CD;}
+.portlet-footer A:active { text-decoration: none; color: #83C2CD;} 
+.portlet-footer A:hover { text-decoration: underline; color: #ACDAD5;}
+
+.portlet-bgcolor { background-color: #E6FAF6; text-align:left; padding : 0 0 5 5; font-size:12; font-family: Verdana, helvetica, arial;}
+.portlet-form-group {border-top: thin solid #83C2CD; border-bottom: thin solid #83C2CD; border-left: thin solid #83C2CD; border-right: thin solid #83C2CD; background-color: #ffffff;  font-size:12; font-family: Verdana, helvetica, arial;  margin : 5 5 5 5; }
+.portlet-form-label { color: #000000; font-family: Tahoma, Arial; font-size: 12px; }
+.portlet-form-label-i { color: #000000; font-family: Tahoma, Arial; font-style: italic; font-size: 12px; }
+.portlet-form-field { color: #83C2CD; font-family: Tahoma, Arial; font-size: 12px; }
+.portlet-form-input-field { border-color: #83C2CD; border-style: solid; border-width: 1px; font-family: Arial; font-size: 12px; }
+.portlet-form-input-field-color { border-color: #83C2CD; border-style: solid; border-width: 1px; font-family: Arial; font-size: 12px; color: #FFFFFF; background-color: #83C2CD;}
+.portlet-form-select { color: #000000; border-color: #83C2CD; border-style: solid; border-width: 1px; font-family: Arial; font-size: 12px; }
+.portlet-form-select2 { color: #000000; border-color: #83C2CD; border-style: solid; border-width: 0px; font-family: Arial; font-size: 12px; }
+.portlet-form-radio { color: #000000;  border-color: #83C2CD; font-family: Arial; font-size: 12px; }
+.portlet-form-check { color: #000000;  border-color: #83C2CD; font-family: Arial; font-size: 12px; }
+.portlet-form-icon { border: 0px; }
+.portlet-form-field-label {}
+.portlet-icon-label { }
+.portlet-dlg-icon-label {}
+.portlet-form-button { color: #83C2CD; background-color: #E6FAF6; border-color: #83C2CD; border-style: solid; border-width: 1px; font-family: Arial; font-size: 12px; margin: 0 0 0 4;}
+.portlet-form-button-disabled { color: #B5B1AC; background-color: #E6E6E6; border-color: #B5B1AC; border-style: solid; border-width: 1px; font-family: Arial; font-size: 12px; }
+.portlet-form-textarea-field { border-color: #83C2CD; border-style: solid; border-width: 1px; font-family: Arial; font-size: 12px; }
+
+.portlet-table {border-width: 1px 1px 1px 1px;
+	border-spacing: 2px;
+	border-style: outset outset outset outset;
+	border-color: #83C2CD #83C2CD #83C2CD #83C2CD;
+	border-collapse: collapse; }
+.portlet-table th {
+	border-width: 1px 1px 1px 1px;
+	padding: 3px 3px 3px 3px;
+	border-style: inset inset inset inset;
+	border-color: #83C2CD #83C2CD #83C2CD #83C2CD;
+	-moz-border-radius: 0px 0px 0px 0px;
+}
+.portlet-table tr {
+	border-width: 1px 1px 1px 1px;
+	padding: 3px 3px 3px 3px;
+	border-style: inset inset inset inset;
+	border-color: #83C2CD #83C2CD #83C2CD #83C2CD;
+	-moz-border-radius: 0px 0px 0px 0px;
+}
+.portlet-table td {
+	border-width: 1px 1px 1px 1px;
+	padding: 3px 3px 3px 3px;
+	border-style: inset inset inset inset;
+	border-color: #83C2CD #83C2CD #83C2CD #83C2CD;
+	-moz-border-radius: 0px 0px 0px 0px;
+}
+.portlet-table-title {text-align:center; padding : 0 0 5 5; font-size:12; font-family: Verdana, helvetica, arial; color:#83C2CD}
+.portlet-table-td-left {text-align:left; padding : 0 0 5 5; font-size:12; font-family: Verdana, helvetica, arial;}
+.portlet-table-td-center {text-align:center;padding : 0 0 5 0; font-size:12; font-family: Verdana, helvetica, arial;}
+.portlet-table-td-right {text-align:right; padding : 10 0 5 0; font-size:12; font-family: Verdana, helvetica, arial;}
+
+.portlet-font{}
+.portlet-font-dim{}
+.portlet-msg-status {}
+.portlet-msg-info {text-align:left; padding : 0 0 5 5; font-size:12; font-family: Verdana, helvetica, arial; color:#3169B5}
+.portlet-msg-error {text-align:left; padding : 0 0 5 5; font-size:12; font-family: Verdana, helvetica, arial; color:#ff0000}
+.portlet-msg-alert {text-align:left; padding : 0 0 5 5; font-size:12; font-family: Verdana, helvetica, arial; color:#ff0000}
+.portlet-msg-success {text-align:left; padding : 0 0 5 5; font-size:12; font-family: Verdana, helvetica, arial; color:#3169B5}
+.portlet-section-header{}
+.portlet-section-body{}
+.portlet-section-alternate{}
+.portlet-section-selected{}
+.portlet-section-subheader{}
+.portlet-section-footer{}
+.portlet-section-text{}
+.portlet-menu {}
+.portlet-menu-item {}
+.portlet-menu-item-selected {}
+.portlet-menu-item-hover {}
+.portlet-menu-item-hover-selected {}
+.portlet-menu-cascade-item {}
+.portlet-menu-cascade-item-selected {}
+.portlet-menu-description {}
+.portlet-menu-caption {}
+
+/* #### Web Application's CSS #### */
+.loading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  font-size:10; 
+  font-family: Verdana, helvetica, arial;
+  text-align:center;
+} 	

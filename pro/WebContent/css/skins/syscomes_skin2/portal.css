@@ -1,0 +1,136 @@
+body{
+	padding: 0 0 0 0;
+	margin:0; 
+	overflow-x: hidden !important; 
+	overflow-y: auto;
+	/*background: url(/images/bg/22.jpg);*/
+	background-position: 0 -150;
+}
+.portal-tabs{
+	display:none;
+}
+/* 门户选项卡元素样式 */
+ul.x-tab-strip-top {/*tab页头部对应的样式*/
+	background:transparent;		/*背景(透明)*/
+	background-color:#e0e0e0;	/*背景颜色*/
+	border: none;				/*边框(无)*/
+}
+.x-tab-panel-header {
+	border-bottom: none;
+	background-color: #fff;
+	padding: 0;
+}
+.x-tab-strip-top .x-tab-right, .x-tab-strip-top .x-tab-left, .x-tab-strip-top .x-tab-strip-inner{/*未被选中时,tab页对应的样式*/
+	background:transparent;		/*背景(透明)*/
+	background-color: #e0e0e0;	/*背景颜色*/
+}
+/*被选中时,tab页左右两侧对应的样式*/
+.x-tab-strip-top .x-tab-strip-active .x-tab-right,.x-tab-strip-top .x-tab-strip-active .x-tab-left,.x-tab-strip-top .x-tab-strip-active .x-tab-inner{
+	background-color: #fff;		/*背景颜色*/
+}
+.x-tab-strip-top span.x-tab-strip-text{/*未被选中时,tab页中字体对应的样式*/
+	font-weight: bold;			/*字体宽度*/
+	color: #000;				/*字体颜色*/
+}
+.x-tab-strip-top .x-tab-strip-active .x-tab-strip-text{/*被选中时,tab页字体区域对应的样式*/
+	background-color: #fff;		/*背景颜色*/
+	font-weight: bold;			/*字体宽度*/
+	color: #000;				/*字体颜色*/
+}
+
+table.Econtent td.viewType23Class a{
+	font-family: Microsoft YaHei;
+	font-size: 14px;
+	color: #4f61ea;
+}
+.Econtent .docAbstract {
+	font-family: Microsoft YaHei;
+	margin-left: 15px;
+	padding-top: 2px;
+	text-indent: 0px;
+	line-height: 16px;
+}
+
+#shortcut .data ul li{
+	text-align: center;
+	width: 60px;
+	float: left;
+	display: inline;
+	margin: 2px 0px 0px 0px;
+}
+#shortcut .handler{/*底部操作栏对应的样式*/
+	border: 0px solid red;	/*边框 (宽度  样式  颜色)*/ 
+	position: absolute !important;	/*定位*/
+	top: 44;
+	right: 0;
+}
+#shortcut .handler div{
+	width: 16px;	/*宽度*/ 
+	height: 16px;	/*高度*/
+	cursor: pointer;/*鼠标以上去的形状(手型)*/
+}
+#shortcut .handler .prev{/*底部操作栏向前滑动对应的样式*/
+	background: url("images/shortcut_prev.png") no-repeat;	/*背景 (图片平铺方式：不平铺)*/
+	float: left;		/*浮动*/
+	margin-top: 2px;	/*上外边距*/
+	margin-left: 20px;	/*左外边距*/
+	display: none;
+}
+#shortcut .handler .next{/*底部操作栏向后滑动对应的样式*/
+	background: url("images/rightArrow.png") no-repeat;	/*背景 (图片平铺方式：不平铺)*/
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 20px;
+}
+#shortcut .handler .setting{/*底部操作栏设置对应的样式*/
+	background: url("images/shortcut_setting.png") no-repeat;	/*背景 (图片平铺方式：不平铺)*/
+	float: right;		/*浮动*/
+	margin-top: 2px;	/*上外边距*/
+	margin-right: 15px;	/*右外边距*/
+	display: none;
+}
+#shortcut .data ul li span.onover{
+	background: url("images/shortcut-pic-available-bg.png") no-repeat;
+}
+#shortcut .handler .pageInfo{
+	display: none;
+}
+#shortcut .data ul li span.text{
+	color: #3B59AA;
+}
+
+
+table.Econtent td.viewType23Class a{
+	font-family: Microsoft YaHei;
+	font-size: 14px;
+	color: #4f61ea;
+}
+table.Econtent td.docSubject a{
+	font-family: Microsoft YaHei !important;
+}
+.Econtent .docAbstract {
+	font-family: Microsoft YaHei;
+	margin-left: 15px;
+	padding-top: 2px;
+	text-indent: 0px;
+	line-height: 16px;
+}
+.portlet{
+	border: 0;
+}
+div.requestTabPortletFooter{
+	text-align: right;
+}
+div.requestTabPortletFooter a{
+	color: #3B59AA;
+}
+span.refresh{
+	margin: 0px 5px 0 0;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	vertical-align: middle;
+	background: url(images/refresh.gif) no-repeat;
+	cursor: hand;
+}

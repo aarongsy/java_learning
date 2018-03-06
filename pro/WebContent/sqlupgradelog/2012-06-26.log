@@ -1,0 +1,11 @@
+错误时间
+  17:41:46
+错误位置
+  sql2012091102.sql第50行:
+错误语句
+ create index BLOG_ATTENTION_INDEX on BLOG_ATTENTION (USERID)
+错误原因
+  java.sql.SQLSyntaxErrorException: ORA-00955: 名称已由现有对象使用
+
+
+

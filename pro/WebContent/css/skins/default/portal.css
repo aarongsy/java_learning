@@ -1,0 +1,74 @@
+body{
+	padding: 0 0 0 15px;
+	margin:0; 
+	overflow-x: hidden !important; 
+	overflow-y: auto;
+	/*background: url(/images/bg/22.jpg);*/
+	background-position: 0 -150;
+}
+.portal-tabs{
+	display:none;
+}
+/*门户元素样式*/
+.portlet{	/*窗体样式*/
+	border: none;
+}
+.portlet-header{	/*标题栏样式*/
+	background: #CBCBCB;	
+}
+.portlet-header-title {	/*标题的样式*/
+	padding-left: 8px;
+}
+
+#shortcut .data ul li{
+	text-align: center;
+	width: 60px;
+	float: left;
+	display: inline;
+	margin: 2px 0px 0px 0px;
+}
+
+/* 门户选项卡元素样式 */
+ul.x-tab-strip-top {/*tab页头部对应的样式*/
+	background:transparent;		/*背景(透明)*/
+	background-color:#e0e0e0;	/*背景颜色*/
+	border: none;				/*边框(无)*/
+}
+.x-tab-panel-header {
+	border-bottom: none;
+	background-color: #fff;
+	padding: 0;
+}
+.x-tab-strip-top .x-tab-right, .x-tab-strip-top .x-tab-left, .x-tab-strip-top .x-tab-strip-inner{/*未被选中时,tab页对应的样式*/
+	background:transparent;		/*背景(透明)*/
+	background-color: #e0e0e0;	/*背景颜色*/
+}
+/*被选中时,tab页左右两侧对应的样式*/
+.x-tab-strip-top .x-tab-strip-active .x-tab-right,.x-tab-strip-top .x-tab-strip-active .x-tab-left,.x-tab-strip-top .x-tab-strip-active .x-tab-inner{
+	background-color: #fff;		/*背景颜色*/
+}
+.x-tab-strip-top span.x-tab-strip-text{/*未被选中时,tab页中字体对应的样式*/
+	font-weight: bold;			/*字体宽度*/
+	color: #000;				/*字体颜色*/
+}
+.x-tab-strip-top .x-tab-strip-active .x-tab-strip-text{/*被选中时,tab页字体区域对应的样式*/
+	background-color: #fff;		/*背景颜色*/
+	font-weight: bold;			/*字体宽度*/
+	color: #000;				/*字体颜色*/
+}
+/*for ie 10*/
+.x-tab-strip-top .x-tab-right{
+	padding-left: 0px;	
+}
+.x-tab-strip-top .x-tab-left{
+	padding-left: 10px;	
+}
+span.refresh{
+	margin: 0px 5px 0 0;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	vertical-align: middle;
+	background: url(/images/silk/refresh.gif) no-repeat;
+	cursor: hand;
+}
