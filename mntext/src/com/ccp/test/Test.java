@@ -21,7 +21,7 @@ import com.ccp.service.MnDataService;
 
 public class Test {
 	private static SqlSessionFactory factory;
-	private static Properties props;
+	private static Properties props;//代表持久的一套属性
 	private static MnDataService service;
 
 	static {
@@ -30,6 +30,7 @@ public class Test {
 		props = new Properties();
 		try {
 			is = Resources.getResourceAsStream("mybatis-config.xml");
+			//source date properties settings
 			ir = new InputStreamReader(
 					Resources.getResourceAsStream("args.properties"), "UTF-8");
 			props.load(ir);
@@ -74,7 +75,7 @@ public class Test {
 				System.out.println("任务结束时间："+format.format(System.currentTimeMillis()));
 				System.out.println();
 			}
-		}, 0, 3, TimeUnit.MINUTES);
+		}, 0, 2, TimeUnit.MINUTES);//generate a new writing thread every 2 minutes
 
 	}
 

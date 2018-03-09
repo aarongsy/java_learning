@@ -79,7 +79,15 @@ public class Amoeba(){
 
 "=="可以比较任何类型的变量，如(int a=00011) ==(byte b=00011) 只要字节组合相等就会判断为相等
 
+"&&" "||"(短运算符):逻辑and or 
+"&"  "|" (长运算符):使用在boolean表达式时会强制java虚拟机一定要计算运算符两边的算式。用场用作位运算。
 
+"类"被包装在包中
+
+arrayList.size();
+array.length();
+
+java函数库，查询html api文档
 
 page 150
 

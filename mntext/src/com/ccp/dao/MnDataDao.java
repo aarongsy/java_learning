@@ -16,7 +16,7 @@ public class MnDataDao {
 	}
 
 	public List<MnData> getMnDataListByEnterpriseNameAndDeviceName(
-			String enterpriseName, String deviceName) {
+		String enterpriseName, String deviceName) {
 		SqlSession ss = factory.openSession();
 		MnMapper mm = ss.getMapper(MnMapper.class);
 		String mn = null;

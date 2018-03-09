@@ -1,0 +1,67 @@
+package com.ccp.service;
+
+import java.io.OutputStream;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.commons.io.IOUtils;
+
+import com.ccp.dao.MnDataDao;
+import com.ccp.pojo.MnData;
+
+public class MnDataService {
+	private MnDataDao dao;
+
+	public void setDao(MnDataDao dao) {
+		this.dao = dao;
+	}
+
+	public List<String> getMnDataLineList(String enterpriseName) {
+		List<String> list = new ArrayList<String>();
+		List<String> deviceNameList = dao
+				.getDeviceNameListByEnterpriseName(enterpriseName);
+		for (String deviceName : deviceNameList) {
+			List<MnData> mnDatalist = dao
+					.getMnDataListByEnterpriseNameAndDeviceName(enterpriseName,
+							deviceName);
+			list.add(generateDataLine(deviceName, mnDatalist));
+		}
+		return list;
+	}
+
+	public String generateDataLine(String deviceName, List<MnData> mnDatalist) {
+		StringBuilder sb = new StringBuilder("deviceName=" + deviceName);
+		int count=0;
+		Timestamp time = null;
+		String check=null;
+		for (MnData mnData : mnDatalist) {
+			count++;
+			//System.out.println(mnData);
+			//if (mnDatalist.size) {
+			//System.out.println(mnDatalist.size());//arraylist大小为9999991010101010？？？
+			//if (mnData.getPollutantName()=="总烃"||mnData.getPollutantCode()=="非甲烷总烃") {
+			
+			if (mnData.getPollutantCode()=="25") {
+			sb.append(",").append(mnData.getPollutantName()).append("=")
+					.append(mnData.getRealtimeData());
+			time=mnData.getMeasureDatetime();
+			check=mnData.toString();
+			System.out.println(check);
+			}else {continue;}
+		  
+			
+			}
+		//sb.append(",TIME=").append(time);
+        //sb.append(mnData.getMeasureDatetime());
+		return sb.toString();
+	}
+
+	public void mnDataToFile(List<String> mnDataLineList, OutputStream output)
+			throws Exception {
+		IOUtils.writeLines(mnDataLineList, IOUtils.LINE_SEPARATOR, output,
+				"utf-8");
+		IOUtils.closeQuietly(output);
+	}
+
+}

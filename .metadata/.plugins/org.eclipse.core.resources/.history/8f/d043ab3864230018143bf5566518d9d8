@@ -1,0 +1,16 @@
+package com.ccp.service;
+
+import java.sql.Timestamp;
+
+public class dataFormat {
+	private String deviceName;
+	//private Timestamp MeasureDatetime;
+	private String PollutantName;
+	//private String PollutantCode;
+	//private float RealtimeData;
+	//private String MetricUnit;
+//	private String Flag;
+//	private Timestamp ReceiveDatetime;
+///	private float UpperLimit;
+//	private float LowerLimit;
+}

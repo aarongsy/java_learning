@@ -1,19 +1,9 @@
 //org.eclipse.ui.commands/state/org.eclipse.ui.navigator.resources.nested.changeProjectPresentation/org.eclipse.ui.commands.radioState=false
 //org.eclipse.ui.commands/state/org.eclipse.wst.xml.views.XPathView.processor.xpathprocessor/org.eclipse.ui.commands.radioState=xpath10
-ACTIVE_HYPERLINK_COLOR=138,201,242
-CONFLICTING_COLOR=240,15,66
-CONTENT_ASSIST_BACKGROUND_COLOR=52,57,61
-CONTENT_ASSIST_FOREGROUND_COLOR=238,238,238
 ColorsAndFontsPreferencePage.expandedCategories=Torg.eclipse.debug.ui.presentation
 ColorsAndFontsPreferencePage.selectedElement=Forg.eclipse.debug.ui.DetailPaneFont
-ERROR_COLOR=247,68,117
-HYPERLINK_COLOR=111,197,238
-INCOMING_COLOR=31,179,235
-OUTGOING_COLOR=238,238,238
 PLUGINS_NOT_ACTIVATED_ON_STARTUP=org.eclipse.m2e.discovery;
-RESOLVED_COLOR=108,210,17
 eclipse.preferences.version=1
 org.eclipse.debug.ui.consoleFont=1|Courier New|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|0|3|2|1|49|Courier New;
-org.eclipse.ui.commands=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<org.eclipse.ui.commands>\r\n<keyBinding commandId\="org.eclipse.debug.ui.commands.RunLast" contextId\="org.eclipse.ui.contexts.window" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="NUMPAD_DECIMAL"/>\r\n<keyBinding commandId\="org.eclipse.ui.edit.text.hippieCompletion" contextId\="org.eclipse.ui.textEditorScope" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="ALT+SHIFT+C"/>\r\n<keyBinding contextId\="org.eclipse.ui.textEditorScope" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="ALT+CTRL+/"/>\r\n<keyBinding contextId\="org.eclipse.ui.textEditorScope" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="CTRL+SHIFT+Q"/>\r\n<keyBinding contextId\="org.eclipse.ui.contexts.window" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="CTRL+F11"/>\r\n</org.eclipse.ui.commands>
-overriddenByCSS=,ACTIVE_HYPERLINK_COLOR,CONFLICTING_COLOR,CONTENT_ASSIST_BACKGROUND_COLOR,CONTENT_ASSIST_FOREGROUND_COLOR,ERROR_COLOR,HYPERLINK_COLOR,INCOMING_COLOR,OUTGOING_COLOR,RESOLVED_COLOR,
+org.eclipse.ui.commands=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<org.eclipse.ui.commands>\r\n<keyBinding commandId\="org.eclipse.debug.ui.commands.RunLast" contextId\="org.eclipse.ui.contexts.window" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="CTRL+F11"/>\r\n<keyBinding commandId\="org.eclipse.ui.edit.text.hippieCompletion" contextId\="org.eclipse.ui.textEditorScope" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="ALT+SHIFT+C"/>\r\n<keyBinding contextId\="org.eclipse.ui.textEditorScope" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="ALT+CTRL+/"/>\r\n<keyBinding contextId\="org.eclipse.ui.textEditorScope" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="CTRL+SHIFT+Q"/>\r\n<keyBinding contextId\="org.eclipse.ui.contexts.window" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="CTRL+F11"/>\r\n</org.eclipse.ui.commands>
 terminal.views.view.font.definition=1|Courier New|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|0|3|2|1|49|Courier New;

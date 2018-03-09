@@ -115,14 +115,22 @@ public class MnData {
 		LowerLimit = lowerLimit;
 	}
 
-	@Override
+//	@Override
+//	public String toString() {
+//		return "MnData [STName=" + STName + ", MeasureDatetime="
+//				+ MeasureDatetime + ", PollutantName=" + PollutantName
+//				+ ", PollutantCode=" + PollutantCode + ", RealtimeData="
+//				+ RealtimeData + ", MetricUnit=" + MetricUnit + ", Flag="
+//				+ Flag + ", ReceiveDatetime=" + ReceiveDatetime
+//				+ ", UpperLimit=" + UpperLimit + ", LowerLimit=" + LowerLimit
+//				+ "]";
+//	}
 	public String toString() {
 		return "MnData [STName=" + STName + ", MeasureDatetime="
-				+ MeasureDatetime + ", PollutantName=" + PollutantName
-				+ ", PollutantCode=" + PollutantCode + ", RealtimeData="
-				+ RealtimeData + ", MetricUnit=" + MetricUnit + ", Flag="
+				+PollutantName+ ", PollutantCode=" + PollutantCode 
+				+ MeasureDatetime + ", PollutantName=" + ", RealtimeData="
+				+ RealtimeData + ", Flag="
 				+ Flag + ", ReceiveDatetime=" + ReceiveDatetime
-				+ ", UpperLimit=" + UpperLimit + ", LowerLimit=" + LowerLimit
 				+ "]";
 	}
 }
