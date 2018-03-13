@@ -35,6 +35,7 @@ public class GameHelper {
 		ArrayList<String> alphaCells=new ArrayList<String>();
 		String [] alphacoords = new String [comSize];
 		String temp = null;
+		
 		int [] coords= new int[comSize];
 		int attempts=0;
 		boolean success =false;

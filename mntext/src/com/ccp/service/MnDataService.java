@@ -46,8 +46,10 @@ public class MnDataService {
 		final String DEVICENAME2="DFR-1期焚烧炉";
 		final String DEVICENAME3="DFR-1、2期溢散水洗塔";
 		final String DEVICENAME4="DFR3期溢散水洗塔";
-		final String DEVICENAME5="DFR3期焚烧炉（西）";
-		final String DEVICENAME6="DFR3期焚烧炉（4线 东）";
+//		final String DEVICENAME5="DFR3期焚烧炉（西）";
+//		final String DEVICENAME6="DFR3期焚烧炉（4线 东）";
+		final String DEVICENAME5="DFR3期焚烧炉（3线西）";
+		final String DEVICENAME6="DFR3期焚烧炉（4线东）";
 		final String DEVICENAME7="厂界1";
 		final String DEVICENAME8="厂界2";
 		final String DEVICENAME9="厂界3";

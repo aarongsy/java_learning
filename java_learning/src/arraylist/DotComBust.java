@@ -40,7 +40,7 @@ public class DotComBust {
 		String result ="miss";
 		for (DotCom dotComToTest: dotComsList){
 			result = dotComToTest.checkYourself(userGuess);
-		}
+		
 		if (result.equals("hit")){
 			break;
 		}
@@ -48,7 +48,7 @@ public class DotComBust {
 			dotComsList.remove(dotComToTest);
 			break;
 		}
-		
+		}
 	}
 	public void finishGame(){
 		System.out.println("ALL Dot Coms are dead ! Your Stock is now worthless.");
@@ -58,9 +58,10 @@ public class DotComBust {
 		
 		}else{
 			System.out.println("Took you long enough "+numOfGuesses+"guesses.");
-			System.out.println("fish are dancing with your options"));
+			System.out.println("fish are dancing with your options");
 		}
 	}
+	
 	public static void main (String[] args){
 		DotComBust game= new DotComBust();
 		game.setUpGame();
