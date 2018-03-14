@@ -16,7 +16,7 @@ public class find_return {
     	System.out.println(strprint);
     }
 	public static void findstring(String originstr,String filedic){
-		String s = "岁月之轮";  
+		String s ="欧康诺";  
 		int i = originstr.lastIndexOf(s);  
 		if (i!=-1){
 		  System.out.println("在"+filedic+"中"); 
@@ -35,7 +35,7 @@ public class find_return {
 	}
 	public static void main(String args[])throws Exception{
 		String filedic="D://123//new";
-		int fileindex=326;
+		int fileindex=23;
 		for (int i=0;i<=fileindex;i++){
 			String s=filedic+i+".txt";
 			readline(s);

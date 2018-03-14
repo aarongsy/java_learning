@@ -12,6 +12,7 @@ public class TestAction  extends BaseBean implements Action {
 	@Override
 	public String execute(RequestInfo requestInfo) {
 		String workflowid = requestInfo.getWorkflowid();
+		
 		String requestid = requestInfo.getRequestid();
 		writeLog("进入TestAction-----------"+requestid);
 //		RecordSetDataSource dataSource = new RecordSetDataSource("ZJB");
@@ -32,6 +33,7 @@ public class TestAction  extends BaseBean implements Action {
 			return Action.FAILURE_AND_CONTINUE;
 		}
 		return Action.SUCCESS;
+		
 	}
 
 }

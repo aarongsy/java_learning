@@ -25,21 +25,43 @@ public class testread {
 		int line=0;
 		
 		while((temp = br.readLine())!=null){
+	        
+		    line++;
+	        
+	        if(line==lineDel) {
+	        	
+	        	String s= temp.replace(" ","").replace("\r\n", "");
+	        	if(s.length()>50) {
+	        		String s1=s.substring(0,50);
+	        		String s2=s.substring(50);
+	        		System.out.print(s1);
+	        		sb.append(s2).append("\r\n");
+	        		
+	        	}
+	        	else {
+	        		System.out.print(s);
+	        		
+	        	}
+	        	continue;
+	        }
+	       sb.append(temp);
+		}
+		
+		/*while((temp = br.readLine())!=null){
 		        
 			    line++;
 		        
 		        if(line==lineDel) {
-		        	//temp.replace(" ", "");
+		        		
 		        	String s= temp.replace(" ","");
-		        	//s=temp.replace("\n","");
-		        	//s=temp.replace("\r\n","" );
-		        	
+		        	//if(s.length()>1000)
+		        	//System.out.println(s.length());
 		        	System.out.print(s);
-		        	//System.out.print("string"+10);
+		        	
 		        	continue;
 		        	}
 		        sb.append(temp).append( "\r\n");
-		}
+		}*/
 		br.close();
 		OutputStreamWriter osr = new OutputStreamWriter(new FileOutputStream(file),"utf-8");
 		BufferedWriter  bw=new   BufferedWriter(osr);
@@ -47,14 +69,14 @@ public class testread {
 		bw.close();
 	}
 	public static void deletefile(String file){
-	 File f = new File(file);  // 输入要删除的文件位置
+	 File f = new File(file);  // 
 	 if(f.exists())
 	    f.delete();
 	}
 	public static void main(String args[]) throws Exception {
 		
-		String filedirectory="D://123//new154.txt";
-		String delfiledir="D://123//new9.txt";
+		String filedirectory="D://123//new3.txt";
+		//String delfiledir="D://123//new9.txt";
 		int n=1;
 		for (int i=0;i<n;i++){
 		 deleterow(1,filedirectory);

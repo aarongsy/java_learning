@@ -2,6 +2,8 @@ package com.ccp.service;
 
 import java.io.OutputStream;
 import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -132,11 +134,19 @@ public class MnDataService {
 				System.out.println("error! Device name not match"+deviceName);
 				break;
 			}
-
-//			sb.append(",").append(mnData.getPollutantName()).append("=")
-//					.append(mnData.getRealtimeData());
 			time=mnData.getMeasureDatetime();
-			sb.append(",TIMESTAMP=").append(time).append(",QUALITY=192");
+
+			//change time output style
+			
+			String tsStr="";
+			DateFormat sdf= new SimpleDateFormat ("MM/dd/yyyy HH:mm:ss");//月日年
+			try {
+				tsStr=sdf.format(time);
+//				System.out.println(tsStr);
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
+			sb.append(",TIMESTAMP=").append(tsStr).append(",QUALITY=192");
 			sb.append("\r\n");
 		}
 		return sb.toString();
