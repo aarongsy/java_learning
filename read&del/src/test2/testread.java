@@ -23,7 +23,6 @@ public class testread {
 		StringBuffer   sb=new  StringBuffer(4096);
 		String  temp=null;
 		int line=0;
-		
 		while((temp = br.readLine())!=null){
 	        
 		    line++;
@@ -69,18 +68,17 @@ public class testread {
 		bw.close();
 	}
 	public static void deletefile(String file){
-	 File f = new File(file);  // 
-	 if(f.exists())
-	    f.delete();
+		 File f = new File(file);
+		 if(f.exists())
+		 f.delete();
+		 
 	}
 	public static void main(String args[]) throws Exception {
-		
-		String filedirectory="D://123//new3.txt";
+		String filedirectory="D://123//new6.txt";
 		//String delfiledir="D://123//new9.txt";
 		int n=1;
 		for (int i=0;i<n;i++){
-		 deleterow(1,filedirectory);
-		
+		  deleterow(1,filedirectory);
 		}
 		//deletefile(filedirectory);
     }  

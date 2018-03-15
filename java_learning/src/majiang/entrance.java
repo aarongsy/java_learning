@@ -20,7 +20,7 @@ public class entrance {
 		
 		if (num>=1 && num<=36) {
 			
-			return +"wan";
+			return "wan";
 		}else if (num>=37 && num<=72) {
 			return num-36+"tiao";
 		}else if (num >=73 && num <=108) {

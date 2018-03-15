@@ -50,11 +50,9 @@ public class entrance {
 					i--;
 					continue;
 				}
-				
 			}
 			System.out.println("\r\n");
 		}
-		
 	}
 	public static int rannum(int size) {
 		int num1to108 = (int)(Math.random()*size);
@@ -67,7 +65,4 @@ public class entrance {
 		  }
 		  return list;
 		}
-
-
-	
 }

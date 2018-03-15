@@ -519,3 +519,8 @@
 2018-03-14 14:13:22,138 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2018-03-14 14:13:22,138 [Worker-16] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
 2018-03-14 14:13:22,138 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-03-15 08:29:36,253 [Worker-16] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for aaron:aaron:jar:0.0.1-SNAPSHOT is missing, no dependency information available
+2018-03-15 08:29:44,045 [Worker-16] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-03-15 08:29:44,076 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-03-15 08:29:44,076 [Worker-16] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-03-15 08:29:44,076 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource

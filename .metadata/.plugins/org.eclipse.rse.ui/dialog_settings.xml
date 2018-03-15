@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="RemoteSearchPage">
-		<item value="false" key="includeSubfolders"/>
 		<item value="false" key="stringRegex"/>
+		<item value="false" key="includeSubfolders"/>
 		<item value="1" key="dataSize"/>
 		<item value="true" key="fileNameCaseSensitive"/>
 		<item value="false" key="caseSensitive"/>
@@ -11,15 +11,15 @@
 	</section>
 	<section name="RemoteSearchPage.data0">
 		<item value="*" key="fileNames"/>
-		<item value="false" key="includeSubfolders"/>
 		<item value="false" key="stringRegex"/>
+		<item value="false" key="includeSubfolders"/>
 		<item value="addrow" key="searchString"/>
 		<item value="true" key="fileNameCaseSensitive"/>
 		<item value="false" key="caseSensitive"/>
-		<item value="C:\Documents and Settings\gsy\workspace" key="folderName"/>
 		<item value="false" key="fileNameRegex"/>
-		<item value="false" key="includeArchives"/>
-		<item value="Local" key="connectionName"/>
+		<item value="C:\Documents and Settings\gsy\workspace" key="folderName"/>
 		<item value="CCPUB049" key="profileName"/>
+		<item value="Local" key="connectionName"/>
+		<item value="false" key="includeArchives"/>
 	</section>
 </section>
