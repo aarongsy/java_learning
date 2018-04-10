@@ -1,0 +1,233 @@
+<HTML>
+<HEAD>
+<TITLE>Java Source Code</TITLE>
+</HEAD>
+<BODY BGCOLOR=#FFFFFF>
+<PRE>
+<FONT color=#000000>
+</FONT><FONT color=#008000>/**
+<em> </em><em>*</em><em> </em><em>Example5.java</em><em> </em><em>-</em><em> </em><em>Simple</em><em> </em><em>implementation</em><em> </em><em>of</em><em> </em><em>an</em><em> </em><em>(</em><em>external</em><em> </em><em>RFC</em><em>)</em><em> </em><em>server.</em><em> </em><em>This</em><em> </em><em>example</em><em> </em><em>is</em><em> </em><em>based</em><em> </em><em>on</em>
+<em> </em><em>*</em><em> </em><em>static</em><em> </em><em>metadata</em><em> </em><em>with</em><em> </em><em>non</em><em>-</em><em>unicode</em><em> </em><em>layout</em><em>,</em><em> </em><em>so</em><em> </em><em>the</em><em> </em><em>calls</em><em> </em><em>only</em><em> </em><em>from</em><em> </em><em>non</em><em>-</em><em>unicode</em><em> </em><em>systems</em><em> </em><em>can</em><em> </em><em>be</em>
+<em> </em><em>*</em><em> </em><em>handled.</em>
+<em> </em><em>*</em><em> </em><em>Property</em><em> </em><em>of</em><em> </em><em>SAP</em><em> </em><em>AG</em><em>,</em><em> </em><em>Walldorf</em>
+<em> </em><em>*</em><em> </em><em>(</em><em>c</em><em>)</em><em> </em><em>Copyright</em><em> </em><em>SAP</em><em> </em><em>AG</em><em>,</em><em> </em><em>Walldorf</em><em>,</em><em> </em><em>2000</em><em>-</em><em>2005.</em>
+<em> </em><em>*</em><em> </em><em>All</em><em> </em><em>rights</em><em> </em><em>reserved.</em>
+<em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+</FONT><FONT color=#0000FF><b>import</b></FONT><FONT color=#000000> com.sap.mw.jco.*;
+</FONT>
+
+<FONT color=#008000>/**
+<em> </em><em>*</em><em> </em><em>@version</em><em> </em><em>1.0</em>
+<em> </em><em>*</em><em> </em><em>@author</em><em> </em><em> </em><em>SAP</em><em> </em><em>AG</em><em>,</em><em> </em><em>Walldorf</em>
+<em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+
+</FONT><FONT color=#008000>//<em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em></FONT><FONT color=#000000>
+</FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>class</b></FONT><FONT color=#000000> Example5 </FONT><FONT color=#0000FF><b>implements</b></FONT><FONT color=#000000> </FONT><FONT color=#000080><b>JCO.ServerExceptionListener</b></FONT><FONT color=#000000>, </FONT><FONT color=#000080><b>JCO.ServerStateChangedListener</b></FONT><FONT color=#000000> {
+</FONT><FONT color=#008000>//<em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em></FONT><FONT color=#000000>
+
+  </FONT><FONT color=#008000>/**
+<em> </em><em> </em><em> </em><em>*</em><em> </em><em> </em><em>Implementation</em><em> </em><em>of</em><em> </em><em>our</em><em> </em><em>own</em><em> </em><em>repository.</em>
+<em> </em><em> </em><em> </em><em>*</em><em> </em><em> </em><em>Just</em><em> </em><em>dummy</em><em> </em><em>extend</em><em> </em><em>the</em><em> </em><em>basic</em><em> </em><em>repository</em><em> </em><em>that</em><em> </em><em>comes</em><em> </em><em>with</em><em> </em><em>the</em><em> </em><em>JCO</em><em> </em><em>package</em>
+<em> </em><em> </em><em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+  </FONT><FONT color=#0000FF><b>static</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>class</b></FONT><FONT color=#000000> Repository </FONT><FONT color=#0000FF><b>extends</b></FONT><FONT color=#000000> </FONT><FONT color=#000080><b>JCO.BasicRepository</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>implements</b></FONT><FONT color=#000000> </FONT><FONT color=#000080><b>IRepository</b></FONT><FONT color=#000000> {
+
+    </FONT><FONT color=#008000>/**
+<em> </em><em> </em><em> </em><em> </em><em> </em><em>*</em><em> </em><em>Creates</em><em> </em><em>a</em><em> </em><em>new</em><em> </em><em>empty</em><em> </em><em>repository</em>
+<em> </em><em> </em><em> </em><em> </em><em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> Repository(String name)
+    {
+      </FONT><FONT color=#0000FF><b>super</b></FONT><FONT color=#000000>(name);
+    }
+  }
+
+  </FONT><FONT color=#008000>/**<em> </em><em>The</em><em> </em><em>repository</em><em> </em><em>we</em><em> </em><em>gonna</em><em> </em><em>be</em><em> </em><em>using</em><em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+  </FONT><FONT color=#0000FF><b>protected</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>static</b></FONT><FONT color=#000000> </FONT><FONT color=#000080><b>IRepository</b></FONT><FONT color=#000000> repository;
+
+  </FONT><FONT color=#0000FF><b>static</b></FONT><FONT color=#000000> {
+
+    repository = </FONT><FONT color=#0000FF><b>new</b></FONT><FONT color=#000000> Repository(</FONT><FONT color=#FF00FF>"TestRepository"</FONT><FONT color=#000000>);
+
+    </FONT><FONT color=#008000>//<em> </em><em>non</em><em>-</em><em>unicode</em><em> </em><em>definition</em><em> </em><em>of</em><em> </em><em>functions.</em><em> </em><em>The</em><em> </em><em>server</em><em> </em><em>with</em><em> </em><em>this</em><em> </em><em>repository</em><em> </em><em>can</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#008000>//<em> </em><em>dispatch</em><em> </em><em>calls</em><em> </em><em>only</em><em> </em><em>from</em><em> </em><em>non</em><em>-</em><em>unicode</em><em> </em><em>systems</em></FONT><FONT color=#000000>
+
+    </FONT><FONT color=#008000>//<em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#008000>//<em> </em><em> </em><em>Add</em><em> </em><em>function</em><em> </em><em>'</em><em>STFC_CONNECTION</em><em>'</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#008000>//<em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#000080><b>JCO.MetaData</b></FONT><FONT color=#000000> fmeta = </FONT><FONT color=#0000FF><b>new</b></FONT><FONT color=#000000> </FONT><FONT color=#000080><b>JCO.MetaData</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"STFC_CONNECTION"</FONT><FONT color=#000000>);
+    fmeta</FONT><FONT color=#000080><b>.addInfo</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"REQUTEXT"</FONT><FONT color=#000000>, </FONT><FONT color=#000080><b>JCO.TYPE_CHAR</b></FONT><FONT color=#000000>, 255,   0,  0, </FONT><FONT color=#000080><b>JCO.IMPORT_PARAMETER</b></FONT><FONT color=#000000>, </FONT><FONT color=#0000FF><b>null</b></FONT><FONT color=#000000>);
+    fmeta</FONT><FONT color=#000080><b>.addInfo</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"ECHOTEXT"</FONT><FONT color=#000000>, </FONT><FONT color=#000080><b>JCO.TYPE_CHAR</b></FONT><FONT color=#000000>, 255,   0,  0, </FONT><FONT color=#000080><b>JCO.EXPORT_PARAMETER</b></FONT><FONT color=#000000>, </FONT><FONT color=#0000FF><b>null</b></FONT><FONT color=#000000>);
+    fmeta</FONT><FONT color=#000080><b>.addInfo</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"RESPTEXT"</FONT><FONT color=#000000>, </FONT><FONT color=#000080><b>JCO.TYPE_CHAR</b></FONT><FONT color=#000000>, 255,   0,  0, </FONT><FONT color=#000080><b>JCO.EXPORT_PARAMETER</b></FONT><FONT color=#000000>, </FONT><FONT color=#0000FF><b>null</b></FONT><FONT color=#000000>);
+    repository</FONT><FONT color=#000080><b>.addFunctionInterfaceToCache</b></FONT><FONT color=#000000>(fmeta);
+
+    </FONT><FONT color=#008000>//<em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#008000>//<em> </em><em> </em><em>Add</em><em> </em><em>function</em><em> </em><em>'</em><em>STFC_STRUCTURE</em><em>'</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#008000>//<em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em></FONT><FONT color=#000000>
+    fmeta = </FONT><FONT color=#0000FF><b>new</b></FONT><FONT color=#000000> </FONT><FONT color=#000080><b>JCO.MetaData</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"STFC_STRUCTURE"</FONT><FONT color=#000000>);
+    fmeta</FONT><FONT color=#000080><b>.addInfo</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"IMPORTSTRUCT"</FONT><FONT color=#000000>, </FONT><FONT color=#000080><b>JCO.TYPE_STRUCTURE</b></FONT><FONT color=#000000>, 144, 0, 0, </FONT><FONT color=#000080><b>JCO.IMPORT_PARAMETER</b></FONT><FONT color=#000000>, </FONT><FONT color=#FF00FF>"RFCTEST"</FONT><FONT color=#000000>);
+    fmeta</FONT><FONT color=#000080><b>.addInfo</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"ECHOSTRUCT"</FONT><FONT color=#000000>,   </FONT><FONT color=#000080><b>JCO.TYPE_STRUCTURE</b></FONT><FONT color=#000000>, 144, 0, 0, </FONT><FONT color=#000080><b>JCO.EXPORT_PARAMETER</b></FONT><FONT color=#000000>, </FONT><FONT color=#FF00FF>"RFCTEST"</FONT><FONT color=#000000>);
+    fmeta</FONT><FONT color=#000080><b>.addInfo</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"RESPTEXT"</FONT><FONT color=#000000>,     </FONT><FONT color=#000080><b>JCO.TYPE_CHAR</b></FONT><FONT color=#000000>,      255, 0, 0, </FONT><FONT color=#000080><b>JCO.EXPORT_PARAMETER</b></FONT><FONT color=#000000>,  </FONT><FONT color=#0000FF><b>null</b></FONT><FONT color=#000000>    );
+    fmeta</FONT><FONT color=#000080><b>.addInfo</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"RFCTABLE"</FONT><FONT color=#000000>,     </FONT><FONT color=#000080><b>JCO.TYPE_TABLE</b></FONT><FONT color=#000000>,     144, 0, 0, 0,                    </FONT><FONT color=#FF00FF>"RFCTEST"</FONT><FONT color=#000000>);
+    repository</FONT><FONT color=#000080><b>.addFunctionInterfaceToCache</b></FONT><FONT color=#000000>(fmeta);
+
+    </FONT><FONT color=#008000>//<em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#008000>//<em> </em><em>Add</em><em> </em><em>the</em><em> </em><em>structure</em><em> </em><em>RFCTEST</em><em> </em><em>to</em><em> </em><em>the</em><em> </em><em>structure</em><em> </em><em>cache</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#008000>//<em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em><em>-</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#000080><b>JCO.MetaData</b></FONT><FONT color=#000000> smeta  = </FONT><FONT color=#0000FF><b>new</b></FONT><FONT color=#000000> </FONT><FONT color=#000080><b>JCO.MetaData</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"RFCTEST"</FONT><FONT color=#000000>);
+    smeta</FONT><FONT color=#000080><b>.addInfo</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"RFCFLOAT"</FONT><FONT color=#000000>,  </FONT><FONT color=#000080><b>JCO.TYPE_FLOAT</b></FONT><FONT color=#000000>,  8,  0, 0);
+    smeta</FONT><FONT color=#000080><b>.addInfo</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"RFCCHAR1"</FONT><FONT color=#000000>,  </FONT><FONT color=#000080><b>JCO.TYPE_CHAR</b></FONT><FONT color=#000000>,   1,  8, 0);
+    smeta</FONT><FONT color=#000080><b>.addInfo</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"RFCINT2"</FONT><FONT color=#000000>,   </FONT><FONT color=#000080><b>JCO.TYPE_INT2</b></FONT><FONT color=#000000>,   2, 10, 0);
+    smeta</FONT><FONT color=#000080><b>.addInfo</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"RFCINT1"</FONT><FONT color=#000000>,   </FONT><FONT color=#000080><b>JCO.TYPE_INT1</b></FONT><FONT color=#000000>,   1, 12, 0);
+    smeta</FONT><FONT color=#000080><b>.addInfo</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"RFCICHAR4"</FONT><FONT color=#000000>, </FONT><FONT color=#000080><b>JCO.TYPE_CHAR</b></FONT><FONT color=#000000>,   4, 13, 0);
+    smeta</FONT><FONT color=#000080><b>.addInfo</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"RFCINT4"</FONT><FONT color=#000000>,   </FONT><FONT color=#000080><b>JCO.TYPE_INT</b></FONT><FONT color=#000000>,    4, 20, 0);
+    smeta</FONT><FONT color=#000080><b>.addInfo</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"RFCHEX3"</FONT><FONT color=#000000>,   </FONT><FONT color=#000080><b>JCO.TYPE_BYTE</b></FONT><FONT color=#000000>,   3, 24, 0);
+    smeta</FONT><FONT color=#000080><b>.addInfo</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"RFCCHAR2"</FONT><FONT color=#000000>,  </FONT><FONT color=#000080><b>JCO.TYPE_CHAR</b></FONT><FONT color=#000000>,   2, 27, 0);
+    smeta</FONT><FONT color=#000080><b>.addInfo</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"RFCTIME"</FONT><FONT color=#000000>,   </FONT><FONT color=#000080><b>JCO.TYPE_TIME</b></FONT><FONT color=#000000>,   6, 29, 0);
+    smeta</FONT><FONT color=#000080><b>.addInfo</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"RFRDATE"</FONT><FONT color=#000000>,   </FONT><FONT color=#000080><b>JCO.TYPE_DATE</b></FONT><FONT color=#000000>,   8, 35, 0);
+    smeta</FONT><FONT color=#000080><b>.addInfo</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"RFCDATA1"</FONT><FONT color=#000000>,  </FONT><FONT color=#000080><b>JCO.TYPE_CHAR</b></FONT><FONT color=#000000>,   50,43, 0);
+    smeta</FONT><FONT color=#000080><b>.addInfo</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"RFCDATA2"</FONT><FONT color=#000000>,  </FONT><FONT color=#000080><b>JCO.TYPE_CHAR</b></FONT><FONT color=#000000>,   50,93, 0);
+    repository</FONT><FONT color=#000080><b>.addStructureDefinitionToCache</b></FONT><FONT color=#000000>(smeta);
+  }
+
+  </FONT><FONT color=#008000>/**
+<em> </em><em> </em><em> </em><em>*</em><em> </em><em> </em><em>Implementation</em><em> </em><em>of</em><em> </em><em>my</em><em> </em><em>own</em><em> </em><em>server</em>
+<em> </em><em> </em><em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+  </FONT><FONT color=#0000FF><b>static</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>class</b></FONT><FONT color=#000000> Server </FONT><FONT color=#0000FF><b>extends</b></FONT><FONT color=#000000> </FONT><FONT color=#000080><b>JCO.Server</b></FONT><FONT color=#000000> {
+
+    </FONT><FONT color=#008000>/**
+<em> </em><em> </em><em> </em><em> </em><em> </em><em>*</em><em> </em><em> </em><em>Create</em><em> </em><em>an</em><em> </em><em>instance</em><em> </em><em>of</em><em> </em><em>my</em><em> </em><em>own</em><em> </em><em>server</em>
+<em> </em><em> </em><em> </em><em> </em><em> </em><em>*</em><em> </em><em> </em><em>@param</em><em> </em><em>gwhost</em><em> </em><em>the</em><em> </em><em>gateway</em><em> </em><em>host</em>
+<em> </em><em> </em><em> </em><em> </em><em> </em><em>*</em><em> </em><em> </em><em>@param</em><em> </em><em>gwserv</em><em> </em><em>the</em><em> </em><em>gateway</em><em> </em><em>service</em><em> </em><em>number</em>
+<em> </em><em> </em><em> </em><em> </em><em> </em><em>*</em><em> </em><em> </em><em>@param</em><em> </em><em>progid</em><em> </em><em>the</em><em> </em><em>program</em><em> </em><em>id</em>
+<em> </em><em> </em><em> </em><em> </em><em> </em><em>*</em><em> </em><em> </em><em>@param</em><em> </em><em>repository</em><em> </em><em>the</em><em> </em><em>repository</em><em> </em><em>used</em><em> </em><em>by</em><em> </em><em>the</em><em> </em><em>server</em><em> </em><em>to</em><em> </em><em>lookup</em><em> </em><em>the</em><em> </em><em>definitions</em><em> </em><em>of</em><em> </em><em>an</em><em> </em><em>inc</em>
+<em> </em><em> </em><em> </em><em> </em><em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> Server(String gwhost, String gwserv, String progid, </FONT><FONT color=#000080><b>IRepository</b></FONT><FONT color=#000000> repository)
+    {
+      </FONT><FONT color=#0000FF><b>super</b></FONT><FONT color=#000000>(gwhost,gwserv,progid,repository);
+    }
+
+    </FONT><FONT color=#008000>/**
+<em> </em><em> </em><em> </em><em> </em><em> </em><em>*</em><em> </em><em> </em><em>Not</em><em> </em><em>really</em><em> </em><em>necessary</em><em> </em><em>to</em><em> </em><em>override</em><em> </em><em>this</em><em> </em><em>function</em><em> </em><em>but</em><em> </em><em>for</em><em> </em><em>demonstration</em><em> </em><em>purposes...</em>
+<em> </em><em> </em><em> </em><em> </em><em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#0000FF><b>protected</b></FONT><FONT color=#000000> </FONT><FONT color=#000080><b>JCO.Function</b></FONT><FONT color=#000000> getFunction(String function_name)
+    {
+      </FONT><FONT color=#000080><b>JCO.Function</b></FONT><FONT color=#000000> function = super</FONT><FONT color=#000080><b>.getFunction</b></FONT><FONT color=#000000>(function_name);
+      </FONT><FONT color=#0000FF><b>return</b></FONT><FONT color=#000000> function;
+    }
+
+    </FONT><FONT color=#008000>/**
+<em> </em><em> </em><em> </em><em> </em><em> </em><em>*</em><em> </em><em> </em><em>Not</em><em> </em><em>really</em><em> </em><em>necessary</em><em> </em><em>to</em><em> </em><em>override</em><em> </em><em>this</em><em> </em><em>method</em><em> </em><em>but</em><em> </em><em>for</em><em> </em><em>demonstration</em><em> </em><em>purposes...</em>
+<em> </em><em> </em><em> </em><em> </em><em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#0000FF><b>protected</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>boolean</b></FONT><FONT color=#000000> checkAuthorization(String function_name, </FONT><FONT color=#0000FF><b>int</b></FONT><FONT color=#000000> authorization_mode,
+        String authorization_partner, </FONT><FONT color=#0000FF><b>byte</b></FONT><FONT color=#000000>[] authorization_key)
+    {
+      </FONT><FONT color=#008000>/*<em>Simply</em><em> </em><em>allow</em><em> </em><em>everyone</em><em> </em><em>to</em><em> </em><em>invoke</em><em> </em><em>the</em><em> </em><em>services</em><em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+      </FONT><FONT color=#0000FF><b>return</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>true</b></FONT><FONT color=#000000>;
+    }
+
+    </FONT><FONT color=#008000>/**
+<em> </em><em> </em><em> </em><em> </em><em> </em><em>*</em><em> </em><em> </em><em>Overrides</em><em> </em><em>the</em><em> </em><em>default</em><em> </em><em>method.</em>
+<em> </em><em> </em><em> </em><em> </em><em> </em><em>*</em><em> </em><em> </em><em>Can</em><em> </em><em>handle</em><em> </em><em>only</em><em> </em><em>the</em><em> </em><em>two</em><em> </em><em>functions</em><em> </em><em>STFC_CONNECTION</em><em> </em><em>and</em><em> </em><em>STFC_STRUCTURE</em>
+<em> </em><em> </em><em> </em><em> </em><em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#0000FF><b>protected</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>void</b></FONT><FONT color=#000000> handleRequest(</FONT><FONT color=#000080><b>JCO.Function</b></FONT><FONT color=#000000> function)
+    {
+      </FONT><FONT color=#000080><b>JCO.ParameterList</b></FONT><FONT color=#000000> input  = function</FONT><FONT color=#000080><b>.getImportParameterList</b></FONT><FONT color=#000000>();
+      </FONT><FONT color=#000080><b>JCO.ParameterList</b></FONT><FONT color=#000000> output = function</FONT><FONT color=#000080><b>.getExportParameterList</b></FONT><FONT color=#000000>();
+      </FONT><FONT color=#000080><b>JCO.ParameterList</b></FONT><FONT color=#000000> tables = function</FONT><FONT color=#000080><b>.getTableParameterList</b></FONT><FONT color=#000000>();
+
+      System.out.println(</FONT><FONT color=#FF00FF>"handleRequest("</FONT><FONT color=#000000> + function</FONT><FONT color=#000080><b>.getName</b></FONT><FONT color=#000000>() + </FONT><FONT color=#FF00FF>")"</FONT><FONT color=#000000>);
+
+      </FONT><FONT color=#0000FF><b>if</b></FONT><FONT color=#000000> (function</FONT><FONT color=#000080><b>.getName</b></FONT><FONT color=#000000>().equals(</FONT><FONT color=#FF00FF>"STFC_CONNECTION"</FONT><FONT color=#000000>)) {
+        output</FONT><FONT color=#000080><b>.setValue</b></FONT><FONT color=#000000>(input</FONT><FONT color=#000080><b>.getString</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"REQUTEXT"</FONT><FONT color=#000000>),</FONT><FONT color=#FF00FF>"ECHOTEXT"</FONT><FONT color=#000000>);
+        output</FONT><FONT color=#000080><b>.setValue</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"This is a response from Example5.java"</FONT><FONT color=#000000>,</FONT><FONT color=#FF00FF>"RESPTEXT"</FONT><FONT color=#000000>);
+      }
+      </FONT><FONT color=#0000FF><b>else</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>if</b></FONT><FONT color=#000000> (function</FONT><FONT color=#000080><b>.getName</b></FONT><FONT color=#000000>().equals(</FONT><FONT color=#FF00FF>"STFC_STRUCTURE"</FONT><FONT color=#000000>)) {
+        </FONT><FONT color=#000080><b>JCO.Structure</b></FONT><FONT color=#000000> sin  = input</FONT><FONT color=#000080><b>.getStructure</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"IMPORTSTRUCT"</FONT><FONT color=#000000>);
+        </FONT><FONT color=#000080><b>JCO.Structure</b></FONT><FONT color=#000000> sout = (</FONT><FONT color=#000080><b>JCO.Structure</b></FONT><FONT color=#000000>)sin.clone();
+        </FONT><FONT color=#0000FF><b>try</b></FONT><FONT color=#000000> {
+          System.out.println(sin);
+        }
+        </FONT><FONT color=#0000FF><b>catch</b></FONT><FONT color=#000000> (Exception ex) {
+          System.out.println(ex);
+        }
+        output</FONT><FONT color=#000080><b>.setValue</b></FONT><FONT color=#000000>(sout,</FONT><FONT color=#FF00FF>"ECHOSTRUCT"</FONT><FONT color=#000000>);
+        output</FONT><FONT color=#000080><b>.setValue</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"This is a response from Example5.java"</FONT><FONT color=#000000>,</FONT><FONT color=#FF00FF>"RESPTEXT"</FONT><FONT color=#000000>);
+      }</FONT><FONT color=#008000>//<em>if</em></FONT><FONT color=#000000>
+    }
+  }
+
+  </FONT><FONT color=#008000>/**<em> </em><em>List</em><em> </em><em>of</em><em> </em><em>servers</em><em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+  </FONT><FONT color=#000080><b>JCO.Server</b></FONT><FONT color=#000000> srv[] = </FONT><FONT color=#0000FF><b>new</b></FONT><FONT color=#000000> </FONT><FONT color=#000080><b>JCO.Server</b></FONT><FONT color=#000000>[2];
+
+  </FONT><FONT color=#008000>/**
+<em> </em><em> </em><em> </em><em>*</em><em> </em><em> </em><em>Constructor</em>
+<em> </em><em> </em><em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+  </FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> Example5()
+  {
+    </FONT><FONT color=#008000>//<em> </em><em>Yes</em><em>,</em><em> </em><em>we</em><em>'</em><em>re</em><em> </em><em>interested</em><em> </em><em>in</em><em> </em><em>server</em><em> </em><em>exceptions</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#000080><b>JCO.addServerExceptionListener</b></FONT><FONT color=#000000>(</FONT><FONT color=#0000FF><b>this</b></FONT><FONT color=#000000>);
+
+    </FONT><FONT color=#008000>//<em> </em><em>And</em><em> </em><em>we</em><em> </em><em>also</em><em> </em><em>want</em><em> </em><em>to</em><em> </em><em>know</em><em> </em><em>when</em><em> </em><em>the</em><em> </em><em>server</em><em>(</em><em>s</em><em>)</em><em> </em><em>change</em><em> </em><em>their</em><em> </em><em>states</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#000080><b>JCO.addServerStateChangedListener</b></FONT><FONT color=#000000>(</FONT><FONT color=#0000FF><b>this</b></FONT><FONT color=#000000>);
+  }
+
+  </FONT><FONT color=#008000>/**
+<em> </em><em> </em><em> </em><em>*</em><em> </em><em> </em><em>Start</em><em> </em><em>the</em><em> </em><em>server</em>
+<em> </em><em> </em><em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+  </FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>void</b></FONT><FONT color=#000000> startServers()
+  {
+    </FONT><FONT color=#008000>//<em> </em><em>Server</em><em> </em><em>1</em><em> </em><em>listens</em><em> </em><em>for</em><em> </em><em>incoming</em><em> </em><em>requests</em><em> </em><em>from</em><em> </em><em>system</em><em> </em><em>1</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#008000>//<em> </em><em>(</em><em>Change</em><em> </em><em>gateway</em><em> </em><em>host</em><em>,</em><em> </em><em>service</em><em>,</em><em> </em><em>and</em><em> </em><em>program</em><em> </em><em>ID</em><em> </em><em>according</em><em> </em><em>to</em><em> </em><em>your</em><em> </em><em>needs</em><em>)</em></FONT><FONT color=#000000>
+    srv[0] = </FONT><FONT color=#0000FF><b>new</b></FONT><FONT color=#000000> Server(</FONT><FONT color=#FF00FF>"gwhost1"</FONT><FONT color=#000000>,</FONT><FONT color=#FF00FF>"gwserv00"</FONT><FONT color=#000000>,</FONT><FONT color=#FF00FF>"JCOSERVER01"</FONT><FONT color=#000000>,repository);
+    </FONT><FONT color=#008000>//<em> </em><em>Server</em><em> </em><em>2</em><em> </em><em>listens</em><em> </em><em>for</em><em> </em><em>incoming</em><em> </em><em>requests</em><em> </em><em>from</em><em> </em><em>system</em><em> </em><em>2</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#008000>//<em> </em><em>(</em><em>Change</em><em> </em><em>gateway</em><em> </em><em>host</em><em>,</em><em> </em><em>service</em><em>,</em><em> </em><em>and</em><em> </em><em>program</em><em> </em><em>ID</em><em> </em><em>according</em><em> </em><em>to</em><em> </em><em>your</em><em> </em><em>needs</em><em>)</em></FONT><FONT color=#000000>
+    srv[1] = </FONT><FONT color=#0000FF><b>new</b></FONT><FONT color=#000000> Server(</FONT><FONT color=#FF00FF>"gwhost2"</FONT><FONT color=#000000>,</FONT><FONT color=#FF00FF>"gwserv00"</FONT><FONT color=#000000>,</FONT><FONT color=#FF00FF>"JCOSERVER02"</FONT><FONT color=#000000>,repository);
+
+    </FONT><FONT color=#0000FF><b>for</b></FONT><FONT color=#000000> (</FONT><FONT color=#0000FF><b>int</b></FONT><FONT color=#000000> i = 0; i &lt; srv.length; i++) {
+      </FONT><FONT color=#0000FF><b>try</b></FONT><FONT color=#000000> {
+        srv[i]</FONT><FONT color=#000080><b>.setTrace</b></FONT><FONT color=#000000>(</FONT><FONT color=#0000FF><b>true</b></FONT><FONT color=#000000>);
+        srv[i]</FONT><FONT color=#000080><b>.start</b></FONT><FONT color=#000000>();
+      }
+      </FONT><FONT color=#0000FF><b>catch</b></FONT><FONT color=#000000> (Exception ex) {
+        System.out.println(</FONT><FONT color=#FF00FF>"Could not start server "</FONT><FONT color=#000000> + srv[i]</FONT><FONT color=#000080><b>.getProgID</b></FONT><FONT color=#000000>() + </FONT><FONT color=#FF00FF>":\n"</FONT><FONT color=#000000> + ex);
+      }</FONT><FONT color=#008000>//<em>try</em></FONT><FONT color=#000000>
+    }</FONT><FONT color=#008000>//<em>for</em></FONT><FONT color=#000000>
+  }
+
+  </FONT><FONT color=#008000>/**
+<em> </em><em> </em><em> </em><em>*</em><em> </em><em> </em><em>Simply</em><em> </em><em>prints</em><em> </em><em>the</em><em> </em><em>text</em><em> </em><em>of</em><em> </em><em>the</em><em> </em><em>exception</em><em> </em><em>and</em><em> </em><em>a</em><em> </em><em>stack</em><em> </em><em>trace</em>
+<em> </em><em> </em><em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+  </FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>void</b></FONT><FONT color=#000000> serverExceptionOccurred(</FONT><FONT color=#000080><b>JCO.Server</b></FONT><FONT color=#000000> server, Exception ex)
+  {
+    System.out.println(</FONT><FONT color=#FF00FF>"Exception in server "</FONT><FONT color=#000000> + server</FONT><FONT color=#000080><b>.getProgID</b></FONT><FONT color=#000000>() + </FONT><FONT color=#FF00FF>":\n"</FONT><FONT color=#000000> + ex);
+    ex.printStackTrace();
+  }
+
+  </FONT><FONT color=#008000>/**
+<em> </em><em> </em><em> </em><em>*</em><em> </em><em> </em><em>Simply</em><em> </em><em>prints</em><em> </em><em>server</em><em> </em><em>state</em><em> </em><em>changes</em>
+<em> </em><em> </em><em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+  </FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>void</b></FONT><FONT color=#000000> serverStateChangeOccurred(</FONT><FONT color=#000080><b>JCO.Server</b></FONT><FONT color=#000000> server, </FONT><FONT color=#0000FF><b>int</b></FONT><FONT color=#000000> old_state, </FONT><FONT color=#0000FF><b>int</b></FONT><FONT color=#000000> new_state)
+  {
+    System.out.print(</FONT><FONT color=#FF00FF>"Server "</FONT><FONT color=#000000> + server</FONT><FONT color=#000080><b>.getProgID</b></FONT><FONT color=#000000>() + </FONT><FONT color=#FF00FF>" changed state from ["</FONT><FONT color=#000000>);
+    </FONT><FONT color=#0000FF><b>if</b></FONT><FONT color=#000000> ((old_state &amp; </FONT><FONT color=#000080><b>JCO.STATE_STOPPED</b></FONT><FONT color=#000000>    ) != 0) System.out.print(</FONT><FONT color=#FF00FF>" STOPPED "</FONT><FONT color=#000000>);
+    </FONT><FONT color=#0000FF><b>if</b></FONT><FONT color=#000000> ((old_state &amp; </FONT><FONT color=#000080><b>JCO.STATE_STARTED</b></FONT><FONT color=#000000>    ) != 0) System.out.print(</FONT><FONT color=#FF00FF>" STARTED "</FONT><FONT color=#000000>);
+    </FONT><FONT color=#0000FF><b>if</b></FONT><FONT color=#000000> ((old_state &amp; </FONT><FONT color=#000080><b>JCO.STATE_LISTENING</b></FONT><FONT color=#000000>  ) != 0) System.out.print(</FONT><FONT color=#FF00FF>" LISTENING "</FONT><FONT color=#000000>);
+    </FONT><FONT color=#0000FF><b>if</b></FONT><FONT color=#000000> ((old_state &amp; </FONT><FONT color=#000080><b>JCO.STATE_TRANSACTION</b></FONT><FONT color=#000000>) != 0) System.out.print(</FONT><FONT color=#FF00FF>" TRANSACTION "</FONT><FONT color=#000000>);
+    </FONT><FONT color=#0000FF><b>if</b></FONT><FONT color=#000000> ((old_state &amp; </FONT><FONT color=#000080><b>JCO.STATE_BUSY</b></FONT><FONT color=#000000>       ) != 0) System.out.print(</FONT><FONT color=#FF00FF>" BUSY "</FONT><FONT color=#000000>);
+
+    System.out.print(</FONT><FONT color=#FF00FF>"] to ["</FONT><FONT color=#000000>);
+    </FONT><FONT color=#0000FF><b>if</b></FONT><FONT color=#000000> ((new_state &amp; </FONT><FONT color=#000080><b>JCO.STATE_STOPPED</b></FONT><FONT color=#000000>    ) != 0) System.out.print(</FONT><FONT color=#FF00FF>" STOPPED "</FONT><FONT color=#000000>);
+    </FONT><FONT color=#0000FF><b>if</b></FONT><FONT color=#000000> ((new_state &amp; </FONT><FONT color=#000080><b>JCO.STATE_STARTED</b></FONT><FONT color=#000000>    ) != 0) System.out.print(</FONT><FONT color=#FF00FF>" STARTED "</FONT><FONT color=#000000>);
+    </FONT><FONT color=#0000FF><b>if</b></FONT><FONT color=#000000> ((new_state &amp; </FONT><FONT color=#000080><b>JCO.STATE_LISTENING</b></FONT><FONT color=#000000>  ) != 0) System.out.print(</FONT><FONT color=#FF00FF>" LISTENING "</FONT><FONT color=#000000>);
+    </FONT><FONT color=#0000FF><b>if</b></FONT><FONT color=#000000> ((new_state &amp; </FONT><FONT color=#000080><b>JCO.STATE_TRANSACTION</b></FONT><FONT color=#000000>) != 0) System.out.print(</FONT><FONT color=#FF00FF>" TRANSACTION "</FONT><FONT color=#000000>);
+    </FONT><FONT color=#0000FF><b>if</b></FONT><FONT color=#000000> ((new_state &amp; </FONT><FONT color=#000080><b>JCO.STATE_BUSY</b></FONT><FONT color=#000000>       ) != 0) System.out.print(</FONT><FONT color=#FF00FF>" BUSY "</FONT><FONT color=#000000>);
+    System.out.println(</FONT><FONT color=#FF00FF>"]"</FONT><FONT color=#000000>);
+  }
+
+  </FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>static</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>void</b></FONT><FONT color=#000000> main(String[] argv)
+  {
+    Example5 obj = </FONT><FONT color=#0000FF><b>new</b></FONT><FONT color=#000000> Example5();
+    obj.startServers();
+  }
+}
+</PRE></FONT>
+</BODY></HTML>

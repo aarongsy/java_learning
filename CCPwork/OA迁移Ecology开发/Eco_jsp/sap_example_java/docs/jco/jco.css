@@ -1,0 +1,262 @@
+
+.textblack
+{
+    font-family: arial, sans-serif;
+    font-size: 9pt;
+    letter-spacing: 1px;
+    line-height: 16px;
+    font-weight: 500;
+    color: black;
+    position: relative;
+    left: 10px;
+}
+
+.textred
+{
+    font-family: arial, sans-serif;
+    font-size: 9pt;
+    letter-spacing: 1px;
+    line-height: 16px;
+    font-weight: 500;
+    color: red;
+    position: relative;
+    left: 10px;
+}
+
+.text 
+{
+    font-family: arial, sans-serif;
+    font-size: 9pt;
+    letter-spacing: normal;
+    line-height: 15px;
+    font-weight: normal;
+    color: white;
+    position: relative;
+    left: 10px;
+}
+
+a.white
+{
+    font-family: arial;
+    font-size: 9pt;
+    font-weight: bold;
+    letter-spacing: normal;
+    line-height: 30px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: white;
+}
+
+a:hover.white
+{
+    font-family: arial;
+    font-size: 9pt;
+    font-weight: bold;
+    letter-spacing: normal;
+    line-height: 30px;
+    letter-spacing: 1px;
+    text-decoration: underline;
+    color: white;
+}
+
+a.dgrey
+{
+    font-family: arial;
+    font-size: 9pt;
+    font-weight: bold;
+    letter-spacing: normal;
+    line-height: 16px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #4C4C4C;
+}
+
+a:hover.dgrey
+{
+    font-family: arial;
+    font-size: 9pt;
+    font-weight: bold;
+    letter-spacing: normal;
+    line-height: 16px;
+    letter-spacing: 1px;
+    text-decoration: underline;
+    color: #4C4C4C;
+}
+
+a.grey
+{
+    font-family: arial;
+    font-size: 9pt;
+    font-weight: bold;
+    letter-spacing: normal;
+    line-height: 16px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #4C4C4C;
+}
+
+a:hover.grey
+{
+    font-family: arial;
+    font-size: 9pt;
+    font-weight: bold;
+    letter-spacing: normal;
+    line-height: 16px;
+    letter-spacing: 1px;
+    text-decoration: underline;
+    color: #4C4C4C;
+}
+
+.head
+{
+    font-family: arial, sans-serif;
+    font-size: 11pt;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #4C4C4C;
+    text-indent: 10px;
+}
+
+.spacer
+{
+    line-height: 15px;
+}
+
+td.faqhead
+{
+    font-family: arial, sans-serif;
+    font-size: 11pt;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-indent: 10px;
+    color: #FFFFFF;
+    background: #8CAA33;
+}
+
+td.faqw
+{
+    font-family: arial, sans-serif;
+    font-size: 9pt;
+    letter-spacing: normal;
+    line-height: 15px;
+    font-weight: normal;
+    color: #4C4C4C;
+    background: #CCCCCC;
+}
+
+td.error
+{
+    font-family: arial, sans-serif;
+    font-size: 9pt;
+    letter-spacing: normal;
+    line-height: 15px;
+    font-weight: normal;
+    color: #aa0000;
+    background: #FFFFFF;
+}
+
+td.tiny
+{
+    font-family: arial, sans-serif;
+    font-size: 8pt;
+    letter-spacing: normal;
+    font-weight: normal;
+}
+
+td.faqg
+{
+    font-family: arial, sans-serif;
+    font-size: 9pt;
+    letter-spacing: normal;
+    line-height: 15px;
+    font-weight: normal;
+    color: #4C4C4C;
+    background: white;
+}
+
+hr.separator
+{
+    width: 530px; 
+    color: #4C4C4C;
+    border-style : thin;
+    margin-left: 8px;
+}
+
+body
+{
+    background-color: #FFFFFF;
+    font-family: arial, sans-serif;
+    font-size: 9pt;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: black;
+}
+
+body.allclasses
+{
+    background-color: #4C4C4C; 
+    font-family: arial, sans-serif;
+    font-size: 9pt;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: white;
+}
+
+a
+{
+    font-family: arial, sans-serif;
+    font-size: 9pt;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: #505050;
+}
+
+/* Table colors */
+.TableHeadingColor     { background: #ffac1e }
+.TableSubHeadingColor  { background: #ffcf1e }
+.TableRowColor         { background: #FFFFFF }
+
+/* Font used in left-hand frame lists */
+.FrameTitleFont
+{
+    font-family: arial, sans-serif;
+    font-size: 9pt;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: white;
+}
+
+.FrameHeadingFont
+{
+    font-family: arial, sans-serif;
+    font-size: 11pt;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: white;
+}
+
+.FrameItemFont
+{
+    font-family: arial, sans-serif;
+    font-size: 9pt;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: white;
+}
+
+.FrameItemFont a
+{
+    font-family: arial, sans-serif;
+    font-size: 9pt;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: white;
+}
+
+.NavBarCell1    { background-color:#ffcf1e; }
+.NavBarCell1Rev { background-color:#ff1200; }
+.NavBarFont1    { font-family: Arial, Helvetica, sans-serif; color:#000000; }
+.NavBarFont1Rev { font-family: Arial, Helvetica, sans-serif; color:#FFFFFF; }
+
+.NavBarCell2    { font-family: Arial, Helvetica, sans-serif; background-color:#FFFFFF; }
+.NavBarCell3    { font-family: Arial, Helvetica, sans-serif; background-color:#FFFFFF; }

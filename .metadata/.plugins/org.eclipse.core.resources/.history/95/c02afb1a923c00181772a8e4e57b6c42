@@ -1,0 +1,20 @@
+package majiang;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Player {
+	private int id;
+	private List<Card> handcard = new ArrayList<Card>();
+	
+	public List<Card> getHandCards() {
+		return handcard;
+	}
+	
+	public void setHandCards(Card card) {
+		handcard.add(card);
+	}
+	
+	
+}

@@ -1,0 +1,50 @@
+package majiang;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Cards {
+
+	private List<Card> list = new ArrayList<Card>();
+	
+	//创建牌堆
+	public Cards() {
+		System.out.println("-----开始创建牌堆-----");
+		String Color[]= {"万","条","桶"};
+		String Colorhua[] = {"花"};
+		String Colorhua2[] = {"东","南","西","北","中","发"};
+		String index[] = {"1","2","3","4","5","6","7","8","9"};
+		String indexhua[] = {"1","2","3","4","5","6","7","8"};
+		String indexhua2[]= {"1","2","3","4"};
+		for (int i = 0; i<Color.length;i++) {
+			for (int j = 0; j<index.length;j++) {
+				for (int k=0;k<4;k++) {
+					list.add(new Card(Color[i],index[j]));
+				}
+			}
+		}
+	}
+	
+	public List<Card> getList() {
+		return list;
+	}
+	
+	public void shufCards() {
+		System.out.println("start shuffling");
+		Collections.shuffle(list);
+		System.out.println("end shuffling");
+	}
+	
+	public void showCards() {
+		System.out.print("扑克牌为:");
+		System.out.println("<<");
+		for (int i=0; i < list.size();i++) {
+			System.out.println(list.get(i).getNumber()+list.get(i).getColor());
+		}
+		System.out.println("]");
+		
+	}
+}
+	
+

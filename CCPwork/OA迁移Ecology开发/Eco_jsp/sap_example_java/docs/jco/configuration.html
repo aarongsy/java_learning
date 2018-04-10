@@ -1,0 +1,279 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE>SAP Java Connector Installation</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1252">
+  <link rel="stylesheet" type="text/css" href="jco.css">
+ </HEAD>
+<BODY>
+
+<table cellSpacing=0 cellPadding=0 border=1><tr><td>
+<table cellSpacing=0 cellPadding=0 border=0>
+<tr>
+    <td vAlign="top"   ><IMG height="80" src="images/father_son.jpg" width=115 border=0></td>
+    <td vAlign="bottom"><IMG height="25" src="images/ebusiness.gif"  width=375 border=0></td>
+    <td vAlign="top"   ><IMG height="80" src="images/skateboard.jpg" width=240 border=0></td>
+</tr>
+<tr bgcolor="#ffac1e"><td vAlign="top" colspan=3>&nbsp;</td></tr>
+<tr><td colspan=3><table cellSpacing=0 cellPadding=0 border=0><tr>
+
+<!-- ################################################################################ -->
+<!-- ###   LEFT TOOLBOX START                                                     ### -->
+<!-- ################################################################################ -->
+<td align="right" valign="top" width=115 bgcolor="#4c4c4c">
+<table cellSpacing=0 cellPadding=5 border=0><tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td>
+
+<table style="align: top" cellSpacing=0 cellPadding=0 width=100 align=left border=0>
+   <tr><td align=right><a class=white style="LETTER-SPACING: normal" href="intro.html">        Home         </a></td></tr>
+   <tr><td align=right><a class=white style="LETTER-SPACING: normal" href="installation.html"> Installation </a></td></tr>
+   <tr><td align=right><a class=white style="LETTER-SPACING: normal" href="configuration.html">Configuration</a></td></tr>
+   <tr><td align=right><a class=white style="LETTER-SPACING: normal" href="security.html">     Security</a></td></tr>
+   <tr><td align=right><a class=white style="LETTER-SPACING: normal" href="documentation.html">Documentation</a></td></tr>
+   <tr><td align=right><a class=white style="LETTER-SPACING: normal" href="examples.html">     Examples     </a></td></tr>
+   <tr><td align=right><a class=white style="LETTER-SPACING: normal" href="releasenotes.html"> Release Notes</a></td></tr>
+   <tr><td>&nbsp;</td>
+   <tr><td>&nbsp;</td>
+</table>
+
+</td></tr>
+
+<!-- ################################################################################ -->
+</table></td> <!-- ###   LEFT TOOLBOX END                                         ### -->
+<!-- ################################################################################ -->
+
+
+<!-- ################################################################################ -->
+<!-- ###   WORK AREA START                                                        ### -->
+<!-- ################################################################################ -->
+<td valign="top" colspan=2 height=200><table cellSpacing=0 cellPadding=2 border=0 width=500>
+<!-- ################################################################################ -->
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Configuration and Requirements</SPAN></td></tr>
+<tr><td valign="top" align="left"><HR class="separator" noshade></td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Components of the SAP Java Connector</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    The SAP Java Connector runtime environment consists of 3 parts:
+    <ul>
+        <li><tt>sapjco.jar</tt> - java archive containing JCo's Java runtime classes
+        <li>{library prefix}<tt>sapjcorfc</tt>{shared library extension} - JNI runtime library
+        containing JCo's native code
+        <li>{library prefix}<tt>rfccm</tt>{shared library extension} (<tt>librfc32.dll</tt>
+        on Windows systems) - native RFC library used by JCo for handling remote function calls to
+        and from an SAP System
+    </ul>
+    JCo's JNI runtime library acts as the linking part between JCo's Java classes and the native
+    RFC including the network communication. Its main functional task is to do all the marshalling
+    operations between the Java and the native RFC data types. Therefore JCo's Java runtime classes
+    and its JNI runtime library tightly depend on each other. For a correct installation their
+    version numbers and dates must be equal.
+    <p>
+    In contrast to that there is only a loose coupling between the JNI runtime library and the
+    native RFC library. The JNI library will exchange RFC data with the native RFC library and will
+    delegate the management of RFC and network communication to it. Because the used RFC APIs will
+    remain stable and downward compatible JCo only needs a specific minimum version of the native
+    RFC library. The one delivered with the JCo distribution is sufficient but one may also install
+    a later version.
+    <p>
+    The native RFC library is an independent component and will be patched more often than JCo. You
+    can download it separately from the SAP Service Marketplace at
+    <a href="http://service.sap.com/patches">http://service.sap.com/patches</a>. Please navigate
+    to the appropriate SAP Web AS Binary Kernel Patches. The library is database independent and
+    titled <tt>"librfc"</tt>. Like all SAP binary patches it is compressed with the SAR format.
+    Please see SAP note <a href="http://service.sap.com/sap/support/notes/413708">413708</a> for more
+    information about the current RFC library version.
+    <p>
+    <em>Note: For JCo you will always need a Non-Unicode version of the RFC library,
+    even if you would like to connect to a Unicode SAP System. Furthermore the RFC library must have
+    the same bit width as the used JVM (Java Virtual Machine). So if you are using a 32-bit JVM,
+    you will need also the 32-bit Non-Unicode RFC library, regardless if you are running on a
+    32-bit or 64-bit operating system.</em>
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Runtime loading mechanism</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    When an application references a JCo class for the first time it will be loaded by the associated
+    class loader. During this process JCo's static initializer will be executed. This routine will
+    search and load the JCo JNI library by using the following algorithm:
+    <ol>
+        <li>Try to load the <tt>sapjcorfc</tt> library from the same directory where the
+            <tt>sapjco.jar</tt> file or the JCo class files are located.<p>
+
+        <li>Search the <tt>sapjcorfc</tt> library along the directory path defined in the
+            <tt>java.library.path</tt> system property from left to right and if found load
+            it from there.<br>
+            <em>Note: If this property is not set manually, the JVM will usually set the OS specific
+            library path environment variable as the default</em><tt> java.library.path </tt><em>system
+            property at startup.</em><p>
+
+        <li>Let the JVM handle the loading of the <tt>sapjcorfc</tt> library by delegating
+            this task to its <tt>System.loadLibrary(String)</tt> method.
+    </ol>
+    JCo's JNI library is linked with the native RFC library. So when it is loaded the operating system
+    will try to resolve its dependencies by loading the native RFC library, too. Usually, this will be
+    done by searching for the first occurrence of the <tt>rfccm</tt> | <tt>librfc32</tt> library along the
+    directory path defined by the OS specific library path environment variable from left to right and
+    load it.
+    <p>
+    If the <tt>sapjcorfc</tt> library and/or the <tt>rfccm</tt> | <tt>librfc32</tt> library cannot be
+    loaded, you will get an <tt>ExceptionInInitializerError</tt> from the
+    <tt>JCO.&lt;clinit&gt;</tt> method saying that it could not load the middleware layer
+    <tt>com.sap.mw.jco.rfc.MiddlewareRFC</tt>. This error message may be caused for one of the
+    following reasons:
+    <ul>
+        <li>The <tt>sapjcorfc</tt> library cannot be found by using the above described
+            algorithm, because you unintentionally installed it to the wrong directory or forgot
+            to specify its directory in the OS specific library path environment variable or alternatively
+            in the <tt>java.library.path</tt> system property.
+        <li>The <tt>rfccm</tt> | <tt>librfc32</tt> library cannot be found because you unintentionally
+            installed it to the wrong directory or forgot to specify its directory in the
+            OS specific library path environment variable.
+        <li>The version of the <tt>sapjcorfc</tt> library found via the <tt>sapjco.jar</tt> directory or
+            the <tt>java.library.path</tt> system property is not the required version (the version
+            numbers and dates of the JCo middleware and the JCo library must be equal).
+        <li>The version of the <tt>rfccm</tt> | <tt>librfc32</tt> library found via the OS specific
+            library path environment variable is too old (for example you forgot to copy the <tt>librfc32.dll</tt>
+            to the <tt>&lt;WinDir&gt;\system32</tt> directory and an older version is loaded from there).
+        <li>The <tt>sapjcorfc</tt> library, the <tt>rfccm</tt> | <tt>librfc32</tt> library or
+            both lack the execute permission flag.
+        <li>The <tt>sapjcorfc</tt> library, the <tt>rfccm</tt> | <tt>librfc32</tt> library or both do
+            not have the same bit width as the JVM.
+        <li>The <tt>sapjcorfc</tt> library, the <tt>rfccm</tt> | <tt>librfc32</tt> library or both were
+            from a different JCo distribution and are not for use with your operating system and/or
+            your hardware processor.
+        <li>The <tt>sapjcorfc</tt> library, the <tt>rfccm</tt> | <tt>librfc32</tt> library or both require
+            a higher operating system version.
+    </ul>
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Version dialog</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        You can check if JCo is installed correctly by starting its About dialog. This can conveniently be done
+        by using the command<br><br>
+           <code>&nbsp;&nbsp;&nbsp;java -jar {sapjco-install-path}/sapjco.jar</code><br>
+        or<br>
+           <code>&nbsp;&nbsp;&nbsp;java -classpath {sapjco-install-path}/sapjco.jar com.sap.mw.jco.About</code><br><br>
+
+        The command will pop up a dialog containing all relevant JCo version information. On non-windowing systems
+        you can get the same information printed to the console by typing<br><br>
+           <code>&nbsp;&nbsp;&nbsp;java -jar {sapjco-install-path}/sapjco.jar -stdout</code><br>
+        or<br>
+           <code>&nbsp;&nbsp;&nbsp;java -classpath {sapjco-install-path}/sapjco.jar com.sap.mw.jco.About</code><br>
+           <code>&nbsp;&nbsp;&nbsp;-stdout</code><br><br>
+
+        There should be no exception or error thrown and all versions should be listed with their correct version
+        numbers and date. Otherwise please see the above chapter "runtime loading mechanism" for possible installation
+        or configuration errors.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Network configuration</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    JCo uses the native RFC library for its RFC communication. The RFC library for its part uses the CPI-C
+    protocol based on TCP/IP for its low level network communication. Usually the TCP/IP protocol is a
+    communication service provided by the operating system. So, as a prerequisite for JCo to work, the TCP/IP
+    service must be configured.<br>
+    If you have a working SAPGUI installed on your machine all necessary TCP/IP configuration steps should have
+    been already made during its installation process. But if you install JCo from scratch on a new system, you
+    have to take care of the following:<p>
+    <ul>
+        <li>Make sure that the SAP application, message and gateway servers or alternatively the SAP router
+            can be reached physically by using their IP addresses (<tt>ping&nbsp;&lt;nnn.nnn.nnn.nnn&gt;</tt>).
+            If this won't work please ask your network administrator for help.
+        <li>If desired, make sure that the SAP application, message and gateway servers or alternatively the SAP
+            router can also be reached by using their logical host names (<tt>ping&nbsp;&lt;hostname&gt;</tt>).
+            If they cannot be reached this way please check your DNS (Domain Name Service) service entries or
+            maintain the respective host name in your local hosts file (for Windows systems:
+            <tt>&lt;WinDir&gt;\system32\drivers\etc\hosts</tt>).
+        <li>If you would like to use the load balanced log on, check if the SAP message server service and its
+            TCP port is defined in the services file. There must be an entry of format <tt>"sapms&lt;SID&gt;&nbsp;&lt;portnumber&gt;/tcp"</tt>
+            in the services file where <tt>&lt;SID&gt;</tt> = 3-letter SAP System ID. (In Windows systems the
+            services file is usually stored at <tt>&lt;WinDir&gt;\system32\drivers\etc\services</tt>.)
+        <li>If you would like to omit the message server host name in your log on parameters for a load
+            balanced log on, please maintain an entry of format <tt>"&lt;SID&gt;=&lt;hostname&gt;"</tt> in the file
+            <tt>sapmsg.ini</tt> where <tt>&lt;SID&gt;</tt> = 3-letter SAP System ID. The RFC library will try
+            to read a missing message server host name from this file. It will be searched in the current
+            working directory or in the directory specified by the shell environment variable
+            <tt>RFC_LOGON_INI_PATH</tt>.
+    </ul>
+    For more information on the SAP technical infrastructure, network communication and configuration please have a
+    look at the SAP Service Marketplace section "Network Integration" at
+    <a href="http://service.sap.com/network">http://service.sap.com/network</a>.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Application configuration for Unicode SAP Systems</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        Generally you should make sure that your repositories always hold the correct meta data for the related
+        future RFC client calls and/or server requests. Usually this is done by creating standard dynamic
+        <tt>JCO.Repository</tt> instances with a <tt>JCO.Client</tt> or better a <tt>JCO.Pool</tt> which are
+        connected to the same SAP backend system as the corresponding future application client calls and/or
+        server requests. It is especially important that you don't mix up Unicode and non-Unicode calls. For
+        doing RFC calls to and from a Unicode SAP Systems you will also need a corresponding repository holding
+        the appropriate Unicode meta data. For RFC calls to and from Non-Unicode SAP Systems you will need
+        a repository holding the appropriate Non-Unicode meta data.<p>
+        If you would like to do RFC outbound calls from a Unicode SAP System to a <tt>JCO.Server</tt> instance,
+        the server must be created using the additional server property <tt>jco.server.unicode=1</tt>. Furthermore
+        you have to set the <tt>&nbsp;Unicode&nbsp;</tt> option for your RFC destination in transaction <tt>SM59</tt>.
+        This option can be found on the Tab <tt>"Special Options"</tt>, section <tt>"Character Width in Target System"</tt>.<p>
+        For RFC outbound calls from a Non-Unicode SAP System to a <tt>JCO.Server</tt> instance or for any inbound
+        RFC calls to Non-Unicode or Unicode SAP Systems you don't have to do any special configuration tasks.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Tracing mechanisms</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        JCo's tracing mechanism can be turned on by setting the following java environment
+        properties at startup:<br><br>
+           <code>&nbsp;&nbsp;&nbsp;-Djco.trace_level=N&nbsp;(where 0 &le; N &le; 10 with 10 = most detailed trace)</code><br><br>
+        and optionally<br><br>
+           <code>&nbsp;&nbsp;&nbsp;-Djco.trace_path=&lt;PATH&gt;</code><br><br>
+        If a trace path is set the JCo traces will be written to one or multiple files named
+        <tt>JCO&lt;date&gt;_&lt;time&gt;.&lt;no&gt;.trc</tt> in the specified <tt>PATH</tt> directory. Otherwise the JCo
+        traces will be written to the standard output stream (default is an output to the console).<br>
+        The same tracing behavior can be achieved by modifying the program code calling the JCo APIs
+        <tt>JCO.setTraceLevel(int)</tt> and/or <tt>JCO.setTracePath(String)</tt> accordingly.<p>
+        The RFC library tracing mechanism can be turned on by setting the shell environment variable <tt>RFC_TRACE=1</tt>
+        before starting the JCo Java process. For a more detailed output, you may additionally set the shell environment
+        variable <tt>RFC_TRACE_DUMP=1</tt>. The RFC library trace files are named <tt>rfc&lt;processID&gt;_&lt;threadID&gt;.trc</tt>
+        and will be written to the current working directory or - if set additionally - to the directory specified by the shell
+        environment variable <tt>RFC_TRACE_DIR=&lt;PATH&gt;</tt>. In case the shell environment variable <tt>RFC_TRACE</tt>
+        is set to 1 then all connections will be traced by the RFC library. If you would like to trace only a special
+        connection, you can turn on the RFC tracing individually by calling the <tt>setTrace(true)</tt> method of the
+        appropriate <tt>JCO.Client</tt> or <tt>JCO.Server</tt> instance before connecting it or create these instances
+        by using the additional properties <tt>jco.client.trace=1</tt> or <tt>jco.server.trace=1</tt>.
+        <p>
+    </td></tr>
+</table></div>
+
+<!-- ################################################################################ -->
+</table></td> <!-- ### WORK AREA END                                              ### -->
+<!-- ################################################################################ -->
+
+</td></tr></table>
+</tr></table>
+</td></tr></table>
+</body>
+</html>

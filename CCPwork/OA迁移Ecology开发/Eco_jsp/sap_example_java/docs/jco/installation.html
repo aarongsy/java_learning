@@ -1,0 +1,289 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE>SAP Java Connector Installation</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1252">
+  <link rel="stylesheet" type="text/css" href="jco.css">
+ </HEAD>
+<BODY>
+
+<table cellSpacing=0 cellPadding=0 border=1><tr><td>
+<table cellSpacing=0 cellPadding=0 border=0>
+<tr>
+    <td vAlign="top"   ><IMG height="80" src="images/father_son.jpg" width=115 border=0></td>
+    <td vAlign="bottom"><IMG height="25" src="images/ebusiness.gif"  width=375 border=0></td>
+    <td vAlign="top"   ><IMG height="80" src="images/skateboard.jpg" width=240 border=0></td>
+</tr>
+<tr bgcolor="#ffac1e"><td vAlign="top" colspan=3>&nbsp;</td></tr>
+<tr><td colspan=3><table cellSpacing=0 cellPadding=0 border=0><tr>
+
+<!-- ################################################################################ -->
+<!-- ###   LEFT TOOLBOX START                                                     ### -->
+<!-- ################################################################################ -->
+<td align="right" valign="top" width=115 bgcolor="#4c4c4c">
+<table cellSpacing=0 cellPadding=5 border=0><tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td>
+
+<table style="align: top" cellSpacing=0 cellPadding=0 width=100 align=left border=0>
+   <tr><td align=right><a class=white style="LETTER-SPACING: normal" href="intro.html">        Home         </a></td></tr>
+   <tr><td align=right><a class=white style="LETTER-SPACING: normal" href="installation.html"> Installation </a></td></tr>
+   <tr><td align=right><a class=white style="LETTER-SPACING: normal" href="configuration.html">Configuration</a></td></tr>
+   <tr><td align=right><a class=white style="LETTER-SPACING: normal" href="security.html">     Security</a></td></tr>
+   <tr><td align=right><a class=white style="LETTER-SPACING: normal" href="documentation.html">Documentation</a></td></tr>
+   <tr><td align=right><a class=white style="LETTER-SPACING: normal" href="examples.html">     Examples     </a></td></tr>
+   <tr><td align=right><a class=white style="LETTER-SPACING: normal" href="releasenotes.html"> Release Notes</a></td></tr>
+   <tr><td>&nbsp;</td>
+   <tr><td>&nbsp;</td>
+</table>
+
+</td></tr>
+
+<!-- ################################################################################ -->
+</table></td> <!-- ###   LEFT TOOLBOX END                                         ### -->
+<!-- ################################################################################ -->
+
+
+<!-- ################################################################################ -->
+<!-- ###   WORK AREA START                                                        ### -->
+<!-- ################################################################################ -->
+<td valign="top" colspan=2 height=200><table cellSpacing=0 cellPadding=2 border=0 width=500>
+<!-- ################################################################################ -->
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Installation</SPAN></td></tr>
+<tr><td valign="top" align="left"><HR class="separator" noshade></td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Preliminaries</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    The SAP Java Connector (JCo) 2.1.10 requires a Java Runtime Environment (JRE) version 1.3 or 1.4. The
+    64-bit JCo versions need a 64-bit JRE version 1.4. Please see SAP note
+    <a href="https://service.sap.com/sap/support/notes/549268">549268</a> for a current and detailed list of
+    supported platforms and Java runtime environments.
+    <p>
+    Additionally, JCo 2.1.10 requires the classic RFC runtime library version 6.40 or higher to be installed
+    on the system where it is running. A sufficient version of the RFC library is already shipped with this
+    distribution package but you may also download and install a newer one from
+    <a href="https://service.sap.com/patches">https://service.sap.com/patches</a>. JCo needs the non-Unicode
+    version of this library. It can be found in the database independent download section of the various
+    SAP Kernel releases with the download object title <tt>"librfc"</tt>. Please see SAP note
+    <a href="https://service.sap.com/sap/support/notes/413708">413708</a> for more information about the
+    current RFC library version.
+    <p>
+    The latest version of the SAP Java Connector can be downloaded from the SAP Service Marketplace at
+    <a href="https://service.sap.com/connectors">https://service.sap.com/connectors</a>. There you will
+    also find all available distribution packages for the various supported platforms and processors.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Microsoft Windows</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    <p>There are different distribution packages for various JRE versions and hardware processors available:
+    <ul><li><code>sapjco-ntintel-2.1.10.zip</code> for a 32-bit JRE running on a 32-bit INTEL x86 or a
+    64-bit INTEL Itanium processor
+    <li><code>sapjco-ntia64-2.1.10.zip</code> for a 64-bit JRE running on a 64-bit INTEL Itanium processor
+    <li><code>sapjco-ntamd64-2.1.10.zip</code> for a 64-bit JRE running on a 64-bit AMD or INTEL x86 processor
+    </ul>
+    To install JCo for Windows unzip the appropriate distribution package into an arbitrary directory
+    {sapjco-install-path}.<br>
+    If there is already an older <code>librfc32.dll</code> version installed in the <code>{windows-dir}\system32</code>
+    directory, please replace it with the one that comes with this JCo distribution package, otherwise please keep the
+    already installed newer version within the <code>{windows-dir}\system32</code> directory.
+    <p>
+    <i>Note:</i> Please be aware of the fact, that on Windows 64-bit operating systems the directory
+    <code>{windows-dir}\system32</code> contains the 64-bit system libraries. So if installing the 32-bit JCo distribution
+    package on a 64-bit Windows operating system, check and replace the <code>librfc32.dll</code> within the
+    <code>{windows-dir}\SysWOW64</code> directory instead, which contains the 32-bit system libraries in this case.
+    <p>
+    <i>Attention:</i> Do not copy the <code>sapjcorfc.dll</code> neither into the <code>{windows-dir}\system32</code>
+    nor into the <code>{windows-dir}\SysWOW64</code> directory. This will break the operability of other JCo versions
+    that are already installed on the same system. Furthermore you would risk that the current installation also would
+    not work anymore, if the <code>sapjcorfc.dll</code> gets replaced in the respective Windows system directory in the
+    future.
+    <p>
+    <i>Additional step for 32-bit JCo installations:</i> The 32-bit JCo version requires the Microsoft C/C++ runtime
+    libraries version 7.1 to be installed on the system. If the runtime libraries <code>msvcr71.dll</code> or&nbsp;
+    <code>msvcp71.dll</code> are missing in the <code>{windows-dir}\system32</code> or <code>{windows-dir}\SysWOW64</code>
+    directory, respectively, they have to be installed additionally.<br>
+    Please see SAP note <a href="https://service.sap.com/sap/support/notes/684106">684106</a> for further information.
+    <p>
+    Then add <code>{sapjco-install-path}</code> to the <code>PATH</code> environment variable.<br>
+    Finally, add <code>{sapjco-install-path}\sapjco.jar</code> to your <code>CLASSPATH</code> environment variable.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Linux</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    <p>There are different distribution packages for various JRE versions and hardware processors available:
+    <ul><li><code>sapjco-linuxintel-2.1.10.tgz</code> for a 32-bit JRE running on a 32-bit INTEL x86 processor
+    <li><code>sapjco-linuxia64-2.1.10.tgz</code> for a 64-bit JRE running on a 64-bit INTEL Itanium processor
+    <li><code>sapjco-linuxppc64-2.1.10.tgz</code> for a 64-bit JRE running on a 64-bit PowerPC processor
+    <li><code>sapjco-linuxx86_64-2.1.10.tgz</code> for a 64-bit JRE running on a 64-bit AMD or INTEL x86 processor
+    <li><code>sapjco-linuxs390x-2.1.10.tgz</code> for a 64-bit JRE running on a 64-bit IBM eServer zSeries processor
+    </ul>
+    To install JCo for Linux copy the appropriate distribution package into an arbitrary directory
+    <code>{sapjco-install-path}</code>. Next, change to the installation directory:<p>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp;cd {sapjco-install-path}&nbsp;&nbsp;&nbsp;</code><i>[return]</i><p>
+    and extract the archive:<p>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp;tar zxvf sapjco-linux*2.1.10.tgz&nbsp;&nbsp;&nbsp;</code><i>[return]</i><p>
+    Then add <code>{sapjco-install-path}</code> to the <code>LD_LIBRARY_PATH</code> environment variable.<br>
+    Finally, add <code>{sapjco-install-path}/sapjco.jar</code> to your <code>CLASSPATH</code> environment variable.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>SUN Solaris</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    <p>There are different distribution packages for various JRE versions and hardware processors available:
+    <ul><li><code>sapjco-sun-2.1.10.tgz</code> for a 32-bit JRE running on a 32- or 64-bit SUN SPARC processor
+    <li><code>sapjco-sun_64-2.1.10.tgz</code> for a 64-bit JRE running on a 64-bit SUN SPARC processor
+    <li><code>sapjco-sunx86_64-2.1.10.tgz</code> for a 64-bit JRE running on a 64-bit AMD or INTEL x86 processor
+    </ul>
+    To install JCo for SUN Solaris copy the appropriate distribution package into an arbitrary directory
+    <code>{sapjco-install-path}</code>. Next, change to the installation directory:<p>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp;cd {sapjco-install-path}&nbsp;&nbsp;&nbsp;</code><i>[return]</i><p>
+    and extract the archive:<p>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp;gunzip sapjco-sun*2.1.10.tgz&nbsp;&nbsp;&nbsp;</code><i>[return]</i><br>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp;tar xvf sapjco-sun*2.1.10.tar&nbsp;&nbsp;&nbsp;</code><i>[return]</i><p>
+    Then add <code>{sapjco-install-path}</code> to the <code>LD_LIBRARY_PATH</code> environment variable.<br>
+    Finally, add <code>{sapjco-install-path}/sapjco.jar</code> to your <code>CLASSPATH</code> environment variable.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>IBM AIX</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    <p>There are different distribution packages for various JRE versions and hardware processors available:
+    <ul><li><code>sapjco-rs6000-2.1.10.tgz</code> for a 32-bit JRE running on a 32- or 64-bit IBM RS/6000 processor
+    <li><code>sapjco-rs6000_64-2.1.10.tgz</code> for a 64-bit JRE running on a 64-bit IBM RS/6000 processor
+    </ul>
+    To install JCo for IBM AIX copy the appropriate distribution package into an arbitrary directory
+    <code>{sapjco-install-path}</code>. Next, change to the installation directory:<p>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp;cd {sapjco-install-path}&nbsp;&nbsp;&nbsp;</code><i>[return]</i><p>
+    and extract the archive:<p>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp;gunzip sapjco-rs6000*2.1.10.tgz&nbsp;&nbsp;&nbsp;</code><i>[return]</i><br>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp;tar xvf sapjco-rs6000*2.1.10.tar&nbsp;&nbsp;&nbsp;</code><i>[return]</i><p>
+    Then add <code>{sapjco-install-path}</code> to the <code>LIBPATH</code> environment variable.<br>
+    Finally, add <code>{sapjco-install-path}/sapjco.jar</code> to your <code>CLASSPATH</code> environment variable.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>HP-UX</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    <p>There are different distribution packages for various JRE versions and hardware processors available:
+    <ul><li><code>sapjco-hp_32-2.1.10.tgz</code> for a 32-bit JRE running on a 32- or 64-bit PA-RISC processor
+    <li><code>sapjco-hp_64-2.1.10.tgz</code> for a 64-bit JRE running on a 64-bit PA-RISC processor
+    <li><code>sapjco-hpia64-2.1.10.tgz</code> for a 64-bit JRE running on 64-bit INTEL Itanium processor
+    </ul>
+    To install JCo for IBM AIX copy the appropriate distribution package into an arbitrary directory
+    <code>{sapjco-install-path}</code>. Next, change to the installation directory:<p>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp;cd {sapjco-install-path}&nbsp;&nbsp;&nbsp;</code><i>[return]</i><p>
+    and extract the archive:<p>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp;gunzip sapjco-hp*2.1.10.tgz&nbsp;&nbsp;&nbsp;</code><i>[return]</i><br>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp;tar xvf sapjco-hp*2.1.10.tar&nbsp;&nbsp;&nbsp;</code><i>[return]</i><p>
+    Then add <code>{sapjco-install-path}</code> to the <code>SHLIB_PATH</code> environment variable.<br>
+    Finally, add <code>{sapjco-install-path}/sapjco.jar</code> to your <code>CLASSPATH</code> environment variable.
+    </td></tr>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>HP Tru64</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    <p>There is only one distribution package available for running JCo in a 64-bit JRE on a 64-bit DEC Alpha processor.<p>
+    To install JCo for HP Tru64 copy the distribution package <code>sapjco-alphaosf-2.1.10.tgz</code> into an
+    arbitrary directory <code>{sapjco-install-path}</code>. Next, change to the installation directory:<p>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp;cd {sapjco-install-path}&nbsp;&nbsp;&nbsp;</code><i>[return]</i><p>
+    and extract the archive:<p>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp;gunzip sapjco-alphaosf-2.1.10.tgz&nbsp;&nbsp;&nbsp;</code><i>[return]</i><br>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp;tar xvf sapjco-alphaosf-2.1.10.tar&nbsp;&nbsp;&nbsp;</code><i>[return]</i><p>
+    Then add <code>{sapjco-install-path}</code> to the <code>LD_LIBRARY_PATH</code> environment variable.<br>
+    Finally, add <code>{sapjco-install-path}/sapjco.jar</code> to your <code>CLASSPATH</code> environment variable.
+    </td></tr>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>IBM OS/400</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    <p>There is only one distribution package available for running JCo in a 64-bit JRE on a 64-bit IBM AS/400 processor.<br>
+    <i>Prerequisite:</i> Product 5722SS1 option 33 (OS/400 Portable Application Solutions Environment) must
+    be installed.<p>
+    To install JCo for IBM OS/400, unzip the file <code>sapjco-as400_pase_64-2.1.10.zip</code> into an
+    arbitrary directory <code>{sapjco-install-path}</code> on the IFS file system.</p>
+    Next, go to the iSeries command prompt and change to the installation directory:<p>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp;cd {sapjco-install-path}&nbsp;&nbsp;&nbsp;</code><i>[return]</i><p>
+    Then add <code>{sapjco-install-path}</code> to the <code>LIBPATH</code> environment variable:<p>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp;ADDENVVAR ENVVAR(LIBPATH)</code><br>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VALUE('{sapjco-install-path}')&nbsp;&nbsp;&nbsp;</code><i>[return]</i></p>
+    Furthermore, add <code>{sapjco-install-path}/sapjco.jar</code> to your <code>CLASSPATH</code> environment variable:<p>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp;ADDENVVAR ENVVAR(CLASSPATH)</code><br>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VALUE('{sapjco-install-path}/sapjco.jar')&nbsp;&nbsp;&nbsp;</code><i>[return]</i><p>
+    To use OS/400 PASE native methods when starting Java from an iSeries command prompt or Qshell command prompt,
+    set the <code>QIBM_JAVA_PASE_STARTUP</code> environment variable:<p>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp;ADDENVVAR ENVVAR(QIBM_JAVA_PASE_STARTUP)</code><br>
+    <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VALUE('/usr/lib/start64')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><i>[return]</i>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>IBM z/OS</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    <p>There is only one distribution package available for running JCo in a 32-bit JRE on IBM's z/OS operating system.<br>
+    <i>Prerequisite:</i>&nbsp; The utility gzip is required to extract the package file. It can be downloaded from
+    <a href="http://www.ibm.com/servers/eserver/zseries/zos/unix/bpxa1toy.html">
+    http://www.ibm.com/servers/eserver/zseries/zos/unix/bpxa1toy.html</a><br>
+    <i>Prerequisite:</i>&nbsp; IBM's latest patches for <code>LibASCII</code> support (<code>fomeliba.dll</code>)
+    must be installed (<code>IBM APAR OW57148</code>).
+    <p>
+    To install JCo for z/OS copy the distribution package <code>sapjco-os390-2.1.10.tgz</code> into an
+    arbitrary directory {sapjco-install-path}. Next, change to the installation directory: <br />
+    <blockquote><code>cd {sapjco-install-path}   <i>[return]</i></code></blockquote>
+    </p>
+    and extract the archive with implicite translation of text files to EBCDIC:
+    <blockquote><code>
+    gzip -d sapjco-os390-2.1.10.tgz   <i>[return]</i><br/>
+    pax -rvf sapjco-os390-2.1.10.tar -o from=ISO8859-1,to=IBM-1047   <i>[return]</i><br/>
+    pax -rvf sapjco-os390-2.1.10.tar *.jar lib* */*/im*/* */*/*.pdf   <i>[return]</i><br/>
+    </code></blockquote>
+
+    Then add <code>{sapjco-install-path}:/usr/lpp/icli/sbin</code> to the <code>LIBPATH</code> environment variable.<br/>
+    Finally, add <code>{sapjco-install-path}/sapjco.jar</code> to your <code>CLASSPATH</code> environment variable.
+
+</table></div>
+</td></tr>
+
+</td></tr>
+</table></div>
+
+
+<!-- ################################################################################ -->
+</table></td> <!-- ### WORK AREA END                                              ### -->
+<!-- ################################################################################ -->
+
+</td></tr></table>
+</tr></table>
+</td></tr></table>
+</body>
+</html>

@@ -1,0 +1,839 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE>SAP Java Connector Release Notes</TITLE>
+  <META http-equiv=Content-Type content="text/html; charset=windows-1252">
+  <link rel="stylesheet" type="text/css" href="jco.css">
+ </HEAD>
+<BODY>
+
+<table cellSpacing=0 cellPadding=0 border=1><tr><td>
+<table cellSpacing=0 cellPadding=0 border=0>
+<tr>
+    <td vAlign="top"   ><IMG height="80" src="images/father_son.jpg" width=115 border=0></td>
+    <td vAlign="bottom"><IMG height="25" src="images/ebusiness.gif"  width=375 border=0></td>
+    <td vAlign="top"   ><IMG height="80" src="images/skateboard.jpg" width=240 border=0></td>
+</tr>
+<tr bgcolor="#ffac1e"><td vAlign="top" colspan=3>&nbsp;</td></tr>
+<tr><td colspan=3><table cellSpacing=0 cellPadding=0 border=0><tr>
+
+<!-- ################################################################################ -->
+<!-- ###   LEFT TOOLBOX START                                                     ### -->
+<!-- ################################################################################ -->
+<td align="right" valign="top" width=115 bgcolor="#4c4c4c">
+<table cellSpacing=0 cellPadding=5 border=0><tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td>
+
+<table style="align: top" cellSpacing=0 cellPadding=0 width=100 align=left border=0>
+   <tr><td align=right><a class=white style="LETTER-SPACING: normal" href="intro.html">        Home         </a></td></tr>
+   <tr><td align=right><a class=white style="LETTER-SPACING: normal" href="installation.html"> Installation </a></td></tr>
+   <tr><td align=right><a class=white style="LETTER-SPACING: normal" href="configuration.html">Configuration</a></td></tr>
+   <tr><td align=right><a class=white style="LETTER-SPACING: normal" href="security.html">     Security</a></td></tr>
+   <tr><td align=right><a class=white style="LETTER-SPACING: normal" href="documentation.html">Documentation</a></td></tr>
+   <tr><td align=right><a class=white style="LETTER-SPACING: normal" href="examples.html">     Examples     </a></td></tr>
+   <tr><td align=right><a class=white style="LETTER-SPACING: normal" href="releasenotes.html"> Release Notes</a></td></tr>
+   <tr><td>&nbsp;</td>
+   <tr><td>&nbsp;</td>
+</table>
+
+</td></tr>
+
+<!-- ################################################################################ -->
+</table></td> <!-- ###   LEFT TOOLBOX END                                         ### -->
+<!-- ################################################################################ -->
+
+
+<!-- ################################################################################ -->
+<!-- ###   WORK AREA START                                                        ### -->
+<!-- ################################################################################ -->
+<td valign="top" colspan=2 height=200><table cellSpacing=0 cellPadding=2 border=0 width=500>
+<!-- ################################################################################ -->
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Release Notes 2.1.10</SPAN></td></tr>
+<tr><td valign="top" align="left"><HR class="separator" noshade></td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in initialization of RFC parameter defaults</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0 width="100%">
+    <tr><td class="faqw">
+    RFC function module parameters might not have been initialized correctly when an ABAP system
+    field (e.g. <tt>SY-DATLO</tt> or <tt>SY-TIMLO</tt>) was defined as its default value. This also
+    might have lead to some <tt>JCO.ConversionException</tt> being thrown when trying to read these
+    values with the various <tt>JCO.ParameterList.get<em>&lt;type&gt;</em>()</tt> or the
+    <tt>JCO.ParameterList.getValue()</tt> methods.
+    </td></tr>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix removing native memory leaks</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0 width="100%">
+    <tr><td class="faqw">
+    Two memory leaks have been fixed in the used RFC library. One memory leak occurred when
+    an attempt to open an RFC connection failed for any reason. And on Windows platforms,
+    a memory leak was removed when terminating threads. For more details please see the
+    SAP notes <a href="https://service.sap.com/sap/support/notes/1584944">1584944</a> and
+    <a href="https://service.sap.com/sap/support/notes/1250242">1250242</a>.
+    </td></tr>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in repository when looking up table and line types</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0 width="100%">
+    <tr><td class="faqw">
+    In certain cases, for table types and the corresponding line type, it was relevant in which order
+    they had been looked up. When first looking up the table type, the table type was also cached under
+    the name of the line type, i.e. the method <code>JCO.Repository.getStructureDefinition("FOO").getName().equals("FOO")</code>
+    returned <code>false</code>, but it should return <code>true</code>, if "FOO" was the line type of
+    the previsously looked up table type. When using the other lookup order - first the line type and
+    then the table type, the behavior was as expected.
+    </td></tr>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Improvement for avoiding SAP AS Java deployment errors</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0 width="100%">
+    <tr><td class="faqw">
+    Sometimes a JCo standalone gets installed or deployed onto an SAP NetWeaver Application Server Java
+    by accident. This leads to strange error situations, undefined behavior and wrong RFC results occurring
+    intermittently. Hence, the JCo standalone is now denying to be loaded within an SAP NetWeaver AS Java
+    instance. If JCo is needed within this environment, the integrated JCo version has to be used by simply
+    adding an application reference to the library '<code>com.sap.mw.jco</code>' to the relevant application
+    or to its deployment descriptor.
+    </td></tr>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Release Notes 2.1.9</SPAN></td></tr>
+<tr><td valign="top" align="left"><HR class="separator" noshade></td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in handling of large complex field lists</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0 width="100%">
+    <tr><td class="faqw">
+    A <tt>java.lang.ArrayIndexOutOfBoundsException</tt> with an index value of <tt>-128</tt> was thrown
+    if a <tt>JCO.ParameterList</tt>, a <tt>JCO.Structure</tt> or a <tt>JCO.Table</tt> object contained
+    more than 127 complex fields like other objects of type <tt>TABLE</tt>, <tt>STRUCTURE</tt>,
+    <tt>STRING</tt> or <tt>XSTRING</tt>.
+    </td></tr>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in typing of export parameters</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0 width="100%">
+    <tr><td class="faqw">
+    Export paramaters were not typed as <tt>OPTIONAL_PARAMETER</tt> if the <tt>JCO.Repository</tt>
+    was used for querying function interfaces from an SAP System and for creating <tt>IFunctionTemplate</tt>
+    objects this way. So the method <tt>IMetaData.isOptional([index|name])</tt> incorrectly returned
+    the value <tt>false</tt> for such export parameters. Now the value <tt>true</tt> is returned
+    instead.
+    </td></tr>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in numeric handling of signed or empty field values</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    A <tt>JCO.ConversionException</tt> might be thrown when trying to get an empty or signed value
+    from a field of type <tt>CHAR</tt> as a converted numeric value. The following <tt>JCO.Record</tt>
+    methods were affected: <tt>getInt()</tt>, <tt>getShort()</tt>, <tt>getLong()</tt>,
+    <tt>getBigInteger()</tt>, <tt>getDouble()</tt>, <tt>getFloat()</tt>, <tt>getBigDecimal()</tt>
+    and <tt>getValue()</tt>.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in repository for nested vector types</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    Table types that referred to a table type as line type which itself refers again to a table type as line type and
+    table types that referred to a table type as line type which refers to a domain as line type were not correctly
+    stored in the repository, when being looked up from an ABAP system.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in trace initialization</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    An error in the trace initialization might have caused a native crash on fast multiprocessor machines, if
+    <tt>JCO.setTraceLevel()</tt> and/or <tt>JCO.setTracePath()</tt> were called simultaneously from multiple threads.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Added new APIs for using own client pool managers</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    If using JCo in an application server environment it might happen that some applications run into pool name
+    collisions when using the central pool manager instance of JCo. If at least two applications are accidently using
+    the same pool name this might break the operability of an application, e.g. if one application deletes a pool
+    that is still in use by the other one. Therefore the API <tt>JCO.createPoolManager(name)</tt> and dependent APIs
+    like <tt>JCO.PoolManager.addClientPool(...)</tt> and <tt>JCO.createRepository(name, poolName, poolManager)</tt>
+    have been added to allow applications to create and use their own pool manager instances.
+    For more details please see SAP note <a href="https://service.sap.com/sap/support/notes/1418270">1418270</a>.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Release Notes 2.1.8</SPAN></td></tr>
+<tr><td valign="top" align="left"><HR class="separator" noshade></td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Additional connection parameter</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0 width="100%">
+    <tr><td class="faqw">
+    The RFC connection parameter <tt>WAN_CONN</tt> is supported now. If this connection parameter is
+    set to <tt>1</tt>, the compression of tables is initiated if the table size is over 250
+    bytes. With the default value <tt>0</tt> only tables over 8 kB will be compressed.
+    </td></tr>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in tRFC processing</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0 width="100%">
+    <tr><td class="faqw">
+    <tt>onConfirmTID</tt> and <tt>onRollback</tt> might have caused a native crash on some platforms
+    with an error message like <br>
+    <tt>*** glibc detected *** free(): invalid pointer</tt>
+    </td></tr>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in error handling</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0 width="100%">
+    <tr><td class="faqw">
+    An error in the error handling might have caused a native crash, if the system ran out of memory.
+    </td></tr>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in JCO.Repository</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0 width="100%">
+    <tr><td class="faqw">
+    <tt>JCO.Repository.getFunctionTemplate()</tt> and <tt>JCO.Repository.getStructureDefinition()</tt>
+    threw a <tt>NullPointerException</tt> under some circumstances.<br>
+    <em>Note:</em> The NullPointerException occurred only if the client connection belonged to a pool.
+    The best way to resolve this issue is to change the application code and create the repository
+    with the available pool name instead of creating it with only one pooled client connection.
+    Therefore the repository would be able to allocate the client connections only during its remote
+    function calls thus enabling it to work with the full pool capacity.
+    </td></tr>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Release Notes 2.1.7</SPAN></td></tr>
+<tr><td valign="top" align="left"><HR class="separator" noshade></td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Support for additional platforms</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0 width="100%">
+    <tr><td class="faqw">
+    Windows Server 2003 for Intel EM64T and AMD64 CPUs and furthermore Sun Solaris for Intel EM64T and AMD64 CPUs
+    are supported now. For details please see SAP note <a href="https://service.sap.com/sap/support/notes/549268">549268</a>.
+    </td></tr>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Added new chapter "Security" to documentation</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    A new chapter "Security" has been added to the JCo documentation. Please see the appropriate
+    link on the left menu bar.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in JCO.Client.reset</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0 width="100%">
+    <tr><td class="faqw">
+    <tt>JCO.Client.reset</tt> led to an error with connections to SAP System releases &lt; 4.0.
+    </td></tr>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in handling of logon parameters containing quotes</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0 width="100%">
+    <tr><td class="faqw">
+    User name or password logon parameters containing one or more quote characters (<tt>"</tt>) led to
+    an <tt>RFC_ERROR_LOGON_FAILURE</tt> saying that the name or password was incorrect.
+    </td></tr>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Release Notes 2.1.6</SPAN></td></tr>
+<tr><td valign="top" align="left"><HR class="separator" noshade></td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Support for additional platforms</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    Linux X86_64 for Intel EM64T and AMD64 CPUs and Linux on Power 64bit are supported now. For details please see SAP note
+    <a href="https://service.sap.com/sap/support/notes/549268">549268</a>.
+    </td></tr>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Release Notes 2.1.5</SPAN></td></tr>
+<tr><td valign="top" align="left"><HR class="separator" noshade></td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Support for long and mixed case passwords</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        Now JCo supports long and mixed case passwords (up to 40 characters instead of only 8) that will
+        be introduced with the forthcoming SAP kernel release. JCo does not automatically
+        convert characters in the password logon parameter to upper case any longer.<p>
+        <em>The non-conversion may cause logon problems with SAP kernel releases up to 6.40,
+        because these releases assume to get the logon passwords always in upper case. SAP note
+        <a href="https://service.sap.com/sap/support/notes/792850">792850</a>
+        describes the required minimum kernel patch level for this problem to be fixed.</em></p>
+    </td></tr>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>New codepage 8450 supported</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0 width="100%">
+    <tr><td class="faqw">
+        The SAP codepage 8450 (Simplified Chinese [GB2312-80]) is additionally supported now.
+    </td></tr>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Release Notes 2.1.4</SPAN></td></tr>
+<tr><td valign="top" align="left"><HR class="separator" noshade></td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>New codepages supported</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        The SAP codepages 6230, 6240, 6250, 6300, 6400, 6600 and 6700 are additionally
+        supported now.<p>
+        <em>These codepages are the so called unambiguous blended codepages that do not
+        offer full round trip capability. That means there are more or less characters
+        in each codepage that could be mapped to multiple SAP byte sequences. The conversion
+        direction SAP byte sequence -> Java unicode only contains unambiguous mappings, but
+        the other direction Java unicode -> SAP byte sequence may contain ambiguous mappings.
+        (e.g. in SAP codepage 6300, character <tt>SECTION SIGN</tt>: SAP code x'A7
+        or x'8198 -> U+00A7 -> x'A7).</em>
+    </td></tr>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Support for authorization trace</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    New methods are introduced to support the authorization trace in the SAP system.
+        <ul>
+        <li><code>JCO.Client.startAuthorizationTracing()</code>
+        <li><code>JCO.Client.endAuthorizationTracing()</code>
+        <li><code>JCO.Client.isAuthorizationTracingEnabled()</code>
+        </ul>
+    <br>
+    <em>The methods can be used only if authorization tracing is enabled in
+    the SAP system. The authorization trace is provided for internal usage by SAP.
+    </em>
+    </td></tr>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in treatment of connection properties</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        Some connection properties might have been misinterpreted as
+        boolean values and/or leading spaces were ignored. This led to
+        log on failures.
+    </td></tr>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in JCO.Client.execute()</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        Uninitialized function parameters were sent to the SAP system filled with their default values
+        or in some cases with their initial values.<br>
+        This prevented the SAP system from setting its own default values on the backend side and could
+        have affected the result of the called function module.<br>
+        <em>Note:</em> This bug is only known in JCo 2.1.3.
+    </td></tr>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in treatment of JCO.Request and JCO.Response</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        When using the <tt>JCO.Request</tt> and <tt>JCO.Response</tt> model the content of simple parameters
+        could have been lost if the called function module contained tables in its table parameter list.
+    </td></tr>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in event firing for ServerStateChangedListener</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        The server state change event when changing from state busy to not busy will now be fired to the
+        <tt>JCO.ServerStateChangedListener</tt>s after the data in the <tt>JCO.Throughput</tt> has been set -
+        and not before as it was previously.
+    </td></tr>
+</table></div>
+</td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Release Notes 2.1.3</SPAN></td></tr>
+<tr><td valign="top" align="left"><HR class="separator" noshade></td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>New codepage supported</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        The SAP codepage 1810 (Hebrew with LTR [Left-to-Right] and RTL [Right-to-Left] mark) is
+        additionally supported now.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Improvement of the internal XML Parser</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    The internal XML Parser was extended to parse the predefined XML entity &amp;apos; (') as
+    required by W3C Recommendation for XML 1.0 in
+    "<a href="http://www.w3.org/TR/REC-xml">4.6 Predefined Entities</a>".
+    Other predefined XML entities are the HTML entities and are parsed since JCo 2.1.2.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in handling inactive tables in JCO.Client</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        A crash in the JCo native part could occur, if some tables in the table parameter list were
+        marked as inactive.<br>
+        <em>Note:</em> This bug is only known in JCo 2.1.2.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in JCo's initialization routine</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    JCo could not load its JNI runtime library from the same directory where the <tt>sapjco.jar</tt>
+    file or the JCo class files are located, if this directory name contains spaces or non-ascii letters
+    and JDK 1.4 was used.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Release Notes 2.1.2</SPAN></td></tr>
+<tr><td valign="top" align="left"><HR class="separator" noshade></td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Added new chapter "Configuration" to documentation</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    A new chapter "Configuration" has been added to the JCo documentation. Please see the appropriate
+    link on the left menu bar.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Added new API JCO.getMiddlewarePropertyInfo()</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    Returns information about the properties that are offered by the middleware implementation.
+    Each element of the array is a set of two <tt>Strings</tt> containing the name and description of
+    a middleware property.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in JCO.Table.toString()</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        The method <tt>JCO.Table.toString()</tt> threw an <tt>ArrayIndexOutOfBoundsException</tt> if
+        the table contained only one unnamed column (vector).
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in the handling of JCO.AbapException</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    In some rare cases when the backend system sent an application exception, JCo set the ABAP exception
+    key and text without previuously cleaning the last exception texts. This led to a corrupted exception
+    key and message text.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix for state handling in JCO.Server</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    After calling <tt>suspend()</tt> the server thread could not be stopped or restarted again. Furthermore
+    calling the server's <tt>suspend()</tt> or <tt>stop()</tt> method had no effect while it was currently
+    dispatching a request.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix for deadlock in JCO.Server</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    A deadlock could have occurred between an application thread invoking the <tt>JCO.Server.start()</tt>
+    or <tt>JCO.Server.stop()</tt> methods and a server thread, when the server thread was firing
+    <tt>serverStateChange</tt> events and the invoked listener used the server instance as a lock object.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix of the internal XML Parser</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    The internal XML Parser catched, traced and swallowed all runtime errors. This could lead to an
+    unnoticed inconsistent state in JCo tables or structures.<br>
+    Only JCo version 2.1.1 was affected by this bug.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Improvement of the internal XML Parser</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    The internal XML Parser can now parse all HTML entities defined with the HTML 4 Specification chapter
+    "<a href="http://www.w3.org/TR/html401/sgml/entities.html">Character entity references in HTML 4</a>".
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix avoiding crashes in native part</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+    A crash in the JCo native part could occur, if there were incompatible structure or table metadata
+    defined on the local and the backend side.<p>
+    <em>This bugfix <b>only avoids</b> the crash. It is still neccessary
+    to correct the repository's metadata, otherwise the transferred parameter data will be garbled.</em>
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>New APIs in JCO.Record</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        New APIs <tt>setValue(char[] value, int index)</tt>, <tt>setValue(char[] value, String name)</tt>,
+        <tt>getCharArray(int index)</tt> and <tt>getCharArray(String name)</tt> have been added.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Improved method JCO.ParameterList.setActive()</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        JCo now allows to set every table or structure in the export and table parameters lists as
+        inactive (except flat structures) if it is irrelevant for a specific RFC call. The content
+        of inactive parameters won't be marshalled to JCo's native layer and their content won't be
+        sent to the backend system thus increasing the performance of the given RFC call.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in JCO.Record.copyFrom()</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+       The method <tt>JCO.Structure.toXML()</tt> threw an <tt>ArrayIndexOutOfBoundsException</tt>
+       if the <tt>JCO.Structure</tt> object was previously filled by using its <tt>copyFrom()</tt>
+       method with a source record based on the same metadata. The data transmission to the backend
+       was not affected by this bug.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in JCO.Table.toString()</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        The method <tt>JCO.Table.toString()</tt> threw an <tt>IndexOutOfBoundsException</tt> if
+        the table contained only one unnamed column (vector).
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in JCO.Client.connect()</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        The method <tt>JCO.Client.connect()</tt> ignored the <tt>jco.client.codepage</tt>
+        property for doing correct codepage conversions of the various logon parameters. This
+        led to an <tt>RFC_ERROR_LOGON_FAILURE</tt> if some codepage specific national characters
+        were used within any logon parameter.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>New codepages supported</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        The SAP codepages 1180 (Latin-1 with transliteration from Latin-2), 1900 (Baltic)
+        and 8700 (Arabic) are additionally supported now.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in internal codepage converter</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        The internal codepage converter truncated the last character of a string when JCo
+        received data from a multi byte character codepage backend system and the last character
+        of a field was a non-ASCII single byte character (e.g. Japanese halfwidth Katakana letters).
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Release Notes 2.1.1</SPAN></td></tr>
+<tr><td valign="top" align="left"><HR class="separator" noshade></td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>New API JCO.Table.ensureBufferCapacity(int)</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        With the new API <tt>JCO.Table.ensureBufferCapacity(int)</tt> it is now possible to
+        increase the internal table buffer size for future row appends and so avoid unneccessary
+        memory reallocations in the table buffer. This API has no effect on the filled rows and
+        the row cursor.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Improvement in JCO.Repository</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        <tt>JCO.Repository</tt> now tries to reestablish its client connection if an
+        <tt>RFC_ERROR_COMMUNICATION</tt> or <tt>RFC_ERROR_APPLICATION_EXCEPTION</tt> occurred
+        within a repository query. If succesful, it will then repeat the desired query once
+        leading to more reliability in case the connection problems are only temporary.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Modified SAP codepage converter tables</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        All internal codepage converter tables have been adapted to convert the slightly modified
+        SAP system codepages correctly <em>(please see SAP note
+        <a href="https://service.sap.com/sap/support/notes/634911">634911</a>
+        for more information).</em>
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in JCo XML writer</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        <tt>JCO.Record.writeXML(Writer, ...)</tt> failed with an <tt>ArrayIndexOutOfBoundsException</tt>,
+        if the size of an element was larger than 1024 bytes.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in JCO.Record.copyFrom()</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        After calling the <tt>copyFrom()</tt> method on a <tt>JCO.Structure</tt> instance,
+        future calls of other methods of this instance may result in an
+        <tt>ArrayIndexOutOfBoundsException</tt>.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in JCO.Record.equals()</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        The method <tt>JCO.Record.equals()</tt> could have returned <tt>false</tt> by mistake
+        if the compared records contained complex parameters.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix for treatment of states in JCO.Server</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        The treatment of states in the class <tt>JCO.Server</tt> was fixed.<br>
+        A new state being assigned while the server was processing its <tt>handleRequest()</tt>
+        method may have been overwritten and therefore had no effect.<br>
+        A <tt>JCO.Server</tt> that has been suspended could not be resumed/restarted again.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix for logon procedure</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        Depending on the used Java Runtime Environment the logon to a SAP system
+        could have failed with an <tt>RFC_ERROR_LOGON_FAILURE</tt> if the user ID
+        or the password contained some special national characters like
+        '&szlig;' (german sharp s).
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfix in internal codepage converter</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        The internal codepage converter truncated the last character of a string when JCo was used
+        to transfer IDocs with the SAP Java Connector IDoc Class Library to a multi byte character
+        codepage backend system.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Bugfixes avoiding crashes in native part</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        A crash in the JCo native part occurred if a customer implementation of a <tt>JCO.Server</tt>
+        threw an exception without a message text from the methods <tt>onCheckTID()</tt>,
+        <tt>onConfirmTID()</tt>, <tt>onCommit()</tt> or <tt>onRollback()</tt>.<p>
+        With enabled tracing a crash in the JCo native part occurred, if an application threw
+        a Java exception with a message text larger than 6KB from <tt>JCO.Server.handleRequest()</tt>.<p>
+        A crash in the JCo native part could occur, if a customer implementation of a <tt>JCO.Server</tt>
+        used a static repository containing non unicode metadata and the backend system was unicode
+        enabled or vice versa.<p>
+        <em>This bugfix <b>only avoids</b> the crash. It is still neccessary
+        to correct the repository's metadata, otherwise the transferred parameter data will be garbled.</em>
+    </td></tr>
+</table></div>
+
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Release Notes 2.1.0</SPAN></td></tr>
+<tr><td valign="top" align="left"><HR class="separator" noshade></td></tr>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Enhanced codepage conversion</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0 width="100%">
+    <tr><td class="faqw">
+        JCo now uses codepage definitions based on standard SAP codepages.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>Improved method JCO.ParameterList.setActive()</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        JCo now allows to set every table parameter as inactive if it is irrelevant for a specific
+        RFC call. In older JCo versions this was only possible if the table parameter was defined as
+        optional. The content of inactive table parameters won't be marshalled to JCo's native layer
+        and their content won't be sent to the backend system thus increasing the performance of
+        the appropriate RFC request.
+    </td></tr>
+</table></div>
+
+<tr><td valign="top" align="left">&nbsp;</td></tr>
+<tr><td valign="top" align="left"><SPAN class=head>DSR Support</SPAN></td></tr>
+<tr><td valign="top" align="left">
+<div class="textblack"><table cellSpacing=0 cellPadding=2 border=0>
+    <tr><td class="faqw">
+        DSR (Distributed Statistic Records) is a new feature allowing the creation and storage of
+        all-embracing statistical and trace data in a centralized, synchronized and standardized manner
+        in an SAP monitoring system.<br>
+        Prerequisites for using this feature: The Java archive <tt>jdsr.jar</tt> must be
+        installed on the system and included in the <tt>CLASSPATH</tt>.<br>
+        The methods <tt>JCO.Client.setDsrPassport(...)</tt> and <tt>JCO.Client.getDsrPassport()</tt>
+        have been added for accessing the DSR passport.<br>
+        DSR records will be written, if the additional JCo property <tt>jco.jdsr</tt> is set to 1.<p>
+    </td></tr>
+</table></div>
+
+<!-- ################################################################################ -->
+</table></td> <!-- ### WORK AREA END                                              ### -->
+<!-- ################################################################################ -->
+
+</td></tr></table>
+</tr></table>
+</td></tr></table>
+</body>
+</html>

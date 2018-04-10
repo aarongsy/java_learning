@@ -1,0 +1,12 @@
+2018-03-30 16:33:42,519 ERROR weaver.conn.RecordSet  - sources=1
+2018-03-30 16:33:42,532 ERROR weaver.conn.RecordSet  - 创建SAP连接
+2018-03-30 16:33:42,532 ERROR weaver.conn.RecordSet  - length:1
+2018-03-30 16:33:42,532 ERROR weaver.conn.RecordSet  - 4500161955
+2018-03-30 16:33:42,558 ERROR weaver.conn.RecordSet  - 执行function获取sap数据
+2018-03-30 16:33:42,559 ERROR weaver.conn.RecordSet  - 
+2018-03-30 16:33:52,547 ERROR weaver.conn.RecordSet  - sources=1
+2018-03-30 16:33:52,560 ERROR weaver.conn.RecordSet  - 创建SAP连接
+2018-03-30 16:33:52,560 ERROR weaver.conn.RecordSet  - length:1
+2018-03-30 16:33:52,560 ERROR weaver.conn.RecordSet  - 45001619556
+2018-03-30 16:33:52,585 ERROR weaver.conn.RecordSet  - 执行function获取sap数据
+2018-03-30 16:33:52,585 ERROR weaver.conn.RecordSet  - 

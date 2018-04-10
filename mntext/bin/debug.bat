@@ -1,0 +1,1 @@
+java -jar ./mntext_debug2.jar

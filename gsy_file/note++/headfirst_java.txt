@@ -12,26 +12,26 @@ public class Dog{
 }
 #Dog类
 
-	--------------------------------------
-	|            /source file/           |    
-	|    ---------------------------     | 
-	|    |       /class file/      |     | 
-	|    |    ------------------   |     |   
-	|    |    |   /method 1/   |   |     |    
-	|    |    |                |   |     |                      
-	|    |    |   statement    |   |     |     
-	|    |    ------------------   |     |         
-	|    |                         |     |               
-	|    |    ------------------   |     |         
-	|    |    |   /method 2/   |   |     |
-	|    |    |                |   |     |          
-	|    |    |   statement1   |   |     |                  
-	|    |    |   statement2   |   |     |                 
-	|    |    ------------------   |     |         
-	|    |                         |     |                           
-	|    ---------------------------     |
-	|                                    |                      
-	--------------------------------------
+	-------------------------------------
+	|            /source file/          |    
+	|    ---------------------------    | 
+	|    |       /class file/      |    | 
+	|    |    ------------------   |    |   
+	|    |    |   /method 1/   |   |    |    
+	|    |    |                |   |    |                      
+	|    |    |   statement    |   |    |     
+	|    |    ------------------   |    |         
+	|    |                         |    |               
+	|    |    ------------------   |    |         
+	|    |    |   /method 2/   |   |    |
+	|    |    |                |   |    |          
+	|    |    |   statement1   |   |    |                  
+	|    |    |   statement2   |   |    |                 
+	|    |    ------------------   |    |         
+	|    |                         |    |                           
+	|    ---------------------------    |
+	|                                   |                      
+	-------------------------------------
 
 /****************************** CHAPTER 2 面向对象化 ******************************/
 
@@ -135,6 +135,7 @@ java函数库，查询html api文档
 Wolf  继承Animal
 Wolf  继承Canine
 Canine继承Animal
+
 "继承"
 	子类可以继承父类的成员，包括实例变量和方法，存取权限决定子类能否继承特定的成员
 	4 种存取权限  左边最受限制，右边限制最小
@@ -147,8 +148,8 @@ Canine继承Animal
 	用IS-A检验，xxx is a xxx。单向的
 	
 	Class Y extends Class X and Class Y is the father of Class Z，then Z IS-A X
-	
-animal这个类没有对应实例不应该被初始化出来，所以需要abstract类
+
+"抽象类 abstract class": animal这个类没有对应实例不应该被初始化出来，所以需要abstract类
 abstract public class Canine extends Animal{
 	public void roam(){}
 }
@@ -163,9 +164,50 @@ public class MakeCanine{
 	}
 }
 
-接口 interface ：在animal 大类中，狗是pet，但狮子不是，如果有一个petshop，怎么重用现有的animal类？
-
-page 218
+"接口 interface" ：java 的接口就像是100%的纯抽象类，所有接口的方法都是抽象的，所以所有Pet 的类都必须实现这些方法。
+	问题：在animal 大类中，狗是pet，但狮子不是，如果有一个petshop，怎么重用现有的animal类？
+	解决：用public interface Pet(...)
+			public class Dog extends Canine implements Pet(...)
+			
+			
+	------------------------------
+	|          Pet               |    
+	|----------------------------| 
+	|                            | 
+	|abstract void beFrendly();  |   
+	|abstract void play();       |    
+	|                            |                      
+	|                            |     
+	|                            |         
+	|                            |        
+	------------------------------	
+	
+	
+	public interface Pet{
+		public abstract void beFriendly();
+		public abstract void play();
+	}
+	
+	-------------------------------------------
+	public class Dog extends Canine implements Pet(){
+		public void beFriendly(){...}
+		public void play(){...}//必须实现出pet的方法，这是合约的规定
+		
+		public void roam(){...}
+		public void eat(){...}//普通的覆盖方法
+	}
+	
+	可以实现多个接口
+	public class Dog extends Animal implements Pet, Saveable,Paitable{...}
+	
+"栈stack" & "堆heap":用来在ram中存取数据，java自动管理栈和堆，无法设置。
+	栈 stack：存取速度比heap快，仅次于寄存器，可以共享，但存储的数据大小与生存周期要确定。
+			 方法调用和局部变量
+			  
+	堆 heap：可以动态的分配内存大小，不需要生存期，java垃圾收集器会自动收走数据，存取速度慢。
+		     存储对象
+			 
+page 254
 
 
 

@@ -1,0 +1,103 @@
+<HTML>
+<HEAD>
+<TITLE>Java Source Code</TITLE>
+</HEAD>
+<BODY BGCOLOR=#FFFFFF>
+<PRE>
+<FONT color=#000000></FONT><FONT color=#008000>/**
+<em> </em><em>*</em><em> </em><em>Example1.java</em><em> </em><em>-</em><em> </em><em>call</em><em> </em><em>the</em><em> </em><em>rfc</em><em> </em><em>module</em><em> </em><em>'</em><em>STFC_CONNECTION</em><em>'</em><em> </em><em>with</em><em> </em><em>custom</em><em> </em><em>definition</em>
+<em> </em><em>*</em><em> </em><em>of</em><em> </em><em>function</em><em> </em><em>metadata.</em><em> </em><em>Please</em><em> </em><em>notice</em><em>,</em><em> </em><em>the</em><em> </em><em>communication</em><em> </em><em>with</em><em> </em><em>static</em>
+<em> </em><em>*</em><em> </em><em>metadata</em><em> </em><em>interface</em><em> </em><em>definitions</em><em> </em><em>is</em><em> </em><em>dangerous.</em><em> </em><em>The</em><em> </em><em>inconsistencies</em><em> </em><em>in</em><em> </em><em>the</em>
+<em> </em><em>*</em><em> </em><em>interface</em><em> </em><em>definitions</em><em> </em><em>may</em><em> </em><em>cause</em><em> </em><em>corrupted</em><em> </em><em>data</em><em>,</em><em> </em><em>errors</em><em> </em><em>while</em><em> </em><em>communication</em><em> </em><em>or</em>
+<em> </em><em>*</em><em> </em><em>even</em><em> </em><em>application</em><em> </em><em>crashes.</em><em> </em><em>In</em><em> </em><em>Example2</em><em> </em><em>you</em><em> </em><em>can</em><em> </em><em>see</em><em>,</em><em> </em><em>how</em><em> </em><em>to</em><em> </em><em>avoid</em><em> </em><em>these</em><em> </em><em>problems.</em>
+<em> </em><em>*</em>
+<em> </em><em>*</em><em> </em><em>Property</em><em> </em><em>of</em><em> </em><em>SAP</em><em> </em><em>AG</em><em>,</em><em> </em><em>Walldorf</em>
+<em> </em><em>*</em><em> </em><em>(</em><em>c</em><em>)</em><em> </em><em>Copyright</em><em> </em><em>SAP</em><em> </em><em>AG</em><em>,</em><em> </em><em>Walldorf</em><em>,</em><em> </em><em>2000</em><em>-</em><em>2005.</em>
+<em> </em><em>*</em><em> </em><em>All</em><em> </em><em>rights</em><em> </em><em>reserved.</em>
+<em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+</FONT><FONT color=#0000FF><b>import</b></FONT><FONT color=#000000> com.sap.mw.jco.*;
+
+</FONT><FONT color=#008000>/**
+<em> </em><em>*</em><em> </em><em>Example1</em><em> </em><em>-</em><em> </em><em>start</em><em> </em><em>a</em><em> </em><em>simple</em><em> </em><em>call</em><em> </em><em>with</em><em> </em><em>static</em><em> </em><em>metadata</em><em> </em><em>definition</em>
+<em> </em><em>*</em>
+<em> </em><em>*</em><em> </em><em>@version</em><em> </em><em>1.0</em>
+<em> </em><em>*</em><em> </em><em>@author</em><em> </em><em> </em><em>SAP</em><em> </em><em>AG</em><em>,</em><em> </em><em>Walldorf</em>
+<em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+</FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>class</b></FONT><FONT color=#000000> Example1 {
+
+  </FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>static</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>void</b></FONT><FONT color=#000000> main(String[] argv)
+  {
+    </FONT><FONT color=#000080><b>JCO.Client</b></FONT><FONT color=#000000> client = </FONT><FONT color=#0000FF><b>null</b></FONT><FONT color=#000000>;
+
+    </FONT><FONT color=#0000FF><b>try</b></FONT><FONT color=#000000> {
+
+      </FONT><FONT color=#008000>//<em> </em><em>Print</em><em> </em><em>the</em><em> </em><em>version</em><em> </em><em>of</em><em> </em><em>the</em><em> </em><em>underlying</em><em> </em><em>JCO</em><em> </em><em>library</em></FONT><FONT color=#000000>
+      System.out.println(</FONT><FONT color=#FF00FF>"\n\nVersion of the JCO-library:\n"</FONT><FONT color=#000000> +
+                             </FONT><FONT color=#FF00FF>"---------------------------\n"</FONT><FONT color=#000000> + </FONT><FONT color=#000080><b>JCO.getMiddlewareVersion</b></FONT><FONT color=#000000>());
+
+      </FONT><FONT color=#008000>//<em> </em><em>Create</em><em> </em><em>a</em><em> </em><em>client</em><em> </em><em>connection</em><em> </em><em>to</em><em> </em><em>a</em><em> </em><em>dedicated</em><em> </em><em>R</em><em>/</em><em>3</em><em> </em><em>system</em></FONT><FONT color=#000000>
+      client = </FONT><FONT color=#000080><b>JCO.createClient</b></FONT><FONT color=#000000>( </FONT><FONT color=#FF00FF>"000"</FONT><FONT color=#000000>,       </FONT><FONT color=#008000>//<em> </em><em>SAP</em><em> </em><em>client</em></FONT><FONT color=#000000>
+                                 </FONT><FONT color=#FF00FF>"johndoe"</FONT><FONT color=#000000>,   </FONT><FONT color=#008000>//<em> </em><em>userid</em></FONT><FONT color=#000000>
+                                 </FONT><FONT color=#FF00FF>"*****"</FONT><FONT color=#000000>,     </FONT><FONT color=#008000>//<em> </em><em>password</em></FONT><FONT color=#000000>
+                                 </FONT><FONT color=#FF00FF>"EN"</FONT><FONT color=#000000>,        </FONT><FONT color=#008000>//<em> </em><em>language</em></FONT><FONT color=#000000>
+                                 </FONT><FONT color=#FF00FF>"appserver"</FONT><FONT color=#000000>, </FONT><FONT color=#008000>//<em> </em><em>host</em><em> </em><em>name</em></FONT><FONT color=#000000>
+                                 </FONT><FONT color=#FF00FF>"00"</FONT><FONT color=#000000> );      </FONT><FONT color=#008000>//<em> </em><em>system</em><em> </em><em>number</em></FONT><FONT color=#000000>
+
+      </FONT><FONT color=#008000>//<em> </em><em>Open</em><em> </em><em>the</em><em> </em><em>connection</em></FONT><FONT color=#000000>
+      client</FONT><FONT color=#000080><b>.connect</b></FONT><FONT color=#000000>();
+
+      </FONT><FONT color=#008000>//<em> </em><em>Get</em><em> </em><em>the</em><em> </em><em>attributes</em><em> </em><em>of</em><em> </em><em>the</em><em> </em><em>connection</em><em> </em><em>and</em><em> </em><em>print</em><em> </em><em>them</em></FONT><FONT color=#000000>
+
+      </FONT><FONT color=#000080><b>JCO.Attributes</b></FONT><FONT color=#000000> attributes = client</FONT><FONT color=#000080><b>.getAttributes</b></FONT><FONT color=#000000>();
+      System.out.println(</FONT><FONT color=#FF00FF>"Connection attributes:\n"</FONT><FONT color=#000000> +
+                         </FONT><FONT color=#FF00FF>"----------------------\n"</FONT><FONT color=#000000> + attributes);
+      </FONT><FONT color=#0000FF><b>boolean</b></FONT><FONT color=#000000> is_backend_unicode = attributes</FONT><FONT color=#000080><b>.getPartnerCodepage</b></FONT><FONT color=#000000>().equals(</FONT><FONT color=#FF00FF>"4102"</FONT><FONT color=#000000>) ||
+                                   attributes</FONT><FONT color=#000080><b>.getPartnerCodepage</b></FONT><FONT color=#000000>().equals(</FONT><FONT color=#FF00FF>"4103"</FONT><FONT color=#000000>);
+
+      </FONT><FONT color=#008000>//<em> </em><em>Create</em><em> </em><em>metadata</em><em> </em><em>definition</em><em> </em><em>of</em><em> </em><em>the</em><em> </em><em>input</em><em> </em><em>parameter</em><em> </em><em>list</em></FONT><FONT color=#000000>
+      </FONT><FONT color=#000080><b>JCO.MetaData</b></FONT><FONT color=#000000> input_md = </FONT><FONT color=#0000FF><b>new</b></FONT><FONT color=#000000> </FONT><FONT color=#000080><b>JCO.MetaData</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"INPUT"</FONT><FONT color=#000000>);
+      input_md</FONT><FONT color=#000080><b>.addInfo</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"REQUTEXT"</FONT><FONT color=#000000>, </FONT><FONT color=#000080><b>JCO.TYPE_CHAR</b></FONT><FONT color=#000000>, 255, 255 * (is_backend_unicode? 2 : 1 ),
+                        -1, 0, </FONT><FONT color=#0000FF><b>null</b></FONT><FONT color=#000000>, </FONT><FONT color=#0000FF><b>null</b></FONT><FONT color=#000000>, 0, </FONT><FONT color=#0000FF><b>null</b></FONT><FONT color=#000000>, </FONT><FONT color=#0000FF><b>null</b></FONT><FONT color=#000000>);
+
+      </FONT><FONT color=#008000>//<em> </em><em>Create</em><em> </em><em>the</em><em> </em><em>input</em><em> </em><em>parameter</em><em> </em><em>list</em><em> </em><em>from</em><em> </em><em>the</em><em> </em><em>metadata</em><em> </em><em>object</em></FONT><FONT color=#000000>
+      </FONT><FONT color=#000080><b>JCO.ParameterList</b></FONT><FONT color=#000000> input = </FONT><FONT color=#000080><b>JCO.createParameterList</b></FONT><FONT color=#000000>(input_md);
+
+      </FONT><FONT color=#008000>//<em> </em><em>Set</em><em> </em><em>the</em><em> </em><em>first</em><em> </em><em>(</em><em>and</em><em> </em><em>only</em><em>)</em><em> </em><em>input</em><em> </em><em>parameter</em></FONT><FONT color=#000000>
+      input</FONT><FONT color=#000080><b>.setValue</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"This is my first JCo example."</FONT><FONT color=#000000>, </FONT><FONT color=#FF00FF>"REQUTEXT"</FONT><FONT color=#000000>);
+
+      </FONT><FONT color=#008000>//<em> </em><em>Create</em><em> </em><em>metadata</em><em> </em><em>definition</em><em> </em><em>of</em><em> </em><em>the</em><em> </em><em>output</em><em> </em><em>parameter</em><em> </em><em>list</em></FONT><FONT color=#000000>
+      </FONT><FONT color=#000080><b>JCO.MetaData</b></FONT><FONT color=#000000> output_md = </FONT><FONT color=#0000FF><b>new</b></FONT><FONT color=#000000> </FONT><FONT color=#000080><b>JCO.MetaData</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"OUTPUT"</FONT><FONT color=#000000>);
+
+      </FONT><FONT color=#008000>//<em> </em><em>Specify</em><em> </em><em>the</em><em> </em><em>parameters</em><em> </em><em>types</em><em> </em><em>of</em><em> </em><em>the</em><em> </em><em>function</em><em> </em><em>will</em><em> </em><em>be</em><em> </em><em>returned</em></FONT><FONT color=#000000>
+      output_md</FONT><FONT color=#000080><b>.addInfo</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"ECHOTEXT"</FONT><FONT color=#000000>, </FONT><FONT color=#000080><b>JCO.TYPE_CHAR</b></FONT><FONT color=#000000>, 255, 255 * (is_backend_unicode? 2 : 1 ),
+                         -1, 0, </FONT><FONT color=#0000FF><b>null</b></FONT><FONT color=#000000>, </FONT><FONT color=#0000FF><b>null</b></FONT><FONT color=#000000>, 0, </FONT><FONT color=#0000FF><b>null</b></FONT><FONT color=#000000>, </FONT><FONT color=#0000FF><b>null</b></FONT><FONT color=#000000>);
+      output_md</FONT><FONT color=#000080><b>.addInfo</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"RESPTEXT"</FONT><FONT color=#000000>, </FONT><FONT color=#000080><b>JCO.TYPE_CHAR</b></FONT><FONT color=#000000>, 255, 255 * (is_backend_unicode? 2 : 1 ),
+                         -1, 0, </FONT><FONT color=#0000FF><b>null</b></FONT><FONT color=#000000>, </FONT><FONT color=#0000FF><b>null</b></FONT><FONT color=#000000>, 0, </FONT><FONT color=#0000FF><b>null</b></FONT><FONT color=#000000>, </FONT><FONT color=#0000FF><b>null</b></FONT><FONT color=#000000>);
+
+      </FONT><FONT color=#008000>//<em> </em><em>Create</em><em> </em><em>the</em><em> </em><em>output</em><em> </em><em>parameter</em><em> </em><em>list</em><em> </em><em>from</em><em> </em><em>the</em><em> </em><em>metadata</em><em> </em><em>object</em></FONT><FONT color=#000000>
+      </FONT><FONT color=#000080><b>JCO.ParameterList</b></FONT><FONT color=#000000> output = </FONT><FONT color=#000080><b>JCO.createParameterList</b></FONT><FONT color=#000000>(output_md);
+
+      </FONT><FONT color=#008000>//<em> </em><em>Call</em><em> </em><em>the</em><em> </em><em>function</em></FONT><FONT color=#000000>
+      client</FONT><FONT color=#000080><b>.execute</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"STFC_CONNECTION"</FONT><FONT color=#000000>, input, output);
+
+      </FONT><FONT color=#008000>//<em> </em><em>Print</em><em> </em><em>the</em><em> </em><em>result</em></FONT><FONT color=#000000>
+      System.out.println(</FONT><FONT color=#FF00FF>"The function 'STFC_CONNECTION' returned the following parameters:\n"</FONT><FONT color=#000000> +
+                         </FONT><FONT color=#FF00FF>"-----------------------------------------------------------------"</FONT><FONT color=#000000>);
+      </FONT><FONT color=#0000FF><b>for</b></FONT><FONT color=#000000> (</FONT><FONT color=#0000FF><b>int</b></FONT><FONT color=#000000> i = 0; i &lt; output</FONT><FONT color=#000080><b>.getFieldCount</b></FONT><FONT color=#000000>(); i++) {
+          System.out.println(</FONT><FONT color=#FF00FF>"Name: "</FONT><FONT color=#000000> +  output</FONT><FONT color=#000080><b>.getName</b></FONT><FONT color=#000000>(i) + </FONT><FONT color=#FF00FF>" Value: "</FONT><FONT color=#000000> + output</FONT><FONT color=#000080><b>.getString</b></FONT><FONT color=#000000>(i));
+      }</FONT><FONT color=#008000>//<em>for</em></FONT><FONT color=#000000>
+
+      </FONT><FONT color=#008000>//<em> </em><em>All</em><em> </em><em>done</em></FONT><FONT color=#000000>
+      System.out.println(</FONT><FONT color=#FF00FF>"\n\nCongratulations! It worked."</FONT><FONT color=#000000>);
+    }
+    </FONT><FONT color=#0000FF><b>catch</b></FONT><FONT color=#000000> (Exception ex) {
+      System.out.println(</FONT><FONT color=#FF00FF>"Caught an exception: \n"</FONT><FONT color=#000000> + ex);
+    }
+    </FONT><FONT color=#0000FF><b>finally</b></FONT><FONT color=#000000> {
+        </FONT><FONT color=#008000>//<em> </em><em>do</em><em> </em><em>not</em><em> </em><em>forget</em><em> </em><em>to</em><em> </em><em>close</em><em> </em><em>the</em><em> </em><em>client</em><em> </em><em>connection</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#0000FF><b>if</b></FONT><FONT color=#000000> (client != </FONT><FONT color=#0000FF><b>null</b></FONT><FONT color=#000000>) client</FONT><FONT color=#000080><b>.disconnect</b></FONT><FONT color=#000000>();
+    }
+  }
+}
+</PRE></FONT>
+</BODY></HTML>

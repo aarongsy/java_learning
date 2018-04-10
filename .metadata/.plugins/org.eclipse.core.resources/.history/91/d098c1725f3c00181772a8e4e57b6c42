@@ -1,0 +1,17 @@
+package majiang;
+
+import java.math.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+public class entrance {
+	
+
+	public static void main (String[] args) {
+	    
+		Cards cards = new Cards();
+		cards.showCards();
+		cards.shufCards();
+		cards.showCards();
+		
+	}
+}

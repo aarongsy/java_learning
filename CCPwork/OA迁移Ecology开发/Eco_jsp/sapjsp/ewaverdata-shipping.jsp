@@ -1,0 +1,72 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@page import="com.weaver.integration.log.LogInfo"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.SQLException"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="weaver.general.StaticObj"%>
+<%@page import="weaver.interfaces.datasource.DataSource"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="weaver.general.Util"%>>
+
+<%
+	String shipping = request.getParameter("shipping");
+	String path = request.getParameter("");
+	try {
+		DataSource ds = (DataSource) StaticObj.getServiceByFullname(("datasource.eweaverTestOA"),
+				weaver.interfaces.datasource.DataSource.class);
+		Connection conn = ds.getConnection();
+		String outcall = "";
+		Statement st = conn.createStatement();
+		String[] shippings = shipping.split(",");
+		for (int i = 0; i < shippings.length; i++) {
+			String sql = "select * from V_ECO_SHIPADVICE" + " where SHIPADVICENO='" + shippings[i] + "'";
+			ResultSet rs = st.executeQuery(sql);
+
+			while (rs.next()) {
+				outcall += "![]";
+				outcall += Util.null2String(rs.getString("SHIPADVSTATUS")) + "|";
+				outcall += Util.null2String(rs.getString("SHIPADVICENO")) + "|";
+				outcall += Util.null2String(rs.getString("ETD")) + "|";
+				outcall += Util.null2String(rs.getString("DELIVERYNO")) + "|";
+				outcall += Util.null2String(rs.getString("DELIVERYITEM")) + "|";
+				outcall += Util.null2String(rs.getString("SALEORDER")) + "|";
+				outcall += Util.null2String(rs.getString("ORDERITEM")) + "|";
+				outcall += Util.null2String(rs.getString("STOCKNO")) + "|";
+				outcall += Util.null2String(rs.getString("STOCKDESC")) + "|";
+				outcall += Util.null2String(rs.getString("LOCATION")) + "|";
+				outcall += Util.null2String(rs.getString("SHIPNUM")) + "|";
+				outcall += Util.null2String(rs.getString("SALEUNIT")) + "|";
+				outcall += Util.null2String(rs.getString("SHIPTO")) + "|";
+				outcall += Util.null2String(rs.getString("SHIPTOADDR")) + "|";
+				outcall += Util.null2String(rs.getString("REALSHIPNUM")) + "|";
+				outcall += Util.null2String(rs.getString("COSTCENTER")) + "|";
+				outcall += Util.null2String(rs.getString("REMARK")) + "|";
+				outcall += Util.null2String(rs.getString("PROCATEGORY")) + "|";
+				outcall += Util.null2String(rs.getString("LCEN")) + "|";
+				outcall += Util.null2String(rs.getString("SHIPM")) + "|";
+				outcall += Util.null2String(rs.getString("SPECNEED")) + "|";
+				outcall += Util.null2String(rs.getString("MATERDES")) + "|";
+				outcall += Util.null2String(rs.getString("CUSORDNO")) + "|";
+				outcall += Util.null2String(rs.getString("ORDERADVICENO")) + "|";
+				outcall += Util.null2String(rs.getString("SOLDTO")) + "|";
+				outcall += Util.null2String(rs.getString("SOLDTOADDR")) + "|";
+				outcall += Util.null2String(rs.getString("COMCODE")) + "|";
+				outcall += Util.null2String(rs.getString("CONTAINTYPE")) + "|";
+				outcall += Util.null2String(rs.getString("CONTAINQUAN")) + "|";
+				outcall += Util.null2String(rs.getString("ETA")) + "|";
+				outcall += Util.null2String(rs.getString("REQUESTID")) + "|";
+				outcall += Util.null2String(rs.getString("CLOSEDATE")) + "|";
+			}
+
+		}
+
+		out.write("suceess：" + outcall);
+	} catch (Exception e) {
+		// TODO: handle exception
+		out.write("fail" + e);
+		e.printStackTrace();
+
+	}
+%>
+
+

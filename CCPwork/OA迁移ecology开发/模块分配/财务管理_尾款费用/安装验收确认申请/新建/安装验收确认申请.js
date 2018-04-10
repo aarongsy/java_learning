@@ -149,7 +149,7 @@
 			document.getElementById('field_付款条件').value=jsonResult .ZTERM;                                       
 			document.getElementById('field_付款条件span').innerHTML=jsonResult .ZTERM;      
 			var sql='update uf_fn_acceptconfirm set  suppliercode=\''+jsonResult .LIFNR +'\',payterm=\''+jsonResult .ZTERM+'\',suppliername=\''+jsonResult .NAME1 +'\'where requestid=\''+requestid+'\'';   
-	 DataService.executeSql(sql,{callback:function(data){}});        
+			DataService.executeSql(sql,{callback:function(data){}});        
 			}                                                                
 		});
 	    getcheck();          

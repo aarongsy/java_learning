@@ -1,0 +1,201 @@
+<HTML>
+<HEAD>
+<TITLE>Java Source Code</TITLE>
+</HEAD>
+<BODY BGCOLOR=#FFFFFF>
+<PRE>
+<FONT color=#000000></FONT><FONT color=#008000>/**
+<em> </em><em>*</em><em> </em><em>Example7.java</em>
+<em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+</FONT><FONT color=#0000FF><b>import</b></FONT><FONT color=#000000> com.sap.mw.jco.*;
+
+</FONT><FONT color=#008000>/**
+<em> </em><em>*</em><em> </em><em>Example</em><em> </em><em>of</em><em> </em><em>a</em><em> </em><em>JCo</em><em> </em><em>server</em><em> </em><em>with</em><em> </em><em>transaction</em><em> </em><em>processing</em>
+<em> </em><em>*</em><em> </em><em>This</em><em> </em><em>is</em><em> </em><em>an</em><em> </em><em>example</em><em> </em><em>of</em><em> </em><em>the</em><em> </em><em>simplest</em><em> </em><em>implementation</em>
+<em> </em><em>*</em><em> </em><em>of</em><em> </em><em>a</em><em> </em><em>JCo</em><em> </em><em>dual</em><em> </em><em>server.</em><em> </em><em>It</em><em> </em><em>uses</em><em> </em><em>dynamic</em><em> </em><em>repositories</em>
+<em> </em><em>*</em><em> </em><em>for</em><em> </em><em>each</em><em> </em><em>of</em><em> </em><em>the</em><em> </em><em>servers.</em>
+<em> </em><em>*</em>
+<em> </em><em>*</em><em> </em><em>Property</em><em> </em><em>of</em><em> </em><em>SAP</em><em> </em><em>AG</em><em>,</em><em> </em><em>Walldorf</em>
+<em> </em><em>*</em><em> </em><em>(</em><em>c</em><em>)</em><em> </em><em>Copyright</em><em> </em><em>SAP</em><em> </em><em>AG</em><em>,</em><em> </em><em>Walldorf</em><em>,</em><em> </em><em>2000</em><em>-</em><em>2005.</em>
+<em> </em><em>*</em><em> </em><em>All</em><em> </em><em>rights</em><em> </em><em>reserved.</em>
+<em> </em><em>*</em>
+<em> </em><em>*</em><em> </em><em>@version</em><em> </em><em> </em><em>1.1</em>
+<em> </em><em>*</em><em> </em><em>@author</em><em> </em><em> </em><em> </em><em>SAP</em><em> </em><em>AG</em><em>,</em><em> </em><em>Walldorf</em>
+<em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+
+</FONT><FONT color=#008000>//<em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em></FONT><FONT color=#000000>
+</FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>class</b></FONT><FONT color=#000000> Example7 </FONT><FONT color=#0000FF><b>implements</b></FONT><FONT color=#000000> </FONT><FONT color=#000080><b>JCO.ServerExceptionListener</b></FONT><FONT color=#000000>, </FONT><FONT color=#000080><b>JCO.ServerErrorListener</b></FONT><FONT color=#000000> {
+</FONT><FONT color=#008000>//<em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em><em>*</em></FONT><FONT color=#000000>
+
+    </FONT><FONT color=#008000>/**
+    <em> </em><em>*</em><em> </em><em> </em><em>This</em><em> </em><em>is</em><em> </em><em>the</em><em> </em><em>actual</em><em> </em><em>Server</em><em> </em><em>(</em><em>Listener</em><em>)</em><em> </em><em>object</em>
+    <em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#0000FF><b>static</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>class</b></FONT><FONT color=#000000> Server </FONT><FONT color=#0000FF><b>extends</b></FONT><FONT color=#000000> </FONT><FONT color=#000080><b>JCO.Server</b></FONT><FONT color=#000000> {
+
+        </FONT><FONT color=#008000>/**
+        <em> </em><em>*</em><em> </em><em> </em><em>Simple</em><em> </em><em>constructor.</em><em> </em><em>Just</em><em> </em><em>call</em><em> </em><em>superclass</em><em> </em><em>to</em><em> </em><em>initialize</em><em> </em><em>everything</em>
+        <em> </em><em>*</em><em> </em><em> </em><em>properly.</em>
+        <em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> Server(String gwhost, String gwserv, String program_id, </FONT><FONT color=#000080><b>IRepository</b></FONT><FONT color=#000000> repos)
+        {
+            </FONT><FONT color=#0000FF><b>super</b></FONT><FONT color=#000000>(gwhost, gwserv, program_id, repos);
+        }
+
+        </FONT><FONT color=#008000>/**
+        <em> </em><em>*</em><em> </em><em> </em><em>This</em><em> </em><em>function</em><em> </em><em>will</em><em> </em><em>be</em><em> </em><em>invoked</em><em> </em><em>when</em><em> </em><em>a</em><em> </em><em>transactional</em><em> </em><em>RFC</em><em> </em><em>is</em><em> </em><em>being</em><em> </em><em>called</em><em> </em><em>from</em><em> </em><em>a</em>
+        <em> </em><em>*</em><em> </em><em> </em><em>SAP</em><em> </em><em>R</em><em>/</em><em>3</em><em> </em><em>system.</em><em> </em><em>The</em><em> </em><em>function</em><em> </em><em>has</em><em> </em><em>to</em><em> </em><em>store</em><em> </em><em>the</em><em> </em><em>TID</em><em> </em><em>in</em><em> </em><em>permanent</em><em> </em><em>storage</em><em> </em><em>and</em><em> </em><em>return</em><em> </em><em>&lt;</em><em>code</em><em>&gt;</em><em>true</em><em>&lt;</em><em>/</em><em>code</em><em>&gt;</em><em>.</em>
+        <em> </em><em>*</em><em> </em><em> </em><em>The</em><em> </em><em>method</em><em> </em><em>has</em><em> </em><em>to</em><em> </em><em>return</em><em> </em><em>&lt;</em><em>code</em><em>&gt;</em><em>false</em><em>&lt;</em><em>/</em><em>code</em><em>&gt;</em><em> </em><em>if</em><em> </em><em>the</em><em> </em><em>a</em><em> </em><em>transaction</em><em> </em><em>with</em><em> </em><em>this</em><em> </em><em>ID</em><em> </em><em>has</em><em> </em><em>already</em>
+        <em> </em><em>*</em><em> </em><em> </em><em>been</em><em> </em><em>process.</em><em> </em><em>Throw</em><em> </em><em>an</em><em> </em><em>exception</em><em> </em><em>if</em><em> </em><em>anything</em><em> </em><em>goes</em><em> </em><em>wrong.</em><em> </em><em>The</em><em> </em><em>transaction</em><em> </em><em>processing</em><em> </em><em>will</em><em> </em><em>be</em>
+        <em> </em><em>*</em><em> </em><em> </em><em>aborted</em><em> </em><em>thereafter.</em><em>&lt;</em><em>b</em><em>&gt;</em>
+        <em> </em><em>*</em><em> </em><em> </em><em>Derived</em><em> </em><em>servers</em><em> </em><em>must</em><em> </em><em>override</em><em> </em><em>this</em><em> </em><em>method</em><em> </em><em>to</em><em> </em><em>actually</em><em> </em><em>implement</em><em> </em><em>the</em><em> </em><em>transaction</em><em> </em><em>ID</em><em> </em><em>management.</em>
+        <em> </em><em>*</em><em> </em><em> </em><em>@param</em><em> </em><em>tid</em><em> </em><em>the</em><em> </em><em>transaction</em><em> </em><em>ID</em>
+        <em> </em><em>*</em><em> </em><em> </em><em>@return</em><em> </em><em>&lt;</em><em>code</em><em>&gt;</em><em>true</em><em>&lt;</em><em>/</em><em>code</em><em>&gt;</em><em> </em><em>if</em><em> </em><em>the</em><em> </em><em>ID</em><em> </em><em>is</em><em> </em><em>valid</em><em> </em><em>and</em><em> </em><em>not</em><em> </em><em>in</em><em> </em><em>use</em><em> </em><em>otherwise</em><em>,</em><em> </em><em>&lt;</em><em>code</em><em>&gt;</em><em>false</em><em>&lt;</em><em>/</em><em>code</em><em>&gt;</em><em> </em><em>otherwise</em>
+        <em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#0000FF><b>protected</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>boolean</b></FONT><FONT color=#000000> onCheckTID(String tid)
+        {
+            </FONT><FONT color=#0000FF><b>return</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>true</b></FONT><FONT color=#000000>;
+        }
+
+        </FONT><FONT color=#008000>/**
+        <em> </em><em>*</em><em> </em><em> </em><em>This</em><em> </em><em>function</em><em> </em><em>will</em><em> </em><em>be</em><em> </em><em>called</em><em> </em><em>after</em><em> </em><em>the</em><em> </em><em>&lt;</em><em>em</em><em>&gt;</em><em>local</em><em>&lt;</em><em>/</em><em>em</em><em>&gt;</em><em> </em><em>transaction</em><em> </em><em>has</em><em> </em><em>been</em><em> </em><em>completed.</em>
+        <em> </em><em>*</em><em> </em><em> </em><em>All</em><em> </em><em>resources</em><em> </em><em>assiciated</em><em> </em><em>with</em><em> </em><em>this</em><em> </em><em>TID</em><em> </em><em>can</em><em> </em><em>be</em><em> </em><em>released.</em><em>&lt;</em><em>b</em><em>&gt;</em>
+        <em> </em><em>*</em><em> </em><em> </em><em>Derived</em><em> </em><em>servers</em><em> </em><em>must</em><em> </em><em>override</em><em> </em><em>this</em><em> </em><em>method</em><em> </em><em>to</em><em> </em><em>actually</em><em> </em><em>implement</em><em> </em><em>the</em><em> </em><em>transaction</em><em> </em><em>ID</em><em> </em><em>management.</em>
+        <em> </em><em>*</em><em> </em><em> </em><em>@param</em><em> </em><em>tid</em><em> </em><em>the</em><em> </em><em>transaction</em><em> </em><em>ID</em>
+        <em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#0000FF><b>protected</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>void</b></FONT><FONT color=#000000> onConfirmTID(String tid)
+        {
+        }
+
+        </FONT><FONT color=#008000>/**
+        <em> </em><em>*</em><em> </em><em> </em><em>This</em><em> </em><em>function</em><em> </em><em>will</em><em> </em><em>be</em><em> </em><em>called</em><em> </em><em>after</em><em> </em><em>&lt;</em><em>em</em><em>&gt;</em><em>all</em><em>&lt;</em><em>/</em><em>em</em><em>&gt;</em><em> </em><em>RFC</em><em> </em><em>functions</em><em> </em><em>belonging</em><em> </em><em>to</em><em> </em><em>a</em><em> </em><em>certain</em><em> </em><em>transaction</em>
+        <em> </em><em>*</em><em> </em><em> </em><em>have</em><em> </em><em>been</em><em> </em><em>successfully</em><em> </em><em>completed.</em><em> </em><em>&lt;</em><em>b</em><em>&gt;</em>
+        <em> </em><em>*</em><em> </em><em> </em><em>Derived</em><em> </em><em>servers</em><em> </em><em>can</em><em> </em><em>override</em><em> </em><em>this</em><em> </em><em>method</em><em> </em><em>to</em><em> </em><em>locally</em><em> </em><em>commit</em><em> </em><em>the</em><em> </em><em>transaction.</em>
+        <em> </em><em>*</em><em> </em><em> </em><em>@param</em><em> </em><em>tid</em><em> </em><em>the</em><em> </em><em>transaction</em><em> </em><em>ID</em>
+        <em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#0000FF><b>protected</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>void</b></FONT><FONT color=#000000> onCommit(String tid)
+        {
+        }
+
+        </FONT><FONT color=#008000>/**
+        <em> </em><em>*</em><em> </em><em> </em><em>This</em><em> </em><em>function</em><em> </em><em>will</em><em> </em><em>be</em><em> </em><em>called</em><em> </em><em>if</em><em> </em><em>an</em><em> </em><em>error</em><em> </em><em>in</em><em> </em><em>one</em><em> </em><em>of</em><em> </em><em>the</em><em> </em><em>RFC</em><em> </em><em>functions</em><em> </em><em>belonging</em><em> </em><em>to</em>
+        <em> </em><em>*</em><em> </em><em> </em><em>a</em><em> </em><em>certain</em><em> </em><em>transaction</em><em> </em><em>has</em><em> </em><em>occurred.</em><em>&lt;</em><em>b</em><em>&gt;</em>
+        <em> </em><em>*</em><em> </em><em> </em><em>Derived</em><em> </em><em>servers</em><em> </em><em>can</em><em> </em><em>override</em><em> </em><em>this</em><em> </em><em>method</em><em> </em><em>to</em><em> </em><em>locally</em><em> </em><em>rollback</em><em> </em><em>the</em><em> </em><em>transaction.</em>
+        <em> </em><em>*</em><em> </em><em> </em><em>@param</em><em> </em><em>tid</em><em> </em><em>the</em><em> </em><em>transaction</em><em> </em><em>ID</em>
+        <em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#0000FF><b>protected</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>void</b></FONT><FONT color=#000000> onRollback(String tid)
+        {
+        }
+
+        </FONT><FONT color=#008000>/**
+        <em> </em><em>*</em><em> </em><em> </em><em>Called</em><em> </em><em>upon</em><em> </em><em>an</em><em> </em><em>incoming</em><em> </em><em>requests</em>
+        <em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#0000FF><b>protected</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>void</b></FONT><FONT color=#000000> handleRequest(</FONT><FONT color=#000080><b>JCO.Function</b></FONT><FONT color=#000000> function)
+        {
+            </FONT><FONT color=#008000>//<em> </em><em>Process</em><em> </em><em>incoming</em><em> </em><em>requests</em></FONT><FONT color=#000000>
+            </FONT><FONT color=#0000FF><b>if</b></FONT><FONT color=#000000> (function</FONT><FONT color=#000080><b>.getName</b></FONT><FONT color=#000000>().equals(</FONT><FONT color=#FF00FF>"STFC_CONNECTION"</FONT><FONT color=#000000>)) {
+                </FONT><FONT color=#008000>//<em> </em><em>Do</em><em> </em><em>your</em><em> </em><em>processing</em><em> </em><em>here</em></FONT><FONT color=#000000>
+
+                </FONT><FONT color=#008000>//<em> </em><em>For</em><em> </em><em>now</em><em> </em><em>we</em><em> </em><em>just</em><em> </em><em>dump</em><em> </em><em>the</em><em> </em><em>function</em><em> </em><em>to</em><em> </em><em>a</em><em> </em><em>HTML</em><em> </em><em>file</em></FONT><FONT color=#000000>
+                </FONT><FONT color=#008000>//<em> </em><em>which</em><em> </em><em>can</em><em> </em><em>be</em><em> </em><em>viewed</em><em> </em><em>nicely</em><em> </em><em>in</em><em> </em><em>a</em><em> </em><em>browser</em></FONT><FONT color=#000000>
+                function</FONT><FONT color=#000080><b>.writeHTML</b></FONT><FONT color=#000000>(function</FONT><FONT color=#000080><b>.getName</b></FONT><FONT color=#000000>() + </FONT><FONT color=#FF00FF>".html"</FONT><FONT color=#000000>);
+            }
+
+            </FONT><FONT color=#008000>//<em> </em><em>This</em><em> </em><em>will</em><em> </em><em>cause</em><em> </em><em>a</em><em> </em><em>short</em><em>-</em><em>dump</em><em> </em><em>in</em><em> </em><em>R</em><em>/</em><em>3</em><em> </em><em>that</em><em> </em><em>indicates</em><em> </em><em>that</em><em> </em><em>we</em><em> </em><em>cannot</em></FONT><FONT color=#000000>
+            </FONT><FONT color=#008000>//<em> </em><em>handle</em><em> </em><em>the</em><em> </em><em>request.</em></FONT><FONT color=#000000>
+            </FONT><FONT color=#0000FF><b>else</b></FONT><FONT color=#000000> {
+                </FONT><FONT color=#008000>//<em> </em><em>Otherwise</em></FONT><FONT color=#000000>
+                </FONT><FONT color=#0000FF><b>throw</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>new</b></FONT><FONT color=#000000> </FONT><FONT color=#000080><b>JCO.AbapException</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"NOT_SUPPORTED"</FONT><FONT color=#000000>,</FONT><FONT color=#FF00FF>"This service is not implemented by the external server"</FONT><FONT color=#000000>);
+            }
+        }
+    }
+
+    </FONT><FONT color=#008000>/**
+    <em> </em><em>*</em><em> </em><em> </em><em>Called</em><em> </em><em>if</em><em> </em><em>an</em><em> </em><em>exception</em><em> </em><em>was</em><em> </em><em>thrown</em><em> </em><em>anywhere</em><em> </em><em>in</em><em> </em><em>our</em><em> </em><em>server</em>
+    <em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>void</b></FONT><FONT color=#000000> serverExceptionOccurred(</FONT><FONT color=#000080><b>JCO.Server</b></FONT><FONT color=#000000> srv, Exception ex)
+    {
+        System.out.println(</FONT><FONT color=#FF00FF>"Exception in Server "</FONT><FONT color=#000000> + srv</FONT><FONT color=#000080><b>.getProgID</b></FONT><FONT color=#000000>() + </FONT><FONT color=#FF00FF>":\n"</FONT><FONT color=#000000> + ex);
+        ex.printStackTrace();
+    }
+
+    </FONT><FONT color=#008000>/**
+    <em> </em><em>*</em><em> </em><em> </em><em>Called</em><em> </em><em>if</em><em> </em><em>an</em><em> </em><em>error</em><em> </em><em>was</em><em> </em><em>thrown</em><em> </em><em>anywhere</em><em> </em><em>in</em><em> </em><em>our</em><em> </em><em>server</em>
+    <em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>void</b></FONT><FONT color=#000000> serverErrorOccurred(</FONT><FONT color=#000080><b>JCO.Server</b></FONT><FONT color=#000000> srv, Error err)
+    {
+        System.out.println(</FONT><FONT color=#FF00FF>"Error in Server "</FONT><FONT color=#000000> + srv</FONT><FONT color=#000080><b>.getProgID</b></FONT><FONT color=#000000>() + </FONT><FONT color=#FF00FF>":\n"</FONT><FONT color=#000000> + err);
+        err.printStackTrace();
+    }
+
+    </FONT><FONT color=#008000>//<em> </em><em>System</em><em> </em><em>IDs</em><em> </em><em>of</em><em> </em><em>the</em><em> </em><em>system</em><em> </em><em>that</em><em> </em><em>we</em><em> </em><em>gonna</em><em> </em><em>using</em><em> </em><em>be</em><em> </em><em>for</em><em> </em><em>dictionary</em><em> </em><em>calls</em></FONT><FONT color=#000000>
+    String POOL_A = </FONT><FONT color=#FF00FF>"SYSTEM_A"</FONT><FONT color=#000000>;
+    String POOL_B = </FONT><FONT color=#FF00FF>"SYSTEM_B"</FONT><FONT color=#000000>;
+
+    </FONT><FONT color=#008000>//<em> </em><em>The</em><em> </em><em>server</em><em> </em><em>objects</em><em> </em><em>that</em><em> </em><em>actually</em><em> </em><em>handles</em><em> </em><em>the</em><em> </em><em>request</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#0000FF><b>int</b></FONT><FONT color=#000000> MAX_SERVERS = 2;
+    Server servers[] = </FONT><FONT color=#0000FF><b>new</b></FONT><FONT color=#000000> Server[MAX_SERVERS];
+
+    </FONT><FONT color=#008000>/**
+    <em> </em><em>*</em><em> </em><em> </em><em>Constructor.</em><em> </em><em>Creates</em><em> </em><em>a</em><em> </em><em>client</em><em> </em><em>pool</em><em>,</em><em> </em><em>the</em><em> </em><em>repository</em><em> </em><em>and</em><em> </em><em>a</em><em> </em><em>server.</em>
+    <em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> Example7()
+    {
+
+        </FONT><FONT color=#000080><b>IRepository</b></FONT><FONT color=#000000> repository;
+
+        </FONT><FONT color=#008000>//<em> </em><em>Add</em><em> </em><em>a</em><em> </em><em>connection</em><em> </em><em>pool</em><em> </em><em>to</em><em> </em><em>a</em><em> </em><em>remote</em><em> </em><em>R</em><em>/</em><em>3</em><em> </em><em>system</em><em> </em><em>A.</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#008000>//<em> </em><em>We</em><em> </em><em>will</em><em> </em><em>use</em><em> </em><em>this</em><em> </em><em>connected</em><em> </em><em>to</em><em> </em><em>dynamically</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#008000>//<em> </em><em>request</em><em> </em><em>dictionary</em><em> </em><em>information</em><em> </em><em>for</em><em> </em><em>incoming</em><em> </em><em>function</em><em> </em><em>calls.</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#008000>//<em> </em><em>!</em><em>!</em><em>!</em><em> </em><em>Please</em><em>,</em><em> </em><em>fill</em><em> </em><em>in</em><em> </em><em>the</em><em> </em><em>necessary</em><em> </em><em>login</em><em> </em><em>and</em><em> </em><em>system</em><em> </em><em>parameters</em><em> </em><em>!</em><em>!</em><em>!</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#000080><b>JCO.addClientPool</b></FONT><FONT color=#000000>(POOL_A,3,</FONT><FONT color=#FF00FF>"000"</FONT><FONT color=#000000>,</FONT><FONT color=#FF00FF>"user"</FONT><FONT color=#000000>,</FONT><FONT color=#FF00FF>"password"</FONT><FONT color=#000000>,</FONT><FONT color=#FF00FF>"EN"</FONT><FONT color=#000000>,</FONT><FONT color=#FF00FF>"system_a"</FONT><FONT color=#000000>,</FONT><FONT color=#FF00FF>"01"</FONT><FONT color=#000000>);
+
+        </FONT><FONT color=#008000>//<em> </em><em>Create</em><em> </em><em>repository</em><em> </em><em>for</em><em> </em><em>System</em><em> </em><em>A</em></FONT><FONT color=#000000>
+        repository = </FONT><FONT color=#000080><b>JCO.createRepository</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"SYSTEM_A"</FONT><FONT color=#000000>, POOL_A );
+
+        </FONT><FONT color=#008000>//<em> </em><em>Create</em><em> </em><em>a</em><em> </em><em>new</em><em> </em><em>server</em><em> </em><em>and</em><em> </em><em>register</em><em> </em><em>it</em><em> </em><em>with</em><em> </em><em>system</em><em> </em><em>A</em></FONT><FONT color=#000000>
+        servers[0] = </FONT><FONT color=#0000FF><b>new</b></FONT><FONT color=#000000> Server(</FONT><FONT color=#FF00FF>"SystemA"</FONT><FONT color=#000000>, </FONT><FONT color=#FF00FF>"sapgw01"</FONT><FONT color=#000000>, </FONT><FONT color=#FF00FF>"SERVER_A"</FONT><FONT color=#000000>, repository);
+
+        </FONT><FONT color=#008000>//<em> </em><em>Add</em><em> </em><em>a</em><em> </em><em>connection</em><em> </em><em>pool</em><em> </em><em>to</em><em> </em><em>a</em><em> </em><em>remote</em><em> </em><em>R</em><em>/</em><em>3</em><em> </em><em>system</em><em> </em><em>B.</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#008000>//<em> </em><em>We</em><em> </em><em>will</em><em> </em><em>use</em><em> </em><em>this</em><em> </em><em>connected</em><em> </em><em>to</em><em> </em><em>dynamically</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#008000>//<em> </em><em>request</em><em> </em><em>dictionary</em><em> </em><em>information</em><em> </em><em>for</em><em> </em><em>incoming</em><em> </em><em>function</em><em> </em><em>calls.</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#008000>//<em> </em><em>!</em><em>!</em><em>!</em><em> </em><em>Please</em><em>,</em><em> </em><em>fill</em><em> </em><em>in</em><em> </em><em>the</em><em> </em><em>necessary</em><em> </em><em>login</em><em> </em><em>and</em><em> </em><em>system</em><em> </em><em>parameters</em><em> </em><em>!</em><em>!</em><em>!</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#000080><b>JCO.addClientPool</b></FONT><FONT color=#000000>(POOL_B,3,</FONT><FONT color=#FF00FF>"000"</FONT><FONT color=#000000>,</FONT><FONT color=#FF00FF>"user"</FONT><FONT color=#000000>,</FONT><FONT color=#FF00FF>"password"</FONT><FONT color=#000000>,</FONT><FONT color=#FF00FF>"EN"</FONT><FONT color=#000000>,</FONT><FONT color=#FF00FF>"system_b"</FONT><FONT color=#000000>,</FONT><FONT color=#FF00FF>"02"</FONT><FONT color=#000000>);
+
+        </FONT><FONT color=#008000>//<em> </em><em>Create</em><em> </em><em>repository</em><em> </em><em>for</em><em> </em><em>system</em><em> </em><em>B</em></FONT><FONT color=#000000>
+        repository = </FONT><FONT color=#000080><b>JCO.createRepository</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"SYSTEM_B"</FONT><FONT color=#000000>, POOL_B );
+
+        </FONT><FONT color=#008000>//<em> </em><em>Create</em><em> </em><em>a</em><em> </em><em>new</em><em> </em><em>server</em><em> </em><em>and</em><em> </em><em>register</em><em> </em><em>it</em><em> </em><em>with</em><em> </em><em>system</em><em> </em><em>B</em></FONT><FONT color=#000000>
+        servers[1] = </FONT><FONT color=#0000FF><b>new</b></FONT><FONT color=#000000> Server(</FONT><FONT color=#FF00FF>"SystemB"</FONT><FONT color=#000000>, </FONT><FONT color=#FF00FF>"sapgw02"</FONT><FONT color=#000000>, </FONT><FONT color=#FF00FF>"SERVER_B"</FONT><FONT color=#000000>, repository);
+
+        </FONT><FONT color=#008000>//<em> </em><em>Register</em><em> </em><em>ourselves</em><em> </em><em>such</em><em> </em><em>that</em><em> </em><em>we</em><em> </em><em>get</em><em> </em><em>exceptions</em><em> </em><em>from</em><em> </em><em>the</em><em> </em><em>servers</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#000080><b>JCO.addServerExceptionListener</b></FONT><FONT color=#000000>(</FONT><FONT color=#0000FF><b>this</b></FONT><FONT color=#000000>);
+
+        </FONT><FONT color=#008000>//<em> </em><em>Register</em><em> </em><em>ourselves</em><em> </em><em>such</em><em> </em><em>that</em><em> </em><em>we</em><em> </em><em>get</em><em> </em><em>errors</em><em> </em><em>from</em><em> </em><em>the</em><em> </em><em>servers</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#000080><b>JCO.addServerErrorListener</b></FONT><FONT color=#000000>(</FONT><FONT color=#0000FF><b>this</b></FONT><FONT color=#000000>);
+    }
+
+    </FONT><FONT color=#008000>/**
+    <em> </em><em>*</em><em> </em><em> </em><em>Start</em><em> </em><em>the</em><em> </em><em>server</em>
+    <em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>void</b></FONT><FONT color=#000000> startServers()
+    {
+        </FONT><FONT color=#0000FF><b>try</b></FONT><FONT color=#000000> {
+            </FONT><FONT color=#0000FF><b>for</b></FONT><FONT color=#000000> (</FONT><FONT color=#0000FF><b>int</b></FONT><FONT color=#000000> i = 0; i &lt; MAX_SERVERS; i++) servers[i]</FONT><FONT color=#000080><b>.start</b></FONT><FONT color=#000000>();
+        }
+        </FONT><FONT color=#0000FF><b>catch</b></FONT><FONT color=#000000> (Exception ex) {
+            System.out.println(</FONT><FONT color=#FF00FF>"Could not start servers !\n"</FONT><FONT color=#000000> + ex);
+        }</FONT><FONT color=#008000>//<em>try</em></FONT><FONT color=#000000>
+    }
+
+    </FONT><FONT color=#008000>/**
+    <em> </em><em>*</em><em> </em><em> </em><em>Simple</em><em> </em><em>main</em><em> </em><em>program</em><em> </em><em>driver</em>
+    <em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+    </FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>static</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>void</b></FONT><FONT color=#000000> main(String[] argv)
+    {
+        Example7 obj = </FONT><FONT color=#0000FF><b>new</b></FONT><FONT color=#000000> Example7();
+        obj.startServers();
+    }
+}
+
+</PRE></FONT>
+</BODY></HTML>

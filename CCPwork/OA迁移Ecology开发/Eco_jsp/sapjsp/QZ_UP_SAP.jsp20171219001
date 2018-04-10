@@ -1,0 +1,118 @@
+<%@page import="weaver.general.Util"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.HashSet"%>
+<%@page import="java.util.Collections"%>
+<%@page import="java.util.Comparator"%>
+<%@page import="java.util.Map"%>
+<%@page import="weaver.conn.RecordSet"%>
+<%@page import="net.sf.json.JSONObject"%>
+<%@page import="java.io.PrintWriter"%>
+<%@page import="net.sf.json.JSONArray"%>
+<%@page import="weaver.general.BaseBean"%>
+<%@page import="com.sap.mw.jco.IFunctionTemplate"%>
+<%@page import="com.sap.mw.jco.JCO"%>
+<%@page import="weaver.interfaces.datasource.DataSource"%>
+<%@page import="com.weaver.integration.log.LogInfo"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
+<%@page
+	import="com.weaver.integration.datesource.SAPInterationDateSourceImpl;"%>
+
+<%
+	RecordSet rs = new RecordSet();
+	BaseBean log = new BaseBean();
+	log.writeLog("进入QZ_UP_SAP.jsp");
+	JCO.Client sapconnection = null;
+	JSONObject jsonResult = new JSONObject();
+	JSONArray jsonArr = new JSONArray();
+	try {
+
+		String lists = request.getParameter("list");
+		log.writeLog(lists);
+		JSONArray json = JSONArray.fromObject(lists);
+
+		Date d = new Date();
+		SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
+		String currdate = format.format(d);
+		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
+
+		for (int i = 0; i < json.size(); i++) {
+			Map<String, String> map = new HashMap<String, String>();
+			map.put("BUKRS", (String) json.getJSONObject(i).get("gsdm"));//公司代码
+			map.put("MATNR", (String) json.getJSONObject(i).get("wlh"));//物料号
+			map.put("ZUUMB", (String) json.getJSONObject(i).get("wlje"));//物料金额
+			map.put("BUDAT", currdate);//过账日期
+			map.put("NOTESID", (String) json.getJSONObject(i).get("notesid"));
+			list.add(map);
+		}
+
+		for (Map<String, String> m : list) {
+			for (String k : m.keySet()) {
+				rs.writeLog(k + " : " + m.get(k));
+			}
+
+		}
+
+		String sources = "1";
+		SAPInterationDateSourceImpl sapidsi = new SAPInterationDateSourceImpl();
+		sapconnection = (JCO.Client) sapidsi.getConnection(sources, new LogInfo());
+		log.writeLog("创建SAP连接");
+		String strFunc = "ZOA_MM_DOC_POST";
+		JCO.Function function = null;
+		JCO.Repository myRepository = new JCO.Repository("Repository", sapconnection);
+		IFunctionTemplate ft = myRepository.getFunctionTemplate(strFunc.toUpperCase());
+		function = ft.getFunction();
+
+		if (function == null) {
+			log.writeLog("链接SAP失败");
+			return;
+		}
+		if (list.size() > 0) {
+			for (int i = 0; i < list.size(); i++) {
+				JSONObject jsonObj = new JSONObject();
+				function.getImportParameterList().setValue("1010", "BUKRS");//公司代码
+				function.getImportParameterList().setValue("1010", "WERKS");//工厂
+				function.getImportParameterList().setValue("20170706", "BUDAT");//凭证中的过帐日期
+				function.getImportParameterList().setValue("N", "RUN_MODE");//调试模式
+				function.getImportParameterList().setValue("SJYF2017070600054PE FILM_1", "NOTESID");//NOTESID
+				function.getImportParameterList().setValue("800001499", "BKTXT");//凭证抬头文本
+
+				JCO.Table inTableParams1 = function.getTableParameterList().getTable("MM_DOC_ITEM");
+				inTableParams1.appendRow();
+				inTableParams1.setValue("PE FILM", "MATNR");//物料号
+				inTableParams1.setValue("26339.24", "ZUUMB");//物料金额
+
+				sapconnection.execute(function);
+				log.writeLog("执行function上传sap数据");
+
+				String FLAG = function.getExportParameterList().getValue("FLAG").toString();
+				String ERR_MSG = function.getExportParameterList().getValue("ERR_MSG").toString();
+				String MBLNR = function.getExportParameterList().getValue("MBLNR").toString();
+				// 获取数据
+				log.writeLog(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+				log.writeLog("FLAG: " + FLAG);
+				log.writeLog("ERR_MSG: " + ERR_MSG);
+				log.writeLog("MBLNR: " + MBLNR);
+				log.writeLog("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+				jsonObj.put("msg", ERR_MSG);
+				jsonObj.put("flag", FLAG);
+				jsonObj.put("MBLNR", MBLNR);
+				jsonArr.add(jsonObj);
+			}
+		}
+		jsonResult.put("result", jsonArr);
+	} catch (Exception e) {
+		// TODO: handle exception
+		jsonResult.put("flag", "E");
+		out.write("fail" + e);
+		e.printStackTrace();
+	}
+
+	response.getWriter().write(jsonResult.toString());
+	response.getWriter().flush();
+	response.getWriter().close();
+%>

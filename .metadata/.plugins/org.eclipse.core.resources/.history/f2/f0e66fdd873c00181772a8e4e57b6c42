@@ -1,0 +1,44 @@
+package majiang;
+
+import java.math.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+public class entrance {
+	
+
+	public static void main (String[] args) {
+	    
+		Cards cards = new Cards();
+		cards.showCards();
+		cards.shufCards();
+		cards.showCards();
+		
+		System.out.println("\n111开始发牌:");
+		for(int i=0; i<14;i++) {
+			if (cards.hasNext()) {
+				cards.takeNext();
+			}
+		}
+		System.out.println("\n222开始发牌:");
+		for(int i=0; i<14;i++) {
+			if (cards.hasNext()) {
+				cards.takeNext();
+			}
+		}
+		System.out.println("\n333开始发牌:");
+		for(int i=0; i<14;i++) {
+			if (cards.hasNext()) {
+				cards.takeNext();
+			}
+		}
+		System.out.println("\n444开始发牌:");
+		for(int i=0; i<14;i++) {
+			if (cards.hasNext()) {
+				cards.takeNext();
+			}
+		}
+		System.out.println("\n剩余的牌堆");
+		cards.showCards();
+	}
+	
+}

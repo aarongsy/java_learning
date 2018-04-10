@@ -1,0 +1,182 @@
+<HTML>
+<HEAD>
+<TITLE>Java Source Code</TITLE>
+</HEAD>
+<BODY BGCOLOR=#FFFFFF>
+<PRE>
+<FONT color=#000000></FONT><FONT color=#008000>/**
+<em> </em><em>*</em><em> </em><em>Example2.java</em>
+<em> </em><em>*</em><em> </em><em>Property</em><em> </em><em>of</em><em> </em><em>SAP</em><em> </em><em>AG</em><em>,</em><em> </em><em>Walldorf</em>
+<em> </em><em>*</em><em> </em><em>(</em><em>c</em><em>)</em><em> </em><em>Copyright</em><em> </em><em>SAP</em><em> </em><em>AG</em><em>,</em><em> </em><em>Walldorf</em><em>,</em><em> </em><em>2000</em><em>-</em><em>2005.</em>
+<em> </em><em>*</em><em> </em><em>All</em><em> </em><em>rights</em><em> </em><em>reserved.</em>
+<em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+</FONT><FONT color=#0000FF><b>import</b></FONT><FONT color=#000000> com.sap.mw.jco.*;
+
+</FONT><FONT color=#008000>/**
+<em> </em><em>*</em><em> </em><em>@version</em><em> </em><em>1.0</em>
+<em> </em><em>*</em><em> </em><em>@author</em><em> </em><em> </em><em>SAP</em><em> </em><em>AG</em><em>,</em><em> </em><em>Walldorf</em>
+<em> </em><em>*</em><em>/</em></FONT><FONT color=#000000>
+</FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>class</b></FONT><FONT color=#000000> Example2 {
+
+  </FONT><FONT color=#008000>//<em> </em><em>The</em><em> </em><em>MySAP.com</em><em> </em><em>system</em><em> </em><em>we</em><em> </em><em>gonna</em><em> </em><em>be</em><em> </em><em>using</em></FONT><FONT color=#000000>
+  </FONT><FONT color=#0000FF><b>static</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>final</b></FONT><FONT color=#000000> String SID = </FONT><FONT color=#FF00FF>"R3"</FONT><FONT color=#000000>;
+
+  </FONT><FONT color=#008000>//<em> </em><em>The</em><em> </em><em>repository</em><em> </em><em>we</em><em> </em><em>will</em><em> </em><em>be</em><em> </em><em>using</em></FONT><FONT color=#000000>
+  </FONT><FONT color=#000080><b>IRepository</b></FONT><FONT color=#000000> repository;
+
+  </FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> Example2()
+  {
+    </FONT><FONT color=#0000FF><b>try</b></FONT><FONT color=#000000> {
+      </FONT><FONT color=#008000>//<em> </em><em>Add</em><em> </em><em>a</em><em> </em><em>connection</em><em> </em><em>pool</em><em> </em><em>to</em><em> </em><em>the</em><em> </em><em>specified</em><em> </em><em>system</em></FONT><FONT color=#000000>
+      </FONT><FONT color=#008000>//<em> </em><em> </em><em> </em><em> </em><em>The</em><em> </em><em>pool</em><em> </em><em>will</em><em> </em><em>be</em><em> </em><em>saved</em><em> </em><em>in</em><em> </em><em>the</em><em> </em><em>pool</em><em> </em><em>list</em><em> </em><em>to</em><em> </em><em>be</em><em> </em><em>used</em></FONT><FONT color=#000000>
+      </FONT><FONT color=#008000>//<em> </em><em> </em><em> </em><em> </em><em>from</em><em> </em><em>other</em><em> </em><em>threads</em><em> </em><em>by</em><em> </em><em>JCO.getClient</em><em>(</em><em>SID</em><em>)</em><em>.</em></FONT><FONT color=#000000>
+      </FONT><FONT color=#008000>//<em> </em><em> </em><em> </em><em> </em><em>The</em><em> </em><em>pool</em><em> </em><em>must</em><em> </em><em>be</em><em> </em><em>explicitely</em><em> </em><em>removed</em><em> </em><em>by</em><em> </em><em>JCO.removeClientPool</em><em>(</em><em>SID</em><em>)</em></FONT><FONT color=#000000>
+      </FONT><FONT color=#000080><b>JCO.addClientPool</b></FONT><FONT color=#000000>( SID,         </FONT><FONT color=#008000>//<em> </em><em>Alias</em><em> </em><em>for</em><em> </em><em>this</em><em> </em><em>pool</em></FONT><FONT color=#000000>
+                         10,          </FONT><FONT color=#008000>//<em> </em><em>Max.</em><em> </em><em>number</em><em> </em><em>of</em><em> </em><em>connections</em></FONT><FONT color=#000000>
+                         </FONT><FONT color=#FF00FF>"000"</FONT><FONT color=#000000>,       </FONT><FONT color=#008000>//<em> </em><em>SAP</em><em> </em><em>client</em></FONT><FONT color=#000000>
+                         </FONT><FONT color=#FF00FF>"johndoe"</FONT><FONT color=#000000>,   </FONT><FONT color=#008000>//<em> </em><em>userid</em></FONT><FONT color=#000000>
+                         </FONT><FONT color=#FF00FF>"*****"</FONT><FONT color=#000000>,     </FONT><FONT color=#008000>//<em> </em><em>password</em></FONT><FONT color=#000000>
+                         </FONT><FONT color=#FF00FF>"EN"</FONT><FONT color=#000000>,        </FONT><FONT color=#008000>//<em> </em><em>language</em></FONT><FONT color=#000000>
+                         </FONT><FONT color=#FF00FF>"appserver"</FONT><FONT color=#000000>, </FONT><FONT color=#008000>//<em> </em><em>host</em><em> </em><em>name</em></FONT><FONT color=#000000>
+                         </FONT><FONT color=#FF00FF>"00"</FONT><FONT color=#000000> );
+
+      </FONT><FONT color=#008000>//<em> </em><em>Create</em><em> </em><em>a</em><em> </em><em>new</em><em> </em><em>repository</em></FONT><FONT color=#000000>
+      </FONT><FONT color=#008000>//<em> </em><em> </em><em> </em><em> </em><em>The</em><em> </em><em>repository</em><em> </em><em>caches</em><em> </em><em>the</em><em> </em><em>function</em><em> </em><em>and</em><em> </em><em>structure</em><em> </em><em>definitions</em></FONT><FONT color=#000000>
+      </FONT><FONT color=#008000>//<em> </em><em> </em><em> </em><em> </em><em>to</em><em> </em><em>be</em><em> </em><em>used</em><em> </em><em>for</em><em> </em><em>all</em><em> </em><em>calls</em><em> </em><em>to</em><em> </em><em>the</em><em> </em><em>system</em><em> </em><em>SID.</em><em> </em><em>The</em><em> </em><em>creation</em><em> </em><em>of</em></FONT><FONT color=#000000>
+      </FONT><FONT color=#008000>//<em> </em><em> </em><em> </em><em> </em><em>redundant</em><em> </em><em>instances</em><em> </em><em>cause</em><em> </em><em>performance</em><em> </em><em>and</em><em> </em><em>memory</em><em> </em><em>waste.</em></FONT><FONT color=#000000>
+      repository = </FONT><FONT color=#000080><b>JCO.createRepository</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"MYRepository"</FONT><FONT color=#000000>, SID);
+    }
+    </FONT><FONT color=#0000FF><b>catch</b></FONT><FONT color=#000000> (</FONT><FONT color=#000080><b>JCO.Exception</b></FONT><FONT color=#000000> ex) {
+      System.out.println(</FONT><FONT color=#FF00FF>"Caught an exception: \n"</FONT><FONT color=#000000> + ex);
+    }
+  }
+
+  </FONT><FONT color=#008000>//<em> </em><em>Retrieves</em><em> </em><em>and</em><em> </em><em>prints</em><em> </em><em>information</em><em> </em><em>about</em><em> </em><em>the</em><em> </em><em>remote</em><em> </em><em>system</em></FONT><FONT color=#000000>
+  </FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>void</b></FONT><FONT color=#000000> systemInfo()
+  {
+    </FONT><FONT color=#0000FF><b>try</b></FONT><FONT color=#000000> {
+
+      </FONT><FONT color=#008000>//<em> </em><em>Get</em><em> </em><em>a</em><em> </em><em>function</em><em> </em><em>template</em><em> </em><em>from</em><em> </em><em>the</em><em> </em><em>repository</em></FONT><FONT color=#000000>
+      </FONT><FONT color=#000080><b>IFunctionTemplate</b></FONT><FONT color=#000000> ftemplate = repository</FONT><FONT color=#000080><b>.getFunctionTemplate</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"RFC_SYSTEM_INFO"</FONT><FONT color=#000000>);
+
+      </FONT><FONT color=#008000>//<em> </em><em>if</em><em> </em><em>the</em><em> </em><em>function</em><em> </em><em>definition</em><em> </em><em>was</em><em> </em><em>found</em><em> </em><em>in</em><em> </em><em>backend</em><em> </em><em>system</em></FONT><FONT color=#000000>
+      </FONT><FONT color=#0000FF><b>if</b></FONT><FONT color=#000000>(ftemplate != </FONT><FONT color=#0000FF><b>null</b></FONT><FONT color=#000000>) {
+
+        </FONT><FONT color=#008000>//<em> </em><em>Create</em><em> </em><em>a</em><em> </em><em>function</em><em> </em><em>from</em><em> </em><em>the</em><em> </em><em>template</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#000080><b>JCO.Function</b></FONT><FONT color=#000000> function = ftemplate</FONT><FONT color=#000080><b>.getFunction</b></FONT><FONT color=#000000>();
+
+        </FONT><FONT color=#008000>//<em> </em><em>Get</em><em> </em><em>a</em><em> </em><em>client</em><em> </em><em>from</em><em> </em><em>the</em><em> </em><em>pool</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#000080><b>JCO.Client</b></FONT><FONT color=#000000> client = </FONT><FONT color=#000080><b>JCO.getClient</b></FONT><FONT color=#000000>(SID);
+
+        </FONT><FONT color=#008000>//<em> </em><em>We</em><em> </em><em>can</em><em> </em><em>call</em><em> </em><em>'</em><em>RFC_SYSTEM_INFO</em><em>'</em><em> </em><em>directly</em><em> </em><em>since</em><em> </em><em>it</em><em> </em><em>does</em><em> </em><em>not</em><em> </em><em>need</em><em> </em><em>any</em><em> </em><em>input</em><em> </em><em>parameters</em></FONT><FONT color=#000000>
+        client</FONT><FONT color=#000080><b>.execute</b></FONT><FONT color=#000000>(function);
+
+        </FONT><FONT color=#008000>//<em> </em><em>The</em><em> </em><em>export</em><em> </em><em>parameter</em><em> </em><em>'</em><em>RFCSI_EXPORT</em><em>'</em><em> </em><em>contains</em><em> </em><em>a</em><em> </em><em>structure</em><em> </em><em>of</em><em> </em><em>type</em><em> </em><em>'</em><em>RFCSI</em><em>'</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#000080><b>JCO.Structure</b></FONT><FONT color=#000000> s = function</FONT><FONT color=#000080><b>.getExportParameterList</b></FONT><FONT color=#000000>()</FONT><FONT color=#000080><b>.getStructure</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"RFCSI_EXPORT"</FONT><FONT color=#000000>);
+
+        </FONT><FONT color=#008000>//<em> </em><em>Use</em><em> </em><em>enumeration</em><em> </em><em>to</em><em> </em><em>loop</em><em> </em><em>over</em><em> </em><em>all</em><em> </em><em>fields</em><em> </em><em>of</em><em> </em><em>the</em><em> </em><em>structure</em></FONT><FONT color=#000000>
+        System.out.println(</FONT><FONT color=#FF00FF>"System info for "</FONT><FONT color=#000000> + SID + </FONT><FONT color=#FF00FF>":\n"</FONT><FONT color=#000000> +
+                           </FONT><FONT color=#FF00FF>"--------------------"</FONT><FONT color=#000000>);
+
+        </FONT><FONT color=#0000FF><b>for</b></FONT><FONT color=#000000> (</FONT><FONT color=#000080><b>JCO.FieldIterator</b></FONT><FONT color=#000000> e = s</FONT><FONT color=#000080><b>.fields</b></FONT><FONT color=#000000>(); e.hasMoreElements(); ) {
+          </FONT><FONT color=#000080><b>JCO.Field</b></FONT><FONT color=#000000> field = e</FONT><FONT color=#000080><b>.nextField</b></FONT><FONT color=#000000>();
+          System.out.println(field</FONT><FONT color=#000080><b>.getName</b></FONT><FONT color=#000000>() + </FONT><FONT color=#FF00FF>":\t"</FONT><FONT color=#000000> + field</FONT><FONT color=#000080><b>.getString</b></FONT><FONT color=#000000>());
+        }</FONT><FONT color=#008000>//<em>for</em></FONT><FONT color=#000000>
+
+        System.out.println(</FONT><FONT color=#FF00FF>"\n\n"</FONT><FONT color=#000000>);
+
+        </FONT><FONT color=#008000>//<em> </em><em>Release</em><em> </em><em>the</em><em> </em><em>client</em><em> </em><em>into</em><em> </em><em>the</em><em> </em><em>pool</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#000080><b>JCO.releaseClient</b></FONT><FONT color=#000000>(client);
+      }
+      </FONT><FONT color=#0000FF><b>else</b></FONT><FONT color=#000000> {
+        System.out.println(</FONT><FONT color=#FF00FF>"Function RFC_SYSTEM_INFO not found in backend system."</FONT><FONT color=#000000>);
+      }
+    }
+    </FONT><FONT color=#0000FF><b>catch</b></FONT><FONT color=#000000> (Exception ex) {
+      System.out.println(</FONT><FONT color=#FF00FF>"Caught an exception: \n"</FONT><FONT color=#000000> + ex);
+    }
+
+  }
+
+  </FONT><FONT color=#008000>//<em> </em><em>Retrieves</em><em> </em><em>and</em><em> </em><em>displays</em><em> </em><em>a</em><em> </em><em>sales</em><em> </em><em>order</em><em> </em><em>list</em></FONT><FONT color=#000000>
+  </FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>void</b></FONT><FONT color=#000000> salesOrders()
+  {
+    </FONT><FONT color=#000080><b>JCO.Client</b></FONT><FONT color=#000000> client = </FONT><FONT color=#0000FF><b>null</b></FONT><FONT color=#000000>;
+
+    </FONT><FONT color=#0000FF><b>try</b></FONT><FONT color=#000000> {
+      </FONT><FONT color=#008000>//<em> </em><em>Get</em><em> </em><em>a</em><em> </em><em>function</em><em> </em><em>template</em><em> </em><em>from</em><em> </em><em>the</em><em> </em><em>repository</em></FONT><FONT color=#000000>
+      </FONT><FONT color=#000080><b>IFunctionTemplate</b></FONT><FONT color=#000000> ftemplate = repository</FONT><FONT color=#000080><b>.getFunctionTemplate</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"BAPI_SALESORDER_GETLIST"</FONT><FONT color=#000000>);
+
+      </FONT><FONT color=#008000>//<em> </em><em>if</em><em> </em><em>the</em><em> </em><em>function</em><em> </em><em>definition</em><em> </em><em>was</em><em> </em><em>found</em><em> </em><em>in</em><em> </em><em>backend</em><em> </em><em>system</em></FONT><FONT color=#000000>
+      </FONT><FONT color=#0000FF><b>if</b></FONT><FONT color=#000000>(ftemplate != </FONT><FONT color=#0000FF><b>null</b></FONT><FONT color=#000000>) {
+
+        </FONT><FONT color=#008000>//<em> </em><em>Create</em><em> </em><em>a</em><em> </em><em>function</em><em> </em><em>from</em><em> </em><em>the</em><em> </em><em>template</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#000080><b>JCO.Function</b></FONT><FONT color=#000000> function = ftemplate</FONT><FONT color=#000080><b>.getFunction</b></FONT><FONT color=#000000>();
+
+        </FONT><FONT color=#008000>//<em> </em><em>Get</em><em> </em><em>a</em><em> </em><em>client</em><em> </em><em>from</em><em> </em><em>the</em><em> </em><em>pool</em></FONT><FONT color=#000000>
+        client = </FONT><FONT color=#000080><b>JCO.getClient</b></FONT><FONT color=#000000>(SID);
+
+        </FONT><FONT color=#008000>//<em> </em><em>Fill</em><em> </em><em>in</em><em> </em><em>input</em><em> </em><em>parameters</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#000080><b>JCO.ParameterList</b></FONT><FONT color=#000000> input = function</FONT><FONT color=#000080><b>.getImportParameterList</b></FONT><FONT color=#000000>();
+
+        input</FONT><FONT color=#000080><b>.setValue</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"0000001200"</FONT><FONT color=#000000>, </FONT><FONT color=#FF00FF>"CUSTOMER_NUMBER"</FONT><FONT color=#000000>   );
+        input</FONT><FONT color=#000080><b>.setValue</b></FONT><FONT color=#000000>(      </FONT><FONT color=#FF00FF>"1000"</FONT><FONT color=#000000>, </FONT><FONT color=#FF00FF>"SALES_ORGANIZATION"</FONT><FONT color=#000000>);
+        input</FONT><FONT color=#000080><b>.setValue</b></FONT><FONT color=#000000>(         </FONT><FONT color=#FF00FF>"0"</FONT><FONT color=#000000>, </FONT><FONT color=#FF00FF>"TRANSACTION_GROUP"</FONT><FONT color=#000000> );
+
+        </FONT><FONT color=#008000>//<em> </em><em>Call</em><em> </em><em>the</em><em> </em><em>remote</em><em> </em><em>system</em></FONT><FONT color=#000000>
+        client</FONT><FONT color=#000080><b>.execute</b></FONT><FONT color=#000000>(function);
+
+        </FONT><FONT color=#008000>//<em> </em><em>Print</em><em> </em><em>return</em><em> </em><em>message</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#000080><b>JCO.Structure</b></FONT><FONT color=#000000> ret = function</FONT><FONT color=#000080><b>.getExportParameterList</b></FONT><FONT color=#000000>()</FONT><FONT color=#000080><b>.getStructure</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"RETURN"</FONT><FONT color=#000000>);
+        System.out.println(</FONT><FONT color=#FF00FF>"BAPI_SALES_ORDER_GETLIST RETURN: "</FONT><FONT color=#000000> + ret</FONT><FONT color=#000080><b>.getString</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"MESSAGE"</FONT><FONT color=#000000>));
+
+        </FONT><FONT color=#008000>//<em> </em><em>Get</em><em> </em><em>table</em><em> </em><em>containing</em><em> </em><em>the</em><em> </em><em>orders</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#000080><b>JCO.Table</b></FONT><FONT color=#000000> sales_orders = function</FONT><FONT color=#000080><b>.getTableParameterList</b></FONT><FONT color=#000000>()</FONT><FONT color=#000080><b>.getTable</b></FONT><FONT color=#000000>(</FONT><FONT color=#FF00FF>"SALES_ORDERS"</FONT><FONT color=#000000>);
+
+        </FONT><FONT color=#008000>//<em> </em><em>Print</em><em> </em><em>results</em></FONT><FONT color=#000000>
+        </FONT><FONT color=#0000FF><b>if</b></FONT><FONT color=#000000> (sales_orders</FONT><FONT color=#000080><b>.getNumRows</b></FONT><FONT color=#000000>() &gt; 0) {
+
+          </FONT><FONT color=#008000>//<em> </em><em>Loop</em><em> </em><em>over</em><em> </em><em>all</em><em> </em><em>rows</em></FONT><FONT color=#000000>
+          </FONT><FONT color=#0000FF><b>do</b></FONT><FONT color=#000000> {
+
+            System.out.println(</FONT><FONT color=#FF00FF>"-----------------------------------------"</FONT><FONT color=#000000>);
+
+            </FONT><FONT color=#008000>//<em> </em><em>Loop</em><em> </em><em>over</em><em> </em><em>all</em><em> </em><em>columns</em><em> </em><em>in</em><em> </em><em>the</em><em> </em><em>current</em><em> </em><em>row</em></FONT><FONT color=#000000>
+            </FONT><FONT color=#0000FF><b>for</b></FONT><FONT color=#000000> (</FONT><FONT color=#000080><b>JCO.FieldIterator</b></FONT><FONT color=#000000> e = sales_orders</FONT><FONT color=#000080><b>.fields</b></FONT><FONT color=#000000>(); e.hasMoreElements(); ) {
+              </FONT><FONT color=#000080><b>JCO.Field</b></FONT><FONT color=#000000> field = e</FONT><FONT color=#000080><b>.nextField</b></FONT><FONT color=#000000>();
+              System.out.println(field</FONT><FONT color=#000080><b>.getName</b></FONT><FONT color=#000000>() + </FONT><FONT color=#FF00FF>":\t"</FONT><FONT color=#000000> + field</FONT><FONT color=#000080><b>.getString</b></FONT><FONT color=#000000>());
+            }</FONT><FONT color=#008000>//<em>for</em></FONT><FONT color=#000000>
+          } </FONT><FONT color=#0000FF><b>while</b></FONT><FONT color=#000000>(sales_orders</FONT><FONT color=#000080><b>.nextRow</b></FONT><FONT color=#000000>());
+
+        }
+        </FONT><FONT color=#0000FF><b>else</b></FONT><FONT color=#000000> {
+          System.out.println(</FONT><FONT color=#FF00FF>"No results found"</FONT><FONT color=#000000>);
+        }</FONT><FONT color=#008000>//<em>if</em></FONT><FONT color=#000000>
+      }
+      </FONT><FONT color=#0000FF><b>else</b></FONT><FONT color=#000000> {
+        System.out.println(</FONT><FONT color=#FF00FF>"Function BAPI_SALESORDER_GETLIST not found in backend system."</FONT><FONT color=#000000>);
+      }</FONT><FONT color=#008000>//<em>if</em></FONT><FONT color=#000000>
+    }
+    </FONT><FONT color=#0000FF><b>catch</b></FONT><FONT color=#000000> (Exception ex) {
+      System.out.println(</FONT><FONT color=#FF00FF>"Caught an exception: \n"</FONT><FONT color=#000000> + ex);
+    }
+    </FONT><FONT color=#0000FF><b>finally</b></FONT><FONT color=#000000> {
+      </FONT><FONT color=#008000>//<em> </em><em>Release</em><em> </em><em>the</em><em> </em><em>client</em><em> </em><em>to</em><em> </em><em>the</em><em> </em><em>pool</em></FONT><FONT color=#000000>
+      </FONT><FONT color=#000080><b>JCO.releaseClient</b></FONT><FONT color=#000000>(client);
+    }
+  }
+
+  </FONT><FONT color=#0000FF><b>protected</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>void</b></FONT><FONT color=#000000> cleanUp() {
+    JCO</FONT><FONT color=#000080><b>.removeClientPool</b></FONT><FONT color=#000000>(SID);
+  }
+
+  </FONT><FONT color=#0000FF><b>public</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>static</b></FONT><FONT color=#000000> </FONT><FONT color=#0000FF><b>void</b></FONT><FONT color=#000000> main(String[] argv)
+  {
+    Example2 e = </FONT><FONT color=#0000FF><b>new</b></FONT><FONT color=#000000> Example2();
+    e.systemInfo();
+    e.salesOrders();
+    e.cleanUp();
+  }
+}
+</PRE></FONT>
+</BODY></HTML>

@@ -16,7 +16,7 @@ public class find_return {
     	System.out.println(strprint);
     }
 	public static void findstring(String originstr,String filedic){
-		String s ="欧康诺";  
+		String s ="意识引导器";  
 		int i = originstr.lastIndexOf(s);  
 		if (i!=-1){
 		  System.out.println("在"+filedic+"中"); 
