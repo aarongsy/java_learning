@@ -1,6 +1,6 @@
 <%@page import="javax.servlet.jsp.tagext.TryCatchFinally"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@page import="com.weaver.integration.log.LogInfo"%>
+
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="java.sql.Statement"%>
@@ -19,6 +19,7 @@
     String ponos = request.getParameter("ponos");
     String path = request.getParameter("");
     JCO.Client sapconnection = null;
+	
     try {
 		RecordSet rs = new RecordSet();
         RecordSet rs1 = new RecordSet();
@@ -37,8 +38,8 @@
     
 
 
-        rs1.writeLog(outcall);
-        out.write("20180330________________suceess：" + outcall);
+        rs1.writeLog(outcal______suceess：" + outcall);
+        out.write("20180330__________");
     } catch (Exception e) {
         // TODO: handle exception
         out.write("20180330_______________fail" + e);

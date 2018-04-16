@@ -1,0 +1,15 @@
+package majiang;
+
+import java.util.Scanner;
+
+public class testEntrance {
+	public static void main(String[] args) {
+		while(true) {
+			Scanner console = new Scanner(System.in);
+			if (console.hasNext()){
+				System.out.println("next"+console.next());
+				System.out.println("nextline"+console.nextLine());
+			}
+		}
+	}
+}
